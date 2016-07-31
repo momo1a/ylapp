@@ -1,0 +1,134 @@
+﻿@charset "utf-8";
+
+/*----- sprite -----*/
+.logo a,
+.contact-section-tit,
+.menu-hasSub dt,
+.menu-notSub a,
+.menu-hasSub a { background: url(../../images/help_center/common_sprite.png) no-repeat; _background: url(../../images/help_center/common_sprite_png8.png) no-repeat;}
+
+.logo a { background-position: 0 0;}
+.contact-tel .contact-section-tit { background-position: 0 -148px;}
+.contact-email .contact-section-tit { background-position: -0 -194px;}
+.contact-guide .contact-section-tit{background-position:-2px -322px; }
+.contact-qq .contact-section-tit { background-position: 0 -360px;}
+.menu-hasSub dt { background-position: 20px -234px;}
+.menu-hasSubClose dt { background-position: 18px -256px;}
+.menu-hasSubHighlight a {color: #CC0000 !important;}
+.menu-siteMap a { background-position: 8px -98px;}
+.menu-idea a { background-position: 8px -55px;}
+.menu-hasSub a { background-position: 22px -283px;}
+
+
+/*----- topbar -----*/
+.topbar { border-bottom: 1px solid #dcdcdc; color: #000; background-color: #f5f5f5;}
+.topbar-wrap { width: 1000px; margin-left: auto; margin-right: auto; height: 21px; line-height: 22px; padding: 3px 0;}
+.login-info {float: left; }
+.topbar-nav {float: right; }
+.topbar-nav .yuan-bg {display: inline-block; width: 52px; height: 15px; line-height: 15px; background: url(/images/www/share.png) no-repeat 0 -195px; color: #fff; text-align: center; }
+.topbar a {  text-decoration: none;}
+.topbar a:hover { color: #EA5900; text-decoration: underline; }
+.topbar-login,.topbar-register { margin-left: 8px; color: #666;}
+.topbar-userName { margin-left: 3px; margin-right: 8px; color: #0072C1;}
+.topbar-tipMsg { margin-right: 8px;}
+.topbar-tipMsg a { margin: 0 3px;}
+.topbar-tipMsg em { font-style: normal; font-weight: 700; font-family: arial;}
+.topbar-nav a { color: #666; }
+.topbar-nav a { padding: 0 5px;}
+
+/*----- header -----*/
+.headerOuter { border-bottom: 1px solid #a00; background-color: #c00;}
+.headerInner { border-bottom: 1px solid #FC544E;}
+.header { position: relative; margin: 0 auto; width: 1000px; height: 83px;}
+.logo { position: absolute; left: 0; bottom: 5px; }
+.logo a { display: block; padding-top: 46px; width: 305px; height: 0; overflow: hidden; color: #fff;}
+
+/*----- menu -----*/
+.menu { border-left: 1px solid #fff; border-right: 1px solid #fff;}
+.menu-notSub,
+.menu-hasSub { margin-top: -1px; border-top: 1px solid #dcdcdc; zoom:1;}
+.menu-notSub a,
+.menu-hasSub dt { display: block; padding: 8px 0 8px 30px; border-top: 1px solid #fff; border-bottom: 1px solid #dcdcdc; text-shadow: 0 1px 1px #fff; color:#4c4c4c; cursor:pointer; background-color: #F5F5F5; _zoom:1; }
+.menu-notSub a {font-size: 14px; font-weight: 700; }
+.menu-hasSub dt { font-size: 12px; }
+.menu-hasSub a { display: block; padding: 5px 0 5px 30px;background-color: #fff; color:#4c4c4c; _zoom:1;}
+.menu-hasSub a:hover { background-color: #f8f8f8;}
+.menu-item-curPage { color:#c00 !important;  font-weight: 700;}
+
+.tab {  }
+.tab-nav { margin-bottom: -2px; *position: relative; *zoom:1; }
+.tab-item { float: left; width: 50%; margin-right: -1px;}
+.tab-item a { 
+	display: block; 
+	font-size: 16px; 
+	font-weight: 700;
+	text-align: center;
+	padding: 6px 0;
+	border: 1px solid #dcdcdc; 
+	background-color: #EBEBEB;
+	color:#666; 
+	text-decoration: none; 
+	text-shadow: 0 1px 1px #fff; 
+}
+.tab-itemCurrent a { border-bottom-color:#F5F5F5; background-color: #F5F5F5; color:#CC0000;}
+.tab-cont { padding-right: 1px; *padding-right: 0; background-color: #F5F5F5;}
+.tab-panel {  border-left: 1px solid #dcdcdc; border-right: 1px solid #dcdcdc;}
+
+/*----- contact -----*/
+.contact-section { margin-top: -1px; border: 1px solid #ccc; padding-left: 8px;}
+.contact-section-tit { padding: 15px 0 0 50px; font-weight: 700; color: #555;}
+.contact-section-cont { font-size: 18px; color: #c00;}
+.contact-time { margin-top: -1px; padding: 6px; border: 1px solid #ccc; color: #555; }
+.contact-time-tit { text-align: center;}
+.contact-time-cont {}
+.contact-guide{padding: 8px 0 8px 8px;}/*新手引导*/
+.contact-guide .contact-section-tit{padding: 7px 0 7px 30px;display:block}
+.contact-qq{padding: 8px 0 8px 8px;}/*新手引导*/
+.contact-qq .contact-section-tit{padding: 7px 0 7px 30px;display:block}
+.contact-time-detail em { display: block; padding:3px 0; font-weight: 700;}
+.contact-time-detail span { float: left; width: 50%; *width: 49.9%;text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.contact-time-tip { margin-top: 3px; color: #999;}
+.gradient {
+	filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffffff,endColorstr=#F4F4F4);
+	background-image: -moz-linear-gradient(top,#FFFFFF,#F4F4F4);
+	background-image: -o-linear-gradient(top,#FFFFFF,#F4F4F4);
+	background-image: -webkit-linear-gradient(top,#FFFFFF,#F4F4F4);
+	background-image: -ms-linear-gradient(top,#FFFFFF,#F4F4F4);
+	background-image: linear-gradient(top,#FFFFFF,#F4F4F4);
+}
+
+/*----- searbar -----*/
+.layout-search div, 
+.float-func a { background-image:url(../../images/help_center/global.png); _background-image:url(../../images/help_center/global_png8.png); background-repeat:no-repeat;}
+.layout-search{width:100%; height:55px; padding:10px 0; border:#dcdcdc solid 1px; background-color:#f5f5f5; margin-bottom:10px; position: relative;}
+.layout-search div{  background-position:-350px 0;}
+.layout-search .search-box{height:55px; padding-left:60px; margin-left:5px; background-position:-300px 0;}
+.search-form{margin:5px 0;}
+.search-text{width:360px; height:20px; background-color:#fff; border:#dcdcdc solid 1px; padding:4px; font-size:14px; color:#ccc;}
+.search-button{height:30px; display:inline-block; padding:4px 20px; font-size:14px; display:inline; color:#fff; background-color:#dd0000; border:#cc0000 solid 1px; cursor:pointer; *overflow: visible;}
+.search-hot{float:left;padding-left: 65px;margin-top: -14px;width: 720px}
+.search-hot{ width: 700px; overflow: hidden; height: 22px; text-overflow: ellipsis; white-space: nowrap;}
+.search-hot a{margin-right:5px;}
+.layout-search .contract{height:45px; padding-left:45px; margin-left:20px; margin-top:5px; background-position:-300px -55px; line-height:20px;}
+.contract strong{font-size:20px; font-family:"Microsoft YaHei",Verdana,Geneva,sans-serif; font-weight:normal; line-height:25px;}
+.layout-search .contract-qq{height:45px; padding-left:38px;background-position:-136px -714px; line-height:20px;position:absolute; right:150px; top: 13px;}
+.layout-search .contract-qq{line-height: 37px;font-size: 18px;}
+
+
+/* float function block */
+.float-func{width:60px; position:fixed; right:30px; bottom:100px; z-index:999; display:none;}
+.float-func a{width:60px; height:20px; display:block; background-color:#f5f5f5; padding-top:40px; text-align:center; margin-bottom:2px;}
+
+.to-feedback{background-position:0 -670px;}
+.to-top{background-position:-60px -670px;}
+
+/*----- frame (双飞翼布局——玉伯) -----*/
+.frame { *zoom:1; width: 100%;}
+.frame:before, 
+.frame:after { content: ""; display: table; }
+.frame:after { clear: both; }
+.frame-mainWrap { float: left; width: 100%;}
+.frame-main { margin-left: 215px; min-height: 1px;}
+.frame-aside { float: left; margin-left: -100%; width: 205px; min-height: 1px;}
+
+.main { margin: 10px auto 25px;}

@@ -1,0 +1,9 @@
+
+/* ie mobile 不支持fixed  */
+#wrapper{ padding-top: 0;}
+	#header{ position: relative;}
+	#navigation{ position: relative; top: 0;}
+
+	#main.activeState #navigation ,#main.activeState #header{ left: 0;}
+
+

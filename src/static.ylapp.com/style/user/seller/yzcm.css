@@ -1,0 +1,16 @@
+.yzcm-msg {padding: 10px; color: #339900; border-bottom: 1px dotted #ccc; margin-bottom: 15px; }
+.yzcm-content {padding-top: 15px;}
+.yzcm-content p {margin: 10px;}
+.yzcm-content a {color: #0055FF;}
+.yzcm-content .ui-form-button {color: #FFFFFF;}
+.yzcm-txtHighlight {color: #CC0000;}
+.yzcm-error {margin-left: 20px; color: #CC0000; display: none;}
+.yzcm-dialog li {margin: 10px; height: 30px; text-align: center;}
+.yzcm-buttonPayed{ background-color: #999; color: #fff; cursor: default; }
+
+.flow {height: 50px; color: #666666; background-color: #ffffff; line-height: 50px;text-align: center;}
+.flow-4 .flow-step{width: 174px;}
+.flow-title {background-color: #F54444; color: #666666; float: left; width: 90px; font-size: 14px; color: #ffffff; font-weight: bold; }
+.flow-step {background: url(../../../../images/user/seller/flow.png) right center no-repeat; height: 48px; float: left; border-top: 1px dotted #cccccc; border-bottom: 1px dotted #cccccc; overflow: hidden;}
+.flow-stepLast {background-image: none; border-right: 1px dotted #cccccc; }
+.flow span {font-size: 20px; margin-right: 5px; display: inline-block; _display: inline; _zoom: 1; margin-top: -2px; vertical-align: middle; }

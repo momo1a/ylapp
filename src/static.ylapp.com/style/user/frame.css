@@ -1,0 +1,24 @@
+/*--- 预设 ---*/
+a {color: #666;}
+a:hover{text-decoration: none;}
+body {background-color: #F7F5ED; }
+/*@Color
+  @border-color: #ccc|#c00; //默认|高亮
+  @深红      #9D1519
+  @红		 #c00
+  @浅红      #F2273A
+*/
+
+/*--- 工具类 ---*/
+.w1000 {width: 1000px; margin: 0 auto; }
+
+/*====================================================*/
+.main { border: 1px solid #eee; border-top-width:0;  border-radius: 0 0 5px 5px; -moz-border-radius: 0 0 5px 5px; padding-bottom: 36px;  background: url(../../images/user/main_bg.jpg) repeat-y -36px 0 #fafafa; }
+
+/*传说中的双飞翼布局!!~~*/
+.main-primary { float: left; width: 100%;}
+.main-primary-wrap { margin-left: 160px; padding: 10px; min-height: 1px; }
+.main-aside { float: left; width: 160px; margin-left: -100%; _margin-left: -1000px; }
+
+
+.footer { margin-top: 50px;}

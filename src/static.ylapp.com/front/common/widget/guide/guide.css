@@ -1,0 +1,23 @@
+@-webkit-keyframes widgetguiderotate {
+  0%   {-webkit-transform:rotate(90deg);}
+  100% {-webkit-transform:rotate(0deg);}
+}
+@-moz-keyframes widgetguiderotate {
+  0%   {-webkit-transform:rotate(90deg);}
+  100% {-webkit-transform:rotate(0deg);}
+}
+@-ms-keyframes widgetguiderotate {
+  0%   {-webkit-transform:rotate(90deg);}
+  100% {-webkit-transform:rotate(0deg);}
+}
+@keyframes widgetguiderotate{
+  0%   {-webkit-transform:rotate(90deg);}
+  100% {-webkit-transform:rotate(0deg);}
+}
+.widget-guide{ width:1000px; height:0; line-height:0; margin:0 auto; }
+.widget-guide-fw{ position:fixed; _position:absolute; width:1000px; height:0; bottom:0; z-index:100; _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight)); }
+.widget-guide-close{ width:12px; height:12px; overflow:hidden; position:absolute; top: -209px; right: -79px; line-height:12px; font-size: 18px; font-family: Helvetica,STHeiti; _font-family: Tahoma,'\u9ed1\u4f53','Book Antiqua',Palatino; text-align: center; z-index: 2; color: #ff4254; background-color:rgba(255,255,255,0.8); -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccffffff', endColorstr='#ccffffff'); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccffffff', endColorstr='#ccffffff'); }
+.widget-guide-close:hover{ color: #ff0000; background-color:rgba(169,169,169,0.8); -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cca9a9a9', endColorstr='#cca9a9a9'); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cca9a9a9', endColorstr='#cca9a9a9'); }
+.widget-guide-close:hover span:hover{ -webkit-animation-duration: 0.5s; -moz-animation-duration: 0.5s; -ms-animation-duration: 0.5s; animation-duration: 0.5s; -webkit-animation-name: widgetguiderotate; -moz-animation-name: widgetguiderotate; -ms-animation-name: widgetguiderotate; animation-name: widgetguiderotate; }
+.widget-guide-link{ width: 50px; height: 50px; overflow:hidden; position:absolute; top: -210px; right: -80px; z-index: 1; }
+.widget-guide-link img{ width: 50px; height: 50px; display: block; }

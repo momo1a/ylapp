@@ -1,0 +1,51 @@
+// main: ../../frame.less
+
+// 文档块
+.g-doc{
+	min-width: 1000px;
+	background-color: #F5F5F5;
+}
+// 标准块
+.g-wrap{
+	width: 1000px;
+	margin: 0 auto;
+}
+// topbar
+.g-tb{
+	height: 27px;
+	background-color: #F5F5F5;
+	border-bottom: 1px solid #DCDCDC;
+}
+// 头部
+.g-hd{
+	border-bottom: 1px solid @color-h;
+	background-color: #fff;
+}
+// 头部主内容
+.g-hdm{
+	padding: 35px 0;
+}
+/* 双飞翼：两列右侧自适应布局 */
+/*
+<div class="g-bd2">
+	<div class="g-sd2">
+		<p>左侧固定宽</p>
+	</div>
+	<div class="g-mn2">
+		<div class="g-mn2c">
+			<p>右侧自适应</p>
+		</div>
+	</div>
+</div>
+ */
+.g-bd2{margin-top: 20px; margin-bottom: 20px;}
+.g-sd2{position:relative;float:left;width:160px;margin-right:-160px;}
+.g-mn2{float:right;width:100%;}
+.g-mn2c{margin-left:180px;}
+// 底部
+.g-ft{
+	background-color: #E8E8E8;
+	border-top: 1px solid #C0C0C0;
+	margin-top: 40px;
+	padding: 15px 0 60px 0;
+}

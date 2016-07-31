@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+/*--- box ---*/
+.ui-box { box-shadow: 0 1px 6px rgba(0,0,0,.3);-moz-box-shadow: 0 1px 6px rgba(0,0,0,.3);-webkit-box-shadow: 0 1px 6px rgba(0,0,0,.3); background-color: #fff;}
+.ui-box, .ui-box-outer, .ui-box-inner { border:1px solid #ccc; border-radius: 3px;  padding-bottom: 1px;}
+.ui-box-outer, .ui-box-inner { border-top-width:0; margin:0 -1px;}
+.ui-box-inner { padding: 0; min-height: 1px;}
+.ui-box2 { border-top-left-radius: 0px;border-top-right-radius: 0px; border-top: 2px solid #28364E;}
+.ui-box-head { height: 40px; padding-left:10px; line-height: 40px; color: #333; background-color: #EEE; vertical-align: middle;}
+.ui-box-tit { font-size: 14px; font-weight: 700; color: #4c4c4c;}
+.ui-box-body { padding: 15px;}
+
+/*--- select ---*/
+.ui-select { height: 26px; line-height: 18px; padding: 4px; vertical-align: middle; } 
+
+/*--- textbox ---*/
+input.ui-form-text:focus { outline: none; }
+.ui-form-text { min-width: 1em; height: 15px; line-height: 16px; padding: 5px; font-size: 12px; border:1px solid #d3d3d3;}
+.ui-form-textGray:focus { border-color:#d3d3d3; box-shadow: 0 0 4px rgba(0,0,0,.3) }
+.ui-form-textRed:focus { border-color:#FF818E; box-shadow: 0 0 4px rgba(204,0,0,.6); }
+.ui-form-textBlud:focus { border-color: #598EDE; box-shadow: 0 0 4px rgba(0,0,204,.6); }
+.ui-form-textDatetime { min-width: 125px; padding-right:26px; background: url(../../../images/admin/datetime_icon.png) no-repeat right 50% #fff; cursor: default;}
+.ui-form-textDatetime:focus { background-image: url(../../../images/admin/datetime_icon2.png) }
+
+/*--- button ---*/
+.ui-form-button { padding: .35em 1.35em; font-size: 14px; border-width: 0; border-radius: .3em; *overflow: visible;}
+.ui-form-button:hover { text-decoration: none; cursor: pointer;}
+.ui-form-buttonGray { background-color: #999; color: #fff; }
+.ui-form-buttonGray:hover { background-color: #666; }
+.ui-form-buttonRed { background-color: #F1273A; color: #fff; }
+.ui-form-buttonRed:hover { background-color: #BF1C2C; }
+.ui-form-buttonBlue { background-color: #3D4D66;  color: #fff; }
+.ui-form-buttonBlue:hover { background-color: #2D3D57; }
+
+.ui-operate-button {  padding-left: 19px; display: inline-block; }
+.ui-operate-button:hover { color:#EA5900; text-decoration: none; cursor: pointer;}
+.ui-operate-buttonAdd { background: url(../../../images/admin/add_icon.png) no-repeat 0 50%; }
+.ui-operate-buttonAddDisable,
+.ui-operate-buttonAddDisable:hover { background: url(../../../images/admin/add_icon2.png) no-repeat 0 50%; color: #aaa !important; cursor: default !important; }
+.ui-operate-buttonEdit { background: url(../../../images/admin/edit_icon.png) no-repeat 0 50%; }
+.ui-operate-buttonEditDisable,
+.ui-operate-buttonEditDisable:hover { background: url(../../../images/admin/edit_icon2.png) no-repeat 0 50%; color: #aaa !important; cursor: default !important;}
+.ui-operate-buttonDel { background: url(../../../images/admin/del_icon.png) no-repeat 0 50%; }
+.ui-operate-buttonDelDisable,
+.ui-operate-buttonDelDisable:hover{ background: url(../../../images/admin/del_icon2.png) no-repeat 0 50%; color: #aaa !important; cursor: default !important; }
+.ui-operate-buttonShield{ background: url(../../../images/admin/shield_icon.png) no-repeat 0 50%; }
+.ui-operate-buttonShieldDisable,
+.ui-operate-buttonShieldDisable:hover{ background: url(../../../images/admin/shield_icon2.png) no-repeat 0 50%; color: #aaa !important; cursor: default !important; }
+.ui-operate-buttonAccredit { background: url(../../../images/admin/accredit_icon.png) no-repeat 0 50%; }
+.ui-operate-buttonSave { background: url(../../../images/admin/save_icon.png) no-repeat 0 50%; }
+.ui-operate-buttonSaveDisable,
+.ui-operate-buttonSaveDisable:hover { background: url(../../../images/admin/save_icon2.png) no-repeat 0 50%; color: #aaa !important; cursor: default !important; }
+
+/*下面这个很丑的,单独声明，慎用;*/
+.ui-form-btnSearch {
+	text-shadow: 0 1px 1px #fff;
+	cursor: pointer;
+	padding: 3px 10px 4px; border: 1px solid #acacac; font-size: 12px; *overflow: visible;
+	color:#333;
+	background-color: #CCCCCC;
+	background-image: -webkit-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+	background-image: -moz-linear-gradient(top, #eaeaea, #eaeaea 25%, #CCCCCC);
+	background-image: -o-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+	background-image: linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaeaea', endColorstr='#CCCCCC', GradientType=0);
+}
+.ui-form-btnSearch:active  {background: #f0f0f0;filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);}
+
+/*--- ui-table ---*/
+.ui-table { border: 1px solid #ccc; table-layout: fixed; width: 100%; }
+.ui-table thead th { height: 35px;}
+.ui-table thead th, .ui-table td { vertical-align: middle; text-align: center;}
+.ui-table thead th { 
+	font-size: 12px;
+	color:#4c4c4c;
+	text-shadow:0 1px 1px #fff;
+	background-color: #CCCCCC;
+	background-image: -webkit-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+	background-image: -moz-linear-gradient(top, #eaeaea, #eaeaea 25%, #CCCCCC);
+	background-image: -o-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+	background-image: linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaeaea', endColorstr='#CCCCCC', GradientType=0);
+}
+.ui-table td { border: 1px solid #ccc; border-bottom-style: dotted; border-top:none; padding: 12px 0;  word-break: break-all; word-wrap: break-word; height:30px;}
+
+.ui-table-colActivityName { width: 15em;} /*用到col标签上去。*/
+/*限制活动标题最多显示三行（后台程序限制活动标题最多是50个字符(汉字算两字符)，如果以后限制字数有变这个宽度要改）*/
+.ui-table-activityName { text-align: left !important; word-break: break-all; word-wrap: break-word; } /* 用到td上 */
+.ui-table-activityName img { float: left; height: 60px; margin: 0 6px; width: 60px; }
+
+.ui-table-colDatetime { width: 12em;}
+/*现在的日期格式为：2013年6月13日 14:00 ；若他日时间格式有变，这个宽度要改*/
+
+.ui-table-operate a { display: inline-block; padding:2px 5px; border-radius: 3px; margin-top: 5px; white-space: nowrap; color:#fff; background-color: #1BB974; } /*用到td标签上去*/
+.ui-table-operate a:hover { color:#fff; text-decoration: none; background-color: #4BDB9B;}
+
+/*--- ui-table2 ---*/
+.ui-table2 {  table-layout: fixed; width: 100%; }
+.ui-table2 th { text-align: right;  padding-right:12px;}
+.ui-table2 td {text-align: left; padding: 6px 0;}
+
+.ui-table-statusR { color: #F2273A;} /*红：审核中等*/    /*js正则判断添加*/
+.ui-table-statusG { color: #1BB974;}  /*绿：通过等*/
+.ui-table-statusB { color: #3366CC;}  /*蓝：进行中等*/
+.ui-table-statusGray { color: #808080;} /*灰：结束等*/
+
+/*表头的"全选"组件，html：
+<th class="ui-table-checkAll"><label><input type="checkbox" />全选/取消</label></th>*/
+.ui-table-checkAll { width: 90px;} /*用到thead 的th标签上去。*/
+.ui-table-checkAll input { vertical-align: middle; margin-right:3px; } 
+
+.ui-paging { line-height: 2; font-family: \5b8b\4f53; color: #666;}
+.ui-paging a, .ui-paging strong {display: inline-block; padding:0 0.8em; border: 1px solid #ccc; color:#666; background-color: #fff; }
+.ui-paging a:hover,.ui-paging strong { border-color: #c00; color: #c00; text-decoration: none;}
+.ui-paging strong { font-weight: 700; }
+.ui-paging-center { text-align: center; }
+.ui-paging-center .ui-paging { display: inline-block; *zoom:1; *display: inline;}
+
+
+.ui-tab { }
+.ui-tab-nav { margin-bottom: -1px; *position: relative; *zoom:1; }
+.ui-tab-nav a:hover { text-decoration: none;}
+.ui-tab-item { display: inline-block; *zoom:1; *display: inline; *margin-right: 5px; border: 1px solid #ccc; background-color: #EBEBEB; }
+.ui-tab-item, .ui-tab-item a { border-top-left-radius:2px; border-top-right-radius:2px; }
+.ui-tab-itemCurrent { border-bottom:none; padding-bottom: 1px; background-color: #fff;}
+.ui-tab-item a { display: block; padding:0 .8em; font-size: 12px; line-height: 2.6; border-top: 1px solid #fff; border-left: 1px solid #fff; color:#666; text-decoration: none; text-shadow: 0 1px 1px #fff; }
+.ui-tab-itemCurrent a { font-weight: 700;}
+.ui-tab-cont { border-top:1px solid #ccc; padding-top: 25px;}
+.ui-tab-panel { }
+
+.up_sort{color:green; font-size:15px; font-weight:500; background: url(../../../images/admin/up.png) no-repeat 35% 50%;}
+.down_sort{color:red; font-size:15px; font-weight:500; background: url(../../../images/admin/down.png) no-repeat 35% 50%;}
+.no_change{font-size:15px; font-weight:500;}
+
+
+/* 字体图标 */
+@font-face {
+  font-family: "iconfont";
+  src: url('../../admin/font/iconfont.eot'); /* IE9*/
+  src: url('../../admin/font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../../admin/font/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../../admin/font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../../admin/font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.u-ifont{font-family:"iconfont" !important; font-size:16px; font-style:normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale; }

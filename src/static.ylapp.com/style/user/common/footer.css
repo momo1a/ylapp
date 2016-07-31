@@ -1,0 +1,13 @@
+﻿@charset "utf-8";
+.footer {  border-top: 1px solid #C0C0C0; background-color: #F0F0F0; color: #888888; min-width: 1000px;}
+.footer-bd { width:1000px; margin:0 auto;padding:10px 0 50px 0; }
+.footer-bd { *zoom:1;} .footer-bd:before,.footer-bd:after { content: ""; display:table;}.footer-bd:after{clear:both;}
+.footer-info { float: left; }
+.footer-service {float: right; }
+.footer-qq,.footer-email{display: block;line-height: 20px;overflow: hidden;margin-bottom: 5px;}
+.footer-service span{float: left; display: inline-block; font-size: 0;width: 16px; height: 16px;margin-right: 3px;margin-top: 3px;}
+.footer-email span{background: url(/user/common/images/icon_min_email.png) no-repeat; }
+.footer-email a:hover { color: #f00; text-decoration: underline;}
+.footer p { line-height: 2;}
+.footer-nav a, 
+.footer-copyright a { display: inline-block; white-space: nowrap; margin-right:1em; }

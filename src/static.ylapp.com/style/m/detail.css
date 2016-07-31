@@ -1,0 +1,42 @@
+body{ padding-top: 40px; padding-bottom: 10px;}
+
+
+
+/*=== content ===*/
+	#content{ padding: 0 5px; font-size: 14px;}
+	/*== primary-info ==*/
+	#primary-info{ background-color: #fff; padding-top: 20px; min-height: 300px; border-radius: 0 0 3px 3px; border: 1px solid #C5C8CC;
+	box-shadow:0 1px 0 rgb(255,255,255), 0 2px 0 #C5C8CC, 0 3px 0 #fff, 0 4px 0 #C5C8CC,0 5px 0 #fff, 0 6px 0 #C5C8CC,0 6px 2px #bbb;}
+		#showArea{ width: 300px;height: 248px; margin:0 auto;}
+		#showArea .trun-left,#showArea .trun-right{ line-height: 230px; text-align: center; float: left; width: 35px; height: 230px; cursor: pointer; font-size: 30px;}
+		
+		/*.icon-arrow-left,.icon-arrow-right{ display: inline-block; height: 7px; width: 7px;border: #999 solid;border-width: 2px 2px 0 0;}
+		.icon-arrow-left{  -webkit-transform: rotate(-135deg); transform: rotate(-135deg); }
+		.icon-arrow-right{ -webkit-transform: rotate(45deg); transform: rotate(45deg); }*/
+
+		#showArea .img-container{ width: 230px; height: 230px; overflow: hidden; float: left;}
+		#showArea .img-container div{ width: 230px; height: 230px;}
+		#showArea .img-container ul.swipe-wrap{ overflow: hidden; position: relative;}
+		#showArea .img-container ul.swipe-wrap li{ float:left;  width:100%;  position: relative;}
+		#showArea .img-container img{ width: 230px; height: 230px;}
+		#showArea .in-entry-status{ text-align: center; float: left; width: 100%; }
+		#showArea .in-entry-status span{ display:inline-block; width: 8px; height: 8px; border-radius: 8px; -webkit-border-radius: 8px; background-color: #eee; margin-right: 3px;/* box-shadow: inset 0 1px 3px #bbb,0 0 1px 1px #f8f8f8;*/}
+		#showArea .in-entry-status span.active{ background-color: #CD0104;
+			   /* box-shadow:inset 0 1px 3px -1px #D33434,0 1px 2px rgba(0,0,0,.5);
+				background-image: -moz-linear-gradient(top,#D63434,#960101);
+				background-image: -webkit-gradient(linear,0 0,0 100%,from(#D63434),to(#960101));
+				background-image: -webkit-linear-gradient(top,#D63434,#960101);
+				background-image: -o-linear-gradient(top,#D63434,#960101);
+				background-image: linear-gradient(to bottom,#D63434,#960101);*/}
+
+		.text-info{ padding: 5px 15px;  }
+		.text-info p{ line-height: 1.8em; }
+		.text-info h2{ font-size: 16px; line-height: 30px;}
+		.btnWrapper{ padding: 5px 0;}
+
+	/*== secondary-info ==*/
+	#secondary-info{ padding-top: 10px;}
+	#secondary-info .text-info.bdb{ border-bottom: 1px solid #E2E2E2;}
+	#secondary-info .text-info.bdt{ border-top: 1px solid #fff;}
+
+

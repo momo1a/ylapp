@@ -1,0 +1,226 @@
+@charset "UTF-8";
+#switchpic { width:9px; height:35px; cursor:pointer; clear: both; vertical-align: bottom; margin-top: 220px;}
+select { height: 26px; line-height: 18px; padding: 4px; _margin-bottom: 2px; vertical-align: middle;}
+input { vertical-align: middle;}
+#windownbg {z-index: 999 !important; }
+#windown-box {z-index: 9999 !important; }
+#ajaxwaitid {display: none; position: absolute; z-index: 100; padding-left: 5px; top: 0; right: 0; width: 100px; height: 1.6em; background: #D00; line-height: 1.6em; color: #FFF; overflow: hidden; } /*========== main.php 欢迎==========*/
+.welcome { padding: 20px;}
+.errmsg { height:23px;color:red;font-size:14px;font-weight:bold;}
+.mobile_order{background-color: #0099FF; color:#FFF; padding:3px;} /*手机下单标签*/
+
+/*========== online_time.php 设置活动上线时间==========*/
+.onlineTime { padding: 15px;}
+.onlineTime td { padding: 6px 0;}
+.onlineTime em { font-weight: 700; color: #c00; margin-left:5px; margin-right: 5px;}
+.onlineTime .ui-form-text { width: 40px; border-radius: 3px; margin-left:8px; margin-right: 8px; text-align: center;}
+.onlineTime-ft { margin-top: 5px; padding: 15px 0 0 15px; border-top:1px solid #ccc; }
+
+/*========== hot_percent.php 设置近期热卖百分比 ==========*/
+.hot-percent-form {  padding: 15px;}
+.hot-percent-form .ui-form-text { width: 40px; border-radius: 3px; margin-left:8px; margin-right: 8px; text-align: center;}
+.hot-percent-form-ft {  margin-top: 12px; padding: 15px 0 0 15px; border-top:1px solid #ccc; }
+
+/*========== goods_remind.php 设置开团提醒时间 ==========*/
+.remindSetting { }
+.remindTime {}
+.remindTime td { padding: 6px 0;}
+.remindTime em { font-weight: 700; color: #c00; margin-left:5px; margin-right: 5px;}
+.remindTime .ui-form-text { width: 40px; border-radius: 3px; margin-left:8px; margin-right: 8px; text-align: center;}
+.remindTime-ft,
+.remindTime2-ft { margin-top: 5px; padding: 15px 0 0 15px; border-top:1px solid #ccc; }
+.remindTime2 { margin: 15px;}
+.remindTime2-list { padding: 20px; padding-right: 0;}
+.remindTime2-list li { float: left; margin-right: 30px; margin-bottom: 15px; font-weight: 700;}
+
+/*========== user\auto_shield.php 设置自动屏蔽 ==========*/
+.autosheildSetting { }
+.autoShield {}
+.autoShield td { padding: 6px 0;}
+.autoShield em { font-weight: 700; color: #c00; margin-left:5px; margin-right: 5px;}
+.autoShield .ui-form-text { width: 40px; border-radius: 3px; margin-left:8px; margin-right: 8px; text-align: center;}
+.autoShield table{margin-left:24px;}
+.autoShield-ft{ margin-top: 5px; padding: 15px 0 0 15px; border-top:1px solid #ccc; }
+
+/*========== goods\remind.php 数据管理 ==> 开团提醒数据 ==========*/
+.remindData {}
+
+/*========== category\goods_category.php 类目列表 ==========*/
+.goods-category-head .ui-operate-button { margin-left: 5px;}
+.goods-category .cate-list { border: 1px solid #ccc;}
+.goods-category .cate-name,
+.goods-category .subcate-name { float: left;}
+.goods-category .cate-btngroup,
+.goods-category .subcate-btngroup { float: right; }
+.goods-category .cate-list .ui-operate-button{ display: block; float: left; margin-left: 30px; }
+.goods-category .cate-list dd{ display: block; clear: both; border-top: 1px dotted #ccc;}
+.goods-category .cate-list dt,.cate-list dd { height: 35px;  padding: 0 20px; line-height: 35px; }
+.goods-category .cate-list dt {
+    font-size: 12px; color:#4c4c4c; text-shadow:0 1px 1px #fff; *zoom:1;
+    background-color: #CCCCCC;
+    background-image: -webkit-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: -moz-linear-gradient(top, #eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: -o-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaeaea', endColorstr='#CCCCCC', GradientType=0);
+}
+
+/*========== action.php 操作管理 ==========*/
+
+
+/*=========  频道管理 → 专题推送  ======*/
+.special { }
+.special-head .ui-operate-button { margin-left: 5px;}
+.special .cate-list { border: 1px solid #ccc;}
+.special .cate-name,
+.special .subcate-name { float: left;}
+.special .cate-btngroup,
+.special .subcate-btngroup { float: right; }
+.special .cate-list .ui-operate-button{ display: block; float: left; margin-left: 30px; }
+.special .cate-list dd{ display: block; clear: both; border-top: 1px dotted #ccc;}
+.special .cate-list dt,.cate-list dd { height: 35px;  padding: 0 20px; line-height: 35px; }
+.special .cate-list dt {
+    font-size: 12px; color:#4c4c4c; text-shadow:0 1px 1px #fff; *zoom:1;
+    background-color: #CCCCCC;
+    background-image: -webkit-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: -moz-linear-gradient(top, #eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: -o-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaeaea', endColorstr='#CCCCCC', GradientType=0);
+}
+
+/*========= help\category.php 帮助管理 → 帮助分类  ======*/
+.help-category { }
+.help-category-head .ui-operate-button { margin-left: 5px;}
+.help-category .cate-list { border: 1px solid #ccc;}
+.help-category .cate-name,
+.help-category .subcate-name { float: left;}
+.help-category .cate-btngroup,
+.help-category .subcate-btngroup { float: right; }
+.help-category .cate-list .ui-operate-button{ display: block; float: left; margin-left: 30px; }
+.help-category .cate-list dd{ display: block; clear: both; border-top: 1px dotted #ccc;}
+.help-category .cate-list dt,.cate-list dd { height: 35px;  padding: 0 20px; line-height: 35px; }
+.help-category .cate-list dt {
+    font-size: 12px; color:#4c4c4c; text-shadow:0 1px 1px #fff; *zoom:1;
+    background-color: #CCCCCC;
+    background-image: -webkit-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: -moz-linear-gradient(top, #eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: -o-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaeaea', endColorstr='#CCCCCC', GradientType=0);
+}
+
+/*========= privilege\index.php 权限设置 ==========*/
+.permissionsSet-head .ui-operate-button { margin-left: 15px;}
+
+/*========= loglist\syslog.php 查看异常 ==========*/
+/* \(^o^)/ */
+
+/*========= loglist\admin.php 管理员操作 ==========*/
+/* \(^o^)/ */
+
+/*========= message\send.php 群发管理 ========*/
+.concurrent { }
+.concurrent-head { font-size: 14px; font-weight: 700;}
+.concurrent form { /*padding-bottom: 12px;*/}
+.concurrent form li { float: left; width: 50%; overflow: hidden;}
+.concurrent form label { margin-right: 20px;}
+.concurrent-edit td { padding: 6px 0; }
+.concurrent-edit .col1 { padding-right: 8px; text-align: right;}
+.concurrent-edit tr:last-child { vertical-align: top;}
+.concurrent-edit .ui-form-text { width: 420px;}
+.concurrent-edit textarea { min-height: 200px; _height:200px; overflow: auto; resize:none;}
+
+/*========= trade.php 交易额导出 ==========*/
+/* \(^o^)/ */
+
+/*========= fee.php.php 损耗费导出 ==========*/
+/* \(^o^)/ */
+
+/*========= finance.php 财务数据导出 ==========*/
+/* \(^o^)/ */
+
+/*========= appeal\list.php 用户申诉列表 ==========*/
+.appealList { }
+.appealList .ui-tab-cont form { margin-bottom: 15px; border-width:0;}
+.appealList .ui-tab-nav a:hover { color: #EA5900; }
+/*========= appeal\detail.php 用户申诉管理 ==========*/
+.appeal-detail td {word-wrap:break-word; word-break:break-all;}
+/*========= appeal\records.php 用户申诉记录 ==========*/
+.records { }
+.records .ui-tab-cont form { margin-bottom: 15px; border-width:0;}
+.records .ui-tab-nav a:hover { color: #EA5900; }
+
+/*========= appeal\type.php 用户申诉类型 ==========*/
+.appealType .ui-box-inner { padding: 15px;}
+.appealType .ui-operate-button {  line-height: 24px; }
+.appealType tbody .ui-operate-button { margin-right: 10px;}
+
+/*========= advertisement.php 焦点广告 ==========*/
+.advertisement .ui-box-inner{ padding: 15px; }
+.advertisement td {word-wrap:break-word; word-break:break-all;}
+.advertisement-add { margin-top: 20px;}
+.advertisement-add li { padding: 6px 0; }
+.advertisement-add form li span { display: inline-block; width: 8em; padding-right: 8px; text-align: right; }
+.advertisement-add form li p { margin-left: 9em; color:#999;}
+.advertisement-add form { padding: 15px;}
+.advertisement-add input[name=title] { width: 30em;}
+.advertisement-add input[name=link] { width: 30em;}
+.advertisement-add input[name=width],.advertisement-add input[name=height] { width: 3em; text-align: center;}
+.advertisement-add input[name=imgurl] { width: 30em;}
+.advertisement-add .ui-form-button { margin-left: 10px;}
+
+/*========= recommend\link.php 卖家买家规则 ==========*/
+/*同上*/
+
+/*========= recommend\goods_list.php 商品列表 ==========*/
+.goods-list { }
+
+/*========= recommend\show_order.php 晒单 ==========*/
+.show-order { }
+
+/*========= user\index 会员列表 ==========*/
+.userList { }
+.userList td{word-wrap:break-word; word-break:break-all; }
+/*======== user\details.php 会员详情 ========*/
+.details { }
+.details-head .ui-form-button { margin-left: 12px;}
+
+
+
+/*弹出框里面的内容的样式  PS:不是我(Jim)写的，泪奔啊！*/
+.window_form .h {  overflow: hidden; padding: 5px;  text-indent: 0; display: block; zoom:1;}
+.window_form .h textarea { border: 1px solid #A6C9E1; height: 50px; width: 300px; float:left;}
+.window_form span { /*display: block;*/ float: left; text-align: right;  width: 110px;}
+.window_form .closeWin { border: none; margin-left: 150px; margin-top: 10px; text-align: center; cursor: pointer;}
+.window_form #addBTN { color: #0066CC; display:block;}
+.ml110 { margin-left:110px; }
+.window_form .Proof { height: 22px; line-height:22px; width:150px; margin-bottom:5px; float:left;}
+.pingzhen { overflow: hidden;float: left;width: 460px;word-wrap: break-word;word-break: break-all;}
+.pingzhen input { display:block; clear:both; margin-bottom:5px; padding:2px; }
+
+/*========== message\ 站内信管理 ==========*/
+.message-statusSucc{display: inline-block; *display:inline; *zoom:1; margin-left: 10px; width: 18px; height: 0px; padding-top: 16px; line-height: 1.5; overflow: hidden; vertical-align: middle; background: url(../../images/admin/message_status.png) 0 0 no-repeat; }
+.message-statusErr{display: inline-block; *display:inline; *zoom:1; margin-left: 10px; width: 18px; height: 0px; padding-top: 16px; line-height: 1.5; overflow: hidden; vertical-align: middle; background: url(../../images/admin/message_status.png) -19px 0 no-repeat; }
+
+/*========== message\ 现金券样式 ==========*/
+.voucher-box{ position:relative; overflow:hidden; }
+.voucher-mz{ width:383px; height:199px; overflow:hidden; display:block; position:relative; color:#fff; background:url(./../../admin/images/voucher_bg.png) 0 0 no-repeat;background-position:-772px -203px; }
+.voucher-mz-0{ background-position:-772px -203px; }
+.voucher-mz-5{ background-position:0 0; }
+.voucher-mz-10{ background-position:-386px 0; }
+.voucher-mz-20{ background-position:-772px 0; }
+.voucher-mz-50{ background-position:0 -203px; }
+.voucher-mz-100{ background-position:-386px -203px; }
+.voucher-mz h4 span{ font-family:"\5FAE\8F6F\96C5\9ED1"; font-size:18px; font-weight:normal; height:38px; line-height:38px; float:right; margin-right:15px; padding: 0 0 0 35px; width: auto !important; background:url(./../../admin/images/voucher_sprite.png) -437px -11px no-repeat; _background:url(./../../admin/images/voucher_sprite_png8.png) -437px -11px no-repeat; _display:inline; }
+.voucher-price{ font-size:34px; line-height:1; font-family:"\5FAE\8F6F\96C5\9ED1"; display:block; padding-top:10px; padding-left:8px; text-align: left !important; }
+.voucher-price em{ font-size:49px; font-family:Arial; }
+.voucher-note{ line-height:20px; }
+.voucher-note dt{ float:left; width:62px; padding-left:13px; text-align:right; _display:inline; }
+.voucher-note dd{ float:left; width:295px; }
+.voucher-note li{ width:295px; overflow:hidden; white-space:nowrap; padding: 0; }
+
+.u-quality{
+	display: block; width: 72px; height: 15px; background: url(/common/img/icon/72x15_quality.png) 0 0 no-repeat; overflow: hidden; text-indent: -9999px; vertical-align: middle;
+	margin: 0 auto;
+}

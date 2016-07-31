@@ -1,0 +1,22 @@
+/*--- 用户信息模块 ---*/
+.user-info-head { padding: 20px 10px 10px; margin:0 10px; color:#666; text-overflow:ellipsis; white-space: nowrap; overflow: hidden; background-color: #fff;border-bottom: 2px solid #F2273A; }
+.user-info-section-tit { font-weight: 700; color:#3d3d3d;line-height: 2.6}
+.user-info-money-show { height: 36px; }
+.user-info-money-show a { display: inline-block; margin-top: 5px; color: #1BB974; } /* 显示/隐藏按钮 */
+.user-info-money-show span { display: inline-block; margin-top: 5px; } /* loading */
+.user-info-moneyValue, .user-info-noMoney { font-size: 24px; padding-right: .3em; font-weight: 700;}
+.user-info-moneyValue { color: #1BB974; }
+.user-info-noMoney { color: #4D4D4D; } /*金额00.00的样式,js添加*/
+.gotoHuLianPay { display: inline-block; margin-left: 2em; padding: 0 0.6em; border-radius: 2px; line-height: 2.2;  font-weight: normal; color: #fff; /*text-shadow:0 -1px 0 #057E48;*/ background-color: #1BB974;}
+.gotoHuLianPay:hover { background-color: #12A764;}
+
+.user-info-userName { padding: 0 .6em; font-size: 14px; font-weight: 700; color:#4D4D4D;}
+
+.user-info-money { margin: 10px 10px 0;}
+.user-info-balance, .user-info-amountOfBond { padding:10px; border-bottom: 1px solid #ddd; }
+
+.user-info-msg { padding: 20px; background-color: #f7f7f7; }
+.user-info-msg p { line-height: 2.6;}
+.user-info-msg a { color:#666; margin-left: 2em; }
+.user-info-msg a:hover { text-decoration: underline; } /* em 0 text-decoration: none; cursor:text;*/
+.user-info-msg em { color:#c00; font-weight: 700;}

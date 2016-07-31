@@ -1,0 +1,37 @@
+.main {margin: 20px auto 0; min-width: 1000px; max-width: 2000px;/*以使最多显示8列，IE6已放弃治疗*/ }
+/*晒单分类*/
+.showCategory {padding: 10px; border: 2px solid #CC0001; background-color: #fff; } 
+.showCategory dt {font-size: 18px; color: #C62222; font-family: \5FAE\8F6F\96C5\9ED1; }
+.showCategory-bd a {float: left; width: 33%; line-height: 2; text-align: center; color: #666; }
+.showCategory a:hover {text-decoration: underline; }
+.showCategory-all {text-align: right; line-height: 2.6; } 
+.showCategory-all a {color: #c00; font-family: \5b8b\4f53; }
+
+.showlist {color: #666; background-color: #FFF; }
+/*商品信息模块*/
+.goodinfo {}
+.goodinfo-showPic {display: block; text-align: center; background: url(../../images/www/loading.gif) no-repeat 50% 50%; min-height: 35px; }
+.goodinfo-showPic img { width: 100%; height: auto; vertical-align: top;/*防止出现空隙*/ }
+.goodinfo h3 {padding: 5px 10px; font: 12px/2 normal; }
+.goodinfo-reply-see {padding: 0 10px; }
+.goodinfo-skShare {float: left; padding-left:20px; background: url(/images/www/show_share.png) no-repeat 0 2px; }
+/*.goodinfo-skShare img {vertical-align: middle; padding-right: 3px; }*/
+.goodinfo-view {float: right; }
+/*==试客留言模块==*/
+.message {padding: 10px; margin-top: 10px; border-top: 1px dashed #ccc; }
+.shikee-info {line-height: 20px; }
+.shikee-name {color: #c00; }
+.shikee-name:hover {text-decoration: underline; }
+.shikee-icon {float: left; margin-right: 10px; }
+.shikee-icon img { height: 40px !important; width: 40px !important; margin: 0 !important; display: inline !important; }
+.shikee-words {clear: both; }
+
+.cell {width: 234px; margin:3px; margin-bottom: 12px; -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3); -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3); box-shadow: 0 1px 3px rgba(0,0,0,.3); overflow: hidden; }
+.no-boxShadow .cell { margin: 1px; margin-bottom: 12px; border: 1px solid #ccc; }
+
+/*分页*/
+.paging-center {margin-top: 30px; }
+.footer {margin-top: 50px; }
+.loading {border-top: 3px double rgba(34, 25, 25, 0.14); font-weight: 700; margin-bottom: 15px; padding: 15px 0; text-align: center; font-size: 1.6em; color: #444; }
+#waterfall_container { text-align: center; } 
+.waterfall_column { text-align: left;}

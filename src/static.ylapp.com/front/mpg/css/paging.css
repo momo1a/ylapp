@@ -1,0 +1,87 @@
+@charset "utf-8";
+.paging {
+  line-height: 2;
+  font-family: \5b8b\4f53;
+  color: #666;
+}
+.paging a,
+.paging-currentPage {
+  display: inline-block;
+  padding: 0 0.8em;
+  margin-right: .4em;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+.paging a:hover,
+.paging-currentPage {
+  border-color: #c00;
+  color: #EA5900;
+  text-decoration: none;
+}
+.paging-currentPage {
+  font-weight: 700;
+}
+.paging-ellipsis {
+  margin-right: .4em;
+  color: #666;
+  font-weight: 700;
+  font-family: tahoma;
+}
+.paging-next,
+.paging-prev {
+  background: url(../img/paging_sprite.png) no-repeat #ffffff;
+}
+.paging-prev {
+  padding-left: 18px !important;
+  background-position: 6px 6px;
+}
+.paging-next {
+  padding-right: 18px !important;
+  background-position: 53px -19px;
+}
+.paging-total {
+  margin-right: .4em;
+}
+.paging form {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+.paging-pageNum {
+  height: 1.6em;
+  width: 3em;
+  border: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #fff;
+}
+.paging-pageNum:focus {
+  border-color: #c00;
+}
+.paging-goto {
+  height: 2.2em;
+  padding: 0 0.8em;
+  border: 1px solid #ccc;
+  border-color: #fff #999 #999 #fff;
+  color: #fff;
+  background-color: #FF635D;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.paging-goto:hover {
+  background-color: #c00;
+}
+.paging-goto:active {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  border-color: #fff;
+}
+.paging-center {
+  text-align: center;
+}
+.paging-center .paging {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}

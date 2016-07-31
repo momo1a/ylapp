@@ -1,0 +1,36 @@
+.message-tab-cont ul,.message-icon,.message-down,.message-up{background:url(../images/message_sprite.png) no-repeat 0 0;_background:url(../images/message_sprite_png8.png) no-repeat 0 0;}
+.message-head h2 {font-size: 14px;}
+.message-body {margin: 15px;}
+.message-body a{color: #1BB974; text-decoration: none; }
+.message-body a:hover{color: #1BB974; text-decoration: none; }
+
+.message-tab {}
+.message-tab-nav{height: 25px; padding: 0 10px 0 30px; border-bottom: 2px solid #CC0000; }
+.message-tab-nav input{vertical-align: middle;}
+.message-tab-nav .floatR a{margin-right: 5px;}
+.message-tab-item{float: left; font-size: 14px; height: 23px; padding: 2px 15px 0 15px; margin-right: 5px; color: #666666; background-color: #EEEEEE; cursor: pointer; }
+.message-tab-itemCurrent{background-color: #CC0000;color:#FFFFFF;}
+.message-tab-cont{}
+.message-tab-cont ul { margin-top: 10px; background-position: -92px 0; background-repeat: repeat-y;*zoom:1;}
+.message-tab-cont li{position: relative; padding: 0 10px 0 25px;margin-bottom: 15px;*zoom:1;}
+.message-listDate {color: #999; padding-left: 6px;}
+.message-listBox {border: 1px solid #CCC;border-radius: 10px;padding: 5px 10px;}
+.message-listTitle {font-size: 12px;color: #000;margin-bottom: 3px;padding-right: 110px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.message-read .message-listTitle{color: #666;}
+.message-listContent{color: #4C4C4C;margin-bottom: 20px;word-wrap:break-word;overflow:hidden;display: none;}
+.message-listContent a{color: #3366CC; text-decoration: none; }
+.message-listContent a:hover{color: #3366CC; text-decoration: underline; }
+.message-icon{ width: 26px; height: 18px; overflow: hidden; text-indent: -300px; position: absolute; top: 21px; left: 0;}
+.message-read .message-icon{background-position:-1px -21px;}
+.message-noread .message-icon{background-position:-1px -1px;}
+.message-show .message-listTitle{padding-right: 0;}
+.message-show .message-listContent{display: block;}
+.message-operate {text-align: right;margin-top: -20px;}
+.message-operate a{margin-left: 5px;}
+.message-operate input{margin-left: 10px;vertical-align: middle;}
+.message-down {padding-left: 12px;background-position:-5px -62px;}
+.message-up {padding-left: 12px;background-position:-5px -42px;}
+.message-more{background-color: #F2F2F2; padding: 6px; margin: 0 10px 0 15px; text-align: center; border-radius: 5px; }
+.message-more i{font-family: \5b8b\4f53; font-style: normal; }
+.message-more span{color: #1BB974; display: none;}
+.message-more span img{vertical-align: middle; }

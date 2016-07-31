@@ -1,0 +1,11 @@
+﻿@charset "utf-8";
+.feedback th { padding-right: .5em; width: 6.5em; text-align: right; font-weight: normal;}
+.feedback td { padding: 6px 0;}
+.feedback-uName input,
+.feedback-contactWay input,
+.feedback-vCode  input { width: 180px; padding: 3px;}
+.feedback-vCode  input { width: 3em !important; text-align: center;}
+.feedback-idea th { vertical-align: top;}
+.feedback-idea textarea { padding: 5px; width: 600px; height: 400px;}
+.feedback-ft { margin: 20px 10px 0; padding: 12px 0 0 6em; border-top: 1px dashed #e3e3e3;}
+.feedback-ft input { padding: .4em 1.8em; *overflow: visible;}

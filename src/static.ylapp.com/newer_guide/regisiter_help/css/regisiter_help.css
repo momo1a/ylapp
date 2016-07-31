@@ -1,0 +1,119 @@
+@charset "utf-8";
+.newer-lead-content  .reg-fill-bg{
+	background: url(../img/newer_bg_2.jpg) no-repeat center;
+}
+.newer-lead-content  .reg-fill-bg2{
+	background: url(../img/newer_bg_3.jpg) no-repeat center;
+}
+.newer-lead-content  .reg-identity-bg{
+	background: url(../img/newer_bg_4.jpg) no-repeat center;
+}
+.newer-lead-content  .reg-success-bg{
+	background: url(../img/newer_bg_5.jpg) no-repeat center;
+}
+.newer-lead-content .newer-mian-tip.reg-success-bg{
+	height: 900px;
+}
+.newer-lead-content  .newer-mian-tip  .sign-free{
+	top: 2px;
+	left: 350px;
+	width: 115px;
+	height: 55px;
+	background: url(../img/sign_1.png) no-repeat;
+}
+.newer-lead-content  .newer-mian-tip .sign-girl{
+	top: 165px;
+	right: 52px;
+	width: 382px;
+	height: 249px;
+	background: url(../img/sign_2.png) no-repeat;
+
+}
+.newer-lead-content  .newer-mian-tip .sign-girl-a{
+	top: 51px;
+	right: 103px;
+	width: 117px;
+	height: 57px;
+}
+.newer-lead-content  .newer-mian-tip .to-sign{
+	right:0px;
+	top:540px;
+	width: 138px;
+	height: 50px;
+	background: url(../img/sign_3.png) no-repeat;
+
+}
+
+.newer-lead-content  .newer-mian-tip .click-sign{
+	top: 221px;
+	left: 170px;
+	width: 492px;
+	height: 381px;
+	background: url(../img/write_1.png) no-repeat;
+
+}
+.newer-lead-content  .newer-mian-tip .click-sign-a{
+	top: 0px;
+	right: 59px;
+	width: 222px;
+	height: 222px;
+	
+}
+.newer-lead-content  .newer-mian-tip .fill{
+	top: 293px;
+	left: 130px;
+	width: 980px;
+	height: 260px;
+	background: url(../img/write_2.png) no-repeat;
+	background-position: 0 0;
+}
+.newer-lead-content  .newer-mian-tip .sign{
+	top: 550px;
+	left: 130px;
+	width: 350px;
+	height: 180px;
+	background: url(../img/write_2.png) no-repeat;
+	background-position: 0 -260px;
+}
+.newer-lead-content  .newer-mian-tip .sign-a{
+	top: 32px;
+	left: 158px;
+	width: 184px;
+	height: 47px;	
+}
+.newer-lead-content  .newer-mian-tip  .identity-tip{
+	top: 174px;
+	left: 280px;
+	width: 420px;
+	height: 250px;
+	background: url(../img/identity_test_1.png) no-repeat;
+	background-position: -90px 0;
+}
+.newer-lead-content  .newer-mian-tip  .identity-test{
+	top: 424px;
+	left: 190px;
+	width: 340px;
+	height: 178px;
+	background: url(../img/identity_test_1.png) no-repeat;
+	background-position: 0 -250px;
+}
+.newer-lead-content  .newer-mian-tip  .identity-test-a{
+	top: 10px;
+	left: 100px;
+	width: 184px;
+	height: 51px;
+}
+.newer-lead-content  .newer-mian-tip  .reg-success{
+	top: 299px;
+	left: 330px;
+	width: 687px;
+	height: 326px;
+	background: url(../img/sign_success.png) no-repeat;
+}
+.newer-lead-content  .newer-mian-tip  .reg-success-a{
+	top: 175px;
+	left: 85px;
+	width: 182px;
+	height: 30px;
+}
+/*---注册账号模块---*/

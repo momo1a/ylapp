@@ -1,0 +1,13 @@
+.about h2, .claspsL, .claspsR {  background: url("../../images/www/about_sprite.png") no-repeat; _background: url("../../images/www/about_sprite_for_ie6.png") no-repeat; }
+
+.about {width: 1000px; margin: 10px auto 0;}
+.about h2 { line-height: 1.8; padding-left: 28px; font-size: 16px; color: #666; border-bottom: 2px solid #c00; margin-bottom: 15px; background-position: 0 3px;}
+.about-banner { max-width: 1000px; box-shadow: 0px 0px 5px rgba(0,0,0,.3); border-radius: 5px; _width:expression(this.clientWidth>1000? 1000:this.clientWidth); }
+.about-cont-wrap ,.about-cont { border:1px solid #e3e3e3; border-radius: 5px; }
+.about-cont-wrap { margin-top: 50px; position: relative;}
+.about-cont { border-color: #fff; background-color: #E6E5DE; padding: 50px 20px; }
+.about-cont p { line-height: 2.2; margin-bottom: 30px; color: #69675D; text-indent: 2em;}
+.about-bottom { height: 13px; margin-bottom: 17px;background: url("../../images/www/about_bottom.jpg") no-repeat 50% bottom;}
+.claspsL,.claspsR { position: absolute; display: block; width: 34px; height: 71px;}
+.claspsL { left:31px; top: -39px;_top: -38px; background-position: 0px -39px;}
+.claspsR { left: 935px; top: -39px;_top: -38px; background-position: -46px -39px;}

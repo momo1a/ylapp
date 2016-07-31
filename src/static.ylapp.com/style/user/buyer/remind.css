@@ -1,0 +1,63 @@
+.remind-tit { font-size: 14px;}
+.remind-bd { padding: 15px 10px;}
+
+.activityStatus { margin-bottom: 12px;}
+.activityStatus a { display: inline-block; padding: 1px 5px; margin-right: 5px; color:#1BB974; border-radius: 4px; white-space: nowrap; cursor: pointer; } 
+.activityStatus a:hover  { text-decoration: none; background-color: #4BDB9B; color: #fff;}
+.activityStatus-cur { color: #fff !important; background-color: #1BB974 !important; }
+
+.remind-search { margin-bottom: 15px;}
+.remind-search form { float: left;}
+.remind-search input { vertical-align: middle; }
+
+.remind-remaining { float: right; margin-top: 8px;}
+.remind-remaining span em { font-weight: 700; color: #EA5900;}
+.remind-remaining a {color: #666;}
+.remind-remaining a:hover { color: #EA5900;}
+
+.remind .ui-table-activityName { position: relative;}
+.remind-typeLabelWrap { clear: both; position: relative; height:0; line-height:0; *zoom: 1; }
+.remind-typeLabel { position: absolute; left: 6px; bottom: 0; line-height: 1.5; padding: 0 .3em; color: #fff; background: #1BB974;}
+
+.remind-status { display: inline-block; *zoom: 1; *display: inline; width: 32px; height: 32px;}
+.remind-statusWarning { background: url(../../../images/user/buyer/remind_warning.png) no-repeat 50% 50%;}
+.remind-statusSuccess { background: url(../../../images/user/buyer/remind_success.png) no-repeat 50% 50%;}
+.remind-statusError { background: url(../../../images/user/buyer/remind_error.png) no-repeat 50% 50%;}
+
+.remindData .status, 
+.remind .price em { font-weight: 700; color: #c00; }
+.remind .price span { color: #999; text-decoration: line-through; }
+.remind tfoot td { padding-left: 25px; text-align: left; }
+.remind tfoot .btnGroup { float: left;}
+.remind .paging { margin-right: 15px;}
+.remind .paging a { color: #666; }
+.remind .paging a:hover { text-decoration: none; }
+
+.paging .ui-form-text { width: 2em; text-align: center;}
+
+/* “设置开团提醒” 弹框 */
+.remind-dialog form { margin-top: 10px;}
+.remind-dialog form p { padding: 3px 0; vertical-align: middle;}
+.remind-dialog form label { display: inline-block; cursor: pointer;}
+.remind-dialog form input { margin-right: 3px; vertical-align: middle;}
+.remind-code .ui-form-text { width: 4em; text-align: center;}
+.remind-code img { vertical-align: bottom;}
+.remind-error { display: none; padding: 5px; color: #f00;}
+.remind-otherWays-cont{border: 1px solid #ddd; padding: 10px; margin-left: 17px;}
+.remind-otherWays .ui-form-text { width: 180px;}
+
+/* 同款推荐 */
+.recommendGoods {
+	 float: left; padding: 20px; width: 180px;
+}
+.recommendGoods a:hover { text-decoration: underline;}
+.recommendGoods-pic {
+	display: block; width: 180px; height: 180px; text-align: center;
+}
+.recommendGoods-pic img { 
+	max-width: 100%; max-height: 100%;
+}
+.recommendGoods-tit {
+	display: block; width: 100%; height: 3em; text-overflow: ellipsis; overflow: hidden;
+}
+.recommendGoods-price em { font-size: 16px; color: #c00; font-weight: 700;}

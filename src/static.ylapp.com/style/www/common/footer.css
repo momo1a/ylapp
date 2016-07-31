@@ -1,0 +1,25 @@
+﻿@charset "utf-8";
+.footer a { color: #666;}
+.footer a:hover { color: #EA5900; text-decoration: none; } 
+.footer { padding-bottom: 30px; border-top: 1px solid #C0C0C0; color: #888888; min-width: 1000px;}
+.footer-bd { width:1000px; margin:0 auto; padding-top:10px; }
+.footer-bd { *zoom:1;} .footer-bd:before,.footer-bd:after { content: ""; display:table;}.footer-bd:after{clear:both;}
+.footer-info { float: left; }
+.footer-service {float: right; position: relative;}
+.footer .footer-qq,.footer .footer-email{display: block;line-height: 20px; overflow: hidden;margin-bottom: 5px;}
+
+.footer-service  span{display: inline-block; float:left; width: 16px; height: 16px; font-size: 0;margin: 3px 3px 0; }
+.footer-qq span{ background:url(/images/www/qq.png) no-repeat;}
+.footer-email span{ background:url(/front/common/img/icon_min_email.png) no-repeat;}
+.footer p { line-height: 2;}
+.footer-nav a, 
+.friendlyLink a,
+.footer-copyright a { display: inline-block; white-space: nowrap; margin-right:1em; }
+.footer-ft { margin: 0 auto; width: 1000px;}
+.footer-ft a { display: inline-block;}
+.nanningPolice { width: 50px; height: 50px; background: url(../../../images/www/nanning_police.png) no-repeat 50% 50%; }
+.bind-remind-outer{ width: 1000px; margin: 0 auto; position: relative; height: 0; z-index: 5; }
+.bind-remind{ position: fixed; _position: absolute; top: 225px; display: none; }
+.bind-remind-inner { width: 130px; height: 75px; background: url(../../../images/www/notfound.png) center 0 no-repeat; position: absolute; left: -140px; padding-top: 166px; padding-left: 5px; text-align: left;}
+.bind-remind p{ text-align: right; }
+.bind-remind a{ color: #0066FF; }

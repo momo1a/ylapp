@@ -1,0 +1,29 @@
+
+/*=======未登录提示=====*/
+.notLogin { margin:0 auto; padding:50px; width:900px; height:390px; text-align:left; background-color:#fff; }
+.notLogin-title { font-weight:bold; color:#cc0001; padding-bottom:10px;}
+.notLogin-content { line-height:200%;}
+.notLogin-content p{ color:#808080;}
+.notLogin-content strong { color:#cc0001; }
+.notLogin-content-choose { color:#4c4c4c; font-weight:bold; }
+.notLogin-content-choose a { color:#4c4c4c;}
+.notLogin-content-choose a:hover { text-decoration:underline;}
+
+/*========  404 and503 ===========*/
+.error {margin:56px auto ; width:890px; height:400px; background:url(../../images/error/error_bj.png) no-repeat center right;}
+.errorTxt { float:left; clear:left; width:430px; padding:20px 0px 40px 176px; line-height:22px;}
+.errorTxt a { color:#ff3c29; margin:0px 2px;}
+.errorTxt a:hover {  text-decoration:  underline;  color:#E01400;}
+/*== 404 ==*/
+.error-404 {float:left;}
+.error-404-top {float:left; padding-left:60px;}
+.error-404-top img,.error-404-bottom img { display: block;}
+.retunIndex { background:url(../../images/error/erroricon.gif) no-repeat 0px 2px; padding-left:16px;}
+.error-404-bottom {float: left;clear: left;padding-left: 174px;}
+/*== 503 ==*/
+.error-503 {float:left;}
+.error-503-top {float:left; padding-left:120px; padding-top:10px;}
+.error-503-top img {display:block;}
+.retunIndex { background:url(../../images/error/erroricon.gif) no-repeat 0px 2px; padding-left:16px;}
+a.refresh {background:url(../../images/error/erroricon.gif) no-repeat 0px -29px; padding-left:16px; margin-left:10px;}
+.reason503 { float: left; clear:left; width: 400px; font:  bold 14px/150%  \5FAE\8F6F\96C5\9ED1; color:#333; padding:10px 0px 0px 120px;}

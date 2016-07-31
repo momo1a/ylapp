@@ -1,0 +1,81 @@
+// out: ../css/order.css, compress: true
+@import url(../../../common/lesslib/module.less);
+.t-order{
+  .t-sch {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    .u-ipt-date{
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .u-btn-s{
+      padding:0;
+      width: 56px;
+    }
+    .sch-type{
+      margin-left: 25px;
+      margin-right: 10px;
+    }
+    .sval{
+      margin-left: 1px;
+    }
+    .sch-term{
+      padding-left: 20px;
+      padding-bottom: 20px;
+      line-height: 27px;
+    }
+    .total{
+      height: 45px;
+      width: 100%;
+      line-height: 45px;
+      padding-left: 20px;
+      border-top: 1px solid #f5f5f5;
+      dt,dd{float: left;}
+      dd{
+          margin-right: 45px;
+      }
+      strong,em{ font-style: normal; }
+      .question{
+          color: #666;
+          font-weight: normal;
+          font-size: 16px;
+          margin-left: 5px;
+          cursor: pointer;
+          &:hover{color: #666;text-decoration: none;}
+      }
+    }
+  }
+}
+.t-dialog-form{
+    dl{width: 350px;margin: 10px 0;}
+    dt,dd{float: left;}
+    dt{width: 50px;}
+    dd{
+        width: 300px;
+        textarea{width: 290px;height: 4em;resize: none;}
+    }
+    .imgipt{
+        position: absolute;
+        width: 200px;
+        height: 27px;
+        .opacity(0.01);
+        cursor: pointer;
+    }
+}
+/*新：填写单号弹出框样式 - by 陆楚良  nec规范版*/
+.t-fillTrade{ width: 470px; height: 235px; color: #324A52; font-size: 12px; padding: 25px; padding-left: 0; }
+.t-fillTrade-qrcode{ width: 685px; height: 255px; padding-left: 25px; }
+.t-fillTrade .qrcode{ float: left; width: 190px; height: 100%; padding-right: 24px; border-right: 1px dashed #B6BBBE; }
+.t-fillTrade .qrcode img{ display: block; width: 190px; height: 190px; margin-bottom: 10px; }
+.t-fillTrade .qrcode p{ text-align: center; }
+.t-fillTrade .mform{ float: left; width: 450px; height: 100%; padding-left: 20px; }
+.t-fillTrade .mform table{width: 100%;}
+.t-fillTrade .mform th{height: 40px;width: 65px;text-align: right;font-weight: normal;}
+.t-fillTrade .mform td{height: 40px;}
+.t-fillTrade .mform .small th,.t-fillTrade .mform .small td{height: 22px;}
+.t-fillTrade .mform .code{ width: 90px; height: 30px; vertical-align: middle; margin-right: 5px; }
+.t-fillTrade .mform .u-ipt{ margin-right: 5px; }
+.t-fillTrade .mform .z-post{ color: #666; }
+.t-fillTrade .mform dl{margin-top: 22px;margin-left: 5px;}
+.t-fillTrade .mform dd p{text-indent: 2em;}

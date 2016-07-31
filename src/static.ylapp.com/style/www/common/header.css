@@ -1,0 +1,34 @@
+@charset "utf-8";
+.header { background: #c00; min-width: 1000px;}
+.header-main { width:1000px; margin:0 auto; padding:30px 0; *zoom:1;}
+.header-main:before,
+.header-main:after { content: ""; display:table; }
+.header-main:after { clear:both;}
+.header-logo {float: left;}
+.header-logo a { display: block; width: 483px; height: 61px; overflow: hidden; font-size: 18px; color:#fff;
+	*height: 0; *padding-top: 61px; *background: url("../../../images/www/header_sprite.png") no-repeat 0 0;  } /*IE67 fuck!*/
+.header-logo a:before {  content: url("../../../images/www/header_sprite.png"); } /* 现代浏览器 */
+
+.header-search { float: right;  height: 38px; margin-top: 12px; background-color: #fff; *width:368px; _overflow: hidden; min-width: 368px;/*因为chrome一个偶尔出现的bug*/}
+.header-search-type {  float: left; height: 38px; overflow: hidden; _position: relative; }
+.header-search-type:hover,.header-search-typeHover { height: auto;}
+.header-search-type li { height: 38px; line-height: 38px; padding: 0 20px 0 10px; font-size: 14px; color: #666; white-space: nowrap;cursor: pointer;  _float:left;_clear:both; background-color:#FFF;}
+.header-search-type li:hover { background-color: #eee;}
+.header-search-type-selected { background: url("../../../images/www/header_sprite.png") no-repeat 42px -74px #fff; }
+
+.header-search-txt { float: left; width: 260px; height: 20px; line-height: 20px; padding:9px 0; overflow: hidden;border: 0; border: none; font-size: 14px;  }
+.header-search-btn { float: right; width:50px; height: 38px; overflow: hidden; background: url("../../../images/www/header_sprite.png") no-repeat 16px -110px; border:none; cursor: pointer; white-space: nowrap;}
+.header-nav { min-width: 1000px; background-color: #AC0000; }
+.header-nav li:hover,
+.header-nav-current { background-color: #910000; }
+.header-nav ul { width:1000px; margin: 0 auto; height: 36px; }
+.header-nav li { float: left; position: relative;}
+.header-nav a { display: block; line-height: 36px; padding: 0 25px; font-size: 16px; font-family: \5FAE\8F6F\96C5\9ED1; color: #fff;  }
+.header-nav a:hover { color:#fff; text-decoration: none; }
+.header-nav .zk3,.header-nav .zk5{ position: absolute; width: 47px; height: 23px; top: -15px; left: 50%; margin-left: -10px;}
+.header-nav .zk3{ background-image: url(/front/common/img/zk3.gif); }
+.header-nav .zk5{ background-image: url(/front/common/img/zk5.gif); }
+
+
+ /*导航new图标*/
+ .new{background-image: url(../../../images/www/new.gif); display: inline-block; width: 35px; height: 23px; position: absolute; top: -12px; left: 65px;}

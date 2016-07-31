@@ -1,0 +1,218 @@
+// out: ../css/cash.css, compress: true
+@import url(../../../common/lesslib/module.less);	// 常用库
+.t-cash{
+  .tick{
+    margin-top: 10px;
+    padding: 13px;
+    a:hover{
+      text-decoration: none;
+    }
+  }
+  .eCode{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-family:'\5b8b\4f53' ;
+    font-weight: normal;
+    line-height: 38px;
+  }
+  //现金卷外框
+  .box{
+    float: left;
+    // margin: 0 9px 11px 15px;
+    margin: 7px;
+    position: relative;
+    overflow: hidden;
+    font: ~'12px/1.5 tahoma, arial, \5b8b\4f53';
+  }
+
+  //面值背景
+  .z-mz{
+    width: 383px;
+    height: 199px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    color: #fff;
+    background: url(../img/voucher_bg.png) 0 0 no-repeat;
+    &-0{background-position:-772px -203px;}
+    &-5{background-position:0 0;}
+    &-10{background-position:-386px 0;}
+    &-20{background-position:-772px 0;}
+    &-50{background-position:0 -203px;}
+    &-100{background-position:-386px -203px;}
+
+    h4 span{
+      .font-family("雅黑");
+      font-size: 18px;
+      font-weight: normal;
+      height: 38px;
+      line-height: 38px;
+      float: right;
+      margin-right: 15px;
+      padding-left: 35px;
+      background: url(../img/voucher_sprite.png) -437px -11px no-repeat;
+
+    }
+  }
+  //卷面价格
+  .price{
+    font-size: 34px;
+    line-height: 1;
+    .font-family("雅黑");
+    display: block;
+    padding-top: 10px;
+    padding-left: 8px;
+    em{
+      font-size: 49px;
+      font-family: Arial;
+    }
+  }
+  //卷面信息（使用条件、有效时间）
+  .note{
+    line-height: 20px;
+    dt{float: left;width: 62px;padding-left: 13px;text-align: right;_display: inline;}
+    dd{float: left;width: 295px;}
+    li{width: 295px;overflow: hidden;white-space:nowrap;}
+  }
+  // 状态
+  .bg{
+    width: 102px;
+    height: 68px;
+    position: absolute;
+    top: 48px;
+    right: 25px;
+    background-image: url(../img/voucher_sprite.png);
+    display: none;
+  }
+  .operate{
+    width: 383px;
+    height: 199px;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+  }
+  .msk{
+    width: 383px;
+    height: 199px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/voucher_sprite.png) 0 -151px no-repeat;
+    .opacity(30);
+  }
+  // 按钮
+  .btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -56px;
+    margin-top: -19px;
+    padding-left: 38px;
+    padding-top: 7px;
+    color: #fff;
+    width: 74px;
+    height: 32px;
+    font-size: 16px;
+    border-width: 0;
+    border-radius: .3em;
+    cursor: pointer;
+    *overflow: hidden;
+    background: #22d6ac url(../img/voucher_sprite.png) 12px -68px no-repeat;
+    .font-family("雅黑");
+  }
+
+  //待付款
+  .z-wait{
+    .bg{background-position:0 0; display: block;}
+    .btn{background-color: #22d6ac;background-position:-100px -68px;}
+  }
+  //已兑现
+  .z-over{
+    .z-mz{background-position:0 -406px;}
+    .bg{background-position:-102px 0;; display: block; }
+    .btn{background-color: #22d6ac;background-position:-212px -68px;}
+  }
+  //已作废
+  .z-obs{
+    .z-mz{background-position:-386px -406px;}
+    .bg{background-position:-204px 0; display: block;}
+    .btn{background-color: #606060;background-position:-324px -68px;}
+  }
+  //已过期
+  .z-exp{
+    .z-mz{background-position:-772px -406px;}
+    .bg{background-position:-306px 0; display: block; }
+    .btn{background-color: #606060;background-position:-436px -68px;}
+  }
+  .m-page{margin-top: 20px;}
+
+}
+.t-dform{
+  dl{.clearfix()}
+  dt{
+    float: left;width: 5em;line-height: 27px;text-align: right;
+    span{color: #F2273A}
+  }
+  dd{
+    float: left;
+    width: 204px;
+    p{width: 100%;height: 20px;margin-bottom: 10px;}
+  }
+  a{
+    color: #3366CC;
+    &:hover{text-decoration: underline;}
+  }
+  .u-btn{
+    line-height: 21px;
+  }
+}
+.t-cdkey{
+  .snav{
+    font-family: '\5b8b\4f53';
+    color: #b4b4b4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-bottom: 1px dotted #d2d2d2;
+    a{
+      color: #b4b4b4;
+    }
+  }
+}
+.t-lst{
+  text-align: center;
+  font-weight: 700;
+  padding: 0 20px ;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  ul{
+    padding:20px 0;
+    border-top: 1px dotted #d2d2d2;
+    &.ul1{
+      border-top: 0;
+    }
+  }
+  li{
+    float: left;
+    line-height: 25px;
+    height: 25px;
+    &.first{
+      width: 299px;
+      border-right: 1px dotted #d2d2d2 ;
+    }
+    &.sec{
+      width: 189px;
+      border-right: 1px dotted #d2d2d2 ;
+    }
+    &.last{
+      width: 780-299-189-2px;
+    }
+  }
+  .info{
+    .sec{
+      color: #dc4c4c;
+    }
+  }
+}

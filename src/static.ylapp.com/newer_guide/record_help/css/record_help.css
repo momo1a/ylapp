@@ -1,0 +1,71 @@
+@charset "utf-8";
+/*抢购状态*/
+/*抢购状态滑动条*/
+
+.newer-lead-bar .order-bar{
+	background: url(../img/record_bar.png) no-repeat;
+}
+.newer-lead-content  .findorder-help-step1{
+	background-position:0px 0px ;
+}
+.newer-lead-content  .findorder-help-step2{
+	background-position:1px -87px
+}
+
+.newer-lead-content .newer-lead-bar .order-bar a.first{
+	margin-left: 220px !important;
+	_margin-left:110px;
+}
+.newer-lead-content .newer-lead-bar .order-bar a.last{
+	margin-left: 171px !important;
+}
+/*--------抢购状态滑动条-------*/
+.newer-lead-content  .newer-mian-tip  .findorder-pro-tip{
+	top:1px;
+	left:539px;
+	width:322px;
+	height:140px;
+	background: url(../img/purchase_recode_1.png) no-repeat;
+
+}
+.newer-lead-content  .newer-mian-tip  .findorder-pro-a{
+	top:-1px;
+	right:43px;
+	width:84px;
+	height:30px;
+	
+}
+
+.newer-lead-content  .newer-mian-tip  .findorder-peop{
+	top:236px;
+	right: 152px;
+	width:170px;
+	height:45px;
+	background: url(../img/purchase_recode_2.png) no-repeat;
+}
+.newer-lead-content  .newer-mian-tip  .findorder-peop-a{
+	top:0px;
+	right: 0px;
+	width:115px;
+	height:32px;
+
+}
+.newer-lead-content  .newer-mian-tip .orderstatus-pro-tip{
+	top:143px;
+	left:317px;
+	width:803px;
+	height:127px;
+	background: url(../img/purchase_recode_3.png) no-repeat;
+
+}
+
+.newer-lead-content  .newer-mian-tip  .orderstatus-peop{
+	top:340px;
+	left: 140px;
+	width:461px;
+	height:108px;
+	background: url(../img/purchase_recode_4.png) no-repeat;
+}
+
+
+/*----------抢购状态----------*/

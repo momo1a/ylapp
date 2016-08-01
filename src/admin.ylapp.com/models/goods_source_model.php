@@ -4,7 +4,7 @@
  * 商品来源
  *
  */
-class Goods_source_model extends Zhs_goods_source_model
+class Goods_source_model extends YL_goods_source_model
 {
 	// 使用从库
 	protected $db_con = 'slave';
@@ -21,7 +21,7 @@ class Goods_source_model extends Zhs_goods_source_model
 	public function sources_stat($offset,$size,$start_time,$end_time)
 	{
 		$dbprefix = $this->db->dbprefix;
-		$goods_table = $dbprefix . Zhs_goods_model::$table_name;
+		$goods_table = $dbprefix . YL_goods_model::$table_name;
 		$query = "
 			SELECT g.source,g.source_count,s.input_name,s.state FROM(
 			SELECT source,count(*) AS 'source_count'
@@ -49,7 +49,7 @@ class Goods_source_model extends Zhs_goods_source_model
 	public function sources_stat_count($start_time,$end_time)
 	{
 		$dbprefix = $this->db->dbprefix;
-		$goods_table = $dbprefix . Zhs_goods_model::$table_name;
+		$goods_table = $dbprefix . YL_goods_model::$table_name;
 		$query = "
 		SELECT count(*) as 'count' FROM(
 		SELECT source,count(*) AS 'source_count'

@@ -8,7 +8,7 @@
  * @author "韦明磊<nicolaslei@163.com>"
  *
  */
-class ZHS_Email extends CI_Email
+class YL_Email extends CI_Email
 {
 	public function subject($subject)
 	{

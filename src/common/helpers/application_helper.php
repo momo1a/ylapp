@@ -247,8 +247,8 @@ function buyer_logo($uid)
 	{
 		return $url;
 	}
-	$ci->load->model('zhs_user_seller_model');
-	$logo = $ci->zhs_user_seller_model->get_field($uid, 'logo');
+	$ci->load->model('YL_user_seller_model');
+	$logo = $ci->YL_user_seller_model->get_field($uid, 'logo');
 	if ($logo)
 	{
 		$logo = image_url($uid, $logo);
@@ -369,8 +369,8 @@ if ( ! function_exists('check_strong_passwd'))
 		$password_rules = $CI->cache->get($key);
 		if ( $password_rules === FALSE ) 
 		{
-			$CI->load->model('zhs_uc_password_rules');
-			$password_rules = $CI->zhs_uc_password_rules->find_password_rules();
+			$CI->load->model('YL_uc_password_rules');
+			$password_rules = $CI->YL_uc_password_rules->find_password_rules();
 			$CI->cache->save($key, $password_rules , 600);
 		}
 		
@@ -637,7 +637,7 @@ function fuzz_str($gid,$seed,$need_secret_key=FALSE) {
 	return mb_substr(md5($gid.$secret_key.$seed),0, 6, 'utf-8') ;
 }
 
-if ( ! function_exists('zhs_config_item'))
+if ( ! function_exists('YL_config_item'))
 {
 	/**
 	 * 对CI的config_item改装，配置未设置时，返回默认值
@@ -646,7 +646,7 @@ if ( ! function_exists('zhs_config_item'))
 	 * @return mixd
 	 * @author 宁天友
 	 */
-	function zhs_config_item($key, $default_val = NULL) {
+	function YL_config_item($key, $default_val = NULL) {
 		# 不存在$key的配置时，congif_item返回FALSE
 		$_config = config_item($key);
 		return $_config === FALSE ? $default_val : $_config;
@@ -777,8 +777,8 @@ if ( ! function_exists('mobile_auth'))
 		$return = $CI->cache->get($key);
 		if( !$return )
 		{
-			$CI->load->model('zhs_user_model');
-			if( $CI->zhs_user_model->mobile_valid( $uid ) )
+			$CI->load->model('YL_user_model');
+			if( $CI->YL_user_model->mobile_valid( $uid ) )
 			{
 				$return = TRUE;
 			}
@@ -947,7 +947,7 @@ if( ! function_exists('goods_source_name'))
 			if( ! $cache_data){
 				// 从数据库获取数据
 				$CI =& get_instance();
-				$CI->load->model('zhs_goods_source_model','source_model');
+				$CI->load->model('YL_goods_source_model','source_model');
 				
 				$where = array('state'=>1);
 				$db_source = $CI->source_model->select('id,show_name')->where($where)->find_all();

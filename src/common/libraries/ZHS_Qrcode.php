@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class ZHS_Qrcode
+class YL_Qrcode
 {
 	/**
 	 * @var string 活动二维码存放文件夹

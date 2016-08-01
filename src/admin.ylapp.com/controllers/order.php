@@ -143,8 +143,8 @@ class Order extends MY_Controller {
 			} else {
 				//取消未填写单号app推送信息
 				$this->db->reconnect();
-				$this->load->model('zhs_user_push_remind_model');
-				$this->zhs_user_push_remind_model->delete_user_push_remind($this->user['id'], 1, $oid);
+				$this->load->model('YL_user_push_remind_model');
+				$this->YL_user_push_remind_model->delete_user_push_remind($this->user['id'], 1, $oid);
 			}
 		}
 		$this->success('操作成功');

@@ -9,7 +9,7 @@
  * @category	Models
  * @author		momo1a@qq.com
  */
-class ZHS_Model extends CI_Model
+class YL_Model extends CI_Model
 {
 
 	/**

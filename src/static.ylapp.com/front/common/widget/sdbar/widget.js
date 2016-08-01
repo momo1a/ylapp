@@ -735,7 +735,7 @@ var Widgets = Widgets || {};
         tpl : '<div class="detail-hd">'
             +     '<span class="close J_W_click" data-action="hide_detail" title="关闭">&gt;&gt;</span>'
             +     '<h4>'
-            +         '<a href="#" target="_blank" class="J_W_click" data-action="myzhs"><i class="ifont">&#xE006;</i>我的众划算</a>'
+            +         '<a href="#" target="_blank" class="J_W_click" data-action="myYL"><i class="ifont">&#xE006;</i>我的众划算</a>'
             +     '</h4>'
             + '</div>'
             + '<div class="detail-bd">'
@@ -744,10 +744,10 @@ var Widgets = Widgets || {};
             +     '<% }else if(user.type==1){ %>'
             +         '<% // 买家 %>'
             +         '<div class="minfo">'
-            +             '<a href="#" target="_blank" class="J_W_click" data-action="myzhs">'
+            +             '<a href="#" target="_blank" class="J_W_click" data-action="myYL">'
             +                 '<img src="http://uc.shikee.com/avatar.php?uid=<%= user.uid %>&size=middle" alt="<%= user.name %>">'
             +             '<a>'
-            +             '<p>您好，<a href="#" target="_blank" class="J_W_click" data-action="myzhs"><%= user.name %></a></p>'
+            +             '<p>您好，<a href="#" target="_blank" class="J_W_click" data-action="myYL"><%= user.name %></a></p>'
             +         '</div>'
             +         '<ul class="mnote fn-cb">'
             +             '<li>'
@@ -798,10 +798,10 @@ var Widgets = Widgets || {};
             +     '<% }else{ %>'
             +         '<% // 商家 %>'
             +         '<div class="minfo">'
-            +             '<a href="#" target="_blank" class="J_W_click" data-action="myzhs">'
+            +             '<a href="#" target="_blank" class="J_W_click" data-action="myYL">'
             +                 '<img src="http://uc.shikee.com/avatar.php?uid=<%= user.uid %>&size=middle" alt="<%= user.name %>">'
             +             '<a>'
-            +             '<p>您好，<a href="#" target="_blank" class="J_W_click" data-action="myzhs"><%= user.name %></a></p>'
+            +             '<p>您好，<a href="#" target="_blank" class="J_W_click" data-action="myYL"><%= user.name %></a></p>'
             +         '</div>'
             +         '<ul class="mnote fn-cb">'
             +             '<li>'
@@ -1052,7 +1052,7 @@ var Widgets = Widgets || {};
          */
         Action: {
             // 根据当前会员类型给当前点击的链接赋予会员中心地址
-            myzhs : function(event){
+            myYL : function(event){
                 var user = shs.user.info();
                 if(user){
                     $(event.currentTarget).attr("href", shs.site(user.type==1 ? "buyer" : "seller"));

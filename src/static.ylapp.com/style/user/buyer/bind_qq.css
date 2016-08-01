@@ -26,14 +26,14 @@
 
 
 
-.bind-qq-face,.bind-qq-face-noBind,.bind-qq-face-noZhs{ height:120px; outline:medium none; position:relative; text-align:center; width:125px; }
-.bind-qq-face em,.bind-qq-face-noBind em,.bind-qq-face-noZhs em{ color:#434343; display:inline-block; font-size:14px; font-style:normal; height:20px; left:0; line-height:18px; position:absolute; text-align:center; top:0px; vertical-align:middle; width:100%; }
+.bind-qq-face,.bind-qq-face-noBind,.bind-qq-face-noYL{ height:120px; outline:medium none; position:relative; text-align:center; width:125px; }
+.bind-qq-face em,.bind-qq-face-noBind em,.bind-qq-face-noYL em{ color:#434343; display:inline-block; font-size:14px; font-style:normal; height:20px; left:0; line-height:18px; position:absolute; text-align:center; top:0px; vertical-align:middle; width:100%; }
 .bind-qq-face img{ height:78px; left:22px; position:absolute; top:35px; width:78px; border: 1px solid #E6E6E6; border-radius:3px; padding:2px; }
-.bind-qq-face .nick,.bind-qq-face-noBind .nick,.bind-qq-face-noZhs .nick{ color:#6F7479; display:block; font-family:Tahoma,Verdana,Arial,sans-serif; height:50px; left:0; line-height:18px; overflow:hidden; position:absolute; text-align:center; top:125px; vertical-align:middle; width:100%; word-wrap:break-word; word-break:break-all; }
+.bind-qq-face .nick,.bind-qq-face-noBind .nick,.bind-qq-face-noYL .nick{ color:#6F7479; display:block; font-family:Tahoma,Verdana,Arial,sans-serif; height:50px; left:0; line-height:18px; overflow:hidden; position:absolute; text-align:center; top:125px; vertical-align:middle; width:100%; word-wrap:break-word; word-break:break-all; }
 
 .bind-qq-face-noBind img{ height:78px; left:22px; position:absolute; top:35px; width:78px; }
 
-.bind-qq-face-noZhs img{ height:78px; left:22px; position:absolute; top:35px; width:78px; border-color:#6CAFF2; box-shadow:0 0 8px #6CAFF2; -moz-box-shadow:0 0 8px #6CAFF2; -webkit-box-shadow:0 0 8px #6CAFF2; border-radius:3px; padding:2px; }
+.bind-qq-face-noYL img{ height:78px; left:22px; position:absolute; top:35px; width:78px; border-color:#6CAFF2; box-shadow:0 0 8px #6CAFF2; -moz-box-shadow:0 0 8px #6CAFF2; -webkit-box-shadow:0 0 8px #6CAFF2; border-radius:3px; padding:2px; }
 
 .bind-qq-captcha .ui-form-text{width: 80px;}
 .bind-qq-captcha img{width: 81px;height: 27px;vertical-align: middle;}

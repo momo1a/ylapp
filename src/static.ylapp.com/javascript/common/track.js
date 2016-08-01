@@ -3,7 +3,7 @@
 {
 	var url,ref,flag_spm,flag_ref,domain,exptime;
 	
-	domain   = 'zhsdev1.com';
+	domain   = 'YLdev1.com';
 	url      = window.location.href;
 	ref      = document.referrer;
 	flag_spm = false;

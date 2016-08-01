@@ -111,7 +111,7 @@ class Data_export_model extends CI_Model
 		}
 		$seller_uids = array_unique($seller_uids);
 		$user_sellers = array();
-		foreach ($this->db->select('uid,salesman_uname')->from(Zhs_user_seller_model::$table_name)->where_in('uid',$seller_uids)->get()->result_array() as $seller)
+		foreach ($this->db->select('uid,salesman_uname')->from(YL_user_seller_model::$table_name)->where_in('uid',$seller_uids)->get()->result_array() as $seller)
 		{
 			$user_sellers[$seller['uid']] = $seller;
 		}
@@ -193,7 +193,7 @@ class Data_export_model extends CI_Model
 		}
 		$seller_uids = array_unique($seller_uids);
 		$user_sellers = array();
-		foreach ($this->db->select('uid,salesman_uname')->from(Zhs_user_seller_model::$table_name)->where_in('uid',$seller_uids)->get()->result_array() as $seller)
+		foreach ($this->db->select('uid,salesman_uname')->from(YL_user_seller_model::$table_name)->where_in('uid',$seller_uids)->get()->result_array() as $seller)
 		{
 			$user_sellers[$seller['uid']] = $seller;
 		}
@@ -287,7 +287,7 @@ class Data_export_model extends CI_Model
 		// 查询shs_user_seller表
 		$seller_uids = array_unique($seller_uids);
 		$user_sellers = array();
-		foreach ($this->db->select('uid,salesman_uname')->from(Zhs_user_seller_model::$table_name)->where_in('uid',$seller_uids)->get()->result_array() as $seller)
+		foreach ($this->db->select('uid,salesman_uname')->from(YL_user_seller_model::$table_name)->where_in('uid',$seller_uids)->get()->result_array() as $seller)
 		{
 			$user_sellers[$seller['uid']] = $seller;
 		}

@@ -116,9 +116,9 @@ class Recommend extends MY_Controller
 			default:
 				//首页楼层分类商品推荐
 				$recommend_type = Common_recommend_model::RECOMMEND_CATEGORY;
-				$this->load->model('zhs_goods_category_model');
+				$this->load->model('YL_goods_category_model');
 				// 商品分类
-				$goods_categories = $this->zhs_goods_category_model->find_all_to_assembly();
+				$goods_categories = $this->YL_goods_category_model->find_all_to_assembly();
 				$params_type = explode('_', $type);
 				$category =  isset($params_type[0]) ? $params_type[0] : '';
 				$cat_type =  isset($params_type[1]) ? $params_type[1] : $goods_categories['parent']['0']['id'];

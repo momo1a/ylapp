@@ -124,7 +124,7 @@ $(function(){
                                 $('.art-error').hide();
                                 var reg = new RegExp('^http:\/\/[a-z]+'+ v.reg +'');
                                 var url = $('#J_newurl').val();
-                                var zhs = url.split('.');
+                                var YL = url.split('.');
                                 if (url == '') {
                                     $('.art-error').css('display','block').html('请输入需要生成的链接地址');
                                 }else if(reg.test(url) == false){

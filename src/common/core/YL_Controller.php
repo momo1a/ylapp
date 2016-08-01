@@ -5,14 +5,14 @@
  *
  * 主要调配一些公用的类库或者存放一些公用的方法
  *
- * @package		ZHS
+ * @package		YL
  * @subpackage	Libraries
  * @author		韦明磊
  * @category	core
  * @link		http://www.zhonghuasuan.com/
  * @see 		CI_Controller
  */
-class ZHS_Base_Controller extends CI_Controller
+class YL_Base_Controller extends CI_Controller
 {
 	/**
 	 * construct
@@ -48,14 +48,14 @@ class ZHS_Base_Controller extends CI_Controller
 
 /**
  * 众划算的页面显示总控制器
- * @package		ZHS
+ * @package		YL
  * @subpackage	Libraries
  * @author		韦明磊<nicolaslei@163.com>
  * @category	core
  * @link		http://www.zhonghuasuan.com/
  *
  */
-class ZHS_Controller extends ZHS_Base_Controller
+class YL_Controller extends YL_Base_Controller
 {
 	public $view_data = array();
 	
@@ -72,14 +72,14 @@ class ZHS_Controller extends ZHS_Base_Controller
 /**
  * 请求缓存控制器
  * 
- * @package		ZHS
+ * @package		YL
  * @subpackage	Libraries
  * @author		韦明磊
  * @category	core
  * @link		http://www.zhonghuasuan.com/
  * @see 		CI_Controller
  */
-class ZHS_Request_Cache_Controller extends ZHS_Controller
+class YL_Request_Cache_Controller extends YL_Controller
 {
 	/**
 	 * 自定义请求缓存KEY
@@ -232,7 +232,7 @@ class ZHS_Request_Cache_Controller extends ZHS_Controller
  * @author 杜嘉杰
  *
  */
-class ZHS_App_Controller extends CI_Controller {
+class YL_App_Controller extends CI_Controller {
 	/**
 	 * 用户id
 	 * @var int
@@ -362,8 +362,8 @@ class ZHS_App_Controller extends CI_Controller {
 
 		if( ! $login_sign)
 		{
-			$this->load->model('zhs_user_model');
-			$user = $this->zhs_user_model->select('login_sign')->find($uid);
+			$this->load->model('YL_user_model');
+			$user = $this->YL_user_model->select('login_sign')->find($uid);
 			$login_sign = $user['login_sign'];
 			cache($cache_key,$login_sign);
 		}
@@ -563,8 +563,8 @@ class ZHS_App_Controller extends CI_Controller {
 		$this->client_type = $client_type;
 		$this->client_version = $version;
 		
-		$this->load->model('Zhs_sys_config_model');
-		$app_version = $this->Zhs_sys_config_model->get_app_min_version($client_type);
+		$this->load->model('YL_sys_config_model');
+		$app_version = $this->YL_sys_config_model->get_app_min_version($client_type);
 		if( $app_version['new_version'] > $version){
 			$this->check_version_msg($app_version);
 		}

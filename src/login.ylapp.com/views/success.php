@@ -85,7 +85,7 @@
         <div class="links">
             <a class="icon-back" id="JS-goback" href="<?php echo urldecode($to_url);?>">返回</a>
             <a class="icon-home" href="<?php echo config_item('domain_www'); ?>">众划算首页</a>
-            <a class="icon-user" href="<?php echo $my_zhs_url; ?>" >我的众划算</a>
+            <a class="icon-user" href="<?php echo $my_YL_url; ?>" >我的众划算</a>
             <a class="icon-pay" href="<?php echo config_item('domain_hlpay_www'); ?>">我的互联支付</a>
             <a class="icon-zone" href="<?php echo config_item('domain_shikee_bbs'); ?>">我的社区空间</a>
             <a class="icon-order" href="<?php echo config_item('domain_www'); ?>show/">买家晒单</a>

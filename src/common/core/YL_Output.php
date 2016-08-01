@@ -8,7 +8,7 @@
  * @author 韦明磊<nicolaslei@163.com>
  *
  */
-class ZHS_Output extends CI_Output
+class YL_Output extends CI_Output
 {
 	/**
 	 * Update/serve a cached file

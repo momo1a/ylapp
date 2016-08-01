@@ -5,7 +5,7 @@
  * @author dujiajie
  *
  */
-class Goods_remind_model extends Zhs_goods_remind_model
+class Goods_remind_model extends YL_goods_remind_model
 {
 	
 }

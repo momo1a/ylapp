@@ -8,7 +8,7 @@
  * 
  * @author "韦明磊-众划算项目组<nicolaslei@163.com>"
  */
-class User_model extends Zhs_user_model
+class User_model extends YL_user_model
 {
 	/**
 	 * 新增一个本地用户
@@ -30,10 +30,10 @@ class User_model extends Zhs_user_model
 		// 数据写入,开启事务
 		$this->db->trans_start();
 		parent::insert($data);
-		$this->db->insert(Zhs_user_stat_model::$table_name, array('uid'=>$data['uid'],'goods_today_buy_num'=>$goods_today_buy_num));
+		$this->db->insert(YL_user_stat_model::$table_name, array('uid'=>$data['uid'],'goods_today_buy_num'=>$goods_today_buy_num));
 		if($data['utype']==parent::USER_TYPE_BUYER)
 		{
-			$this->db->insert(Zhs_user_guide_model::$table_name, array('uid'=>$data['uid']));
+			$this->db->insert(YL_user_guide_model::$table_name, array('uid'=>$data['uid']));
 		}
 		$this->db->trans_complete();
 

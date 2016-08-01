@@ -8,7 +8,7 @@
  * @author 韦明磊<nicolaslei@163.com>
  *
  */
-class ZHS_Hooks extends CI_Hooks
+class YL_Hooks extends CI_Hooks
 {
 	/**
 	 * Run Hook

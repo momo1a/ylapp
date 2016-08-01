@@ -70,7 +70,7 @@ $min_cachePath = '/tmp';
  * If /min/ is directly inside your document root, just uncomment the 
  * second line. The third line might work on some Apache servers.
  */
-$min_documentRoot = '/mnt/myweb/zhs/zhs_web/src/static.ylapp.com';
+$min_documentRoot = '/mnt/myweb/YL/YL_web/src/static.ylapp.com';
 //$min_documentRoot = substr(__FILE__, 0, -15);
 //$min_documentRoot = $_SERVER['SUBDOMAIN_DOCUMENT_ROOT'];
 

@@ -296,7 +296,7 @@ class Auth
 	public function check_uc_user($uc_user)
 	{
 		// 手机号码为空并且用户没激活邮箱返回错误信息
-		if( $uc_user['isLock'] == Zhs_user_model::UC_STATUS_NOT_ACTIVE )
+		if( $uc_user['isLock'] == YL_user_model::UC_STATUS_NOT_ACTIVE )
 		{
 			$this->_error = self::LOGIN_STATUS_NO_ACTIVATE;
 			$this->user = $uc_user;
@@ -310,7 +310,7 @@ class Auth
 			return FALSE;
 		}
 		
-		if ($uc_user['isLock'] == Zhs_user_model::UC_STATUS_LOCKED)
+		if ($uc_user['isLock'] == YL_user_model::UC_STATUS_LOCKED)
 		{
 			$this->_error = self::LOGIN_STATUS_SEAL;
 			return FALSE;
@@ -329,7 +329,7 @@ class Auth
 	 */
 	public function check_local_user($user)
 	{
-		if ($user['is_lock'] == Zhs_user_model::LOCK_STATE_FREEZE)
+		if ($user['is_lock'] == YL_user_model::LOCK_STATE_FREEZE)
 		{
 			$this->_error = self::LOGIN_STATUS_SHS_SEAL;
 			return FALSE;
@@ -390,7 +390,7 @@ class Auth
 	{
 		return $this->CI->user_model->insert_local_user(array(
 				'uid'		=> $uc_user['uid'],
-				'is_lock'	=> Zhs_user_model::LOCK_STATE_NORMAL,
+				'is_lock'	=> YL_user_model::LOCK_STATE_NORMAL,
 				'uname'		=> $uc_user['username'],
 				'utype'		=> $uc_user['type'],
 				'reg_source'=> $uc_user['reg_source'],
@@ -449,9 +449,9 @@ class Auth
 		$data['avatar'] = avatar($uid, 'big','img');
 		
 		// 设置签名
-		$this->CI->load->library('zhs_user_service');
-		$this->CI->zhs_user_service->set_app_sign($uid);
-		$sing_data = $this->CI->zhs_user_service->flag_data();
+		$this->CI->load->library('YL_user_service');
+		$this->CI->YL_user_service->set_app_sign($uid);
+		$sing_data = $this->CI->YL_user_service->flag_data();
 		$data['sign'] = $sing_data['login_sign'];
 		
 		return $data;

@@ -4,7 +4,7 @@
  * @author 张桂赏
  * @version 2014-7-25
  */
-class App_push_message_model extends Zhs_app_push_message_model
+class App_push_message_model extends YL_app_push_message_model
 {
 	/**
 	 * 显示搜索信息

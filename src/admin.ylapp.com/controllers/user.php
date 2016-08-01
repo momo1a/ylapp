@@ -538,7 +538,7 @@ class User extends MY_Controller
 		
 		$deposit_type=$this->db->select('uid,state,deposit_type')->from('user_seller_deposit')->where('uid',$uid)->get()->result_array();
 		
-		$user_seller = $this->db->select('salesman_uname')->from(Zhs_user_seller_model::$table_name)->where('uid',$uid)->get()->row_array();
+		$user_seller = $this->db->select('salesman_uname')->from(YL_user_seller_model::$table_name)->where('uid',$uid)->get()->row_array();
 			
 		foreach ( $deposit_type as $key=> $v) {
 			if($v['deposit_type']==1){
@@ -1293,7 +1293,7 @@ class User extends MY_Controller
 				$this->error('所属伙伴不能超过50个字符');
 			}
 			// 保存
-			$re = $this->db->set('salesman_uname',$salesman_uname)->where('uid',$uid)->update(Zhs_user_seller_model::$table_name);
+			$re = $this->db->set('salesman_uname',$salesman_uname)->where('uid',$uid)->update(YL_user_seller_model::$table_name);
 			if($re)
 			{
 				$this->success('保存成功');
@@ -1306,7 +1306,7 @@ class User extends MY_Controller
 		else
 		{
 			// 展示
-			$user_seller = $this->db->select('salesman_uname')->from(Zhs_user_seller_model::$table_name)->where('uid',$uid)->get()->row_array();
+			$user_seller = $this->db->select('salesman_uname')->from(YL_user_seller_model::$table_name)->where('uid',$uid)->get()->row_array();
 			$data['user_seller'] = $user_seller;
 			$data['uid'] = $uid;
 			$this->load->view('user/dialog/save_salesman_uname', $data);

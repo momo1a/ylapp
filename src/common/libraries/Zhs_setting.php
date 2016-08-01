@@ -4,7 +4,7 @@
  * 配置文件类
  *
  */
-class Zhs_setting
+class YL_setting
 {
 	/**
 	 * 保存状态
@@ -98,8 +98,8 @@ class Zhs_setting
 		$configs = array(); 
 		
 		// 系统配置
-		$this->CI->load->model('zhs_system_config_model');
-		$system_config = $this->CI->zhs_system_config_model->find_all();
+		$this->CI->load->model('YL_system_config_model');
+		$system_config = $this->CI->YL_system_config_model->find_all();
 		
 		// TODO 补充的配置
 
@@ -173,8 +173,8 @@ class Zhs_setting
 		$sign = md5($time.$app_key);
 		$url = $domain_appsystem.'app/create_config?time='.$time.'&sign='.$sign;
 
-		$this->CI->load->library('zhs_http');
-		$re = $this->CI->zhs_http->get($url);
+		$this->CI->load->library('YL_http');
+		$re = $this->CI->YL_http->get($url);
 		$json_ret = json_decode($re,TRUE);
 		if(isset($json_ret['code']) && $json_ret['code']==201){
 			return TRUE;

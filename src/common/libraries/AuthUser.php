@@ -43,7 +43,7 @@ class AuthUser
 	 */
 	public static function is_buyer()
 	{
-		return self::type() == Zhs_user_model::USER_TYPE_BUYER;
+		return self::type() == YL_user_model::USER_TYPE_BUYER;
 	}
 	
 	//----------------------------------------------------------------------------
@@ -55,7 +55,7 @@ class AuthUser
 	 */
 	public static function is_seller()
 	{
-		return (bool)(self::type() == Zhs_user_model::USER_TYPE_SELLER);
+		return (bool)(self::type() == YL_user_model::USER_TYPE_SELLER);
 	}
 	
 	//----------------------------------------------------------------------------
@@ -145,14 +145,14 @@ class AuthUser
 				return $status['flag'];
 			}
 			
-			self::$CI->load->model('zhs_user_model');
+			self::$CI->load->model('YL_user_model');
 			
-			$status = self::$CI->zhs_user_model->status();
+			$status = self::$CI->YL_user_model->status();
 			// 第三登录(QQ)【系统自动生成账号】(邮箱为空),出于业务的需要,我们默认这个状态的用户是正常的
 			$flag	= ($status == 0 OR $status == 300) ? TRUE : FALSE;
 			$cache 	= array(
 				'flag' => $flag,
-				'message' => $flag ? '' : self::$CI->zhs_user_model->error
+				'message' => $flag ? '' : self::$CI->YL_user_model->error
 			);
 			self::$message = $cache['message'];
 			// 将状态保存30分钟

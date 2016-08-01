@@ -7,7 +7,7 @@
  * @link    http://www.zhonghuasuan.com/
  */
 
-class Invite_log_model extends Zhs_invite_log_model {
+class Invite_log_model extends YL_invite_log_model {
 
     //do nothing
 

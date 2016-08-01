@@ -21,7 +21,7 @@
 						<?php foreach ($sources as $item):?>
 						<tr>
 							<td><?php 
-								if($item['state'] == Zhs_goods_source_model::STATE_HIDDEN){
+								if($item['state'] == YL_goods_source_model::STATE_HIDDEN){
 									echo '其他（' .$item['input_name'] . '）';
 								}else{
 									echo $item['input_name']; 

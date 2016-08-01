@@ -1,7 +1,7 @@
 <?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
 
-class ZHS_Loader extends CI_Loader
+class YL_Loader extends CI_Loader
 {
 	/**
 	 * Database Loader

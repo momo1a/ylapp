@@ -81,11 +81,11 @@ class User_invite extends MY_Controller
     	//邀请状态查询条件
     	if( $state > 0 )
     	{
-    		if( $state == Zhs_invite_user_model::STATUS_TIME_IN )
+    		if( $state == YL_invite_user_model::STATUS_TIME_IN )
     		{
     			$search_where = array_merge($search_where, array('reg_time + expiry_date >='=>time() ,'state'=>'0' ) );
     		}
-    		elseif( $state == Zhs_invite_user_model::STATUS_TIME_OUT )
+    		elseif( $state == YL_invite_user_model::STATUS_TIME_OUT )
     		{
     			$search_where = array_merge($search_where, array('reg_time + expiry_date <'=>time() ,'state'=>'0'  ) );
     		}
@@ -140,7 +140,7 @@ class User_invite extends MY_Controller
     				date('Y-m-d H:i',$v['reg_time']),
     				$v['ivuname'],
     				$v['commission'],
-    				Zhs_invite_user_model::show_state($v['state'],$v['reg_time'],$v['expiry_date'])
+    				YL_invite_user_model::show_state($v['state'],$v['reg_time'],$v['expiry_date'])
     			);
     		}
     	}
@@ -222,7 +222,7 @@ class User_invite extends MY_Controller
      */
     public function sum_commission()
     {
-    	$search_where = array('state'=>Zhs_invite_user_pay_model::STATUS_ALREADY_PAY);
+    	$search_where = array('state'=>YL_invite_user_pay_model::STATUS_ALREADY_PAY);
     	$this->load->model('invite_user_pay_model');
     	$user_pay = $this->invite_user_pay_model->sum_commission($search_where);//查询结果集
     	echo isset($user_pay['commission']) ? $user_pay['commission'] : '0.00';

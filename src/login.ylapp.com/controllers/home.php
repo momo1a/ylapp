@@ -272,7 +272,7 @@ class Home extends MY_Controller
 	{
 		$this->load->view('success', array(
 				'to_url' => $this->_to_url(),
-				'my_zhs_url' => AuthUser::is_buyer() ? config_item('domain_buyer') : config_item('domain_seller'),
+				'my_YL_url' => AuthUser::is_buyer() ? config_item('domain_buyer') : config_item('domain_seller'),
 				'sync_login_shikee' => $this->auth->sync_login_shikee_url(AuthUser::id())
 		));
 	}

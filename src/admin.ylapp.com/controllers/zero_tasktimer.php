@@ -104,8 +104,8 @@ class Zero_tasktimer extends MY_Controller
 	 */
 	private function _build_cache()
 	{
-		$this->load->library('zhs_setting');
-		$this->zhs_setting->build_cache();
+		$this->load->library('YL_setting');
+		$this->YL_setting->build_cache();
 	}
 	/**
 	 * 记录操作日志
@@ -129,8 +129,8 @@ class Zero_tasktimer extends MY_Controller
 	 */
 	public function biuld_app_config()
 	{
-		$this->load->library('zhs_setting');
-		$this->zhs_setting->build_cache();
+		$this->load->library('YL_setting');
+		$this->YL_setting->build_cache();
 	}
 
 }

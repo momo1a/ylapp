@@ -1,5 +1,5 @@
 <?php
-class Zhs_http {
+class YL_http {
 	public $timeout = 0;
 	
 	// cURL连接资源句柄的信息

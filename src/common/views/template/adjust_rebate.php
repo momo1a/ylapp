@@ -23,10 +23,10 @@
             <div class="m-cn">
                 <p>原返现金额：<?php echo $due_rebate;?>元</p>
                 <?php foreach ($adjust_rebate_logs as $log){
-                	$adjust_tips = $log['adjust_type'] == zhs_order_adjust_rebate_model::ADJUST_TYPE_APP ? '手机客户端下单' : '管理员处理申诉';
+                	$adjust_tips = $log['adjust_type'] == YL_order_adjust_rebate_model::ADJUST_TYPE_APP ? '手机客户端下单' : '管理员处理申诉';
                 ?>
                    <p style="font-weight: 700"><?php echo $adjust_tips.'，系统调整返现金额：'.$log['adjust_rebate'];?>元
-                       <?php if($log['adjust_type'] == zhs_order_adjust_rebate_model::ADJUST_TYPE_APP){?>
+                       <?php if($log['adjust_type'] == YL_order_adjust_rebate_model::ADJUST_TYPE_APP){?>
                        （电脑网购价<?php echo $goodsDetail['price'];?>元，手机客户端网购价<?php echo  $goodsDetail['mobile_price'];?>元，差价<?php echo  $goodsDetail['price'] - $goodsDetail['mobile_price'];?>元）
                       <?php } ?>
                    </p>

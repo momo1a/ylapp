@@ -891,11 +891,11 @@ class Setting extends MY_Controller
 	 */
 	private function _build_cache()
 	{
-		$this->load->library('zhs_setting');
-		$re = $this->zhs_setting->build_cache();
+		$this->load->library('YL_setting');
+		$re = $this->YL_setting->build_cache();
 		if( ! $re)
 		{
-			$this->error($this->zhs_setting->flag_msg());
+			$this->error($this->YL_setting->flag_msg());
 		}
 		
 		return TRUE;

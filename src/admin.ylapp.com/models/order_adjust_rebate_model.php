@@ -4,7 +4,7 @@
  * @author minch <yeah@minch.me>
  * @version 20130717
  */
-class Order_adjust_rebate_model extends Zhs_order_adjust_rebate_model 
+class Order_adjust_rebate_model extends YL_order_adjust_rebate_model
 {
 	/**
 	 * 通过申述获取一条返现金额调整记录

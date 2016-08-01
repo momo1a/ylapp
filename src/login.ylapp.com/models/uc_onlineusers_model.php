@@ -5,7 +5,7 @@
  * 
  * @author "韦明磊-众划算项目组<nicolaslei@163.com>"
  */
-class Uc_onlineusers_model extends Zhs_uc_onlineusers_model {}
+class Uc_onlineusers_model extends YL_uc_onlineusers_model {}
 
 /* End of file uc_onlineusers_model.php */
 /* Location: ./application/models/uc_onlineusers_model.php */

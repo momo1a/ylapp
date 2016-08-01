@@ -7,7 +7,7 @@
  * @link http://www.zhonghuasuan.com/
  *
  */
-class advertisement_model extends Zhs_advertisement_model
+class advertisement_model extends YL_advertisement_model
 {
 	/**
 	 * 获取登录页的广告

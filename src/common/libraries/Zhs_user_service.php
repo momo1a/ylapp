@@ -4,7 +4,7 @@
  * 通用用户类库，主要用于注册、修改密码、找回密码等
  *
  */
-class Zhs_user_service
+class YL_user_service
 {
 	/**
 	 * 保存状态
@@ -137,15 +137,15 @@ class Zhs_user_service
 		$this->CI->load->helper('string');
 		$login_sign = random_string('md5');
 		
-		$this->CI->load->model('zhs_user_model');
-		$re =  $this->CI->zhs_user_model->update($uid, array('login_sign'=>$login_sign) );
+		$this->CI->load->model('YL_user_model');
+		$re =  $this->CI->YL_user_model->update($uid, array('login_sign'=>$login_sign) );
 		if( ! $re)
 		{
 			$this->set_flag('REFRESH_SIGN_ERROR', '更新签名失败');
 			return FALSE;
 		}
 		
-		$this->CI->load->library('zhs_http');
+		$this->CI->load->library('YL_http');
 
 		// 请求app站点更新用户的缓存
 		$url = config_item('domain_appsystem');
@@ -160,7 +160,7 @@ class Zhs_user_service
 			'uid'=>$uid,
 			'sign' => md5($uid.$key)
 		);
-		$this->CI->zhs_http->post($url.'app/flush_user', $params);
+		$this->CI->YL_http->post($url.'app/flush_user', $params);
 
 		$this->set_flag('SUCCESS', '新的签名', array('login_sign'=>$login_sign));
 		return TRUE;

@@ -44,7 +44,7 @@
                 ?>
 			<tr>
 				<td>
-					<?php if ($v['state'] == Zhs_goods_model::STATUS_UNCHECK_PAID):?>
+					<?php if ($v['state'] == YL_goods_model::STATUS_UNCHECK_PAID):?>
 					<input type="checkbox" class="checkbox" checked="checked" name="gids[]" value="<?php echo $v['fuzz_data']['gid_fuzz']; ?>" />
 					<?php else:?>
 					&nbsp;

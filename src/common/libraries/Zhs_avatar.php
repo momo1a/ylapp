@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Zhs_avatar
+class YL_avatar
 {
 	private $CI;
 	public $uid;

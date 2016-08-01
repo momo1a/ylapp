@@ -12,7 +12,7 @@ Template::add_css(array(
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="ZHS-SYS-Version" content="<?php echo SYS_VERSION.SYS_BUILD;?>">
+<meta name="YL-SYS-Version" content="<?php echo SYS_VERSION.SYS_BUILD;?>">
 <?php if (isset($_head_metas)) : ?>
 	<?php foreach($_head_metas as $meta):?>
 	<meta <?php echo $meta['http_equiv'] ? "http-equiv" : "name";?>="<?php echo $meta['name'];?>" content="<?php echo $meta['content'];?>">

@@ -539,8 +539,8 @@ function check_strong_passwd($username,$password)
 	$password_rules = $CI->cache->get($key);
 	if ( $password_rules === FALSE ) 
 	{
-		$CI->load->model('zhs_uc_password_rules');
-		$password_rules = $CI->zhs_uc_password_rules->find_password_rules();
+		$CI->load->model('YL_uc_password_rules');
+		$password_rules = $CI->YL_uc_password_rules->find_password_rules();
 		$CI->cache->save($key, $password_rules , 600);
 	}
 	
@@ -581,7 +581,7 @@ function check_strong_passwd($username,$password)
 function send_message($to, $id, $title, $content, $level = 3, $starttime = 0, $endtime = 0, $lastlogintime = 0)
 {
 	$_STOMP			= NULL;
-	$_queue_theme	= 'zhs/site/batch/message';
+	$_queue_theme	= 'YL/site/batch/message';
 	$CI				= &get_instance();
 
 	if ( ! extension_loaded('Stomp')) {
@@ -759,8 +759,8 @@ if ( ! function_exists('mobile_auth'))
 		$return = $CI->cache->get($key);
 		if( !$return )
 		{
-			$CI->load->model('zhs_user_model');
-			if( $CI->zhs_user_model->mobile_valid( $uid ) )
+			$CI->load->model('YL_user_model');
+			if( $CI->YL_user_model->mobile_valid( $uid ) )
 			{
 				$return = TRUE;
 			}
@@ -851,7 +851,7 @@ if( ! function_exists('goods_source_name'))
 			if( ! $cache_data){
 				// 从数据库获取数据
 				$CI =& get_instance();
-				$CI->load->model('zhs_goods_source_model','source_model');
+				$CI->load->model('YL_goods_source_model','source_model');
 				
 				$where = array('state'=>1);
 				$db_source = $CI->source_model->select('id,show_name')->where($where)->find_all();

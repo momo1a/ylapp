@@ -40,7 +40,7 @@
 							<td><?php echo $v['ivuname']; ?></td>
 							<td><?php echo $v['commission']; ?></td>
 							<td><?php echo date('Y-m-d H:i',$v['dateline']); ?></td>
-							<td><?php echo Zhs_invite_user_pay_model::$status_arr[$v['state']]; ?></td>
+							<td><?php echo YL_invite_user_pay_model::$status_arr[$v['state']]; ?></td>
 						</tr>
 						<?php endforeach; endif;?>
 					</tbody>

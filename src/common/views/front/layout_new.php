@@ -9,7 +9,7 @@
 Template::meta("renderer", "webkit");                       // 360浏览器默认使用极速模式
 Template::meta("X-UA-Compatible", "IE=edge,chrome=1", true);// 针对安装了谷歌插件的ie浏览器下，让ie使用谷歌内核渲染
 Template::meta("D-Width-Response","class=g-wrap");          // 页面宽度响应设置
-Template::meta("ZHS-SYS-Version", SYS_VERSION.SYS_BUILD);   // 系统防缓存设置
+Template::meta("YL-SYS-Version", SYS_VERSION.SYS_BUILD);   // 系统防缓存设置
 // CSS文件包
 Template::add_css(array(
     'common/css/reset.css',                     // 重置样式表

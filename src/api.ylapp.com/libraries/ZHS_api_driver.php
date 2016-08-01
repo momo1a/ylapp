@@ -11,7 +11,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
  * @version 2015年7月16日14:56:43
  * 
  */
-interface ZHS_api_driver
+interface YL_api_driver
 {
 
 	/**

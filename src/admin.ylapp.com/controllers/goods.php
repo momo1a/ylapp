@@ -931,10 +931,10 @@ class Goods extends MY_Controller
 		if(count($oids) > 0)
 		{
 			// 根据oid查找订单
-			$this->load->model('zhs_order_model');
+			$this->load->model('YL_order_model');
 			$order_fields = 'oid, site_type, fill_site_type';
 			$order_list = array();
-			foreach ($this->zhs_order_model->select($order_fields)->where_in('oid', $oids)->find_all() as $order)
+			foreach ($this->YL_order_model->select($order_fields)->where_in('oid', $oids)->find_all() as $order)
 			{
 				$order_list[$order['oid']] = $order;
 			}
@@ -1504,7 +1504,7 @@ class Goods extends MY_Controller
 			
 			$this->check_goods_user_state($gid);
 			
-			$goods = $this->db->select('gid,state,dateline')->from(Zhs_goods_model::$table_name)
+			$goods = $this->db->select('gid,state,dateline')->from(YL_goods_model::$table_name)
 				->where('gid',$gid)->where_in('state', array(Goods_model::STATUS_UNCHECK_PAID,Goods_model::STATUS_CHECKED))
 				->get()->row_array();
 			if( ! $goods)
@@ -1550,7 +1550,7 @@ class Goods extends MY_Controller
 		{
 			$this->error('活动不存在');
 		}
-		$this->db->select('gid,state,dateline')->from(Zhs_goods_model::$table_name)->where('gid',$gid);
+		$this->db->select('gid,state,dateline')->from(YL_goods_model::$table_name)->where('gid',$gid);
 		$goods = $this->db->where_in('state', array(Goods_model::STATUS_UNCHECK_PAID,Goods_model::STATUS_CHECKED))->get()->row_array();
 			
 		if($fuzz != fuzz_str($gid, $goods['dateline']))

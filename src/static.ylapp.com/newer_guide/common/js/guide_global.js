@@ -137,7 +137,7 @@ shs.user = (function() {
 			$('.topbar-nav').prepend('<a href="' + uc + '">我的众划算</a>');
 		},
 		info : function() {
-			var cookie = shs.cookie('zhs');
+			var cookie = shs.cookie('YL');
 			if (!cookie || cookie.split('|').length != 4) {
 				return null;
 			}

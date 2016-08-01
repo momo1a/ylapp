@@ -7,9 +7,9 @@
  * @version 2015-7-16 14:57:45
  * @link http://www.zhonghuasuan.com
  */
-require APPPATH.'libraries/ZHS_api_driver.php';
+require APPPATH.'libraries/YL_api_driver.php';
 
-class Trade_no_default extends CI_Driver implements ZHS_api_driver
+class Trade_no_default extends CI_Driver implements YL_api_driver
 {
 	private $CI;
 	protected $error = array();
@@ -53,7 +53,7 @@ class Trade_no_default extends CI_Driver implements ZHS_api_driver
 	 */
 	public function is_exist()
 	{
-		$this->CI->load->model('Zhs_order_model');
+		$this->CI->load->model('YL_order_model');
 		$this->CI->load->model('Order_model', 'order');
 		$count = $this->CI->order->count_by('trade_no', $this->params['no']);
 

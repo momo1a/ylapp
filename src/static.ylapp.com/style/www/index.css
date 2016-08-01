@@ -28,7 +28,7 @@
 .I-member-btnLogin,
 .I-member-btnRegister,
 .I-strength li,
-.I-member .memberMsg .goto-myZHS a,
+.I-member .memberMsg .goto-myYL a,
 .helper-center b,
 .helper-buyerQ b,
 .helper-sellerQ b,
@@ -42,7 +42,7 @@
 .I-strength-2 { background-position: 30px -180px !important; }
 .I-strength-3 { background-position: 30px -269px !important; }
 .I-strength-4 { background-position: 30px -352px !important; }
-.I-member .memberMsg .goto-myZHS a { background-position: -8px -86px; }
+.I-member .memberMsg .goto-myYL a { background-position: -8px -86px; }
 .helper-center b { background-position: -4px -467px; }
 .helper-buyerQ b { background-position: -4px -487px; }
 .helper-sellerQ b { background-position: -4px -508px; }
@@ -98,8 +98,8 @@
 .I-member .memberMsg li em { font-weight: bold; }
 .I-member .memberMsg li em { color: #F2273A; }
 .I-member .memberMsg li a:hover { color: #cc0000; text-decoration: underline; }
-.I-member .memberMsg .goto-myZHS { font-family: \5b8b\4f53; width: 100%; text-align: right; font-weight: bold; }
-.I-member .memberMsg .goto-myZHS a { color: #cc0000; padding-left: 16px; }
+.I-member .memberMsg .goto-myYL { font-family: \5b8b\4f53; width: 100%; text-align: right; font-weight: bold; }
+.I-member .memberMsg .goto-myYL a { color: #cc0000; padding-left: 16px; }
 .I-member-islogin { border-top: 2px solid #FF6666; height: 69px; }
 .I-member-icon { display: inline-block; *display: inline; *zoom: 1; width: 34px; height: 27px; vertical-align: middle; }
 .I-member-btnLogin,

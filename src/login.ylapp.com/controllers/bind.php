@@ -205,14 +205,14 @@ class Bind extends MY_Controller
 	 *
 	 * 在第三方登录账号完成授权后,
 	 * 如果用户没有绑定已有账号或者新注册一个账号绑定,
-	 * 那可以通过该方法让系统自动生成一个众划算账号,默认的账号名是zhs来源__时间戳,密码随机
+	 * 那可以通过该方法让系统自动生成一个众划算账号,默认的账号名是YL来源__时间戳,密码随机
 	 * 
 	 * @return void
 	 */
 	public function fast()
 	{
 		$this->load->helper('string');
-		$username	= 'zhs' . $this->third_party_user['type'] . '_' . TIMESTAMP . random_string('numeric', 1);
+		$username	= 'YL' . $this->third_party_user['type'] . '_' . TIMESTAMP . random_string('numeric', 1);
 		
 		// 在正常的情况不会出现用户名已存在的问题,不排除数据出错的遗留问题
 		if ($this->user_model->uc_username_exists($username)) {
@@ -230,10 +230,10 @@ class Bind extends MY_Controller
 				'password' 		=> $password,
 				'email'			=> '',
 				'mobile'		=> '',
-				'mobile_valid'	=> Zhs_uc_user_model::MOBILE_AUTH_NOT,
+				'mobile_valid'	=> YL_uc_user_model::MOBILE_AUTH_NOT,
 				'salt'			=> $salt,
 				'VnetPayPswd' 	=> md5($salt),
-				'uTypeid'		=> Zhs_user_model::USER_TYPE_BUYER, // 快速登录只开放给普通用户
+				'uTypeid'		=> YL_user_model::USER_TYPE_BUYER, // 快速登录只开放给普通用户
 				'reg_source' 	=> 3 // 用户中心注册来源为众划算（3）
 		);
 		$this->load->helper('cookie');
@@ -246,7 +246,7 @@ class Bind extends MY_Controller
 			
 			// 保存登录,由于邮箱没有激活,不更新联盟、支付的登录状态
 			// 前台用户是通过cookie获取的，这里的用户名就只能以【请完善资料】写入cookie
-			AuthUser::save_login($uid, $username, Zhs_user_model::USER_TYPE_BUYER, 0);
+			AuthUser::save_login($uid, $username, YL_user_model::USER_TYPE_BUYER, 0);
 			// 清除第三方用户授权信息
 			$this->_cleanup_auth();
 			
@@ -370,11 +370,11 @@ class Bind extends MY_Controller
 				'password' 		=> $password,
 				'salt'			=> $salt,
 				'VnetPayPswd'	=> $vnetpay_password,
-				'uTypeid'		=> Zhs_user_model::USER_TYPE_BUYER, // 快速登录只开放给普通用户
+				'uTypeid'		=> YL_user_model::USER_TYPE_BUYER, // 快速登录只开放给普通用户
 				'reg_source' 	=> 3, // 用户中心注册来源为众划算（3）
 				'email'			=> '',
 				'mobile'		=> '',
-				'mobile_valid'	=> Zhs_uc_user_model::MOBILE_AUTH_NOT,
+				'mobile_valid'	=> YL_uc_user_model::MOBILE_AUTH_NOT,
 		);
 		
 		/*
@@ -386,7 +386,7 @@ class Bind extends MY_Controller
 		}elseif ($act_type == 'mobile') {
 			// 手机认证
 			$uc_data['mobile'] = $val;
-			$uc_data['mobile_valid'] = Zhs_uc_user_model::MOBILE_AUTH_YES; // 已认证
+			$uc_data['mobile_valid'] = YL_uc_user_model::MOBILE_AUTH_YES; // 已认证
 		}
 
 		// 本地用户附加数据
@@ -397,7 +397,7 @@ class Bind extends MY_Controller
 			// 绑定
 			$this->user_login_bind_model->fresh_bind($uid, $username, $reg_from, $this->third_party_user);
 			// 更新UC中心的用户在线状态
-			$this->uc_onlineusers_model->update($uid, $username, $password, Zhs_user_model::USER_TYPE_BUYER);
+			$this->uc_onlineusers_model->update($uid, $username, $password, YL_user_model::USER_TYPE_BUYER);
 		
 			//推广跟踪记录
 			try {
@@ -407,7 +407,7 @@ class Bind extends MY_Controller
 			catch(Exception $e){}
 			
 			// 保存登录
-			AuthUser::save_login($uid, $username, Zhs_user_model::USER_TYPE_BUYER);
+			AuthUser::save_login($uid, $username, YL_user_model::USER_TYPE_BUYER);
 			
 			// 清除第三方授权信息
 			$this->_cleanup_auth();

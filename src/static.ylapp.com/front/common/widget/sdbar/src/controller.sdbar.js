@@ -68,7 +68,7 @@ var sdbarController = CL.Controller.extend({
      */
     Action: {
         // 根据当前会员类型给当前点击的链接赋予会员中心地址
-        myzhs : function(event){
+        myYL : function(event){
             var user = shs.user.info();
             if(user){
                 $(event.currentTarget).attr("href", shs.site(user.type==1 ? "buyer" : "seller"));

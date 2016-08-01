@@ -259,11 +259,11 @@ class App_bind extends CI_Controller
 			'password' 		=> $password,
 			'salt'			=> $salt,
 			'VnetPayPswd'	=> $vnetpay_password,
-			'uTypeid'		=> Zhs_user_model::USER_TYPE_BUYER, // 快速登录只开放给普通用户
+			'uTypeid'		=> YL_user_model::USER_TYPE_BUYER, // 快速登录只开放给普通用户
 			'reg_source' 	=> 3, // 用户中心注册来源为众划算（3）
 			'email'			=> '',
 			'mobile'		=> '',
-			'mobile_valid'	=> Zhs_uc_user_model::MOBILE_AUTH_NOT,
+			'mobile_valid'	=> YL_uc_user_model::MOBILE_AUTH_NOT,
 		);
 	
 		/*
@@ -275,7 +275,7 @@ class App_bind extends CI_Controller
 		}elseif ($act_type == 'mobile') {
 			// 手机认证
 			$uc_data['mobile'] = $val;
-			$uc_data['mobile_valid'] = Zhs_uc_user_model::MOBILE_AUTH_YES; // 已认证
+			$uc_data['mobile_valid'] = YL_uc_user_model::MOBILE_AUTH_YES; // 已认证
 		}
 	
 		// 本地用户附加数据
@@ -293,7 +293,7 @@ class App_bind extends CI_Controller
 		// 绑定
 		$this->user_login_bind_model->fresh_bind($uid, $username, $reg_from, $this->third_party_user);
 		// 更新UC中心的用户在线状态
-		$this->uc_onlineusers_model->update($uid, $username, $password, Zhs_user_model::USER_TYPE_BUYER);
+		$this->uc_onlineusers_model->update($uid, $username, $password, YL_user_model::USER_TYPE_BUYER);
 		
 		//推广跟踪记录
 		try {
@@ -385,8 +385,8 @@ class App_bind extends CI_Controller
 	{
 		$this->load->helper('string');
 		$login_sign = random_string('unique', 4);
-		$this->load->model('zhs_user_model');
-		$re = $this->zhs_user_model->update($uid, array('login_sign'=>$login_sign));
+		$this->load->model('YL_user_model');
+		$re = $this->YL_user_model->update($uid, array('login_sign'=>$login_sign));
 		if( ! $re)
 		{
 			return FALSE;

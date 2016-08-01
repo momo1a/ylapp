@@ -5,7 +5,7 @@
  * 
  * @author "韦明磊-众划算项目组<nicolaslei@163.com>"
  */
-class User_login_bind_model extends Zhs_user_login_bind_model
+class User_login_bind_model extends YL_user_login_bind_model
 {
 	/**
 	 * 插入前置操作
@@ -36,7 +36,7 @@ class User_login_bind_model extends Zhs_user_login_bind_model
 		$this->db->trans_start();
 		
 		// 用户绑定标识更新
-		$this->db->set('bind', 'bind+'.$bind_type, FALSE)->where('uid', $uid)->update(Zhs_user_model::$table_name);
+		$this->db->set('bind', 'bind+'.$bind_type, FALSE)->where('uid', $uid)->update(YL_user_model::$table_name);
 		$third_party_user['uid'] = $uid;
 		$third_party_user['type'] = $bind_type;
 		// 写入绑定信息
@@ -46,13 +46,13 @@ class User_login_bind_model extends Zhs_user_login_bind_model
 				'bind_type'			=> $bind_type,
 				'operate_uid'	=> $uid, // 自身操作
 				'operate_uname'	=> $uname,
-				'operate_type'	=> Zhs_user_login_bind_log_model::TYPE_BIND,
+				'operate_type'	=> YL_user_login_bind_log_model::TYPE_BIND,
 				'account_nickname' => $third_party_user['nickname'],
 				'dateline'		=> TIMESTAMP,
 				'content'		=> '',
 		);
 		// 写入绑定日志
-		$this->db->insert(Zhs_user_login_bind_log_model::$table_name, $log);
+		$this->db->insert(YL_user_login_bind_log_model::$table_name, $log);
 		
 		$this->db->trans_complete();
 		
@@ -82,13 +82,13 @@ class User_login_bind_model extends Zhs_user_login_bind_model
 				'bind_type' 			=> $bind_type,
 				'operate_uid'	=> $uid, // 自身操作
 				'operate_uname'	=> $uname,
-				'operate_type'	=> Zhs_user_login_bind_log_model::TYPE_UPBIND,
+				'operate_type'	=> YL_user_login_bind_log_model::TYPE_UPBIND,
 				'account_nickname' => $third_party_user['nickname'],
 				'dateline'		=> TIMESTAMP,
 				'content'		=> '',
 		);
 		// 写入绑定日志
-		$this->db->insert(Zhs_user_login_bind_log_model::$table_name, $log);
+		$this->db->insert(YL_user_login_bind_log_model::$table_name, $log);
 		
 		$flag = $this->db->trans_status();
 		$this->db->trans_complete();

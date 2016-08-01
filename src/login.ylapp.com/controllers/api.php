@@ -17,7 +17,7 @@ class Api extends MY_Controller
 	 * 来源地址保存的KEY
 	 * @var string
 	 */
-	private static $_fromurl_key_name = 'zhs_from_url';
+	private static $_fromurl_key_name = 'YL_from_url';
 	
 	/**
 	 * 用于存储第三方用户授权信息

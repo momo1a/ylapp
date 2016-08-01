@@ -23,12 +23,12 @@ var shs = function(shs, window, document, location, $){
      * @author 陆楚良
      * @return {String} 返回系统版本号(需要页面配合设置才能返回正确的版本号，否则返回的是0)
      * 例：
-     *     <meta name="ZHS-SYS-Version" content="1.0201403131651">
+     *     <meta name="YL-SYS-Version" content="1.0201403131651">
      * 或者：
-     *     <script>window["ZHS-SYS-Version"] = "1.0201403131651";</script>
+     *     <script>window["YL-SYS-Version"] = "1.0201403131651";</script>
      */
     shs.sys_version = function(){
-        return $.type(window["ZHS-SYS-Version"])=="string" ?  window["ZHS-SYS-Version"] : $("head meta[name=ZHS-SYS-Version]").attr("content") || "0";
+        return $.type(window["YL-SYS-Version"])=="string" ?  window["YL-SYS-Version"] : $("head meta[name=YL-SYS-Version]").attr("content") || "0";
     };
     /**
      * 响应式布局
@@ -261,7 +261,7 @@ var shs = function(shs, window, document, location, $){
          */
         user.info = function(notEvent){
             var info=null,split;
-            var cookie = shs.cookie('zhs');
+            var cookie = shs.cookie('YL');
             if (cookie && cookie.split('|').length == 4) {
                 split = cookie.split('|');
                 info  = {

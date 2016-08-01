@@ -7,7 +7,7 @@
  * @link    http://www.zhonghuasuan.com/
  */
 
-class Invite_user_pay_model extends Zhs_invite_user_pay_model 
+class Invite_user_pay_model extends YL_invite_user_pay_model
 {
 	
 	/**

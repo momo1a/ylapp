@@ -8,7 +8,7 @@
  * @author "韦明磊<nicolaslei@163.com>"
  *
  */
-class ZHS_Log extends CI_Log
+class YL_Log extends CI_Log
 {
 	public function __construct()
 	{

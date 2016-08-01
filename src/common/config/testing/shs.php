@@ -1,6 +1,6 @@
 <?php
 // 用户cookie配置
-$config['cookie_name'] = 'zhs';
+$config['cookie_name'] = 'YL';
 $config['cookie_domain'] = '.fqf.com';
 $config['cookie_account'] = 'account'; // 保存登录账号的cookie键
 

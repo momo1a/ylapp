@@ -78,7 +78,7 @@
 			<td align="right" >注册来源：</td>
 			<td><?php if($user['reg_source']==1){echo '试客联盟';}elseif($user['reg_source']==2){echo '互联支付';}elseif($user['reg_source']==3){echo '众划算';}else{echo '-';}?></td>
 		</tr>
-		<?php if($user['utype']==Zhs_user_model::USER_TYPE_SELLER):?>
+		<?php if($user['utype']==YL_user_model::USER_TYPE_SELLER):?>
 		<tr>
 			<td align="right" >所属伙伴：</td>
 			<td><?php echo $user_seller['salesman_uname'] ? $user_seller['salesman_uname']:'-';?>&nbsp;&nbsp;<a type="form" href="<?php echo site_url('user/save_salesman_uname')?>" data-uid="<?php echo $user['uid']; ?>" callback="reload" style="color: #0066FF;" title="修改" >修改</a></td>

@@ -12,7 +12,7 @@
 				    
 				    <select name="state">
 				        <option value="0">邀请状态</option>
-				        <?php foreach(Zhs_invite_user_model::$status_arr as $state=>$val){?>
+				        <?php foreach(YL_invite_user_model::$status_arr as $state=>$val){?>
 						<option value="<?php echo $state;?>" <?php if($state==$this->input->get_post('state') ):?>selected="selected"<?php endif;?>><?php echo $val;?></option>
 						<?php }?>
 					</select>
@@ -52,8 +52,8 @@
 							<td><?php echo $v['beivuname']; ?></td>
 							<td><?php echo date('Y-m-d H:i',$v['reg_time']); ?></td>
 							<td><?php echo $v['ivuname']; ?></td>
-							<td><?php echo Zhs_invite_user_model::show_commission($v['state'],$v['commission']);?></td>
-							<td><?php echo Zhs_invite_user_model::show_state($v['state'],$v['reg_time'],$v['expiry_date']); ?></td>
+							<td><?php echo YL_invite_user_model::show_commission($v['state'],$v['commission']);?></td>
+							<td><?php echo YL_invite_user_model::show_state($v['state'],$v['reg_time'],$v['expiry_date']); ?></td>
 							<td><a href="<?php echo site_url('user_invite/find_log')?>" data-ivid="<?php echo $v['ivid']; ?>" height="420" width="600" type="dialog">操作记录</a></td>
 						</tr>
 						<?php endforeach; endif;?>

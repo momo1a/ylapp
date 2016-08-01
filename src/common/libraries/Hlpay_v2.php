@@ -103,8 +103,8 @@ class Hlpay_v2 {
 		
 		$url = $this->server. 'isExistOfUser';
 		
-		$this->CI->load->library('zhs_http');
-		$result_str = $this->CI->zhs_http->post($url, $param);
+		$this->CI->load->library('YL_http');
+		$result_str = $this->CI->YL_http->post($url, $param);
 		/* 互联支付返回值：
 		 * error	String	错误信息
 		 * success	Number	用户编号

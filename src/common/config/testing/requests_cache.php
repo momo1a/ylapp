@@ -16,7 +16,7 @@
  | 
  | 注意：
  | 如果cache_key配置无法满足KEY的需求,可以通过控制器的$request_cache_keys参数设置你的KEY,
- | 或者重写ZHS_Controller::_request_cache_key方法定义你的KEY
+ | 或者重写YL_Controller::_request_cache_key方法定义你的KEY
  */
 /*$config['cache.requests']['www'] = array(
 	'home' => array(

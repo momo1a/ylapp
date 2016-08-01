@@ -8,7 +8,7 @@
  * @link http://www.zhonghuasuan.com/
  *
  */
-class User_premium_model extends Zhs_user_premium_model
+class User_premium_model extends YL_user_premium_model
 {
 	/**
 	 * 更新优质会员信息

@@ -6,7 +6,7 @@
  * @author "韦明磊-众划算项目组<nicolaslei@163.com>"
  *
  */
-class User_login_bind_log_model extends Zhs_user_login_bind_log_model
+class User_login_bind_log_model extends YL_user_login_bind_log_model
 {
 	/**
 	 * 对要写入数据库的数据进行写入前更新

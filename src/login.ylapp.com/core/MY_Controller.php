@@ -1,8 +1,8 @@
 <?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-require COMPATH."core/ZHS_Controller.php";
+require COMPATH."core/YL_Controller.php";
 
-class MY_Controller extends ZHS_Controller
+class MY_Controller extends YL_Controller
 {
 	public function __construct()
 	{

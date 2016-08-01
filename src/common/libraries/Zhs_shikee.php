@@ -4,7 +4,7 @@
  * 试客联盟接口
  *
  */
-class Zhs_shikee 
+class YL_shikee
 {
 	/**
 	 * 联盟api地址
@@ -70,7 +70,7 @@ class Zhs_shikee
 	 *
 	 *	返回状态
 	 *  ERROR_MISSING_PARAM：缺失参数
-	 *  ERROR_MISSING_CONFIG：缺少配置项：KEY_ZHS
+	 *  ERROR_MISSING_CONFIG：缺少配置项：KEY_YL
 	 *  ERROR_SIGN_ERROR：签名错误
 	 *  SUCCESS_EXISTS：单号已存在
 	 *  SUCCESS_NOT_EXISTS：单号不存在
@@ -87,16 +87,16 @@ class Zhs_shikee
 		);
 
 		// 请求
-		$this->CI->load->library('zhs_http');
+		$this->CI->load->library('YL_http');
 		$url = $this->server . 'join/exist_trade_no';
-		$this->CI->zhs_http->timeout = 5;
-		$re_str = $this->CI->zhs_http->post($url, $data);
+		$this->CI->YL_http->timeout = 5;
+		$re_str = $this->CI->YL_http->post($url, $data);
 		
 		// 处理返回结果
 		/*	
 		 	试客联盟返回的字段：
 				MISSING_PARAM   缺失参数
-				MISSING_CONFIG  缺少配置项：KEY_ZHS
+				MISSING_CONFIG  缺少配置项：KEY_YL
 				SIGN_ERROR      签名错误
 				-1订单号不存在，1订单号存在
 		*/
@@ -107,7 +107,7 @@ class Zhs_shikee
 		{
 			$err_map = array(
 				'MISSING_PARAM' => array('code'=>'ERROR_MISSING_PARAM', 'msg'=>' 缺失参数'),
-				'MISSING_CONFIG' => array('code'=>'ERROR_MISSING_CONFIG', 'msg'=>' 缺少配置项：KEY_ZHS'),
+				'MISSING_CONFIG' => array('code'=>'ERROR_MISSING_CONFIG', 'msg'=>' 缺少配置项：KEY_YL'),
 				'SIGN_ERROR' => array('code'=>'ERROR_SIGN_ERROR', 'msg'=>' 签名错误')
 			);
 
@@ -139,7 +139,7 @@ class Zhs_shikee
 		}
 		else
 		{
-		    $arr = $this->CI->zhs_http->get_info();
+		    $arr = $this->CI->YL_http->get_info();
 		    $log_msg = '请求地址：'.$arr['url'].'  错误代码：[http_code :  '.$arr['http_code'].' ]';
 			$msg = ' 数据异常,请重新填写订单号!';
 			//写入日志

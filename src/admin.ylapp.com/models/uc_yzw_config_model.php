@@ -7,7 +7,7 @@
  * @link    http://www.zhonghuasuan.com/
  */
 
-class Uc_yzw_config_model extends Zhs_uc_yzw_config_model {
+class Uc_yzw_config_model extends YL_uc_yzw_config_model {
 
     //do nothing
 

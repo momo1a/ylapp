@@ -8,8 +8,14 @@ class User_model extends MY_Model
     public static $table_name = 'user';
 
 
-    public function getAllUsers(){
-        $res = $this->find_all();
+    public function reg($mobile,$userType,$pwd){
+        $data = array('phone'=>$mobile,'userType'=>$userType,'password'=>$pwd);
+        $res = $this->insert($data);
+        return $res;
+
+    }
+    public function getUserMobile($mobile){
+        $res = $this->find_by('phone',$mobile);
         return $res;
     }
 }

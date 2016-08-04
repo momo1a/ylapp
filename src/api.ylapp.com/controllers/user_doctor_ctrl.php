@@ -30,12 +30,16 @@ class User_doctor_ctrl extends MY_Controller
             $this->response($this->responseDataFormat(10,'未登录',array()));
         }
         $decodeToken = $this->crypt->decode($privateToken);
+
         $tokenArr = explode('-',$decodeToken);
         $this->currentUserId = intval($tokenArr[0]);
         $this->currentUserType = intval($tokenArr[3]);
         $user = $this->user_model->getUserByUid($this->currentUserId);
         if(!$user){
             $this->response($this->responseDataFormat(11,'用户不存在',array()));
+        }
+        if($this->currentUserType != 1 && $this->currentUserType != 2){
+            $this->response($this->responseDataFormat(12,'用户类型异常',array()));
         }
 
     }

@@ -46,18 +46,23 @@ class Api extends MY_Controller
         $pwd = $this->input->post('pwd');
         $res = $this->user->getRecordByPhoneOrNickname($user);
         if(!$res){
-            $this->response($this->responseDataFormat(1,'用户不存在',array())); //用户类型不存在
+            $this->response($this->responseDataFormat(1,'用户不存在',array())); //用户用户不存在
         }
         if($this->encryption($pwd) != $res['password']){
             $this->response($this->responseDataFormat(2,'密码不正确',array())); //用户类型不存在
         }
 
         if($res['isBlack'] != 0 || $res['status'] != 0){
-            $this->response($this->responseDataFormat(3,'用户状态异常',array())); //用户类型不存在
+            $this->response($this->responseDataFormat(3,'用户状态异常',array())); //用户状态异常
         }
         /*  检测通过 */
         $privateToken = $this->crypt->encode($res['uid'].'-'.$user.'-'.time().'-'.$res['userType']);  //私有token
-        $this->response($this->responseDataFormat(0,'登陆成功',array($privateToken))); //登陆成功
+        if($this->user->updateLoginInfo($res['uid'])) {
+            $this->response($this->responseDataFormat(0, '登陆成功', array($privateToken))); //登陆成功
+        }else{
+            $this->response($this->responseDataFormat(-1, '登陆失败', array())); //登陆失败
+        }
+        
 
     }
 

@@ -63,4 +63,15 @@ class User_model extends MY_Model
         $res = $this->find_by($where);
         return $res;
     }
+
+    /**
+     * 修改登录信息
+     * @param $uid
+     */
+    public function updateLoginInfo($uid){
+        $where = array('uid'=>$uid);
+        $data = array('lastLoginTime'=>time(),'lastLoginIp'=>ip2long($_SERVER['REMOTE_ADDR']));
+        $res = $this->update($where,$data);
+        return $res;
+    }
 }

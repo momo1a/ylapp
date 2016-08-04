@@ -17,6 +17,7 @@ CREATE TABLE `YL_user` (
   `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '用户状态：0正常，N保留',
   PRIMARY KEY (`uid`),
   KEY `uname` (`nickname`) USING BTREE,
-  KEY `mobile` (`phone`) USING BTREE
+  KEY `mobile` (`phone`) USING BTREE,
+  UNIQUE KEY `nickname` (`nickname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
 

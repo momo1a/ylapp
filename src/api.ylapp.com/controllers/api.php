@@ -6,7 +6,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
  * @date 20160730
  *
  */
-class Api extends CI_Controller
+class Api extends MY_Controller
 {
 
     /**
@@ -24,23 +24,42 @@ class Api extends CI_Controller
      * 成功请求
      * @var array
      */
-    protected $ok = array('code'=>1,'msg'=>'SUCCESS','data'=>array());
+    protected $ok = array('code'=>0,'msg'=>'SUCCESS','data'=>array());
 
 
 
 
 	public function __construct(){
 		parent::__construct();
-        if($this->router->method !='test') {
-            $this->checkToken();  //检测通讯token
-        }
-        $this->load->library("ShortMsg/ShortMsg",null,'sms');  // 加载短信类库
-        $this->load->library('Cache_memcached',null,'cache');  // 加载缓存类库
 	}
 
 	public function index(){
 		$this->response();
 	}
+
+    /**
+     * 登陆接口
+     */
+    public function login(){
+        $this->load->model('user_model','user');
+        $user = addslashes(trim($this->input->post('user')));
+        $pwd = $this->input->post('pwd');
+        $res = $this->user->getRecordByPhoneOrNickname($user);
+        if(!$res){
+            $this->response($this->responseDataFormat(1,'用户不存在',array())); //用户类型不存在
+        }
+        if($this->encryption($pwd) != $res['password']){
+            $this->response($this->responseDataFormat(2,'密码不正确',array())); //用户类型不存在
+        }
+
+        if($res['isBlack'] != 0 || $res['status'] != 0){
+            $this->response($this->responseDataFormat(3,'用户状态异常',array())); //用户类型不存在
+        }
+        /*  检测通过 */
+        $privateToken = $this->crypt->encode($res['uid'].'-'.$user.'-'.time().'-'.$res['userType']);  //私有token
+        $this->response($this->responseDataFormat(0,'登陆成功',array($privateToken))); //登陆成功
+
+    }
 
     /**
      * 注册接口
@@ -49,32 +68,28 @@ class Api extends CI_Controller
         $this->load->model('user_model','user');
         $mobile = trim($this->input->post('mobile'));      // 手机号
         $userType = trim($this->input->post('userType'));  //用户类型 1 用户 2 医生
-        $code = trim($this->input->post('code'));          //手机验证码
         $pwd = trim($this->input->post('pwd'));            //密码
         $rePwd = $this->input->post('rePwd');              //确认密码
-        $serverMsgCode = $this->cache->get($mobile);       //获取存在服务器的验证码
         $isExist = $this->user->getUserMobile($mobile);    //手机号是否已经注册
         if($userType != 1 && $userType != 2){
             $this->response($this->responseDataFormat(1,'用户类型异常',array())); //用户类型不允许
         }
-        if($code != $serverMsgCode){
-            $this->response($this->responseDataFormat(2,'验证码不正确或者已经过期',array()));
-        }
         if(strlen($pwd) < 6){
-            $this->response(3,'密码不的小于6位',array());
+            $this->response($this->responseDataFormat(2,'密码不得小于6位',array()));
         }
         if(is_numeric($pwd)){
-            $this->response($this->responseDataFormat(4,'密码不得是纯数字',array()));
+            $this->response($this->responseDataFormat(3,'密码不得是纯数字',array()));
         }
         if($pwd != $rePwd){
-            $this->response($this->responseDataFormat(5,'第一次密码跟第二次密码不一致',array()));
+            $this->response($this->responseDataFormat(4,'第一次密码跟第二次密码不一致',array()));
         }
         if($isExist){
-            $this->response($this->responseDataFormat(6,'手机号码已经注册',array()));
+            $this->response($this->responseDataFormat(5,'手机号码已经注册',array()));
         }
         /*  检查完毕入库 */
 
-        $return = $this->user->reg($mobile,$userType,$this->encryption($pwd));
+        $return = $this->user->reg($mobile,$userType,$this->encryption($pwd),$this->getRemoteAddr());
+
         if($return){
             $this->response($this->responseDataFormat(0,'注册成功',array()));
         }else{
@@ -84,6 +99,47 @@ class Api extends CI_Controller
 
     }
 
+    /**
+     * 检验验证码接口
+     */
+    public function checkVerificationCode(){
+        $mobile = trim($this->input->post('mobile'));      // 手机号
+        $code = trim($this->input->post('code'));          //手机验证码
+        $serverMsgCode = $this->cache->get($mobile);       //获取存在服务器的验证码
+        if($code != $serverMsgCode){
+            $this->response($this->responseDataFormat(1,'验证码不正确或者已经过期',array()));
+        }
+
+        $this->response($this->responseDataFormat(0,'验证成功',array()));
+
+    }
+
+    /**
+     * 用户密码重置
+     */
+    public function reSettingPwd(){
+        $this->load->model('user_model','user');
+        $uid = intval($this->input->post('uid'));  // 用户id
+        $pwd = trim($this->input->post('pwd'));    // 密码
+        $rePwd = trim($this->input->post('rePwd')); // 确认密码
+        if(strlen($pwd) < 6){
+            $this->response($this->responseDataFormat(1,'密码不的小于6位',array()));
+        }
+        if(is_numeric($pwd)){
+            $this->response($this->responseDataFormat(2,'密码不得是纯数字',array()));
+        }
+        if($pwd != $rePwd){
+            $this->response($this->responseDataFormat(3,'第一次密码跟第二次密码不一致',array()));
+        }
+
+        $return = $this->user->reSettingPwd($uid,$this->encryption($pwd));
+
+        if($return){
+            $this->response($this->responseDataFormat(0,'修改成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'系统错误',array()));
+        }
+    }
 
     /**
      * 发送手机验证码接口
@@ -94,59 +150,17 @@ class Api extends CI_Controller
             $this->response($this->responseDataFormat(2,'手机号码非法',array()));
         }
         $code = rand(100000,999999);
-        $res = $this->sms->send(array('code'=>$code,'length'=>5),$mobile);
+        $res = $this->sms->send(array('code'=>$code,'length'=>1),$mobile);
         $returnCode = $res['result']->err_code;
         $status  = $res['result']->success;
         $returnCode = (array)$returnCode;
         $status = (array)$status;
         if($returnCode[0] == 0 && $status[0] == 'true') {
-            $this->cache->save($mobile, $code, 300);
+            $this->cache->save($mobile, $code, 60);
         }
         $this->response($this->responseDataFormat($returnCode[0],$status[0],array()));
     }
 
-    /**
-     * @param array $content
-     *         code   响应码
-     *         msg    消息描述
-     *         data   数据
-     * @param string $content_type 响应头
-     */
-	private function response($content = array('code'=>1002,'msg'=>'ERR_PARAMETER','data'=>array()), $content_type = 'text/html;charset=utf-8'){
-		$content_type = trim($content_type) != '' ? trim($content_type) : 'text/html;charset=utf-8';
-        header('Content-Type: '.$content_type);
-        exit(json_encode($content));
-	}
-
-    /**
-     * 检查通讯token
-     */
-    private function checkToken(){
-        $token = trim($this->input->post('token'));
-        if($token != strtoupper(md5(KEY_APP_SERVER))){
-            exit(json_encode(array('code'=>1001,'msg'=>'ERR_TOKEN_DIFFER')));  //通信TOKEN不一致
-        }
-    }
-
-    /**
-     * 加密函数
-     * @param $string
-     */
-    private function encryption($string){
-        return md5(sha1($string));
-    }
-
-    /**
-     * @param $code
-     * @param $msg
-     * @param $data
-     */
-    private function responseDataFormat($code,$msg,$data){
-        $responseData['code'] = $code;
-        $responseData['msg'] = $msg;
-        $responseData['data'] = $data;
-        return $responseData;
-    }
 
     /*
      * 404处理
@@ -155,26 +169,4 @@ class Api extends CI_Controller
         exit(json_encode(array('code'=>404,'msg'=>'ERR_INTERFACE_NOT_FOUND')));
     }
 
-
-    /*test*/
-    public function test(){
-
-        var_dump($this->cache->get('15977675495'));
-        var_dump(strtoupper(md5(111111)));
-        $form = <<<HTML
-<form action="http://api.ylapp.com/api/register" method="post">
-    <input type="text" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
-   <input type="text" name="mobile" /><br/>
-   <input type="text" name="code" /><br/>
-   <input type="hidden" name="userType" value="1"/><br/>
-   <input type="text" name="pwd" /><br/>
-    <input type="text" name="rePwd" /><br/>
-    <!--<input name="mobile" type="text"/>-->
-    <input type="submit" value="submit"/>
-
-</form>
-HTML;
-        echo $form;
-
-    }
 }

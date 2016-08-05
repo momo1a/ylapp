@@ -17,7 +17,11 @@ class MY_Controller extends CI_Controller
      */
     protected static $_TYPE_DOCTOR = 2;
 
-
+    /**
+     * 接收客户端发送的私有token
+     * @var null
+     */
+    protected static $privateToken = null;
 
 	function __construct(){
 		parent::__construct();
@@ -27,6 +31,8 @@ class MY_Controller extends CI_Controller
         $this->load->library('Crypt',array('key'=>KEY_APP_SERVER,'iv'=>'0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF'),'crypt');    // 加密类库
         $this->load->library("ShortMsg/ShortMsg",null,'sms');  // 加载短信类库
         $this->load->library('Cache_memcached',null,'cache');  // 加载缓存类库
+        self::$privateToken = trim($this->input->post('privateToken'));
+
 	}
 	/**
 	 * 处理成功返回json数据
@@ -71,7 +77,7 @@ class MY_Controller extends CI_Controller
      * 检查通讯token
      */
     protected function checkToken(){
-        $token = trim($this->input->post('token'));
+        $token = trim($this->input->get_post('token'));
         if($token != strtoupper(md5(KEY_APP_SERVER))){
             exit(json_encode(array('code'=>1001,'msg'=>'ERR_TOKEN_DIFFER')));  //通信TOKEN不一致
         }

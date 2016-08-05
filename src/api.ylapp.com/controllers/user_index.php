@@ -22,4 +22,37 @@ class User_index extends MY_Controller
         $this->response($this->responseDataFormat(0,'请求成功',$res));
     }
 
+    /**
+     * 用户首页获取医生列表
+     */
+    public function getIndexDoctorList(){
+        $this->load->model('user_model','user');
+        $res = $this->user->getDoctorList(6);
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
+    }
+
+    /**
+     * 用户首页获取资讯列表
+     */
+
+    public function getIndexNewsList(){
+        $this->load->model('news_model','news');
+        $res = $this->news->getNewsList(2,1);  // 获取两条发布在用户端的资讯
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
+    }
+
+
+    /**
+     * 获取首页滚动日志
+     */
+    public function getIndexScrollLog(){
+        $this->load->model('user_doctor_log_model','udlog');
+        $uid = 0;
+        $res = $this->udlog->getIndexScrollLog($uid);
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
+        var_dump($this->crypt->decode(self::$privateToken));
+    }
+
+
+
 }

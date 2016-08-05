@@ -74,4 +74,17 @@ class User_model extends MY_Model
         $res = $this->update($where,$data);
         return $res;
     }
+
+    /**
+     * 获取医生列表
+     */
+    public function getDoctorList($limit){
+        $where = array('userType'=>2);
+        $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user.uid','left');
+        $this->join('YL_hospital','YL_doctor_info.hid=YL_hospital.hid','left');
+        $this->join('YL_doctor_offices','YL_doctor_offices.id=YL_doctor_info.officeId','left');
+        $this->limit($limit);
+        $res = $this->find_all_by($where);
+        return $res;
+    }
 }

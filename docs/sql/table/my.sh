@@ -1,12 +1,12 @@
 #########################################################################
-# File Name: tatal.sh
+# File Name: my.sh
 # Author: Moshiyou
 # mail: momo1a@qq.com
-#Created Time:Tue 02 Aug 2016 05:43:36 PM CST
+#Created Time:Fri 05 Aug 2016 08:54:32 AM CST
 #########################################################################
 #!/bin/bash
-TATAL=$(ls -l)
-for i in `ls`
+rm -rf /mnt/myweb/my.sql
+for i in `ls | grep -v "my.sh"`
 do
- cat $i >> my.sql
+	cat $i >> /mnt/myweb/my.sql
 done

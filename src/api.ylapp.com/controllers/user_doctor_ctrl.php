@@ -25,12 +25,10 @@ class User_doctor_ctrl extends MY_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('user_model');
-        $privateToken = trim($this->input->post('privateToken'));
-        if(!$privateToken){
+        if(!self::$privateToken){
             $this->response($this->responseDataFormat(10,'未登录',array()));
         }
-        $decodeToken = $this->crypt->decode($privateToken);
-
+        $decodeToken = $this->crypt->decode(self::$privateToken);
         $tokenArr = explode('-',$decodeToken);
         $this->currentUserId = intval($tokenArr[0]);
         $this->currentUserType = intval($tokenArr[3]);

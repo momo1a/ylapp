@@ -49,7 +49,7 @@ class User_index extends MY_Controller
         $this->load->model('user_doctor_log_model','udlog');
         $uid = 0;
         $res = $this->udlog->getIndexScrollLog($uid);
-        $this->response($this->responseDataFormat(0,'请求成功',$res));
+        //$this->response($this->responseDataFormat(0,'请求成功',$res));
         var_dump($this->crypt->decode(self::$privateToken));
     }
 

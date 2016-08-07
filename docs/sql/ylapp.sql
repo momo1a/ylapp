@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.61.97
-Source Server Version : 50542
-Source Host           : 192.168.61.97:3306
+Source Server         : 192.168.1.103_3306
+Source Server Version : 50536
+Source Host           : 192.168.1.103:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50542
+Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2016-08-05 18:02:28
+Date: 2016-08-07 21:57:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -474,22 +474,23 @@ CREATE TABLE `YL_user` (
   UNIQUE KEY `nickname` (`nickname`),
   KEY `uname` (`nickname`) USING BTREE,
   KEY `mobile` (`phone`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of YL_user
 -- ----------------------------
-INSERT INTO `YL_user` VALUES ('1', '张三', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('3', '李四', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('4', '王五', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('5', '赵六', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('6', '赵医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('7', '李医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('8', '钱医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('9', '孙医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('10', '鲁医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('11', '黄医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('12', '梁医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('1', '张三', '641d3ac5e969efd385fdbfe1c134bb75', '1', '1470359890', '3232251298', '1470548940', '3232235794', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('3', '李四', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675496', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('4', '王五', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675497', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('5', '赵六', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675498', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('6', '赵医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675499', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('7', '李医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675410', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('8', '钱医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675411', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('9', '孙医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675412', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('10', '鲁医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675413', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('11', '黄医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675414', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('12', '梁医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675415', '1470359944', '/upoad/a/test.jpg', '0', '0');
+INSERT INTO `YL_user` VALUES ('13', '', '7c20ba8ef9eb3dff71201c1fb1f5c29c', '1', '1470546934', '3232235794', '0', '0', '', '13707818185', '0', '', '0', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_doctor_log
@@ -526,6 +527,8 @@ CREATE TABLE `YL_user_illness_history` (
   `uid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '用户id',
   `username` varchar(30) NOT NULL DEFAULT '0' COMMENT '用户名',
   `illName` varchar(30) NOT NULL DEFAULT '' COMMENT '病历名称',
+  `realname` varchar(30) NOT NULL DEFAULT '' COMMENT '真实姓名',
+  `age` smallint(3) unsigned NOT NULL DEFAULT '0' COMMENT '年龄',
   `sex` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '性别1男 2女',
   `allergyHistory` varchar(50) NOT NULL DEFAULT '' COMMENT '过敏史',
   `result` varchar(25) NOT NULL DEFAULT '' COMMENT '诊断结果',
@@ -534,11 +537,14 @@ CREATE TABLE `YL_user_illness_history` (
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态:预留',
   PRIMARY KEY (`illId`),
   KEY `uid` (`uid`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户病历表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户病历表';
 
 -- ----------------------------
 -- Records of YL_user_illness_history
 -- ----------------------------
+INSERT INTO `YL_user_illness_history` VALUES ('1', '1', '张三', '我的病历一', '李自成', '80', '1', '无', '前列腺炎', '2', '犯得上发生发射点发生发射点发射点发射点房贷首付法师', '0');
+INSERT INTO `YL_user_illness_history` VALUES ('2', '1', '张三', '我的病历二', '李白', '25', '1', '无', '盆腔炎', '3', '撒犯得上发生的看法酒店开了房艰苦拉萨解放', '0');
+INSERT INTO `YL_user_illness_history` VALUES ('3', '1', '张三', '我的病历三', '李清照', '32', '2', '青霉素过敏', '脑血栓', '3', '房间看电视jfk拉萨jfk理解啊绿色健康', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_illness_history_remarks
@@ -555,11 +561,13 @@ CREATE TABLE `YL_user_illness_history_remarks` (
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态:预留',
   PRIMARY KEY (`id`),
   KEY `illId` (`illId`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户病历记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户病历记录表';
 
 -- ----------------------------
 -- Records of YL_user_illness_history_remarks
 -- ----------------------------
+INSERT INTO `YL_user_illness_history_remarks` VALUES ('1', '1', '1', '1470560960', '初诊', '病情复杂，待观察', '{“img1.jpg”,\"img2,jpg\",\"img3.jpg\"}', '0');
+INSERT INTO `YL_user_illness_history_remarks` VALUES ('2', '1', '1', '1470561000', '复诊', '病情得到了有效的控制', '{“img1.jpg”,\"img2,jpg\",\"img3.jpg\"}', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_leaving_msg

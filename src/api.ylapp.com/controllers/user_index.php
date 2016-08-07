@@ -18,7 +18,7 @@ class User_index extends MY_Controller
      */
     public function getBannerImg(){
         $this->load->model('banner_model','banner');
-        $res = $this->banner->getBannerByUserType(1);
+        $res = $this->banner->getBannerByUserType(1,'title,img');
         $this->response($this->responseDataFormat(0,'请求成功',$res));
     }
 
@@ -27,7 +27,7 @@ class User_index extends MY_Controller
      */
     public function getIndexDoctorList(){
         $this->load->model('user_model','user');
-        $res = $this->user->getDoctorList(6);
+        $res = $this->user->getDoctorList(6,'YL_user.uid,YL_user.avatar,YL_user.nickname,YL_doctor_offices.officeName');
         $this->response($this->responseDataFormat(0,'请求成功',$res));
     }
 
@@ -37,7 +37,7 @@ class User_index extends MY_Controller
 
     public function getIndexNewsList(){
         $this->load->model('news_model','news');
-        $res = $this->news->getNewsList(2,1);  // 获取两条发布在用户端的资讯
+        $res = $this->news->getNewsList(2,1,'YL_news.nid,YL_news.title,YL_news.thumbnail,YL_news.author,FROM_UNIXTIME(YL_news.createTime) as createTime,YL_news_category.name as cateName',true);  // 获取两条发布在用户端的资讯
         $this->response($this->responseDataFormat(0,'请求成功',$res));
     }
 
@@ -50,7 +50,6 @@ class User_index extends MY_Controller
         $uid = 0;
         $res = $this->udlog->getIndexScrollLog($uid);
         //$this->response($this->responseDataFormat(0,'请求成功',$res));
-        var_dump($this->crypt->decode(self::$privateToken));
     }
 
 

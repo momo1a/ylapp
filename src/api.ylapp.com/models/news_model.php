@@ -17,8 +17,12 @@ class News_model extends MY_Model
      * @param $limit
      * @param $postPos 发布位置
      */
-    public function getNewsList($limit,$postPos){
+    public function getNewsList($limit,$postPos,$select,$recmdToIndex=false){
         $where = array('postPos'=>$postPos);
+        if($recmdToIndex){
+            $this->where('isRecmdIndex',1);
+        }
+        $this->select($select);
         $this->join('YL_news_category','YL_news_category.cid=YL_news.nid','left');
         $this->limit($limit);
         $res = $this->find_all_by($where);

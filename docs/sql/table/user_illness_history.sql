@@ -5,6 +5,8 @@ CREATE TABLE `YL_user_illness_history` (
   `uid` int(11) unsigned NOT NULL DEFAULT '0' comment '用户id',
   `username` varchar(30) not null default '0' comment '用户名',
   `illName` varchar(30) not null default '' comment '病历名称',
+  `realname` varchar(30) not null default '' comment '真实姓名',
+  `age` SMALLINT(3) unsigned not null default '0' comment '年龄',
   `sex` tinyint(3) unsigned not null default '0' comment '性别1男 2女',
   `allergyHistory` varchar(50) not null default '' comment '过敏史',
   `result` varchar(25) not null default '' comment '诊断结果',

@@ -44,6 +44,9 @@ class Api extends MY_Controller
         $this->load->model('user_model','user');
         $user = addslashes(trim($this->input->post('user')));
         $pwd = $this->input->post('pwd');
+        if(empty($user)){
+            $this->response($this->responseDataFormat(4,'账号不能为空',array())); //用户状态异常
+        }
         $res = $this->user->getRecordByPhoneOrNickname($user);
         if(!$res){
             $this->response($this->responseDataFormat(1,'用户不存在',array())); //用户用户不存在
@@ -58,7 +61,7 @@ class Api extends MY_Controller
         /*  检测通过 */
         $privateToken = $this->crypt->encode($res['uid'].'-'.$user.'-'.time().'-'.$res['userType']);  //私有token
         if($this->user->updateLoginInfo($res['uid'])) {
-            $this->response($this->responseDataFormat(0, '登陆成功', array($privateToken))); //登陆成功
+            $this->response($this->responseDataFormat(0, '登陆成功', array('privateToken'=>$privateToken))); //登陆成功
         }else{
             $this->response($this->responseDataFormat(-1, '登陆失败', array())); //登陆失败
         }
@@ -75,21 +78,26 @@ class Api extends MY_Controller
         $userType = trim($this->input->post('userType'));  //用户类型 1 用户 2 医生
         $pwd = trim($this->input->post('pwd'));            //密码
         $rePwd = $this->input->post('rePwd');              //确认密码
+        $code = trim($this->input->post('code'));          //手机验证码
+        $serverMsgCode = $this->cache->get($mobile);       //获取存在服务器的验证码
+        if($code != $serverMsgCode){
+            $this->response($this->responseDataFormat(1,'验证码不正确或者已经过期',array()));
+        }
         $isExist = $this->user->getUserMobile($mobile);    //手机号是否已经注册
         if($userType != 1 && $userType != 2){
-            $this->response($this->responseDataFormat(1,'用户类型异常',array())); //用户类型不允许
+            $this->response($this->responseDataFormat(2,'用户类型异常',array())); //用户类型不允许
         }
         if(strlen($pwd) < 6){
-            $this->response($this->responseDataFormat(2,'密码不得小于6位',array()));
+            $this->response($this->responseDataFormat(3,'密码不得小于6位',array()));
         }
         if(is_numeric($pwd)){
-            $this->response($this->responseDataFormat(3,'密码不得是纯数字',array()));
+            $this->response($this->responseDataFormat(4,'密码不得是纯数字',array()));
         }
         if($pwd != $rePwd){
-            $this->response($this->responseDataFormat(4,'第一次密码跟第二次密码不一致',array()));
+            $this->response($this->responseDataFormat(5,'第一次密码跟第二次密码不一致',array()));
         }
         if($isExist){
-            $this->response($this->responseDataFormat(5,'手机号码已经注册',array()));
+            $this->response($this->responseDataFormat(6,'手机号码已经注册',array()));
         }
         /*  检查完毕入库 */
 
@@ -124,7 +132,7 @@ class Api extends MY_Controller
      */
     public function reSettingPwd(){
         $this->load->model('user_model','user');
-        $uid = intval($this->input->post('uid'));  // 用户id
+        $uid = self::$currentUid;  // 用户id
         $pwd = trim($this->input->post('pwd'));    // 密码
         $rePwd = trim($this->input->post('rePwd')); // 确认密码
         if(strlen($pwd) < 6){

@@ -17,11 +17,35 @@ class MY_Controller extends CI_Controller
      */
     protected static $_TYPE_DOCTOR = 2;
 
+
     /**
      * 接收客户端发送的私有token
      * @var null
      */
     protected static $privateToken = null;
+
+    /**
+     * 当前用户uid
+     * @var
+     */
+    protected static $currentUid;
+
+    /**
+     * 当前用户手机号
+     * @var
+     */
+    protected static $currentUserMobile;
+    /**
+     * 当前用户类型
+     * @var
+     */
+    protected static $currentUserType;
+
+    /**
+     * 当前用户最后登录记录时间
+     * @var
+     */
+    protected static $currentUserLastLoginTime;
 
 	function __construct(){
 		parent::__construct();
@@ -31,8 +55,12 @@ class MY_Controller extends CI_Controller
         $this->load->library('Crypt',array('key'=>KEY_APP_SERVER,'iv'=>'0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF'),'crypt');    // 加密类库
         $this->load->library("ShortMsg/ShortMsg",null,'sms');  // 加载短信类库
         $this->load->library('Cache_memcached',null,'cache');  // 加载缓存类库
-        self::$privateToken = trim($this->input->post('privateToken'));
-
+        self::$privateToken = $this->crypt->decode(trim($this->input->get_post('privateToken')));
+        $userInfoArr = explode('-',self::$privateToken);
+        self::$currentUid = $userInfoArr[0];
+        self::$currentUserMobile = $userInfoArr[1];
+        self::$currentUserLastLoginTime = $userInfoArr[2];
+        self::$currentUserType = $userInfoArr[3];
 	}
 	/**
 	 * 处理成功返回json数据
@@ -103,8 +131,12 @@ class MY_Controller extends CI_Controller
         return $responseData;
     }
 
-
+    /**
+     * 获取远程地址
+     * @return int
+     */
     protected function getRemoteAddr(){
         return ip2long($this->input->server('REMOTE_ADDR'));
     }
+
 }

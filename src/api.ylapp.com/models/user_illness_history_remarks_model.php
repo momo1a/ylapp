@@ -17,4 +17,27 @@ class User_illness_history_remarks_model extends MY_Model
         $res = $this->find_all_by($where);
         return $res;
     }
+
+    /**
+     * 添加备注
+     * @param $data
+     * @return bool|mixed
+     */
+    public function addRemark($data){
+        $res = $this->insert($data);
+        return $res;
+    }
+
+    /**
+     * 编辑记录
+     * @param $remarkId
+     * @param $uid
+     * @param $illId
+     * @param $data
+     */
+    public function editRemarks($remarkId,$uid,$illId,$data){
+        $where = array('id'=>$remarkId,'uid'=>$uid,'illId'=>$illId);
+        $res = $this->update($where,$data);
+        return $res;
+    }
 }

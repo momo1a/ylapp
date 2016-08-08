@@ -139,4 +139,14 @@ class MY_Controller extends CI_Controller
         return ip2long($this->input->server('REMOTE_ADDR'));
     }
 
+    /**
+     * 获取图片服务器
+     */
+
+    protected function getImgServer(){
+        $imgServers = $this->config->item('image_servers');
+        $imgServer = $imgServers[0] or $this->response($this->responseDataFormat(1,'图片服务器未配置',array()));
+        return $imgServer;
+    }
+
 }

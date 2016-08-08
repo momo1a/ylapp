@@ -37,4 +37,14 @@ class User_illness_history_model extends MY_Model
         $res = $this->find_by($where);
         return $res;
     }
+
+    /**
+     * @param $uid
+     * @param $illId
+     */
+    public function editIllness($uid,$illId,$data){
+        $where = array('uid'=>$uid,'illId'=>$illId);
+        $res = $this->update($where,$data);
+        return $res;
+    }
 }

@@ -40,4 +40,31 @@ class User_illness_history_remarks_model extends MY_Model
         $res = $this->update($where,$data);
         return $res;
     }
+
+    /**
+     * 删除病历记录
+     * @param $remarkId
+     * @param $uid
+     * @return bool
+     */
+    public function delRemarkById($remarkId,$uid){
+        $where = array('id'=>$remarkId,'uid'=>$uid);
+        $res = $this->delete_where($where);
+        return $res;
+    }
+
+    /**
+     * 根据remarkId获取到该记录的img
+     * @param $id
+     */
+    public function getImgById($id){
+        $where = array('id'=>$id);
+        $this->select('img');
+        $res = $this->find_by($where);
+        if($res){
+            return json_decode($res['img'],true);
+        }else{
+            return false;
+        }
+    }
 }

@@ -152,12 +152,21 @@ class Medical extends MY_Controller
                 $stages = trim($this->input->get_post('stages_'.$id));
                 $content = addslashes($this->input->get_post('content_'.$id));
                 if(!empty($_FILES)){
-                    $imgArr = array();
+                    $imgArr = $this->illness_remarks->getImgById($id);
+                    $imgArr = $imgArr ? $imgArr : array();
                     foreach($_FILES as $key=>$value){
                         if($value['name']==''){ continue;}
-                        if(preg_match('/img[1|2|3]\_'.$id.'/',$key)){
+                        if(preg_match('/img1\_'.$id.'/',$key)){
                             $imgFile = $this->upload_image->save('illRemark',$value['tmp_name']);
-                            array_push($imgArr,$imgFile);
+                            $imgArr[0] = $imgFile;
+                        }
+                        if(preg_match('/img2\_'.$id.'/',$key)){
+                            $imgFile = $this->upload_image->save('illRemark',$value['tmp_name']);
+                            $imgArr[1] = $imgFile;
+                        }
+                        if(preg_match('/img1\_'.$id.'/',$key)){
+                            $imgFile = $this->upload_image->save('illRemark',$value['tmp_name']);
+                            $imgArr[2] = $imgFile;
                         }
                     }
                 }
@@ -177,6 +186,19 @@ class Medical extends MY_Controller
             $this->response($this->responseDataFormat(0,'请求成功',array()));
         }else{
             $this->response($this->responseDataFormat(-1,'请求失败',array()));
+        }
+    }
+
+    /**
+     * 删除病历记录
+     */
+    public function delRemark(){
+        $remarkId = intval($this->input->get_post('remarkId'));
+        $rs = $this->illness_remarks->delRemarkById($remarkId,self::$currentUid);
+        if($rs){
+            $this->response($this->responseDataFormat(0,'删除成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'删除成功',array()));
         }
     }
 

@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.1.103_3306
-Source Server Version : 50536
-Source Host           : 192.168.1.103:3306
+Source Server         : 192.168.61.97
+Source Server Version : 50542
+Source Host           : 192.168.61.97:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50536
+Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2016-08-07 21:57:10
+Date: 2016-08-08 17:52:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -542,7 +542,7 @@ CREATE TABLE `YL_user_illness_history` (
 -- ----------------------------
 -- Records of YL_user_illness_history
 -- ----------------------------
-INSERT INTO `YL_user_illness_history` VALUES ('1', '1', '张三', '我的病历一', '李自成', '80', '1', '无', '前列腺炎', '2', '犯得上发生发射点发生发射点发射点发射点房贷首付法师', '0');
+INSERT INTO `YL_user_illness_history` VALUES ('1', '1', '张三', '我的病历llll', '张无忌', '28', '1', '无', '膀胱炎', '4', '就分开了电视剧疯狂的', '0');
 INSERT INTO `YL_user_illness_history` VALUES ('2', '1', '张三', '我的病历二', '李白', '25', '1', '无', '盆腔炎', '3', '撒犯得上发生的看法酒店开了房艰苦拉萨解放', '0');
 INSERT INTO `YL_user_illness_history` VALUES ('3', '1', '张三', '我的病历三', '李清照', '32', '2', '青霉素过敏', '脑血栓', '3', '房间看电视jfk拉萨jfk理解啊绿色健康', '0');
 
@@ -561,13 +561,14 @@ CREATE TABLE `YL_user_illness_history_remarks` (
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态:预留',
   PRIMARY KEY (`id`),
   KEY `illId` (`illId`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户病历记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户病历记录表';
 
 -- ----------------------------
 -- Records of YL_user_illness_history_remarks
 -- ----------------------------
-INSERT INTO `YL_user_illness_history_remarks` VALUES ('1', '1', '1', '1470560960', '初诊', '病情复杂，待观察', '{“img1.jpg”,\"img2,jpg\",\"img3.jpg\"}', '0');
-INSERT INTO `YL_user_illness_history_remarks` VALUES ('2', '1', '1', '1470561000', '复诊', '病情得到了有效的控制', '{“img1.jpg”,\"img2,jpg\",\"img3.jpg\"}', '0');
+INSERT INTO `YL_user_illness_history_remarks` VALUES ('1', '1', '1', '1462636800', '初诊', '并无大碍', '[\"illRemark\\/2016\\/08\\/08\\/1748159137.jpg\",\"illRemark\\/2016\\/08\\/08\\/1748154259.jpg\",\"illRemark\\/2016\\/08\\/08\\/1748156700.jpg\"]', '0');
+INSERT INTO `YL_user_illness_history_remarks` VALUES ('2', '1', '1', '1533484800', '复诊', '无中生有', '[\"illRemark\\/2016\\/08\\/08\\/1748156220.jpg\",\"illRemark\\/2016\\/08\\/08\\/1748163400.jpg\",\"illRemark\\/2016\\/08\\/08\\/1748167927.jpg\"]', '0');
+INSERT INTO `YL_user_illness_history_remarks` VALUES ('3', '1', '1', '1428163200', '最后', '大爱无疆', '[\"illRemark\\/2016\\/08\\/08\\/1748165187.jpg\"]', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_leaving_msg

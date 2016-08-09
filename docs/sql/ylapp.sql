@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.1.103_3306
-Source Server Version : 50536
-Source Host           : 192.168.1.103:3306
+Source Server         : 192.168.61.97
+Source Server Version : 50542
+Source Host           : 192.168.61.97:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50536
+Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2016-08-08 23:43:21
+Date: 2016-08-09 18:04:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;

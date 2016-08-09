@@ -76,9 +76,25 @@ class User_model extends MY_Model
     }
 
     /**
-     * 获取医生列表
+     * 获取医院列表
+     * @param $officeId  科室id
+     * @param $hid      医院id
+     * @param $limit    获取条数
+     * @param $select   查询字段
+     * @return array
      */
-    public function getDoctorList($limit,$select){
+    public function getDoctorList($limit,$select,$officeId=0,$hid=0,$keyword=''){
+        $officeId = intval($officeId);
+        $hid = intval($hid);
+        if($officeId != 0){
+            $this->where('YL_doctor_offices.id',$officeId);
+        }
+        if($hid != 0){
+            $this->where('YL_hospital.hid',$hid);
+        }
+        if($keyword != ''){
+            $this->like('YL_user.nickname',$keyword);
+        }
         $where = array('userType'=>2);
         $this->select($select);
         $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user.uid','left');

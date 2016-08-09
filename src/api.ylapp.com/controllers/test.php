@@ -445,11 +445,54 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/hospital/getHospitalList" method="post">
+<form action="http://api.ylapp.com/hospital/getAllHospital" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
-    <input type="text" name="hid"/>
-    <input type="text" name="keyword"/>
+    <!--<input type="text" name="hid"/>
+    <input type="text" name="keyword"/>-->
+    <input type="submit" value="submit"/>
+</form>
+HTML;
+        echo $form;
+    }
+
+    public function getDoctorList(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor/getDoctorList" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    hid<input type="text" name="hid"/>
+    officeId<input type="text" name="officeId"/>
+    keyword<input type="text" name="keyword"/>
+    <input type="submit" value="submit"/>
+</form>
+HTML;
+        echo $form;
+    }
+
+
+
+    public function getAllOffices(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/hospital/getAllOffices" method="get">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <input type="submit" value="submit"/>
 </form>
 HTML;

@@ -15,6 +15,7 @@ CREATE TABLE `YL_doctor_fee_seting` (
   `phonePerSecond` DECIMAL(5,2) unsigned not null default '0' comment '电话问诊二平台分成',
   `phoneTimeLenThird` SMALLINT(5)  unsigned not null default '0' comment '电话问诊时长三 单位：分',
   `phoneFeeThird` DECIMAL(9,2) unsigned not null default '0' comment '电话问诊三费用',
+  `phonePerThrid` DECIMAL(5,2) unsigned not null default '0' comment '电话问诊三平台分成',
   `dateline` int(11) unsigned not null default '0' comment '时间线',
   PRIMARY KEY (`docId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生费用设置表';

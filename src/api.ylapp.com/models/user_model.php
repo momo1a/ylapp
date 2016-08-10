@@ -111,7 +111,7 @@ class User_model extends MY_Model
      */
     public function getDoctorDetail($docId,$select){
         $this->select($select);
-        $this->where(array('userType'=>2,'uid'=>$docId));
+        $this->where(array('YL_user.userType'=>2,'YL_user.uid'=>$docId));
         $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user.uid','left');
         $this->join('YL_hospital','YL_doctor_info.hid=YL_hospital.hid','left');
         $this->join('YL_doctor_offices','YL_doctor_offices.id=YL_doctor_info.officeId','left');

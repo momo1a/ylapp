@@ -10,12 +10,13 @@ class Doctor extends MY_Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->load->model('User','user');
+        $this->load->model('User_model','user');
         $this->load->model('Doctor_evaluate_model','evaluate');
+        $this->load->model('Doctor_reply_model','reply');
     }
 
     /**
-     * 用户首页获取医生列表
+     * 获取医生列表
      */
     public function getDoctorList(){
         $officeId = intval($this->input->get_post('officeId'));
@@ -32,10 +33,11 @@ class Doctor extends MY_Controller
 
     public function getDoctorDetail(){
         $docId = intval($this->input->get_post('docId'));
-        $select = 'YL_user.avatar,YL_user.nickname,YL_hospital.name AS hospitalName,Yl_doctor_offices.officeName,YL_doctor_info.summary,YL_doctor_info.goodAt';
+        $select = 'YL_user.avatar,YL_user.nickname,YL_hospital.name AS hospitalName,YL_doctor_offices.officeName,YL_doctor_info.docLevel,YL_doctor_info.summary,YL_doctor_info.goodAt';
         $doctor = $this->user->getDoctorDetail($docId,$select);
         $evaluate = $this->evaluate->getDoctorEvaluate($docId,'YL_doctor_evaluate.content,FROM_UNIXTIME(YL_doctor_evaluate.dateline) as evaluateTime,YL_doctor_evaluate.username,YL_user.avatar');
-        $this->response($this->responseDataFormat(0,'请求成功',array('doctor'=>$doctor,'evaluate'=>$evaluate)));
+        $answerNum = $this->reply->getDocCompleteAnswerTotal($docId);
+        $this->response($this->responseDataFormat(0,'请求成功',array('doctor'=>$doctor,'evaluate'=>$evaluate,'answerNum'=>$answerNum)));
     }
 
 }

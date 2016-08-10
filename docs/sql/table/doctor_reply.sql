@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS  `YL_doctor_reply`;
 CREATE TABLE `YL_doctor_reply` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `themeId` int(11) unsigned not null default '0' comment '主题id',
+  `userId` int(11) unsigned not null default '0' comment '用户id（留言者id）',
   `type` tinyint(3) unsigned not null default '0' comment '主题类型1：留言,n预留',
   `replyContent` VARCHAR(500) not null default '' comment '回复内容',
   `replyId` int(11) not null default '0' comment '回复者id',
@@ -13,5 +14,6 @@ CREATE TABLE `YL_doctor_reply` (
   PRIMARY KEY (`id`),
   KEY `themeId` (`themeId`) USING BTREE,
   KEY `replyTime` (`state`) USING BTREE,
-  KEY `replyId` (`replyId`) USING BTREE
+  KEY `replyId` (`replyId`) USING BTREE,
+  KEY `userId` (`userId`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生回复表';

@@ -498,5 +498,25 @@ HTML;
 HTML;
         echo $form;
     }
+
+    public function TimeLenView(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/Diagnosis_online/diaSelectTimeLenView" method="get">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="text" name="docId"/>
+    <input type="submit" value="submit"/>
+</form>
+HTML;
+        echo $form;
+    }
 }
 

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2016-08-09 18:04:37
+Date: 2016-08-10 17:57:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -64,6 +64,33 @@ INSERT INTO `YL_banner` VALUES ('7', 'banner7', '2', 'banner7.jpg', '1470361991'
 INSERT INTO `YL_banner` VALUES ('8', 'banner8', '2', 'banner8.jpg', '1470361991', '1470361991', '0');
 
 -- ----------------------------
+-- Table structure for YL_doctor_evaluate
+-- ----------------------------
+DROP TABLE IF EXISTS `YL_doctor_evaluate`;
+CREATE TABLE `YL_doctor_evaluate` (
+  `vid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `docId` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '医生id',
+  `docNicname` varchar(50) NOT NULL DEFAULT '' COMMENT '医生昵称',
+  `uid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '用户id',
+  `username` varchar(50) NOT NULL DEFAULT '' COMMENT '用户昵称',
+  `content` varchar(50) NOT NULL DEFAULT '' COMMENT '评价内容',
+  `dateline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '评价时间',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0;待处理，1审核通过，2审核不通过',
+  PRIMARY KEY (`vid`),
+  KEY `docId` (`docId`) USING BTREE,
+  KEY `uid` (`uid`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='医生评价表';
+
+-- ----------------------------
+-- Records of YL_doctor_evaluate
+-- ----------------------------
+INSERT INTO `YL_doctor_evaluate` VALUES ('1', '6', '赵医生', '1', '张三', '人帅医术高明', '1470820966', '1');
+INSERT INTO `YL_doctor_evaluate` VALUES ('2', '6', '赵医生', '1', '张三', '人帅医术高明', '1470820922', '0');
+INSERT INTO `YL_doctor_evaluate` VALUES ('3', '6', '赵医生', '1', '张三', '人帅医术高明', '1470820911', '1');
+INSERT INTO `YL_doctor_evaluate` VALUES ('4', '6', '赵医生', '1', '张三', '人帅医术高明', '1470820888', '0');
+INSERT INTO `YL_doctor_evaluate` VALUES ('5', '6', '赵医生', '1', '张三', '人帅医术高明', '1470820877', '1');
+
+-- ----------------------------
 -- Table structure for YL_doctor_fee_seting
 -- ----------------------------
 DROP TABLE IF EXISTS `YL_doctor_fee_seting`;
@@ -74,14 +101,15 @@ CREATE TABLE `YL_doctor_fee_seting` (
   `leavMsgPer` decimal(5,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '留言费用平台分成',
   `regNumFee` decimal(9,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '挂号费用',
   `regNumPer` decimal(5,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '挂号费用平台分成',
-  `phoneTimeLenFrist` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '电话问诊时长一 单位：分',
-  `phoneFeeFrist` decimal(9,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '电话问诊一费用',
-  `phonePerFrist` decimal(5,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '电话问诊一平台分成',
+  `phoneTimeLenFirst` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '电话问诊时长一 单位：分',
+  `phoneFeeFirst` decimal(9,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '电话问诊一费用电话问诊时长一 单位：分',
+  `phonePerFirst` decimal(5,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '电话问诊一平台分成',
   `phoneTimeLenSecond` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '电话问诊时长二 单位：分',
   `phoneFeeSecond` decimal(9,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '电话问诊二费用',
   `phonePerSecond` decimal(5,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '电话问诊二平台分成',
   `phoneTimeLenThird` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '电话问诊时长三 单位：分',
   `phoneFeeThird` decimal(9,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '电话问诊三费用',
+  `phonePerThird` decimal(5,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '电话问诊三平台分成',
   `dateline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '时间线',
   PRIMARY KEY (`docId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生费用设置表';
@@ -89,6 +117,13 @@ CREATE TABLE `YL_doctor_fee_seting` (
 -- ----------------------------
 -- Records of YL_doctor_fee_seting
 -- ----------------------------
+INSERT INTO `YL_doctor_fee_seting` VALUES ('6', '赵医生', '20.00', '2.50', '30.00', '3.50', '15', '40.00', '4.50', '30', '50.00', '3.00', '45', '80.00', '2.22', '1470794030');
+INSERT INTO `YL_doctor_fee_seting` VALUES ('7', '李医生', '12.00', '1.22', '20.00', '1.18', '20', '50.00', '0.88', '40', '60.00', '0.89', '50', '100.00', '1.18', '1470794030');
+INSERT INTO `YL_doctor_fee_seting` VALUES ('8', '钱医生', '8.00', '2.12', '28.00', '1.12', '28', '50.00', '1.20', '60', '120.00', '0.66', '100', '80.00', '1.92', '1470794030');
+INSERT INTO `YL_doctor_fee_seting` VALUES ('9', '孙医生', '22.00', '1.12', '25.00', '2.12', '25', '30.00', '1.50', '30', '40.00', '0.22', '80', '130.00', '1.11', '1470794030');
+INSERT INTO `YL_doctor_fee_seting` VALUES ('10', '鲁医生', '12.00', '1.18', '28.00', '2.13', '32', '40.00', '2.18', '60', '70.00', '0.18', '90', '155.00', '1.19', '1470794030');
+INSERT INTO `YL_doctor_fee_seting` VALUES ('11', '黄医生', '9.00', '1.16', '33.00', '1.92', '32', '45.00', '6.62', '70', '60.00', '0.99', '110', '166.00', '1.88', '1470794030');
+INSERT INTO `YL_doctor_fee_seting` VALUES ('12', '梁医生', '6.00', '0.11', '18.00', '0.99', '55', '30.00', '0.88', '60', '40.00', '0.88', '120', '130.00', '1.99', '1470794030');
 
 -- ----------------------------
 -- Table structure for YL_doctor_info
@@ -588,7 +623,7 @@ CREATE TABLE `YL_user_illness_history_remarks` (
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态:预留',
   PRIMARY KEY (`id`),
   KEY `illId` (`illId`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户病历记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户病历记录表';
 
 -- ----------------------------
 -- Records of YL_user_illness_history_remarks

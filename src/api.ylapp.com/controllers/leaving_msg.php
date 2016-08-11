@@ -34,11 +34,14 @@ class Leaving_msg extends MY_Controller
         $content = addslashes($this->input->get_post('content'));
         $price = floatval($this->input->get_post('price'));
         $docId = intval($this->input->get_post('docId'));
+        if(!$docId){exit('DOCTOR NOT EXISTS');}
         $imgArr = array();
         if(!empty($_FILES)){
             foreach($_FILES as $k=>$val){
-                $imgFile = $this->upload_image->save('leavingMsg',$val['tmp_name']);
-                array_push($imgArr,$imgFile);
+                if($val['name'] != '') {
+                    $imgFile = $this->upload_image->save('leavingMsg', $val['tmp_name']);
+                    array_push($imgArr, $imgFile);
+                }
             }
         }
         $data = array(

@@ -22,7 +22,7 @@ class Doctor_evaluate_model extends MY_Model
         $this->where(array('YL_doctor_evaluate.docId'=>$docId,'YL_doctor_evaluate.state'=>1));
         $this->select($select);
         $this->join('YL_user','YL_user.uid=YL_doctor_evaluate.uid');
-        $this->order_by('YL_doctor_evaluate.vid','DESC');
+        $this->order_by('YL_doctor_evaluate.dateline','DESC');
         $res = $this->find_all();
         return $res;
     }

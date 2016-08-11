@@ -49,9 +49,9 @@ class MY_Controller extends CI_Controller
 
 	function __construct(){
 		parent::__construct();
-        /*if(strtolower($this->router->class) != 'test'){
+        if(strtolower($this->router->class) != 'test'){
             $this->checkToken();  //检测通讯token
-        }*/
+        }
         $this->load->library('Crypt',array('key'=>KEY_APP_SERVER,'iv'=>'0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF'),'crypt');    // 加密类库
         $this->load->library("ShortMsg/ShortMsg",null,'sms');  // 加载短信类库
         $this->load->library('Cache_memcached',null,'cache');  // 加载缓存类库

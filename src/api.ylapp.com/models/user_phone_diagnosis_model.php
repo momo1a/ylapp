@@ -17,7 +17,8 @@ class User_phone_diagnosis_model extends MY_Model
      * 在线问诊预约
      */
     public function commitRecord($data){
-        $res = $this->insert($data);
+        $this->insert($data);
+        $res = $this->db->insert_id();
         return $res;
     }
 }

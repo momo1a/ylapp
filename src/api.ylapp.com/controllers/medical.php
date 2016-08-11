@@ -99,7 +99,7 @@ class Medical extends MY_Controller
         if($res){
             $this->response($this->responseDataFormat(0,'请求成功',array()));
         }else{
-            $this->response($this->responseDataFormat(-1,'请求失败',array()));
+            $this->response($this->responseDataFormat(-1,'暂无数据',array()));
         }
     }
 
@@ -115,7 +115,7 @@ class Medical extends MY_Controller
         if($illness && $remakes && $imgServer){
             $this->response($this->responseDataFormat(0,'请求成功',array('illnessHistory'=>$illness,'remarks'=>$remakes,'imgServer'=>$imgServer)));
         }else{
-            $this->response($this->responseDataFormat(-1,'请求失败',array()));
+            $this->response($this->responseDataFormat(-1,'暂无数据',array()));
         }
 
     }

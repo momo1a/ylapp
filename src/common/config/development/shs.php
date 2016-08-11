@@ -13,7 +13,7 @@ $config['encryption_key'] = '111111'; // 统一密钥,Session加密用到
 
 // 上传图片
 $config['upload_image_save_path'] = '/mnt/myweb/images/';
-$config['upload_image_thumb_size'] = array('illRemark' => array(30,50,80,108), 'show' => array('215x0', '105x140'));
+$config['upload_image_thumb_size'] = array('illRemark' => array(30,50,80,108), 'leavingMsg' => array(30,50,100,30));
 $config['upload_image_quality'] = 95;
 
 // 上传修改头像
@@ -25,7 +25,7 @@ $config['upload_avatar_quality'] = 95;
 $config['image_servers'] = array('http://img.ylapp.com/');
 
 // 各站点域名
-//$config['domain_www'] = 'http://www.fqf.com/';
+//$config['domain_www'] = 'http://www.ylapp.com/';
 
 
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'shs_system.php';

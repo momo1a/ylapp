@@ -546,5 +546,107 @@ HTML;
 HTML;
         echo $form;
     }
+
+    /**
+     * 支付页面
+     */
+    public function payView(){
+            $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/Diagnosis_online/diaDoPostTempOne" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    docId<input type="text" name="docId"/>
+    phoneTimeLen<input type="text" name="phoneTimeLen"/>
+    price<input type="text" name="price"/>
+    ask_sex 男<input type="radio" name="sex" value="1"/>
+    ask_sex 女<input type="radio" name="sex" value="2"/>
+    askNickname<input type="text" name="person"/>
+    askTelephone<input type="text" name="telephone"/>
+    hopeCalldate<input type="date" name="hopeCallDate"/>
+    content<input type="text" name="content"/>
+    illnessId<input type="text" name="illnessId"/>
+    otherIllness<input type="text" name="otherIllness"/>
+    <input type="submit" value="submit"/>
+</form>
+HTML;
+            echo $form;
+
+    }
+
+
+
+
+    /****************留言问答****************/
+
+    public function leavView(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/Leaving_msg/leavingMsgView" method="get">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="text" name="docId"/>
+    <input type="submit" value="submit"/>
+</form>
+HTML;
+        echo $form;
+    }
+
+    /**
+     * 留言问答支付页面
+     */
+    public function payLeavView(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/Leaving_msg/commitStepFrt" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    docId<input type="text" name="docId"/>
+    content<input type="text" name="content"/>
+    price<input type="text" name="price"/>
+    img1<input type="file" name="img1">
+    img2<input type="file" name="img2">
+    img3<input type="file" name="img3">
+    <input type="submit" value="submit"/>
+</form>
+HTML;
+        echo $form;
+
+
+        /**
+         * $content = addslashes($this->input->get_post('content'));
+        $price = floatval($this->input->get_post('price'));
+        $docId = intval($this->input->get_post('docId'));
+        $imgArr = array();
+        if(!empty($_FILES)){
+        foreach($_FILES as $k=>$val){
+        $imgFile = $this->upload_image->save('leavingMsg',$val['tmp_name']);
+        array_push($imgArr,$imgFile);
+        }
+        }
+         */
+    }
+
 }
 

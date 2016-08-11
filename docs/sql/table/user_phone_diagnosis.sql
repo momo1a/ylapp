@@ -17,7 +17,7 @@ CREATE TABLE `YL_user_phone_diagnosis` (
   `docName` varchar(20) not null default '' comment '医生名称',
   `docTelephone` varchar(20) not null default '' comment '医生电话',
   `askTime` INT(11) unsigned NOT NULL DEFAULT '0' COMMENT '问诊时间',
-  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待处理，1已确认沟通时间，2已支付，3未支付，4完成，5失败',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0待付款,1待审核,2已确认沟通时间，3完成，4失败',
   PRIMARY KEY (`id`),
   KEY `state` (`state`) USING BTREE,
   KEY `askUid` (`askUid`) USING BTREE,

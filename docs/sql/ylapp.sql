@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2016-08-10 17:57:40
+Date: 2016-08-11 15:40:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -139,6 +139,7 @@ CREATE TABLE `YL_doctor_info` (
   `summary` varchar(1000) NOT NULL DEFAULT '' COMMENT '简介',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '账号状态:0未通过,1通过',
   `goodAt` varchar(300) NOT NULL DEFAULT '' COMMENT '擅长',
+  `docLevel` varchar(25) NOT NULL DEFAULT '' COMMENT '医生职称',
   PRIMARY KEY (`uid`),
   UNIQUE KEY `uid` (`uid`),
   KEY `state` (`state`) USING BTREE
@@ -147,13 +148,13 @@ CREATE TABLE `YL_doctor_info` (
 -- ----------------------------
 -- Records of YL_doctor_info
 -- ----------------------------
-INSERT INTO `YL_doctor_info` VALUES ('6', '2', '3', '研究生', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。');
-INSERT INTO `YL_doctor_info` VALUES ('7', '3', '4', '博士', '2', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。');
-INSERT INTO `YL_doctor_info` VALUES ('8', '1', '2', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。');
-INSERT INTO `YL_doctor_info` VALUES ('9', '2', '5', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。');
-INSERT INTO `YL_doctor_info` VALUES ('10', '2', '4', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。');
-INSERT INTO `YL_doctor_info` VALUES ('11', '1', '1', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。');
-INSERT INTO `YL_doctor_info` VALUES ('12', '2', '2', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。');
+INSERT INTO `YL_doctor_info` VALUES ('6', '2', '3', '研究生', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '副主任医生');
+INSERT INTO `YL_doctor_info` VALUES ('7', '3', '4', '博士', '2', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '主任医生');
+INSERT INTO `YL_doctor_info` VALUES ('8', '1', '2', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '院长');
+INSERT INTO `YL_doctor_info` VALUES ('9', '2', '5', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '实习生');
+INSERT INTO `YL_doctor_info` VALUES ('10', '2', '4', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '主任医生');
+INSERT INTO `YL_doctor_info` VALUES ('11', '1', '1', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '主任医生');
+INSERT INTO `YL_doctor_info` VALUES ('12', '2', '2', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '副主任医生');
 
 -- ----------------------------
 -- Table structure for Yl_doctor_offices
@@ -202,6 +203,7 @@ DROP TABLE IF EXISTS `YL_doctor_reply`;
 CREATE TABLE `YL_doctor_reply` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `themeId` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '主题id',
+  `userId` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '用户id（留言者id）',
   `type` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '主题类型1：留言,n预留',
   `replyContent` varchar(500) NOT NULL DEFAULT '' COMMENT '回复内容',
   `replyId` int(11) NOT NULL DEFAULT '0' COMMENT '回复者id',
@@ -211,12 +213,16 @@ CREATE TABLE `YL_doctor_reply` (
   PRIMARY KEY (`id`),
   KEY `themeId` (`themeId`) USING BTREE,
   KEY `replyTime` (`state`) USING BTREE,
-  KEY `replyId` (`replyId`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='医生回复表';
+  KEY `replyId` (`replyId`) USING BTREE,
+  KEY `userId` (`userId`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='医生回复表';
 
 -- ----------------------------
 -- Records of YL_doctor_reply
 -- ----------------------------
+INSERT INTO `YL_doctor_reply` VALUES ('1', '1', '1', '1', '放心你的病没事', '6', '赵医生', '1470879001', '1');
+INSERT INTO `YL_doctor_reply` VALUES ('2', '4', '1', '1', '你病入膏肓了', '6', '赵医生', '1470879002', '2');
+INSERT INTO `YL_doctor_reply` VALUES ('3', '5', '1', '1', '有得治，放心好了，来我这里', '6', '赵医生', '1470879003', '1');
 
 -- ----------------------------
 -- Table structure for YL_feedback
@@ -646,15 +652,21 @@ CREATE TABLE `YL_user_leaving_msg` (
   `docName` varchar(20) NOT NULL DEFAULT '' COMMENT '医生名称',
   `img` varchar(300) NOT NULL DEFAULT '' COMMENT '图片',
   `askTime` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '问诊时间',
-  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0通过，1未通过',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待付款，1待处理，2通过，3不通过',
   PRIMARY KEY (`id`),
   KEY `state` (`state`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户留言表';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='用户留言表';
 
 -- ----------------------------
 -- Records of YL_user_leaving_msg
 -- ----------------------------
+INSERT INTO `YL_user_leaving_msg` VALUES ('1', '1', '张三', '15977675495', '我的病能治吗', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878945', '2');
+INSERT INTO `YL_user_leaving_msg` VALUES ('2', '1', '张三', '15977675495', '我的病能治吗111111', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878946', '1');
+INSERT INTO `YL_user_leaving_msg` VALUES ('3', '1', '张三', '15977675495', '我的病能治吗22222', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878947', '1');
+INSERT INTO `YL_user_leaving_msg` VALUES ('4', '1', '张三', '15977675495', '我的病能治吗3333', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878948', '2');
+INSERT INTO `YL_user_leaving_msg` VALUES ('5', '1', '张三', '15977675495', '我的病能治吗4444', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878949', '2');
+INSERT INTO `YL_user_leaving_msg` VALUES ('6', '1', '张三', '15977675495', '医生我肚子痛啊，怎么解决', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470900059', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_phone_diagnosis
@@ -677,16 +689,18 @@ CREATE TABLE `YL_user_phone_diagnosis` (
   `docName` varchar(20) NOT NULL DEFAULT '' COMMENT '医生名称',
   `docTelephone` varchar(20) NOT NULL DEFAULT '' COMMENT '医生电话',
   `askTime` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '问诊时间',
-  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待处理，1已确认沟通时间，2已支付，3未支付，4完成，5失败',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待付款,1待审核,2已确认沟通时间，3完成，4失败',
   PRIMARY KEY (`id`),
   KEY `state` (`state`) USING BTREE,
   KEY `askUid` (`askUid`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户电话问诊表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户电话问诊表';
 
 -- ----------------------------
 -- Records of YL_user_phone_diagnosis
 -- ----------------------------
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('1', '1', '1', '王小伟', '0', '15878787878', '1', '我房间第几大姐夫房价肯定是减肥了肯德基', '', '15', '1470758400', '300.00', '6', '赵医生', '15977675499', '1470882754', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('2', '1', '2', '王美玲', '0', '15878787878', '2', '我房间范德萨范德萨第几大姐夫房价肯定是减肥了肯德基', '', '15', '1470844800', '300.00', '6', '赵医生', '15977675499', '1470883155', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_reg_num

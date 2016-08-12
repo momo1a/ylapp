@@ -12,7 +12,7 @@ $config['encryption_key'] = '111111'; // 统一密钥,Session加密用到
 
 
 // 上传图片
-$config['upload_image_save_path'] = '/mnt/myweb/images/';
+$config['upload_image_save_path'] = '/home/www/images/';
 $config['upload_image_thumb_size'] = array('illRemark' => array(30,50,80,108), 'leavingMsg' => array(30,50,100,30));
 $config['upload_image_quality'] = 95;
 
@@ -22,7 +22,7 @@ $config['upload_avatar_thumb_size'] = array('small'=>48, 'middle'=>120, 'big'=>1
 $config['upload_avatar_quality'] = 95;
 
 // 图片服务器
-$config['image_servers'] = array('http://img.ylapp.com/');
+$config['image_servers'] = array('http://123.207.87.83:8081/');
 
 // 各站点域名
 //$config['domain_www'] = 'http://www.ylapp.com/';
@@ -32,3 +32,4 @@ require dirname(__FILE__).DIRECTORY_SEPARATOR.'shs_system.php';
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'static_url.php';  //加载众划算静态URL
 
 ?>
+

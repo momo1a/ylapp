@@ -25,7 +25,7 @@ class Test extends MY_Controller
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<form action="http://api.ylapp.com/api/login" method="post">
+<form action="http://123.207.87.83:8080/api/login" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     <!--input type="text" name="privateToken" value="jVAavd11771a9dWgMdRGYzxpYlfj5RIJKt93K1YGrMNO3vDLLOfByhSxcylD5\/9gnv\/UoYEO"/><br/>-->
     <input type="text" name="user" /><br/>
@@ -56,7 +56,7 @@ HTML;
         }
         </style>
         </head>
-<form action="http://api.ylapp.com/api/register" method="post">
+<form action="http://123.207.87.83:8080/api/register" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     <input type="hidden" name="userType" value="1"/>
     mobile:<input type="text" name="mobile"/>
@@ -86,7 +86,7 @@ HTML;
         }
         </style>
         </head>
-<form action="http://api.ylapp.com/api/sendIdentifyCode" method="post">
+<form action="http://123.207.87.83:8080/api/sendIdentifyCode" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     mobile:<input type="text" name="mobile"/>
     <input type="submit" value="submit"/>
@@ -106,7 +106,7 @@ HTML;
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<form action="http://api.ylapp.com/api/reSettingPwd" method="post">
+<form action="http://123.207.87.83:8080/api/reSettingPwd" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <input type="text" name="pwd" /><br/>
@@ -125,7 +125,7 @@ HTML;
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<form action="http://api.ylapp.com/user_index/getBannerImg" method="post">
+<form action="http://123.207.87.83:8080/user_index/getBannerImg" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="submit" value="submit"/>
 
@@ -140,7 +140,7 @@ HTML;
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<form action="http://api.ylapp.com/user_index/getIndexDoctorList" method="post">
+<form action="http://123.207.87.83:8080/user_index/getIndexDoctorList" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="submit" value="submit"/>
 
@@ -155,7 +155,7 @@ HTML;
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<form action="http://api.ylapp.com/user_index/getIndexNewsList" method="post">
+<form action="http://123.207.87.83:8080/user_index/getIndexNewsList" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="submit" value="submit"/>
 
@@ -193,7 +193,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/medical/editIllness" method="post">
+<form action="http://123.207.87.83:8080/medical/editIllness" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     illId<input type="text" name="illId"/><br/>
@@ -221,7 +221,7 @@ HTML;
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<form action="http://api.ylapp.com/medical/getIllnessList" method="get">
+<form action="http://123.207.87.83:8080/medical/getIllnessList" method="get">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <input type="submit" value="submit"/>
@@ -236,7 +236,7 @@ HTML;
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<form action="http://api.ylapp.com/medical/getIllnessDetail" method="get">
+<form action="http://123.207.87.83:8080/medical/getIllnessDetail" method="get">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     IllId<input type="text" name="illId"/>
@@ -261,7 +261,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/medical/addIllRemark" method="post" enctype="multipart/form-data">
+<form action="http://123.207.87.83:8080/medical/addIllRemark" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     IllId<input type="text" name="illId"/>
@@ -291,7 +291,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/medical/editIllnessView" method="post" enctype="multipart/form-data">
+<form action="http://123.207.87.83:8080/medical/editIllnessView" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     IllId<input type="text" name="illId"/>
@@ -318,7 +318,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/medical/editIllness" method="post" enctype="multipart/form-data">
+<form action="http://123.207.87.83:8080/medical/editIllness" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     illId<input type="text" name="illId"/><br/>
@@ -370,7 +370,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/medical/delRemark" method="post">
+<form action="http://123.207.87.83:8080/medical/delRemark" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     remarkId<input type="text" name="remarkId"/>
@@ -398,7 +398,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/news/getNewsList" method="post">
+<form action="http://123.207.87.83:8080/news/getNewsList" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <input type="submit" value="submit"/>
@@ -421,7 +421,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/news/getNewsDetail" method="post">
+<form action="http://123.207.87.83:8080/news/getNewsDetail" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <input type="text" name="nid"/>
@@ -445,7 +445,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/hospital/getAllHospital" method="post">
+<form action="http://123.207.87.83:8080/hospital/getAllHospital" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <!--<input type="text" name="hid"/>
@@ -466,7 +466,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/doctor/getDoctorList" method="post">
+<form action="http://123.207.87.83:8080/doctor/getDoctorList" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     hid<input type="text" name="hid"/>
@@ -490,7 +490,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/hospital/getAllOffices" method="get">
+<form action="http://123.207.87.83:8080/hospital/getAllOffices" method="get">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <input type="submit" value="submit"/>
@@ -513,7 +513,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/doctor/getDoctorDetail" method="post">
+<form action="http://123.207.87.83:8080/doctor/getDoctorDetail" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <input type="text" name="docId"/>
@@ -537,7 +537,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/Diagnosis_online/diaSelectTimeLenView" method="get">
+<form action="http://123.207.87.83:8080/Diagnosis_online/diaSelectTimeLenView" method="get">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <input type="text" name="docId"/>
@@ -560,7 +560,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/Diagnosis_online/diaDoPostTempOne" method="post">
+<form action="http://123.207.87.83:8080/Diagnosis_online/diaDoPostTempOne" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     docId<input type="text" name="docId"/>
@@ -596,7 +596,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/Leaving_msg/leavingMsgView" method="get">
+<form action="http://123.207.87.83:8080/Leaving_msg/leavingMsgView" method="get">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     <input type="text" name="docId"/>
@@ -619,7 +619,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/leaving_msg/commitStepFrt" method="post" enctype="multipart/form-data">
+<form action="http://123.207.87.83:8080/Leaving_msg/commitStepFrt" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     docId<input type="text" name="docId"/>

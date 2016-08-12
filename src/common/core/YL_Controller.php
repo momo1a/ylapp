@@ -7,7 +7,7 @@
  *
  * @package		YL
  * @subpackage	Libraries
- * @author		韦明磊
+ * @author		null
  * @category	core
  * @link		http://www.zhonghuasuan.com/
  * @see 		CI_Controller
@@ -574,7 +574,7 @@ class YL_App_Controller extends CI_Controller {
 	 * 版本升级的提示语
 	 * @param array $app_version 版本信息
 	 *
-	 * @author 杜嘉杰
+	 * @author null
 	 * @version 2015年9月29日  上午10:15:58
 	 *
 	 */

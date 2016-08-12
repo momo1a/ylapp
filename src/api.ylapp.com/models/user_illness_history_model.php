@@ -21,7 +21,8 @@ class User_illness_history_model extends MY_Model
      * 获取病历列表
      * @param $uid
      */
-    public function illnessList($uid){
+    public function illnessList($uid,$select='*'){
+        $this->select($select);
         $where = array('uid'=>$uid);
         $res = $this->find_all_by($where);
         return $res;

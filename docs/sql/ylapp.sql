@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2016-08-11 15:40:26
+Date: 2016-08-12 11:45:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -285,6 +285,24 @@ CREATE TABLE `YL_hospital` (
 INSERT INTO `YL_hospital` VALUES ('1', '北京武警总队医院', '长安街5号', '/upload/img/test.sql', '1470361991', '1470361991', '0');
 INSERT INTO `YL_hospital` VALUES ('2', '广东协和医院', '东莞长安街8号', '/upload/img/test.sql', '1470361991', '1470361991', '0');
 INSERT INTO `YL_hospital` VALUES ('3', '深圳人民医院', '南山区XX街5号', '/upload/img/test.sql', '1470361991', '1470361991', '0');
+
+-- ----------------------------
+-- Table structure for YL_money
+-- ----------------------------
+DROP TABLE IF EXISTS `YL_money`;
+CREATE TABLE `YL_money` (
+  `uid` int(11) unsigned NOT NULL,
+  `amount` decimal(9,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '用户金额',
+  `updateTime` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '修改时间',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0正常，N预留',
+  PRIMARY KEY (`uid`),
+  KEY `state` (`state`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户金额表';
+
+-- ----------------------------
+-- Records of YL_money
+-- ----------------------------
+INSERT INTO `YL_money` VALUES ('1', '300.00', '1470965191', '0');
 
 -- ----------------------------
 -- Table structure for YL_news
@@ -656,7 +674,7 @@ CREATE TABLE `YL_user_leaving_msg` (
   PRIMARY KEY (`id`),
   KEY `state` (`state`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='用户留言表';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='用户留言表';
 
 -- ----------------------------
 -- Records of YL_user_leaving_msg
@@ -667,6 +685,8 @@ INSERT INTO `YL_user_leaving_msg` VALUES ('3', '1', '张三', '15977675495', '�
 INSERT INTO `YL_user_leaving_msg` VALUES ('4', '1', '张三', '15977675495', '我的病能治吗3333', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878948', '2');
 INSERT INTO `YL_user_leaving_msg` VALUES ('5', '1', '张三', '15977675495', '我的病能治吗4444', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878949', '2');
 INSERT INTO `YL_user_leaving_msg` VALUES ('6', '1', '张三', '15977675495', '医生我肚子痛啊，怎么解决', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470900059', '0');
+INSERT INTO `YL_user_leaving_msg` VALUES ('7', '1', '张三', '15977675495', '我还好吗，医生', '350.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1617333130.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341085.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341619.jpg\"]', '1470903454', '0');
+INSERT INTO `YL_user_leaving_msg` VALUES ('8', '1', '张三', '15977675495', '我还好吗，医生', '350.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1621163096.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1621166021.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1621162898.jpg\"]', '1470903676', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_phone_diagnosis
@@ -694,13 +714,16 @@ CREATE TABLE `YL_user_phone_diagnosis` (
   KEY `state` (`state`) USING BTREE,
   KEY `askUid` (`askUid`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='用户电话问诊表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='用户电话问诊表';
 
 -- ----------------------------
 -- Records of YL_user_phone_diagnosis
 -- ----------------------------
 INSERT INTO `YL_user_phone_diagnosis` VALUES ('1', '1', '1', '王小伟', '0', '15878787878', '1', '我房间第几大姐夫房价肯定是减肥了肯德基', '', '15', '1470758400', '300.00', '6', '赵医生', '15977675499', '1470882754', '0');
 INSERT INTO `YL_user_phone_diagnosis` VALUES ('2', '1', '2', '王美玲', '0', '15878787878', '2', '我房间范德萨范德萨第几大姐夫房价肯定是减肥了肯德基', '', '15', '1470844800', '300.00', '6', '赵医生', '15977675499', '1470883155', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('3', '1', '1', '王小贝', '0', '15845454545', '2', '好样的王小贝', '', '60', '1470240000', '350.00', '6', '赵医生', '15977675499', '1470965004', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('4', '1', '1', '王小贝', '0', '15845454545', '2', '好样的王小贝', '', '60', '1470240000', '350.00', '6', '赵医生', '15977675499', '1470965032', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('5', '1', '1', '王小贝', '0', '15845454545', '2', '好样的王小贝', '', '60', '1470240000', '350.00', '6', '赵医生', '15977675499', '1470965213', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_reg_num

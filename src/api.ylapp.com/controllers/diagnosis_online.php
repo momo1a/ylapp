@@ -9,10 +9,12 @@ class Diagnosis_online extends MY_Controller
 {
     public function __construct(){
         parent::__construct();
+        $this->checkUserLogin();
         $this->load->model('User_model','user');
         $this->load->model('User_illness_history_model','illness_history');
         $this->load->model('Doctor_fee_setting_model','fee_setting');
         $this->load->model('User_phone_diagnosis_model','online_diagnosis');
+        $this->load->model('Money_model','money');
     }
 
     /**
@@ -30,7 +32,6 @@ class Diagnosis_online extends MY_Controller
      * 在线问诊支付页面
      */
     public function diaDoPostTempOne(){
-        if(!self::$privateToken ){exit('NOT LOGIN');}
         $docId = intval($this->input->get_post('docId'));
         $phoneTimeLen = intval($this->input->get_post('phoneTimeLen')); // 通话时长
         $price = floatval($this->input->get_post('price'));  //价钱
@@ -59,8 +60,9 @@ class Diagnosis_online extends MY_Controller
         );
 
         $res = $this->online_diagnosis->commitRecord($data);
-
-        $this->response($this->responseDataFormat(0,'请求成功',array('orderId'=>$res)));
+        $money = $this->money->getUserMoney(self::$currentUid);
+        $money = $money ? $money : 0;
+        $this->response($this->responseDataFormat(0,'请求成功',array('orderId'=>$res,'remainAmount'=>$money)));
 
     }
 }

@@ -15,5 +15,11 @@ class User_reg_num_model extends MY_Model
     }
 
 
-    //TODO
+    /**
+     * 挂号第一步生成记录
+     */
+    public function firstStep($data){
+        $this->insert($data);
+        return $this->db->insert_id();
+    }
 }

@@ -17,7 +17,7 @@ CREATE TABLE `YL_user_reg_num` (
   `illnessId` int(11) not null default '0' comment '病历id',
   `userRemark` varchar(200) not null default '' comment '用户备注',
   `dateline` int(11) unsigned not null default '0' comment '记录时间',
-  `status` tinyint(3) not null default '0' comment '状态 1.状态有待处理，2预约成功，3预约失败，4已支付，5未支付，6完成',
+  `status` tinyint(3) not null default '0' comment '状态 0.状态有待处理，1未支付 2已支付,3预约成功，4预约失败，5完成',
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE,

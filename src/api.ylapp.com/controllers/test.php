@@ -560,7 +560,7 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/Diagnosis_online/diaDoPostTempOne" method="post">
+<form action="http://api.ylapp.com/diagnosis_online/diaDoPostTempOne" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
     docId<input type="text" name="docId"/>

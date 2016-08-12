@@ -49,7 +49,7 @@ class MY_Controller extends CI_Controller
 
 	function __construct(){
 		parent::__construct();
-        if(strtolower($this->router->class) != 'test'){
+        if(!preg_match('/.?test.?/i',strtolower($this->router->class))){
             $this->checkToken();  //检测通讯token
         }
         $this->load->library('Crypt',array('key'=>KEY_APP_SERVER,'iv'=>'0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF'),'crypt');    // 加密类库
@@ -147,6 +147,16 @@ class MY_Controller extends CI_Controller
         $imgServers = $this->config->item('image_servers');
         $imgServer = $imgServers[0] or $this->response($this->responseDataFormat(1,'图片服务器未配置',array()));
         return $imgServer;
+    }
+
+
+    /**
+     * 检查用户登陆
+     */
+    protected function checkUserLogin(){
+        if(!self::$privateToken){
+            exit('NOT LOGIN');
+        }
     }
 
 }

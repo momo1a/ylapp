@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * 留言问答控制器
  * User: momo1a@qq.com
@@ -9,10 +9,12 @@ class Leaving_msg extends MY_Controller
 {
     public function __construct(){
         parent::__construct();
+        $this->checkUserLogin();
         $this->load->library('Upload_image',null,'upload_image');
         $this->load->model('User_leaving_msg_model','leaving');
         $this->load->model('User_model','user');
         $this->load->model('Doctor_fee_setting_model','fee_setting');
+        $this->load->model('Money_model','money');
     }
 
     /**
@@ -30,7 +32,6 @@ class Leaving_msg extends MY_Controller
      * 用户提交留言到支付页面
      */
     public function commitStepFrt(){
-        if(!self::$currentUid){exit('NOT LOGIN');}
         $content = addslashes($this->input->get_post('content'));
         $price = floatval($this->input->get_post('price'));
         $docId = intval($this->input->get_post('docId'));
@@ -57,7 +58,8 @@ class Leaving_msg extends MY_Controller
         );
 
         $res = $this->leaving->commitFirst($data);
-
-        $this->response($this->responseDataFormat(0,'请求成功',array('orderId'=>$res)));
+        $money = $this->money->getUserMoney(self::$currentUid);
+        $money = $money ? $money : 0;
+        $this->response($this->responseDataFormat(0,'请求成功',array('orderId'=>$res,'remainAmount'=>$money)));
     }
 }

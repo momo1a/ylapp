@@ -12,7 +12,7 @@ CREATE TABLE `YL_order` (
   `price` decimal(9,2) unsigned not null default '0' comment '套餐价格',
   `type` tinyint(3) unsigned not null default '0' comment '类型：1疫苗接种，2基因检测',
   `dateline` int(11) unsigned not null default '0' comment '下单时间',
-  `status` tinyint(3) unsigned not null default '0' comment '状态：1.状态有待处理，2已支付，3未支付，4已通知，5完成',
+  `status` tinyint(3) unsigned not null default '0' comment '状态：1.待支付，2已支付，3待处理，4已通知，5完成',
   PRIMARY KEY (`oid`),
   KEY `status` (`status`) USING BTREE,
   KEY `packageId` (`packageId`) USING BTREE,

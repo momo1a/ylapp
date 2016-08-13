@@ -154,9 +154,31 @@ class MY_Controller extends CI_Controller
      * 检查用户登陆
      */
     protected function checkUserLogin(){
-        if(!self::$privateToken){
-            exit('NOT LOGIN');
+        if(!self::$privateToken || !is_numeric(self::$currentUid) || self::$currentUid == 0){
+            $this->response($this->responseDataFormat('500','未登录',array()));
         }
+    }
+
+
+    /**
+     * 保存用户 医生 日志
+     * @param $userId
+     * @param $docId
+     * @param $type
+     * @param $comState
+     * @param $description
+     */
+    protected function userDoctorLogSave($userId,$docId,$type,$comState,$description){
+        $this->load->model('Common_user_doctor_log_model','udlog');
+        $data = array(
+            'userId'=>$userId,
+            'doctorId'=>$docId,
+            'comType'=>$type,
+            'comState'=>$comState,
+            'description'=>$description,
+            'dateline'=>time()
+        );
+        $this->udlog->saveLog($data);
     }
 
 }

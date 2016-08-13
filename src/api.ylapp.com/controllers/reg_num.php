@@ -65,6 +65,8 @@ class Reg_num extends MY_Controller
         );
         $res = $this->user_reg_num->firstStep($data);
         $remainAmount = $this->money->getUserMoney(self::$currentUid);
+        //log
+        $this->userDoctorLogSave(self::$currentUid,$docId,3,0,'用户提交预约挂号');
         $this->response($this->responseDataFormat(0,'请求成功',array('orderId'=>$res,'remainAmount'=>$remainAmount)));
     }
 

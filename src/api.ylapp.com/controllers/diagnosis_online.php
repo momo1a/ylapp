@@ -62,6 +62,8 @@ class Diagnosis_online extends MY_Controller
         $res = $this->online_diagnosis->commitRecord($data);
         $money = $this->money->getUserMoney(self::$currentUid);
         $money = $money ? $money : 0;
+        //log
+        $this->userDoctorLogSave(self::$currentUid,$docId,2,0,'用户提交了在线问诊申请');
         $this->response($this->responseDataFormat(0,'请求成功',array('orderId'=>$res,'remainAmount'=>$money)));
 
     }

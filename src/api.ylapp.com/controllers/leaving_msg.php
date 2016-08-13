@@ -60,6 +60,8 @@ class Leaving_msg extends MY_Controller
         $res = $this->leaving->commitFirst($data);
         $money = $this->money->getUserMoney(self::$currentUid);
         $money = $money ? $money : 0;
+        // log
+        $this->userDoctorLogSave(self::$currentUid,$docId,1,0,'用户提交了留言问答');
         $this->response($this->responseDataFormat(0,'请求成功',array('orderId'=>$res,'remainAmount'=>$money)));
     }
 }

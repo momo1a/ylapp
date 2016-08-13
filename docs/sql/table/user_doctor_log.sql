@@ -5,7 +5,7 @@ CREATE TABLE `YL_user_doctor_log` (
   `userId` int(11) unsigned NOT NULL DEFAULT '0' comment '用户id',
   `doctorId` int(11) unsigned not null default '0' comment '医生id',
   `comType` tinyint(3) unsigned not null default '0' comment '问诊类型1,留言问诊，2电话问诊，3预约挂号',
-  `comState`tinyint(3) unsigned not null default '0' comment '问诊状态值 1,4,6 对应三个类型的',
+  `comState`tinyint(3) unsigned not null default '0' comment '问诊状态值 1,3,5 对应三个类型的完成状态',
   `description` varchar(30) not null default '' comment '日志描述',
   `dateline` int(11) unsigned not null default '0' comment '记录时间',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态:预留',

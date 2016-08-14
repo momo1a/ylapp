@@ -13,7 +13,7 @@ $config['encryption_key'] = '111111'; // 统一密钥,Session加密用到
 
 // 上传图片
 $config['upload_image_save_path'] = '/mnt/myweb/images/';
-$config['upload_image_thumb_size'] = array('illRemark' => array(30,50,80,108), 'leavingMsg' => array(30,50,100,30));
+$config['upload_image_thumb_size'] = array('illRemark' => array(30,50,80,108), 'leavingMsg' => array(30,50,100,30),'post'=>array(30,60,100,160));
 $config['upload_image_quality'] = 95;
 
 // 上传修改头像

@@ -22,7 +22,7 @@ class Gene_check extends MY_Controller
 
     public function geneCheckList(){
         $res = $this->gene->getList('id,thumbnail,name,price');
-        $this->response($this->responseDataFormat(0,'请求成功',array('GeneList'=>$res,'imaServer'=>$this->getImgServer())));
+        $this->response($this->responseDataFormat(0,'请求成功',array('GeneList'=>$res,'imgServer'=>$this->getImgServer())));
     }
 
     /**
@@ -59,7 +59,7 @@ class Gene_check extends MY_Controller
             'packageId'=>$geneId,
             'packageTitle'=>$geneTitle[0]['name'],
             'price'=>floatval($genePrice[0]['price']),
-            'type'=>1,
+            'type'=>2,
             'dateline'=>time(),
             'status'=>1
         );

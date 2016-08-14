@@ -13,7 +13,7 @@
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Exceptions
- * @author		韦明磊-众划算开发团队
+ * @author		momo1a@qq.com
  * @link		http://codeigniter.com/user_guide/libraries/exceptions.html
  */
 class YL_Exceptions extends CI_Exceptions {

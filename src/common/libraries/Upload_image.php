@@ -8,7 +8,7 @@
  *  upload_image_thumb_size:缩略图大小
  *  upload_image_quality:图片压缩质量
  *
- * @author 温守力
+ * @author momo1a@qq.com modify
  * @version 130628
  *
  * 用法演示：

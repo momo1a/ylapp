@@ -47,12 +47,12 @@ class Leaving_msg extends MY_Controller
         }
         $data = array(
             'askerUid'=>self::$currentUid,
-            'askerNickname'=>$this->user->getNickname(self::$currentUid,'nickname'),
-            'askerPone' => $this->user->getNickname(self::$currentUid,'phone'),
+            'askerNickname'=>$this->user->getUserInfoByUid(self::$currentUid,'nickname'),
+            'askerPone' => $this->user->getUserInfoByUid(self::$currentUid,'phone'),
             'askerContent'=>$content,
             'price'=>$price,
             'docId'=>$docId,
-            'docName'=>$this->user->getNickname($docId,'nickname'),
+            'docName'=>$this->user->getUserInfoByUid($docId,'nickname'),
             'img'=>json_encode($imgArr),
             'askTime'=>time()
         );

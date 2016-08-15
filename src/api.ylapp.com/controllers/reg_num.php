@@ -48,10 +48,10 @@ class Reg_num extends MY_Controller
         $hospitalArr = $this->user->getDoctorDetail($docId,'YL_hospital.address');
         $data = array(
             'userId'=>self::$currentUid,
-            'userName'=>$this->user->getNickname(self::$currentUid,'nickname'),
+            'userName'=>$this->user->getUserInfoByUid(self::$currentUid,'nickname'),
             'docId'=>$docId,
-            'docName'=>$this->user->getNickname($docId,'nickname'),
-            'docTel'=>$this->user->getNickname($docId,'phone'),
+            'docName'=>$this->user->getUserInfoByUid($docId,'nickname'),
+            'docTel'=>$this->user->getUserInfoByUid($docId,'phone'),
             'price'=>$priceArr[0]['regNumFee'],
             'hosAddr'=>$hospitalArr[0]['address'],
             'contacts'=>$person,

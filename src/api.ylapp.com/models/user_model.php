@@ -48,9 +48,9 @@ class User_model extends MY_Model
      * 检查用户登陆
      * @param $user  昵称或者手机号
      */
-    public function getRecordByPhoneOrNickname($user){
-        $where = array('nickname'=>$user,'phone'=>$user);
-        $res = $this->find_by($where,'','or');
+    public function getRecord($column,$value){
+        $where =  array($column=>$value);
+        $res = $this->find_by($where);
         return $res;
     }
 
@@ -122,7 +122,7 @@ class User_model extends MY_Model
 
 
 
-    public function getNickname($uid,$column){
+    public function getUserInfoByUid($uid,$column){
         $where = array('uid'=>$uid);
         $res = $this->find_by($where);
         return $res[$column];

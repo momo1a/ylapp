@@ -21,7 +21,7 @@ class Medical extends MY_Controller
     public function addIllnessHistory(){
         $this->load->model('user_model');
         $uid = self::$currentUid;
-        $nickname = $this->user_model->getNickname($uid,'nickname');
+        $nickname = $this->user_model->getUserInfoByUid($uid,'nickname');
         $data = array(
             'uid'=>$uid,
             'username'=>$nickname,

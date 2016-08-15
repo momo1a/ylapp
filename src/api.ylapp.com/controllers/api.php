@@ -47,7 +47,7 @@ class Api extends MY_Controller
         if(empty($user)){
             $this->response($this->responseDataFormat(4,'账号不能为空',array())); //用户状态异常
         }
-        $res = $this->user->getRecordByPhoneOrNickname($user);
+        $res = $this->user->getRecord('phone',$user);
         if(!$res){
             $this->response($this->responseDataFormat(1,'用户不存在',array())); //用户用户不存在
         }

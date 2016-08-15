@@ -47,9 +47,9 @@ class Gene_check extends MY_Controller
         $money = $this->money->getUserMoney(self::$currentUid);
 
         /*添加订单*/
-        $userName =$this->user->getNickname(self::$currentUid,'nickname');
-        $userTel =$this->user->getNickname(self::$currentUid,'phone');
-        $birthday =$this->user->getNickname(self::$currentUid,'birthday');
+        $userName =$this->user->getUserInfoByUid(self::$currentUid,'nickname');
+        $userTel =$this->user->getUserInfoByUid(self::$currentUid,'phone');
+        $birthday =$this->user->getUserInfoByUid(self::$currentUid,'birthday');
         $geneTitle = $this->gene->getGeneDetail($geneId,'name');
         $data = array(
             'buyerId'=>self::$currentUid,

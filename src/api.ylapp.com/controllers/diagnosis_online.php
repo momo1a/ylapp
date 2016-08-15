@@ -54,8 +54,8 @@ class Diagnosis_online extends MY_Controller
             'hopeCalldate'=>$hopeCalldate,
             'price'=>$price,
             'docId'=>$docId,
-            'docName'=>$this->user->getNickname($docId,'nickname'),
-            'docTelephone'=>$this->user->getNickname($docId,'phone'),
+            'docName'=>$this->user->getUserInfoByUid($docId,'nickname'),
+            'docTelephone'=>$this->user->getUserInfoByUid($docId,'phone'),
             'askTime'=>time()
         );
 

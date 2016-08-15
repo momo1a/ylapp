@@ -35,7 +35,7 @@ class Post extends MY_Controller
                 }
             }
         }
-        $nickName = $this->user->getNickname(self::$currentUid,'nickname');
+        $nickName = $this->user->getUserInfoByUid(self::$currentUid,'nickname');
         $data = array(
             'postUid'=>self::$currentUid,
             'postNickname'=>$nickName,
@@ -104,7 +104,7 @@ class Post extends MY_Controller
         $data = array(
             'postId'=>$postId,
             'recmdUid'=>self::$currentUid,
-            'recmdNickname'=>$this->user->getNickname(self::$currentUid,'nickname'),
+            'recmdNickname'=>$this->user->getUserInfoByUid(self::$currentUid,'nickname'),
             'recmdContent'=>$content,
             'recmdTime'=>time()
         );

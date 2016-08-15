@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.61.97
-Source Server Version : 50542
-Source Host           : 192.168.61.97:3306
+Source Server         : 192.168.1.103_3306
+Source Server Version : 50536
+Source Host           : 192.168.1.103:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50542
+Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2016-08-15 17:56:39
+Date: 2016-08-15 23:33:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -159,8 +159,8 @@ INSERT INTO `YL_doctor_info` VALUES ('12', '2', '2', '博士生导师', '1', '15
 -- ----------------------------
 -- Table structure for Yl_doctor_offices
 -- ----------------------------
-DROP TABLE IF EXISTS `Yl_doctor_offices`;
-CREATE TABLE `Yl_doctor_offices` (
+DROP TABLE IF EXISTS `YL_doctor_offices`;
+CREATE TABLE `YL_doctor_offices` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `officeName` varchar(20) NOT NULL DEFAULT '' COMMENT '科室名',
   `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0正常,n预留',
@@ -170,11 +170,11 @@ CREATE TABLE `Yl_doctor_offices` (
 -- ----------------------------
 -- Records of Yl_doctor_offices
 -- ----------------------------
-INSERT INTO `Yl_doctor_offices` VALUES ('1', '肿瘤科', '0');
-INSERT INTO `Yl_doctor_offices` VALUES ('2', '内科', '0');
-INSERT INTO `Yl_doctor_offices` VALUES ('3', '心脏科', '0');
-INSERT INTO `Yl_doctor_offices` VALUES ('4', '外科', '0');
-INSERT INTO `Yl_doctor_offices` VALUES ('5', '儿科', '0');
+INSERT INTO `YL_doctor_offices` VALUES ('1', '肿瘤科', '0');
+INSERT INTO `YL_doctor_offices` VALUES ('2', '内科', '0');
+INSERT INTO `YL_doctor_offices` VALUES ('3', '心脏科', '0');
+INSERT INTO `YL_doctor_offices` VALUES ('4', '外科', '0');
+INSERT INTO `YL_doctor_offices` VALUES ('5', '儿科', '0');
 
 -- ----------------------------
 -- Table structure for YL_doctor_phone_diagnosis_remarks
@@ -638,7 +638,7 @@ CREATE TABLE `YL_user` (
 -- ----------------------------
 -- Records of YL_user
 -- ----------------------------
-INSERT INTO `YL_user` VALUES ('1', '张三', '641d3ac5e969efd385fdbfe1c134bb75', '1', '1470359890', '3232251298', '1470548940', '3232235794', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('1', '小飞侠2', '6467c1b1d2b9b93e5ad991356202bf55', '1', '1470359890', '3232251298', '1470548940', '3232235794', 'momo1a@qq.com', '15977675495', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '2');
 INSERT INTO `YL_user` VALUES ('3', '李四', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675496', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
 INSERT INTO `YL_user` VALUES ('4', '王五', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675497', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
 INSERT INTO `YL_user` VALUES ('5', '赵六', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675498', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');

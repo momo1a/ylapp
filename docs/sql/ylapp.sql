@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.1.103_3306
-Source Server Version : 50536
-Source Host           : 192.168.1.103:3306
+Source Server         : 192.168.61.97
+Source Server Version : 50542
+Source Host           : 192.168.61.97:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50536
+Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2016-08-14 23:22:07
+Date: 2016-08-15 17:56:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -628,6 +628,7 @@ CREATE TABLE `YL_user` (
   `avatar` varchar(50) NOT NULL DEFAULT '' COMMENT '头像',
   `isBlack` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否黑名单:0否,1是',
   `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '用户状态：0正常，N保留',
+  `sex` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT '性别,1男，2女',
   PRIMARY KEY (`uid`),
   UNIQUE KEY `nickname` (`nickname`),
   KEY `uname` (`nickname`) USING BTREE,
@@ -637,18 +638,18 @@ CREATE TABLE `YL_user` (
 -- ----------------------------
 -- Records of YL_user
 -- ----------------------------
-INSERT INTO `YL_user` VALUES ('1', '张三', '641d3ac5e969efd385fdbfe1c134bb75', '1', '1470359890', '3232251298', '1470548940', '3232235794', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('3', '李四', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675496', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('4', '王五', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675497', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('5', '赵六', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675498', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('6', '赵医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675499', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('7', '李医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675410', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('8', '钱医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675411', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('9', '孙医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675412', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('10', '鲁医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675413', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('11', '黄医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675414', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('12', '梁医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675415', '1470359944', '/upoad/a/test.jpg', '0', '0');
-INSERT INTO `YL_user` VALUES ('13', '', '7c20ba8ef9eb3dff71201c1fb1f5c29c', '1', '1470546934', '3232235794', '0', '0', '', '13707818185', '0', '', '0', '0');
+INSERT INTO `YL_user` VALUES ('1', '张三', '641d3ac5e969efd385fdbfe1c134bb75', '1', '1470359890', '3232251298', '1470548940', '3232235794', 'momo1a@qq.com', '15977675495', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('3', '李四', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675496', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('4', '王五', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675497', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('5', '赵六', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675498', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('6', '赵医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675499', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('7', '李医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675410', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('8', '钱医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675411', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('9', '孙医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675412', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('10', '鲁医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675413', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('11', '黄医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675414', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('12', '梁医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675415', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('13', '', '7c20ba8ef9eb3dff71201c1fb1f5c29c', '1', '1470546934', '3232235794', '0', '0', '', '13707818185', '0', '', '0', '0', '1');
 
 -- ----------------------------
 -- Table structure for YL_user_doctor_log

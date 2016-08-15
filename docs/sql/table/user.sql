@@ -11,6 +11,7 @@ CREATE TABLE `YL_user` (
   `lastLoginIp` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '最后一次登录ip',
   `email` varchar(150) NOT NULL DEFAULT '' COMMENT '邮箱',
   `phone` varchar(15) NOT NULL DEFAULT '' COMMENT '电话',
+  `sex` tinyint(3) unsigned not null DEFAULT '1' comment '性别,1男，2女',
   `birthday` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '出生日期',
   `avatar` varchar(50) not null default '' comment '头像',
   `isBlack` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否黑名单:0否,1是',

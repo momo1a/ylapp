@@ -58,7 +58,8 @@ class User_model extends MY_Model
      * 根据uid获取一条用户记录
      * @param $uid
      */
-    public function getUserByUid($uid){
+    public function getUserByUid($uid,$select='*'){
+        $this->select($select);
         $where = array('uid'=>$uid);
         $res = $this->find_by($where);
         return $res;
@@ -126,4 +127,20 @@ class User_model extends MY_Model
         $res = $this->find_by($where);
         return $res[$column];
     }
+
+
+    /*用户端一些逻辑*/
+
+
+    /**
+     * 保存（修改）用户信息
+     * @param $uid
+     * @param $data
+     */
+    public function saveUserDetail($uid,$data){
+        $where = array('uid'=>$uid);
+        $res = $this->update($where,$data);
+        return $res;
+    }
+
 }

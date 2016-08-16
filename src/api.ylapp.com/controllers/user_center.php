@@ -15,6 +15,7 @@ class User_center extends MY_Controller
         $this->load->model('Money_model','money');
         $this->load->model('Take_cash_model','cash');
         $this->load->model('Common_trade_log_model','trade_log');
+        $this->load->model('User_phone_diagnosis_model','online_ask');
     }
 
 
@@ -210,6 +211,14 @@ class User_center extends MY_Controller
      */
     public function tradeLog(){
         $res = $this->trade_log->getListByUid(self::$currentUid,'tradeDesc,FROM_UNIXTIME(dateline) AS tradeTime,tradeVolume,tradeType');
+        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+    }
+
+    /**
+     * 在线问诊记录
+     */
+    public function onlineAskList(){
+        $res = $this->online_ask->getListByUid(self::$currentUid,'id,docName,FROM_UNIXTIME(askTime) as dateline,askContent,state');
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 

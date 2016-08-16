@@ -30,6 +30,7 @@ class User_phone_diagnosis_model extends MY_Model
     public function getListByUid($uid,$select="*"){
         $this->where(array('askUid'=>$uid));
         $this->select($select);
+        $this->order_by('askTime','DESC');
         $res = $this->find_all();
         return $res;
     }

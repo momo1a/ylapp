@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.1.103_3306
-Source Server Version : 50536
-Source Host           : 192.168.1.103:3306
+Source Server         : 192.168.61.97
+Source Server Version : 50542
+Source Host           : 192.168.61.97:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50536
+Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2016-08-15 23:33:50
+Date: 2016-08-16 16:34:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -157,7 +157,7 @@ INSERT INTO `YL_doctor_info` VALUES ('11', '1', '1', '博士生导师', '1', '15
 INSERT INTO `YL_doctor_info` VALUES ('12', '2', '2', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '副主任医生');
 
 -- ----------------------------
--- Table structure for Yl_doctor_offices
+-- Table structure for YL_doctor_offices
 -- ----------------------------
 DROP TABLE IF EXISTS `YL_doctor_offices`;
 CREATE TABLE `YL_doctor_offices` (
@@ -168,7 +168,7 @@ CREATE TABLE `YL_doctor_offices` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='科室表';
 
 -- ----------------------------
--- Records of Yl_doctor_offices
+-- Records of YL_doctor_offices
 -- ----------------------------
 INSERT INTO `YL_doctor_offices` VALUES ('1', '肿瘤科', '0');
 INSERT INTO `YL_doctor_offices` VALUES ('2', '内科', '0');
@@ -322,7 +322,7 @@ CREATE TABLE `YL_money` (
 -- ----------------------------
 -- Records of YL_money
 -- ----------------------------
-INSERT INTO `YL_money` VALUES ('1', '300.00', '1470965191', '0');
+INSERT INTO `YL_money` VALUES ('1', '4744.00', '1471318965', '0');
 
 -- ----------------------------
 -- Table structure for YL_news
@@ -567,7 +567,6 @@ DROP TABLE IF EXISTS `YL_take_cash`;
 CREATE TABLE `YL_take_cash` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '提现人id',
-  `name` varchar(25) NOT NULL DEFAULT '' COMMENT '提现人昵称',
   `bank` varchar(125) NOT NULL DEFAULT '' COMMENT '开户银行',
   `address` varchar(125) NOT NULL DEFAULT '' COMMENT '开户地区',
   `cardNum` varchar(50) NOT NULL DEFAULT '' COMMENT '银行卡号',
@@ -581,11 +580,17 @@ CREATE TABLE `YL_take_cash` (
   KEY `status` (`status`) USING BTREE,
   KEY `uid` (`uid`) USING BTREE,
   KEY `userType` (`userType`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='提现表';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='提现表';
 
 -- ----------------------------
 -- Records of YL_take_cash
 -- ----------------------------
+INSERT INTO `YL_take_cash` VALUES ('6', '1', '中国工商银行', '广东深圳市xx街道xx号xx支行', '6212262102001049908', '王尼玛', '450329198808080515', '128.00', '1', '1471317160', '0');
+INSERT INTO `YL_take_cash` VALUES ('7', '1', '中国工商银行', '广东深圳市xx街道xx号xx支行', '6212262102001049908', '王尼玛', '450329198808080515', '128.00', '1', '1471317221', '0');
+INSERT INTO `YL_take_cash` VALUES ('8', '1', '中国工商银行', '广东深圳市xx街道xx号xx支行', '6212262102001049908', '王尼玛', '450329198808080515', '128.00', '1', '1471317551', '0');
+INSERT INTO `YL_take_cash` VALUES ('9', '1', '中国工商银行', '广东深圳市xx街道xx号xx支行', '6212262102001049908', '王尼玛', '450329198808080515', '128.00', '1', '1471317598', '0');
+INSERT INTO `YL_take_cash` VALUES ('10', '1', '中国工商银行', '广东深圳市xx街道xx号xx支行', '6212262102001049908', '王尼玛', '450329198808080515', '128.00', '1', '1471317974', '0');
+INSERT INTO `YL_take_cash` VALUES ('12', '1', '中国工商银行', '广东深圳市xx街道xx号xx支行', '6212262102001049908', '王尼玛', '450329198808080515', '128.00', '1', '1471318965', '0');
 
 -- ----------------------------
 -- Table structure for YL_trade_log
@@ -594,20 +599,26 @@ DROP TABLE IF EXISTS `YL_trade_log`;
 CREATE TABLE `YL_trade_log` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned NOT NULL DEFAULT '0',
-  `username` varchar(30) NOT NULL DEFAULT '' COMMENT '反馈用户名',
   `userType` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '用户类型1用户，2医生',
   `tradeVolume` decimal(9,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '交易额',
   `tradeDesc` varchar(30) NOT NULL DEFAULT '' COMMENT '交易描述',
-  `tradeChannel` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '交易渠道,0：本系统，1:支付宝，2：微信',
+  `tradeChannel` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '交易渠道,0：本系统，1:支付宝，2：微信,3银联',
   `dateline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '交易时间',
-  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态预留',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0待处理，1已经确认，2失败',
+  `tradeType` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '交易类型1提现，2充值，3疫苗费用，4基因费用，5电话位置，6在线问答，7预约挂号',
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='交易记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='交易记录表';
 
 -- ----------------------------
 -- Records of YL_trade_log
 -- ----------------------------
+INSERT INTO `YL_trade_log` VALUES ('6', '1', '1', '128.00', '提现', '0', '1471317160', '1', '1');
+INSERT INTO `YL_trade_log` VALUES ('7', '1', '1', '128.00', '提现', '0', '1471317221', '1', '1');
+INSERT INTO `YL_trade_log` VALUES ('8', '1', '1', '128.00', '提现', '0', '1471317551', '0', '1');
+INSERT INTO `YL_trade_log` VALUES ('9', '1', '1', '128.00', '提现', '0', '1471317598', '0', '1');
+INSERT INTO `YL_trade_log` VALUES ('10', '1', '1', '128.00', '提现', '0', '1471317974', '0', '1');
+INSERT INTO `YL_trade_log` VALUES ('12', '1', '1', '128.00', '提现', '0', '1471318965', '0', '0');
 
 -- ----------------------------
 -- Table structure for YL_user

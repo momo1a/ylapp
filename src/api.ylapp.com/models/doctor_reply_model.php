@@ -23,4 +23,17 @@ class Doctor_reply_model extends MY_Model
         $res = $this->count_all();
         return $res;
     }
+
+    /**
+     * 获取医生回答通过的对应用户的对应问题
+     * @param $uid
+     * @param $id
+     * @param int $type
+     */
+    public function getContentByThemeId($uid,$id,$select,$type=1){
+        $this->where(array('themeId'=>$id,'userId'=>$uid,'type'=>$type,'state'=>1));
+        $this->select($select);
+        $res = $this->find_all();
+        return $res;
+    }
 }

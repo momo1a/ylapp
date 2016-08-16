@@ -35,4 +35,16 @@ class User_phone_diagnosis_model extends MY_Model
         return $res;
     }
 
+    /**
+     *
+     * @param $id
+     * @param $select
+     */
+    public function getDetailById($uid,$id,$select){
+        $this->where(array('askUid'=>$uid));
+        $this->select($select);
+        $res = $this->find($id);
+        return $res;
+    }
+
 }

@@ -16,6 +16,10 @@ class User_center extends MY_Controller
         $this->load->model('Take_cash_model','cash');
         $this->load->model('Common_trade_log_model','trade_log');
         $this->load->model('User_phone_diagnosis_model','online_ask');
+        $this->load->model('Doctor_evaluate_model','evaluate');
+        $this->load->model('User_reg_num_model','appoint');
+        $this->load->model('User_leaving_msg_model','leaving_msg');
+        $this->load->model('Doctor_reply_model','reply');
     }
 
 
@@ -220,6 +224,101 @@ class User_center extends MY_Controller
     public function onlineAskList(){
         $res = $this->online_ask->getListByUid(self::$currentUid,'id,docName,FROM_UNIXTIME(askTime) as dateline,askContent,state');
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+    }
+
+    /**
+     * 在线问诊详情
+     */
+
+    public function onlineAskDetail(){
+        $id = intval($this->input->get_post('id'));
+        $res = $this->online_ask->getDetailById(self::$currentUid,$id,'askNickname as name,docId,docName,askTelephone,FROM_UNIXTIME(hopeCalldate) AS hopeDate,phoneTimeLen as timeLen,price,askContent,state');
+
+        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+    }
+
+
+    /**
+     * 评价提交
+     */
+
+    public function evaluate(){
+        $docId = intval($this->input->get_post('docId'));
+        $content = addslashes($this->input->get_post('content'));
+        $data = array(
+            'docId'=>$docId,
+            'docNicname'=>$this->user->getUserInfoByUid($docId,'nickname'),
+            'uid'=>self::$currentUid,
+            'username'=>$this->user->getUserInfoByUid(self::$currentUid,'nickname'),
+            'content'=>$content,
+            'dateline'=>time()
+        );
+        $res = $this->evaluate->addEvaluate($data);
+        if($res){
+            $this->response($this->responseDataFormat(0,'请求成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'请求失败',array()));
+        }
+    }
+
+    /*************我的预约****************/
+    /**
+     * 预约列表
+     */
+    public function appointList(){
+        $res = $this->appoint->appointList(self::$currentUid,'YL_user_reg_num.id,YL_user_reg_num.docName,YL_hospital.name as hosName,YL_hospital.address,FROM_UNIXTIME(YL_user_reg_num.appointTime) AS dateline,YL_user_reg_num.status');
+        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+    }
+
+
+    /**
+     * 预约详情
+     *
+     */
+    public function appointDetail(){
+        $id = intval($this->input->get_post('id'));
+        $res = $this->appoint->appointDetail(self::$currentUid,$id,'id,contacts,sex,docName,FROM_UNIXTIME(appointTime) as appointTime,appointTel,price,hosAddr,status');
+        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+    }
+
+
+    /**
+     * 取消预约
+     */
+    public function appointCancel(){
+        $id = intval($this->input->get_post('id'));
+        $res = $this->appoint->appointCancel(self::$currentUid,$id);
+        if($res){
+            $this->response($this->responseDataFormat(0,'请求成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'系统错误',array()));
+        }
+    }
+
+
+    /*************问答记录****************/
+
+
+    /**
+     * 列表
+     */
+    public function askAnswerList(){
+        $res = $this->leaving_msg->getMsgList(self::$currentUid,'id,docName,FROM_UNIXTIME(askTime) AS dateline,askerContent as content,state');
+        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+    }
+
+    /**
+     * 详情
+     */
+    public function askAnswerDetail(){
+        $id = intval($this->input->get_post('id'));
+        $select = 'askerNickname as name,docName,askerPone,FROM_UNIXTIME(askTime) AS dateline,askerContent,img';
+        $imgServer = $this->getImgServer();
+        $res = $this->leaving_msg->getMsgDetail(self::$currentUid,$id,$select);
+        $replySelect = 'replyContent';
+        $reply = $this->reply-> getContentByThemeId(self::$currentUid,$id,$replySelect);
+        $reply = $reply ? $reply : '';
+        $this->response($this->responseDataFormat(0,'请求成功',array('askDetail'=>$res,'reply'=>$reply,'imgServer'=>$imgServer)));
     }
 
 }

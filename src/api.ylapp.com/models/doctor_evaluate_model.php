@@ -26,4 +26,13 @@ class Doctor_evaluate_model extends MY_Model
         $res = $this->find_all();
         return $res;
     }
+
+    /**
+     * 提交评论
+     * @param $docId
+     */
+    public function addEvaluate($data){
+        $this->insert($data);
+        return $this->db->insert_id();
+    }
 }

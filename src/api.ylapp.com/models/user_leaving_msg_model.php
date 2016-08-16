@@ -23,4 +23,32 @@ class User_leaving_msg_model extends MY_Model
         return $this->db->insert_id();
     }
 
+
+    /**
+     *
+     * @param $uid
+     * @param $select
+     *
+     */
+    public function getMsgList($uid,$select){
+        $this->where(array('askerUid'=>$uid));
+        $this->select($select);
+        $this->order_by(array('askTime'=>'DESC'));
+        $res = $this->find_all();
+        return $res;
+    }
+
+
+    /**
+     * 问答详情显示给用户
+     */
+
+    public function getMsgDetail($uid,$id,$select){
+        $this->where(array('askerUid'=>$uid));
+        $this->select($select);
+        $res = $this->find($id);
+        return $res;
+
+    }
+
 }

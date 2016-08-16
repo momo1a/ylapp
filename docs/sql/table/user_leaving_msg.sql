@@ -11,7 +11,7 @@ CREATE TABLE `YL_user_leaving_msg` (
   `docName` varchar(20) not null default '' comment '医生名称',
   `img` VARCHAR(300) not null default '' comment '图片',
   `askTime` INT(11) unsigned NOT NULL DEFAULT '0' COMMENT '问诊时间',
-  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待付款，1待处理，2通过，3不通过',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待付款，1待处理(已付款)，2通过（显示给医生看），3不通过（失败），4完成',
   PRIMARY KEY (`id`),
   KEY `state` (`state`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE

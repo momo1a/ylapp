@@ -26,4 +26,14 @@ class Money_model extends MY_Model
         return $res;
     }
 
+    /**
+     * 用户余额变更
+     * @param $uid
+     * @param $amount
+     */
+    public function updateUserMoney($uid,$amount){
+        $res = $this->db->query('UPDATE YL_money SET `amount`=`amount`-'.$amount.',`updateTime`='.time().' WHERE uid='.$uid);
+        return $res;
+    }
+
 }

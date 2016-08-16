@@ -3,7 +3,6 @@ DROP TABLE IF EXISTS  `YL_take_cash`;
 CREATE TABLE `YL_take_cash` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned not null default '0' comment '提现人id',
-  `name` varchar(25) not null default '' comment '提现人昵称',
   `bank` varchar(125) not null default '' comment '开户银行',
   `address` varchar(125) not null default '' comment '开户地区',
   `cardNum` varchar(50) not null default '' comment '银行卡号',

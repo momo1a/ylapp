@@ -452,4 +452,55 @@ HTML;
         echo $form;
     }
 
+
+    /**
+     * tixian
+     */
+    public function takeCash(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/user_center/takeCash" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    bank<input type="text" name="bank"/>
+    cardNum<input type="text" name="cardNum"/>
+    address<input type="text" name="address"/>
+    realName<input type="text" name="realName"/>
+    identity<input type="text" name="identity"/>
+    amount<input type="text" name="amount"/>
+    <input type="hidden" name="userType" value="1"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+    /**
+     * jiaoyijilu
+     */
+    public function tradeLog(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/user_center/tradeLog" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
 }

@@ -21,4 +21,17 @@ class User_phone_diagnosis_model extends MY_Model
         $res = $this->db->insert_id();
         return $res;
     }
+
+    /**
+     * 根据用户id获取问诊记录
+     * @param $uid
+     * @param string $select
+     */
+    public function getListByUid($uid,$select="*"){
+        $this->where(array('askUid'=>$uid));
+        $this->select($select);
+        $res = $this->find_all();
+        return $res;
+    }
+
 }

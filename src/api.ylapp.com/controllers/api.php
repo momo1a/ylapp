@@ -158,20 +158,21 @@ class Api extends MY_Controller
      * 发送手机验证码接口
      */
     public function sendIdentifyCode(){
+        $timeLen = 60;
         $mobile = trim($this->input->post('mobile'));   //手机号
         if(!is_numeric($mobile)){
             $this->response($this->responseDataFormat(2,'手机号码非法',array()));
         }
         $code = rand(100000,999999);
-        $res = $this->sms->send(array('code'=>$code,'length'=>1),$mobile);
-        $returnCode = $res['result']->err_code;
+        $res = $this->sms->sendMsg($mobile,$code,$timeLen);
+        /*$returnCode = $res['result']->err_code;
         $status  = $res['result']->success;
         $returnCode = (array)$returnCode;
-        $status = (array)$status;
-        if($returnCode[0] == 0 && $status[0] == 'true') {
-            $this->cache->save($mobile, $code, 60);
+        $status = (array)$status;*/
+        if($res == 0) {
+            $this->cache->save($mobile, $code, $timeLen);
         }
-        $this->response($this->responseDataFormat($returnCode[0],$status[0],array()));
+        $this->response($this->responseDataFormat($res,'请求成功',array()));
     }
 
 

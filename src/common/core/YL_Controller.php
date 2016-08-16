@@ -74,7 +74,7 @@ class YL_Controller extends YL_Base_Controller
  * 
  * @package		YL
  * @subpackage	Libraries
- * @author		韦明磊
+ * @author		momo1a
  * @category	core
  * @link		http://www.zhonghuasuan.com/
  * @see 		CI_Controller
@@ -229,7 +229,7 @@ class YL_Request_Cache_Controller extends YL_Controller
 
 /**
  * App使用的控制器
- * @author 杜嘉杰
+ * @author momo1a
  *
  */
 class YL_App_Controller extends CI_Controller {

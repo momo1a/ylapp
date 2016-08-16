@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.61.97
-Source Server Version : 50542
-Source Host           : 192.168.61.97:3306
+Source Server         : 192.168.1.103_3306
+Source Server Version : 50536
+Source Host           : 192.168.1.103:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50542
+Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2016-08-16 16:54:55
+Date: 2016-08-17 00:18:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -73,13 +73,13 @@ CREATE TABLE `YL_doctor_evaluate` (
   `docNicname` varchar(50) NOT NULL DEFAULT '' COMMENT '医生昵称',
   `uid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '用户id',
   `username` varchar(50) NOT NULL DEFAULT '' COMMENT '用户昵称',
-  `content` varchar(50) NOT NULL DEFAULT '' COMMENT '评价内容',
+  `content` varchar(500) NOT NULL DEFAULT '' COMMENT '评价内容',
   `dateline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '评价时间',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0;待处理，1审核通过，2审核不通过',
   PRIMARY KEY (`vid`),
   KEY `docId` (`docId`) USING BTREE,
   KEY `uid` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='医生评价表';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='医生评价表';
 
 -- ----------------------------
 -- Records of YL_doctor_evaluate
@@ -89,6 +89,9 @@ INSERT INTO `YL_doctor_evaluate` VALUES ('2', '6', '赵医生', '1', '张三', '
 INSERT INTO `YL_doctor_evaluate` VALUES ('3', '6', '赵医生', '1', '张三', '人帅医术高明', '1470820911', '1');
 INSERT INTO `YL_doctor_evaluate` VALUES ('4', '6', '赵医生', '1', '张三', '人帅医术高明', '1470820888', '0');
 INSERT INTO `YL_doctor_evaluate` VALUES ('5', '6', '赵医生', '1', '张三', '人帅医术高明', '1470820877', '1');
+INSERT INTO `YL_doctor_evaluate` VALUES ('6', '6', '赵医生', '1', '小飞侠2', '呵呵jfk都是jfk会计法律技术开发框架', '1471348351', '0');
+INSERT INTO `YL_doctor_evaluate` VALUES ('7', '7', '李医生', '1', '小飞侠2', '风纪扣圣诞节快乐就是靠近热裤', '1471348395', '0');
+INSERT INTO `YL_doctor_evaluate` VALUES ('8', '8', '钱医生', '1', '小飞侠2', '风纪扣圣诞节快乐就是靠近热裤', '1471348404', '0');
 
 -- ----------------------------
 -- Table structure for YL_doctor_fee_seting
@@ -220,9 +223,9 @@ CREATE TABLE `YL_doctor_reply` (
 -- ----------------------------
 -- Records of YL_doctor_reply
 -- ----------------------------
-INSERT INTO `YL_doctor_reply` VALUES ('1', '1', '1', '1', '放心你的病没事', '6', '赵医生', '1470879001', '1');
-INSERT INTO `YL_doctor_reply` VALUES ('2', '4', '1', '1', '你病入膏肓了', '6', '赵医生', '1470879002', '2');
-INSERT INTO `YL_doctor_reply` VALUES ('3', '5', '1', '1', '有得治，放心好了，来我这里', '6', '赵医生', '1470879003', '1');
+INSERT INTO `YL_doctor_reply` VALUES ('1', '1', '1', '1', '医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复', '6', '赵医生', '1470879001', '1');
+INSERT INTO `YL_doctor_reply` VALUES ('2', '4', '1', '1', '医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复', '6', '赵医生', '1470879002', '2');
+INSERT INTO `YL_doctor_reply` VALUES ('3', '5', '1', '1', '医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复', '6', '赵医生', '1470879003', '1');
 
 -- ----------------------------
 -- Table structure for YL_feedback
@@ -753,7 +756,7 @@ CREATE TABLE `YL_user_leaving_msg` (
   `docName` varchar(20) NOT NULL DEFAULT '' COMMENT '医生名称',
   `img` varchar(300) NOT NULL DEFAULT '' COMMENT '图片',
   `askTime` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '问诊时间',
-  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待付款，1待处理，2通过，3不通过',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待付款，1待处理(已付款)，2通过（显示给医生看），3不通过（失败），4完成',
   PRIMARY KEY (`id`),
   KEY `state` (`state`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE
@@ -762,15 +765,15 @@ CREATE TABLE `YL_user_leaving_msg` (
 -- ----------------------------
 -- Records of YL_user_leaving_msg
 -- ----------------------------
-INSERT INTO `YL_user_leaving_msg` VALUES ('1', '1', '张三', '15977675495', '我的病能治吗', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878945', '2');
-INSERT INTO `YL_user_leaving_msg` VALUES ('2', '1', '张三', '15977675495', '我的病能治吗111111', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878946', '1');
-INSERT INTO `YL_user_leaving_msg` VALUES ('3', '1', '张三', '15977675495', '我的病能治吗22222', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878947', '1');
-INSERT INTO `YL_user_leaving_msg` VALUES ('4', '1', '张三', '15977675495', '我的病能治吗3333', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878948', '2');
-INSERT INTO `YL_user_leaving_msg` VALUES ('5', '1', '张三', '15977675495', '我的病能治吗4444', '300.00', '6', '赵医生', '{img1.jpg,img2,jpg,img3.jpg}', '1470878949', '2');
-INSERT INTO `YL_user_leaving_msg` VALUES ('6', '1', '张三', '15977675495', '医生我肚子痛啊，怎么解决', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470900059', '3');
-INSERT INTO `YL_user_leaving_msg` VALUES ('7', '1', '张三', '15977675495', '我还好吗，医生', '350.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1617333130.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341085.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341619.jpg\"]', '1470903454', '4');
-INSERT INTO `YL_user_leaving_msg` VALUES ('8', '1', '张三', '15977675495', '我还好吗，医生', '350.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1621163096.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1621166021.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1621162898.jpg\"]', '1470903676', '2');
-INSERT INTO `YL_user_leaving_msg` VALUES ('9', '1', '张三', '15977675495', '医生 我的病 能治不', '30.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/13\\/2331436591.jpg\",\"leavingMsg\\/2016\\/08\\/13\\/2331437401.jpg\"]', '1471102303', '3');
+INSERT INTO `YL_user_leaving_msg` VALUES ('1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878945', '2');
+INSERT INTO `YL_user_leaving_msg` VALUES ('2', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878946', '1');
+INSERT INTO `YL_user_leaving_msg` VALUES ('3', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878947', '1');
+INSERT INTO `YL_user_leaving_msg` VALUES ('4', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878948', '2');
+INSERT INTO `YL_user_leaving_msg` VALUES ('5', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878949', '2');
+INSERT INTO `YL_user_leaving_msg` VALUES ('6', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470900059', '3');
+INSERT INTO `YL_user_leaving_msg` VALUES ('7', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '350.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1617333130.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341085.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341619.jpg\"]', '1470903454', '4');
+INSERT INTO `YL_user_leaving_msg` VALUES ('8', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '350.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1621163096.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1621166021.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1621162898.jpg\"]', '1470903676', '2');
+INSERT INTO `YL_user_leaving_msg` VALUES ('9', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '30.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/13\\/2331436591.jpg\",\"leavingMsg\\/2016\\/08\\/13\\/2331437401.jpg\"]', '1471102303', '3');
 
 -- ----------------------------
 -- Table structure for YL_user_phone_diagnosis
@@ -803,12 +806,12 @@ CREATE TABLE `YL_user_phone_diagnosis` (
 -- ----------------------------
 -- Records of YL_user_phone_diagnosis
 -- ----------------------------
-INSERT INTO `YL_user_phone_diagnosis` VALUES ('1', '1', '1', '王小伟', '0', '15878787878', '1', '我房间第几大姐夫房价肯定是减肥了肯德基', '', '15', '1470758400', '300.00', '6', '赵医生', '15977675499', '1470882754', '0');
-INSERT INTO `YL_user_phone_diagnosis` VALUES ('2', '1', '2', '王美玲', '0', '15878787878', '2', '我房间范德萨范德萨第几大姐夫房价肯定是减肥了肯德基', '', '15', '1470844800', '300.00', '6', '赵医生', '15977675499', '1470883155', '0');
-INSERT INTO `YL_user_phone_diagnosis` VALUES ('3', '1', '1', '王小贝', '0', '15845454545', '2', '好样的王小贝', '', '60', '1470240000', '350.00', '6', '赵医生', '15977675499', '1470965004', '0');
-INSERT INTO `YL_user_phone_diagnosis` VALUES ('4', '1', '1', '王小贝', '0', '15845454545', '2', '好样的王小贝', '', '60', '1470240000', '350.00', '6', '赵医生', '15977675499', '1470965032', '0');
-INSERT INTO `YL_user_phone_diagnosis` VALUES ('5', '1', '1', '王小贝', '0', '15845454545', '2', '好样的王小贝', '', '60', '1470240000', '350.00', '6', '赵医生', '15977675499', '1470965213', '0');
-INSERT INTO `YL_user_phone_diagnosis` VALUES ('6', '1', '2', '王小丹', '0', '15545454545', '2', '附近看到了时间分离开的交付了', '', '45', '1470240000', '200.00', '6', '赵医生', '15977675499', '1471101970', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('1', '1', '1', '王小伟', '0', '15878787878', '1', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '', '15', '1470758400', '300.00', '6', '赵医生', '15977675499', '1470882754', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('2', '1', '2', '王美玲', '0', '15878787878', '2', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '', '15', '1470844800', '300.00', '6', '赵医生', '15977675499', '1470883155', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('3', '1', '1', '王小贝', '0', '15845454545', '2', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '', '60', '1470240000', '350.00', '6', '赵医生', '15977675499', '1470965004', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('4', '1', '1', '王小贝', '0', '15845454545', '2', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '', '60', '1470240000', '350.00', '6', '赵医生', '15977675499', '1470965032', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('5', '1', '1', '王小贝', '0', '15845454545', '2', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '', '60', '1470240000', '350.00', '6', '赵医生', '15977675499', '1470965213', '0');
+INSERT INTO `YL_user_phone_diagnosis` VALUES ('6', '1', '2', '王小丹', '0', '15545454545', '2', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '', '45', '1470240000', '200.00', '6', '赵医生', '15977675499', '1471101970', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_reg_num
@@ -831,21 +834,24 @@ CREATE TABLE `YL_user_reg_num` (
   `illnessId` int(11) NOT NULL DEFAULT '0' COMMENT '病历id',
   `userRemark` varchar(200) NOT NULL DEFAULT '' COMMENT '用户备注',
   `dateline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '记录时间',
-  `status` tinyint(3) NOT NULL DEFAULT '0' COMMENT '状态 0.状态有待处理，1未支付 2已支付,3预约成功，4预约失败，5完成',
+  `status` tinyint(3) NOT NULL DEFAULT '0' COMMENT '状态 0.状态有待处理，1未支付 2已支付,3预约成功，4预约失败，5完成,6,用户取消',
+  `cancelTime` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '取消时间',
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE,
   KEY `status` (`status`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='用户挂号表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='用户挂号表';
 
 -- ----------------------------
 -- Records of YL_user_reg_num
 -- ----------------------------
-INSERT INTO `YL_user_reg_num` VALUES ('1', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '雷老虎', '1471622400', '1', '1419696000', '15878787878', '1', '我的病情很轻的', '1471016434', '0');
-INSERT INTO `YL_user_reg_num` VALUES ('2', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '雷老虎', '1471622400', '1', '1419696000', '15878787878', '1', '我的病情很轻的', '1471019970', '0');
-INSERT INTO `YL_user_reg_num` VALUES ('3', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '王小虎', '1470672000', '1', '1470758400', '15745454545', '2', '今生几何', '1471101338', '0');
-INSERT INTO `YL_user_reg_num` VALUES ('4', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '王小虎', '1470672000', '1', '1470758400', '15745454545', '2', '今生几何', '1471101398', '0');
-INSERT INTO `YL_user_reg_num` VALUES ('5', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '王小虎', '1470672000', '1', '1470758400', '15745454545', '2', '今生几何', '1471101534', '0');
+INSERT INTO `YL_user_reg_num` VALUES ('1', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '雷老虎', '1471622400', '1', '1419696000', '15878787878', '1', '我的病情很轻的', '1471016434', '0', '0');
+INSERT INTO `YL_user_reg_num` VALUES ('2', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '雷老虎', '1471622400', '1', '1419696000', '15878787878', '1', '我的病情很轻的', '1471019970', '1', '0');
+INSERT INTO `YL_user_reg_num` VALUES ('3', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '王小虎', '1470672000', '1', '1470758400', '15745454545', '2', '今生几何', '1471101338', '6', '1471356475');
+INSERT INTO `YL_user_reg_num` VALUES ('4', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '王小虎', '1470672000', '1', '1470758400', '15745454545', '2', '今生几何', '1471101398', '3', '0');
+INSERT INTO `YL_user_reg_num` VALUES ('5', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '王小虎', '1470672000', '1', '1470758400', '15745454545', '2', '今生几何', '1471101534', '4', '0');
+INSERT INTO `YL_user_reg_num` VALUES ('6', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '王小虎', '1470672000', '1', '1470758400', '15745454545', '2', '今生几何', '1471101538', '5', '0');
+INSERT INTO `YL_user_reg_num` VALUES ('7', '1', '张三', '6', '赵医生', '15977675499', '30.00', '东莞长安街8号', '王小虎', '1470672000', '1', '1470758400', '15745454545', '2', '今生几何', '1471101534', '6', '0');
 
 -- ----------------------------
 -- Table structure for YL_vaccinum

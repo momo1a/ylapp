@@ -3,7 +3,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 // 主数据库（默认）
-$db['default']['hostname'] = '192.168.61.97';
+
+$db['default']['hostname'] = '192.168.1.103';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '123456';
 $db['default']['database'] = 'ylapp';
@@ -21,9 +22,10 @@ $db['default']['autoinit'] = FALSE;
 $db['default']['stricton'] = FALSE;
 
 // 从数据库 - 主要用于前台读取数据
-$db['slave']['hostname'] = '192.168.61.97';
+
+$db['slave']['hostname'] = '192.168.1.103';
 $db['slave']['username'] = 'root';
-$db['slave']['password'] = '123465';
+$db['slave']['password'] = '123456';
 $db['slave']['port']     = '3306';
 $db['slave']['database'] = 'ylapp';
 $db['slave']['dbdriver'] = 'mysql';

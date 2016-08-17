@@ -410,4 +410,30 @@ class User_center extends MY_Controller
             $this->response($this->responseDataFormat(1,'删除失败',array()));
         }
     }
+
+
+    /**
+     * 反馈意见
+     */
+
+
+    public function feedback(){
+        $content = addslashes($this->input->get_post('content'));
+        if(mb_strlen($content) > 300){
+            $this->response($this->responseDataFormat(1,'字数超过限定大小',array()));
+        }
+        $this->load->model('Feedback_model','feedback');
+        $data = array(
+            'uid'=>self::$currentUid,
+            'userType'=>1,
+            'content'=>$content,
+            'dateline'=>time()
+        );
+        $res = $this->feedback->addFeedback($data);
+        if($res){
+            $this->response($this->responseDataFormat(0,'请求成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'系统错误',array()));
+        }
+    }
 }

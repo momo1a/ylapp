@@ -63,4 +63,18 @@ SQL;
         $res = $this->find_all();
         return $res;
     }
+
+    /**
+     * 我的发帖列表
+     * @param $uid
+     * @param $select
+     */
+    public function myPostList($uid,$select){
+        $this->where(array('postUid'=>$uid));
+        $this->select($select);
+        $this->order_by(array('id'=>'desc'));
+        $res = $this->find_all();
+        return $res;
+    }
+
 }

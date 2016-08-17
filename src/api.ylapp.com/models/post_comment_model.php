@@ -38,4 +38,35 @@ class  Post_comment_model extends MY_Model
         return $res;
     }
 
+    /**
+     * 我的回复  （我的帖子的评论）
+     * @param $uid
+     * @param $select
+     */
+    public function myReply($uid,$select='*'){
+        $this->select($select);
+        $this->join('YL_user','YL_user.uid=YL_post_comment.recmdUid','left');
+        $this->join('YL_post','YL_post_comment.postId=YL_post.id','left');
+        $this->where(array('YL_post.postUid'=>$uid,'YL_post_comment.state'=>1));
+        $this->order_by(array('YL_post_comment.id'=>'desc'));
+        $res = $this->find_all();
+        return $res;
+    }
+
+    /**
+     * 我的评论
+     * @param $uid
+     * @param $select
+     */
+    public function myComment($uid,$select='*'){
+        $this->select($select);
+        $this->join('YL_user','YL_user.uid=YL_post_comment.recmdUid','left');
+        $this->join('YL_post','YL_post.id=YL_post_comment.postId','left');
+        $this->where(array('YL_post_comment.recmdUid'=>$uid));
+        $this->order_by(array('YL_post_comment.id'=>'desc'));
+        $res = $this->find_all();
+        return $res;
+    }
+
+
 }

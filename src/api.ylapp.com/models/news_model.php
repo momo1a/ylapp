@@ -18,7 +18,7 @@ class News_model extends MY_Model
      * @param $postPos 发布位置
      */
     public function getNewsList($limit,$postPos,$select,$recmdToIndex=false){
-        $where = array('postPos'=>$postPos);
+        $where = array('YL_news.postPos'=>$postPos,'YL_news.state'=>1);
         if($recmdToIndex){
             $this->where('isRecmdIndex',1);
         }
@@ -35,7 +35,7 @@ class News_model extends MY_Model
      * @param $nid
      * @param $field
      */
-    public function getNewsDetail($nid,$field){
+    public function getNewsDetail($nid,$field='*'){
         $where = array('nid'=>$nid);
         $this->select($field);
         $res = $this->find_by($where);

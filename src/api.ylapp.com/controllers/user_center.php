@@ -20,6 +20,10 @@ class User_center extends MY_Controller
         $this->load->model('User_reg_num_model','appoint');
         $this->load->model('User_leaving_msg_model','leaving_msg');
         $this->load->model('Doctor_reply_model','reply');
+        $this->load->model('Order_model','order');
+        $this->load->model('Post_model','post');
+        $this->load->model('Post_comment_model','post_comment');
+        $this->load->model('News_collections_model','collection');
     }
 
 
@@ -321,4 +325,89 @@ class User_center extends MY_Controller
         $this->response($this->responseDataFormat(0,'请求成功',array('askDetail'=>$res,'reply'=>$reply,'imgServer'=>$imgServer)));
     }
 
+
+
+
+    /**********我的*************/
+
+
+    /**
+     * 购买记录
+     */
+    public function order(){
+        $selectVac = 'YL_order.oid,YL_vaccinum.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price';
+        $selectGene = 'YL_order.oid,YL_gene_check.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price';
+        $resVac = $this->order->getOrdersByUid(self::$currentUid,$selectVac);  // 疫苗订单
+        $resGene = $this->order->getOrdersByUid(self::$currentUid,$selectGene,2);  // 基因订单
+        $arr = array();
+        if(!empty($resVac)){
+            foreach($resVac as $k=>$v){
+                array_push($arr,$v);
+            }
+        }
+        if(!empty($resGene)){
+            foreach($resGene as $k=>$v){
+                array_push($arr,$v);
+            }
+        }
+        rsort($arr);
+        $this->response($this->responseDataFormat(0,'请求成功',$arr));
+    }
+
+    /**
+     * 我的帖子
+     */
+
+    public function postList(){
+        $select = 'id,img,postTitle,postContent,from_unixtime(postTime) as dateline';
+        $res = $this->post->myPostList(self::$currentUid,$select);
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
+    }
+
+
+    /**
+     * 我的回复
+     */
+
+    public function myPostReply(){
+        $select = 'YL_post.id as postId,YL_post_comment.id as commentId,YL_user.avatar,YL_user.nickname,from_unixtime(YL_post_comment.recmdTime) as dateline,YL_post_comment.recmdContent as commentContent,YL_post.postTitle,YL_post.postContent';
+        $res = $this->post_comment->myReply(self::$currentUid,$select);
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
+    }
+
+    /**
+     * 我的评论
+     */
+
+    public function myPostComment(){
+        $select = 'YL_post.id as postId,YL_post_comment.id as commentId,YL_user.avatar,YL_user.nickname,from_unixtime(YL_post_comment.recmdTime) as dateline,YL_post_comment.recmdContent as commentContent,YL_post.postTitle,YL_post.postContent,YL_post_comment.state';
+        $res = $this->post_comment->myComment(self::$currentUid,$select);
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
+    }
+
+
+    /**
+     * 我的收藏
+     */
+
+    public function myCollections(){
+        $select = 'YL_news_collections.id as collId,YL_news.thumbnail,YL_news.title,YL_news.content,FROM_UNIXTIME(YL_news.createTime) as dateline';
+        $res = $this->collection->myCollections(self::$currentUid,$select);
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
+    }
+
+
+    /**
+     * 删除收藏
+     */
+
+    public function delCollection(){
+        $collId = intval($this->input->get_post('collId'));
+        $res = $this->collection->delCollection($collId,self::$currentUid);
+        if($res){
+            $this->response($this->responseDataFormat(0,'删除成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(1,'删除失败',array()));
+        }
+    }
 }

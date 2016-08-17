@@ -27,4 +27,29 @@ class Order_model extends MY_Model
         $this->insert($data);
         return $this->db->insert_id();
     }
+
+    /**
+     * 获取用户订单
+     * @param $uid
+     * @param $select
+     * @param $type 订单类型默认
+     */
+    public function getOrdersByUid($uid,$select,$type=1){
+        $this->where(array('YL_order.buyerId'=>$uid,'YL_order.type'=>$type));
+        switch($type){
+            case 1:
+                $this->join('YL_vaccinum','YL_order.packageId=YL_vaccinum.id','left');
+                break;
+            case 2:
+                $this->join('YL_gene_check','YL_order.packageId=YL_gene_check.id','left');
+                break;
+            default:
+                break;
+        }
+
+        $this->order_by(array('YL_order.oid'=>'desc'));
+        $this->select($select);
+        $res = $this->find_all();
+        return $res;
+    }
 }

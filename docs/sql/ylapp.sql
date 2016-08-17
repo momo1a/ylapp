@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.1.103_3306
-Source Server Version : 50536
-Source Host           : 192.168.1.103:3306
+Source Server         : 192.168.61.97
+Source Server Version : 50542
+Source Host           : 192.168.61.97:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50536
+Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2016-08-17 00:18:58
+Date: 2016-08-17 17:51:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -354,37 +354,37 @@ CREATE TABLE `YL_news` (
 -- ----------------------------
 -- Records of YL_news
 -- ----------------------------
-INSERT INTO `YL_news` VALUES ('1', '2', '香港可接种9价HPV疫苗', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '疫苗', '1', '1', '1', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('2', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '1', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('3', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '2', '1', '1', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('4', '2', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '2', '1', '1', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('25', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('26', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('27', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('28', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('29', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('30', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('31', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('32', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('33', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('34', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('35', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('36', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('37', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('38', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('39', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('40', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('41', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('42', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('43', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('44', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('45', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('46', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('47', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('48', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('49', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('50', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
-INSERT INTO `YL_news` VALUES ('51', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '0');
+INSERT INTO `YL_news` VALUES ('1', '2', '香港可接种9价HPV疫苗', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '疫苗', '1', '1', '1', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('2', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '1', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('3', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '2', '1', '1', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('4', '2', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '2', '1', '1', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('25', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('26', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('27', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('28', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('29', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('30', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('31', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('32', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('33', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('34', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('35', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('36', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('37', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('38', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('39', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('40', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('41', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('42', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('43', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('44', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('45', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('46', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('47', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('48', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('49', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('50', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
+INSERT INTO `YL_news` VALUES ('51', '1', '香港xxxx基因资讯', '据美国食品药品监督管理局（FDA）网站消息，美国默克公司（北美以外地区叫默沙东公司）的九价HPV疫苗“佳达修9”（九价重组人乳头瘤病毒疫苗）已通过FDA核准，产品上市在即。\r\n \r\n“佳达修9”是“佳达修4”的升级产品。与预防6、11、16、18等四个HPV病毒亚型的“佳达修4”相比，“佳达修9”增加了31、33、45、52、58五种病毒亚型，预防HPV的病毒亚型多达9个，可有效预防宫颈癌、外阴癌、阴道癌和肛门癌，以及生殖器疣等疾病。', 'ben', 'thumb/test1.jpg', 'banner1,jpg', '基因', '1', '1', '0', '1470368111', '1470368111', '1');
 
 -- ----------------------------
 -- Table structure for YL_news_category
@@ -404,6 +404,27 @@ CREATE TABLE `YL_news_category` (
 -- ----------------------------
 INSERT INTO `YL_news_category` VALUES ('1', '基因', '0', '0');
 INSERT INTO `YL_news_category` VALUES ('2', '疫苗', '0', '0');
+
+-- ----------------------------
+-- Table structure for YL_news_collections
+-- ----------------------------
+DROP TABLE IF EXISTS `YL_news_collections`;
+CREATE TABLE `YL_news_collections` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '资讯id',
+  `uid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '收藏者uid',
+  `dateline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '收藏时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `nid_uid` (`nid`,`uid`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='资讯收藏表';
+
+-- ----------------------------
+-- Records of YL_news_collections
+-- ----------------------------
+INSERT INTO `YL_news_collections` VALUES ('4', '2', '1', '1471421308');
+INSERT INTO `YL_news_collections` VALUES ('5', '3', '1', '1471421313');
+INSERT INTO `YL_news_collections` VALUES ('6', '4', '1', '1471421318');
+INSERT INTO `YL_news_collections` VALUES ('7', '25', '1', '1471421428');
 
 -- ----------------------------
 -- Table structure for YL_news_comment
@@ -447,13 +468,21 @@ CREATE TABLE `YL_order` (
   KEY `packageId` (`packageId`) USING BTREE,
   KEY `buyerId` (`buyerId`) USING BTREE,
   KEY `type` (`type`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='订单表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='订单表';
 
 -- ----------------------------
 -- Records of YL_order
 -- ----------------------------
 INSERT INTO `YL_order` VALUES ('1', '1', '张三', '0', '15977675495', '1470359944', '5', '香港权威基因检测专业服务', '13800.00', '2', '1471096564', '1');
 INSERT INTO `YL_order` VALUES ('2', '1', '张三', '0', '15977675495', '1470359944', '5', '9价hpv疫苗', '4200.00', '1', '1471152328', '1');
+INSERT INTO `YL_order` VALUES ('3', '1', '张三', '0', '15977675495', '1470359955', '5', '香港权威基因检测专业服务', '13800.00', '2', '1471096564', '2');
+INSERT INTO `YL_order` VALUES ('4', '1', '张三', '0', '15977675495', '1470359955', '5', '香港权威基因检测专业服务', '13800.00', '2', '1471096585', '3');
+INSERT INTO `YL_order` VALUES ('5', '1', '张三', '0', '15977675495', '1470359955', '5', '香港权威基因检测专业服务', '13800.00', '2', '1471096586', '4');
+INSERT INTO `YL_order` VALUES ('6', '1', '张三', '0', '15977675495', '1470359955', '5', '香港权威基因检测专业服务', '13800.00', '2', '1471096587', '5');
+INSERT INTO `YL_order` VALUES ('7', '1', '张三', '0', '15977675495', '1470359944', '5', '9价hpv疫苗', '4200.00', '1', '1471152391', '2');
+INSERT INTO `YL_order` VALUES ('8', '1', '张三', '0', '15977675495', '1470359944', '5', '9价hpv疫苗', '4200.00', '1', '1471152392', '3');
+INSERT INTO `YL_order` VALUES ('9', '1', '张三', '0', '15977675495', '1470359944', '5', '9价hpv疫苗', '4200.00', '1', '1471152393', '4');
+INSERT INTO `YL_order` VALUES ('10', '1', '张三', '0', '15977675495', '1470359944', '5', '9价hpv疫苗', '4200.00', '1', '1471152394', '5');
 
 -- ----------------------------
 -- Table structure for YL_post
@@ -530,7 +559,7 @@ CREATE TABLE `YL_post_comment` (
   KEY `state` (`state`) USING BTREE,
   KEY `postId` (`postId`) USING BTREE,
   KEY `recmdUid` (`recmdUid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='交流圈（帖子）评论表';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='交流圈（帖子）评论表';
 
 -- ----------------------------
 -- Records of YL_post_comment
@@ -549,6 +578,7 @@ INSERT INTO `YL_post_comment` VALUES ('11', '7', '1', '张三', '最近好无聊
 INSERT INTO `YL_post_comment` VALUES ('12', '8', '1', '张三', '最近好无聊给力啊', '1471104012', '1');
 INSERT INTO `YL_post_comment` VALUES ('13', '11', '1', '张三', '最近好无聊给力啊', '1471104013', '1');
 INSERT INTO `YL_post_comment` VALUES ('14', '5', '1', '张三', '我很喜欢你的帖子', '1471186821', '0');
+INSERT INTO `YL_post_comment` VALUES ('15', '7', '4', '王五', '王五回复张三的帖子', '1471186921', '1');
 
 -- ----------------------------
 -- Table structure for YL_role_privileges
@@ -652,7 +682,7 @@ CREATE TABLE `YL_user` (
 -- ----------------------------
 -- Records of YL_user
 -- ----------------------------
-INSERT INTO `YL_user` VALUES ('1', '小飞侠2', '6467c1b1d2b9b93e5ad991356202bf55', '1', '1470359890', '3232251298', '1470548940', '3232235794', 'momo1a@qq.com', '15977675495', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '2');
+INSERT INTO `YL_user` VALUES ('1', '张三', '6467c1b1d2b9b93e5ad991356202bf55', '1', '1470359890', '3232251298', '1470548940', '3232235794', 'momo1a@qq.com', '15977675495', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '2');
 INSERT INTO `YL_user` VALUES ('3', '李四', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675496', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
 INSERT INTO `YL_user` VALUES ('4', '王五', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675497', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
 INSERT INTO `YL_user` VALUES ('5', '赵六', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675498', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
@@ -904,3 +934,256 @@ INSERT INTO `YL_vaccinum` VALUES ('28', '2', '9价hpv疫苗', '<p>\r\n	<p style=
 INSERT INTO `YL_vaccinum` VALUES ('29', '2', '9价hpv疫苗', '<p>\r\n	<p style=\"color:#444444;font-family:\'Microsoft Yahei\', \'Helvetica Neue\', Helvetica, Arial, sans-serif;font-size:18px;background-color:#FFFFFF;\">\r\n		<span style=\"color:#323232;font-family:����;font-size:14px;line-height:24px;background-color:#FCFCFC;\">“医学的进步是人类的福音” 9价HPV疫苗是现有同名疫苗4价的进阶版，这种疫苗除了包含老版本疫苗抗6、11、16、18型乳头瘤病毒以外，还增添了对31、33、45、52和58五种亚型乳头瘤病毒的保护能力，而数据显示这五种乳头瘤病毒导致了约20%的宫颈癌病例的发生。3月22日，维港健康将联手香港毅力医护中心在香港推出首发预约，即可全面接种9价HPV疫苗。</span>\r\n	</p>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		<br />\r\n<img alt=\"\" src=\"http://www.qqcjw.com/uploads/allimg/160325/16-160325162G4W4.jpg\" style=\"height:229px;width:500px;\" />\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		9价HPV疫苗<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 此前美国FDA已经于2014年12月份批准了这种疫苗的上市，在2015年2月份美国CDC下属的专家委员会也做出了建议批准该疫苗上市的决定。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 香港成为第三个在今年三月底推出9价HPV疫苗的地区，与维港健康疫苗预约机构合作的部分医疗机构将是拥有首批疫苗注射资质的机构。维港健康客服人员透露，3月21日将会上市9价HPV疫苗，3月底就可预约接种9价HPV疫苗。进阶版HPV 9价疫苗能有效预防9种人乳头瘤病毒型，新增添5种亚型乳头瘤病毒保护，而这些病毒能引起了约20%的宫颈癌，这意味着9价HPV疫苗预防宫颈癌由70%上升至90%，是疫苗预防效果上一大突破！\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		<br />\r\n<img alt=\"\" src=\"http://www.qqcjw.com/uploads/allimg/160325/16-160325162J0406.jpg\" style=\"height:auto;\" />\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		全球引致HPV癌症及疾病的百分比<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp;赛诺菲公司的发言人表示Gardasil 9的上市将标志着预防乳头瘤病毒的新时代，这种疫苗将会把这九种病毒亚型的感染降低80%之多！\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 9价HPV疫苗批准适用于以预防HPV病毒16、18、31、33、45、52 和58型引起的宫颈癌、外阴癌、阴道癌和肛门癌，以及人乳头状瘤病毒6和11型引起的生殖器疣。换而言之，接种新款疫苗可以预防9成的宫颈癌和9成的尖锐湿疣。&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; CDC 免疫规范顾问委员会推荐 13 岁以下孩子与青少年接种这款疫苗，研究人员在这些人身上对这款疫苗进行了测试，以确保该疫苗至少能与用于早期临床试验受试者那样有效。这款疫苗是至关重要的，因为明确知道它能够预防四种癌症，即宫颈癌、外阴癌症、肛门癌和阴道癌，也知道它将能预防所有口腔癌中大约三分之二的癌症。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 在一项研究中，研究人员给 3066 名 9至15 岁的男孩女孩接种三种剂量系列的 HPV-9 疫苗。第二种剂量在第一个剂量后一个月接种，第三种剂量在 6 个月后接种。在第三种剂量接种后一个月，超过 99% 的受试者对该疫苗包含的所有 9 种菌株产生充分的抗体水平。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 在随访两年半后，受试者的抗体水平仍然强大，没有理由怀疑它们将会减弱。目前为止，四价与二价疫苗已跟随研究受试者大约 8 到 10 年，并未发现保护减弱的证据。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; Gardasil 9 预防 HPV 类型 6、11、16、18、31、33、45、52 及 58。而 HPV-16 与 HPV-18 是大部分癌症的起因，所有这些菌株的合并能够预防 HPV 引起的 90% 的癌症。这意味着可以避免逾 20 万例癌前期病变（需要各种侵入性手术来移除）及大约 2.3 万例可导致死亡、转移性疾病、手术和/或化疗病例。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 这款疫苗的影响是巨大的。这正在避免巨大数量的活组织检查、LEEPs 及锥形活组织检查。正在预防最终的事情，即治疗。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; LEEP（宫颈环形电切术）从根本上讲是熔化掉不治疗能发展成宫颈癌的癌前期病变。锥形活组织检查是一种侵入性方法，用来诊断癌前期病变或癌细胞。这些介入治疗中有一些可能会增加不孕风险。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 从另一方面讲，这款疫苗的这种风险是最低的。微小反应可能包括疼痛、注射部位红肿、轻度发烧、头痛及昏厥。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 接种后坐或躺大约 15 分钟可以帮助预防昏厥及跌倒引起的损伤。9价HPV疫苗可导致的最严重不良事件是一种严重的过敏反应。这种情况大约在每 100 万例接种中才出现一例。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 为了避免过敏反应，对某些疫苗成分过敏的人不应进行接种。对酵母过敏的人不应接种Gardasil 9或Gardasil，对乳胶过敏的人不应接种 Cervarix。Cervarix 是由葛兰素史克生产的二价疫苗。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		<br />\r\n<img alt=\"\" src=\"http://www.qqcjw.com/uploads/allimg/160325/16-160325162Q0619.jpg\" style=\"height:237px;width:500px;\" />\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		Gardasil 9<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 这在本质上意味着没有以上所说过敏症的人没有理由不去遵循 CDC 的建议，即所有青春期前的孩子应该接种这款疫苗。但如果一个人已经接种了三种剂量的四价 HPV 疫苗，那么没有理由接种Gardasil 9，除非他们处于接触这种病毒的高风险人群中。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 高风险个人包括那些存在无防护措施性行为的人，特别是有多个性伙伴的人。如果他们选择接种Gardasil 9，研究表明在接种四价疫苗的所有剂量后接种 9 价疫苗是安全的。对于那些尚未接种任何 HPV 疫苗的人，建议他们接种一种剂量的四价Gardasil ，它需要用完，随后接种Gardasil 第二种及第三种剂量。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; Gardasil 9 被批准用于 9至26 岁女性及 9至15 岁男性。这款疫苗被批准用于 16、18、31、33、45、52 及 58 型 HPV 引起的宫颈、外阴、阴道和肛门癌，及用于 6 或 11 型 HPV 引起的生殖器疣预防。Gardasil 9 对 5 种其它 HPV 类型（31、33、45、52 和 58）增加了保护，这些类型 HPV 引起大约 20% 的宫颈癌，FDA 之前批准的 HPV 疫苗不涵盖这些 HPV 类型。“接种疫苗是降低 HPV 引起的大多数宫颈、生殖器和肛门癌的一种关键公共卫生措施”。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 我们知道疫苗效价越高，免疫效果就越好。现有的HPV疫苗佳达修、卉妍康依次是4价疫苗和2价疫苗。2014年12月10日，美国食品药品监督管理局（FDA）官网宣布：默沙东（在美国和加拿大称为默克）研发的GARDASIL&reg;9（佳达修，九价重组人乳头状瘤病毒疫苗）获批，可预防约90%宫颈癌及相关癌症。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 新疫苗有潜力预防约90%的宫颈癌、外阴癌、阴道癌和肛门癌。<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 覆盖更多HPV病毒\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 提及9价HPV疫苗，维港健康专业人士称：相较于第一代GARDASIL&reg;疫苗，GARDASIL&reg;9增加了31、33、45、52 和 58五种病毒亚型，这些病毒引起了约20%的宫颈癌，是此前FDA获批的HPV病毒疫苗所不能预防的。\r\n	</div>\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '1471147205', '4200.00', '{\"thumbnail.jpg\"}', '1');
 INSERT INTO `YL_vaccinum` VALUES ('30', '2', '9价hpv疫苗', '<p>\r\n	<p style=\"color:#444444;font-family:\'Microsoft Yahei\', \'Helvetica Neue\', Helvetica, Arial, sans-serif;font-size:18px;background-color:#FFFFFF;\">\r\n		<span style=\"color:#323232;font-family:����;font-size:14px;line-height:24px;background-color:#FCFCFC;\">“医学的进步是人类的福音” 9价HPV疫苗是现有同名疫苗4价的进阶版，这种疫苗除了包含老版本疫苗抗6、11、16、18型乳头瘤病毒以外，还增添了对31、33、45、52和58五种亚型乳头瘤病毒的保护能力，而数据显示这五种乳头瘤病毒导致了约20%的宫颈癌病例的发生。3月22日，维港健康将联手香港毅力医护中心在香港推出首发预约，即可全面接种9价HPV疫苗。</span>\r\n	</p>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		<br />\r\n<img alt=\"\" src=\"http://www.qqcjw.com/uploads/allimg/160325/16-160325162G4W4.jpg\" style=\"height:229px;width:500px;\" />\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		9价HPV疫苗<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 此前美国FDA已经于2014年12月份批准了这种疫苗的上市，在2015年2月份美国CDC下属的专家委员会也做出了建议批准该疫苗上市的决定。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 香港成为第三个在今年三月底推出9价HPV疫苗的地区，与维港健康疫苗预约机构合作的部分医疗机构将是拥有首批疫苗注射资质的机构。维港健康客服人员透露，3月21日将会上市9价HPV疫苗，3月底就可预约接种9价HPV疫苗。进阶版HPV 9价疫苗能有效预防9种人乳头瘤病毒型，新增添5种亚型乳头瘤病毒保护，而这些病毒能引起了约20%的宫颈癌，这意味着9价HPV疫苗预防宫颈癌由70%上升至90%，是疫苗预防效果上一大突破！\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		<br />\r\n<img alt=\"\" src=\"http://www.qqcjw.com/uploads/allimg/160325/16-160325162J0406.jpg\" style=\"height:auto;\" />\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		全球引致HPV癌症及疾病的百分比<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp;赛诺菲公司的发言人表示Gardasil 9的上市将标志着预防乳头瘤病毒的新时代，这种疫苗将会把这九种病毒亚型的感染降低80%之多！\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 9价HPV疫苗批准适用于以预防HPV病毒16、18、31、33、45、52 和58型引起的宫颈癌、外阴癌、阴道癌和肛门癌，以及人乳头状瘤病毒6和11型引起的生殖器疣。换而言之，接种新款疫苗可以预防9成的宫颈癌和9成的尖锐湿疣。&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; CDC 免疫规范顾问委员会推荐 13 岁以下孩子与青少年接种这款疫苗，研究人员在这些人身上对这款疫苗进行了测试，以确保该疫苗至少能与用于早期临床试验受试者那样有效。这款疫苗是至关重要的，因为明确知道它能够预防四种癌症，即宫颈癌、外阴癌症、肛门癌和阴道癌，也知道它将能预防所有口腔癌中大约三分之二的癌症。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 在一项研究中，研究人员给 3066 名 9至15 岁的男孩女孩接种三种剂量系列的 HPV-9 疫苗。第二种剂量在第一个剂量后一个月接种，第三种剂量在 6 个月后接种。在第三种剂量接种后一个月，超过 99% 的受试者对该疫苗包含的所有 9 种菌株产生充分的抗体水平。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 在随访两年半后，受试者的抗体水平仍然强大，没有理由怀疑它们将会减弱。目前为止，四价与二价疫苗已跟随研究受试者大约 8 到 10 年，并未发现保护减弱的证据。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; Gardasil 9 预防 HPV 类型 6、11、16、18、31、33、45、52 及 58。而 HPV-16 与 HPV-18 是大部分癌症的起因，所有这些菌株的合并能够预防 HPV 引起的 90% 的癌症。这意味着可以避免逾 20 万例癌前期病变（需要各种侵入性手术来移除）及大约 2.3 万例可导致死亡、转移性疾病、手术和/或化疗病例。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 这款疫苗的影响是巨大的。这正在避免巨大数量的活组织检查、LEEPs 及锥形活组织检查。正在预防最终的事情，即治疗。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; LEEP（宫颈环形电切术）从根本上讲是熔化掉不治疗能发展成宫颈癌的癌前期病变。锥形活组织检查是一种侵入性方法，用来诊断癌前期病变或癌细胞。这些介入治疗中有一些可能会增加不孕风险。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 从另一方面讲，这款疫苗的这种风险是最低的。微小反应可能包括疼痛、注射部位红肿、轻度发烧、头痛及昏厥。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 接种后坐或躺大约 15 分钟可以帮助预防昏厥及跌倒引起的损伤。9价HPV疫苗可导致的最严重不良事件是一种严重的过敏反应。这种情况大约在每 100 万例接种中才出现一例。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 为了避免过敏反应，对某些疫苗成分过敏的人不应进行接种。对酵母过敏的人不应接种Gardasil 9或Gardasil，对乳胶过敏的人不应接种 Cervarix。Cervarix 是由葛兰素史克生产的二价疫苗。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		<br />\r\n<img alt=\"\" src=\"http://www.qqcjw.com/uploads/allimg/160325/16-160325162Q0619.jpg\" style=\"height:237px;width:500px;\" />\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		Gardasil 9<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 这在本质上意味着没有以上所说过敏症的人没有理由不去遵循 CDC 的建议，即所有青春期前的孩子应该接种这款疫苗。但如果一个人已经接种了三种剂量的四价 HPV 疫苗，那么没有理由接种Gardasil 9，除非他们处于接触这种病毒的高风险人群中。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 高风险个人包括那些存在无防护措施性行为的人，特别是有多个性伙伴的人。如果他们选择接种Gardasil 9，研究表明在接种四价疫苗的所有剂量后接种 9 价疫苗是安全的。对于那些尚未接种任何 HPV 疫苗的人，建议他们接种一种剂量的四价Gardasil ，它需要用完，随后接种Gardasil 第二种及第三种剂量。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; Gardasil 9 被批准用于 9至26 岁女性及 9至15 岁男性。这款疫苗被批准用于 16、18、31、33、45、52 及 58 型 HPV 引起的宫颈、外阴、阴道和肛门癌，及用于 6 或 11 型 HPV 引起的生殖器疣预防。Gardasil 9 对 5 种其它 HPV 类型（31、33、45、52 和 58）增加了保护，这些类型 HPV 引起大约 20% 的宫颈癌，FDA 之前批准的 HPV 疫苗不涵盖这些 HPV 类型。“接种疫苗是降低 HPV 引起的大多数宫颈、生殖器和肛门癌的一种关键公共卫生措施”。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 我们知道疫苗效价越高，免疫效果就越好。现有的HPV疫苗佳达修、卉妍康依次是4价疫苗和2价疫苗。2014年12月10日，美国食品药品监督管理局（FDA）官网宣布：默沙东（在美国和加拿大称为默克）研发的GARDASIL&reg;9（佳达修，九价重组人乳头状瘤病毒疫苗）获批，可预防约90%宫颈癌及相关癌症。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 新疫苗有潜力预防约90%的宫颈癌、外阴癌、阴道癌和肛门癌。<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 覆盖更多HPV病毒\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 提及9价HPV疫苗，维港健康专业人士称：相较于第一代GARDASIL&reg;疫苗，GARDASIL&reg;9增加了31、33、45、52 和 58五种病毒亚型，这些病毒引起了约20%的宫颈癌，是此前FDA获批的HPV病毒疫苗所不能预防的。\r\n	</div>\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '1471147205', '4200.00', '{\"thumbnail.jpg\"}', '2');
 INSERT INTO `YL_vaccinum` VALUES ('31', '1', '9价hpv疫苗', '<p>\r\n	<p style=\"color:#444444;font-family:\'Microsoft Yahei\', \'Helvetica Neue\', Helvetica, Arial, sans-serif;font-size:18px;background-color:#FFFFFF;\">\r\n		<span style=\"color:#323232;font-family:����;font-size:14px;line-height:24px;background-color:#FCFCFC;\">“医学的进步是人类的福音” 9价HPV疫苗是现有同名疫苗4价的进阶版，这种疫苗除了包含老版本疫苗抗6、11、16、18型乳头瘤病毒以外，还增添了对31、33、45、52和58五种亚型乳头瘤病毒的保护能力，而数据显示这五种乳头瘤病毒导致了约20%的宫颈癌病例的发生。3月22日，维港健康将联手香港毅力医护中心在香港推出首发预约，即可全面接种9价HPV疫苗。</span>\r\n	</p>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		<br />\r\n<img alt=\"\" src=\"http://www.qqcjw.com/uploads/allimg/160325/16-160325162G4W4.jpg\" style=\"height:229px;width:500px;\" />\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		9价HPV疫苗<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 此前美国FDA已经于2014年12月份批准了这种疫苗的上市，在2015年2月份美国CDC下属的专家委员会也做出了建议批准该疫苗上市的决定。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 香港成为第三个在今年三月底推出9价HPV疫苗的地区，与维港健康疫苗预约机构合作的部分医疗机构将是拥有首批疫苗注射资质的机构。维港健康客服人员透露，3月21日将会上市9价HPV疫苗，3月底就可预约接种9价HPV疫苗。进阶版HPV 9价疫苗能有效预防9种人乳头瘤病毒型，新增添5种亚型乳头瘤病毒保护，而这些病毒能引起了约20%的宫颈癌，这意味着9价HPV疫苗预防宫颈癌由70%上升至90%，是疫苗预防效果上一大突破！\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		<br />\r\n<img alt=\"\" src=\"http://www.qqcjw.com/uploads/allimg/160325/16-160325162J0406.jpg\" style=\"height:auto;\" />\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		全球引致HPV癌症及疾病的百分比<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp;赛诺菲公司的发言人表示Gardasil 9的上市将标志着预防乳头瘤病毒的新时代，这种疫苗将会把这九种病毒亚型的感染降低80%之多！\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 9价HPV疫苗批准适用于以预防HPV病毒16、18、31、33、45、52 和58型引起的宫颈癌、外阴癌、阴道癌和肛门癌，以及人乳头状瘤病毒6和11型引起的生殖器疣。换而言之，接种新款疫苗可以预防9成的宫颈癌和9成的尖锐湿疣。&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; CDC 免疫规范顾问委员会推荐 13 岁以下孩子与青少年接种这款疫苗，研究人员在这些人身上对这款疫苗进行了测试，以确保该疫苗至少能与用于早期临床试验受试者那样有效。这款疫苗是至关重要的，因为明确知道它能够预防四种癌症，即宫颈癌、外阴癌症、肛门癌和阴道癌，也知道它将能预防所有口腔癌中大约三分之二的癌症。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 在一项研究中，研究人员给 3066 名 9至15 岁的男孩女孩接种三种剂量系列的 HPV-9 疫苗。第二种剂量在第一个剂量后一个月接种，第三种剂量在 6 个月后接种。在第三种剂量接种后一个月，超过 99% 的受试者对该疫苗包含的所有 9 种菌株产生充分的抗体水平。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 在随访两年半后，受试者的抗体水平仍然强大，没有理由怀疑它们将会减弱。目前为止，四价与二价疫苗已跟随研究受试者大约 8 到 10 年，并未发现保护减弱的证据。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; Gardasil 9 预防 HPV 类型 6、11、16、18、31、33、45、52 及 58。而 HPV-16 与 HPV-18 是大部分癌症的起因，所有这些菌株的合并能够预防 HPV 引起的 90% 的癌症。这意味着可以避免逾 20 万例癌前期病变（需要各种侵入性手术来移除）及大约 2.3 万例可导致死亡、转移性疾病、手术和/或化疗病例。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 这款疫苗的影响是巨大的。这正在避免巨大数量的活组织检查、LEEPs 及锥形活组织检查。正在预防最终的事情，即治疗。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; LEEP（宫颈环形电切术）从根本上讲是熔化掉不治疗能发展成宫颈癌的癌前期病变。锥形活组织检查是一种侵入性方法，用来诊断癌前期病变或癌细胞。这些介入治疗中有一些可能会增加不孕风险。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 从另一方面讲，这款疫苗的这种风险是最低的。微小反应可能包括疼痛、注射部位红肿、轻度发烧、头痛及昏厥。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 接种后坐或躺大约 15 分钟可以帮助预防昏厥及跌倒引起的损伤。9价HPV疫苗可导致的最严重不良事件是一种严重的过敏反应。这种情况大约在每 100 万例接种中才出现一例。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 为了避免过敏反应，对某些疫苗成分过敏的人不应进行接种。对酵母过敏的人不应接种Gardasil 9或Gardasil，对乳胶过敏的人不应接种 Cervarix。Cervarix 是由葛兰素史克生产的二价疫苗。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		<br />\r\n<img alt=\"\" src=\"http://www.qqcjw.com/uploads/allimg/160325/16-160325162Q0619.jpg\" style=\"height:237px;width:500px;\" />\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;text-align:center;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		Gardasil 9<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 这在本质上意味着没有以上所说过敏症的人没有理由不去遵循 CDC 的建议，即所有青春期前的孩子应该接种这款疫苗。但如果一个人已经接种了三种剂量的四价 HPV 疫苗，那么没有理由接种Gardasil 9，除非他们处于接触这种病毒的高风险人群中。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 高风险个人包括那些存在无防护措施性行为的人，特别是有多个性伙伴的人。如果他们选择接种Gardasil 9，研究表明在接种四价疫苗的所有剂量后接种 9 价疫苗是安全的。对于那些尚未接种任何 HPV 疫苗的人，建议他们接种一种剂量的四价Gardasil ，它需要用完，随后接种Gardasil 第二种及第三种剂量。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; Gardasil 9 被批准用于 9至26 岁女性及 9至15 岁男性。这款疫苗被批准用于 16、18、31、33、45、52 及 58 型 HPV 引起的宫颈、外阴、阴道和肛门癌，及用于 6 或 11 型 HPV 引起的生殖器疣预防。Gardasil 9 对 5 种其它 HPV 类型（31、33、45、52 和 58）增加了保护，这些类型 HPV 引起大约 20% 的宫颈癌，FDA 之前批准的 HPV 疫苗不涵盖这些 HPV 类型。“接种疫苗是降低 HPV 引起的大多数宫颈、生殖器和肛门癌的一种关键公共卫生措施”。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 我们知道疫苗效价越高，免疫效果就越好。现有的HPV疫苗佳达修、卉妍康依次是4价疫苗和2价疫苗。2014年12月10日，美国食品药品监督管理局（FDA）官网宣布：默沙东（在美国和加拿大称为默克）研发的GARDASIL&reg;9（佳达修，九价重组人乳头状瘤病毒疫苗）获批，可预防约90%宫颈癌及相关癌症。\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 新疫苗有潜力预防约90%的宫颈癌、外阴癌、阴道癌和肛门癌。<br />\r\n&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 覆盖更多HPV病毒\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp;\r\n	</div>\r\n	<div style=\"margin:0px auto;padding:0px;border:0px;color:#323232;font-family:����;font-size:14px;background-color:#FCFCFC;\">\r\n		&nbsp; &nbsp; 提及9价HPV疫苗，维港健康专业人士称：相较于第一代GARDASIL&reg;疫苗，GARDASIL&reg;9增加了31、33、45、52 和 58五种病毒亚型，这些病毒引起了约20%的宫颈癌，是此前FDA获批的HPV病毒疫苗所不能预防的。\r\n	</div>\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '1471147205', '4200.00', '{\"thumbnail.jpg\"}', '2');
+
+-- ----------------------------
+-- Procedure structure for proc_goods_post
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `proc_goods_post`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `proc_goods_post`(
+	IN in_uid int(11) unsigned,
+	# 活动类型 韦明磊 2014.3.4
+	IN in_type tinyint(4) unsigned,
+	IN in_uname varchar(50),
+	IN in_title varchar(150),
+	IN in_pid smallint(5) unsigned,
+	IN in_cid smallint(5) unsigned,
+	IN in_img varchar(255),
+	IN in_price decimal(9,2) unsigned,
+	IN in_mobile_price decimal(9,2) unsigned,   -- 手机专享网购价
+	IN in_price_type tinyint(1) unsigned,  -- 价格类型(1:没有其他价格；2:手机专享网购价)
+	IN in_discount decimal(2,1) unsigned,
+	IN in_is_bonus tinyint(1) unsigned,  -- 是否参与分红计划(1:是；0:否)
+	IN in_cost_price decimal(9,2) unsigned,
+	IN in_search_reward decimal(9,2) unsigned, -- 搜索奖励金
+	IN in_rate smallint(5) unsigned,
+	IN in_quantity int(11) unsigned,
+	IN in_remain_quantity smallint(5) unsigned,
+	IN in_single_rebate decimal(9,2) unsigned,
+	IN in_single_fee decimal(9,2) unsigned,
+	IN in_first_days smallint(6) unsigned,
+	IN in_first_quantity int(11) unsigned,
+	IN in_is_taoke tinyint(3) unsigned,
+	IN in_source smallint(4) unsigned,
+	IN in_custom_source_name VARCHAR(10), -- 商家自定义的活动类型
+	# 购买限制 韦明磊 2014.3.4
+	IN in_buy_limit smallint(4) unsigned,
+	-- goods_content表 --
+	IN in_keyword varchar(100),
+	IN in_content text,
+	IN in_items varchar(200), --  温馨提示选择项
+	IN in_prompts varchar(500), --  温馨提示填写项
+	IN in_instruction varchar(100), --  拍下须知
+	IN in_search_buy_instruction varchar(1000), --  搜索须知
+	IN in_url varchar(500),
+	IN in_qrcode_img varchar(255),  -- 二维码下单图片地址
+	IN in_batches_quantity varchar(500),
+	IN in_batches_date varchar(500),
+	-- goods_log表 --
+	IN in_ip int(11) unsigned
+)
+    COMMENT '处理商家发布商品'
+BEGIN
+	DECLARE new_gid int(11) DEFAULT 0;
+	 -- batchesCount 批次总数(除第一批)
+	DECLARE batchesCount int(11) DEFAULT 0;
+	 -- batchesIndex 当前批次
+	DECLARE batchesIndex int(11) DEFAULT 1;
+	 -- batch_quantity 批次商品份数
+	DECLARE batch_quantity int(11) DEFAULT 0;
+	 -- batch_date 批次上线间隔(秒)
+	DECLARE batch_date int(11) DEFAULT 0;
+	 -- goods_quantity 商品总份数
+	DECLARE goods_quantity int(11) DEFAULT 0;
+	 -- goods_guaranty 商品总担保金
+	DECLARE goods_guaranty decimal(9,2) DEFAULT 0;
+	 -- goods_fee 商品总服务费
+	DECLARE goods_fee decimal(9,2) UNSIGNED DEFAULT 0;
+	 -- goods_search_reward 商品搜索奖励金
+	DECLARE goods_search_reward decimal(9,2) UNSIGNED DEFAULT 0;
+	 -- goods_batch_guaranty 商品批次担保金
+	DECLARE goods_batch_guaranty decimal(9,2) UNSIGNED DEFAULT 0;
+	 -- goods_batch_fee 商品批次服务费
+	DECLARE goods_batch_fee decimal(9,2) UNSIGNED DEFAULT 0;
+	 -- goods_addition_add_day 商品追加表add_day
+	DECLARE goods_addition_add_day int(11) DEFAULT 0;
+	
+	 -- 活动分红预留比率
+	DECLARE g_bonus_rate decimal(5,2) UNSIGNED DEFAULT 0;
+	 -- 单笔分红预留金额，返现金额*活动分红预留比率
+	DECLARE g_single_bonus decimal(9,2) UNSIGNED DEFAULT 0;
+	
+	DECLARE g_rand_sting VARCHAR(50) DEFAULT '';
+	DECLARE f_rand_sting VARCHAR(50) DEFAULT '';
+	DECLARE s_rand_sting VARCHAR(50) DEFAULT '';
+	DECLARE g_pno VARCHAR(50) DEFAULT '';
+	DECLARE f_pno VARCHAR(50) DEFAULT '';
+	DECLARE s_pno VARCHAR(50) DEFAULT '';
+	DECLARE Code int(11) DEFAULT 0;
+	DECLARE Message text DEFAULT '';
+	DECLARE log_content VARCHAR(255) DEFAULT '';
+	DECLARE dateline int(11) DEFAULT UNIX_TIMESTAMP();
+
+	DECLARE goods_source_id INT UNSIGNED DEFAULT 0; # 数据库中活动来源的id
+
+	-- SQL语句异常处理
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION,SQLWARNING
+	BEGIN
+		-- SQL异常,事务回滚
+		ROLLBACK;
+		SHOW WARNINGS LIMIT 1;
+		SET new_gid = 0;
+		SET Code = -1;
+		SET Message = '内部SQL语句错误';
+	END;
+		#开始事务
+		START TRANSACTION;
+		main:BEGIN
+
+			#判断商品来源数据是否正常
+			CALL proc_goods_get_source_id(in_source,in_custom_source_name,goods_source_id);
+			IF goods_source_id<=0 THEN
+				SET Code = -3;
+				SET Message = '保存商品类型失败';
+				LEAVE main;
+			END IF;
+
+			SET in_is_bonus = IF(in_is_bonus > 0, 1, 0);
+			
+			# 如果参与分红计划
+			IF in_is_bonus > 0 THEN
+				SELECT `value` INTO g_bonus_rate FROM `shs_system_config` WHERE `key`='bonus_each_activity_proportion' FOR UPDATE;
+				IF g_bonus_rate <= 0 THEN
+					SET Code = -4;
+					SET Message = '商品分红计划未配置或配置错误';
+					LEAVE main;
+				END IF;
+				SET g_single_bonus = TRUNCATE( in_single_rebate*g_bonus_rate/100 , 2 );
+			END IF;
+
+			#插入shs_goods表
+			#添加buy_limit写入 韦明磊 2014.3.4
+			INSERT INTO shs_goods 
+			SET `pay_state`=1,`uid`=in_uid,`type`=in_type,`uname`=in_uname,`title`=in_title,`state`=1,`dateline`=dateline,`pid`=in_pid,`cid`=in_cid,`is_bonus`=in_is_bonus,`single_bonus`=g_single_bonus,`bonus_rate`=g_bonus_rate,
+					`img`=in_img,`price`=in_price,`mobile_price`=in_mobile_price,`price_type`=in_price_type,`discount`=in_discount,`cost_price`=in_cost_price,`search_reward`=in_search_reward,`rate`=in_rate,`quantity`=in_quantity,
+					`remain_quantity`=in_remain_quantity,`single_rebate`=in_single_rebate,`single_fee`=in_single_fee,`first_days`=in_first_days,
+					`first_quantity`=in_first_quantity,`is_taoke`=in_is_taoke,`source`=goods_source_id,`buy_limit`=in_buy_limit;
+			SET new_gid = LAST_INSERT_ID();
+			IF new_gid <= 0 THEN
+				SET Code = -2;
+				SET Message = '插入shs_goods表失败';
+				LEAVE main;
+			ELSE
+        #如果是分期购活动 （author:moshiyou<momo1a@qq.com>）
+				IF	in_type = 6 THEN
+				  SELECT `value` INTO @lock_value_exchange FROM `shs_system_config` WHERE `key`='fenqi_exchange_scale' FOR UPDATE;
+				  SELECT `value` INTO @lock_value_overdue_payment FROM `shs_system_config` WHERE `key`='fenqi_overdue_payment_scale' FOR UPDATE;
+					INSERT INTO shs_stages_goods_extend
+					SET `gid`=new_gid,`back_money`=0,`escape_interest_days`=1000,`late_fee_percent`=@lock_value_overdue_payment,`interest_percent`=0,`gifts_percent`=@lock_value_exchange;
+				END IF;
+				#插入shs_goods_business表
+				INSERT INTO shs_goods_business 
+					SET `pay_state`=1,`gid`=new_gid,`uid`=in_uid,`type`=in_type,`state`=1,`uname`=in_uname,`title`=in_title,`img`=in_img,`is_bonus`=in_is_bonus,`single_bonus`=g_single_bonus,`bonus_rate`=g_bonus_rate,
+							`url`=in_url,`price`=in_price,`discount`=in_discount,`cost_price`=in_cost_price,`search_reward`=in_search_reward,`rate`=in_rate,`quantity`=in_quantity,
+							`remain_quantity`=in_remain_quantity,`single_rebate`=in_single_rebate,`single_fee`=in_single_fee,`first_days`=in_first_days,
+							`first_quantity`=in_first_quantity,`buy_limit`=in_buy_limit;
+				
+				#插入shs_goods_content表
+				INSERT INTO shs_goods_content 
+					SET `gid`=new_gid,`keyword`=in_keyword,`content`=in_content,`url`=in_url,`qrcode_img`=in_qrcode_img,`items`=in_items,`prompts`=in_prompts,`instruction`=in_instruction,`search_buy_instruction`=in_search_buy_instruction;
+				
+				#插入shs_goods_log表
+				SET log_content = '发布了商品。';
+				INSERT INTO shs_goods_log 
+					SET `gid`=new_gid,`uid`=in_uid,`uname`=in_uname,`dateline`=dateline,`content`=log_content,`before_state`=0,`after_state`=1,`ip`=in_ip;
+
+				#更新shs_goods_photo表 ,gid要为0
+				UPDATE shs_goods_photo SET `gid`=new_gid WHERE `uid`=in_uid AND `gid`=0;
+
+				#更新shs_user_seller 表
+				UPDATE shs_user_seller SET `goods_num` = `goods_num` + 1 WHERE `uid` = in_uid;
+				
+				#更新shs_goods表，新生成的活动，商家可以手动解除屏蔽的次数，字段为'seller_remove_shield'
+				UPDATE `shs_goods` SET `seller_remove_shield` = (SELECT `value` FROM `shs_system_config` WHERE `key`='seller_remove_shield') WHERE `gid`=new_gid;
+				
+				#将第一批插入addition表,活动担保金的计算方式修改为每份返现金额x份数 updateby 关小龙 2015-09-22 10:12:00
+				SET goods_guaranty = in_single_rebate * in_quantity;
+				SET goods_fee = in_single_fee * in_quantity;
+				SET goods_search_reward = in_search_reward * in_quantity;
+				
+				#如果是一站成名
+				IF in_type IN (1,4,5) AND LENGTH(in_batches_quantity) > 0 THEN
+					-- batchesCount 获取批次数量(除第一批)
+					CALL proc_get_string_length(in_batches_quantity, '_', batchesCount);
+					IF in_first_days < batchesCount + 1 THEN
+						SET Code = -3;
+						SET Message = '商品时间必须大于等于最大批次';
+						LEAVE main;
+					END IF;
+				END IF;
+				SET goods_addition_add_day = in_first_days;
+				
+				INSERT INTO shs_goods_addition 
+				SET  `pid`=0,`gid`=new_gid, `add_num`=in_quantity, `add_guaranty`=goods_guaranty,
+						`add_fee`=goods_fee, `add_search_reward`=goods_search_reward, `add_day`=goods_addition_add_day,
+						`dateline`=dateline, `online_time`=0, `state`=0;
+				#如果是一站成名
+				IF in_type IN (1,4,5) THEN
+					#有多批次的时候，也插入addition表
+					IF batchesCount > 0 THEN
+						SET goods_quantity = in_quantity;
+						-- 循环每一批次
+						loop_batches:WHILE batchesCount >= batchesIndex DO
+							SET batch_date = 0;
+							SET batch_quantity = 0;
+							-- batch_date 获取批次时间间隔
+							CALL proc_get_substring(in_batches_date, '_', batchesIndex, batch_date);
+							-- batch_quantity 获取批次商品份数
+							CALL proc_get_substring(in_batches_quantity, '_', batchesIndex, batch_quantity);
+							IF batch_date > 0 AND batch_quantity > 0 THEN
+								SET goods_batch_guaranty = in_single_rebate * batch_quantity; #活动担批次保金的计算方式修改为每份返现金额x份数 updateby 关小龙 2015-09-22 10:12:00
+								SET goods_batch_fee = in_single_fee * batch_quantity;
+								
+								-- 天数递减
+								SET goods_addition_add_day = goods_addition_add_day - 1;
+								IF goods_addition_add_day < 1 THEN
+									SET goods_addition_add_day = 1;
+								END IF;
+								-- 插入批次
+								INSERT INTO shs_goods_addition 
+								SET  `pid`=0,
+										`gid`=new_gid,
+										`num`=goods_quantity,
+										`guaranty`=goods_guaranty,
+										`fee`=goods_fee,
+										`search_reward`=0,
+										`add_num`=batch_quantity,
+										`add_guaranty`=goods_batch_guaranty,
+										`add_fee`=goods_batch_fee,
+										`add_search_reward`=0,
+										`add_day`=goods_addition_add_day,
+										`dateline`=dateline,
+										`online_time`=batch_date,
+										`state`=0;
+								-- 下批次插入addition表的num、guaranty和fee字段值
+								SET goods_quantity = goods_quantity + batch_quantity;
+								SET goods_guaranty = goods_guaranty + goods_batch_guaranty;
+								SET goods_fee = goods_fee + goods_batch_fee;
+								SET batchesIndex = batchesIndex + 1;
+							END IF;
+						END WHILE loop_batches;
+					END IF;
+				END IF;
+			END IF;
+		END main;
+		IF new_gid>0 && Code = 0 && Message= '' THEN
+			SET Code = 1;
+			COMMIT;
+		ELSE
+			ROLLBACK;
+			SET new_gid = 0;
+		END IF;
+	SELECT new_gid as gid,Code,Message;
+END
+;;
+DELIMITER ;

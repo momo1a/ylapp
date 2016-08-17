@@ -1,19 +1,37 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.61.97
-Source Server Version : 50542
-Source Host           : 192.168.61.97:3306
+Source Server         : 192.168.1.103_3306
+Source Server Version : 50536
+Source Host           : 192.168.1.103:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50542
+Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2016-08-17 17:51:48
+Date: 2016-08-18 00:24:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for YL_about_us
+-- ----------------------------
+DROP TABLE IF EXISTS `YL_about_us`;
+CREATE TABLE `YL_about_us` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `telephone` varchar(20) NOT NULL DEFAULT '' COMMENT '手机号码',
+  `email` varchar(50) NOT NULL DEFAULT '' COMMENT '邮箱',
+  `address` varchar(120) NOT NULL DEFAULT '' COMMENT '地址',
+  `description` varchar(1000) NOT NULL DEFAULT '' COMMENT '公司简介',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='关于我们表';
+
+-- ----------------------------
+-- Records of YL_about_us
+-- ----------------------------
+INSERT INTO `YL_about_us` VALUES ('1', '0751-832501465', 'test@qq.com', '深圳南山区南山大道', '公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介');
 
 -- ----------------------------
 -- Table structure for YL_background_account
@@ -234,17 +252,28 @@ DROP TABLE IF EXISTS `YL_feedback`;
 CREATE TABLE `YL_feedback` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '反馈用户id',
-  `username` varchar(30) NOT NULL DEFAULT '' COMMENT '反馈用户名',
   `userType` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '反馈用户类型1用户，2医生',
   `dateline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '反馈时间',
   `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态预留',
+  `content` varchar(500) NOT NULL DEFAULT '' COMMENT '反馈内容',
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='反馈表';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='反馈表';
 
 -- ----------------------------
 -- Records of YL_feedback
 -- ----------------------------
+INSERT INTO `YL_feedback` VALUES ('1', '1', '1', '1471438148', '0', '废手机卡雷锋精神开了房间俺老孙水库日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('2', '1', '1', '1471439335', '0', '废手机卡雷锋精神开了房间俺老孙水库日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('3', '1', '1', '1471439483', '0', '废手机卡雷锋精神开了房间俺老孙水库日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('4', '1', '1', '1471439647', '0', '废手机卡雷锋精神开了房间俺老孙水库日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('5', '1', '1', '1471439651', '0', '废手机卡雷锋精神开了房间俺老孙水库日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('6', '1', '1', '1471439659', '0', '废手机卡雷锋精神开了房间俺老孙水库日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('7', '1', '1', '1471439725', '0', '废手机卡雷锋精神开了房间俺老孙水库日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('8', '1', '1', '1471439965', '0', '废手机卡雷锋精神开了房间俺老孙水库日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('9', '1', '1', '1471440096', '0', '废手机卡雷锋精神开了房间俺老孙水库热我认为惹我日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('10', '1', '1', '1471440108', '0', '废手机卡雷锋精神开了房间俺老孙水方的身份的身份库热我认为惹我日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
+INSERT INTO `YL_feedback` VALUES ('11', '1', '1', '1471440285', '0', '方的身份的身份是的');
 
 -- ----------------------------
 -- Table structure for YL_gene_check

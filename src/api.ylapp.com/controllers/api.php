@@ -60,6 +60,7 @@ class Api extends MY_Controller
         }
         /*  检测通过 */
         $privateToken = $this->crypt->encode($res['uid'].'-'.$user.'-'.time().'-'.$res['userType']);  //私有token
+        $this->cache->save(md5($privateToken),$privateToken);
         if($this->user->updateLoginInfo($res['uid'])) {
             $this->response($this->responseDataFormat(0, '登陆成功', array('privateToken'=>$privateToken))); //登陆成功
         }else{

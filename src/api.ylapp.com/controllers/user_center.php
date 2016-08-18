@@ -436,4 +436,13 @@ class User_center extends MY_Controller
             $this->response($this->responseDataFormat(-1,'系统错误',array()));
         }
     }
+
+
+    /**
+     * 退出登录
+     */
+    public function logout(){
+        $this->cache->delete(md5(self::$privateToken));
+        $this->response($this->responseDataFormat(0,'请求成功',array()));
+    }
 }

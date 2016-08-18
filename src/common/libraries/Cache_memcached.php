@@ -100,7 +100,7 @@ class Cache_memcached {
      * @param   int time to live
      * @return  bool    true on success, false on failure
      */
-    public function save($id, $data, $ttl = 60) {
+    public function save($id, $data, $ttl = 864000) {
         if (get_class($this -> _memcached) === 'Memcached') {
             return $this -> _memcached -> set($id, array($data, time(), $ttl), $ttl);
         } elseif (get_class($this -> _memcached) === 'Memcache') {

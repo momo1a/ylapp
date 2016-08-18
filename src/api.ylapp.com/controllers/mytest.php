@@ -1,5 +1,5 @@
 <?php
-class Mytest extends MY_Controller
+class Mytest extends YL_Controller
 {
 
     public function __construct()
@@ -835,7 +835,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/feedback" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="iTUkWab090593WDWFWm86WbM8qnlIOErKJxXQfBJErspogy\/MF0laP\/aF0i4xhv0FbC1WOj2"/>
     <textarea name="content"></textarea>
     <input type="submit" value="submit"/>
 HTML;
@@ -862,10 +862,22 @@ HTML;
     }
 
 
-    public function myxin(){
-        $this->load->library('im/Im',null,'im');
-        $res = $this->im->test();
-        var_dump($res);
+    public function logout(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/user_center/logout" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="iTUkWab090593WDWFWm86WbM8qnlIOErKJxXQfBJErspogy\/MF0laP\/aF0i4xhv0FbC1WOj2"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
     }
 
 }

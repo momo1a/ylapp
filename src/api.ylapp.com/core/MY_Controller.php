@@ -19,10 +19,13 @@ class MY_Controller extends CI_Controller
 
 
     /**
-     * 接收客户端发送的私有token
+     * 接收客户端发送的私有token解码
      * @var null
      */
-    protected static $privateToken = null;
+    protected static $privateTokenDecode = null;
+
+    protected  static $privateToken = null;
+
 
     /**
      * 当前用户uid
@@ -57,8 +60,10 @@ class MY_Controller extends CI_Controller
         $this->load->library('Crypt',array('key'=>KEY_APP_SERVER,'iv'=>'0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF'),'crypt');    // 加密类库
         $this->load->library("UeMsg",null,'sms');  // 加载短信类库
         $this->load->library('Cache_memcached',null,'cache');  // 加载缓存类库
-        self::$privateToken = $this->crypt->decode(trim($this->input->get_post('privateToken')));
-        $userInfoArr = explode('-',self::$privateToken);
+        self::$privateToken = str_replace('\\','',$this->input->get_post('privateToken'));
+        $cacheData = $this->cache->get(md5(self::$privateToken));
+        self::$privateTokenDecode = $this->crypt->decode($cacheData);
+        $userInfoArr = explode('-',self::$privateTokenDecode);
         self::$currentUid = $userInfoArr[0];
         self::$currentUserMobile = $userInfoArr[1];
         self::$currentUserLastLoginTime = $userInfoArr[2];

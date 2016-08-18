@@ -843,25 +843,29 @@ HTML;
     }
 
 
+    public function getIndexScrollLog(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/user_index/getIndexScrollLog" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <!--<input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>-->
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
 
     public function myxin(){
-        $ch = curl_init();
-        $url = 'http://apis.baidu.com/yunba/realtime_restful_api/publish';
-        $header = array(
-            'Content-Type:application/x-www-form-urlencoded',
-            'apikey: dc99c891a8b076d22cc9bcb069679354',
-        );
-        $data = '{"method":"publish", "appkey": "5316bd7179b6570f2ca6e20b", "seckey": "sec-qaAQOCmuFL22b0mv78hcOEyc9DzB9q0zesIfBAereaN6FAcb", "topic": "test_topic", "msg": "this is one message"}';
-    // 添加apikey到header
-    curl_setopt($ch, CURLOPT_HTTPHEADER  , $header);
-    // 添加参数
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    // 执行HTTP请求
-    curl_setopt($ch , CURLOPT_URL , $url);
-    $res = curl_exec($ch);
-
-    var_dump(json_decode($res));
+        $this->load->library('im/Im',null,'im');
+        $res = $this->im->test();
+        var_dump($res);
     }
 
 }

@@ -11,15 +11,15 @@ class User_doctor_log_model extends MY_Model
         parent::__construct();
     }
 
-    public function getIndexScrollLog($uid=0){
-        $where = '(comType=1 AND comState=1) OR (comType=2 AND comState=4) OR (comType=3 AND comState=6)';
-        $this->where($where);
+    public function getIndexScrollLog($uid=0,$select='*'){
         if($uid != 0){
-            $this->where('userId !=', $uid);
+            $where = ' AND l.userId !='.$uid;
         }
-        $this->limit(500);
-        $this->order_by('dateline','desc');
-        $res = $this->find_all();
+        $sql = <<<SQL
+        SELECT  {$select} FROM YL_user_doctor_log as l  LEFT JOIN  YL_user as u ON l.userId=u.uid LEFT JOIN YL_user as d ON l.doctorId=d.uid  WHERE ((l.comType=1 AND l.comState=4) OR (l.comType=2 AND l.comState=3) OR (l.comType=3 AND l.comState=5)) {$where} ORDER BY l.id DESC LIMIT 500
+SQL;
+        $query = $this->db->query($sql);
+        $res = $query->result_array();
         return $res;
     }
 }

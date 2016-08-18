@@ -47,9 +47,9 @@ class User_index extends MY_Controller
      */
     public function getIndexScrollLog(){
         $this->load->model('user_doctor_log_model','udlog');
-        $uid = 0;
-        $res = $this->udlog->getIndexScrollLog($uid);
-        //$this->response($this->responseDataFormat(0,'请求成功',$res));
+        $uid = self::$currentUid;
+        $res = $this->udlog->getIndexScrollLog($uid,'l.description,u.nickname as user,d.nickname doctor');
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
     }
 
 

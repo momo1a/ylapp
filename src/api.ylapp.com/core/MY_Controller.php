@@ -47,8 +47,10 @@ class MY_Controller extends CI_Controller
      */
     protected static $currentUserLastLoginTime;
 
-	function __construct(){
+
+	public function __construct(){
 		parent::__construct();
+        session_start();
         if(!preg_match('/.?test.?/i',strtolower($this->router->class))){
             $this->checkToken();  //检测通讯token
         }
@@ -62,31 +64,7 @@ class MY_Controller extends CI_Controller
         self::$currentUserLastLoginTime = $userInfoArr[2];
         self::$currentUserType = $userInfoArr[3];
 	}
-	/**
-	 * 处理成功返回json数据
-	 * @param int $code:z状态编码
-	 * @param string $msg:描述
-	 * @param string $data:数据
-	 * @author djj
-	 * @version 2014-6-19
-	 */
-	protected function go_back($code , $msg = '', $data = NULL, $output = TRUE) {
-		$code = intval($code);
-		$ret = array (
-				'code' => $code,
-				'msg' => $msg
-		);
-		$data !== NULL && ($ret ['data'] = $data);
-		$json_str = json_encode ( $ret);
-	
-		if ($output) {
-			// 输出后停止程序
-			die ( $json_str );
-		}else{
-			// 返回json字符串
-			return $json_str;
-		}
-	}
+
 
     /**
      * @param array $content
@@ -154,7 +132,7 @@ class MY_Controller extends CI_Controller
      * 检查用户登陆
      */
     protected function checkUserLogin(){
-        if(!self::$privateToken || !is_numeric(self::$currentUid) || self::$currentUid == 0){
+        if(!self::$privateToken || !is_numeric(self::$currentUid) || self::$currentUid == 0 ){
             $this->response($this->responseDataFormat('500','未登录',array()));
         }
     }

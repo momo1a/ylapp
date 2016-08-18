@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2016-08-18 00:24:54
+Date: 2016-08-19 00:07:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -258,7 +258,7 @@ CREATE TABLE `YL_feedback` (
   `content` varchar(500) NOT NULL DEFAULT '' COMMENT '反馈内容',
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='反馈表';
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='反馈表';
 
 -- ----------------------------
 -- Records of YL_feedback
@@ -274,6 +274,22 @@ INSERT INTO `YL_feedback` VALUES ('8', '1', '1', '1471439965', '0', '废手机�
 INSERT INTO `YL_feedback` VALUES ('9', '1', '1', '1471440096', '0', '废手机卡雷锋精神开了房间俺老孙水库热我认为惹我日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
 INSERT INTO `YL_feedback` VALUES ('10', '1', '1', '1471440108', '0', '废手机卡雷锋精神开了房间俺老孙水方的身份的身份库热我认为惹我日俄五十六开发建设V就是你的空间啊发佛挡杀佛角度看');
 INSERT INTO `YL_feedback` VALUES ('11', '1', '1', '1471440285', '0', '方的身份的身份是的');
+INSERT INTO `YL_feedback` VALUES ('12', '3', '1', '1471533219', '0', 'sdfdsfsfas');
+INSERT INTO `YL_feedback` VALUES ('13', '3', '1', '1471533949', '0', '长嘘嘘嘘');
+INSERT INTO `YL_feedback` VALUES ('14', '3', '1', '1471533958', '0', '长嘘嘘嘘法大师傅士大夫');
+INSERT INTO `YL_feedback` VALUES ('15', '3', '1', '1471535303', '0', '微软微软范围热舞');
+INSERT INTO `YL_feedback` VALUES ('16', '3', '1', '1471535314', '0', '微软微软范围热舞忒特瑞特让他');
+INSERT INTO `YL_feedback` VALUES ('17', '3', '1', '1471535318', '0', '犯得上发射点发生');
+INSERT INTO `YL_feedback` VALUES ('18', '3', '1', '1471535324', '0', '犯得上发射点发生方式发士大夫石帆胜丰');
+INSERT INTO `YL_feedback` VALUES ('19', '3', '1', '1471535330', '0', '发士大夫电风扇');
+INSERT INTO `YL_feedback` VALUES ('20', '3', '1', '1471535353', '0', '发士大夫电风扇');
+INSERT INTO `YL_feedback` VALUES ('21', '3', '1', '1471535358', '0', '发士大夫电风扇发士大夫大师傅');
+INSERT INTO `YL_feedback` VALUES ('22', '3', '1', '1471535423', '0', '范德萨范德萨范德萨发生vs');
+INSERT INTO `YL_feedback` VALUES ('23', '3', '1', '1471535770', '0', '犯得上发射点发生vs');
+INSERT INTO `YL_feedback` VALUES ('24', '3', '1', '1471535842', '0', '法大师傅大师傅十分');
+INSERT INTO `YL_feedback` VALUES ('25', '3', '1', '1471535869', '0', '犯得上发生发生');
+INSERT INTO `YL_feedback` VALUES ('26', '3', '1', '1471535902', '0', '法大师傅士大夫');
+INSERT INTO `YL_feedback` VALUES ('27', '3', '1', '1471535991', '0', '发范德萨范德萨');
 
 -- ----------------------------
 -- Table structure for YL_gene_check
@@ -711,8 +727,8 @@ CREATE TABLE `YL_user` (
 -- ----------------------------
 -- Records of YL_user
 -- ----------------------------
-INSERT INTO `YL_user` VALUES ('1', '张三', '6467c1b1d2b9b93e5ad991356202bf55', '1', '1470359890', '3232251298', '1470548940', '3232235794', 'momo1a@qq.com', '15977675495', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '2');
-INSERT INTO `YL_user` VALUES ('3', '李四', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675496', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('1', '张三', '74e7d336cce754cdbe510ed26c04d5f1', '1', '1470359890', '3232251298', '1471532461', '3232235794', 'momo1a@qq.com', '15977675495', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '2');
+INSERT INTO `YL_user` VALUES ('3', '李四', '74e7d336cce754cdbe510ed26c04d5f1', '1', '1470359890', '3232251298', '1471535241', '3232235794', 'momo1a@qq.com', '15977675496', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
 INSERT INTO `YL_user` VALUES ('4', '王五', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675497', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
 INSERT INTO `YL_user` VALUES ('5', '赵六', 'c78b6663d47cfbdb4d65ea51c104044e', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675498', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
 INSERT INTO `YL_user` VALUES ('6', '赵医生', 'c78b6663d47cfbdb4d65ea51c104044e', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675499', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');

@@ -1,5 +1,5 @@
 <?php
-class Mytest extends YL_Controller
+class Mytest extends My_Controller
 {
 
     public function __construct()
@@ -835,7 +835,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/feedback" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="iTUkWab090593WDWFWm86WbM8qnlIOErKJxXQfBJErspogy\/MF0laP\/aF0i4xhv0FbC1WOj2"/>
+    <input type="hidden" name="privateToken" value="z8u7r1cfa4ad1Qly7e9xGEJPWaYOk4E9aalIARThDor6drxRzgwqHd9Xg2rgmjulTlWODpxP"/>
     <textarea name="content"></textarea>
     <input type="submit" value="submit"/>
 HTML;
@@ -843,23 +843,7 @@ HTML;
     }
 
 
-    public function getIndexScrollLog(){
-        $form = <<<HTML
-        <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <style>
-        input{
-        display: block;
-        }
-</style>
-</head>
-<form action="http://api.ylapp.com/user_index/getIndexScrollLog" method="post">
-    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <!--<input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>-->
-    <input type="submit" value="submit"/>
-HTML;
-        echo $form;
-    }
+
 
 
     public function logout(){
@@ -874,7 +858,55 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/logout" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="iTUkWab090593WDWFWm86WbM8qnlIOErKJxXQfBJErspogy\/MF0laP\/aF0i4xhv0FbC1WOj2"/>
+    <input type="hidden" name="privateToken" value="z8u7r1cfa4ad1Qly7e9xGEJPWaYOk4E9aalIARThDor6drxRzgwqHd9Xg2rgmjulTlWODpxP"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+    public function login()
+    {
+
+        /*var_dump($this->cache->get('15977675495'));*/
+        var_dump($this->encryption(111111));
+        var_dump($this->encryption(111111));
+        var_dump(time());
+        var_dump(ip2long($_SERVER['REMOTE_ADDR']));
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<form action="http://api.ylapp.com/api/login" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
+    <!--input type="text" name="privateToken" value="jVAavd11771a9dWgMdRGYzxpYlfj5RIJKt93K1YGrMNO3vDLLOfByhSxcylD5\/9gnv\/UoYEO"/><br/>-->
+    <input type="text" name="user" /><br/>
+    <input type="text" name="pwd" /><br/>
+    <!--<input type="text" name="rePwd"/><br/>-->
+    <input type="submit" value="submit"/>
+
+</form>
+HTML;
+        echo $form;
+
+    }
+
+
+/********************************************************************/
+
+    public function getIndexScrollLog(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/user_index/getIndexScrollLog" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <!--<input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>-->
     <input type="submit" value="submit"/>
 HTML;
         echo $form;

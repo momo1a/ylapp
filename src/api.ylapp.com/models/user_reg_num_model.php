@@ -62,4 +62,44 @@ class User_reg_num_model extends MY_Model
         return $res;
     }
 
+
+    /**
+     * 医生首页待处理的预约
+     * @param $docId
+     */
+    public function doctorIndex($docId){
+        $docId = intval($docId);
+        $sql = <<<SQL
+SELECT
+	r.dateline,
+	r.id,
+	u.nickname,
+	r.contacts,
+	CASE
+WHEN r.sex = 1 THEN
+	'男'
+WHEN r.sex = 2 THEN
+	'女'
+END AS sex,
+ FLOOR(
+	(
+		UNIX_TIMESTAMP() - r.appointBrithday
+	) / 31536000
+) AS age,
+ r.appointTel,
+ FROM_UNIXTIME(r.appointTime) AS appointDate,
+'预约' as type
+FROM
+	YL_user_reg_num AS r
+LEFT JOIN YL_user AS u ON r.userId = u.uid
+WHERE
+	r.docId = {$docId}
+AND r.`status` = 2
+SQL;
+        $query = $this->db->query($sql);
+        $res = $query->result_array();
+
+        return $res;
+    }
+
 }

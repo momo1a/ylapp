@@ -51,4 +51,35 @@ class User_leaving_msg_model extends MY_Model
 
     }
 
+
+    /**
+     * 医生首页
+     * @param $docId
+     */
+    public function doctorIndex($docId){
+        $docId = intval($docId);
+        $sql = <<<SQL
+SELECT
+	m.askTime,
+	m.id,
+	u.nickname,
+	u.sex,
+	FLOOR((UNIX_TIMESTAMP()-u.birthday)/31536000) AS age,
+	m.price,
+	m.askerContent,
+	m.img,
+	'留言问诊' as type
+FROM
+	YL_user_leaving_msg AS m
+LEFT JOIN YL_user AS u ON m.askerUid = u.uid
+
+WHERE
+	m.state = 2
+AND m.docId = {$docId}
+SQL;
+        $query = $this->db->query($sql);
+        $res = $query->result_array();
+        return $res;
+    }
+
 }

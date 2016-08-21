@@ -67,7 +67,7 @@ class User_reg_num_model extends MY_Model
      * 医生首页待处理的预约
      * @param $docId
      */
-    public function doctorIndex($docId){
+    public function doctorIndex($docId,$state=' =2 '){
         $docId = intval($docId);
         $sql = <<<SQL
 SELECT
@@ -94,7 +94,7 @@ FROM
 LEFT JOIN YL_user AS u ON r.userId = u.uid
 WHERE
 	r.docId = {$docId}
-AND r.`status` = 2
+AND r.`status` {$state}
 SQL;
         $query = $this->db->query($sql);
         $res = $query->result_array();

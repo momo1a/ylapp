@@ -56,7 +56,7 @@ class User_phone_diagnosis_model extends MY_Model
      * 医生首页在线问诊内容
      * @param $docId
      */
-    public function doctorIndex($docId)
+    public function doctorIndex($docId,$state=' =2 ')
     {
         $docId = intval($docId);
         $sql = <<<SQL
@@ -78,7 +78,7 @@ FROM
 LEFT JOIN YL_user AS u ON d.askUid = u.uid
 LEFT JOIN YL_user_illness_history AS i ON d.illnessId=i.illId
 WHERE
-	d.state = 2
+	d.state {$state}
 AND d.docId = {$docId}
 SQL;
         $query = $this->db->query($sql);

@@ -56,11 +56,11 @@ class User_leaving_msg_model extends MY_Model
      * 医生首页
      * @param $docId
      */
-    public function doctorIndex($docId){
+    public function doctorIndex($docId,$state=' =2 '){
         $docId = intval($docId);
         $sql = <<<SQL
 SELECT
-	m.askTime,
+	m.askTime as dateline,
 	m.id,
 	u.nickname,
 	u.sex,
@@ -74,11 +74,44 @@ FROM
 LEFT JOIN YL_user AS u ON m.askerUid = u.uid
 
 WHERE
-	m.state = 2
+	m.state {$state}
 AND m.docId = {$docId}
 SQL;
         $query = $this->db->query($sql);
         $res = $query->result_array();
+        return $res;
+    }
+
+    /**
+     * 详情
+     * @param $docId
+     * @param $id  问诊id
+     * @param $isComplete 是否完成 默认获取的是未完成的
+     *
+     */
+    public function detail($docId,$id,$isComplete=false){
+        $docId = intval($docId);
+        $id = intval($id);
+        if($isComplete){   //  如果是完成状态下的详情
+            $this->select(
+                ''
+            );
+            $this->where(array('YL_doctor_reply.type'=>1,'YL_doctor_reply.state'=>1));
+            $this->join('YL_doctor_reply','YL_doctor_reply.themeId=YL_user_leaving_msg.id','left');
+        }else{          //   如果是未完成状态下的详情
+            $this->select(
+                'YL_user_leaving_msg.id,
+            YL_user.nickname,
+            (CASE WHEN YL_user_illness_history.sex=1 THEN "男" WHEN YL_user_illness_history.sex=2 THEN "女" END) as sex,
+            YL_user_leaving_msg.askerNickname,
+            YL_user_leaving_msg.askerContent,
+            YL_user_leaving_msg.img'
+            );
+        }
+        $this->where(array('YL_user_leaving_msg.docId'=>$docId,'YL_user_leaving_msg.id'=>$id));
+        $this->join('YL_user','YL_user.uid=YL_user_leaving_msg.askerUid','left');
+        $this->join('YL_user_illness_history','YL_user_illness_history.illId=YL_user_leaving_msg.illid','left');
+        $res = $this->find_all();
         return $res;
     }
 

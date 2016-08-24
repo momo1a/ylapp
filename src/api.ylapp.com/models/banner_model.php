@@ -14,10 +14,10 @@ class Banner_model extends MY_Model
     /**
      * @param $userType
      */
-    public function getBannerByUserType($userType,$select){
+    public function getBannerByUserType($userType,$select,$limit=4){
         $this->select($select);
         $this->order_by('createTime','desc');
-        $this->limit(4);
+        $this->limit($limit);
         $res = $this->find_all_by(array('type'=>$userType));
         return $res;
     }

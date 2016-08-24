@@ -88,4 +88,23 @@ HTML;
 HTML;
         echo $form;
     }
+
+    public function userIndex(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/user_index/index" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="hHeno77f8685dXm3EaxAcaXoO0drlDOFOCc0crwW\/IpS4nZYn+X8rZ9WPq9\/9Qw1kt92d9XL"/>
+    <input type="text" name="id"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
 }

@@ -10,6 +10,7 @@ class Medical extends MY_Controller
 {
     public function __construct(){
         parent::__construct();
+        $this->checkUserLogin();
         $this->load->model('User_illness_history_model','illness');
         $this->load->model('User_illness_history_remarks_model','illness_remarks');
         $this->load->library('upload_image');
@@ -64,6 +65,11 @@ class Medical extends MY_Controller
         $illId = intval($this->input->get_post('illId'));
         $res = $this->illness->getIllnessDetail(self::$currentUid,$illId);
         $resTwo = $this->illness_remarks->getRemarksByIllIdAndUid($illId,self::$currentUid);
+        if(!empty($resTwo)){
+            foreach($resTwo as $k=>$v){
+                $resTwo[$k]['img'] = json_decode($v['img'],true);
+            }
+        }
         if($res){
             $this->response($this->responseDataFormat(0,'请求成功',array('ill'=>$res,'remarks'=>$resTwo)));
         }else{

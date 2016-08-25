@@ -16,5 +16,6 @@ class Common_user_doctor_log_model extends YL_Model
      */
     public function saveLog($data){
         $this->insert($data);
+        return $this->db->insert_id();
     }
 }

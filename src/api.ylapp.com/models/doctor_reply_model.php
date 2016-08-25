@@ -36,4 +36,13 @@ class Doctor_reply_model extends MY_Model
         $res = $this->find_all();
         return $res;
     }
+
+    /**
+     * 医生回答问题
+     * @param $data
+     */
+    public function recordAdd($data){
+        $this->insert($data);
+        return $this->db->insert_id();
+    }
 }

@@ -10,7 +10,7 @@ CREATE TABLE `YL_doctor_info` (
   `phoneSec` varchar(15) NOT NULL DEFAULT '' COMMENT '电话二',
   `summary` VARCHAR(1000) not null default '' comment '简介',
   `goodAt` varchar(300) not null default '' COMMENT '擅长',
-  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '账号状态:0未通过,1通过',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '账号状态:0待审核,1通过,2不通过',
   PRIMARY KEY (`uid`),
   KEY `state` (`state`) USING BTREE,
   UNIQUE KEY `uid` (`uid`)

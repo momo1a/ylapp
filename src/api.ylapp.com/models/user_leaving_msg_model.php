@@ -83,7 +83,7 @@ SQL;
     }
 
     /**
-     * 详情
+     * 详情显示给医生
      * @param $docId
      * @param $id  问诊id
      * @param $isComplete 是否完成 默认获取的是未完成的
@@ -93,11 +93,22 @@ SQL;
         $docId = intval($docId);
         $id = intval($id);
         if($isComplete){   //  如果是完成状态下的详情
+            $this->where(array('YL_doctor_reply.type'=>1,'YL_doctor_reply.state'=>1)); /*回答留言类型，审核已经通过*/
             $this->select(
-                ''
+                'YL_user_leaving_msg.id,
+                YL_user.nickname,
+                (CASE WHEN YL_user_illness_history.sex=1 THEN "男" WHEN YL_user_illness_history.sex=2 THEN "女" END) as sex,
+                YL_user_illness_history.age,
+                YL_user_illness_history.realname,
+                YL_user_illness_history.allergyHistory,
+                YL_user_illness_history.stages,
+                YL_user_illness_history.result,
+                YL_user_leaving_msg.askerContent,
+                YL_user_leaving_msg.img,
+                YL_doctor_reply.replyContent
+                '
             );
-            $this->where(array('YL_doctor_reply.type'=>1,'YL_doctor_reply.state'=>1));
-            $this->join('YL_doctor_reply','YL_doctor_reply.themeId=YL_user_leaving_msg.id','left');
+
         }else{          //   如果是未完成状态下的详情
             $this->select(
                 'YL_user_leaving_msg.id,
@@ -105,14 +116,37 @@ SQL;
             (CASE WHEN YL_user_illness_history.sex=1 THEN "男" WHEN YL_user_illness_history.sex=2 THEN "女" END) as sex,
             YL_user_leaving_msg.askerNickname,
             YL_user_leaving_msg.askerContent,
+            YL_user_illness_history.age,
             YL_user_leaving_msg.img'
             );
         }
         $this->where(array('YL_user_leaving_msg.docId'=>$docId,'YL_user_leaving_msg.id'=>$id));
         $this->join('YL_user','YL_user.uid=YL_user_leaving_msg.askerUid','left');
         $this->join('YL_user_illness_history','YL_user_illness_history.illId=YL_user_leaving_msg.illid','left');
+        $this->join('YL_doctor_reply','YL_doctor_reply.themeId=YL_user_leaving_msg.id','left');
         $res = $this->find_all();
         return $res;
     }
 
+
+    /**
+     * 根据留言id获取留言信息
+     * @param $id
+     */
+    public function getLeavMsgInfo($id,$select){
+        $this->select($select);
+        $res = $this->find($id);
+        return $res;
+    }
+
+    /**
+     * 更改状态
+     * @param $id
+     */
+    public function updateStatusById($id,$state){
+        $where = array('id'=>$id);
+        $data = array('state'=>$state);
+        $res = $this->update($where,$data);
+        return $res;
+    }
 }

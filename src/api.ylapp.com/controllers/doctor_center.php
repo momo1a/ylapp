@@ -14,6 +14,8 @@ class Doctor_center extends MY_Controller
         $this->load->model('User_reg_num_model','reg_num');
         $this->load->model('User_phone_diagnosis_model','diagnosis');
         $this->load->model('User_leaving_msg_model','levemsg');
+        $this->load->model('Doctor_reply_model','reply');
+        $this->load->model('User_model','user');
     }
 
     /**
@@ -50,6 +52,7 @@ class Doctor_center extends MY_Controller
     }
 
 
+    /*********************问诊之留言文答start**********************************/
     /**
      *  留言问答列表
      */
@@ -58,7 +61,7 @@ class Doctor_center extends MY_Controller
         $state = intval($this->input->get_post('state'));
         switch($state){
             case 1:            // 未完成
-                $order = $this->levemsg->doctorIndex(self::$currentUid,'in(2) ');
+                $order = $this->levemsg->doctorIndex(self::$currentUid,'=2 ');
                 break;
             case 2:          // 已完成
                 $order = $this->levemsg->doctorIndex(self::$currentUid,' =4 ');
@@ -70,17 +73,90 @@ class Doctor_center extends MY_Controller
         $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$order)));
     }
 
+
+
     /**
      * 留言问答详情页
      */
 
     public function leavingDetail(){
-        $id = intval($this->input->get_post('id'));
-        $res = $this->levemsg->detail(self::$currentUid,$id);  // 未回答的
-        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+        $id = intval($this->input->get_post('id')); /*留言id*/
+        $state = intval($this->input->get_post('state'));
+        switch($state){
+            case 1 :
+                $res = $this->levemsg->detail(self::$currentUid,$id);  // 未回答的
+                break;
+            case 2 :
+                $res = $this->levemsg->detail(self::$currentUid,$id,true);  // 已完成的
+                break;
+            default :
+                $this->response($this->responseDataFormat(1,'状态值不正常',array()));
+                break;
+        }
+        if(!empty($res)){
+            foreach($res as $key=>$value){
+                $res[$key]['img'] = json_decode($value['img'],true);
+
+            }
+        }
+        $imgServer =$this->getImgServer();
+        $this->response($this->responseDataFormat(0,'请求成功',array('result'=>$res,'imgServer'=>$imgServer)));
     }
 
 
+    /**
+     * 医生提交回答
+     */
+
+    public function commitReply(){
+        $id = intval($this->input->get_post('id'));  // 留言id
+        $replyContent = addslashes($this->input->get_post('content'));
+        if(!$id){
+            $this->response($this->responseDataFormat(1,'请传入留言id',array()));
+        }
+        $info = $this->levemsg->getLeavMsgInfo($id,'askerUid');
+
+        $data = array(
+            'themeId'=>$id,
+            'userId'=>intval($info['askerUid']),
+            'type'=>1,
+            'replyContent'=>$replyContent,
+            'replyId'=>self::$currentUid,
+            'replyNicname'=>$this->user->getUserInfoByUid(self::$currentUid,'nickname'),
+            'replyTime'=>time()
+        );
+        $logData = array(
+            'userId'=>intval($info['askerUid']),
+            'doctorId'=>self::$currentUid,
+            'comType'=>1,
+            'comState'=>5,
+            'description'=>'医生回答问题',
+            'dateline'=>time()
+        );
+        $this->load->model('Common_user_doctor_log_model','udlog');
+        $this->db->trans_begin();
+        $insertId = $this->reply->recordAdd($data);
+        $update = $this->levemsg->updateStatusById($id,5);  // 更改状态为已回答待审核
+        $log = $this->udlog->saveLog($logData);
+        if ($insertId && $update && $log) {
+            $this->db->trans_commit();
+            $this->response($this->responseDataFormat(0,'请求成功',array()));
+        } else {
+            $this->db->trans_rollback();
+            $this->response($this->responseDataFormat(-1,'请求失败',array()));
+        }
+    }
+
+    /*********************问诊之留言文答end**********************************/
+
+
+    /*********************问诊之在线问诊start**********************************/
+
+
+
+
+
+    /*********************问诊之在线问诊end**********************************/
 
     /**
      * @param $order

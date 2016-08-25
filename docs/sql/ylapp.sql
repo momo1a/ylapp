@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 192.168.61.97
-Source Server Version : 50542
-Source Host           : 192.168.61.97:3306
+Source Server         : 192.168.1.103_3306
+Source Server Version : 50536
+Source Host           : 192.168.1.103:3306
 Source Database       : ylapp
 
 Target Server Type    : MYSQL
-Target Server Version : 50542
+Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2016-08-25 14:34:07
+Date: 2016-08-25 23:28:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -158,7 +158,7 @@ CREATE TABLE `YL_doctor_info` (
   `sex` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '性别',
   `phoneSec` varchar(15) NOT NULL DEFAULT '' COMMENT '电话二',
   `summary` varchar(1000) NOT NULL DEFAULT '' COMMENT '简介',
-  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '账号状态:0未通过,1通过',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '账号状态:0待审核,1通过,2不通过',
   `goodAt` varchar(300) NOT NULL DEFAULT '' COMMENT '擅长',
   `docLevel` varchar(25) NOT NULL DEFAULT '' COMMENT '医生职称',
   PRIMARY KEY (`uid`),
@@ -175,7 +175,7 @@ INSERT INTO `YL_doctor_info` VALUES ('8', '1', '2', '博士生导师', '1', '158
 INSERT INTO `YL_doctor_info` VALUES ('9', '2', '5', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '实习生');
 INSERT INTO `YL_doctor_info` VALUES ('10', '2', '4', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '主任医生');
 INSERT INTO `YL_doctor_info` VALUES ('11', '1', '1', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '主任医生');
-INSERT INTO `YL_doctor_info` VALUES ('12', '2', '2', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '1', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '副主任医生');
+INSERT INTO `YL_doctor_info` VALUES ('12', '2', '2', '博士生导师', '1', '15888888888', '深圳医院业务院长，博士生导师，我省资深内科专家，首都医科大学宣武医院特约顾问，中国、美国、德国三国持照医师，多年从事三甲医院的管理工作，被聘为多家医学杂志常务编委，享受国务院特殊津贴。', '0', '医生在北京大学深圳医院肿瘤科作为副主任医师帮助了无数肿瘤患者。\r\n \r\n擅长乳腺、甲状腺、胃肠外科肿瘤疾病的诊治，以及腹腔微创技术。', '副主任医生');
 
 -- ----------------------------
 -- Table structure for YL_doctor_offices
@@ -236,7 +236,7 @@ CREATE TABLE `YL_doctor_reply` (
   KEY `replyTime` (`state`) USING BTREE,
   KEY `replyId` (`replyId`) USING BTREE,
   KEY `userId` (`userId`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='医生回复表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='医生回复表';
 
 -- ----------------------------
 -- Records of YL_doctor_reply
@@ -244,6 +244,7 @@ CREATE TABLE `YL_doctor_reply` (
 INSERT INTO `YL_doctor_reply` VALUES ('1', '1', '1', '1', '医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复', '6', '赵医生', '1470879001', '1');
 INSERT INTO `YL_doctor_reply` VALUES ('2', '4', '1', '1', '医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复', '6', '赵医生', '1470879002', '2');
 INSERT INTO `YL_doctor_reply` VALUES ('3', '5', '1', '1', '医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复医生回复', '6', '赵医生', '1470879003', '1');
+INSERT INTO `YL_doctor_reply` VALUES ('5', '7', '1', '1', '你的病不是什么大问题，可以治愈', '6', '赵医生', '1472138412', '0');
 
 -- ----------------------------
 -- Table structure for YL_feedback
@@ -356,6 +357,26 @@ CREATE TABLE `YL_hospital` (
 INSERT INTO `YL_hospital` VALUES ('1', '北京武警总队医院', '长安街5号', '/upload/img/test.sql', '1470361991', '1470361991', '0');
 INSERT INTO `YL_hospital` VALUES ('2', '广东协和医院', '东莞长安街8号', '/upload/img/test.sql', '1470361991', '1470361991', '0');
 INSERT INTO `YL_hospital` VALUES ('3', '深圳人民医院', '南山区XX街5号', '/upload/img/test.sql', '1470361991', '1470361991', '0');
+
+-- ----------------------------
+-- Table structure for YL_index_ad_word
+-- ----------------------------
+DROP TABLE IF EXISTS `YL_index_ad_word`;
+CREATE TABLE `YL_index_ad_word` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `word` varchar(125) NOT NULL DEFAULT '' COMMENT '广告词',
+  `type` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '类型 1在线诊疗，2个人病历，3基因检测，4疫苗接种',
+  `dateline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='首页广告词表';
+
+-- ----------------------------
+-- Records of YL_index_ad_word
+-- ----------------------------
+INSERT INTO `YL_index_ad_word` VALUES ('1', '挑家好医院就诊', '1', '1470359891');
+INSERT INTO `YL_index_ad_word` VALUES ('2', '自己的病历自己管', '2', '1470359892');
+INSERT INTO `YL_index_ad_word` VALUES ('3', '提供最权威的基因检测', '3', '1470359893');
+INSERT INTO `YL_index_ad_word` VALUES ('4', '最新最安全的疫苗', '4', '1470359894');
 
 -- ----------------------------
 -- Table structure for YL_money
@@ -731,16 +752,16 @@ CREATE TABLE `YL_user` (
 -- Records of YL_user
 -- ----------------------------
 INSERT INTO `YL_user` VALUES ('1', '张三', '74e7d336cce754cdbe510ed26c04d5f1', '1', '1470359890', '3232251298', '1472105958', '3232251312', 'momo1a@qq.com', '15977675495', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '2');
-INSERT INTO `YL_user` VALUES ('3', '李四', '74e7d336cce754cdbe510ed26c04d5f1', '1', '1470359890', '3232251298', '1471535241', '3232235794', 'momo1a@qq.com', '15977675496', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
-INSERT INTO `YL_user` VALUES ('4', '王五', '74e7d336cce754cdbe510ed26c04d5f1', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675497', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
-INSERT INTO `YL_user` VALUES ('5', '赵六', '74e7d336cce754cdbe510ed26c04d5f1', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675498', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
-INSERT INTO `YL_user` VALUES ('6', '赵医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1471576049', '3232251298', 'momo1a@qq.com', '15977675499', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
-INSERT INTO `YL_user` VALUES ('7', '李医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675410', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
-INSERT INTO `YL_user` VALUES ('8', '钱医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675411', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
-INSERT INTO `YL_user` VALUES ('9', '孙医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675412', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
-INSERT INTO `YL_user` VALUES ('10', '鲁医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675413', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
-INSERT INTO `YL_user` VALUES ('11', '黄医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675414', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
-INSERT INTO `YL_user` VALUES ('12', '梁医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675415', '1470359944', '/upoad/a/test.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('3', '李四', '74e7d336cce754cdbe510ed26c04d5f1', '1', '1470359890', '3232251298', '1471535241', '3232235794', 'momo1a@qq.com', '15977675496', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('4', '王五', '74e7d336cce754cdbe510ed26c04d5f1', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675497', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('5', '赵六', '74e7d336cce754cdbe510ed26c04d5f1', '1', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675498', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('6', '赵医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1472129874', '3232235876', 'momo1a@qq.com', '15977675499', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('7', '李医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675410', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('8', '钱医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675411', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('9', '孙医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675412', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('10', '鲁医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675413', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('11', '黄医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675414', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
+INSERT INTO `YL_user` VALUES ('12', '梁医生', '74e7d336cce754cdbe510ed26c04d5f1', '2', '1470359890', '3232251298', '1470359944', '3232251298', 'momo1a@qq.com', '15977675415', '1470359944', 'avatar/2016/08/15/2029144260.jpg', '0', '0', '1');
 
 -- ----------------------------
 -- Table structure for YL_user_doctor_log
@@ -758,7 +779,7 @@ CREATE TABLE `YL_user_doctor_log` (
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`) USING BTREE,
   KEY `doctorId` (`doctorId`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户-医生-日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='用户-医生-日志表';
 
 -- ----------------------------
 -- Records of YL_user_doctor_log
@@ -766,6 +787,13 @@ CREATE TABLE `YL_user_doctor_log` (
 INSERT INTO `YL_user_doctor_log` VALUES ('1', '1', '6', '3', '0', '用户提交预约挂号', '1471101534', '0');
 INSERT INTO `YL_user_doctor_log` VALUES ('2', '1', '6', '2', '0', '用户提交了在线问诊申请', '1471101970', '0');
 INSERT INTO `YL_user_doctor_log` VALUES ('3', '1', '6', '1', '0', '用户提交了留言问答', '1471102303', '0');
+INSERT INTO `YL_user_doctor_log` VALUES ('4', '1', '6', '1', '5', '医生回答问题', '1472138412', '0');
+INSERT INTO `YL_user_doctor_log` VALUES ('5', '1', '6', '1', '4', '留言问答完成', '1472138413', '0');
+INSERT INTO `YL_user_doctor_log` VALUES ('6', '1', '6', '2', '3', '在线问诊完成', '1472138414', '0');
+INSERT INTO `YL_user_doctor_log` VALUES ('7', '1', '6', '3', '5', '预约挂号完成', '1472138415', '0');
+INSERT INTO `YL_user_doctor_log` VALUES ('8', '3', '6', '1', '4', '留言问答完成', '1472138416', '0');
+INSERT INTO `YL_user_doctor_log` VALUES ('9', '3', '6', '2', '3', '在线问诊完成', '1472138417', '0');
+INSERT INTO `YL_user_doctor_log` VALUES ('10', '3', '6', '3', '5', '预约挂号完成', '1472138418', '0');
 
 -- ----------------------------
 -- Table structure for YL_user_illness_history
@@ -834,7 +862,7 @@ CREATE TABLE `YL_user_leaving_msg` (
   `docName` varchar(20) NOT NULL DEFAULT '' COMMENT '医生名称',
   `img` varchar(300) NOT NULL DEFAULT '' COMMENT '图片',
   `askTime` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '问诊时间',
-  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待付款，1待处理(已付款)，2通过（显示给医生看），3不通过（失败），4完成',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0待付款，1待处理(已付款)，2通过（显示给医生看），3不通过（失败），4完成，5，医生已回答（等待客服审核）',
   PRIMARY KEY (`id`),
   KEY `state` (`state`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE
@@ -843,13 +871,13 @@ CREATE TABLE `YL_user_leaving_msg` (
 -- ----------------------------
 -- Records of YL_user_leaving_msg
 -- ----------------------------
-INSERT INTO `YL_user_leaving_msg` VALUES ('1', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878945', '2');
+INSERT INTO `YL_user_leaving_msg` VALUES ('1', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878945', '4');
 INSERT INTO `YL_user_leaving_msg` VALUES ('2', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878946', '1');
 INSERT INTO `YL_user_leaving_msg` VALUES ('3', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878947', '1');
-INSERT INTO `YL_user_leaving_msg` VALUES ('4', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878948', '2');
-INSERT INTO `YL_user_leaving_msg` VALUES ('5', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878949', '2');
+INSERT INTO `YL_user_leaving_msg` VALUES ('4', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878948', '3');
+INSERT INTO `YL_user_leaving_msg` VALUES ('5', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470878949', '4');
 INSERT INTO `YL_user_leaving_msg` VALUES ('6', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '300.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1520587118.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520585576.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1520588155.jpg\"]', '1470900059', '3');
-INSERT INTO `YL_user_leaving_msg` VALUES ('7', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '350.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1617333130.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341085.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341619.jpg\"]', '1470903454', '4');
+INSERT INTO `YL_user_leaving_msg` VALUES ('7', '1', '1', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '350.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1617333130.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341085.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1617341619.jpg\"]', '1470903454', '5');
 INSERT INTO `YL_user_leaving_msg` VALUES ('8', '1', '2', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '350.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/11\\/1621163096.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1621166021.jpg\",\"leavingMsg\\/2016\\/08\\/11\\/1621162898.jpg\"]', '1470903676', '2');
 INSERT INTO `YL_user_leaving_msg` VALUES ('9', '1', '3', '张三', '15977675495', '问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述', '30.00', '6', '赵医生', '[\"leavingMsg\\/2016\\/08\\/13\\/2331436591.jpg\",\"leavingMsg\\/2016\\/08\\/13\\/2331437401.jpg\"]', '1471102303', '3');
 

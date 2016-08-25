@@ -14,6 +14,7 @@ class Leaving_msg extends MY_Controller
         $this->load->model('User_leaving_msg_model','leaving');
         $this->load->model('User_model','user');
         $this->load->model('Doctor_fee_setting_model','fee_setting');
+        $this->load->model('User_illness_history_model','illness');
         $this->load->model('Money_model','money');
     }
 
@@ -25,7 +26,8 @@ class Leaving_msg extends MY_Controller
         $select = 'YL_user.nickname AS docName,YL_doctor_offices.officeName';
         $doctor = $this->user->getDoctorDetail($docId,$select);
         $leavingFee = $this->fee_setting->getFeeSettingByUid($docId,'leavMsgFee');
-        $this->response($this->responseDataFormat(0,'请求成功',array('doctor'=>$doctor,'leavFee'=>$leavingFee)));
+        $illness = $this->illness->illnessList(self::$currentUid,'illId,illName');
+        $this->response($this->responseDataFormat(0,'请求成功',array('doctor'=>$doctor,'leavFee'=>$leavingFee,'illnessHistory'=>$illness)));
     }
 
     /**
@@ -35,7 +37,9 @@ class Leaving_msg extends MY_Controller
         $content = addslashes($this->input->get_post('content'));
         $price = floatval($this->input->get_post('price'));
         $docId = intval($this->input->get_post('docId'));
-        if(!$docId){exit('DOCTOR NOT EXISTS');}
+        $illId = intval($this->input->get_post('illId'));
+        if(!$docId){$this->response($this->responseDataFormat(1,'请选择医生',array()));}
+        if(!$illId){$this->response($this->responseDataFormat(1,'请选择病历',array()));}
         $imgArr = array();
         if(!empty($_FILES)){
             foreach($_FILES as $k=>$val){
@@ -47,6 +51,7 @@ class Leaving_msg extends MY_Controller
         }
         $data = array(
             'askerUid'=>self::$currentUid,
+            'illid' => $illId,
             'askerNickname'=>$this->user->getUserInfoByUid(self::$currentUid,'nickname'),
             'askerPone' => $this->user->getUserInfoByUid(self::$currentUid,'phone'),
             'askerContent'=>$content,

@@ -84,7 +84,7 @@ class User_model extends MY_Model
      * @param $select   查询字段
      * @return array
      */
-    public function getDoctorList($limit,$select,$officeId=0,$hid=0,$keyword=''){
+    public function getDoctorList($limit,$select,$officeId=0,$hid=0,$keyword='',$offset=0){
         $officeId = intval($officeId);
         $hid = intval($hid);
         if($officeId != 0){
@@ -102,6 +102,7 @@ class User_model extends MY_Model
         $this->join('YL_hospital','YL_doctor_info.hid=YL_hospital.hid','left');
         $this->join('YL_doctor_offices','YL_doctor_offices.id=YL_doctor_info.officeId','left');
         $this->limit($limit);
+        $this->offset($offset);
         $res = $this->find_all_by($where);
         return $res;
     }

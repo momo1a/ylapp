@@ -18,7 +18,10 @@ class News extends MY_Controller
      * 资讯首页
      */
     public function getNewsList(){
-        $res = $this->news->getNewsList(500,1,'YL_news.nid,YL_news.thumbnail,YL_news.title,YL_news.author,FROM_UNIXTIME(YL_news.createTime) AS createTime,YL_news_category.name AS newsCate');
+        $limit = intval($this->input->get_post('limit'));
+        $limit = $limit == 0 ? 10 : $limit;
+        $offset = intval($this->input->get_post('offset'));
+        $res = $this->news->getNewsList($limit,1,'YL_news.nid,YL_news.thumbnail,YL_news.title,YL_news.author,FROM_UNIXTIME(YL_news.createTime) AS createTime,YL_news_category.name AS newsCate',$offset);
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
 
     }

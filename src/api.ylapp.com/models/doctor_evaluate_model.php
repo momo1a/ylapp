@@ -18,11 +18,13 @@ class Doctor_evaluate_model extends MY_Model
      * 获取医生的评价
      * @param $docId
      */
-    public function getDoctorEvaluate($docId,$select){
+    public function getDoctorEvaluate($docId,$select,$limit=10,$offset=0){
         $this->where(array('YL_doctor_evaluate.docId'=>$docId,'YL_doctor_evaluate.state'=>1));
         $this->select($select);
         $this->join('YL_user','YL_user.uid=YL_doctor_evaluate.uid');
         $this->order_by('YL_doctor_evaluate.dateline','DESC');
+        $this->limit($limit);
+        $this->offset($offset);
         $res = $this->find_all();
         return $res;
     }

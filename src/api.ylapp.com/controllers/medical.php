@@ -49,8 +49,11 @@ class Medical extends MY_Controller
      */
 
     public function getIllnessList(){
+        $limit = intval($this->input->get_post('limit'));
+        $offset = intval($this->input->get_post('offset'));
+        $limit = $limit == 0 ? 20 : $limit;
         $uid = self::$currentUid;
-        $res = $this->illness->illnessList($uid);
+        $res = $this->illness->illnessList($uid,'illId,illName,sex,age,realname,allergyHistory,result,stages,situation',$limit,$offset);
         if($res){
             $this->response($this->responseDataFormat(0,'请求成功',array($res)));
         }else{

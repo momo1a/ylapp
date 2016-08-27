@@ -18,7 +18,7 @@ CREATE TABLE `YL_user_reg_num` (
   `userRemark` varchar(200) not null default '' comment '用户备注',
   `dateline` int(11) unsigned not null default '0' comment '记录时间',
   `cancelTime` int(11) unsigned not null default '0' comment '取消时间'
-  `status` tinyint(3) not null default '0' comment '状态 0.状态有待处理，1未支付 2已支付,3预约成功，4预约失败，5完成，6用户取消',
+  `status` tinyint(3) not null default '0' comment '状态 0.状态有待处理，1未支付【状态废弃，跟1重叠】 2已支付（待处理）,3预约成功，4预约失败，5完成，6用户取消',
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`) USING BTREE,
   KEY `docId` (`docId`) USING BTREE,

@@ -39,11 +39,13 @@ class News_collections_model extends MY_Model
      * @param $uid
      * @param string $select
      */
-    public function myCollections($uid,$select='*'){
+    public function myCollections($uid,$select='*',$limit=10,$offset=0){
         $this->select($select);
         $this->where(array('YL_news_collections.uid'=>$uid,'YL_news.state'=>1));
         $this->join('YL_news','YL_news.nid=YL_news_collections.nid','left');
         $this->order_by(array('YL_news_collections.id'=>'desc'));
+        $this->limit($limit);
+        $this->offset($offset);
         $res = $this->find_all();
         return $res;
 

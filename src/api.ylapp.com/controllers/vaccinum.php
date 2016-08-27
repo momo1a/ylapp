@@ -23,8 +23,10 @@ class Vaccinum extends MY_Controller
     public function vaccinumList(){
         $keyword = trim(addslashes($this->input->get_post('keyword')));
         $type = intval($this->input->get_post('vacciType'));
-        $res = $this->vaccinum->getList('id,thumbnail,name,price',$type,$keyword);
-        $res = !$res ? array() : $res;
+        $limit = intval($this->input->get_post('limit'));
+        $offset = intval($this->input->get_post('offset'));
+        $limit = $limit == 0 ? 10 : $limit;
+        $res = $this->vaccinum->getList('id,thumbnail,name,price',$type,$keyword,$limit,$offset);
         $this->response($this->responseDataFormat(0,'请求成功',array('vaccinumList'=>$res,'imgServer'=>$this->getImgServer())));
     }
 

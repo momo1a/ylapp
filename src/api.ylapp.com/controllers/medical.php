@@ -121,6 +121,11 @@ class Medical extends MY_Controller
         $illness = $this->illness->getIllnessDetail(self::$currentUid,$illId);
         $remakes = $this->illness_remarks->getRemarksByIllIdAndUid($illId,self::$currentUid);
         $imgServer = $this->getImgServer();
+        if(!empty($remakes)){
+            foreach($remakes as $key=>$value){
+                $remakes[$key]['img'] = json_decode($value['img'],true);
+            }
+        }
         if($illness && $remakes && $imgServer){
             $this->response($this->responseDataFormat(0,'请求成功',array('illnessHistory'=>$illness,'remarks'=>$remakes,'imgServer'=>$imgServer)));
         }else{

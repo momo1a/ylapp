@@ -18,10 +18,12 @@ class Gene_check_model extends MY_Model
      * 获取基因列表
      * @param string $select
      */
-    public function getList($select='*'){
+    public function getList($select='*',$limit=10,$offset=0){
         $this->select($select);
         $this->where(array('status'=>1));  //上架的
         $this->order_by(array('id'=>'desc','dateline'=>'desc'));
+        $this->offset($offset);
+        $this->limit($limit);
         $res = $this->find_all();
         return $res;
     }

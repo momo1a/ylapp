@@ -21,7 +21,10 @@ class Gene_check extends MY_Controller
      */
 
     public function geneCheckList(){
-        $res = $this->gene->getList('id,thumbnail,name,price');
+        $limit = intval($this->input->get_post('limit'));
+        $offset = intval($this->input->get_post('offset'));
+        $limit = $limit == 0 ? 10 : $limit;
+        $res = $this->gene->getList('id,thumbnail,name,price',$limit,$offset);
         $this->response($this->responseDataFormat(0,'请求成功',array('GeneList'=>$res,'imgServer'=>$this->getImgServer())));
     }
 

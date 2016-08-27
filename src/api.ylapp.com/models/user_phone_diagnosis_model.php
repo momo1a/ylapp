@@ -30,11 +30,14 @@ class User_phone_diagnosis_model extends MY_Model
      * @param $uid
      * @param string $select
      */
-    public function getListByUid($uid, $select = "*")
+    public function getListByUid($uid, $select = "*",$limit=10,$offset=0)
     {
         $this->where(array('askUid' => $uid));
+        $this->where('(state IN(0,1,2,3,4))');
         $this->select($select);
         $this->order_by('askTime', 'DESC');
+        $this->limit($limit);
+        $this->offset($offset);
         $res = $this->find_all();
         return $res;
     }
@@ -50,6 +53,31 @@ class User_phone_diagnosis_model extends MY_Model
         $this->select($select);
         $res = $this->find($id);
         return $res;
+    }
+
+
+
+    /**
+     * 取消在线问诊
+     * @param $uid
+     * @param $id
+     */
+    public function askOnlineCancel($uid,$id){
+        $where = array('askUid'=>$uid,'id'=>$id);
+        $data = array('cencelTime'=>time(),'state'=>5);
+        $res = $this->update($where,$data);
+        /*执行成功后查询数据返回*/
+        if($res){
+            $this->select('YL_hospital.name as hosName,YL_doctor_offices.officeName,YL_user_phone_diagnosis.docName,FROM_UNIXTIME(YL_user_phone_diagnosis.cencelTime) AS cancelTime');
+            $this->where(array('YL_user_phone_diagnosis.id'=>$id));
+            $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user_phone_diagnosis.docId','left');
+            $this->join('YL_doctor_offices','YL_doctor_offices.id=YL_doctor_info.officeId','left');
+            $this->join('YL_hospital','YL_hospital.hid=YL_doctor_info.hid','left');
+            $result = $this->find_all();
+            return $result;
+        }else{
+            return false;
+        }
     }
 
     /**

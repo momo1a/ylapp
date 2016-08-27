@@ -41,7 +41,7 @@ class Diagnosis_online extends MY_Controller
         $hopeCalldate = strtotime($this->input->get_post('hopeCallDate')); // 客户希望沟通的日期
         $askContent = addslashes($this->input->get_post('content'));  // 病情简述、
         $illnessId =  intval($this->input->get_post('illnessId')); // 病历
-        $otherIllness = addslashes($this->input->get_post('otherIllness'));  // 其他病史内容
+        //$otherIllness = addslashes($this->input->get_post('otherIllness'));  // 其他病史内容
         $data = array(
             'askUid'=>self::$currentUid,
             'illnessId' => $illnessId,
@@ -49,7 +49,7 @@ class Diagnosis_online extends MY_Controller
             'askTelephone' => $askTelephone,
             'ask_sex' => $ask_sex,
             'askContent'=>$askContent,
-            'otherIllness'=>$otherIllness,
+            //'otherIllness'=>$otherIllness,
             'phoneTimeLen'=>$phoneTimeLen,
             'hopeCalldate'=>$hopeCalldate,
             'price'=>$price,

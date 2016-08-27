@@ -84,6 +84,8 @@ HTML;
 <form action="http://api.ylapp.com/gene_check/geneCheckList" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="text" name="limit"/>
+    <input type="text" name="offset/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
@@ -521,7 +523,35 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/onlineAskList" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
+    limit<input type="text" name="limit"/>
+    offset<input type="text" name="offset"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+
+
+    /**
+     * jiaoyijilu
+     */
+    public function cancelOnlineAsk(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/user_center/cancelOnlineAsk" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
+    id<input type="text" name="id"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
@@ -589,7 +619,9 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/appointList" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
+    limit<input type="text" name="limit"/>
+    offset<input type="text" name="offset"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
@@ -634,7 +666,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/appointCancel" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
     id<input type="text" name="id"/>
     <input type="submit" value="submit"/>
 HTML;
@@ -656,7 +688,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/askAnswerList" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
@@ -676,7 +708,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/askAnswerDetail" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
     <input type="text" name="id"/>
     <input type="submit" value="submit"/>
 HTML;
@@ -696,7 +728,9 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/order" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
+    limit<input type="text" name="limit"/>
+    offset<input type="text" name="offset"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;

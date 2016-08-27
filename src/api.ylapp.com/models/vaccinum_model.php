@@ -19,7 +19,7 @@ class Vaccinum_model extends MY_Model
      * @param string $select
      * @
      */
-    public function getList($select='*',$type=0,$keyword=''){
+    public function getList($select='*',$type=0,$keyword='',$limit=10,$offset=0){
         if($type != 0){
             $this->where(array('type'=>$type));
         }
@@ -30,6 +30,8 @@ class Vaccinum_model extends MY_Model
         $this->select($select);
         $this->where(array('status'=>1));  //上架的
         $this->order_by(array('id'=>'desc','dateline'=>'desc'));
+        $this->limit($limit);
+        $this->offset($offset);
         $res = $this->find_all();
         return $res;
     }

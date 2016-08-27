@@ -27,12 +27,15 @@ class User_reg_num_model extends MY_Model
      * 获取用户预约列表
      * @param $uid
      */
-    public function appointList($uid,$select="*"){
+    public function appointList($uid,$select="*",$limit=10,$offset=0){
         $this->where(array('userId'=>$uid));
+        $this->where('(status IN(0,2,3,4,5))');
         $this->select($select);
         $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user_reg_num.docId','left');
         $this->join('YL_hospital','YL_doctor_info.hid=YL_hospital.hid','left');
         $this->order_by(array('dateline'=>'DESC'));
+        $this->limit($limit);
+        $this->offset($offset);
         $res = $this->find_all();
         return $res;
     }
@@ -59,7 +62,18 @@ class User_reg_num_model extends MY_Model
         $where = array('userId'=>$uid,'id'=>$id);
         $data = array('cancelTime'=>time(),'status'=>6);
         $res = $this->update($where,$data);
-        return $res;
+        /*执行成功后查询数据返回*/
+        if($res){
+            $this->select('YL_hospital.name as hosName,YL_doctor_offices.officeName,YL_user_reg_num.docName,FROM_UNIXTIME(YL_user_reg_num.cancelTime) AS cancelTime');
+            $this->where(array('YL_user_reg_num.id'=>$id));
+            $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user_reg_num.docId','left');
+            $this->join('YL_doctor_offices','YL_doctor_offices.id=YL_doctor_info.officeId','left');
+            $this->join('YL_hospital','YL_hospital.hid=YL_doctor_info.hid','left');
+            $result = $this->find_all();
+            return $result;
+        }else{
+            return false;
+        }
     }
 
 

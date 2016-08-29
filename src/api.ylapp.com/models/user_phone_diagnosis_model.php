@@ -114,4 +114,33 @@ SQL;
         return $res;
     }
 
+
+    /**
+     * 获取医生端问诊列表
+     * @param $docId
+     * @param string $select
+     * @param int $flag
+     * @return array
+     */
+    public function getDoctorDiaList($docId,$select="*",$flag=1,$limit=10,$offset=0){
+        $this->where(array('docId'=>$docId));
+        switch($flag){
+            case 1:   //未完成问诊列表
+                $this->where('(state IN(0,1,2))');
+                break;
+            case 2:   //已完成问诊列表
+                $this->where(array('state'=>4));
+                break;
+            default:
+                exit(json_encode(array('code'=>305,'msg'=>"flag参数非法",array())));
+        }
+        $this->join('YL_user','YL_user.uid=YL_user_phone_diagnosis.askUid','left');
+        $this->select($select);
+        $this->limit($limit);
+        $this->offset($offset);
+        $res = $this->find_all();
+        return $res;
+
+    }
+
 }

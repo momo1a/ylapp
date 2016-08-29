@@ -24,7 +24,7 @@ class Doctortest extends MY_Controller
 </head>
 <form action="http://api.ylapp.com/doctor_center/index" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="zq3S856c5ff19ZCjL2sh9HJVbQ3ZkAZ9HuaKyr4tiCqwUikv5pPvyBLUq\/BwG0SJAtFIFdIB"/>
+    <input type="hidden" name="privateToken" value="v41iif4ed4458td4gcwOAJjWfnoYM9uV+SZvbg4FeWSeGewf9d9YUckyQME7VezGucIaAmzp"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
@@ -111,6 +111,32 @@ HTML;
 HTML;
         echo $form;
     }
+
+
+    public function getOnlineDiaList(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/getOnlineDiaList" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="v41iif4ed4458td4gcwOAJjWfnoYM9uV+SZvbg4FeWSeGewf9d9YUckyQME7VezGucIaAmzp"/>
+    state<input type="text" name="state"/>
+
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+
+
     public function userIndex(){
         $form = <<<HTML
         <head>

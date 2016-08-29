@@ -22,16 +22,25 @@ class Doctor_center extends MY_Controller
      * 首页
      */
     public function index(){
+        $limit = intval($this->input->get_post('limit'));
+        $limit = $limit == 0 ? 10 : $limit;
+        $offset = intval($this->input->get_post('offset'));
         $regOrder = $this->reg_num->doctorIndex(self::$currentUid);  //预约挂号
         $diagOrder = $this->diagnosis->doctorIndex(self::$currentUid); //在线问诊
         $msgOrder = $this->levemsg->doctorIndex(self::$currentUid); //留言问答
+        if(!empty($msgOrder)){
+            foreach($msgOrder as $key=>$value){
+                $msgOrder[$key]['img'] = json_decode($value['img'],true);
+            }
+        }
         $i = 0;
         $order = array();
         $this->orderContainer($regOrder,$i,$order);
         $this->orderContainer($diagOrder,$i,$order);
         $this->orderContainer($msgOrder,$i,$order);
         $this->sortArrByField($order,'dateline',true);
-        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$order,'count'=>$i)));
+        $result = array_slice($order,$offset,$limit,true);
+        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i)));
     }
 
 
@@ -39,6 +48,9 @@ class Doctor_center extends MY_Controller
      * 消息列表
      */
     public function msgList(){
+        $limit = intval($this->input->get_post('limit'));
+        $limit = $limit == 0 ? 10 : $limit;
+        $offset = intval($this->input->get_post('offset'));
         $regOrder = $this->reg_num->doctorIndex(self::$currentUid,'in(2,3,4,5,6)');  //预约挂号
         $diagOrder = $this->diagnosis->doctorIndex(self::$currentUid,' in(2,3,4) '); //在线问诊
         $msgOrder = $this->levemsg->doctorIndex(self::$currentUid,'in(2,3,4) '); //留言问答
@@ -48,7 +60,8 @@ class Doctor_center extends MY_Controller
         $this->orderContainer($diagOrder,$i,$order);
         $this->orderContainer($msgOrder,$i,$order);
         $this->sortArrByField($order,'dateline',true);
-        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$order,'count'=>$i)));
+        $result = array_slice($order,$offset,$limit,true);
+        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i)));
     }
 
 
@@ -59,12 +72,15 @@ class Doctor_center extends MY_Controller
 
     public function leavingMsgList(){
         $state = intval($this->input->get_post('state'));
+        $limit = intval($this->input->get_post('limit'));
+        $limit = $limit == 0 ? 10 : $limit;
+        $offset = intval($this->input->get_post('offset'));
         switch($state){
             case 1:            // 未完成
-                $order = $this->levemsg->doctorIndex(self::$currentUid,'=2 ');
+                $order = $this->levemsg->doctorIndex(self::$currentUid,'=2 ',$limit,$offset);
                 break;
             case 2:          // 已完成
-                $order = $this->levemsg->doctorIndex(self::$currentUid,' =4 ');
+                $order = $this->levemsg->doctorIndex(self::$currentUid,' =4 ',$limit,$offset);
                 break;
 
             default:
@@ -152,7 +168,15 @@ class Doctor_center extends MY_Controller
 
     /*********************问诊之在线问诊start**********************************/
 
-
+    public function getOnlineDiaList(){
+        $flag = intval($this->input->get_post('state'));
+        $limit = intval($this->input->get_post('limit'));
+        $limit = $limit == 0 ? 10 : $limit;
+        $offset = intval($this->input->get_post('offset'));
+        $select = 'id,nickname as username,askNickname,askTelephone,phoneTimeLen,FROM_UNIXTIME(hopeCalldate) hopeCalldate,askContent';
+        $res = $this->diagnosis->getDoctorDiaList(self::$currentUid,$select,$flag,$limit,$offset);
+        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+    }
 
 
 

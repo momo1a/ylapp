@@ -59,7 +59,7 @@ class User_leaving_msg_model extends MY_Model
      * 医生首页
      * @param $docId
      */
-    public function doctorIndex($docId,$state=' =2 '){
+    public function doctorIndex($docId,$state=' =2 ',$limit=10,$offset=0){
         $docId = intval($docId);
         $sql = <<<SQL
 SELECT
@@ -79,6 +79,7 @@ LEFT JOIN YL_user AS u ON m.askerUid = u.uid
 WHERE
 	m.state {$state}
 AND m.docId = {$docId}
+LIMIT {$offset},{$limit}
 SQL;
         $query = $this->db->query($sql);
         $res = $query->result_array();

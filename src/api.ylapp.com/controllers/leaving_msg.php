@@ -67,6 +67,10 @@ class Leaving_msg extends MY_Controller
         $money = $money ? $money : 0;
         // log
         $this->userDoctorLogSave(self::$currentUid,$docId,1,0,'用户提交了留言问答');
-        $this->response($this->responseDataFormat(0,'请求成功',array('orderId'=>$res,'remainAmount'=>$money)));
+        if($res) {
+            $this->response($this->responseDataFormat(0, '请求成功', array('orderId' => $res, 'remainAmount' => $money)));
+        }else{
+            $this->response($this->responseDataFormat(-1, '系统错误', array()));
+        }
     }
 }

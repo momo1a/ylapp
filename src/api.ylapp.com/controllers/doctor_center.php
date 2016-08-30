@@ -8,6 +8,8 @@
 
 class Doctor_center extends MY_Controller
 {
+
+    protected $imgServer = null;
     public function __construct(){
         parent::__construct();
         $this->checkUserLogin();
@@ -16,6 +18,8 @@ class Doctor_center extends MY_Controller
         $this->load->model('User_leaving_msg_model','levemsg');
         $this->load->model('Doctor_reply_model','reply');
         $this->load->model('User_model','user');
+        $this->load->model('User_illness_history_remarks_model','ill_remark');
+        $this->imgServer = $this->getImgServer();
     }
 
     /**
@@ -40,7 +44,7 @@ class Doctor_center extends MY_Controller
         $this->orderContainer($msgOrder,$i,$order);
         $this->sortArrByField($order,'dateline',true);
         $result = array_slice($order,$offset,$limit,true);
-        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i)));
+        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i,'imgServer'=>$this->imgServer)));
     }
 
 
@@ -86,7 +90,7 @@ class Doctor_center extends MY_Controller
             default:
                 $this->response($this->responseDataFormat(1,'订单状态值不允许',array()));
         }
-        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$order)));
+        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$order,'imgServer'=>$this->imgServer)));
     }
 
 
@@ -115,8 +119,7 @@ class Doctor_center extends MY_Controller
 
             }
         }
-        $imgServer =$this->getImgServer();
-        $this->response($this->responseDataFormat(0,'请求成功',array('result'=>$res,'imgServer'=>$imgServer)));
+        $this->response($this->responseDataFormat(0,'请求成功',array('result'=>$res,'imgServer'=>$this->imgServer)));
     }
 
 
@@ -167,15 +170,40 @@ class Doctor_center extends MY_Controller
 
 
     /*********************问诊之在线问诊start**********************************/
-
+    /**
+     * 问诊列表
+     */
     public function getOnlineDiaList(){
         $flag = intval($this->input->get_post('state'));
         $limit = intval($this->input->get_post('limit'));
         $limit = $limit == 0 ? 10 : $limit;
         $offset = intval($this->input->get_post('offset'));
-        $select = 'id,nickname as username,askNickname,askTelephone,phoneTimeLen,FROM_UNIXTIME(hopeCalldate) hopeCalldate,askContent';
+        $select = 'id,nickname as username,(case  when ask_sex=1 then "男" when ask_sex=2 then "女" end) as sex,YL_user_illness_history.age,askNickname,askTelephone,phoneTimeLen,FROM_UNIXTIME(hopeCalldate) hopeCalldate,askContent,docRemark';
         $res = $this->diagnosis->getDoctorDiaList(self::$currentUid,$select,$flag,$limit,$offset);
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+    }
+
+
+    /**
+     * 问诊详情
+     */
+
+    public function getOnlineDiaDetail(){
+        $id = intval($this->input->get_post('id'));  // 问诊id
+        $select = 'nickname as username,(case  when ask_sex=1 then "男" when ask_sex=2 then "女" end) as sex,YL_user_illness_history.age,askNickname,allergyHistory,stages,askTelephone,askContent,phoneTimeLen,hopeCalldate,illnessId';
+        $order = $this->diagnosis->getDoctorDiaDetail($id,$select);
+        if($order) {
+            $remarkSelect = 'FROM_UNIXTIME(visitDate) as visitDate,stage,content,img';
+            $remark = $this->ill_remark->getRemarksByIllId($order['illnessId'],$remarkSelect);
+            if(!empty($remark)){
+                foreach($remark as $key=>$value){
+                    $remark[$key]['img'] = json_decode($value['img'],true);
+                }
+            }
+            $this->response($this->responseDataFormat(0,'请求成功',array('detail'=>$order,'remark'=>$remark,'imgServer'=>$this->imgServer)));
+        }else{
+            $this->response($this->responseDataFormat(-1,'记录不存在',array()));
+        }
     }
 
 

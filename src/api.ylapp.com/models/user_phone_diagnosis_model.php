@@ -126,21 +126,35 @@ SQL;
         $this->where(array('docId'=>$docId));
         switch($flag){
             case 1:   //未完成问诊列表
-                $this->where('(state IN(0,1,2))');
+                $this->where('(YL_user_phone_diagnosis.state IN(0,1,2))');
                 break;
             case 2:   //已完成问诊列表
-                $this->where(array('state'=>4));
+                $this->where(array('YL_user_phone_diagnosis.state'=>4));
                 break;
             default:
                 exit(json_encode(array('code'=>305,'msg'=>"flag参数非法",array())));
         }
         $this->join('YL_user','YL_user.uid=YL_user_phone_diagnosis.askUid','left');
+        $this->join('YL_user_illness_history','YL_user_illness_history.illId=YL_user_phone_diagnosis.illnessId','left');
         $this->select($select);
         $this->limit($limit);
         $this->offset($offset);
         $res = $this->find_all();
         return $res;
 
+    }
+
+    /**
+     * 获取问诊详情医生端
+     * @param $id
+     *
+     */
+    public function getDoctorDiaDetail($id,$select='*'){
+        $this->select($select);
+        $this->join('YL_user','YL_user.uid=YL_user_phone_diagnosis.askUid','left');
+        $this->join('YL_user_illness_history','YL_user_illness_history.illId=YL_user_phone_diagnosis.illnessId','left');
+        $res = $this->find($id);
+        return $res;
     }
 
 }

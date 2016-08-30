@@ -67,4 +67,16 @@ class User_illness_history_remarks_model extends MY_Model
             return false;
         }
     }
+
+    /**
+     * 根据病历id获取备注
+     * @param $illId
+     *
+     */
+    public function getRemarksByIllId($illId,$select='*'){
+        $this->where(array('illId'=>$illId));
+        $this->select($select);
+        $res = $this->find_all();
+        return $res;
+    }
 }

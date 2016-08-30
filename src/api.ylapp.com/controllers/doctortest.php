@@ -125,7 +125,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/doctor_center/getOnlineDiaList" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="v41iif4ed4458td4gcwOAJjWfnoYM9uV+SZvbg4FeWSeGewf9d9YUckyQME7VezGucIaAmzp"/>
+    <input type="hidden" name="privateToken" value="+Rg4A2e8b6bb3eQiUzovxGRLgLYE6pJ8OtlNxtCs2bV9Na5AdanrJg9XytB632o6uiqR+4Cl"/>
     state<input type="text" name="state"/>
 
     <input type="submit" value="submit"/>
@@ -135,6 +135,27 @@ HTML;
 
 
 
+
+
+    public function getOnlineDiaDetail(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/getOnlineDiaDetail" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="+Rg4A2e8b6bb3eQiUzovxGRLgLYE6pJ8OtlNxtCs2bV9Na5AdanrJg9XytB632o6uiqR+4Cl"/>
+    id<input type="text" name="id"/>
+
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
 
 
     public function userIndex(){

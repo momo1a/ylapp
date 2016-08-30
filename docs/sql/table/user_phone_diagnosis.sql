@@ -16,6 +16,7 @@ CREATE TABLE `YL_user_phone_diagnosis` (
   `docId` int(11) unsigned not null default '0' COMMENT '医生id',
   `docName` varchar(20) not null default '' comment '医生名称',
   `docTelephone` varchar(20) not null default '' comment '医生电话',
+  `docRemark` VARCHAR(300) not null default '' comment '医生备注',
   `askTime` INT(11) unsigned NOT NULL DEFAULT '0' COMMENT '问诊时间',
   `cencelTime` INT(11) unsigned not null default '0' comment '取消时间',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0待付款,1待审核(已付款 管理员协调双方),2已确认沟通时间，3完成，4失败，5用户取消',

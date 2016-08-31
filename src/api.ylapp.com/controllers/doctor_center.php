@@ -207,8 +207,73 @@ class Doctor_center extends MY_Controller
     }
 
 
+    /**
+     * 提交备注
+     */
+
+
+    public function commitRemark(){
+        $id = intval($this->input->get_post('id'));  // 问诊id
+        $content = trim(addslashes($this->input->get_post('content')));  // 内容
+        $res = $this->diagnosis->editDoctorRemark($id,$content);
+        if($res){
+            $this->response($this->responseDataFormat(0,'请求成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'操作失败',array()));
+        }
+    }
+
+
 
     /*********************问诊之在线问诊end**********************************/
+
+
+
+    /*********************问诊之预约挂号start**********************************/
+
+    /**
+     * 预约挂号列表
+     */
+    public function getRegList(){
+        $flag = intval($this->input->get_post('state'));   // 1 未完成  2 已经完成
+        $limit = intval($this->input->get_post('limit'));
+        $offset = intval($this->input->get_post('offset'));
+        $limit = $limit == 0 ? 10 : $limit;
+        $select = 'id,nickname as username,(case  when YL_user_reg_num.sex=1 then "男" when YL_user_reg_num.sex=2 then "女" end) as sex,age,contacts,appointTel,FROM_UNIXTIME(appointTime) AS appointTime';
+        $res = $this->reg_num->getDoctorRegList(self::$currentUid,$select,$flag,$limit,$offset);
+        if($res){
+            $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+        }else{
+            $this->response($this->responseDataFormat(1,'暂无数据',array()));
+        }
+    }
+
+
+    /**
+     * 问诊详情
+     */
+
+    public function getRegNumDetail(){
+        $id = intval($this->input->get_post('id'));  // 预约id
+        $select = 'nickname as username,(case  when YL_user_reg_num.sex=1 then "男" when YL_user_reg_num.sex=2 then "女" end) as sex,YL_user_illness_history.age,contacts,allergyHistory,stages,appointTel,userRemark,FROM_UNIXTIME(appointTime) AS appointTime,illnessId';
+        $order = $this->reg_num->getDoctorRegDetail($id,$select);
+        if($order) {
+            $remarkSelect = 'FROM_UNIXTIME(visitDate) as visitDate,stage,content,img';
+            $remark = $this->ill_remark->getRemarksByIllId($order['illnessId'],$remarkSelect);
+            if(!empty($remark)){
+                foreach($remark as $key=>$value){
+                    $remark[$key]['img'] = json_decode($value['img'],true);
+                }
+            }
+            $this->response($this->responseDataFormat(0,'请求成功',array('detail'=>$order,'remark'=>$remark,'imgServer'=>$this->imgServer)));
+        }else{
+            $this->response($this->responseDataFormat(-1,'记录不存在',array()));
+        }
+    }
+
+
+
+    /*********************问诊之预约挂号end**********************************/
 
     /**
      * @param $order

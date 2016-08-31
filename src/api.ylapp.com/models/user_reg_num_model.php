@@ -116,4 +116,48 @@ SQL;
         return $res;
     }
 
+
+
+    /**
+     * 获取医生端预约列表
+     * @param $docId
+     * @param string $select
+     * @param int $flag
+     * @return array
+     */
+    public function getDoctorRegList($docId,$select="*",$flag=1,$limit=10,$offset=0){
+        $this->where(array('docId'=>$docId));
+        switch($flag){
+            case 1:   //未完成预约列表
+                $this->where('(YL_user_reg_num.status IN(3))');
+                break;
+            case 2:   //已完成预约列表
+                $this->where(array('YL_user_reg_num.status'=>5));
+                break;
+            default:
+                exit(json_encode(array('code'=>305,'msg'=>"flag参数非法",array())));
+        }
+        $this->join('YL_user','YL_user.uid=YL_user_reg_num.userId','left');
+        $this->join('YL_user_illness_history','YL_user_illness_history.illId=YL_user_reg_num.illnessId','left');
+        $this->select($select);
+        $this->limit($limit);
+        $this->offset($offset);
+        $res = $this->find_all();
+        return $res;
+
+    }
+
+    /**
+     * 获取预约详情医生端
+     * @param $id
+     *
+     */
+    public function getDoctorRegDetail($id,$select='*'){
+        $this->select($select);
+        $this->join('YL_user','YL_user.uid=YL_user_reg_num.userId','left');
+        $this->join('YL_user_illness_history','YL_user_illness_history.illId=YL_user_reg_num.illnessId','left');
+        $res = $this->find($id);
+        return $res;
+    }
+
 }

@@ -158,6 +158,98 @@ HTML;
     }
 
 
+    public function commitRemark(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/commitRemark" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="gkrXCdb575f9fIqvSE4QBVcuWqVbt5Izeu3doD+Wt2Gi\/VJ+ZmlQ1yyUOyA\/PUrz31VjHGKV"/>
+    id<input type="text" name="id"/>
+    content<textarea name="content"></textarea>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+
+
+    public function getRegList(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/getRegList" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="gkrXCdb575f9fIqvSE4QBVcuWqVbt5Izeu3doD+Wt2Gi\/VJ+ZmlQ1yyUOyA\/PUrz31VjHGKV"/>
+    limit<input type="text" name="limit"/>
+    offset<input type="text" name="offset"/>
+    state<input type="text" name="state"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+
+
+    public function getRegNumDetail(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/getRegNumDetail" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="gkrXCdb575f9fIqvSE4QBVcuWqVbt5Izeu3doD+Wt2Gi\/VJ+ZmlQ1yyUOyA\/PUrz31VjHGKV"/>
+    ID<input type="text" name="id"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+    public function getNewsListDoc(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/news/getNewsListDoc" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="gkrXCdb575f9fIqvSE4QBVcuWqVbt5Izeu3doD+Wt2Gi\/VJ+ZmlQ1yyUOyA\/PUrz31VjHGKV"/>
+    limit<input type="text" name="limit"/>
+    offset<input type="text" name="offset"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
     public function userIndex(){
         $form = <<<HTML
         <head>

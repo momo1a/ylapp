@@ -62,9 +62,9 @@ class Api extends MY_Controller
         $privateToken = $this->crypt->encode($res['uid'].'-'.$user.'-'.time().'-'.$res['userType']);  //私有token
         $this->cache->save(md5($privateToken),$privateToken);
         if($this->user->updateLoginInfo($res['uid'])) {
-            $this->response($this->responseDataFormat(0, '登陆成功', array('privateToken'=>$privateToken))); //登陆成功
+            $this->response($this->responseDataFormat(0, '登录成功', array('privateToken'=>$privateToken))); //登陆成功
         }else{
-            $this->response($this->responseDataFormat(-1, '登陆失败', array())); //登陆失败
+            $this->response($this->responseDataFormat(-1, '登录失败', array())); //登陆失败
         }
         
 

@@ -126,10 +126,10 @@ SQL;
         $this->where(array('docId'=>$docId));
         switch($flag){
             case 1:   //未完成问诊列表
-                $this->where('(YL_user_phone_diagnosis.state IN(0,1,2))');
+                $this->where('(YL_user_phone_diagnosis.state IN(2))');
                 break;
             case 2:   //已完成问诊列表
-                $this->where(array('YL_user_phone_diagnosis.state'=>4));
+                $this->where(array('YL_user_phone_diagnosis.state'=>3));
                 break;
             default:
                 exit(json_encode(array('code'=>305,'msg'=>"flag参数非法",array())));
@@ -154,6 +154,18 @@ SQL;
         $this->join('YL_user','YL_user.uid=YL_user_phone_diagnosis.askUid','left');
         $this->join('YL_user_illness_history','YL_user_illness_history.illId=YL_user_phone_diagnosis.illnessId','left');
         $res = $this->find($id);
+        return $res;
+    }
+
+
+    /**
+     * 医生提交备注
+     * @param $id
+     */
+    public function editDoctorRemark($id,$content){
+        $where = array('id'=>intval($id));
+        $data =  array('docRemark'=>$content);
+        $res = $this->update($where,$data);
         return $res;
     }
 

@@ -43,6 +43,7 @@ class Reg_num extends MY_Controller
         $telephone = trim($this->input->get_post('telephone'));
         $illId = intval($this->input->get_post('illId'));
         $remark = addslashes($this->input->get_post('remark'));
+        $userAddr = addslashes(trim($this->input->get_post('userAddr')));
         /****/
         $priceArr = $this->fee_setting->getFeeSettingByUid($docId,'regNumFee');
         $hospitalArr = $this->user->getDoctorDetail($docId,'YL_hospital.address');
@@ -58,6 +59,7 @@ class Reg_num extends MY_Controller
             'appointTime'=>$appointTime,
             'sex'=>$sex,
             'appointBrithday'=>$birthday,
+            'userAddr' => $userAddr,
             'appointTel'=>$telephone,
             'illnessId'=>$illId,
             'userRemark'=>$remark,

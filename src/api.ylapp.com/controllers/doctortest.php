@@ -275,6 +275,80 @@ HTML;
 
 
 
+
+    public function docEditInfoView(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/docEditInfoView" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="6511d42638c6faeLj0mJ1fYRcaPj+NQmRmHduyfCWow9A\/GBnO5LZZbx+XmjPokFzU3HWSGL"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+
+
+
+    public function docInfoEdit(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/docInfoEdit" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="6511d42638c6faeLj0mJ1fYRcaPj+NQmRmHduyfCWow9A\/GBnO5LZZbx+XmjPokFzU3HWSGL"/>
+    name<input type="text" name="name"/>
+    sex<input type="text" name="sex"/>
+    birthday<input type="date" name="birthday"/>
+    telFrt<input type="text" name="telFrt"/>
+    telSed<input type="text" name="telSed"/>
+    hosId<input type="text" name="hosId"/>
+    officeId<input type="text" name="officeId"/>
+    degree<input type="text" name="degree"/>
+    summary<input type="text" name="summary"/>
+    goodAt<input type="text" name="goodAt"/>
+    img1<input type="file" name="img1"/>
+    img2<input type="file" name="img2"/>
+    img3<input type="file" name="img3"/>
+    img4<input type="file" name="img4"/>
+    img5<input type="file" name="img5"/>
+    img6<input type="file" name="img6"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+    /**
+     * $name = trim(addslashes($this->input->get_post('name')));
+    $sex = intval($this->input->get_post('sex'));
+    if($sex != 1 && $sex != 2){$this->response($this->responseDataFormat(1,'sex参数非法',array()));}
+    $birthday = strtotime($this->input->get_post('birthday'));
+    $telFrt = trim($this->input->get_post('telFrt'));
+    $telSed = trim($this->input->get_post('telSed'));
+    $hosId = intval($this->input->get_post('hosId'));
+    if(!$hosId){$this->response($this->responseDataFormat(2,'请选择医院',array()));}
+    $officeId = intval($this->input->get_post('officeId'));
+    if(!$officeId){$this->response($this->responseDataFormat(3,'请选择科室',array()));}
+    $degree = addslashes(trim($this->input->get_post('degree')));
+    $summary = addslashes($this->input->get_post('summary')); // 简介
+    $goodAt = addslashes($this->input->get_post('goodAt'));  // 擅长
+     */
+
     public function userIndex(){
         $form = <<<HTML
         <head>

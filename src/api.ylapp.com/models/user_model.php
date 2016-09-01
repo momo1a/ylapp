@@ -152,8 +152,12 @@ class User_model extends MY_Model
      * @param $docId
      * @param $data
      */
-    public function updateDocInfo($docId,$data){
-
+    public function updateDocInfo($docId,$userData){
+        $where = array('uid'=>$docId);
+        $res = $this->update($where,$userData);
+        return $res;
     }
+
+
 
 }

@@ -21,6 +21,8 @@ class Doctor_center extends MY_Controller
         $this->load->model('User_illness_history_remarks_model','ill_remark');
         $this->load->model('Doctor_offices_model','office');
         $this->load->model('Hospital_model','hospital');
+        $this->load->model('Doctor_info_model','doc_info');
+        $this->load->library('Upload_image',null,'upload_image');
         $this->imgServer = $this->getImgServer();
     }
 
@@ -317,6 +319,70 @@ class Doctor_center extends MY_Controller
         }else{
             $this->response($this->responseDataFormat(-1,'系统错误',array($res)));
         }
+    }
+
+
+    /**
+     * 个人信息提交修改
+     */
+
+    public function docInfoEdit(){
+        $name = trim(addslashes($this->input->get_post('name')));
+        $sex = intval($this->input->get_post('sex'));
+        if($sex != 1 && $sex != 2){$this->response($this->responseDataFormat(1,'sex参数非法',array()));}
+        $birthday = strtotime($this->input->get_post('birthday'));
+        $telFrt = trim($this->input->get_post('telFrt'));
+        $telSed = trim($this->input->get_post('telSed'));
+        $hosId = intval($this->input->get_post('hosId'));
+        if(!$hosId){$this->response($this->responseDataFormat(2,'请选择医院',array()));}
+        $officeId = intval($this->input->get_post('officeId'));
+        if(!$officeId){$this->response($this->responseDataFormat(3,'请选择科室',array()));}
+        $degree = addslashes(trim($this->input->get_post('degree')));
+        $summary = addslashes($this->input->get_post('summary')); // 简介
+        $goodAt = addslashes($this->input->get_post('goodAt'));  // 擅长
+        $currentDocCertificateImg = $this->doc_info->getInfoByUid(self::$currentUid,'certificateImg');
+        $currentDocCertificateImg = json_decode($currentDocCertificateImg,true);
+        $currentDocCertificateImg = !$currentDocCertificateImg ? array() : $currentDocCertificateImg;
+        $imgArr = array();
+        if(!empty($_FILES)){
+            foreach($_FILES as $k=>$val){
+                if($val['name'] != '') {
+                    $imgFile = $this->upload_image->save('certificate', $val['tmp_name']);
+                    $imgArr[$k]=$imgFile;
+                }
+            }
+        }
+        $imgMerge = array_merge($currentDocCertificateImg,$imgArr);
+        $userData = array(
+            'nickname'=>$name,
+            'sex'=>$sex,
+            'birthday'=>$birthday,
+            'phone'=>$telFrt
+        );
+        $docInfoData = array(
+            'sex'=>$sex,
+            'phoneSec'=>$telSed,
+            'hid'=>$hosId,
+            'officeId'=>$officeId,
+            'degree'=>$degree,
+            'summary'=>$summary,
+            'goodAt'=>$goodAt,
+            'certificateImg'=>json_encode($imgMerge),
+            'state'=>0
+        );
+
+        $this->db->trans_begin();
+
+        $this->user->updateDocInfo(self::$currentUid,$userData);
+        $this->doc_info->updateDocInfo(self::$currentUid,$docInfoData);
+        if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
+            $this->response($this->responseDataFormat(4,'操作失败',array()));
+        } else {
+            $this->db->trans_commit();
+            $this->response($this->responseDataFormat(0,'修改成功',array()));
+        }
+
     }
 
 

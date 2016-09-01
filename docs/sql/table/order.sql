@@ -6,7 +6,7 @@ CREATE TABLE `YL_order` (
   `buyerName` varchar(25) not null default '' comment '购买人名称',
   `buyerSex` tinyint(3) unsigned not null default '0' comment '购买人性别1男 2女',
   `buyerTel` varchar(20) not null default '' comment '购买人电话',
-  `buyerBrithday` int(11) unsigned not null default '0' comment '购买人出生日期',
+  `buyerBrithday` int(11)  not null default '0' comment '购买人出生日期',
   `packageId` int(11) unsigned not null default '0' comment '购买套餐id',
   `packageTitle` varchar(255) not null default '' comment '购买套餐名称',
   `price` decimal(9,2) unsigned not null default '0' comment '套餐价格',

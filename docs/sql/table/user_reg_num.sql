@@ -12,7 +12,7 @@ CREATE TABLE `YL_user_reg_num` (
   `contacts` varchar(60) not null default '' comment '联系人',
   `appointTime` int(11) unsigned not null default '0' comment '预约时间',
   `sex` tinyint(3) unsigned not null default '0' comment '性别:1男；2女',
-  `appointBrithday` int(11) unsigned not null default '0' comment '预约人的生日',
+  `appointBrithday` int(11)  not null default '0' comment '预约人的生日',
   `appointTel` varchar(25) not null default '' comment '预约人的电话',
   `userAddr` varchar(25) not null default '' comment '预约人地址',
   `illnessId` int(11) not null default '0' comment '病历id',

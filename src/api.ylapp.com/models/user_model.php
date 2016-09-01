@@ -112,7 +112,7 @@ class User_model extends MY_Model
      * @param $docId
      */
     public function getDoctorDetail($docId,$select){
-        $this->select($select);
+        $this->select($select,false);
         $this->where(array('YL_user.userType'=>2,'YL_user.uid'=>$docId));
         $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user.uid','left');
         $this->join('YL_hospital','YL_doctor_info.hid=YL_hospital.hid','left');
@@ -142,6 +142,18 @@ class User_model extends MY_Model
         $where = array('uid'=>$uid);
         $res = $this->update($where,$data);
         return $res;
+    }
+
+
+    /*医生端一些逻辑*/
+
+    /**
+     * 医生修改个人信息
+     * @param $docId
+     * @param $data
+     */
+    public function updateDocInfo($docId,$data){
+
     }
 
 }

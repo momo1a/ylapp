@@ -10,6 +10,11 @@
 class Doctortest extends MY_Controller
 {
 
+    public function index(){
+        var_dump(strtotime("1958-2-2"));
+        var_dump(date('Y-m-d',-375951600));
+    }
+
 
 
     public function doctorIndex(){
@@ -243,6 +248,26 @@ HTML;
     <input type="hidden" name="privateToken" value="gkrXCdb575f9fIqvSE4QBVcuWqVbt5Izeu3doD+Wt2Gi\/VJ+ZmlQ1yyUOyA\/PUrz31VjHGKV"/>
     limit<input type="text" name="limit"/>
     offset<input type="text" name="offset"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+    public function docInfo(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/docInfo" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="EtvtG7162be6963hW3r6R0mCjRIopTOrEOXc3tcrMGArLP\/eALSL9zusD56yIwxtx+ixTVc4"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;

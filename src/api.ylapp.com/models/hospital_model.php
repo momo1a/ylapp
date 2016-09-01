@@ -18,7 +18,7 @@ class Hospital_model extends MY_Model
      * @param string $keyword
      * @return array
      */
-    public function getHospitalList($id=0,$keyword="",$select="*",$limit=10,$offset=0){
+    public function getHospitalList($id=0,$keyword="",$select="*",$limit=40,$offset=0){
         $id = intval($id);
         if($id){
             $this->where(array('hid'=>$id));

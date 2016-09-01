@@ -19,6 +19,8 @@ class Doctor_center extends MY_Controller
         $this->load->model('Doctor_reply_model','reply');
         $this->load->model('User_model','user');
         $this->load->model('User_illness_history_remarks_model','ill_remark');
+        $this->load->model('Doctor_offices_model','office');
+        $this->load->model('Hospital_model','hospital');
         $this->imgServer = $this->getImgServer();
     }
 
@@ -274,6 +276,53 @@ class Doctor_center extends MY_Controller
 
 
     /*********************问诊之预约挂号end**********************************/
+
+
+
+    /*我的 s*/
+
+    /**
+     * 个人信息页面
+     */
+    public function docInfo(){
+        $select = 'YL_user.avatar,YL_user.nickname,(case when YL_user.sex=1 then "男" when YL_user.sex=2 then "女" end) as sex,(DATE_FORMAT(DATE_ADD(FROM_UNIXTIME(0),INTERVAL YL_user.birthday SECOND),"%Y-%m-%d %H:%i:%s")) as birthday,YL_user.phone as phoneF,YL_doctor_info.phoneSec,YL_hospital.name hosName,YL_doctor_offices.officeName,YL_doctor_info.degree,YL_doctor_info.summary,YL_doctor_info.goodAt,YL_doctor_info.certificateImg';
+        $res = $this->user->getDoctorDetail(self::$currentUid,$select);
+        if(!empty($res)){
+            foreach($res as $key=>$value){
+                $res[$key]['certificateImg'] = json_decode($value['certificateImg'],true);
+            }
+        }
+        if($res){
+            $this->response($this->responseDataFormat(0,'请求成功',array('info'=>$res,'imgServer'=>$this->imgServer)));
+        }else{
+            $this->response($this->responseDataFormat(-1,'系统错误',array($res)));
+        }
+    }
+
+    /**
+     * 个人信息修改页面
+     */
+    public function docEditInfoView(){
+        $select = 'YL_user.avatar,YL_user.nickname,(case when YL_user.sex=1 then "男" when YL_user.sex=2 then "女" end) as sex,(DATE_FORMAT(DATE_ADD(FROM_UNIXTIME(0),INTERVAL YL_user.birthday SECOND),"%Y-%m-%d %H:%i:%s")) as birthday,YL_user.phone as phoneF,YL_doctor_info.phoneSec,YL_hospital.hid as HosId,YL_doctor_offices.id as officeId,YL_doctor_info.degree,YL_doctor_info.summary,YL_doctor_info.goodAt,YL_doctor_info.certificateImg';
+        $res = $this->user->getDoctorDetail(self::$currentUid,$select);
+        if(!empty($res)){
+            foreach($res as $key=>$value){
+                $res[$key]['certificateImg'] = json_decode($value['certificateImg'],true);
+            }
+        }
+        $hospital = $this->hospital->getHospitalList();  // 医院
+        $office = $this->office->getAllOffices();   // 所有科室
+        if($res){
+            $this->response($this->responseDataFormat(0,'请求成功',array('info'=>$res,'hospital'=>$hospital,'office'=>$office,'imgServer'=>$this->imgServer)));
+        }else{
+            $this->response($this->responseDataFormat(-1,'系统错误',array($res)));
+        }
+    }
+
+
+    /*我的 e*/
+
+
 
     /**
      * @param $order

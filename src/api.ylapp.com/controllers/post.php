@@ -30,18 +30,19 @@ class Post extends MY_Controller
         if(!empty($_FILES)){
             foreach($_FILES as $k=>$val){
                 if($val['name'] != '') {
-                    $imgFile = $this->upload_image->save('post', $val['tmp_name']);
-                    array_push($imgArr, $imgFile);
+                    $imgFile = $this->upload_image->save('certificate', $val['tmp_name']);
+                    $imgArr[$k]=$imgFile;
                 }
             }
         }
+        $imgArr = !empty($imgArr) ? json_encode($imgArr) : '';
         $nickName = $this->user->getUserInfoByUid(self::$currentUid,'nickname');
         $data = array(
             'postUid'=>self::$currentUid,
             'postNickname'=>$nickName,
             'postTitle'=>$title,
             'postContent'=>$content,
-            'img'=>json_encode($imgArr),
+            'img'=>$imgArr,
             'postTime'=>time(),
             'isAnonymous'=>$isAnonymous,
         );

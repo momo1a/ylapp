@@ -353,6 +353,7 @@ class Doctor_center extends MY_Controller
             }
         }
         $imgMerge = array_merge($currentDocCertificateImg,$imgArr);
+        $imgMerge = !empty($imgMerge) ? json_encode($imgMerge) : "";
         $userData = array(
             'nickname'=>$name,
             'sex'=>$sex,
@@ -367,7 +368,7 @@ class Doctor_center extends MY_Controller
             'degree'=>$degree,
             'summary'=>$summary,
             'goodAt'=>$goodAt,
-            'certificateImg'=>json_encode($imgMerge),
+            'certificateImg'=>$imgMerge,
             'state'=>0
         );
 

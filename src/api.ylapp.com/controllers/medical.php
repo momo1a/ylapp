@@ -90,19 +90,22 @@ class Medical extends MY_Controller
         $content = addslashes($this->input->get_post('content'));
         $stages = intval($this->input->get_post('stages'));
         $imgArr = array();
-        if(!empty($_FILES)) {
-            foreach ($_FILES as $key => $value) {
-                $imgFile = $this->upload_image->save('illRemark',$value['tmp_name']);
-                array_push($imgArr,$imgFile);
+        if(!empty($_FILES)){
+            foreach($_FILES as $k=>$val){
+                if($val['name'] != '') {
+                    $imgFile = $this->upload_image->save('illRemark', $val['tmp_name']);
+                    $imgArr[$k]=$imgFile;
+                }
             }
         }
+        $imgArr = !empty($imgArr) ? json_encode($imgArr) : "";
         $data = array(
             'illId'=>$illId,
             'uid'=>self::$currentUid,
             'visitDate'=>$visitDate,
             'content'=>$content,
             'stage'=>$stages,
-            'img'=>json_encode($imgArr)
+            'img'=> $imgArr
         );
         $res = $this->illness_remarks->addRemark($data);
         if($res){
@@ -170,17 +173,17 @@ class Medical extends MY_Controller
                     $imgArr = $imgArr ? $imgArr : array();
                     foreach($_FILES as $key=>$value){
                         if($value['name']==''){ continue;}
-                        if(preg_match('/img1\_'.$id.'/',$key)){
+                        if('img1_'.$id == $key){
                             $imgFile = $this->upload_image->save('illRemark',$value['tmp_name']);
-                            $imgArr[0] = $imgFile;
+                            $imgArr['img1'] = $imgFile;
                         }
-                        if(preg_match('/img2\_'.$id.'/',$key)){
+                        if('img2_'.$id == $key){
                             $imgFile = $this->upload_image->save('illRemark',$value['tmp_name']);
-                            $imgArr[1] = $imgFile;
+                            $imgArr['img2'] = $imgFile;
                         }
-                        if(preg_match('/img1\_'.$id.'/',$key)){
+                        if('img3_'.$id == $key){
                             $imgFile = $this->upload_image->save('illRemark',$value['tmp_name']);
-                            $imgArr[2] = $imgFile;
+                            $imgArr['img3'] = $imgFile;
                         }
                     }
                 }
@@ -189,9 +192,8 @@ class Medical extends MY_Controller
                     'stage'=>$stages,
                     'content'=>$content,
                 );
-                if(!empty($imgArr)){
-                    $remarkData['img'] = json_encode($imgArr);
-                }
+
+                $remarkData['img'] = !empty($imgArr) ? json_encode($imgArr) : "";
                 $remarkRes = $this->illness_remarks->editRemarks($id,self::$currentUid,$illId,$remarkData);
             }
         }

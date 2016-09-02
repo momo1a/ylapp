@@ -24,6 +24,7 @@ class User_illness_history_model extends MY_Model
     public function illnessList($uid,$select='*',$limit=20,$offset=0){
         $this->select($select);
         $where = array('uid'=>$uid);
+        $this->order_by(array('illId'=>'desc'));
         $this->limit($limit);
         $this->offset($offset);
         $res = $this->find_all_by($where);

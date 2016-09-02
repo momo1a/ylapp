@@ -45,10 +45,11 @@ class Leaving_msg extends MY_Controller
             foreach($_FILES as $k=>$val){
                 if($val['name'] != '') {
                     $imgFile = $this->upload_image->save('leavingMsg', $val['tmp_name']);
-                    array_push($imgArr, $imgFile);
+                    $imgArr[$k]=$imgFile;
                 }
             }
         }
+        $imgArr = !empty($imgArr) ? json_encode($imgArr) : "";
         $data = array(
             'askerUid'=>self::$currentUid,
             'illid' => $illId,
@@ -58,7 +59,7 @@ class Leaving_msg extends MY_Controller
             'price'=>$price,
             'docId'=>$docId,
             'docName'=>$this->user->getUserInfoByUid($docId,'nickname'),
-            'img'=>json_encode($imgArr),
+            'img'=>$imgArr,
             'askTime'=>time()
         );
 

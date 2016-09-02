@@ -58,6 +58,10 @@ class MY_Controller extends CI_Controller
             $this->checkToken();  //检测通讯token
         }
         $this->load->library('Crypt',array('key'=>KEY_APP_SERVER,'iv'=>'0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF'),'crypt');    // 加密类库
+        $this->load->model('Money_model','money');
+        $this->load->model('Take_cash_model','cash');
+        $this->load->model('Common_trade_log_model','trade_log');
+        $this->load->model('News_collections_model','collection');
         $this->load->library("UeMsg",null,'sms');  // 加载短信类库
         $this->load->library('Cache_memcached',null,'cache');  // 加载缓存类库
         self::$privateToken = str_replace('\\','',$this->input->get_post('privateToken'));
@@ -162,6 +166,103 @@ class MY_Controller extends CI_Controller
             'dateline'=>time()
         );
         $this->udlog->saveLog($data);
+    }
+
+
+    /**
+     * 当前用户钱包
+     */
+    protected function myMoney(){
+        $money = $this->money->getUserMoney(self::$currentUid);
+        $money = $money ? $money : 0;
+        $this->response($this->responseDataFormat(0,'请求成功',array($money)));
+    }
+
+    /**
+     * 提现页面
+     */
+
+    protected function cashView(){
+        $money = $this->money->getUserMoney(self::$currentUid);
+        $money = $money ? $money : 0;
+        $this->response($this->responseDataFormat(0,'请求成功',array($money)));
+    }
+
+    /**
+     * 提现申请提交
+     */
+
+    protected function takeCashAction($userType){
+        $bank = addslashes(trim($this->input->get_post('bank')));
+        $cardNum = addslashes(trim($this->input->get_post('cardNum')));
+        $address = addslashes(trim($this->input->get_post('address')));
+        $realName = addslashes(trim($this->input->get_post('realName')));
+        $identity = addslashes(trim($this->input->get_post('identity')));
+        $amount = floatval($this->input->get_post('amount'));
+        $userType  = $userType;
+        $money = $this->money->getUserMoney(self::$currentUid);
+        $money = $money ? $money[0]['amount'] : 0;
+        if(!is_numeric($cardNum)){
+            $this->response($this->responseDataFormat(1,'请填写正确银行卡号',array()));
+        }
+        if(!is_numeric($identity) || strlen($identity) != 18){
+            $this->response($this->responseDataFormat(2,'请填写正确身份证号',array()));
+        }
+        if($amount > $money){
+            $this->response($this->responseDataFormat(3,'提现金额大于用户余额',array()));
+        }
+        $data = array(
+            'uid'=>self::$currentUid,
+            'bank'=>$bank,
+            'cardNum'=>$cardNum,
+            'address'=>$address,
+            'realName'=>$realName,
+            'identity'=>$identity,
+            'amount'=>$amount,
+            'userType'=>$userType,
+            'dateline'=>time()
+        );
+        $tradeData = array(
+            'uid'=>self::$currentUid,
+            'userType'=>$userType,
+            'tradeVolume'=>$amount,
+            'tradeDesc'=>'提现',
+            'tradeType'=>1,
+            'dateline'=>time()
+        );
+        $this->db->trans_begin();
+        $this->cash->addCash($data);
+        $this->trade_log->saveLog($tradeData);
+        $this->money->updateUserMoney(self::$currentUid,$amount);
+
+        if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
+            $this->response($this->responseDataFormat(-1,'系统错误',array()));
+        } else {
+            $this->db->trans_commit();
+            $this->response($this->responseDataFormat(0,'提交申请成功',array()));
+        }
+    }
+
+    /**
+     * 交易记录视图
+     */
+    protected function tradeLogView(){
+        $res = $this->trade_log->getListByUid(self::$currentUid,'tradeDesc,FROM_UNIXTIME(dateline) AS tradeTime,tradeVolume,tradeType');
+        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+    }
+
+
+    /**
+     * 我的收藏
+     */
+    protected function newsCollection(){
+        $limit = intval($this->input->get_post('limit'));
+        $limit = $limit == 0 ? 10 : $limit;
+        $offset = intval($this->input->get_post('offset'));
+        $select = 'YL_news_collections.id as collId,YL_news.thumbnail,YL_news.title,YL_news.content,FROM_UNIXTIME(YL_news.createTime) as dateline';
+        $res = $this->collection->myCollections(self::$currentUid,$select,$limit,$offset);
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
     }
 
 }

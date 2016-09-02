@@ -129,7 +129,7 @@ class Medical extends MY_Controller
                 $remakes[$key]['img'] = json_decode($value['img'],true);
             }
         }
-        if($illness && $remakes && $imgServer){
+        if($illness && $imgServer){
             $this->response($this->responseDataFormat(0,'请求成功',array('illnessHistory'=>$illness,'remarks'=>$remakes,'imgServer'=>$imgServer)));
         }else{
             $this->response($this->responseDataFormat(-1,'暂无数据',array()));

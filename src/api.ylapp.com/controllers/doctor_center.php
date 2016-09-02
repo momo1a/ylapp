@@ -386,6 +386,37 @@ class Doctor_center extends MY_Controller
 
     }
 
+    /**
+     * 我的钱包
+     */
+
+    public function myMoneyIndex(){
+        $this->myMoney();
+    }
+
+    /**
+     * 提现页面
+     */
+
+    public function takeCashView(){
+        $this->cashView();
+    }
+
+
+    /**
+     * 提现提交
+     */
+    public function takeCash(){
+        $this->takeCashAction(self::$_TYPE_DOCTOR);
+    }
+
+    /**
+     * 交易记录
+     */
+    public function tradeLog(){
+        $this->tradeLogView();
+    }
+
 
     /*我的 e*/
 

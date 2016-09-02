@@ -435,12 +435,33 @@ HTML;
 <form action="http://api.ylapp.com/news/newsCollection" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="SzjiZ25df98efs+05ijZCMV06qkBzTYLidZg0xIpHtihZr+KaZIV1gNH6ihmP2Kq3wA+SuY+"/>
+    <input type="text" name="nid"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
     }
 
 
+
+    public function myCollections(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/myCollections" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="SzjiZ25df98efs+05ijZCMV06qkBzTYLidZg0xIpHtihZr+KaZIV1gNH6ihmP2Kq3wA+SuY+"/>
+    limit<input type="text" name="limit"/>
+    offset<input type="text" name="offset"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
 
 
     public function userIndex(){

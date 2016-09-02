@@ -418,6 +418,35 @@ class Doctor_center extends MY_Controller
     }
 
 
+    /**
+     * 我的收藏列表
+     */
+
+    public function myCollections(){
+        $this->collectionList();
+    }
+
+
+    /**
+     * 修改密码
+     */
+
+    public function updatePwd(){
+        $this->updateMyPwd();
+    }
+
+
+    /**
+     * 反馈意见
+     */
+
+
+    public function feedback(){
+        $this->commitFeedback();
+    }
+
+
+
     /*我的 e*/
 
 

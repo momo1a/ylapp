@@ -11,7 +11,6 @@ class User_center extends MY_Controller
     public function __construct(){
         parent::__construct();
         $this->checkUserLogin();   // 检查用户登录
-        $this->load->model('User_model','user');
         $this->load->model('User_phone_diagnosis_model','online_ask');
         $this->load->model('Doctor_evaluate_model','evaluate');
         $this->load->model('User_reg_num_model','appoint');
@@ -93,34 +92,7 @@ class User_center extends MY_Controller
      */
 
     public function updatePwd(){
-        $oldPwd = $this->encryption(trim($this->input->get_post('oldPwd')));
-        $newPwd = trim($this->input->get_post('newPwd'));
-        $reNewPwd = trim($this->input->get_post('reNewPwd'));
-        $password =$this->user->getUserInfoByUid(self::$currentUid,'password');
-        if($oldPwd != $password){
-            $this->response($this->responseDataFormat(1,'旧密码不正确',array()));
-        }
-        if(strlen($newPwd) < 6){
-            $this->response($this->responseDataFormat(2,'密码不得小于6位',array()));
-        }
-        if(is_numeric($newPwd)){
-            $this->response($this->responseDataFormat(3,'密码不得是纯数字',array()));
-        }
-        if($newPwd != $reNewPwd){
-            $this->response($this->responseDataFormat(4,'第一次密码跟第二次密码不一致',array()));
-        }
-        $newPwd = $this->encryption($newPwd);
-        if($newPwd == $password){
-            $this->response($this->responseDataFormat(5,'新密码和旧密码一样未作修改',array()));
-        }
-        $data = array('password'=>$newPwd);
-        $res = $this->user->saveUserDetail(self::$currentUid,$data);
-        if($res){
-            $this->response($this->responseDataFormat(0,'修改成功',array()));
-        }else{
-            $this->response($this->responseDataFormat(-1,'系统错误',array()));
-        }
-
+        $this->updateMyPwd();
     }
 
     /**
@@ -365,7 +337,7 @@ class User_center extends MY_Controller
      */
 
     public function myCollections(){
-        $this->collection();
+        $this->collectionList();
     }
 
 
@@ -390,23 +362,7 @@ class User_center extends MY_Controller
 
 
     public function feedback(){
-        $content = addslashes($this->input->get_post('content'));
-        if(mb_strlen($content) > 300){
-            $this->response($this->responseDataFormat(1,'字数超过限定大小',array()));
-        }
-        $this->load->model('Feedback_model','feedback');
-        $data = array(
-            'uid'=>self::$currentUid,
-            'userType'=>1,
-            'content'=>$content,
-            'dateline'=>time()
-        );
-        $res = $this->feedback->addFeedback($data);
-        if($res){
-            $this->response($this->responseDataFormat(0,'请求成功',array()));
-        }else{
-            $this->response($this->responseDataFormat(-1,'系统错误',array()));
-        }
+        $this->commitFeedback();
     }
 
 

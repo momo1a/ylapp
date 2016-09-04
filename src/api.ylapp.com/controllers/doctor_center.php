@@ -353,6 +353,7 @@ class Doctor_center extends MY_Controller
             }
         }
         $imgMerge = array_merge($currentDocCertificateImg,$imgArr);
+        $imgMerge = !empty($imgMerge) ? json_encode($imgMerge) : "";
         $userData = array(
             'nickname'=>$name,
             'sex'=>$sex,
@@ -367,7 +368,7 @@ class Doctor_center extends MY_Controller
             'degree'=>$degree,
             'summary'=>$summary,
             'goodAt'=>$goodAt,
-            'certificateImg'=>json_encode($imgMerge),
+            'certificateImg'=>$imgMerge,
             'state'=>0
         );
 
@@ -384,6 +385,66 @@ class Doctor_center extends MY_Controller
         }
 
     }
+
+    /**
+     * 我的钱包
+     */
+
+    public function myMoneyIndex(){
+        $this->myMoney();
+    }
+
+    /**
+     * 提现页面
+     */
+
+    public function takeCashView(){
+        $this->cashView();
+    }
+
+
+    /**
+     * 提现提交
+     */
+    public function takeCash(){
+        $this->takeCashAction(self::$_TYPE_DOCTOR);
+    }
+
+    /**
+     * 交易记录
+     */
+    public function tradeLog(){
+        $this->tradeLogView();
+    }
+
+
+    /**
+     * 我的收藏列表
+     */
+
+    public function myCollections(){
+        $this->collectionList();
+    }
+
+
+    /**
+     * 修改密码
+     */
+
+    public function updatePwd(){
+        $this->updateMyPwd();
+    }
+
+
+    /**
+     * 反馈意见
+     */
+
+
+    public function feedback(){
+        $this->commitFeedback();
+    }
+
 
 
     /*我的 e*/

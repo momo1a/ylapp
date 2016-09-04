@@ -11,10 +11,6 @@ class User_center extends MY_Controller
     public function __construct(){
         parent::__construct();
         $this->checkUserLogin();   // 检查用户登录
-        $this->load->model('User_model','user');
-        $this->load->model('Money_model','money');
-        $this->load->model('Take_cash_model','cash');
-        $this->load->model('Common_trade_log_model','trade_log');
         $this->load->model('User_phone_diagnosis_model','online_ask');
         $this->load->model('Doctor_evaluate_model','evaluate');
         $this->load->model('User_reg_num_model','appoint');
@@ -23,7 +19,6 @@ class User_center extends MY_Controller
         $this->load->model('Order_model','order');
         $this->load->model('Post_model','post');
         $this->load->model('Post_comment_model','post_comment');
-        $this->load->model('News_collections_model','collection');
     }
 
 
@@ -97,34 +92,7 @@ class User_center extends MY_Controller
      */
 
     public function updatePwd(){
-        $oldPwd = $this->encryption(trim($this->input->get_post('oldPwd')));
-        $newPwd = trim($this->input->get_post('newPwd'));
-        $reNewPwd = trim($this->input->get_post('reNewPwd'));
-        $password =$this->user->getUserInfoByUid(self::$currentUid,'password');
-        if($oldPwd != $password){
-            $this->response($this->responseDataFormat(1,'旧密码不正确',array()));
-        }
-        if(strlen($newPwd) < 6){
-            $this->response($this->responseDataFormat(2,'密码不得小于6位',array()));
-        }
-        if(is_numeric($newPwd)){
-            $this->response($this->responseDataFormat(3,'密码不得是纯数字',array()));
-        }
-        if($newPwd != $reNewPwd){
-            $this->response($this->responseDataFormat(4,'第一次密码跟第二次密码不一致',array()));
-        }
-        $newPwd = $this->encryption($newPwd);
-        if($newPwd == $password){
-            $this->response($this->responseDataFormat(5,'新密码和旧密码一样未作修改',array()));
-        }
-        $data = array('password'=>$newPwd);
-        $res = $this->user->saveUserDetail(self::$currentUid,$data);
-        if($res){
-            $this->response($this->responseDataFormat(0,'修改成功',array()));
-        }else{
-            $this->response($this->responseDataFormat(-1,'系统错误',array()));
-        }
-
+        $this->updateMyPwd();
     }
 
     /**
@@ -132,9 +100,7 @@ class User_center extends MY_Controller
      */
 
     public function myMoneyIndex(){
-        $money = $this->money->getUserMoney(self::$currentUid);
-        $money = $money ? $money : 0;
-        $this->response($this->responseDataFormat(0,'请求成功',array($money)));
+        $this->myMoney();
     }
 
     /**
@@ -149,9 +115,7 @@ class User_center extends MY_Controller
      */
 
     public function takeCashView(){
-        $money = $this->money->getUserMoney(self::$currentUid);
-        $money = $money ? $money : 0;
-        $this->response($this->responseDataFormat(0,'请求成功',array($money)));
+        $this->cashView();
     }
 
 
@@ -159,58 +123,7 @@ class User_center extends MY_Controller
      * 提现提交
      */
     public function takeCash(){
-        $bank = addslashes(trim($this->input->get_post('bank')));
-        $cardNum = addslashes(trim($this->input->get_post('cardNum')));
-        $address = addslashes(trim($this->input->get_post('address')));
-        $realName = addslashes(trim($this->input->get_post('realName')));
-        $identity = addslashes(trim($this->input->get_post('identity')));
-        $amount = floatval($this->input->get_post('amount'));
-        $userType  = intval($this->input->get_post('userType'));
-        $money = $this->money->getUserMoney(self::$currentUid);
-        $money = $money ? $money[0]['amount'] : 0;
-        if(!is_numeric($cardNum)){
-            $this->response($this->responseDataFormat(1,'请填写正确银行卡号',array()));
-        }
-        if(!is_numeric($identity) || strlen($identity) != 18){
-            $this->response($this->responseDataFormat(2,'请填写正确身份证号',array()));
-        }
-        if($amount > $money){
-            $this->response($this->responseDataFormat(3,'提现金额大于用户余额',array()));
-        }
-        if($userType != 1 && $userType != 2){
-            $this->response($this->responseDataFormat(4,'用户类型异常',array()));
-        }
-        $data = array(
-            'uid'=>self::$currentUid,
-            'bank'=>$bank,
-            'cardNum'=>$cardNum,
-            'address'=>$address,
-            'realName'=>$realName,
-            'identity'=>$identity,
-            'amount'=>$amount,
-            'userType'=>$userType,
-            'dateline'=>time()
-        );
-        $tradeData = array(
-            'uid'=>self::$currentUid,
-            'userType'=>$userType,
-            'tradeVolume'=>$amount,
-            'tradeDesc'=>'提现',
-            'dateline'=>time()
-        );
-        $this->db->trans_begin();
-        $this->cash->addCash($data);
-        $this->trade_log->saveLog($tradeData);
-        $this->money->updateUserMoney(self::$currentUid,$amount);
-
-        if ($this->db->trans_status() === FALSE) {
-            $this->db->trans_rollback();
-            $this->response($this->responseDataFormat(-1,'系统错误',array()));
-        } else {
-            $this->db->trans_commit();
-            $this->response($this->responseDataFormat(0,'提交申请成功',array()));
-        }
-
+        $this->takeCashAction(self::$_TYPE_USER);
     }
 
 
@@ -218,8 +131,7 @@ class User_center extends MY_Controller
      * 交易记录
      */
     public function tradeLog(){
-        $res = $this->trade_log->getListByUid(self::$currentUid,'tradeDesc,FROM_UNIXTIME(dateline) AS tradeTime,tradeVolume,tradeType');
-        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+        $this->tradeLogView();
     }
 
     /**
@@ -421,16 +333,11 @@ class User_center extends MY_Controller
 
 
     /**
-     * 我的收藏
+     * 我的收藏列表
      */
 
     public function myCollections(){
-        $limit = intval($this->input->get_post('limit'));
-        $limit = $limit == 0 ? 10 : $limit;
-        $offset = intval($this->input->get_post('offset'));
-        $select = 'YL_news_collections.id as collId,YL_news.thumbnail,YL_news.title,YL_news.content,FROM_UNIXTIME(YL_news.createTime) as dateline';
-        $res = $this->collection->myCollections(self::$currentUid,$select,$limit,$offset);
-        $this->response($this->responseDataFormat(0,'请求成功',$res));
+        $this->collectionList();
     }
 
 
@@ -455,23 +362,7 @@ class User_center extends MY_Controller
 
 
     public function feedback(){
-        $content = addslashes($this->input->get_post('content'));
-        if(mb_strlen($content) > 300){
-            $this->response($this->responseDataFormat(1,'字数超过限定大小',array()));
-        }
-        $this->load->model('Feedback_model','feedback');
-        $data = array(
-            'uid'=>self::$currentUid,
-            'userType'=>1,
-            'content'=>$content,
-            'dateline'=>time()
-        );
-        $res = $this->feedback->addFeedback($data);
-        if($res){
-            $this->response($this->responseDataFormat(0,'请求成功',array()));
-        }else{
-            $this->response($this->responseDataFormat(-1,'系统错误',array()));
-        }
+        $this->commitFeedback();
     }
 
 

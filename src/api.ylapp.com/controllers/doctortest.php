@@ -334,20 +334,135 @@ HTML;
     }
 
     /**
-     * $name = trim(addslashes($this->input->get_post('name')));
-    $sex = intval($this->input->get_post('sex'));
-    if($sex != 1 && $sex != 2){$this->response($this->responseDataFormat(1,'sex参数非法',array()));}
-    $birthday = strtotime($this->input->get_post('birthday'));
-    $telFrt = trim($this->input->get_post('telFrt'));
-    $telSed = trim($this->input->get_post('telSed'));
-    $hosId = intval($this->input->get_post('hosId'));
-    if(!$hosId){$this->response($this->responseDataFormat(2,'请选择医院',array()));}
-    $officeId = intval($this->input->get_post('officeId'));
-    if(!$officeId){$this->response($this->responseDataFormat(3,'请选择科室',array()));}
-    $degree = addslashes(trim($this->input->get_post('degree')));
-    $summary = addslashes($this->input->get_post('summary')); // 简介
-    $goodAt = addslashes($this->input->get_post('goodAt'));  // 擅长
+     * money
      */
+
+
+
+    public function myMoneyIndex(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/myMoneyIndex" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="SzjiZ25df98efs+05ijZCMV06qkBzTYLidZg0xIpHtihZr+KaZIV1gNH6ihmP2Kq3wA+SuY+"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+    public function takeCashView(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/takeCashView" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="SzjiZ25df98efs+05ijZCMV06qkBzTYLidZg0xIpHtihZr+KaZIV1gNH6ihmP2Kq3wA+SuY+"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+    public function takeCash(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/takeCash" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="SzjiZ25df98efs+05ijZCMV06qkBzTYLidZg0xIpHtihZr+KaZIV1gNH6ihmP2Kq3wA+SuY+"/>
+    bank<input type="text" name="bank"/>
+    cardNum<input type="text" name="cardNum"/>
+    address<input type="text" name="address"/>
+    realName<input type="text" name="realName"/>
+    identity<input type="text" name="identity"/>
+    amount<input type="text" name="amount"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+    public function tradeLog(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/tradeLog" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="SzjiZ25df98efs+05ijZCMV06qkBzTYLidZg0xIpHtihZr+KaZIV1gNH6ihmP2Kq3wA+SuY+"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+    public function newsCollection(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/news/newsCollection" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="SzjiZ25df98efs+05ijZCMV06qkBzTYLidZg0xIpHtihZr+KaZIV1gNH6ihmP2Kq3wA+SuY+"/>
+    <input type="text" name="nid"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+    public function myCollections(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/doctor_center/myCollections" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="SzjiZ25df98efs+05ijZCMV06qkBzTYLidZg0xIpHtihZr+KaZIV1gNH6ihmP2Kq3wA+SuY+"/>
+    limit<input type="text" name="limit"/>
+    offset<input type="text" name="offset"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
 
     public function userIndex(){
         $form = <<<HTML

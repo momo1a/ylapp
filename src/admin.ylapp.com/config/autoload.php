@@ -52,8 +52,6 @@ $autoload['packages'] = array(COMPATH);
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('rbac');
-
 
 /*
 | -------------------------------------------------------------------

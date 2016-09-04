@@ -38,13 +38,9 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "home";
 $route['404_override'] = '';
 
 //$route['yzcm/(ongoing|complete)'] = 'yzcm/index/$1';
-$route['yzcm/(ongoing|herald|complete)(\/\d+)?'] = 'yzcm/index/$1/$2';
-$route['mpg/(ongoing|herald|complete)(\/\d+)?'] = 'mpg/index/$1/$2';
-$route['fenqi/(ongoing|herald|complete)(\/\d+)?'] = 'fenqi/index/$1/$2';
-
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

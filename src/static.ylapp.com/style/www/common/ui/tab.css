@@ -1,9 +1,0 @@
-﻿@charset "utf-8";
-.ui-tab {  background-color: #FFF;}
-.ui-tab-nav { border: 1px solid #D7D7D7; background-color: #ededed; *zoom:1; }
-.ui-tab-nav:after, .ui-tab-nav:before { content: ""; display: table;}.ui-tab-nav:after { clear:both;}
-.ui-tab-item { float: left; cursor:pointer;}
-.ui-tab-item a { padding: .6em; font-size: 14px; line-height: 2.6em; color:#333; text-decoration: none;}
-.ui-tab-itemCurrent a { font-weight: 700;}
-.ui-tab-itemCurrent { border-left: 1px solid #D7D7D7;border-right: 1px solid #D7D7D7; border-top:2px solid #c00; margin:-1px 0 -1px -1px;background-color: #fff;*position: relative; *zoom:1;}
-.ui-tab-cont { border: 1px solid #d7d7d7; margin-top: -1px;}

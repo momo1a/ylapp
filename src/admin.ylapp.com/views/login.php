@@ -33,9 +33,9 @@
     <div class="login-box-body">
         <p class="login-box-msg"></p>
         <div class="callout callout-info" style="text-align: center;font-weight: bold;font-size: large;">移动医疗后台管理系统</div>
-        <form action="" method="post">
+        <form action="" method="post" id="login">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="用户名" required="请填写用户名">
+                <input type="text" class="form-control" placeholder="用户名" required>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -69,6 +69,8 @@
 <script src="<?php echo config_item('domain_static').'admin/'?>bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="<?php echo config_item('domain_static').'admin/'?>plugins/iCheck/icheck.min.js"></script>
+<script src="<?php echo config_item('domain_static').'admin/'?>validate/jquery.validate.min.js"></script>
+<script src="<?php echo config_item('domain_static').'admin/'?>validate/messages_zh.js"></script>
 <script>
     $(function () {
         $('input').iCheck({

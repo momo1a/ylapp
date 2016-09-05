@@ -1,4 +1,5 @@
 <aside class="main-sidebar">
+    <section class="sidebar">
     <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
             <li class="header">HEADER</li>

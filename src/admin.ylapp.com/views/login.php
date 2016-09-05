@@ -33,23 +33,24 @@
     <div class="login-box-body">
         <p class="login-box-msg"></p>
         <div class="callout callout-info" style="text-align: center;font-weight: bold;font-size: large;">移动医疗后台管理系统</div>
-        <form action="login/doAction" method="post" id="login">
+        <form action="" method="post" id="login">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="用户名" name="username" required>
+                <input type="text" class="form-control" placeholder="用户名" name="username" required value="<?php echo $username ? $username : '';?>">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="密码" name="password" required>
+                <input type="password" class="form-control" placeholder="密码" name="password" required value="<?php echo $password ? $password : '';?>">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox" name="remember_pwd" value="1">&nbsp;&nbsp;&nbsp;记住密码
+                            <input type="checkbox" name="remember_pwd" value="1" <?php echo $remember ? "checked" : ""; ?>>&nbsp;&nbsp;&nbsp;记住密码
                         </label>
                     </div>
                 </div>
+                <input type="hidden" name="doAction" value="yes"/>
                 <!-- /.col -->
                 <div class="col-xs-4">
                     <button type="submit" class="btn btn-primary btn-block btn-flat" style="background: white;color: #000000;border: #808080 1px solid;border-radius: 5px">登录</button>

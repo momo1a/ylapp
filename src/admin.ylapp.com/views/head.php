@@ -209,7 +209,7 @@ desired effect
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">退出</a>
+                                    <a href="<?php echo site_url()?>/home/logout" class="btn btn-default btn-flat">退出</a>
                                 </div>
                             </li>
                         </ul>

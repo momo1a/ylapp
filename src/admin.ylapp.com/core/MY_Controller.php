@@ -32,6 +32,14 @@ class MY_Controller extends CI_Controller
         exit(json_encode(array('code'=>$code,'msg'=>$msg,'data'=>$data)));
     }
 
+    /**
+     * 获取当前用户
+     * @return mixed
+     */
+    protected function currentUser(){
+        return $_SESSION['userInfo'];
+    }
+
 
 }
 // End of MY_Controller class

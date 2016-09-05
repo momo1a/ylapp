@@ -128,6 +128,7 @@ class Medical extends MY_Controller
         if(!empty($remakes)){
             foreach($remakes as $key=>$value){
                 $remakes[$key]['img'] = json_decode($value['img'],true);
+                $remakes[$key]['visitDate'] = date('Y-m-d',$value['visitDate']);
             }
         }
         if($illness && $imgServer){

@@ -33,13 +33,13 @@
     <div class="login-box-body">
         <p class="login-box-msg"></p>
         <div class="callout callout-info" style="text-align: center;font-weight: bold;font-size: large;">移动医疗后台管理系统</div>
-        <form action="" method="post" id="login">
+        <form action="login/doAction" method="post" id="login">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="用户名" required>
+                <input type="text" class="form-control" placeholder="用户名" name="username" required>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="密码" required="请填写密码">
+                <input type="password" class="form-control" placeholder="密码" name="password" required>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">

@@ -53,6 +53,13 @@ require_once dirname($application_folder). '/common/common_index.php';
  * And away we go...
  *
  */
+
+/**
+ * 开启session
+ */
+session_start();
+
+
 require_once BASEPATH.'core/CodeIgniter.php';
 
 /* End of file index.php */

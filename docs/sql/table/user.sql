@@ -15,6 +15,7 @@ CREATE TABLE `YL_user` (
   `birthday` int(11)  NOT NULL DEFAULT '0' COMMENT '出生日期',
   `avatar` varchar(50) not null default '' comment '头像',
   `isBlack` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否黑名单:0否,1是',
+  `isBackgroundUser` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否后台管理员:0否,1是',
   `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '用户状态：0正常，N保留',
   PRIMARY KEY (`uid`),
   KEY `uname` (`nickname`) USING BTREE,

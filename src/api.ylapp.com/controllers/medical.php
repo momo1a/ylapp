@@ -71,6 +71,7 @@ class Medical extends MY_Controller
         if(!empty($resTwo)){
             foreach($resTwo as $k=>$v){
                 $resTwo[$k]['img'] = json_decode($v['img'],true);
+                $resTwo[$k]['visitDate'] = date('Y-m-d',$v['visitDate']);
             }
         }
         if($res){

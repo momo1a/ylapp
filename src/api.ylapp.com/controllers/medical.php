@@ -89,7 +89,7 @@ class Medical extends MY_Controller
         $illId = intval($this->input->get_post('illId'));
         $visitDate = strtotime($this->input->get_post('visitDate'));
         $content = addslashes($this->input->get_post('content'));
-        $stages = intval($this->input->get_post('stages'));
+        $stages = trim(addslashes($this->input->get_post('stages')));
         $imgArr = array();
         if(!empty($_FILES)){
             foreach($_FILES as $k=>$val){

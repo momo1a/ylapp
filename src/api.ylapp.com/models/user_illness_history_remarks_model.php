@@ -14,6 +14,7 @@ class User_illness_history_remarks_model extends MY_Model
      */
     public function getRemarksByIllIdAndUid($IllId,$uid){
         $where = array('illId'=>$IllId,'uid'=>$uid);
+        $this->order_by(array('id'=>'desc'));
         $res = $this->find_all_by($where);
         return $res;
     }

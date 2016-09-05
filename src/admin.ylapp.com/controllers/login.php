@@ -15,12 +15,16 @@ class Login extends MY_Controller
     public function doAction(){
         $username = addslashes(trim($this->input->get_post('username')));
         $password = trim($this->input->get_post('password'));
+        $rememberPwd = intval($this->input->get_post('remember_pwd'));
         $enPwd = $this->encryption($password);
         $check = $this->checkLogin($username,$enPwd);
         if(!$check){
             echo '密码或者用户名错误';
         }else{
-            echo '登陆成功';
+            if($rememberPwd){  // 记住密码
+                set_cookie('login', $_REQUEST);
+            }
+            redirect('home/index');
         }
 
     }

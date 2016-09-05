@@ -46,7 +46,7 @@
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox">&nbsp;&nbsp;&nbsp;记住密码
+                            <input type="checkbox" name="remember_pwd" value="1">&nbsp;&nbsp;&nbsp;记住密码
                         </label>
                     </div>
                 </div>
@@ -79,6 +79,23 @@
             increaseArea: '20%' // optional
         });
     });
+   /* function doLogin(){
+        var username = $("input[name='username']").val();
+        var password = $("input[name='password']").val();
+        var rememberPwd = $(":checked").val();
+        $.ajax({
+            type:"POST",
+            url:"<?php echo site_url();?>login/doAction",
+            data:{username:username,password:password,rememberPwd:rememberPwd},
+            dataType:'json',
+            success:function(data){
+
+            },
+            error:function(){
+
+            }
+        });
+    }*/
 </script>
 </body>
 </html>

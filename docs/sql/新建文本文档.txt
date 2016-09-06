@@ -1,0 +1,14 @@
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('1', '用户管理', 'User', 'index', '0', '13', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('2', '医生管理', 'Doctor ', 'index', '0', '12', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('3', '首页管理', 'ClientIndex', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('4', '资讯管理', 'News', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('5', '交流圈', 'Post', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('6', '留言问答', 'LeavMsg', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('7', '电话问诊', 'TelOnline', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('8', '预约挂号', 'RegNum', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('9', '基因检测', 'Gene', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('10', '疫苗接种', 'Vaccine', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('11', '订单管理', 'Order', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('12', '提现管理', 'Cash', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('13', '客服', 'Customer', 'index', '0', '0', '1');
+INSERT INTO `ylapp`.`YL_menu` (`id`, `title`, `ctrl`, `method`, `p_id`, `sort`, `status`) VALUES ('14', '账户管理', 'Auth', 'index', '0', '14', '1');

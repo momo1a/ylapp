@@ -35,12 +35,15 @@
         <div class="callout callout-info" style="text-align: center;font-weight: bold;font-size: large;">移动医疗后台管理系统</div>
         <form action="" method="post" id="login">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="用户名" name="username" required value="<?php echo $username ? $username : '';?>">
+                <input type="text" class="form-control msg-hidden" placeholder="用户名" name="username" required value="<?php echo $username ? $username : '';?>">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="密码" name="password" required value="<?php echo $password ? $password : '';?>">
+                <input type="password" class="form-control msg-hidden" placeholder="密码" name="password" required value="<?php echo $password ? $password : '';?>" id="pass">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="<?php if($msg){ echo 'alert alert-danger alert-dismissible';}?>" id="msg">
+                <?php echo $msg;?>
             </div>
             <div class="row">
                 <div class="col-xs-8">
@@ -79,24 +82,10 @@
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' // optional
         });
-    });
-   /* function doLogin(){
-        var username = $("input[name='username']").val();
-        var password = $("input[name='password']").val();
-        var rememberPwd = $(":checked").val();
-        $.ajax({
-            type:"POST",
-            url:"<?php echo site_url();?>login/doAction",
-            data:{username:username,password:password,rememberPwd:rememberPwd},
-            dataType:'json',
-            success:function(data){
-
-            },
-            error:function(){
-
-            }
+        $('.msg-hidden').focus(function(){
+            $("#msg").hide();
         });
-    }*/
+    });
 </script>
 </body>
 </html>

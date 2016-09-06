@@ -174,14 +174,14 @@ desired effect
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="<?php echo config_item('domain_static').'admin/';?>dist/img/avatar_default.jpg" class="user-image" alt="User Image">
+                            <img src="<?php $imgServer = config_item('image_servers'); echo $user[0]['avatar'] ?  $imgServer[0].$user[0]['avatar'] : config_item('domain_static').'admin/dist/img/avatar_default.jpg';?>" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs"><?php echo $user[0]['nickname'];?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="<?php echo config_item('domain_static').'admin/';?>dist/img/avatar_default.jpg" class="img-circle" alt="用户头像">
+                                <img src="<?php $imgServer = config_item('image_servers'); echo $user[0]['avatar'] ?  $imgServer[0].$user[0]['avatar'] : config_item('domain_static').'admin/dist/img/avatar_default.jpg';?>" class="img-circle" alt="用户头像">
 
                                 <p>
                                     <?php echo $user[0]['nickname'].' - '.$user[0]['role']; ?>

@@ -22,11 +22,14 @@ $config['upload_avatar_thumb_size'] = array('small'=>48, 'middle'=>120, 'big'=>1
 $config['upload_avatar_quality'] = 95;
 
 // 图片服务器
-$config['image_servers'] = array('http://img.ylapp.com/');
+$config['image_servers'] = array('http://123.207.87.83:8081/');
 
 // 各站点域名
 //$config['domain_www'] = 'http://www.ylapp.com/';
-$config['domain_static'] = 'http://123.207.87.83:8080/';
+$config['domain_static'] = 'http://123.207.87.83:8082/';
+
+
+$config['super_admin'] = array(1);
 
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'shs_system.php';
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'static_url.php';  //加载众划算静态URL

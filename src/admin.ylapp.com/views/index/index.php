@@ -7,8 +7,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                系统信息
-                <small>系统环境信息简介</small>
+                当前用户
+                <small><?php if($is_super){echo '超级'.$user[0]['role'];}?></small>
             </h1>
         </section>
 

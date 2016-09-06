@@ -7,6 +7,8 @@ class Home extends MY_Controller
 
     public function index(){
         $data['user'] = get_user();
+        $data['menu'] = self::$_top_menu;
+        $data['is_super'] = self::$_is_super;
         $this->load->view('index/index',$data);
     }
 

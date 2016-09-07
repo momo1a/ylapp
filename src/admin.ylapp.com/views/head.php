@@ -23,6 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
     -->
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/dataTables.bootstrap.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,7 +59,7 @@ desired effect
     <header class="main-header">
 
         <!-- Logo -->
-        <a href="#" class="logo">
+        <a href="<?php echo site_url();?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini">YL</span>
             <!-- logo for regular state and mobile devices -->
@@ -174,17 +175,17 @@ desired effect
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="<?php $imgServer = config_item('image_servers'); echo $user[0]['avatar'] ?  $imgServer[0].$user[0]['avatar'] : config_item('domain_static').'admin/dist/img/avatar_default.jpg';?>" class="user-image" alt="User Image">
+                            <img src="<?php $imgServer = config_item('image_servers'); echo $vars[1][0]['avatar'] ?  $imgServer[0]. $vars[1][0]['avatar'] : config_item('domain_static').'admin/dist/img/avatar_default.jpg';?>" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs"><?php echo $user[0]['nickname'];?></span>
+                            <span class="hidden-xs"><?php echo  $vars[1][0]['nickname'];?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="<?php $imgServer = config_item('image_servers'); echo $user[0]['avatar'] ?  $imgServer[0].$user[0]['avatar'] : config_item('domain_static').'admin/dist/img/avatar_default.jpg';?>" class="img-circle" alt="用户头像">
+                                <img src="<?php $imgServer = config_item('image_servers'); echo  $vars[1][0]['avatar'] ?  $imgServer[0]. $vars[1][0]['avatar'] : config_item('domain_static').'admin/dist/img/avatar_default.jpg';?>" class="img-circle" alt="用户头像">
 
                                 <p>
-                                    <?php echo $user[0]['nickname'].' - '.$user[0]['role']; ?>
+                                    <?php echo  $vars[1][0]['nickname'].' - '. $vars[1][0]['role']; ?>
                                     <small><?php echo date('Y-m-d H:i:s');?></small>
                                 </p>
                             </li>

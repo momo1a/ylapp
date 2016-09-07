@@ -6,10 +6,12 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                当前用户
-                <small><?php if($is_super){echo '超级'.$user[0]['role'];}?></small>
-            </h1>
+            <strong>
+                <div class="btn btn-block btn-primary btn-lg" style="background: #f5f5f5;color: #3c8dbc">
+                <div style="font-weight: bold">当前用户</div>
+                <small><?php if($is_super){echo '超级'.$vars[1][0]['role'];}else{ echo $vars[1][0]['role'];}?></small>
+                </div>
+            </strong>
         </section>
 
         <!-- Main content -->

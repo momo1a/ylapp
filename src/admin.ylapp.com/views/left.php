@@ -2,7 +2,6 @@
     <section class="sidebar">
     <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">当前用户</li>
             <!-- Optionally, you can add icons to the links -->
             <!--<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
@@ -17,8 +16,8 @@
                     <li><a href="#">Link in level 2</a></li>
                 </ul>
             </li>-->
-            <?php if(!empty($menu)){foreach($menu as $value){?>
-                <li class="treeview"><a href="#"><i class="fa fa-link"></i> <span><?php echo $value['title'];?></span></a></li>
+            <?php if(!empty($vars[0])){foreach($vars[0] as $value){?>
+                <li class="treeview  <?php if($this->router->class == $value['ctrl']){ echo 'active';};?>"><a href="<?php echo site_url().$value['ctrl'].DIRECTORY_SEPARATOR.$value['method']?>"><i class="fa fa-link"></i> <span><?php echo $value['title'];?></span></a></li>
             <?php }}?>
         </ul>
         <!-- /.sidebar-menu -->

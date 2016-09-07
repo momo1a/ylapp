@@ -40,7 +40,7 @@ class MY_Controller extends CI_Controller
         }else{  // 超级管理员 直接获取所有菜单管理权限
             self::$_top_menu = $this->menu->get_menu();
         }
-
+        $this->load->vars('vars',array(self::$_top_menu ,get_user()));
     }
 
 

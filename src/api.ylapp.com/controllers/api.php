@@ -177,6 +177,27 @@ class Api extends MY_Controller
     }
 
 
+    /**
+     * 获取帮助列表
+     */
+    public function getHelpList(){
+        $type = intval($this->input->get_post('type'));
+        $this->load->model('Common_help_model','help');
+        $res = $this->help->getHelp($type);
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
+    }
+
+    /**
+     * 帮助详情
+     */
+    public function helpDetail(){
+        $id = intval($this->input->get_post('id'));
+        $this->load->model('Common_help_model','help');
+        $res = $this->help->helpDetail($id);
+        $this->response($this->responseDataFormat(0,'请求成功',$res));
+    }
+
+
     /*
      * 404处理
      */

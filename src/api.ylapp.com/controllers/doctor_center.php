@@ -22,6 +22,7 @@ class Doctor_center extends MY_Controller
         $this->load->model('Doctor_offices_model','office');
         $this->load->model('Hospital_model','hospital');
         $this->load->model('Doctor_info_model','doc_info');
+        $this->load->model('Banner_model','banner');
         $this->load->library('Upload_image',null,'upload_image');
         $this->imgServer = $this->getImgServer();
     }
@@ -36,6 +37,7 @@ class Doctor_center extends MY_Controller
         $regOrder = $this->reg_num->doctorIndex(self::$currentUid);  //预约挂号
         $diagOrder = $this->diagnosis->doctorIndex(self::$currentUid); //在线问诊
         $msgOrder = $this->levemsg->doctorIndex(self::$currentUid); //留言问答
+        $banner = $this->banner->getBannerByUserType(2,'title,img');
         if(!empty($msgOrder)){
             foreach($msgOrder as $key=>$value){
                 $msgOrder[$key]['img'] = json_decode($value['img'],true);
@@ -48,7 +50,7 @@ class Doctor_center extends MY_Controller
         $this->orderContainer($msgOrder,$i,$order);
         $this->sortArrByField($order,'dateline',true);
         $result = array_slice($order,$offset,$limit,true);
-        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i,'imgServer'=>$this->imgServer)));
+        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i,'banner'=>$banner,'imgServer'=>$this->imgServer)));
     }
 
 
@@ -62,6 +64,11 @@ class Doctor_center extends MY_Controller
         $regOrder = $this->reg_num->doctorIndex(self::$currentUid,'in(2,3,4,5,6)');  //预约挂号
         $diagOrder = $this->diagnosis->doctorIndex(self::$currentUid,' in(2,3,4) '); //在线问诊
         $msgOrder = $this->levemsg->doctorIndex(self::$currentUid,'in(2,3,4) '); //留言问答
+        if(!empty($msgOrder)){
+            foreach($msgOrder as $key=>$value){
+                $msgOrder[$key]['img'] = json_decode($value['img'],true);
+            }
+        }
         $i = 0;
         $order = array();
         $this->orderContainer($regOrder,$i,$order);
@@ -69,7 +76,8 @@ class Doctor_center extends MY_Controller
         $this->orderContainer($msgOrder,$i,$order);
         $this->sortArrByField($order,'dateline',true);
         $result = array_slice($order,$offset,$limit,true);
-        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i)));
+        $imgServer = $this->getImgServer();
+        $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i,'imgServer'=>$imgServer)));
     }
 
 

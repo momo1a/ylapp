@@ -36,6 +36,19 @@ class Post_click_like_model extends MY_Model
 
 
     /**
+     * 取消点赞
+     * @param $postId
+     * @param $uid
+     * @return bool
+     */
+    public function cancelLike($postId,$uid){
+        $where = array('postId'=>$postId,'uid'=>$uid);
+        $res = $this->delete_where($where);
+        return $res;
+    }
+
+
+    /**
      * @param $uid
      * @param $postId
      */

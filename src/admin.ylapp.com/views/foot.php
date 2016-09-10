@@ -96,6 +96,8 @@
 <script src="<?php echo config_item('domain_static').'admin/';?>dist/js/app.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo config_item('domain_static').'admin/';?>js/common.js"></script>
+
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

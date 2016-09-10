@@ -42,11 +42,21 @@ class User_center extends MY_Controller
      * 用户详情页提交保存
      */
     public function userDetailSave(){
-        $sex = intval($this->input->get_post('sex'));
+        $sex = intval($this->input->get_post('sex'));  //性别
+        $nickname = addslashes(trim($this->input->get_post('nickname')));  // 昵称
+        $birthday = strtotime($this->input->get_post('birthday'));  //  出生年月
         if($sex != 1 && $sex != 2){
             $sex = 1;
         }
-        $data = array('sex'=>$sex);
+        $isExists = $this->user->getRecord('nickname',$nickname);
+        if($isExists){
+            $this->response($this->responseDataFormat(1,'昵称已经存在',array()));
+        }
+        //$res = $this->user->saveUserDetail(self::$currentUid,$data);
+        /*if($res){
+            $this->response($this->responseDataFormat(0,'修改成功',array()));
+        }*/
+        $data = array('sex'=>$sex,'nickname'=>$nickname,'birthday'=>$birthday);
         $res = $this->user->saveUserDetail(self::$currentUid,$data);
         if($res){
             $this->response($this->responseDataFormat(0,'保存成功',array()));
@@ -246,7 +256,7 @@ class User_center extends MY_Controller
         $limit = intval($this->input->get_post('limit'));
         $limit = $limit == 0 ? 10 : $limit;
         $offset = intval($this->input->get_post('offset'));
-        $res = $this->leaving_msg->getMsgList(self::$currentUid,'id,docName,FROM_UNIXTIME(askTime) AS dateline,askerContent as content,(case when state=2 then "已支付" when state=4 then "已完成" end) as state',$limit,$offset);
+        $res = $this->leaving_msg->getMsgList(self::$currentUid,'id,docName,FROM_UNIXTIME(askTime) AS dateline,askerContent as content,(case when state=2 then "已支付" when state=4 then "已回复" end) as state',$limit,$offset);
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 

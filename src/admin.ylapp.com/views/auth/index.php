@@ -16,7 +16,7 @@
                     <div class="box-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
-                            <tr style="text-align: center">
+                            <tr>
                                 <th>编号</th>
                                 <th>用户名</th>
                                 <th>手机号码</th>
@@ -27,11 +27,24 @@
                             </tr>
                             </thead>
                             <tbody>
-
+                                <?php if(!empty($list)){;?>
+                                    <?php foreach($list as $value){?>
+                                        <tr>
+                                            <th><?php echo $value['uid'];?></th>
+                                            <th><?php echo $value['nickname'];?></th>
+                                            <th><?php echo $value['phone'];?></th>
+                                            <th><?php echo $value['role'];?></th>
+                                            <th><?php echo date('Y-m-d H:i:s',$value['dateline']);?></th>
+                                            <th><span class="glyphicon glyphicon-cog" title="设置权限"></span></th>
+                                            <th><span class="glyphicon glyphicon-pencil" title="设置账户"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="glyphicon glyphicon-trash" title="删除账户"></div></th>
+                                        </tr>
+                                <?php }}?>
                             </tbody>
                         </table>
                     </div>
-                    <!-- /.box-body -->
+                </div>
+                <div class="ui-paging-center" style="margin-top:20px;">
+                    <div class="ui-paging"><?php echo $pager;?></div>
                 </div>
             </div>
             <!-- /.col -->
@@ -44,14 +57,5 @@
 <!-- Main Footer -->
 <?php $this->load->view('foot');?>
 <script>
-    $(function () {
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false
-        });
-    });
+
 </script>

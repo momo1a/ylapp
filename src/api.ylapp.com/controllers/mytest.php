@@ -363,8 +363,10 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/userDetailSave" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
-    <input type="text" name="sex"/>
+    <input type="hidden" name="privateToken" value="QwA2e89aef4671Oi8zKxljHTWvFTaZGo0yDk0rfnjZeUK9Z5fXbXqZceHASMiEZeDck3AXfh"/>
+    sex<input type="text" name="sex"/>
+    birthday<input type="text" name="birthday"/>
+    nickname<input type="text" name="nickname"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
@@ -521,9 +523,9 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/user_center/onlineAskList" method="post" enctype="multipart/form-data">
+<form action="http://123.207.87.83:8080/user_center/onlineAskList" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
+    <input type="hidden" name="privateToken" value="04DHhf839d08dKYTiTAVrv0h5CDJFkT\/Srh615Ds2CSNqE8eMN+yA5jystIJSP5Bpcxv7QHY"/>
     limit<input type="text" name="limit"/>
     offset<input type="text" name="offset"/>
     <input type="submit" value="submit"/>
@@ -617,9 +619,9 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/user_center/appointList" method="post" enctype="multipart/form-data">
+<form action="http://123.207.87.83:8080/user_center/appointList" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
+    <input type="hidden" name="privateToken" value="04DHhf839d08dKYTiTAVrv0h5CDJFkT\/Srh615Ds2CSNqE8eMN+yA5jystIJSP5Bpcxv7QHY"/>
     limit<input type="text" name="limit"/>
     offset<input type="text" name="offset"/>
     <input type="submit" value="submit"/>
@@ -686,9 +688,9 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/user_center/askAnswerList" method="post">
+<form action="http://123.207.87.83:8080/user_center/askAnswerList" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
+    <input type="hidden" name="privateToken" value="04DHhf839d08dKYTiTAVrv0h5CDJFkT\/Srh615Ds2CSNqE8eMN+yA5jystIJSP5Bpcxv7QHY"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
@@ -726,9 +728,9 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/user_center/order" method="post">
+<form action="http://123.207.87.83:8080/user_center/order" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Z6ET30ca5ef8fq9139r4bmeLqXgmYdE7d\/+CuORXx7u9xPXqv8PofOraKhbzk0GAOQLqnqAv"/>
+    <input type="hidden" name="privateToken" value="04DHhf839d08dKYTiTAVrv0h5CDJFkT\/Srh615Ds2CSNqE8eMN+yA5jystIJSP5Bpcxv7QHY"/>
     limit<input type="text" name="limit"/>
     offset<input type="text" name="offset"/>
     <input type="submit" value="submit"/>
@@ -948,4 +950,65 @@ HTML;
         echo $form;
     }
 
+
+
+
+
+    public function getHelpList(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/api/getHelpList" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="3tGel22a4d8eaRVypFLKcmh2FxbEEn2o+fw9aNdAmp4YrYSWaECD7zDL6GVthzkHXf\/xahTN"/>
+    <input type="text" name="type"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+    public function helpDetail(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/api/helpDetail" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="3tGel22a4d8eaRVypFLKcmh2FxbEEn2o+fw9aNdAmp4YrYSWaECD7zDL6GVthzkHXf\/xahTN"/>
+    <input type="text" name="id"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+    public function cancelLike(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/post/cancelLike" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="3tGel22a4d8eaRVypFLKcmh2FxbEEn2o+fw9aNdAmp4YrYSWaECD7zDL6GVthzkHXf\/xahTN"/>
+    <input type="text" name="postId"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
 }

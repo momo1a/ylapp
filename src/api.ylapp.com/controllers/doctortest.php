@@ -29,7 +29,7 @@ class Doctortest extends MY_Controller
 </head>
 <form action="http://api.ylapp.com/doctor_center/index" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="v41iif4ed4458td4gcwOAJjWfnoYM9uV+SZvbg4FeWSeGewf9d9YUckyQME7VezGucIaAmzp"/>
+    <input type="hidden" name="privateToken" value="QvqGNe28d0b57DXz72T3UDSZob\/Sv00tHncE8\/2V0N2CkoRQbFMVGwsQ8yHCGF3IUyfysFc\/"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
@@ -48,7 +48,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/doctor_center/msgList" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="zq3S856c5ff19ZCjL2sh9HJVbQ3ZkAZ9HuaKyr4tiCqwUikv5pPvyBLUq\/BwG0SJAtFIFdIB"/>
+    <input type="hidden" name="privateToken" value="QvqGNe28d0b57DXz72T3UDSZob\/Sv00tHncE8\/2V0N2CkoRQbFMVGwsQ8yHCGF3IUyfysFc\/"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;

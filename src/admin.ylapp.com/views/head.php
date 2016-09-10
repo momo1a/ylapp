@@ -24,6 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     -->
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>dist/css/skins/skin-blue.min.css">
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>css/common.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

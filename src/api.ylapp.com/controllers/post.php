@@ -107,6 +107,20 @@ class Post extends MY_Controller
         }
     }
 
+    /**
+     * 取消点赞
+     */
+    public function cancelLike(){
+        $this->checkUserLogin();
+        $postId = intval($this->input->get_post('postId'));
+        $res = $this->click_like->cancelLike($postId,self::$currentUid);
+        if($res) {
+            $this->response($this->responseDataFormat(0, '取消成功', array()));
+        }else{
+            $this->response($this->responseDataFormat(1, '取消失败', array()));
+        }
+    }
+
 
     /**
      * 添加评论

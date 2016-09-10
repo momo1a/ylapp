@@ -1,0 +1,22 @@
+.ui-paging { line-height: 2; font-family: \5b8b\4f53; color: #666;}
+.ui-paging a, .ui-paging strong {display: inline-block; padding:0 0.8em; border: 1px solid #ccc; color:#666; background-color: #fff; }
+.ui-paging a:hover,.ui-paging strong { border-color: #3c8dbc; color: #3c8dbc; text-decoration: none;}
+.ui-paging strong { font-weight: 700; }
+.ui-paging-center { text-align: center; }
+.ui-paging-center .ui-paging { display: inline-block; *zoom:1; *display: inline;}
+
+
+
+.ui-form-btnSearch, .paging-goto {
+    text-shadow: 0 1px 1px #fff;
+    cursor: pointer;
+    padding: 4px 10px 3px; border: 1px solid #acacac; font-size: 12px; *overflow: visible;
+    color:#333;
+    background-color: #CCCCCC;
+    background-image: -webkit-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: -moz-linear-gradient(top, #eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: -o-linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    background-image: linear-gradient(#eaeaea, #eaeaea 25%, #CCCCCC);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eaeaea', endColorstr='#CCCCCC', GradientType=0);
+}
+.ui-form-btnSearch:active, .paging-goto:active  {background: #f0f0f0;filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);}

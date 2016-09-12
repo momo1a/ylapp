@@ -1,9 +1,22 @@
 <?php $this->load->view('head');?>
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
+    <div id="privileges_setting" class="modal hide fade in" style="display:none;">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">X</a>
+            <h3>我是拟态框的头部</h3>
+        </div>
+        <div class="modal-body">
+            <h4>我是拟态框的中间部分</h4>
+            <p>我是描述部分</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-success">成功</a>
+            <a href="#" class="btn" data-dismiss="modal">关闭</a>
+        </div>
+    </div>
     <!-- Main content -->
     <section class="content">
         <div class="row">
@@ -35,7 +48,7 @@
                                             <th><?php echo $value['phone'];?></th>
                                             <th><?php echo $value['role'];?></th>
                                             <th><?php echo date('Y-m-d H:i:s',$value['dateline']);?></th>
-                                            <th><span class="glyphicon glyphicon-cog" title="设置权限"></span></th>
+                                            <th><a href="#privileges_setting" data-toggle="modal"><span class="glyphicon glyphicon-cog" title="设置权限"></span></a></th>
                                             <th><span class="glyphicon glyphicon-pencil" title="设置账户"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="glyphicon glyphicon-trash" title="删除账户"></div></th>
                                         </tr>
                                 <?php }}?>

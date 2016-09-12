@@ -574,7 +574,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/onlineAskDetail" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="fLRyl5c36d975OCSfuBoRy6LfeGXE+RMms\/Hm31YVzFBT6BOkp8lQ+qyTM3ojZdT3rq5dBiN"/>
     id<input type="text" name="id"/>
     <input type="submit" value="submit"/>
 HTML;
@@ -645,7 +645,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_center/appointDetail" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="fLRyl5c36d975OCSfuBoRy6LfeGXE+RMms\/Hm31YVzFBT6BOkp8lQ+qyTM3ojZdT3rq5dBiN"/>
     id<input type="text" name="id"/>
     <input type="submit" value="submit"/>
 HTML;

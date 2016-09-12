@@ -161,7 +161,7 @@ class User_center extends MY_Controller
 
     public function onlineAskDetail(){
         $id = intval($this->input->get_post('id'));
-        $res = $this->online_ask->getDetailById(self::$currentUid,$id,'askNickname as name,docId,docName,askTelephone,FROM_UNIXTIME(hopeCalldate) AS hopeDate,phoneTimeLen as timeLen,price,askContent,state');
+        $res = $this->online_ask->getDetailById(self::$currentUid,$id,'askNickname as name,docId,docName,askTelephone,FROM_UNIXTIME(hopeCalldate) AS hopeDate,phoneTimeLen as timeLen,price,askContent,(case when state=0 then "未支付" when state=1 then "待处理" when state=2 then "已确认沟通时间" when state=3 then "完成" when state=4 then "失败" end) as state');
 
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
@@ -227,7 +227,7 @@ class User_center extends MY_Controller
      */
     public function appointDetail(){
         $id = intval($this->input->get_post('id'));
-        $res = $this->appoint->appointDetail(self::$currentUid,$id,'id,contacts,sex,docName,FROM_UNIXTIME(appointTime) as appointTime,appointTel,price,hosAddr,status');
+        $res = $this->appoint->appointDetail(self::$currentUid,$id,'id,contacts,sex,docName,FROM_UNIXTIME(appointTime) as appointTime,appointTel,price,hosAddr,(case when status=0 then "未支付" when status=2 then "待处理" when status=3 then "预约成功" when status=4 then "预约失败" when status=5 then "完成" end) as status');
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 

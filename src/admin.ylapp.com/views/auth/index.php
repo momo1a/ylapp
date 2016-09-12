@@ -1,8 +1,14 @@
 <?php $this->load->view('head');?>
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
+<?php $this->load->view('auth/priv_setting');?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
+    <style>
+        .operator_btn{
+            cursor:pointer;
+        }
+    </style>
     <!-- Main content -->
     <section class="content">
         <div class="row">
@@ -34,8 +40,8 @@
                                             <th><?php echo $value['phone'];?></th>
                                             <th><?php echo $value['role'];?></th>
                                             <th><?php echo date('Y-m-d H:i:s',$value['dateline']);?></th>
-                                            <th><a href="#privileges_setting" data-toggle="modal"><span class="glyphicon glyphicon-cog" title="设置权限"></span></a></th>
-                                            <th><span class="glyphicon glyphicon-pencil" title="设置账户"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="glyphicon glyphicon-trash" title="删除账户"></div></th>
+                                            <th><a data-target="#priv_setting" data-toggle="modal" onclick="getUserMenuByUid(this);" uid="<?php echo $value['uid'];?>"><span class="glyphicon glyphicon-cog operator_btn" title="设置权限"></span></a></th>
+                                            <th><span class="glyphicon glyphicon-pencil operator_btn" title="设置账户"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="glyphicon glyphicon-trash operator_btn" title="删除账户"></div></th>
                                         </tr>
                                 <?php }}?>
                             </tbody>
@@ -56,5 +62,20 @@
 <!-- Main Footer -->
 <?php $this->load->view('foot');?>
 <script>
-
+    function getUserMenuByUid(e){
+        $.ajax({
+            url: "<?php echo site_url().'Auth/getUserMenuAjax';?>",
+            type: 'post',
+            dataType: 'json',
+            data: {'uid': $(e).attr('uid')},
+            success: function (data, textStatus) {
+                $.each(data,function(idx,obj){
+                    /*if(obj.mid == $('input[type="checkbox"]').val()){
+                        $('input[type="checkbox"]:checked');
+                    }*/
+                    console.log(obj.mid);
+                });
+            }
+        });
+    }
 </script>

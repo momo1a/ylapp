@@ -1,14 +1,26 @@
-<div id="privileges_setting" class="modal hide fade in" style="display:none;">
-    <div class="modal-header">
-        <a class="close" data-dismiss="modal">X</a>
-        <h3>我是拟态框的头部</h3>
-    </div>
-    <div class="modal-body">
-        <h4>我是拟态框的中间部分</h4>
-        <p>我是描述部分</p>
-    </div>
-    <div class="modal-footer">
-        <a href="#" class="btn btn-success">成功</a>
-        <a href="#" class="btn" data-dismiss="modal">关闭</a>
+<div class="modal fade modal-primary" id="priv_setting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">权限设置</h4>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                <?php $i=1;if(!empty($menu)): foreach($menu as $value):?>
+                    <?php if($value['ctrl'] == 'Auth'){continue;}?>
+                    <?php echo  $value['title'];?>&nbsp;<input type="checkbox" value="<?php echo $value['id'];?>"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <?php if($i%3 == 0)echo '<br/>';?>
+                <?php $i++; endforeach; endif;?>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline " data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-outline pull-left">确定</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
     </div>
 </div>

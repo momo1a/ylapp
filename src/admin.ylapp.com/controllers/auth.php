@@ -11,6 +11,7 @@ class Auth extends MY_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('User_model','user');
+        $this->load->model('User_menu_model','user_menu');
     }
 
     public function index(){
@@ -24,6 +25,20 @@ class Auth extends MY_Controller
         $pager = $this->pager($total, $limit,$page_conf);
         $data['pager'] = $pager;
         $data['list'] = $list;
+        $data['menu'] = self::$_top_menu;
         $this->load->view('auth/index',$data);
+    }
+
+    /**
+     * 获取用户菜单
+     */
+    public function getUserMenuAjax(){
+        $uid = intval($this->input->get_post('uid'));
+        $userMenu = $this->user_menu->get_menu_by_uid($uid);
+        if($userMenu) {
+            exit(json_encode($userMenu));
+        }else{
+            exit(json_decode(array()));
+        }
     }
 }

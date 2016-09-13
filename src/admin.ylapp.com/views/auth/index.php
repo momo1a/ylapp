@@ -69,12 +69,23 @@
             dataType: 'json',
             data: {'uid': $(e).attr('uid')},
             success: function (data, textStatus) {
+                var arr = [];
                 $.each(data,function(idx,obj){
+                    arr.push(obj.mid);
+                    //console.log($(obj).val());
                     /*if(obj.mid == $('input[type="checkbox"]').val()){
                         $('input[type="checkbox"]:checked');
                     }*/
-                    console.log(obj.mid);
+                    //console.log(obj.mid);
                 });
+                var checkBox = $('.menu_checkbox');
+                for(var i = 0 ; i < checkBox.length; i++){
+                    if($.inArray($(checkBox[i]).val(),arr)){
+                        console.log(arr);
+                        console.log($(checkBox[i]).val());
+                        //$(checkBox[i]).attr('checked',true);
+                    }
+                }
             }
         });
     }

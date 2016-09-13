@@ -227,7 +227,7 @@ class User_center extends MY_Controller
      */
     public function appointDetail(){
         $id = intval($this->input->get_post('id'));
-        $res = $this->appoint->appointDetail(self::$currentUid,$id,'id,contacts,sex,docName,FROM_UNIXTIME(appointTime) as appointTime,appointTel,price,hosAddr,(case when status=0 then "未支付" when status=2 then "待处理" when status=3 then "预约成功" when status=4 then "预约失败" when status=5 then "完成" end) as status');
+        $res = $this->appoint->appointDetail(self::$currentUid,$id,'id,contacts,sex,docId,docName,FROM_UNIXTIME(appointTime) as appointTime,appointTel,price,hosAddr,(case when status=0 then "未支付" when status=2 then "待处理" when status=3 then "预约成功" when status=4 then "预约失败" when status=5 then "完成" end) as status');
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 

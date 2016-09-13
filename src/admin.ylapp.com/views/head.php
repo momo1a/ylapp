@@ -15,7 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>third/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -26,6 +26,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>css/common.css">
 
+    <script type="text/javascript">
+        var STATIC_URL = "<?php echo config_item('domain_static');?>";
+    </script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

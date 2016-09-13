@@ -1,3 +1,4 @@
+/*
 var MyRule = {
     required: /\S+/,
     email: /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i,
@@ -200,10 +201,12 @@ $(function(){
         return false;
     });
 });
+*/
 /**
  * 表单验证
  * @param $form
- */
+ *//*
+
 function FormValidate($form)
 {
     var flag = true;
@@ -344,12 +347,14 @@ function FormValidate($form)
     return flag;
 }
 
+*/
 /**
  * 提示窗口
  * @param tips 提示内容
  * @param type 提示类型 notice,error,right
  * @param timeout 自动关闭时间,以毫秒为单位
- */
+ *//*
+
 function PopupTips(tips, type, timeout) {
     var time = timeout/1000 || 1;
     var icon = '';
@@ -375,11 +380,13 @@ function PopupTips(tips, type, timeout) {
         icon: icon
     }).time(time).show();
 }
+*/
 /**
  * 过虑返回值
  * @param rs
  * @returns {Boolean}
- */
+ *//*
+
 function AjaxFilter(rs,el){
     var r = true;
     switch(rs.type){
@@ -416,7 +423,7 @@ function AjaxFilter(rs,el){
     return r;
 }
 function ShowLoading(msg) {
-    var cont = '<span><img style="vertical-align:middle;margin-right:0.5em;" src="' + STATIC_URL + '/images/admin/loading.gif"/>' + (msg || '处理中,请稍候...') + '</span>';
+    var cont = '<span><img style="vertical-align:middle;margin-right:0.5em;" src="' + STATIC_URL + '/images/loading.gif"/>' + (msg || '处理中,请稍候...') + '</span>';
     artDialog({
         id: 'loading',
         title: false,
@@ -460,3 +467,4 @@ function reload(rel)
     var rel = rel || 'div#main-wrap';
     load($(rel).data()['url'], rel, $(rel).data()['data']);
 }
+*/

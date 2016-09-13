@@ -38,7 +38,7 @@ class Auth extends MY_Controller
         if($userMenu) {
             exit(json_encode($userMenu));
         }else{
-            exit(json_decode(array()));
+            exit(json_encode(array()));
         }
     }
 }

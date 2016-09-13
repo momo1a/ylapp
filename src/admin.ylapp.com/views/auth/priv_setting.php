@@ -8,12 +8,13 @@
             </div>
             <div class="modal-body">
                 <form action="" method="post">
+                    <div class="form-group">
                 <?php $i=1;if(!empty($menu)): foreach($menu as $value):?>
                     <?php if($value['ctrl'] == 'Auth'){continue;}?>
-                    <?php echo  $value['title'];?>&nbsp;<input type="checkbox" value="<?php echo $value['id'];?>"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <?php if($i%3 == 0)echo '<br/>';?>
+                    <input type="checkbox" class="minimal menu_checkbox" value="<?php echo $value['id'];?>"/>&nbsp;<?php echo  $value['title'];?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <?php if($i%5 == 0)echo '<br/>';?>
                 <?php $i++; endforeach; endif;?>
-                    </table>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">

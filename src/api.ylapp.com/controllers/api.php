@@ -81,7 +81,7 @@ class Api extends MY_Controller
         $rePwd = $this->input->post('rePwd');              //确认密码
         $code = trim($this->input->post('code'));          //手机验证码
         $serverMsgCode = $this->cache->get($mobile);       //获取存在服务器的验证码
-        if($code != $serverMsgCode){
+        if($code != $serverMsgCode || $code == 0){
             $this->response($this->responseDataFormat(1,'验证码不正确或者已经过期',array()));
         }
         $isExist = $this->user->getUserMobile($mobile);    //手机号是否已经注册

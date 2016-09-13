@@ -137,8 +137,8 @@ class MY_Controller extends CI_Controller
         <!-- /.modal-content -->
     </div>
 </div>';
-        $html .= '';
-        echo ($html);
+        $html .= '<div style="display: none"><a data-target="#showMsg" data-toggle="modal"></a></div>';
+        echo $html;
 
     }
 

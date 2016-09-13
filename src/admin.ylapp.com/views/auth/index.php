@@ -88,4 +88,18 @@
         });
     }
 
+    function setPrv(e){
+        var menu = $("input[name='menu']:checked").serialize();
+        var uid = $("input[name='uid']").val();
+        $.ajax({
+            url: "<?php echo site_url().'Auth/settingUserPrivileges';?>",
+            type: "post",
+            data: {menu:menu,uid:uid},
+            dataType: 'json',
+            success: function (result) {
+
+            }
+        });
+    }
+
 </script>

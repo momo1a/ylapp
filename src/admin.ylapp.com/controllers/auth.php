@@ -46,7 +46,7 @@ class Auth extends MY_Controller
         $res = $this->user_menu->setUserMenu($uid,$str);
         if($res){
             $this->showMsg();
-            redirect('Auth/index');
+            //redirect('Auth/index');
         }else{
             echo '授权失败';
         }

@@ -84,10 +84,12 @@ class Post extends MY_Controller
             }
         }
         $likeCount = $this->click_like->getCountByPostId($postId);
+        $isClickLike = $this->click_like->getCommentByUidAndPostId(self::$currentUid,$postId);  //当前用户是否已点赞
+        $isClickLike = $isClickLike ? '已点赞' : '未点赞';
         $commentSelect = 'YL_post_comment.id,YL_user.avatar,YL_post_comment.recmdNickname,FROM_UNIXTIME(YL_post_comment.recmdTime) AS recmdDate,YL_post_comment.recmdContent';
         $comment = $this->comment->getCommentByPostId($postId,$commentSelect,$limit,$offset);
         $imgServer = $this->getImgServer();
-        $this->response($this->responseDataFormat(0, '请求成功', array('post'=>$post,'likeCount'=>$likeCount,'commentList'=>$comment,'imgServer'=>$imgServer)));
+        $this->response($this->responseDataFormat(0, '请求成功', array('post'=>$post,'likeCount'=>$likeCount,'isClickLike'=>$isClickLike,'commentList'=>$comment,'imgServer'=>$imgServer)));
     }
 
 

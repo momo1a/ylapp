@@ -41,4 +41,10 @@ class Auth extends MY_Controller
             exit(json_encode(array()));
         }
     }
+
+
+    /**
+     * 给用户授权
+     */
+
 }

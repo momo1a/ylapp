@@ -259,7 +259,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/post/detailPost" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="XjFkc3332d20aReRGyiRkDxd8sgyb1LzM3rUuMCYfGilPW8+KRT6Ydl+m41N2E7zdE\/I6XhT"/>
     postId<input type="text" name="postId"/>
     <input type="submit" value="submit"/>
 HTML;

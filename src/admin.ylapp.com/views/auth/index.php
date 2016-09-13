@@ -63,27 +63,24 @@
 <?php $this->load->view('foot');?>
 <script>
     function getUserMenuByUid(e){
+        var uid = $(e).attr('uid');
+        $("input[name='uid']").val(uid);
         $.ajax({
             url: "<?php echo site_url().'Auth/getUserMenuAjax';?>",
             type: 'post',
             dataType: 'json',
-            data: {'uid': $(e).attr('uid')},
+            data: {'uid': uid},
             success: function (data, textStatus) {
                 var arr = [];
                 $.each(data,function(idx,obj){
                     arr.push(obj.mid);
-                    //console.log($(obj).val());
-                    /*if(obj.mid == $('input[type="checkbox"]').val()){
-                        $('input[type="checkbox"]:checked');
-                    }*/
-                    //console.log(obj.mid);
                 });
+                console.log(arr);
                 var checkBox = $('.menu_checkbox');
                 for(var i = 0 ; i < checkBox.length; i++){
-                    if($.inArray($(checkBox[i]).val(),arr)){
-                        console.log(arr);
-                        console.log($(checkBox[i]).val());
-                        //$(checkBox[i]).attr('checked',true);
+                    $(checkBox[i]).attr('checked',false);
+                    if($.inArray($(checkBox[i]).val(),arr) != -1){
+                        $(checkBox[i]).attr('checked',true);
                     }
                 }
             }

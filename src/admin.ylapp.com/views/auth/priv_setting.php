@@ -7,7 +7,7 @@
                 <h4 class="modal-title">权限设置</h4>
             </div>
             <div class="modal-body">
-                <form action="" method="post">
+                <form action="<?php echo site_url();?>" method="post">
                     <div class="form-group">
                 <?php $i=1;if(!empty($menu)): foreach($menu as $value):?>
                     <?php if($value['ctrl'] == 'Auth'){continue;}?>
@@ -15,6 +15,7 @@
                     <?php if($i%5 == 0)echo '<br/>';?>
                 <?php $i++; endforeach; endif;?>
                     </div>
+                    <input type="hidden" name="uid"/>
                 </form>
             </div>
             <div class="modal-footer">

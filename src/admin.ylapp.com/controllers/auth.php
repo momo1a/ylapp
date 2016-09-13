@@ -34,7 +34,7 @@ class Auth extends MY_Controller
      * 给用户设置菜单权限
      */
     public function settingUserPrivileges(){
-        $menus = $_REQUEST['menu'];
+        $menus = explode('&menu=',trim($_REQUEST['menu'],'menu='));
         $uid = intval($this->input->get_post('uid'));
         if(!empty($menus)){
             $str = '';
@@ -45,10 +45,9 @@ class Auth extends MY_Controller
         }
         $res = $this->user_menu->setUserMenu($uid,$str);
         if($res){
-            $this->showMsg();
-            //redirect('Auth/index');
+            $this->ajax_json(0,'操作成功');
         }else{
-            echo '授权失败';
+            $this->ajax_json(-1,'系统错误');
         }
     }
 
@@ -65,9 +64,48 @@ class Auth extends MY_Controller
         }
     }
 
+    /**
+     * 获取用户信息
+     */
+    public function getUserInfoByUid(){
+        $uid = intval($this->input->get_post('uid'));
+        $userInfo = $this->user->getUserInfoByUid($uid);
+        if($userInfo){
+            $this->ajax_json(0,'请求成功',$userInfo);
+        }else{
+            $this->ajax_json(-1,'用户异常');
+        }
+    }
 
     /**
-     * 给用户授权
+     * 修改账户信息
      */
+    public function updateUserInfo(){
+        $uid = intval($this->input->get_post('uid'));
+        $data = array(
+            'nickname'=>addslashes(trim($this->input->get_post('username'))),
+            'password'=> $this->encryption(trim($this->input->get_post('password'))),
+            'phone'=>trim(addslashes($this->input->get_post('telephone')))
+        );
+        $res = $this->user->updateUserInfoByUid($uid,$data);
+        if($res){
+            $this->ajax_json(0,'操作成功');
+        }else{
+            $this->ajax_json(-1,'系统错误');
+        }
+    }
+
+    /**
+     * 删除账户
+     */
+    public function delUser(){
+        $uid = intval($this->input->get_post('uid'));
+        $res = $this->user->delUserByUid($uid);
+        if($res){
+            $this->ajax_json(0,'操作成功');
+        }else{
+            $this->ajax_json(-1,'系统错误');
+        }
+    }
 
 }

@@ -54,5 +54,36 @@ class User_model extends My_Model{
         $count = $this->count_all();
         return $count;
     }
+
+    /**
+     * 获取用户信息
+     * @param $uid
+     */
+    public function getUserInfoByUid($uid){
+        $uid = intval($uid);
+        $res = $this->find_by('uid',$uid);
+        return $res;
+    }
+
+    /**
+     * 修改用户信息
+     * @param $uid
+     */
+    public function updateUserInfoByUid($uid,$data){
+        $where = array('uid'=>intval($uid));
+        $res = $this->update($where,$data);
+        return $res;
+    }
+
+    /**
+     * 删除账号
+     * @param $uid
+     */
+    public function delUserByUid($uid){
+        $uid = intval($uid);
+        $where = array('uid'=>$uid);
+        $res = $this->delete_where($where);
+        return $res;
+    }
 	
 }

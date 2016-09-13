@@ -7,21 +7,21 @@
                 <h4 class="modal-title">权限设置</h4>
             </div>
             <div class="modal-body">
-                <form action="<?php echo site_url();?>" method="post">
+                <form action="<?php echo site_url();?>Auth/settingUserPrivileges" method="post">
                     <div class="form-group">
                 <?php $i=1;if(!empty($menu)): foreach($menu as $value):?>
                     <?php if($value['ctrl'] == 'Auth'){continue;}?>
-                    <input type="checkbox" class="minimal menu_checkbox" value="<?php echo $value['id'];?>"/>&nbsp;<?php echo  $value['title'];?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" class="minimal menu_checkbox" value="<?php echo $value['id'];?>" name="menu[<?php echo $value['id'];?>]"/>&nbsp;<?php echo  $value['title'];?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php if($i%5 == 0)echo '<br/>';?>
                 <?php $i++; endforeach; endif;?>
                     </div>
                     <input type="hidden" name="uid"/>
-                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline " data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-outline pull-left">确定</button>
+                <button type="submit" class="btn btn-outline pull-left">确定</button>
             </div>
+            </form>
         </div>
         <!-- /.modal-content -->
     </div>

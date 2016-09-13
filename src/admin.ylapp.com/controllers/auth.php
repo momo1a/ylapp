@@ -12,6 +12,7 @@ class Auth extends MY_Controller
         parent::__construct();
         $this->load->model('User_model','user');
         $this->load->model('User_menu_model','user_menu');
+        $this->load->helper('application');
     }
 
     public function index(){
@@ -30,7 +31,29 @@ class Auth extends MY_Controller
     }
 
     /**
-     * 获取用户菜单
+     * 给用户设置菜单权限
+     */
+    public function settingUserPrivileges(){
+        $menus = $_REQUEST['menu'];
+        $uid = intval($this->input->get_post('uid'));
+        if(!empty($menus)){
+            $str = '';
+            foreach($menus as $menu){
+                $str .= '('.$uid.','.$menu.'),';
+            }
+            $str = rtrim($str,',');
+        }
+        $res = $this->user_menu->setUserMenu($uid,$str);
+        if($res){
+            $this->showMsg();
+            redirect('Auth/index');
+        }else{
+            echo '授权失败';
+        }
+    }
+
+    /**
+     * ajax获取用户菜单
      */
     public function getUserMenuAjax(){
         $uid = intval($this->input->get_post('uid'));

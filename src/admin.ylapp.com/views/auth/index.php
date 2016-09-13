@@ -75,15 +75,17 @@
                 $.each(data,function(idx,obj){
                     arr.push(obj.mid);
                 });
-                console.log(arr);
                 var checkBox = $('.menu_checkbox');
+                $(checkBox).attr('checked',false);
                 for(var i = 0 ; i < checkBox.length; i++){
-                    $(checkBox[i]).attr('checked',false);
                     if($.inArray($(checkBox[i]).val(),arr) != -1){
-                        $(checkBox[i]).attr('checked',true);
+                        if($(checkBox[i]).is(':checked') == false){
+                            $(checkBox[i]).prop('checked',true);
+                        }
                     }
                 }
             }
         });
     }
+
 </script>

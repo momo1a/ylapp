@@ -19,4 +19,27 @@ class User_menu_model extends My_Model{
         return $res;
     }
 
+    /**
+     * 给用户设置菜单权限
+     * @param $uid
+     * @param $data
+     */
+    public function setUserMenu($uid,$data){
+        $this->db->trans_begin();
+        $this->db->query('DELETE FROM `YL_user_menu` WHERE `uid`='.$uid);
+        if($data) {
+            $this->db->query('INSERT INTO `YL_user_menu`(`uid`,`mid`) VALUE ' . $data);
+        }
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
+        }
+    }
+
 }

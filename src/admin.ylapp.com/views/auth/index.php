@@ -4,6 +4,7 @@
 <?php $this->load->view('auth/priv_setting');?>
 <?php $this->load->view('auth/info_setting');?>
 <?php $this->load->view('auth/del_auth');?>
+<?php $this->load->view('auth/add_auth');?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <style>
@@ -18,7 +19,7 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">账户管理</h3>
-                        <h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-user"></span>创建账户</h3>
+                        <a data-target="#add_auth" data-toggle="modal"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-user"></span>创建账户</h3></a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

@@ -62,5 +62,18 @@ class News_collections_model extends MY_Model
         return $res;
     }
 
+    /**
+     * 获取收藏id
+     * @param $uid
+     * @param $newsId
+     */
+    public function getCollId($uid,$newsId){
+        $this->where(array('nid'=>$newsId,'uid'=>$uid));
+        $this->select('id');
+        $this->limit(1);
+        $res = $this->find_all();
+        return $res[0]['id'];
+    }
+
 
 }

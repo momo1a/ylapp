@@ -28,7 +28,7 @@ class User_menu_model extends My_Model{
         $this->db->trans_begin();
         $this->db->query('DELETE FROM `YL_user_menu` WHERE `uid`='.$uid);
         if($data) {
-            $this->db->query('INSERT INTO `YL_user_menu`(`uid`,`mid`) VALUE ' . $data);
+            $this->db->query('REPLACE INTO `YL_user_menu`(`uid`,`mid`) VALUE ' . $data);
         }
         if ($this->db->trans_status() === FALSE)
         {

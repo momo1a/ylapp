@@ -50,8 +50,10 @@ class News extends MY_Controller
         $res = $this->news->getNewsDetail($nid,'title,author,FROM_UNIXTIME(createTime) AS createTime,content');
         $isCollection = $this->news_collection->getCollectionByUidAndNid(self::$currentUid,$nid);
         $isCollection = $isCollection ? '已收藏' : '未收藏';
+        $collId = $this->news_collection->getCollId(self::$currentUid,$nid);
+        $collId = $collId ? $collId : 0;
         if($res){
-            $this->response($this->responseDataFormat(0,'请求成功',array('news'=>$res,'isColl'=>$isCollection)));
+            $this->response($this->responseDataFormat(0,'请求成功',array('news'=>$res,'isColl'=>$isCollection,'collId'=>intval($collId))));
         }else{
             $this->response($this->responseDataFormat(-1,'请求失败',array()));
         }

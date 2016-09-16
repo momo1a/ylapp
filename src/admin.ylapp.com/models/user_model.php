@@ -85,5 +85,26 @@ class User_model extends My_Model{
         $res = $this->delete_where($where);
         return $res;
     }
+
+    /**
+     * 添加后台账户
+     * @param $data
+     */
+    public function addAuth($data){
+        $this->insert($data);
+        return $this->db->insert_id();
+    }
+
+    /**
+     * 检测列条件是否存在
+     * @param $column 列
+     * @param $value 值
+     */
+    public function getRecord($column,$value){
+        $where =  array($column=>$value);
+        $res = $this->find_by($where);
+        return $res;
+    }
+
 	
 }

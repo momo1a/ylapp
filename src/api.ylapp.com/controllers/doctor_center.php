@@ -202,7 +202,7 @@ class Doctor_center extends MY_Controller
 
     public function getOnlineDiaDetail(){
         $id = intval($this->input->get_post('id'));  // 问诊id
-        $select = 'nickname as username,(case  when ask_sex=1 then "男" when ask_sex=2 then "女" end) as sex,YL_user_illness_history.age,askNickname,allergyHistory,stages,askTelephone,askContent,phoneTimeLen,hopeCalldate,illnessId';
+        $select = 'nickname as username,(case  when ask_sex=1 then "男" when ask_sex=2 then "女" end) as sex,YL_user_illness_history.age,askNickname,allergyHistory,stages,askTelephone,askContent,phoneTimeLen,FROM_UNIXTIME(hopeCalldate) AS hopeCalldate,illnessId,docRemark,result';
         $order = $this->diagnosis->getDoctorDiaDetail($id,$select);
         if($order) {
             $remarkSelect = 'FROM_UNIXTIME(visitDate) as visitDate,stage,content,img';

@@ -96,6 +96,8 @@
 <script src="<?php echo config_item('domain_static').'admin/';?>dist/js/app.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo config_item('domain_static').'admin/';?>plugins/iCheck/icheck.min.js"></script>
+<script src="<?php echo config_item('domain_static').'admin/';?>validform/Validform.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>js/common.js"></script>
 
 
@@ -103,5 +105,6 @@
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+
 </body>
 </html>

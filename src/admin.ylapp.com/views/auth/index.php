@@ -19,7 +19,7 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">账户管理</h3>
-                        <a data-target="#add_auth" data-toggle="modal"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-user"></span>创建账户</h3></a>
+                        <a data-target="#add_auth" data-toggle="modal" onclick="addUserPre();"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-user"></span>创建账户</h3></a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -67,6 +67,11 @@
 <!-- Main Footer -->
 <?php $this->load->view('foot');?>
 <script>
+
+
+    $(function(){
+       $(".modal-dialog").css('width','400px');
+    });
 
     /**
      * 获取用户菜单
@@ -195,5 +200,45 @@
             }
         });
     }
+
+    /**
+     * 添加账户之前
+     */
+    function addUserPre(){
+        $("input[type='checkbox']").prop('checked',false);
+        $("input[type='text']").val("");
+        $("input[type='password']").val("");
+    }
+
+    /**
+     * 添加账户
+     */
+    function addAuth(e){
+        var username = $("#nickname").val();
+        var phone = $("#phone").val();
+        var pwd = $("#pwd").val();
+        var role = $("#role").val();
+        var menu = $("input[name='menu']:checked").serialize();
+        $.ajax({
+            url: "<?php echo site_url().'Auth/addAuth';?>",
+            type: "post",
+            data: {auth:{username:username,phone:phone,pwd:pwd,role:role},menu:menu},
+            dataType: 'json',
+            success: function (result) {
+                if(result.code == 0){
+                    console.log(result);
+                    alert('操作成功');
+                    location.reload();
+
+                }else{
+                    console.log(result);
+                    alert(result.msg);
+                    //location.reload();
+                }
+            }
+        });
+    }
+
+
 
 </script>

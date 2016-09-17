@@ -70,7 +70,7 @@
 
 
     $(function(){
-       $(".modal-dialog").css('width','400px');
+       $(".modal-dialog").css('width','350px');
     });
 
     /**

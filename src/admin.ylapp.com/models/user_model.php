@@ -55,6 +55,51 @@ class User_model extends My_Model{
         return $count;
     }
 
+
+    /**
+     * 获取用户列表
+     * @param int $limit
+     * @param int $offset
+     * @param string $nickname
+     * @param string $phone
+     * @return array
+     */
+    public function getUserList($limit=10,$offset=0,$nickname='',$phone=''){
+        $this->where('isBackgroundUser !=',1);
+        $this->where('userType',1);
+        $this->select('YL_user.*,YL_money.amount');
+        $this->join('YL_money','YL_money.uid=YL_user.uid','left');
+        $this->limit($limit);
+        $this->offset($offset);
+        if(''!= $nickname){
+            $this->like('nickname',$nickname);
+        }
+        if(''!= $phone){
+            $this->like('phone',$phone);
+        }
+        $res = $this->find_all();
+        return $res;
+    }
+
+    /**
+     * 获取用户数量
+     * @param string $nickname
+     * @param string $phone
+     */
+    public function getUserCount($nickname='',$phone=''){
+        $this->where('isBackgroundUser !=',1);
+        $this->where('userType',1);
+        if(''!= $nickname){
+            $this->like('nickname',$nickname);
+        }
+        if(''!= $phone){
+            $this->like('phone',$phone);
+        }
+        $count = $this->count_all();
+
+        return $count;
+    }
+
     /**
      * 获取用户信息
      * @param $uid

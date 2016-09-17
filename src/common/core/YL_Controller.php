@@ -47,7 +47,7 @@ class YL_Base_Controller extends CI_Controller
 #---------------------------------------------------------------------------
 
 /**
- * 众划算的页面显示总控制器
+ * 的页面显示总控制器
  * @package		YL
  * @subpackage	Libraries
  * @author		韦明磊<nicolaslei@163.com>

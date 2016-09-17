@@ -100,7 +100,10 @@
 <script src="<?php echo config_item('domain_static').'admin/';?>validform/Validform.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>js/common.js"></script>
 
-
+<script>
+    var IMG_SERVER = "<?php $servers = config_item('image_servers'); echo $servers[0];?>";
+    var SITE_URL = "<?php echo site_url();?>";
+</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the

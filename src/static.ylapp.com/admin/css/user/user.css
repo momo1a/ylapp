@@ -1,0 +1,65 @@
+#telephone{
+    display: inline-block;
+    margin-right: 88px;
+}
+#nickname{
+    display: inline-block;
+    margin-right: 88px;
+}
+#submit{
+    border-radius: 5px;
+}
+.bg-gray{
+    margin: 15px 0;
+}
+a{
+    cursor: pointer;
+}
+.ill_info_base{
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 8px;
+    width: 18%;
+}
+.ill_info_sec{
+    display: inline-block;
+    margin-top: 8px;
+    margin-right: 50px;
+    width: 30%;
+}
+
+.ill_info_trd{
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+.ill_info_four{
+    display: block;
+    margin-top: 8px;
+}
+.ill_remark_img{
+    margin: 10px 0;
+}
+.ill_remark_img span img{
+    margin: 0 1px;
+    width: 180px;
+    height: 200px;
+}
+
+.zxwz-f div{
+    display: inline-block;
+    width: 30%;
+    margin: 10px 10px;
+}
+.zxwz-s div{
+    margin-left: 10px;
+}
+.zxwz-f span{
+    font-weight: bold;
+    color: #000000;
+}
+.zxwz-s span{
+    font-weight: bold;
+    color: #000000;
+}

@@ -580,7 +580,7 @@ class Phpmailer
         $this->Username = $email_config['smtp_user'];     // SMTP username  注意：普通邮件认证不需要加 @域名
         $this->Password = $email_config['smtp_pass']; // SMTP password
         $this->From		= $email_config['smtp_user'];      // 发件人邮箱
-        $this->FromName = '众划算';  // 发件人
+        $this->FromName = 'YL';  // 发件人
         
         $this->CharSet	= "utf-8";   // 这里指定字符集！
         $this->Encoding = "base64";

@@ -102,6 +102,7 @@ class Auth extends MY_Controller
     public function delUser(){
         $uid = intval($this->input->get_post('uid'));
         $res = $this->user->delUserByUid($uid);
+        $this->user_menu->deleteUserMenu($uid);
         if($res){
             $this->ajax_json(0,'操作成功');
         }else{
@@ -124,7 +125,8 @@ class Auth extends MY_Controller
             'password'=>$this->encryption($auth['pwd']),
             'phone'=>$auth['phone'],
             'role'=> $role,
-            'isBackgroundUser'=>1
+            'isBackgroundUser'=>1,
+            'dateline'=>time()
             );
         $this->db->trans_begin();
         $uid = $this->user->addAuth($data);

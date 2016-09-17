@@ -267,7 +267,7 @@ class Captcha extends CI_Driver_Library
 		$code = $this->captcha_text = strtolower(random_string('alnum', 4));
 		
 		$this->CI->email->add_address($email);  // 收件人邮箱
-		$this->CI->email->set_subject('众划算-邮箱认证(系统邮件，请勿回复)'); // 邮件主题
+		$this->CI->email->set_subject('YL-邮箱认证(系统邮件，请勿回复)'); // 邮件主题
 		$this->CI->email->set_body_tempate_var('code', $code);
 		$this->CI->email->set_body_template('email');
 		$this->CI->email->is_html();  // send as HTML

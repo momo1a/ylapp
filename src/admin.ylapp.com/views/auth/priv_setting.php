@@ -11,7 +11,7 @@
                     <div class="form-group">
                 <?php $i=1;if(!empty($menu)): foreach($menu as $value):?>
                     <?php if($value['ctrl'] == 'Auth'){continue;}?>
-                    <input type="checkbox" class="menu_checkbox icheckbox_minimal-green" value="<?php echo $value['id'];?>" name="menu"/>&nbsp;<?php echo  $value['title'];?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" class="menu_checkbox icheckbox_minimal-green" value="<?php echo $value['id'];?>" name="menu"/>&nbsp;<?php echo  $value['title'];?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <?php if($i%2 == 0)echo '<br/>';?>
                 <?php $i++; endforeach; endif;?>
                     </div>

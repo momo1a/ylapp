@@ -42,4 +42,14 @@ class User_menu_model extends My_Model{
         }
     }
 
+    /**
+     * 删除用户菜单
+     * @param $uid
+     */
+    public function deleteUserMenu($uid){
+        $this->where(array('uid'=>$uid));
+        $res = $this->delete();
+        return $res;
+    }
+
 }

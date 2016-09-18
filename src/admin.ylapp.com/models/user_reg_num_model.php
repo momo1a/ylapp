@@ -29,7 +29,7 @@ class User_reg_num_model extends MY_Model
      */
     public function appointList($uid,$select="*",$limit=10,$offset=0){
         $this->where(array('userId'=>$uid));
-        $this->where('(status IN(0,2,3,4,5))');
+        //$this->where('(status IN(0,2,3,4,5))');
         $this->select($select);
         $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user_reg_num.docId','left');
         $this->join('YL_hospital','YL_doctor_info.hid=YL_hospital.hid','left');

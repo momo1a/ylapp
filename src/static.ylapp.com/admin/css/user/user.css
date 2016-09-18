@@ -63,3 +63,12 @@ a{
     font-weight: bold;
     color: #000000;
 }
+.order-taocan span{
+    font-weight: bold;
+    color: #000000;
+}
+.order-taocan div{
+    display: inline-block;
+    width: 42%;
+    margin: 10px 0;
+}

@@ -1,6 +1,6 @@
 $(function(){
     $(".modal-dialog").css('width','400px');
-    $(".modal-dialog-info").css('width','600px');
+    $(".modal-dialog-info").css('width','650px');
     $(".modal-dialog-order").css('width','800px');
 });
 
@@ -104,7 +104,7 @@ function orderTurnTab(e){
         data: {type: type,uid:uid},
         dataType: 'json',
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             switch (result.data.type){
                 case 1: // 在线问诊
                     var zxwz = $(".order_detail #zxwz");
@@ -152,10 +152,33 @@ function orderTurnTab(e){
                     yygh.html('');
                     if(result.data.order != false){
                         $.each(result.data.order,function(i,d){
+                            var orderState = '';
+                            switch (d.orderState){
+                                case '0':
+                                    orderState = '未付款';
+                                    break;
+                                case '2':
+                                    orderState = '待处理';
+                                    break;
+                                case '3':
+                                    orderState = '预约成功';
+                                    break;
+                                case '4':
+                                    orderState = '预约失败';
+                                    break;
+                                case '5':
+                                    orderState = '完成';
+                                    break;
+                                case '6':
+                                    orderState = '用户取消';
+                                default :
+                                    break;
+
+                            }
                             yygh.append('<div class="zxwz-f"><div><span>预约人：</span>' + d.contacts + '</div>' + '<div><span>预约医生：</span>' + d.docName+ '</div><div><span>定金：</span>' + d.price + '元</div></div>' +
                                 '<div class="zxwz-f"><div><span>电话：</span>'+ d.appointTel +'</div><div><span>所属医院：</span>' + d.name +'</div></div>' +
-                                '<div class="zxwz-f"><div><span>预约时间：</span>'+ d.phoneTimeLen +'分</div><div><span>职位：</span>'+ d.docLevel +'</div><div><span>状态：</span>'+ orderState +'</div></div>' +
-
+                                '<div class="zxwz-f"><div><span>预约时间：</span>'+ d.appointTime +'</div><div><span>职位：</span>'+ d.docLevel +'</div><div><span>状态：</span>'+ orderState +'</div></div>' +
+                                '<div class="zxwz-f"><div>&nbsp;</div><div><span>电话：</span>'+ d.docTel +'</div></div>' +
                                 '<hr/>'
                             );
                         });
@@ -164,8 +187,73 @@ function orderTurnTab(e){
                     }
                     break;
                 case 3:
+                    var lywd = $(".order_detail #lywd");
+                    lywd.html('');
+                    if(result.data.order != false){
+                        $.each(result.data.order,function(i,d){
+                            var orderState = '';
+                            switch (d.orderState){
+                                case '0':
+                                case '1':
+                                case '2':
+                                case '3':
+                                    orderState = '未完成';
+                                    break;
+                                case '4':
+                                    orderState = '已完成';
+                                    break;
+                                default :
+                                    break;
+                            }
+                            var replyContent = d.replyContent ? d.replyContent : '未回复';
+                            lywd.append('<div class="zxwz-f"><div><span>留言问诊人：</span>' + d.nickname + '</div>' + '<div><span>问诊医生：</span>' + d.docName+ '</div><div><span>金额：</span>' + d.price + '元</div></div>' +
+                                '<div class="zxwz-f"><div><span>电话：</span>'+ d.askerPone +'</div><div><span>所属医院：</span>' + d.name +'</div></div>' +
+                                '<div class="zxwz-f"><div></div><div><span>职位：</span>'+ d.docLevel +'</div><div><span>状态：</span>'+ orderState +'</div></div>' +
+                                '<div class="zxwz-f"><div>&nbsp;</div><div><span>电话：</span>'+ d.docPhone +'</div></div>' +
+                                '<div class="zxwz-s"><div><span>留言：</span>' + d.askerContent +  '</div></div>' +
+                                '<div class="zxwz-s"><div><span>医生回复：</span>' + replyContent +  '</div></div>' +
+                                '<hr/>'
+                            );
+                        });
+                    }else{
+                        lywd.html('<div style="text-align: center;margin-top: 20px">该用户暂无问答记录</div>');
+                    }
                     break;
                 case 4:
+                    var gmjl = $(".order_detail #gmjl");
+                    gmjl.html('');
+                    if(result.data.order != false){
+                        $.each(result.data.order,function(i,d){
+                            var orderType = '';
+                            switch (d.orderType){
+                                case '1':
+                                    orderType = '疫苗接种';
+                                    break;
+                                case '2':
+                                    orderType = '基因检测';
+                                    break;
+                                default :
+                                    break;
+                            }
+                            var vaccinumType = '';
+                            switch (d.vaccinumType){
+                                case '1':
+                                    vaccinumType = '(儿童)';
+                                    break;
+                                case '2':
+                                    vaccinumType = '(成人)';
+                                    break;
+                                default :
+                                    vaccinumType = '';
+                            }
+                            gmjl.append('<div><strong>'+ orderType + vaccinumType +'</strong></div>'+
+                                    '<div class="order-taocan"><div>'+ d.packageTitle +'</div><div><span>金额：</span>'+ d.orderPrice +'元</div></div>'+
+                                '<hr/>'
+                            );
+                        });
+                    }else{
+                        gmjl.html('<div style="text-align: center;margin-top: 20px">该用户暂无购买记录</div>');
+                    }
                     break;
             }
         }
@@ -180,5 +268,41 @@ function getOrderInfo(e){
     var uid = $(e).attr('uid');
     $("input[name='uid']").val(uid);
     $("#order_sub_tab_frt").trigger("click");
+}
+
+/**
+ * 获取用户交易记录
+ */
+function getTradeInfo(e){
+    var uid = $(e).attr('uid');
+    $.ajax({
+        url: SITE_URL + "User/getTradeList",
+        type: "post",
+        data: {uid: uid},
+        dataType: 'json',
+        success: function (result) {
+            var info = $("#trade_info .modal-body");
+            console.log('test');
+            if(result.data != false){
+                var flag = '';
+                info.html('');
+                $.each(result.data,function(i,d){
+                    switch (d.tradeType){
+                        case '2':
+                            flag = '<strong style="color: green;font-weight: bold">+&nbsp;</strong>';
+                            break;
+                        default :
+                            flag = '<strong style="color: red;font-weight: bold">-&nbsp;</strong>';
+                    }
+                    info.append('<div><strong>'+ d.tradeDesc +'</strong></div>'+
+                        '<div class="order-taocan"><div>'+ d.dateline +'</div><div><span>'+ flag +'</span>'+ d.tradeVolume +'元</div></div>'+
+                        '<hr/>'
+                    );
+                });
+            }else{
+                info.html('<div style="text-align: center;margin-top: 20px">该用户暂无交易记录</div>');
+            }
+        }
+    });
 }
 

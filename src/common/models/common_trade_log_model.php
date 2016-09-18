@@ -33,4 +33,5 @@ class Common_trade_log_model extends YL_Model
         $res = $this->find_all();
         return $res;
     }
+
 }

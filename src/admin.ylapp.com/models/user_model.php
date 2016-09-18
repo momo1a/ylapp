@@ -151,5 +151,7 @@ class User_model extends My_Model{
         return $res;
     }
 
+    p
+
 	
 }

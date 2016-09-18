@@ -4,6 +4,7 @@
 
 <?php $this->load->view('user/ill_info');?>
 <?php $this->load->view('user/order_info');?>
+<?php $this->load->view('user/trade_info');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -50,9 +51,9 @@
                                         <th><?php echo $value['phone'];?></th>
                                         <th><?php echo date('Y-m-d',$value['birthday']);?></th>
                                         <th><a data-target="#ill_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getIllInfo(this);">详情</a></th>
-                                        <th><a data-target="#order_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getOrderInfo(this);">详情</th>
+                                        <th><a data-target="#order_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getOrderInfo(this);">详情</a></th>
                                         <th>￥<?php echo intval($value['amount']);?></th>
-                                        <th>详情</th>
+                                        <th><a data-target="#trade_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getTradeInfo(this);">详情</a></th>
                                         <th>加入黑名单</th>
                                     </tr>
                                 <?php }}?>

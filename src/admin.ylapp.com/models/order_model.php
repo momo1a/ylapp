@@ -28,9 +28,11 @@ class Order_model extends MY_Model
     public function getAllOrder($uid,$select='*',$limit=10,$offset=0){
         $this->where(array('buyerId'=>$uid));
         $this->select($select);
+        $this->join('YL_vaccinum','YL_order.packageId=YL_vaccinum.id and YL_order.type=1','left');
+        $this->join('YL_gene_check','YL_order.packageId=YL_gene_check.id and YL_order.type=2','left');
         $this->limit($limit);
         $this->offset($offset);
-        $this->order_by('dateline','desc');
+        $this->order_by('YL_order.dateline','desc');
         $res = $this->find_all();
         return $res;
     }

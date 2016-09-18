@@ -36,10 +36,10 @@
                     <!--预约挂号-->
                 </div>
                 <div id="lywd" style="display: none">
-                    留言问答
+                    <!--留言问答-->
                 </div>
                 <div id="gmjl" style="display: none">
-                    购买记录
+                    <!--购买记录-->
                 </div>
                 </div>
             </div>

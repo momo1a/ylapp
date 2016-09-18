@@ -17,6 +17,7 @@ class User extends MY_Controller
         $this->load->model('User_reg_num_model','reg');
         $this->load->model('User_leaving_msg_model','leaving');
         $this->load->model('Order_model','order');
+        $this->load->model('Common_trade_log_model','trade');
     }
 
     public function index(){
@@ -75,15 +76,15 @@ class User extends MY_Controller
                 $result['type'] = 1;
                 break;
             case 2:  //  挂号记录
-                $result['order'] = $this->reg->appointList($uid,'*',$limit,0);
+                $result['order'] = $this->reg->appointList($uid,'*,YL_user_reg_num.status as orderState,FROM_UNIXTIME(YL_user_reg_num.appointTime) AS appointTime',$limit,0);
                 $result['type']  = 2;
                 break;
             case 3:  //  问答记录
-                $result['order'] = $this->leaving->getMsgList($uid,'*',$limit,0);
+                $result['order'] = $this->leaving->getMsgList($uid,'*,YL_user_leaving_msg.state as orderState,doc.phone as docPhone',$limit,0);
                 $result['type']  = 3;
                 break;
             case 4:  // 购买记录
-                $result['order'] = $this->order->getAllOrder($uid,'*',$limit,0);
+                $result['order'] = $this->order->getAllOrder($uid,'*,YL_order.type as orderType,YL_vaccinum.type as vaccinumType,YL_order.price as orderPrice,',$limit,0);
                 $result['type']  = 4;
                 break;
 
@@ -92,5 +93,15 @@ class User extends MY_Controller
 
         }
         $this->ajax_json(0,'请求成功',$result);
+    }
+
+
+    /**
+     * 交易记录
+     */
+    public function getTradeList(){
+        $uid = intval($this->input->get_post('uid'));
+        $res = $this->trade->getListByUid($uid,'*,FROM_UNIXTIME(dateline) as dateline');
+        $this->ajax_json(0,'请求成功',$res);
     }
 }

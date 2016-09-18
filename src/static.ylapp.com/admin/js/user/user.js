@@ -306,3 +306,25 @@ function getTradeInfo(e){
     });
 }
 
+/**
+ * 设置用户黑名单
+ * @param e
+ */
+function setUserBlank(e){
+    var flag = $(e).attr("flag");
+    var uid = $(e).attr("uid");
+    $.ajax({
+        url: SITE_URL + "User/setUserBlank",
+        type: "post",
+        data: {uid: uid,flag:flag},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }
+        }
+
+    });
+}
+

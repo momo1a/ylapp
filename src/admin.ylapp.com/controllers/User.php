@@ -26,7 +26,7 @@ class User extends MY_Controller
         $phone = trim(addslashes($this->input->get_post('telephone')));
         $total = $this->user->getUserCount($nickname,$phone);
         $offset = intval($this->uri->segment(3));
-        $list = $this->user->getUserList($limit,$offset,$nickname,$phone);
+        $list = $this->user->getUserList($limit,$offset,$nickname,$phone,1,'YL_user.*,YL_money.amount');
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
         $pager = $this->pager($total, $limit,$page_conf);
@@ -103,5 +103,17 @@ class User extends MY_Controller
         $uid = intval($this->input->get_post('uid'));
         $res = $this->trade->getListByUid($uid,'*,FROM_UNIXTIME(dateline) as dateline');
         $this->ajax_json(0,'请求成功',$res);
+    }
+
+
+    public function setUserBlank(){
+        $uid = intval($this->input->get_post('uid'));
+        $flag = intval($this->input->get_post('flag'));
+        $res = $this->user->setUserBlank($uid,$flag);
+        if($res){
+            $this->ajax_json(0,'操作成功');
+        }else{
+            $this->ajax_json(0,'操作失败');
+        }
     }
 }

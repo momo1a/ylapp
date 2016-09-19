@@ -50,7 +50,7 @@ function getDoctorDetail(e){
                     default :
                         var sex = '男';
                 }
-                doctorInfo.append('<div class="doctor-detail"><div><span>账号：</span>'+ doctor.phone +'</div><div><span>密码：</span>'+ doctor.password +'</div></div>' +
+                doctorInfo.html('<div class="doctor-detail"><div><span>账号：</span>'+ doctor.phone +'</div><div><span>密码：</span>'+ doctor.password +'</div></div>' +
                 '<div class="doctor-detail"><div><span>姓名：</span>'+ doctor.nickname +'</div><div><span>出生日期：</span>'+ doctor.birthday +'</div></div>' +
                 '<div class="doctor-detail"><div><span>性别：</span>'+ sex +'</div><div><span>电话一：</span>'+ doctor.phone +'</div></div>'+
                 '<div class="doctor-detail"><div><span>所属医院：</span>'+ doctor.name +'</div><div><span>电话二：</span>'+ doctor.phoneSec +'</div></div>' +
@@ -58,15 +58,16 @@ function getDoctorDetail(e){
                 '<hr/>' +
                 '<div class="doctor-desc"><span>简介：</span>'+ doctor.summary + '</div>'+
                 '<hr/>' +
-                '<div class="doctor-desc"><span>擅长：</span>'+ doctor.goodAt + '</div>');
-                doctorInfo.append('<div class="doctor-cert-img">');
+                '<div class="doctor-desc" id="goodAt"><span>擅长：</span>'+ doctor.goodAt + '</div>');
                 if(doctor.certificateImg != ''){
-                    doctorInfo.append('<hr/>');
+                    //$("#goodAt").append('<hr /><div class="doctor-cert-img">');
+                    var html = '<hr /><div class="doctor-cert-img">';
                     $.each(doctor.certificateImg,function(i,d){
-                        doctorInfo.append('<div><img src="'+ IMG_SERVER + d +'"/></div>');
+                         html += '<div><img src="'+ IMG_SERVER + d +'"/></div>';
                     });
+                    html += '</div>'
+                    $('#goodAt').append(html);
                 }
-                //doctorInfo.append('</div>');
             }
         }
 

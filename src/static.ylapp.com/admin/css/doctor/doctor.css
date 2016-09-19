@@ -19,11 +19,11 @@ a{
 }
 .doctor-cert-img div{
     display: inline-block;
-    border: solid 1px red;
-    width: 18%;
-    height: 98px;
+    margin-right: 2px;
+    width: 16%;
+    height: 45px;
 }
 .doctor-cert-img img{
-    width: 118px;
-    height: 98px;
+    height: 100%;
+    width: 100%;
 }

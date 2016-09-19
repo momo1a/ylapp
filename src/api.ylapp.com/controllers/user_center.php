@@ -307,6 +307,7 @@ class User_center extends MY_Controller
         }
         rsort($arr);
         $res = array_slice($arr,$offset,$limit,true);
+        $res['imgServer'] = $this->getImgServer();
         $this->response($this->responseDataFormat(0,'请求成功',$res));
     }
 

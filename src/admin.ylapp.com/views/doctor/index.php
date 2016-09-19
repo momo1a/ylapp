@@ -2,7 +2,11 @@
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
 
+
 <?php $this->load->view('doctor/doctor_detail');?>
+<?php $this->load->view('doctor/order_info');?>
+<?php $this->load->view('doctor/trade_info');?>
+<?php $this->load->view('doctor/fee_setting');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -56,7 +60,7 @@
                                         <th><a data-target="#order_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getOrderInfo(this);">详情</a></th>
                                         <th>￥<?php echo intval($value['amount']);?></th>
                                         <th><a data-target="#trade_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getTradeInfo(this);">详情</a></th>
-                                        <th><a data-target="#trade_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getTradeInfo(this);">详情</a></th>
+                                        <th><a data-target="#fee_setting" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getTradeInfo(this);">详情</a></th>
                                         <th><?php switch(intval($value['doctorState'])){
                                                 case 0:
                                                     echo '待审核';

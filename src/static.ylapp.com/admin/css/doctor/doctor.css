@@ -21,9 +21,35 @@ a{
     display: inline-block;
     margin-right: 2px;
     width: 16%;
-    height: 45px;
+    height: 60px;
 }
 .doctor-cert-img img{
     height: 100%;
     width: 100%;
+}
+
+.zxwz-f div{
+    display: inline-block;
+    width: 30%;
+    margin: 10px 10px;
+}
+.zxwz-s div{
+    margin-left: 10px;
+}
+.zxwz-f span{
+    font-weight: bold;
+    color: #000000;
+}
+.zxwz-s span{
+    font-weight: bold;
+    color: #000000;
+}
+.order-taocan span{
+    font-weight: bold;
+    color: #000000;
+}
+.order-taocan div{
+    display: inline-block;
+    width: 42%;
+    margin: 10px 0;
 }

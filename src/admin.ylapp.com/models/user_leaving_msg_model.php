@@ -33,11 +33,11 @@ class User_leaving_msg_model extends MY_Model
     public function getMsgList($uid,$select='*',$limit=10,$offset=0,$userType = 1){
         if($userType == 1){
             $this->where(array('askerUid'=>$uid));
-            $this->join('YL_user as doc','YL_user_leaving_msg.docId=doc.uid','left');
-            $this->join('YL_user','YL_user_leaving_msg.askerUid=YL_user.uid','left');
         }else{
             $this->where(array('docId'=>$uid));
         }
+        $this->join('YL_user as doc','YL_user_leaving_msg.docId=doc.uid','left');
+        $this->join('YL_user','YL_user_leaving_msg.askerUid=YL_user.uid','left');
         $this->join('YL_doctor_info','YL_user_leaving_msg.docId=YL_doctor_info.uid','left');
         $this->join('YL_hospital','YL_hospital.hid=YL_doctor_info.hid','left');
         $this->join('YL_doctor_reply','YL_doctor_reply.themeId=YL_user_leaving_msg.id and YL_doctor_reply.type=1','left');

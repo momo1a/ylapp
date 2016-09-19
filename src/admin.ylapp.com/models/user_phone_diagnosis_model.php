@@ -30,9 +30,15 @@ class User_phone_diagnosis_model extends MY_Model
      * @param $uid
      * @param string $select
      */
-    public function getListByUid($uid, $select = "*",$limit=10,$offset=0)
+    public function getListByUid($uid, $select = "*",$limit=10,$offset=0,$userType=1)
     {
-        $this->where(array('askUid' => $uid));
+        switch($userType){
+            case 2 :
+                $this->where(array('docId' => $uid));
+                break;
+            default :
+                $this->where(array('askUid' => $uid));
+        }
         $this->select($select);
         $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user_phone_diagnosis.docId','left');
         $this->join('YL_user','YL_doctor_info.uid=YL_user.uid','left');

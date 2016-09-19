@@ -75,6 +75,7 @@ class Medical extends MY_Controller
             }
         }
         if($res){
+            $res['imgServer'] = $this->getImgServer();
             $this->response($this->responseDataFormat(0,'请求成功',array('ill'=>$res,'remarks'=>$resTwo)));
         }else{
             $this->response($this->responseDataFormat(-1,'暂无数据',array()));

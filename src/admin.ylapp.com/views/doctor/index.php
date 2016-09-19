@@ -6,7 +6,7 @@
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>css/user/user.css">
+    <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>css/doctor/doctor.css">
     <!-- Main content -->
     <section class="content">
         <div class="row">

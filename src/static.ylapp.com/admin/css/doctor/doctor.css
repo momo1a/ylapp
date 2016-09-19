@@ -1,0 +1,29 @@
+a{
+    cursor: pointer;
+}
+.doctor-detail{
+    display: block;
+    margin: 10px 0;
+}
+.doctor-detail span{
+    font-weight: bold;
+    color: #000000
+}
+.doctor-desc span{
+    font-weight: bold;
+    color: #000000;
+}
+.doctor-detail div{
+    display: inline-block;
+    width: 48%;
+}
+.doctor-cert-img div{
+    display: inline-block;
+    border: solid 1px red;
+    width: 18%;
+    height: 98px;
+}
+.doctor-cert-img img{
+    width: 118px;
+    height: 98px;
+}

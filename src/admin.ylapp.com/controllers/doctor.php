@@ -53,6 +53,7 @@ class Doctor extends MY_Controller{
         $res = $this->doctor->getDoctorDetail($uid);
         if(!empty($res['certificateImg'])){
             $res['certificateImg'] = json_decode($res['certificateImg'],true);
+            $res['birthday'] = date('Y-m-d',$res['birthday']);
         }
         $this->ajax_json(0,'请求成功',$res);
     }

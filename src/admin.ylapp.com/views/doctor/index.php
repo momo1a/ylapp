@@ -7,6 +7,7 @@
 <?php $this->load->view('doctor/order_info');?>
 <?php $this->load->view('doctor/trade_info');?>
 <?php $this->load->view('doctor/fee_setting');?>
+<?php $this->load->view('doctor/doctor_add');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -18,6 +19,7 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">医生管理</h3>
+                        <a data-target="#doctor_add" data-toggle="modal" onclick="addDoctorPre();"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-user"></span>添加医生</h3></a>
                     </div>
                     <div class="bg-gray color-palette">
                         <form method="get" action="">
@@ -60,7 +62,7 @@
                                         <th><a data-target="#order_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getOrderInfo(this);">详情</a></th>
                                         <th>￥<?php echo intval($value['amount']);?></th>
                                         <th><a data-target="#trade_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getTradeInfo(this);">详情</a></th>
-                                        <th><a data-target="#fee_setting" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getTradeInfo(this);">详情</a></th>
+                                        <th><a data-target="#fee_setting" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getFeeInfo(this);">详情</a></th>
                                         <th><?php switch(intval($value['doctorState'])){
                                                 case 0:
                                                     echo '待审核';

@@ -258,3 +258,77 @@ function getTradeInfo(e){
         }
     });
 }
+
+/**
+ * 获取医生费用
+ * @param e
+ */
+function getFeeInfo(e){
+    var uid = $(e).attr('uid');
+    $('input[type="text"]').val('');
+    $('input[name="uid"]').val(uid);
+    $.ajax({
+        url: SITE_URL + "Doctor/getDoctorFee",
+        type: "post",
+        data: {uid: uid},
+        dataType: 'json',
+        success: function (result) {
+            if(result.data != false){
+                $("input[name='fee[leaving_fee]']").val(result.data.leavMsgFee);
+                $("input[name='fee[leaving_per]']").val(result.data.leavMsgPer);
+                $("input[name='fee[reg_fee]']").val(result.data.regNumFee);
+                $("input[name='fee[reg_per]']").val(result.data.regNumPer);
+                $("input[name='fee[t_len_f]']").val(result.data.phoneTimeLenFirst);
+                $("input[name='fee[ask_fee_f]']").val(result.data.phoneFeeFirst);
+                $("input[name='fee[ask_per_f]']").val(result.data.phonePerFirst);
+                $("input[name='fee[t_len_s]']").val(result.data.phoneTimeLenSecond);
+                $("input[name='fee[ask_fee_s]']").val(result.data.phoneFeeSecond);
+                $("input[name='fee[ask_per_s]']").val(result.data.phonePerSecond);
+                $("input[name='fee[t_len_t]']").val(result.data.phoneTimeLenThird);
+                $("input[name='fee[ask_fee_t]']").val(result.data.phoneFeeThird);
+                $("input[name='fee[ask_per_t]']").val(result.data.phonePerThird);
+            }else{
+                $('input').val(0);
+            }
+        }
+    });
+
+
+}
+
+
+function saveDoctorFee(){
+    var leavMsgFee = $('#fee_setting input[name="fee[leaving_fee]"]').val();
+    var leavMsgPer = $('#fee_setting input[name="fee[leaving_per]"]').val();
+    var regNumFee = $('#fee_setting input[name="fee[reg_fee]"]').val();
+    var regNumPer = $('#fee_setting input[name="fee[reg_per]"]').val();
+    var phoneTimeLenFirst = $('#fee_setting input[name="fee[t_len_f]"]').val();
+    var phoneFeeFirst = $('#fee_setting input[name="fee[ask_fee_f]"]').val();
+    var phonePerFirst = $('#fee_setting input[name="fee[ask_per_f]"]').val();
+    var phoneTimeLenSecond = $('#fee_setting input[name="fee[t_len_s]"]').val();
+    var phoneFeeSecond = $('#fee_setting input[name="fee[ask_fee_s]"]').val();
+    var phonePerSecond = $('#fee_setting input[name="fee[ask_per_s]"]').val();
+    var phoneTimeLenThird = $('#fee_setting input[name="fee[t_len_t]"]').val();
+    var phoneFeeThird = $('#fee_setting input[name="fee[ask_fee_t]"]').val();
+    var phonePerThird = $('#fee_setting input[name="fee[ask_per_t]"]').val();
+    var uid = $('input[name="uid"]').val();
+    $.ajax({
+        url: SITE_URL + "Doctor/saveDoctorFee",
+        type: "post",
+        data: {docId: uid,leavMsgFee:leavMsgFee,leavMsgPer:leavMsgPer,regNumFee:regNumFee,regNumPer:regNumPer,phoneTimeLenFirst:phoneTimeLenFirst,phoneFeeFirst:phoneFeeFirst,phonePerFirst:phonePerFirst,phoneTimeLenSecond:phoneTimeLenSecond,phoneFeeSecond:phoneFeeSecond,phonePerSecond:phonePerSecond,phoneTimeLenThird:phoneTimeLenThird,phoneFeeThird:phoneFeeThird,phonePerThird:phonePerThird},
+        dataType: 'json',
+        success: function (result) {
+            alert(result.msg);
+            location.reload();
+        }
+    });
+}
+
+/**
+ * 初始化添加医生界面
+ */
+function addDoctorPre(){
+
+}
+
+

@@ -12,14 +12,14 @@
                     <div class=" col-xs-6">
                         <div class="input-group">
                             <span class="input-group-addon">留言费用</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[leaving_fee]">
                             <span class="input-group-addon">元</span>
                         </div>
                     </div>
                     <div class="col-xs-6">
                         <div class="input-group">
                             <span class="input-group-addon">分成</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[leaving_per]">
                             <span class="input-group-addon">%</span>
                         </div>
                     </div>
@@ -29,14 +29,14 @@
                     <div class=" col-xs-6">
                         <div class="input-group">
                             <span class="input-group-addon">挂号费用</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[reg_fee]">
                             <span class="input-group-addon">元</span>
                         </div>
                     </div>
                     <div class="col-xs-6">
                         <div class="input-group">
                             <span class="input-group-addon">分成</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[reg_per]">
                             <span class="input-group-addon">%</span>
                         </div>
                     </div>
@@ -46,21 +46,21 @@
                     <div class=" col-xs-4">
                         <div class="input-group">
                             <span class="input-group-addon">时长1</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[t_len_f]">
                             <span class="input-group-addon">分</span>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div class="input-group">
                             <span class="input-group-addon">费用</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[ask_fee_f]">
                             <span class="input-group-addon">元</span>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div class="input-group">
                             <span class="input-group-addon">分成</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[ask_per_f]">
                             <span class="input-group-addon">%</span>
                         </div>
                     </div>
@@ -70,21 +70,21 @@
                     <div class=" col-xs-4">
                         <div class="input-group">
                             <span class="input-group-addon">时长2</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[t_len_s]">
                             <span class="input-group-addon">分</span>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div class="input-group">
                             <span class="input-group-addon">费用</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[ask_fee_s]">
                             <span class="input-group-addon">元</span>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div class="input-group">
                             <span class="input-group-addon">分成</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[ask_per_s]">
                             <span class="input-group-addon">%</span>
                         </div>
                     </div>
@@ -94,27 +94,28 @@
                     <div class=" col-xs-4">
                         <div class="input-group">
                             <span class="input-group-addon">时长3</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[t_len_t]">
                             <span class="input-group-addon">分</span>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div class="input-group">
                             <span class="input-group-addon">费用</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[ask_fee_t]">
                             <span class="input-group-addon">元</span>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div class="input-group">
                             <span class="input-group-addon">分成</span>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="fee[ask_per_t]">
                             <span class="input-group-addon">%</span>
                         </div>
                     </div>
+                    <input name="uid" type="hidden"/>
                 </div>
                 <hr/>
-                <div class="row" style="text-align: center"><button type="submit" class="btn btn-default">保存</button></div>
+                <div class="row" style="text-align: center"><button type="button" class="btn btn-default" onclick="saveDoctorFee();return false;">保存</button></div>
             </div>
             <!--<div class="modal-footer">
                 <button type="button" class="btn btn-outline " data-dismiss="modal">取消</button>

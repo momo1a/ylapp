@@ -44,6 +44,21 @@ class User_model extends MY_Model
         return $res;
     }
 
+
+
+    /**
+     * 修改密码
+     * @param $phone  电话号码
+     * @param $pwd
+     * @return bool
+     */
+    public function reSettingForgotPwd($phone,$pwd){
+        $where = array('phone'=>$phone);
+        $data = array('password'=>$pwd);
+        $res = $this->update($where,$data);
+        return $res;
+    }
+
     /**
      * 检查用户登陆
      * @param $user  昵称或者手机号

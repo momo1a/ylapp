@@ -156,6 +156,35 @@ class Api extends MY_Controller
         }
     }
 
+
+    /**
+     * 忘记密码 -》 修改密码
+     */
+
+    public function reSetForgotPwd(){
+        $this->load->model('user_model','user');
+        $pwd = trim($this->input->post('pwd'));    // 密码
+        $rePwd = trim($this->input->post('rePwd')); // 确认密码
+        $phone = trim($this->input->get_post('telephone')); // 手机号码
+        if(strlen($pwd) < 6){
+            $this->response($this->responseDataFormat(1,'密码不的小于6位',array()));
+        }
+        if(is_numeric($pwd)){
+            $this->response($this->responseDataFormat(2,'密码不得是纯数字',array()));
+        }
+        if($pwd != $rePwd){
+            $this->response($this->responseDataFormat(3,'第一次密码跟第二次密码不一致',array()));
+        }
+
+        $return = $this->user->reSettingForgotPwd($phone,$this->encryption($pwd));
+
+        if($return){
+            $this->response($this->responseDataFormat(0,'修改成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'系统错误',array()));
+        }
+    }
+
     /**
      * 发送手机验证码接口
      */

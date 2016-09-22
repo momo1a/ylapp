@@ -132,6 +132,7 @@ class Api extends MY_Controller
      * 用户密码重置
      */
     public function reSettingPwd(){
+        $this->checkUserLogin();
         $this->load->model('user_model','user');
         $uid = self::$currentUid;  // 用户id
         $pwd = trim($this->input->post('pwd'));    // 密码

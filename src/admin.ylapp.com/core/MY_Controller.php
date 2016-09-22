@@ -27,6 +27,7 @@ class MY_Controller extends CI_Controller
         parent::__construct();
         $this->load->helper('get_user');
         $this->load->model('Menu_model','menu');
+        $this->load->model('User_menu_model','user_menu');
         /* 未登录 */
         if(!get_user()){
             redirect(site_url().'login/index?request_url='.site_url().$this->input->server('REQUEST_URI'));
@@ -36,9 +37,30 @@ class MY_Controller extends CI_Controller
         $currentUser = get_user();
         self::$_is_super = in_array($currentUser[0]['uid'],$supers);
         if(!self::$_is_super){  //不是超级管理员
-            // todo
+            $menus = $this->user_menu->get_menu_by_uid($currentUser[0]['uid']);
+            $mids = array();
+            if(!empty($menus)){
+                foreach($menus as $key=>$value){
+                    array_push($mids,$value['mid']);
+                }
+            }
+            self::$_top_menu = $this->menu->get_menu($mids);
         }else{  // 超级管理员 直接获取所有菜单管理权限
             self::$_top_menu = $this->menu->get_menu();
+        }
+        $currentController = strtolower($this->router->class);
+        $myPrivileges = array();
+        if(!empty(self::$_top_menu)){
+            foreach(self::$_top_menu as $k=>$v){
+                array_push($myPrivileges,strtolower($v['ctrl']));
+            }
+        }
+        if($currentController != 'home'){
+            if(!in_array($currentController,$myPrivileges)){
+                header('content-type:text/html;charset=utf-8');
+                echo '<script>alert("你没有权限操作！");window.location.href="'.site_url().'login"</script>';
+                exit;
+            }
         }
         $this->load->vars('vars',array(self::$_top_menu ,get_user()));
     }

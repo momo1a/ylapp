@@ -60,7 +60,7 @@ class User_model extends MY_Model
     }
 
     /**
-     * 检查用户登陆
+     *
      * @param $user  昵称或者手机号
      */
     public function getRecord($column,$value){

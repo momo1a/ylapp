@@ -12,8 +12,11 @@ class Menu_model extends My_Model{
     /*
      * 获取一级菜单
     */
-    public function get_menu(){
+    public function get_menu($mids = ''){
         $where =  array('p_id'=>0);
+        if(''!=$mids){
+            $this->where_in('id',$mids);
+        }
         $this->order_by('sort','desc');
         $res = $this->find_all_by($where);
         return $res;

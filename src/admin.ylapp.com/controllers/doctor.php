@@ -141,5 +141,26 @@ class Doctor extends MY_Controller{
 
     }
 
+    /**
+     * 添加医生账户
+     */
+    public function addDoctor(){
+        $phone = trim($this->input->get_post('phone'));
+        $password = $this->encryption(trim($this->input->get_post('password')));
+        $nickname = $this->input->get_post('nickname');
+        $sex = intval($this->input->get_post('sex'));
+        $hid = intval($this->input->get_post('hid'));
+        $officeId = intval($this->input->get_post('officeId'));
+        $this->user->getRecord('phone',$phone) ? $this->ajax_json(-1,'手机号已经注册') : '';
+        $this->user->getRecord('nickname',$nickname) ? $this->ajax_json(-1,'昵称已经存在') : '';
+        $res = $this->user->addDoctor($phone,$password,$nickname,$sex,$hid,$officeId);
+        if($res){
+            $this->ajax_json(0,'操作成功');
+        }else{
+            $this->ajax_json(0,'操作失败');
+        }
+
+    }
+
 
 }

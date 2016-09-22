@@ -332,3 +332,48 @@ function addDoctorPre(){
 }
 
 
+function saveDoctor(){
+    var account = $("#doctor_add input[name='account']").val();
+    var pwd = $("#doctor_add input[name='pwd']").val();
+    var username = $("#doctor_add input[name='username']").val();
+    var sex = $("#doctor_add select[name='sex']").val();
+    var hospital = $("#doctor_add select[name='hospital']").val();
+    var office = $("#doctor_add select[name='office']").val();
+    var phonePattern =   /^1[3|4|5|6|8|7]\d{9}$/;
+    if(!phonePattern.test(account)){
+        alert('请填写正确手机号');
+        return false;
+    }
+    var pwdPattern = /^\d+$/;
+    if(pwdPattern.test(pwd)){
+        alert('密码不能为纯数字');
+        return false;
+    }
+    if(pwd.length > 20 || pwd.length < 6){
+        alert('密码不能大于20位小于6位');
+        return false;
+    }
+
+    if(username.length < 2 || username.length > 20){
+        alert('姓名不能大于20位小于2位');
+        return false;
+    }
+
+
+    $.ajax({
+        url: SITE_URL + "Doctor/addDoctor",
+        type: "post",
+        data: {phone:account,password:pwd,nickname:username,sex:sex,hid:hospital,officeId:office},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+}
+
+

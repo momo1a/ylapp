@@ -33,7 +33,7 @@
                     <div class="col-xs-6">
                         <div class="input-group">
                             <span class="input-group-addon">性别</span>
-                            <select class="form-control">
+                            <select class="form-control" name="sex">
                                 <option value="1">男</option>
                                 <option value="2">女</option>
                             </select>
@@ -45,7 +45,7 @@
                     <div class=" col-xs-6">
                         <div class="input-group">
                             <span class="input-group-addon">医院</span>
-                            <select class="form-control">
+                            <select class="form-control" name="hospital">
                                 <?php if($hospital):foreach($hospital as $key=>$value):?>
                                 <option value="<?php echo $value['hid'];?>"><?php echo $value['name'];?></option>
                                 <?php endforeach;endif;?>
@@ -55,7 +55,7 @@
                     <div class="col-xs-6">
                         <div class="input-group">
                             <span class="input-group-addon">科室</span>
-                            <select class="form-control">
+                            <select class="form-control" name="office">
                                 <?php if($office):foreach($office as $key=>$value):?>
                                     <option value="<?php echo $value['officeId'];?>"><?php echo $value['officeName'];?></option>
                                 <?php endforeach;endif;?>

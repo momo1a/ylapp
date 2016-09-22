@@ -80,6 +80,7 @@ class User_model extends My_Model{
         if(''!= $phone){
             $this->like('phone',$phone);
         }
+        $this->order_by('YL_user.uid','desc');
         $res = $this->find_all();
         return $res;
     }
@@ -172,6 +173,36 @@ class User_model extends My_Model{
         $res = $this->update($where,$data);
         return $res;
     }
+
+
+    /**
+     * 添加医生账户
+     * @param $phone
+     * @param $password
+     * @param $nickname
+     * @param $sex
+     * @param $hid
+     * @param $officeId
+     */
+    public function addDoctor($phone,$password,$nickname,$sex,$hid,$officeId){
+        $this->db->trans_begin();
+        $resF = $this->insert(array('phone'=>$phone,'password'=>$password,'nickname'=>$nickname,'sex'=>$sex,'userType'=>2,'dateline'=>time(),'regIp'=>ip2long($_SERVER['REMOTE_ADDR'])));
+        $docId = $this->db->insert_id();
+        $resS = $this->db->insert('doctor_info',array('uid'=>$docId,'hid'=>$hid,'officeId'=>$officeId,'sex'=>$sex));
+        if (!$resF || !$resS)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
+        }
+    }
+
+
+
 
 	
 }

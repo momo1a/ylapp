@@ -66,7 +66,7 @@ SELECT
 	m.askTime as dateline,
 	m.id,
 	u.nickname,
-	u.sex,
+	(CASE  WHEN u.sex=1 THEN '男' WHEN u.sex=2 THEN '女' END ) AS sex,
 	FLOOR((UNIX_TIMESTAMP()-u.birthday)/31536000) AS age,
 	m.price,
 	m.askerContent,

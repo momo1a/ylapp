@@ -102,6 +102,11 @@ class Doctor_center extends MY_Controller
             default:
                 $this->response($this->responseDataFormat(1,'订单状态值不允许',array()));
         }
+        if(!empty($order)){
+            foreach($order as $key=>$value){
+                $order[$key]['img'] = json_decode($value['img'],true);
+            }
+        }
         $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$order,'imgServer'=>$this->imgServer)));
     }
 

@@ -96,6 +96,7 @@ SELECT
 	i.age,
 	case WHEN i.sex=1 THEN '男' WHEN i.sex=2 THEN '女' END AS sex,
 	d.askTelephone,
+	d.docRemark,
 	d.phoneTimeLen,
 	FROM_UNIXTIME(d.hopeCalldate) AS callDate,
 	d.askContent,

@@ -15,7 +15,7 @@ class User_model extends MY_Model
      * @return bool|int|mixed
      */
     public function reg($mobile,$userType,$pwd,$regIp){
-        $data = array('phone'=>$mobile,'userType'=>$userType,'password'=>$pwd,'dateline'=>time(),'regIp'=>$regIp);
+        $data = array('phone'=>$mobile,'userType'=>$userType,'password'=>$pwd,'dateline'=>time(),'regIp'=>$regIp,'nickname'=>'用户'.time().rand(100000,999999));
         $res = $this->insert($data);
         return $res;
 

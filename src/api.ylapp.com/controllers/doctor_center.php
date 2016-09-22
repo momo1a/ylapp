@@ -267,7 +267,7 @@ class Doctor_center extends MY_Controller
 
     public function getRegNumDetail(){
         $id = intval($this->input->get_post('id'));  // 预约id
-        $select = 'nickname as username,(case  when YL_user_reg_num.sex=1 then "男" when YL_user_reg_num.sex=2 then "女" end) as sex,YL_user_illness_history.age,contacts,allergyHistory,stages,appointTel,userRemark,FROM_UNIXTIME(appointTime) AS appointTime,illnessId';
+        $select = 'nickname as username,(case  when YL_user_reg_num.sex=1 then "男" when YL_user_reg_num.sex=2 then "女" end) as sex,YL_user_illness_history.age,result,contacts,allergyHistory,stages,appointTel,userRemark,FROM_UNIXTIME(appointTime) AS appointTime,illnessId';
         $order = $this->reg_num->getDoctorRegDetail($id,$select);
         if($order) {
             $remarkSelect = 'FROM_UNIXTIME(visitDate) as visitDate,stage,content,img';

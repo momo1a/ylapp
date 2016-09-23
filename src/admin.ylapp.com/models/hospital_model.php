@@ -33,4 +33,27 @@ class Hospital_model extends MY_Model
 
         return $res;
     }
+
+
+    /**
+     * 获取医院数量
+     * @param string $keyword
+     * @return int
+     */
+    public function getHospitalCount($keyword = ''){
+        if($keyword != ''){
+            $this->like('name',$keyword);
+        }
+        return $this->count_all();
+    }
+
+    /**
+     * 获取医院详情
+     * @param $hid
+     */
+    public function getHospitalDetail($hid){
+        $where = array('hid'=>$hid);
+        $res = $this->find_by($where);
+        return $res;
+    }
 }

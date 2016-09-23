@@ -25,12 +25,6 @@ class User_model extends My_Model{
         return $res;
 	}
 	
-	/*
-	 * 用户登录检测 By id
-	*/
-	public function check_user_by_id($id){
-
-	}
 
 
     /**
@@ -62,14 +56,18 @@ class User_model extends My_Model{
      * @param int $offset
      * @param string $nickname
      * @param string $phone
+     * @param int 主要针对医生用户
      * @return array
      */
-    public function getUserList($limit=10,$offset=0,$nickname='',$phone='',$userType=1,$select='*'){
+    public function getUserList($limit=10,$offset=0,$nickname='',$phone='',$userType=1,$select='*',$state = -1){
         $this->where('isBackgroundUser !=',1);
         $this->where('userType',$userType);
         $this->select($select);
         $this->join('YL_money','YL_money.uid=YL_user.uid','left');
         if($userType == 2){
+            if($state != -1){
+                $this->where(array('YL_doctor_info.state'=>$state));
+            }
             $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user.uid','left');
         }
         $this->limit($limit);
@@ -90,9 +88,15 @@ class User_model extends My_Model{
      * @param string $nickname
      * @param string $phone
      */
-    public function getUserCount($nickname='',$phone='',$userType=1){
+    public function getUserCount($nickname='',$phone='',$userType=1,$state = -1){
         $this->where('isBackgroundUser !=',1);
         $this->where('userType',$userType);
+        if($userType == 2){
+            if($state != -1){
+                $this->where(array('YL_doctor_info.state'=>$state));
+            }
+            $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user.uid','left');
+        }
         if(''!= $nickname){
             $this->like('nickname',$nickname);
         }

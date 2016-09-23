@@ -28,11 +28,21 @@ class Doctor extends MY_Controller{
 
     public function index(){
         $limit = 10;
+        $stateArr = array(
+            0  => '待审核',
+            1  => '通过',
+            2  => '未通过'
+            );
         $nickname = trim(addslashes($this->input->get_post('nickname')));
         $phone = trim(addslashes($this->input->get_post('telephone')));
-        $total = $this->user->getUserCount($nickname,$phone);
+        $state = intval($this->input->get_post('state'));
+        if(!isset($_GET['state'])){
+            $_GET['state'] = -1;
+            $state = -1;
+        }
+        $total = $this->user->getUserCount($nickname,$phone,2,$state);
         $offset = intval($this->uri->segment(3));
-        $list = $this->user->getUserList($limit,$offset,$nickname,$phone,2,'YL_user.*,YL_money.amount,YL_doctor_info.state as doctorState');
+        $list = $this->user->getUserList($limit,$offset,$nickname,$phone,2,'YL_user.*,YL_money.amount,YL_doctor_info.state as doctorState',$state);
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
         $pager = $this->pager($total, $limit,$page_conf);
@@ -41,6 +51,7 @@ class Doctor extends MY_Controller{
         $data['pager'] = $pager;
         $data['list'] = $list;
         $data['get'] = $_GET;
+        $data['stateArr'] = $stateArr;
         $this->load->view('doctor/index',$data);
     }
 

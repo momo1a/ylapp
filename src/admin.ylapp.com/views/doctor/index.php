@@ -25,9 +25,15 @@
                         <form method="get" action="">
                             <div class="input-group">
                                 <label for="nickname">医生昵称：</label>
-                                <input type="search" name="nickname"   id="nickname" placeholder="请填写用户昵称关键字" value="<?php echo $get['nickname'];?>">
+                                <input type="search" name="nickname"   id="nickname" placeholder="请填写用户昵称关键字" value="<?php echo $get['nickname'];?>" style="margin-right: 10px" size="30">
                                 <label for="telephone">手机号码：</label>
-                                <input type="search" name="telephone" id="telephone"   placeholder="请填手机号码" value="<?php echo $get['telephone']?>">
+                                <input type="search" name="telephone" id="telephone"   placeholder="请填手机号码" value="<?php echo $get['telephone']?>"  style="margin-right: 10px" size="30">
+                                <select  name="state"  style="margin-right: 10px;height: 25px">
+                                    <option value="-1" selected>全部</option>
+                                    <?php foreach($stateArr as $key=>$val):?>
+                                        <option value="<?php echo $key;?>" <?php if($get['state'] == $key){echo 'selected';}?>><?php echo $val;?></option>
+                                    <?php endforeach;?>
+                                </select>
                                 <input type="submit" id="submit" value="搜索">
                             </div>
                         </form>

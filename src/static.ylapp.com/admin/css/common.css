@@ -1,3 +1,12 @@
+/*隐藏图片上传插件的一些按钮*/
+.file-footer-buttons{
+    display: none;
+}
+.file-footer-caption{
+    color: white;
+}
+
+
 .ui-paging { line-height: 2; font-family: \5b8b\4f53; color: #666;}
 .ui-paging a, .ui-paging strong {display: inline-block; padding:0 0.8em; border: 1px solid #ccc; color:#666; background-color: #fff; }
 .ui-paging a:hover,.ui-paging strong { border-color: #3c8dbc; color: #3c8dbc; text-decoration: none;}

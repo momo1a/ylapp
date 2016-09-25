@@ -25,6 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>dist/css/skins/skin-blue.min.css">
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/dataTables.bootstrap.css">
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/iCheck/all.css">
+    <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/fileinput/fileinput.min.css">
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>css/common.css">
 
     <script type="text/javascript">

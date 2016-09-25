@@ -48,4 +48,16 @@ class News_model extends MY_Model
         $res = $this->find_by($where);
         return $res;
     }
+
+    /**
+     * 获取客户端首页banner图片
+     * @param $position 1 用户端 2 医生端
+     */
+    public function getClientIndexBanner($position,$select){
+        $this->select($select);
+        $where = array('postPos'=>$position,'isRecmdIndex'=>1,'state'=>1);
+        $this->order_by(array('nid'=>'desc'));
+        $res = $this->find_all_by($where);
+        return $res;
+    }
 }

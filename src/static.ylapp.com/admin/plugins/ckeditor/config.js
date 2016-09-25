@@ -9,6 +9,8 @@ CKEDITOR.editorConfig = function( config ) {
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
 	// The toolbar groups arrangement, optimized for two toolbar rows.
+    config.width = '95%';
+
 	config.toolbarGroups = [
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
 		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
@@ -23,9 +25,8 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 		{ name: 'styles' },
 		{ name: 'colors' },
-		{ name: 'about' }
+		/*{ name: 'about' }*/
 	];
-
 	// Remove some buttons provided by the standard plugins, which are
 	// not needed in the Standard(s) toolbar.
 	config.removeButtons = 'Underline,Subscript,Superscript';
@@ -35,4 +36,6 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+
 };

@@ -27,8 +27,9 @@ class User_index extends MY_Controller
      * 获取用户端首页banner
      */
     public function getBannerImg(){
-        $this->load->model('banner_model','banner');
-        $res = $this->banner->getBannerByUserType(1,'title,img',4);
+        //$this->load->model('banner_model','banner');
+        $this->load->model('news_model','news');
+        $res = $this->news->getClientIndexBanner(1,'nid,title,banner as img');
         return $res;
         //$this->response($this->responseDataFormat(0,'请求成功',$res));
     }

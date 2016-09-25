@@ -2,6 +2,8 @@
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
 <?php $this->load->view('hospital/hospital_detail');?>
+<?php $this->load->view('hospital/hospital_add');?>
+<?php $this->load->view('hospital/hospital_del');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -13,14 +15,14 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">医院管理</h3>
-                        <a data-target="#doctor_add" data-toggle="modal" onclick="addHospital();"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-user"></span>添加医院</h3></a>
+                        <a data-target="#hospital_add" data-toggle="modal"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加医院</h3></a>
                     </div>
                     <div class="bg-gray color-palette">
-                        <form method="get" action="">
+                        <form method="get" id="hospital-search" action="<?php echo site_url()?>Hospital/index">
                             <div class="input-group">
                                 <label for="nickname">医院名称：</label>
                                 <input type="search" name="keyword"   placeholder="请输入医院名称关键字" value="<?php echo $get['keyword'];?>" style="margin-right: 10px" size="30">
-                                <input type="submit" id="submit" value="搜索">
+                                <input type="button" onclick="$('#hospital-search').submit()" value="搜索">
                             </div>
                         </form>
                     </div>
@@ -43,8 +45,9 @@
                                         <th><?php echo $value['hid'];?></th>
                                         <th><?php echo $value['name'];?></th>
                                         <th><?php echo $value['address'];?></th>
-                                        <th><a data-target="#hospital_detail" data-toggle="modal" hid="<?php echo $value['hid'];?>" onclick="getHospitalDetail(this);">详情</a></th>
-                                        <th><a data-target="#doctor_detail" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getDoctorDetail(this);">操作</a></th>
+                                        <th><a data-target="#hospital_detail" data-toggle="modal" hid="<?php echo $value['hid'];?>" onclick="getHospitalDetail(this);" title="医院详情">详情</a></th>
+                                        <th><a data-target="#hospital_del" data-toggle="modal"  hid="<?php echo $value['hid'];?>" onclick="hospitalDelPre(this);return
+                                         false;" title="删除医院"><span class="glyphicon glyphicon-trash"></span></a></th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

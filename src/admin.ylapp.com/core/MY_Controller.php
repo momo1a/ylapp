@@ -28,6 +28,7 @@ class MY_Controller extends CI_Controller
         $this->load->helper('get_user');
         $this->load->model('Menu_model','menu');
         $this->load->model('User_menu_model','user_menu');
+        $this->load->library('Upload_image',null,'upload');
         /* 未登录 */
         if(!get_user()){
             redirect(site_url().'login/index?request_url='.site_url().$this->input->server('REQUEST_URI'));

@@ -56,4 +56,34 @@ class Hospital_model extends MY_Model
         $res = $this->find_by($where);
         return $res;
     }
+
+    /**
+     * 添加医院
+     * @param $data
+     */
+    public function saveHospital($data){
+        $this->insert($data);
+        return $this->db->insert_id();
+    }
+
+    /**
+     * 删除医院
+     * @param $hid
+     *
+     */
+    public function delHospital($hid){
+        $this->db->trans_begin();
+        $where = array('hid'=>$hid);
+        //$doctors = $this->db->from('doctor_info')->select('uid')->where($where)->get()->result_array();
+
+        $this->delete_where($where);
+
+        if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
+            return false;
+        } else {
+            $this->db->trans_commit();
+            return true;
+        }
+    }
 }

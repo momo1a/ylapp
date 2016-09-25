@@ -2,6 +2,7 @@
 DROP TABLE IF EXISTS  `YL_banner`;
 CREATE TABLE `YL_banner` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nid` int(11) unsigned NOT NULL DEFAULT '0' comment '资讯id',
   `title` varchar(50) NOT NULL DEFAULT '' COMMENT '标题',
   `type` tinyint(3) NOT NULL DEFAULT '0' COMMENT '类型1：用户端，2：医生端',
   `img` varchar(80) NOT NULL DEFAULT '' COMMENT '图片',

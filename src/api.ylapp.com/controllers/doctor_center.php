@@ -23,6 +23,7 @@ class Doctor_center extends MY_Controller
         $this->load->model('Hospital_model','hospital');
         $this->load->model('Doctor_info_model','doc_info');
         $this->load->model('Banner_model','banner');
+        $this->load->model('News_model','news');
         $this->load->library('Upload_image',null,'upload_image');
         $this->imgServer = $this->getImgServer();
     }
@@ -37,7 +38,7 @@ class Doctor_center extends MY_Controller
         $regOrder = $this->reg_num->doctorIndex(self::$currentUid);  //预约挂号
         $diagOrder = $this->diagnosis->doctorIndex(self::$currentUid); //在线问诊
         $msgOrder = $this->levemsg->doctorIndex(self::$currentUid); //留言问答
-        $banner = $this->banner->getBannerByUserType(2,'title,img');
+        $banner = $this->news->getClientIndexBanner(2,'nid,title,banner as img');
         if(!empty($msgOrder)){
             foreach($msgOrder as $key=>$value){
                 $msgOrder[$key]['img'] = json_decode($value['img'],true);

@@ -102,8 +102,6 @@
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/fileinput/fileinput.zh.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/ckeditor/ckeditor.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<script src="<?php echo config_item('domain_static').'admin/';?>plugins/UEditor/ueditor.config.js"></script>
-<script src="<?php echo config_item('domain_static').'admin/';?>plugins/UEditor/ueditor.all.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>js/common.js"></script>
 <script>
     var IMG_SERVER = "<?php $servers = config_item('image_servers'); echo $servers[0];?>";

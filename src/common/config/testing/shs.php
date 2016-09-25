@@ -26,7 +26,7 @@ $config['image_servers'] = array('http://123.207.87.83:8081/');
 
 // 各站点域名
 //$config['domain_www'] = 'http://www.ylapp.com/';
-$config['domain_static'] = 'http://123.207.87.83:8082/';
+$config['domain_static'] = 'http://123.207.87.83:8083/';
 
 // 超级管理员uid
 $config['super_admin'] = array(1);

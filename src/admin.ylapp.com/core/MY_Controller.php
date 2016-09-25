@@ -39,11 +39,13 @@ class MY_Controller extends CI_Controller
         self::$_is_super = in_array($currentUser[0]['uid'],$supers);
         if(!self::$_is_super){  //不是超级管理员
             $menus = $this->user_menu->get_menu_by_uid($currentUser[0]['uid']);
-            $mids = array(0);
+            $mids = array();
             if(!empty($menus)){
                 foreach($menus as $key=>$value){
                     array_push($mids,$value['mid']);
                 }
+            }else{
+                $mids = array(0);
             }
             self::$_top_menu = $this->menu->get_menu($mids);
         }else{  // 超级管理员 直接获取所有菜单管理权限

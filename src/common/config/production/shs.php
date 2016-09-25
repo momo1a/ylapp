@@ -29,7 +29,7 @@ $config['image_servers'] = array('http://123.207.87.83:8081/');
 $config['domain_static'] = 'http://123.207.87.83:8083/';
 
 
-$config['super_admin'] = array(83);
+$config['super_admin'] = array(89);
 
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'shs_system.php';
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'static_url.php';  //加载众划算静态URL

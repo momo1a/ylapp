@@ -39,7 +39,7 @@ class MY_Controller extends CI_Controller
         self::$_is_super = in_array($currentUser[0]['uid'],$supers);
         if(!self::$_is_super){  //不是超级管理员
             $menus = $this->user_menu->get_menu_by_uid($currentUser[0]['uid']);
-            $mids = array();
+            $mids = array(0);
             if(!empty($menus)){
                 foreach($menus as $key=>$value){
                     array_push($mids,$value['mid']);

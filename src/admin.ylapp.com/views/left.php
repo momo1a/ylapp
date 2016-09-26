@@ -17,7 +17,7 @@
                 </ul>
             </li>-->
             <?php if(!empty($vars[0])){foreach($vars[0] as $value){?>
-                <li class="treeview  <?php if($this->router->class == $value['ctrl']){ echo 'active';};?>"><a href="<?php echo site_url().strtolower($value['ctrl']).DIRECTORY_SEPARATOR.strtolower($value['method']);?>"><i class="fa fa-link"></i> <span><?php echo $value['title'];?></span></a></li>
+                <li class="treeview  <?php if($this->router->class == $value['ctrl']){ echo 'active';};?>"><a href="<?php echo site_url().strtolower($value['ctrl']).DIRECTORY_SEPARATOR.$value['method'];?>"><i class="fa fa-link"></i> <span><?php echo $value['title'];?></span></a></li>
             <?php }}?>
         </ul>
         <!-- /.sidebar-menu -->

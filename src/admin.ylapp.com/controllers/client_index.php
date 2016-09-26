@@ -6,7 +6,7 @@
  * Time: 下午 9:23
  */
 
-class ClientIndex extends MY_Controller
+class Client_index extends MY_Controller
 {
     public function __construct(){
         parent::__construct();

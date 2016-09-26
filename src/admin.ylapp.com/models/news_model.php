@@ -73,4 +73,16 @@ class News_model extends MY_Model
         $this->insert($data);
         return $this->db->insert_id();
     }
+
+
+    /**
+     * 获取首页banner图
+     * @return array
+     */
+    public function getBanner(){
+        $this->where(array('isRecmdIndex'=>1,'state'=>1));
+        $this->order_by(array('nid'=>'desc'));
+        $res = $this->find_all();
+        return $res;
+    }
 }

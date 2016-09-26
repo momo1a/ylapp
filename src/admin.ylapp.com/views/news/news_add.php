@@ -84,6 +84,7 @@
                         </select>
                     </div>
                 </div>
+                    <input type="hidden" name="nid" value="0"/>
                 </form>
             </div>
             <div class="modal-footer">

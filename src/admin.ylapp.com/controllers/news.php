@@ -61,37 +61,51 @@ class News extends MY_Controller
 
 
     public function newsAdd(){
-        $title = trim($this->input->get_post('title'));
-        $author = trim($this->input->get_post('author'));
-        $content = $this->input->get_post('content');
-        $tag = trim($this->input->get_post('tag'));
-        $postPos = intval($this->input->get_post('postPos'));
-        $isRecmd = intval($this->input->get_post('isRecmd'));
-        $isRecmdIndex = intval($this->input->get_post('isRecmdIndex'));
-        $state = intval($this->input->get_post('state'));
-        $thumbnail_relative_path = $this->upload->save('news',$_FILES['thumbnail']['tmp_name']);
-        $banner_relative_path = $this->upload->save('news',$_FILES['banner']['tmp_name']);
-        $data = array(
-            'cid' => rand(1,2),
-            'title' => $title,
-            'content' => $content,
-            'author' => $author,
-            'thumbnail' => $thumbnail_relative_path,
-            'banner' => $banner_relative_path,
-            'tag' => $tag,
-            'postPos' => $postPos,
-            'isRecmd' => $isRecmd,
-            'isRecmdIndex'=>$isRecmdIndex,
-            'createTime'=>time(),
-            'state'=>$state
-        );
+        $nid = intval($this->input->get_post('nid'));
+        if($nid !== 0) {  //  编辑
+            echo 'test';
+        }else{    //  添加
+                $title = trim($this->input->get_post('title'));
+                $author = trim($this->input->get_post('author'));
+                $content = $this->input->get_post('content');
+                $tag = trim($this->input->get_post('tag'));
+                $postPos = intval($this->input->get_post('postPos'));
+                $isRecmd = intval($this->input->get_post('isRecmd'));
+                $isRecmdIndex = intval($this->input->get_post('isRecmdIndex'));
+                $state = intval($this->input->get_post('state'));
+                $thumbnail_relative_path = $this->upload->save('news', $_FILES['thumbnail']['tmp_name']);
+                $banner_relative_path = $this->upload->save('news', $_FILES['banner']['tmp_name']);
+                $data = array(
+                    'cid' => rand(1, 2),
+                    'title' => $title,
+                    'content' => $content,
+                    'author' => $author,
+                    'thumbnail' => $thumbnail_relative_path,
+                    'banner' => $banner_relative_path,
+                    'tag' => $tag,
+                    'postPos' => $postPos,
+                    'isRecmd' => $isRecmd,
+                    'isRecmdIndex' => $isRecmdIndex,
+                    'createTime' => time(),
+                    'state' => $state
+                );
 
-        $res = $this->news->addNews($data);
+                $res = $this->news->addNews($data);
 
-        if($res) {
-            $this->ajax_json(0,'添加成功');
-        }else{
-            $this->ajax_json(-1,'系统错误');
+                if ($res) {
+                    $this->ajax_json(0, '添加成功');
+                } else {
+                    $this->ajax_json(-1, '系统错误');
+                }
+            }
         }
+
+    /**
+     * 获取资讯详情
+     */
+    public function getNewsDetail(){
+        $nid = intval($this->input->get_post('nid'));
+        $res = $this->news->getNewsDetail($nid);
+        $this->ajax_json(0,'请求成功',$res);
     }
 }

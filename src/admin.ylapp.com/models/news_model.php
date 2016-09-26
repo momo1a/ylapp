@@ -85,4 +85,16 @@ class News_model extends MY_Model
         $res = $this->find_all();
         return $res;
     }
+
+    /**
+     * 删除banner
+     * @param $nid
+     */
+    public function delBanner($nid){
+        $where = array('nid'=>$nid);
+        $data = array('isRecmdIndex'=>0);
+        $res = $this->update($where,$data);
+        return $res;
+    }
+
 }

@@ -1,0 +1,19 @@
+a{
+    cursor: pointer;
+}
+.banner-img{
+    width: 250px;
+    height: 100px;
+    float: left;
+}
+.banner-desc{
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    float: right;
+}
+
+.banner-img img{
+    width: 100%;
+    height: 100%;
+}

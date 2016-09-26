@@ -56,3 +56,26 @@ function newsSave(){
         }
     });
 }
+
+
+function newsAddPre(){
+    $('#news_add input[name="nid"]').val(0);
+}
+/**
+ * 编辑资讯初始化页面
+ * @param e
+ */
+function editNews(e){
+    var nid = $(e).attr('nid');
+    $('#news_add input[name="nid"]').val(nid);
+    $.ajax({
+        url: SITE_URL + "news/getNewsDetail",
+        type: "post",
+        data:{nid:nid},
+        dataType: 'json',
+        success: function (result) {
+            console.log(result);
+        }
+    });
+
+}

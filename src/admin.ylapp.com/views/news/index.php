@@ -13,7 +13,7 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">资讯管理</h3>
-                        <a data-target="#news_add" data-toggle="modal"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加资讯</h3></a>
+                        <a data-target="#news_add" data-toggle="modal" onclick="newsAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加资讯</h3></a>
                     </div>
                     <div class="bg-gray color-palette">
                         <form method="get" action="">
@@ -102,7 +102,10 @@
                                                 default:
                                                     echo '未知';
                                             }?></th>
-                                        <th><a data-target="#hospital_del" data-toggle="modal"  hid="<?php echo $value['hid'];?>" onclick="hospitalDelPre(this);return false;" title="删除医院"><span class="glyphicon glyphicon-trash"></span></a></th>
+                                        <th>
+                                            <a data-target="#news_add" data-toggle="modal"  nid="<?php echo $value['nid'];?>" onclick="editNews(this);return false;" title="编辑资讯"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            &nbsp;&nbsp;<a data-target="#hospital_del" data-toggle="modal"  hid="<?php echo $value['hid'];?>" onclick="hospitalDelPre(this);return false;" title="删除医院"><span class="glyphicon glyphicon-trash"></span></a>
+                                        </th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

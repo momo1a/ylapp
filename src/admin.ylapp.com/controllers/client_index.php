@@ -36,4 +36,17 @@ class Client_index extends MY_Controller
         $imageServers = config_item('image_servers');
         $this->load->view('clientindex/index',get_defined_vars());
     }
+
+    /**
+     * 删除banner
+     */
+    public function delBanner(){
+        $nid = intval($this->input->get_post('nid'));
+        $res = $this->news->delBanner($nid);
+        if($res){
+            $this->ajax_json(0,'操作成功');
+        }else{
+            $this->ajax_json(-1,'操作失败');
+        }
+    }
 }

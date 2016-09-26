@@ -9,7 +9,7 @@ function setDoctorStat(e){
     var state = $(e).attr("state");
     var uid = $(e).attr("uid");
     $.ajax({
-        url: SITE_URL + "Doctor/setDoctorStat",
+        url: SITE_URL + "doctor/setDoctorStat",
         type: "post",
         data: {uid: uid,state:state},
         dataType: 'json',
@@ -30,7 +30,7 @@ function setDoctorStat(e){
 function getDoctorDetail(e){
     var uid = $(e).attr("uid");
     $.ajax({
-        url: SITE_URL + "Doctor/getDoctorDetail",
+        url: SITE_URL + "doctor/getDoctorDetail",
         type: "post",
         data: {uid: uid},
         dataType: 'json',
@@ -86,7 +86,7 @@ function orderTurnTab(e){
     type = type ? type : 1;   // 默认type值为1
     var uid = $("input[name='uid']").val();
     $.ajax({
-        url: SITE_URL + "Doctor/getUserOrder",
+        url: SITE_URL + "doctor/getUserOrder",
         type: "post",
         data: {type: type,uid:uid},
         dataType: 'json',
@@ -230,7 +230,7 @@ function getOrderInfo(e){
 function getTradeInfo(e){
     var uid = $(e).attr('uid');
     $.ajax({
-        url: SITE_URL + "Doctor/getTradeList",
+        url: SITE_URL + "doctor/getTradeList",
         type: "post",
         data: {uid: uid},
         dataType: 'json',
@@ -268,7 +268,7 @@ function getFeeInfo(e){
     $('input[type="text"]').val('');
     $('input[name="uid"]').val(uid);
     $.ajax({
-        url: SITE_URL + "Doctor/getDoctorFee",
+        url: SITE_URL + "doctor/getDoctorFee",
         type: "post",
         data: {uid: uid},
         dataType: 'json',
@@ -313,7 +313,7 @@ function saveDoctorFee(){
     var phonePerThird = $('#fee_setting input[name="fee[ask_per_t]"]').val();
     var uid = $('input[name="uid"]').val();
     $.ajax({
-        url: SITE_URL + "Doctor/saveDoctorFee",
+        url: SITE_URL + "doctor/saveDoctorFee",
         type: "post",
         data: {docId: uid,leavMsgFee:leavMsgFee,leavMsgPer:leavMsgPer,regNumFee:regNumFee,regNumPer:regNumPer,phoneTimeLenFirst:phoneTimeLenFirst,phoneFeeFirst:phoneFeeFirst,phonePerFirst:phonePerFirst,phoneTimeLenSecond:phoneTimeLenSecond,phoneFeeSecond:phoneFeeSecond,phonePerSecond:phonePerSecond,phoneTimeLenThird:phoneTimeLenThird,phoneFeeThird:phoneFeeThird,phonePerThird:phonePerThird},
         dataType: 'json',
@@ -361,7 +361,7 @@ function saveDoctor(){
 
 
     $.ajax({
-        url: SITE_URL + "Doctor/addDoctor",
+        url: SITE_URL + "doctor/addDoctor",
         type: "post",
         data: {phone:account,password:pwd,nickname:username,sex:sex,hid:hospital,officeId:office},
         dataType: 'json',

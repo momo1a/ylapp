@@ -1,7 +1,7 @@
 $(function(){
     $("#hospital_detail .modal-dialog").css('width','400px');
     $("#hospital_add .modal-dialog").css('width','400px');
-    initFileInput("hospital-img", "/Hospital/saveHospital",350,350);
+    initFileInput("hospital-img", "/hospital/saveHospital",350,350);
 })
 /**
  * 医院详情
@@ -10,7 +10,7 @@ $(function(){
 function getHospitalDetail(e){
     var hid = $(e).attr('hid');
     $.ajax({
-        url: SITE_URL + "Hospital/getHospitalDetail",
+        url: SITE_URL + "hospital/getHospitalDetail",
         type: "post",
         data: {hid: hid},
         dataType: 'json',
@@ -53,7 +53,7 @@ function hospitalSave(){
     });
     var formData = new FormData(document.getElementById('myForm'));
     $.ajax({
-        url: SITE_URL + "Hospital/saveHospital",
+        url: SITE_URL + "hospital/saveHospital",
         type: "post",
         data:formData,
         contentType:false,
@@ -83,7 +83,7 @@ function hospitalDelPre(e){
 function hospitalDel(){
     var hid = $("input[name='hid']").val();
     $.ajax({
-        url: SITE_URL + "Hospital/delHospital",
+        url: SITE_URL + "hospital/delHospital",
         type: "post",
         data:{hid:hid},
         dataType: 'json',

@@ -1,8 +1,8 @@
 $(function(){
     $("#news_add .modal-dialog").css('width','800');
     CKEDITOR.replace('content');
-    initFileInput("news-img", "/News/newsAdd",350,350);
-    initFileInput("banner", "/News/newsAdd",350,350);
+    initFileInput("news-img", "/news/newsAdd",350,350);
+    initFileInput("banner", "/news/newsAdd",350,350);
 });
 
 function newsSave(){
@@ -40,7 +40,7 @@ function newsSave(){
     }
     var formData = new FormData(document.getElementById('newsAdd'));
     $.ajax({
-        url: SITE_URL + "News/newsAdd",
+        url: SITE_URL + "news/newsAdd",
         type: "post",
         data:formData,
         contentType:false,

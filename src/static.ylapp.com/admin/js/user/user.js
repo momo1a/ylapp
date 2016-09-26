@@ -11,7 +11,7 @@ $(function(){
 function getIllInfo(e){
     var uid = $(e).attr('uid');
     $.ajax({
-        url: SITE_URL + "User/getUserIllness",
+        url: SITE_URL + "user/getUserIllness",
         type: "post",
         data: {uid:uid},
         dataType: 'json',
@@ -99,7 +99,7 @@ function orderTurnTab(e){
     type = type ? type : 1;   // 默认type值为1
     var uid = $("input[name='uid']").val();
     $.ajax({
-        url: SITE_URL + "User/getUserOrder",
+        url: SITE_URL + "user/getUserOrder",
         type: "post",
         data: {type: type,uid:uid},
         dataType: 'json',
@@ -276,7 +276,7 @@ function getOrderInfo(e){
 function getTradeInfo(e){
     var uid = $(e).attr('uid');
     $.ajax({
-        url: SITE_URL + "User/getTradeList",
+        url: SITE_URL + "user/getTradeList",
         type: "post",
         data: {uid: uid},
         dataType: 'json',
@@ -314,7 +314,7 @@ function setUserBlank(e){
     var flag = $(e).attr("flag");
     var uid = $(e).attr("uid");
     $.ajax({
-        url: SITE_URL + "User/setUserBlank",
+        url: SITE_URL + "user/setUserBlank",
         type: "post",
         data: {uid: uid,flag:flag},
         dataType: 'json',

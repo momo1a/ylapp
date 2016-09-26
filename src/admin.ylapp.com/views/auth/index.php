@@ -81,7 +81,7 @@
         var uid = $(e).attr('uid');
         $("input[name='uid']").val(uid);
         $.ajax({
-            url: "<?php echo site_url().'Auth/getUserMenuAjax';?>",
+            url: "<?php echo site_url().'auth/getUserMenuAjax';?>",
             type: 'post',
             dataType: 'json',
             data: {'uid': uid},
@@ -111,7 +111,7 @@
         var menu = $("input[name='menu']:checked").serialize();
         var uid = $("input[name='uid']").val();
         $.ajax({
-            url: "<?php echo site_url().'Auth/settingUserPrivileges';?>",
+            url: "<?php echo site_url().'auth/settingUserPrivileges';?>",
             type: "post",
             data: {menu:menu,uid:uid},
             dataType: 'json',
@@ -135,7 +135,7 @@
         var uid = $(e).attr('uid');
         $("input[name='uid']").val(uid);
         $.ajax({
-            url: "<?php echo site_url().'Auth/getUserInfoByUid';?>",
+            url: "<?php echo site_url().'auth/getUserInfoByUid';?>",
             type: 'post',
             dataType: 'json',
             data: {'uid': uid},
@@ -157,7 +157,7 @@
         var telephone = $("#telephone").val();
         var password = $("#password").val();
         $.ajax({
-            url: "<?php echo site_url().'Auth/updateUserInfo';?>",
+            url: "<?php echo site_url().'auth/updateUserInfo';?>",
             type: "post",
             data: {uid:uid,telephone:telephone,username:username,password:password},
             dataType: 'json',
@@ -185,7 +185,7 @@
     function delAuth(e){
         var uid = $("input[name='uid']").val();
         $.ajax({
-            url: "<?php echo site_url().'Auth/delUser';?>",
+            url: "<?php echo site_url().'auth/delUser';?>",
             type: "post",
             data: {uid:uid},
             dataType: 'json',
@@ -220,7 +220,7 @@
         var role = $("#role").val();
         var menu = $("input[name='menu']:checked").serialize();
         $.ajax({
-            url: "<?php echo site_url().'Auth/addAuth';?>",
+            url: "<?php echo site_url().'auth/addAuth';?>",
             type: "post",
             data: {auth:{username:username,phone:phone,pwd:pwd,role:role},menu:menu},
             dataType: 'json',

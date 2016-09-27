@@ -30,7 +30,7 @@ class Post_model extends MY_Model
      * @param $flag 1 为最新  2 本周最热
      * @return mixed
      */
-    public function postList($flag=1,$limit=10,$offset=0){
+    public function postList($flag=1,$limit=10,$offset=0,$uid=0){
         $str = '';
         switch($flag){
             case 2:
@@ -43,7 +43,7 @@ class Post_model extends MY_Model
                 break;
         }
         $sql = <<<SQL
-SELECT  `id`,`postTitle`,`postNickname`,FROM_UNIXTIME(`postTime`) AS postDate,LEFT(`postContent`,24) AS content,(SELECT avatar FROM YL_user WHERE `uid`=a.postUid) AS avatar,(SELECT COUNT(1) FROM YL_post_click_like WHERE `postId`=a.id) AS clickCount,(SELECT COUNT(1) FROM YL_post_comment WHERE state=1 AND postId=a.id) AS commentCount FROM YL_post AS a WHERE state=1 {$str} LIMIT {$offset},{$limit};
+SELECT  a.`id`,b.`id` AS collId,`postTitle`,`postNickname`,FROM_UNIXTIME(`postTime`) AS postDate,LEFT(`postContent`,24) AS content,(SELECT avatar FROM YL_user WHERE `uid`=a.postUid) AS avatar,(SELECT COUNT(1) FROM YL_post_click_like WHERE `postId`=a.id) AS clickCount,(SELECT COUNT(1) FROM YL_post_comment WHERE state=1 AND postId=a.id) AS commentCount FROM YL_post AS a LEFT JOIN YL_post_click_like AS b ON a.id=b.postId  AND b.uid={$uid}  WHERE state=1 {$str} LIMIT {$offset},{$limit};
 SQL;
         $query = $this->db->query($sql);
         $res = $query->result_array();

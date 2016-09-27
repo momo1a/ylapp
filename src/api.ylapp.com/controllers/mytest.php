@@ -237,7 +237,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/post/listPost" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="H+xJr5ffe87abc9WJvGU3xpBpdaQwdT5z73G6emgInqCTGx7WJqbeeVtdaFwquA23Xt1sfjV"/>
     flag<input type="text" name="flag"/>
     limit<input type="text" name="limit"/>
     offset<input type="text" name="offset"/>
@@ -1006,6 +1006,27 @@ HTML;
 <form action="http://api.ylapp.com/post/cancelLike" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="3tGel22a4d8eaRVypFLKcmh2FxbEEn2o+fw9aNdAmp4YrYSWaECD7zDL6GVthzkHXf\/xahTN"/>
+    <input type="text" name="postId"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+    public function msgList(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/user_center/msgList" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="A\/vim2790f7c9ezwpPoopYL9maKS9tobeXgOo1qzDvckwvacadXR\/zm6d3C9\/kEItBk+ul+M"/>
     <input type="text" name="postId"/>
     <input type="submit" value="submit"/>
 HTML;

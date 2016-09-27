@@ -27,7 +27,7 @@ class Doctor extends MY_Controller
         $keyword = addslashes(trim($this->input->get_post('keyword')));
         $this->load->model('user_model','user');
         $res = $this->user->getDoctorList($limit,'YL_user.uid,YL_user.avatar,YL_user.nickname,YL_hospital.name AS hospitalName,YL_doctor_offices.officeName,,YL_doctor_info.docLevel,YL_hospital.address,YL_doctor_info.goodAt',$officeId,$hid,$keyword,$offset);
-        $this->response($this->responseDataFormat(0,'请求成功',$res));
+        $this->response($this->responseDataFormat(0,'请求成功',array('doctors'=>$res,'imgServer'=>$this->getImgServer())));
     }
 
     /**
@@ -43,7 +43,7 @@ class Doctor extends MY_Controller
         $doctor = $this->user->getDoctorDetail($docId,$select);
         $evaluate = $this->evaluate->getDoctorEvaluate($docId,'YL_doctor_evaluate.content,FROM_UNIXTIME(YL_doctor_evaluate.dateline) as evaluateTime,YL_doctor_evaluate.username,YL_user.avatar',$limit,$offset);
         $answerNum = $this->reply->getDocCompleteAnswerTotal($docId);
-        $this->response($this->responseDataFormat(0,'请求成功',array('doctor'=>$doctor,'evaluate'=>$evaluate,'answerNum'=>$answerNum)));
+        $this->response($this->responseDataFormat(0,'请求成功',array('doctor'=>$doctor,'evaluate'=>$evaluate,'answerNum'=>$answerNum,'imgServer'=>$this->getImgServer())));
     }
 
 }

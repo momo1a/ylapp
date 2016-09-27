@@ -30,9 +30,9 @@ class User_leaving_msg_model extends MY_Model
      * @param $select
      *
      */
-    public function getMsgList($uid,$select,$limit=10,$offset=0){
+    public function getMsgList($uid,$select,$limit=10,$offset=0,$state='(state IN(2,4))'){
         $this->where(array('askerUid'=>$uid));
-        $this->where('(state IN(2,4))');
+        $this->where($state);
         $this->select($select);
         $this->order_by(array('askTime'=>'DESC'));
         $this->limit($limit);
@@ -53,6 +53,10 @@ class User_leaving_msg_model extends MY_Model
         return $res;
 
     }
+
+
+
+
 
 
     /**

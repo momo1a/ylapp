@@ -52,4 +52,17 @@ class Order_model extends MY_Model
         $res = $this->find_all();
         return $res;
     }
+
+
+    /**
+     * @param $uid
+     * @param $select
+     * @return array
+     */
+    public function getOrdersMsg($uid,$select){
+        $this->where(array('YL_order.buyerId'=>$uid));
+        $this->select($select);
+        $res = $this->find_all();
+        return $res;
+    }
 }

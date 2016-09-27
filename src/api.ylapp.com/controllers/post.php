@@ -63,9 +63,10 @@ class Post extends MY_Controller
         $limit = $limit == 0 ? 10 : $limit;
         $flag = intval($this->input->get_post('flag'));
         $flag = !$flag ? 1 : $flag;
-        $res = $this->post->postList($flag,$limit,$offset);
+        $uid = !self::$currentUid ? 0 : self::$currentUid;
+        $res = $this->post->postList($flag,$limit,$offset,$uid);
         //var_dump($this->db->last_query());
-        $this->response($this->responseDataFormat(0, '请求成功', array($res)));
+        $this->response($this->responseDataFormat(0, '请求成功', array('postList'=>$res,'imgServer'=>$this->getImgServer())));
     }
 
     /**

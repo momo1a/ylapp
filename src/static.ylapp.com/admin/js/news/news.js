@@ -7,12 +7,14 @@ $(function(){
     initFileInput("banner", "/news/newsAdd",350,350);
     initFileInput("banner-edit", "/news/newsAdd",350,350);
     initFileInput("news-img-edit", "/news/newsAdd",350,350);
+    $(".fileinput-remove-button").css('display','none');  // 隐藏图片上传移除按钮
 });
 
 function newsSave(){
-    var title = $('#news_add input[name="title"]').val();
-    var author = $('#news_add input[name="author"]').val();
-    var content =  CKEDITOR.instances.content.getData();
+    var nid = $('input[name="nid"]').val();
+    var title = nid == 0 ? $('#news_add input[name="title"]').val() : $('#news_edit input[name="title"]').val();
+    var author = nid == 0 ? $('#news_add input[name="author"]').val() : $('#news_edit input[name="author"]').val();
+    var content =  nid == 0 ?  CKEDITOR.instances.content.getData() : CKEDITOR.instances.contentEdit.getData();
     if(!checkInputLength(title,'资讯标题',8,50)){ return false;}
     if(!checkInputLength(author,'作者',2,20)){ return false;}
     if(!checkInputLength(content,'正文',20,20000)){ return false;}
@@ -20,21 +22,24 @@ function newsSave(){
     var bannerImgSrc = $('.banner-img img').attr('src');
     if(!(ImageValidata(newsImgSrc,'资讯缩略图',350,350))){ return false;}
     if(!(ImageValidata(bannerImgSrc,'banner图片',350,350))){ return false;}
-
-    if($("#postPos").val() == -1){
+    var pos = nid == 0 ? 'postPo' : 'postPoEdit';
+    if($("#"+ pos).val() == -1){
         alert('请选择发布位置');
         return false;
     }
-
-    if($("#isRecmd").val() == -1){
+    var recmd = nid == 0 ? 'isRecmd' : 'isRecmdEdit';
+    if($("#"+recmd).val() == -1){
         alert('请选择是否推荐');
         return false;
     }
-    if($("#isRecmdIndex").val() == -1){
+    var  recmdIndex = nid == 0 ? 'isRecmdIndex' : 'isRecmdIndexEdit';
+    if($("#"+recmdIndex).val() == -1){
         alert('请选择是否推荐至首页');
         return false;
     }
-    if($("#state").val() == -1){
+
+    var  state = nid == 0 ? 'state' : 'stateEdit';
+    if($("#" + state).val() == -1){
         alert('请选择状态');
         return false;
     }
@@ -42,7 +47,8 @@ function newsSave(){
     for(instance in CKEDITOR.instances){
         CKEDITOR.instances[instance].updateElement();
     }
-    var formData = new FormData(document.getElementById('newsAdd'));
+    var fromName = nid == 0 ?  "newsAdd" : "newsEdit";
+    var formData = new FormData(document.getElementById(fromName));
     $.ajax({
         url: SITE_URL + "news/newsAdd",
         type: "post",
@@ -63,7 +69,7 @@ function newsSave(){
 
 
 function newsAddPre(){
-    $('#news_add input[name="nid"]').val(0);
+    $('input[name="nid"]').val(0);
 }
 /**
  * 编辑资讯初始化页面
@@ -79,15 +85,46 @@ function editNews(e){
         data:{nid:nid},
         dataType: 'json',
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             $('#news_edit input[name="title"]').val(result.data.title);
             $('#news_edit input[name="author"]').val(result.data.author);
+            $('#news_edit input[name="tag"]').val(result.data.tag);
             CKEDITOR.instances.contentEdit.setData(result.data.content);
-            $('#news_edit .news-img .file-drop-zone-title ').html('<div><img src="'+ IMG_SERVER + result.data.thumbnail +'"/></div>');
-            $('#news_edit .banner-img .file-drop-zone-title ').html('<div><img src="'+ IMG_SERVER + result.data.banner +'"/></div>');
-            $('#news_edit #postPos').val(result.data.postPos);
-
+            $('#news_edit .news-img .file-drop-zone-title ').html('<div><img  style="width: 100%;height: 100%" src="'+ IMG_SERVER + result.data.thumbnail +'"/><input type="hidden" name="origin-news-img" value="'+ result.data.thumbnail +'"/></div>');
+            $('#news_edit .banner-img .file-drop-zone-title ').html('<div><img  style="width: 100%;height: 100%" src="'+ IMG_SERVER + result.data.banner +'"/><input type="hidden" name="origin-news-banner" value="'+ result.data.banner +'"/></div>');
+            $('#news_edit #postPosEdit').val(result.data.postPos);
+            $('#news_edit #isRecmdEdit').val(result.data.isRecmd);
+            $('#news_edit #isRecmdIndexEdit').val(result.data.isRecmdIndex);
+            $('#news_edit #stateEdit').val(result.data.state);
         }
     });
 
+}
+
+/**
+ * 删除前
+ * @param e
+ */
+function newsDelPre(e){
+    var nid = $(e).attr('nid');
+    $('#news_del input[name="nid"]').val(nid);
+}
+
+function newsDel(){
+    var nid = $('#news_del input[name="nid"]').val();
+
+    $.ajax({
+        url: SITE_URL + "news/newsDel",
+        type: "post",
+        data:{nid:nid},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
 }

@@ -12,7 +12,7 @@
                 <h4 class="modal-title" id="news-edit-title">编辑资讯</h4>
             </div>
             <div class="modal-body">
-                <form name="newsAdd" id="newsAdd">
+                <form name="newsAdd" id="newsEdit">
                     <div class="row">
                         <div class="col-sm-8">
                             <div class="input-group">
@@ -57,35 +57,51 @@
                             2=>'医生端'
                         );?>
                         <div class="col-sm-4">
-                            <select class="form-control" name="postPos" id="postPos">
+                            <select class="form-control" name="postPos" id="postPosEdit">
                                 <?php foreach($position as $key=>$value):?>
                                     <option value="<?php echo $key;?>"><?php echo $value;?></option>
                                 <?php endforeach;?>
                             </select>
                         </div>
+
+                        <?php $isRecmd = array(
+                            -1 => '是否推荐',
+                             0 => '否',
+                             1 => '是'
+                        );?>
                         <div class="col-sm-4">
-                            <select class="form-control" name="isRecmd" id="isRecmd">
-                                <option value="-1">是否推荐</option>
-                                <option value="0">否</option>
-                                <option value="1">是</option>
+                            <select class="form-control" name="isRecmd" id="isRecmdEdit">
+                                <?php foreach($isRecmd as $key=>$value):?>
+                                    <option value="<?php echo $key;?>"><?php echo $value;?></option>
+                                <?php endforeach;?>
                             </select>
                         </div>
                     </div>
-
+                    <?php $isRecmdIndex = array(
+                        -1 => '是否推荐至首页',
+                        0 => '否',
+                        1 => '是'
+                    );
+                            $state = array(
+                                -1 => '状态',
+                                0  => '未发布',
+                                1  => '发布',
+                            );
+                    ?>
                     <div class="row">
                         <div class="col-sm-6">
-                            <select class="form-control" name="isRecmdIndex" id="isRecmdIndex">
-                                <option value="-1">是否推荐至首页</option>
-                                <option value="0">否</option>
-                                <option value="1">是</option>
+                            <select class="form-control" name="isRecmdIndex" id="isRecmdIndexEdit">
+                                <?php foreach($isRecmdIndex as $key=>$value):?>
+                                    <option value="<?php echo $key;?>"><?php echo $value;?></option>
+                                <?php endforeach;?>
                             </select>
                         </div>
 
                         <div class="col-sm-6">
-                            <select class="form-control" name="state" id="state">
-                                <option value="-1">状态</option>
-                                <option value="0">未发布</option>
-                                <option value="1">发布</option>
+                            <select class="form-control" name="state" id="stateEdit">
+                                <?php foreach($state as $key=>$value):?>
+                                    <option value="<?php echo $key;?>"><?php echo $value;?></option>
+                                <?php endforeach;?>
                             </select>
                         </div>
                     </div>

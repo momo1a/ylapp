@@ -74,6 +74,17 @@ class News_model extends MY_Model
         return $this->db->insert_id();
     }
 
+    /**
+     * 编辑资讯
+     * @param $nid
+     * @param $data
+     */
+    public function editNews($nid,$data){
+        $where = array('nid'=>$nid);
+        $res = $this->update($where,$data);
+        return $res;
+    }
+
 
     /**
      * 获取首页banner图
@@ -94,6 +105,18 @@ class News_model extends MY_Model
         $where = array('nid'=>$nid);
         $data = array('isRecmdIndex'=>0);
         $res = $this->update($where,$data);
+        return $res;
+    }
+
+
+    /**
+     * 删除资讯
+     * @param $nid
+     * @return bool
+     */
+    public function delNews($nid){
+        $where = array('nid'=>$nid);
+        $res = $this->delete_where($where);
         return $res;
     }
 

@@ -62,43 +62,73 @@ class News extends MY_Controller
 
     public function newsAdd(){
         $nid = intval($this->input->get_post('nid'));
-        if($nid !== 0) {  //  编辑
-            echo 'test';
-        }else{    //  添加
-                $title = trim($this->input->get_post('title'));
-                $author = trim($this->input->get_post('author'));
-                $content = $this->input->get_post('content');
-                $tag = trim($this->input->get_post('tag'));
-                $postPos = intval($this->input->get_post('postPos'));
-                $isRecmd = intval($this->input->get_post('isRecmd'));
-                $isRecmdIndex = intval($this->input->get_post('isRecmdIndex'));
-                $state = intval($this->input->get_post('state'));
-                $thumbnail_relative_path = $this->upload->save('news', $_FILES['thumbnail']['tmp_name']);
-                $banner_relative_path = $this->upload->save('news', $_FILES['banner']['tmp_name']);
-                $data = array(
-                    'cid' => rand(1, 2),
-                    'title' => $title,
-                    'content' => $content,
-                    'author' => $author,
-                    'thumbnail' => $thumbnail_relative_path,
-                    'banner' => $banner_relative_path,
-                    'tag' => $tag,
-                    'postPos' => $postPos,
-                    'isRecmd' => $isRecmd,
-                    'isRecmdIndex' => $isRecmdIndex,
-                    'createTime' => time(),
-                    'state' => $state
-                );
-
-                $res = $this->news->addNews($data);
-
-                if ($res) {
-                    $this->ajax_json(0, '添加成功');
-                } else {
-                    $this->ajax_json(-1, '系统错误');
-                }
-            }
+        $title = trim($this->input->get_post('title'));
+        $author = trim($this->input->get_post('author'));
+        $content = $this->input->get_post('content');
+        $tag = trim($this->input->get_post('tag'));
+        $postPos = intval($this->input->get_post('postPos'));
+        $isRecmd = intval($this->input->get_post('isRecmd'));
+        $isRecmdIndex = intval($this->input->get_post('isRecmdIndex'));
+        $state = intval($this->input->get_post('state'));
+        $thumbnail_relative_path = '';
+        if($_FILES['thumbnail']['tmp_name'] != '') {
+            $thumbnail_relative_path = $this->upload->save('news', $_FILES['thumbnail']['tmp_name']);
         }
+        $banner_relative_path = '';
+        if($_FILES['banner']['tmp_name'] != '') {
+            $banner_relative_path = $this->upload->save('news', $_FILES['banner']['tmp_name']);
+        }
+        if($nid == 0) {  // 添加资讯
+            $data = array(
+                'cid' => rand(1, 2),
+                'title' => $title,
+                'content' => $content,
+                'author' => $author,
+                'thumbnail' => $thumbnail_relative_path,
+                'banner' => $banner_relative_path,
+                'tag' => $tag,
+                'postPos' => $postPos,
+                'isRecmd' => $isRecmd,
+                'isRecmdIndex' => $isRecmdIndex,
+                'createTime' => time(),
+                'state' => $state
+            );
+            $res = $this->news->addNews($data);
+        }else{   // 编辑资讯
+            $data = array(
+                'title' => $title,
+                'content' => $content,
+                'author' => $author,
+                'tag' => $tag,
+                'postPos' => $postPos,
+                'isRecmd' => $isRecmd,
+                'isRecmdIndex' => $isRecmdIndex,
+                'updateTime' => time(),
+                'state' => $state
+            );
+            if($banner_relative_path != ''){
+                $data['banner'] = $banner_relative_path;
+                // 删除原来图片
+                @unlink(config_item('upload_image_save_path').$this->input->post('origin-news-banner'));
+            }
+
+            if($thumbnail_relative_path != ''){
+                $data['thumbnail'] = $thumbnail_relative_path;
+                // 删除原来图片
+                @unlink(config_item('upload_image_save_path').$this->input->post('origin-news-img'));
+
+            }
+
+            $res = $this->news->editNews($nid,$data);
+        }
+
+        if ($res) {
+            $this->ajax_json(0, '操作成功');
+        } else {
+            $this->ajax_json(-1, '系统错误');
+        }
+    }
+
 
     /**
      * 获取资讯详情
@@ -107,5 +137,34 @@ class News extends MY_Controller
         $nid = intval($this->input->get_post('nid'));
         $res = $this->news->getNewsDetail($nid);
         $this->ajax_json(0,'请求成功',$res);
+    }
+
+
+
+    public function newsDel(){
+        $nid = intval($this->input->get_post('nid'));
+        $res = $this->news->delNews($nid);
+        if ($res) {
+            $this->ajax_json(0, '操作成功');
+        } else {
+            $this->ajax_json(-1, '系统错误');
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 评论管理
+     */
+    public function commentList(){
+        $this->load->view('news/comment');
     }
 }

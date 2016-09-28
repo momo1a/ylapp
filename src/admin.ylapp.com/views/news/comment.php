@@ -14,9 +14,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">资讯管理</h3>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="btn btn-primary"><a href="<?php echo site_url()?>news/commentList" style="color: #000000">评论管理</a></span>
+                        <h3 class="box-title">评论管理</h3>
                         <a data-target="#news_add" data-toggle="modal" onclick="newsAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加资讯</h3></a>
                     </div>
                     <div class="bg-gray color-palette">
@@ -109,7 +107,7 @@
                                         <th>
                                             <a data-target="#news_edit" data-toggle="modal"  nid="<?php echo $value['nid'];?>" onclick="editNews(this);return false;" title="编辑资讯"><span class="glyphicon glyphicon-pencil"></span></a>
                                             &nbsp;&nbsp;<a data-target="#news_del" data-toggle="modal"  nid="<?php echo $value['nid'];?>" onclick="newsDelPre(this);return false;" title="删除资讯"><span class="glyphicon glyphicon-trash"></span></a>
-                                            <!--&nbsp;&nbsp;<a href="#" nid="<?php /*echo $value['nid'];*/?>"   title="评论管理"><span class="glyphicon glyphicon-list"></span></a>-->
+                                            &nbsp;&nbsp;<a href="#" nid="<?php echo $value['nid'];?>"   title="评论管理"><span class="glyphicon glyphicon-list"></span></a>
                                         </th>
                                     </tr>
                                 <?php }}?>

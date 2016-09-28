@@ -1,3 +1,7 @@
+/*$(function(){
+    $('.modal-primary').on('hidden.bs.modal', function () {
+        $('.modal-primary').text('');
+});*/
 function initFileInput(ctrlName, uploadUrl,maxImageHeight,maxImageWidth) {
     var control = $('#' + ctrlName);
 

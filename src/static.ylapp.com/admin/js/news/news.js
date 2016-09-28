@@ -1,8 +1,12 @@
 $(function(){
     $("#news_add .modal-dialog").css('width','800');
+    $("#news_edit .modal-dialog").css('width','800');
     CKEDITOR.replace('content');
+    CKEDITOR.replace('contentEdit');
     initFileInput("news-img", "/news/newsAdd",350,350);
     initFileInput("banner", "/news/newsAdd",350,350);
+    initFileInput("banner-edit", "/news/newsAdd",350,350);
+    initFileInput("news-img-edit", "/news/newsAdd",350,350);
 });
 
 function newsSave(){
@@ -67,7 +71,8 @@ function newsAddPre(){
  */
 function editNews(e){
     var nid = $(e).attr('nid');
-    $('#news_add input[name="nid"]').val(nid);
+    $('#news_edit input[name="nid"]').val(nid);
+
     $.ajax({
         url: SITE_URL + "news/getNewsDetail",
         type: "post",
@@ -75,6 +80,13 @@ function editNews(e){
         dataType: 'json',
         success: function (result) {
             console.log(result);
+            $('#news_edit input[name="title"]').val(result.data.title);
+            $('#news_edit input[name="author"]').val(result.data.author);
+            CKEDITOR.instances.contentEdit.setData(result.data.content);
+            $('#news_edit .news-img .file-drop-zone-title ').html('<div><img src="'+ IMG_SERVER + result.data.thumbnail +'"/></div>');
+            $('#news_edit .banner-img .file-drop-zone-title ').html('<div><img src="'+ IMG_SERVER + result.data.banner +'"/></div>');
+            $('#news_edit #postPos').val(result.data.postPos);
+
         }
     });
 

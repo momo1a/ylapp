@@ -2,6 +2,7 @@
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
 <?php $this->load->view('news/news_add');?>
+<?php $this->load->view('news/news_edit');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -69,7 +70,7 @@
                                                     echo '医生端';
                                                     break;
                                                 default:
-                                                    echo '未知';
+                                                    echo '全部';
                                             }?></th>
                                         <th><?php switch(intval($value['isRecmd'])){
                                                 case 0 :
@@ -103,7 +104,7 @@
                                                     echo '未知';
                                             }?></th>
                                         <th>
-                                            <a data-target="#news_add" data-toggle="modal"  nid="<?php echo $value['nid'];?>" onclick="editNews(this);return false;" title="编辑资讯"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            <a data-target="#news_edit" data-toggle="modal"  nid="<?php echo $value['nid'];?>" onclick="editNews(this);return false;" title="编辑资讯"><span class="glyphicon glyphicon-pencil"></span></a>
                                             &nbsp;&nbsp;<a data-target="#hospital_del" data-toggle="modal"  hid="<?php echo $value['hid'];?>" onclick="hospitalDelPre(this);return false;" title="删除医院"><span class="glyphicon glyphicon-trash"></span></a>
                                         </th>
                                     </tr>

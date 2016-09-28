@@ -191,6 +191,14 @@ class Api extends MY_Controller
     public function sendIdentifyCode(){
         $timeLen = 60;
         $mobile = trim($this->input->post('mobile'));   //手机号
+        $flag = intval($this->input->get_post('flag')); //忘记密码发送验证码判断标识
+        if($flag === 1){
+            $this->load->model('user_model','user');
+            $checkPhone = $this->user->getRecord('phone',$mobile);
+            if(!$checkPhone) {
+                $this->response($this->responseDataFormat(3, '手机号没有注册', array()));
+            }
+        }
         if(!is_numeric($mobile)){
             $this->response($this->responseDataFormat(2,'手机号码非法',array()));
         }

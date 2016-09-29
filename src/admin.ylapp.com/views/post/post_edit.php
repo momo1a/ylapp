@@ -20,12 +20,13 @@
                 <div class="row"><span class="left"> 发帖人：</span><span id="postUname" class="right"></span></div>
                 <div class="row"><span class="left">帖子内容：</span><span id="postContent" class="right"></span></div>
                 <div class="row" id="postImg"></div>
-                <div class="row"><input id="clickCount" name="clickCount"/></div>
+                <div class="row"><span class="left">更改点赞数量：</span><span><input id="clickCount"  type="text" name="clickCount" style="color: #000000;border: #808080"/></span></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline " data-dismiss="modal">取消</button>
                 <button type="button" onclick="postSave();return false;" class="btn btn-outline pull-left">确定</button>
             </div>
+            <input type="hidden" name="pid"/>
         </div>
         <!-- /.modal-content -->
     </div>

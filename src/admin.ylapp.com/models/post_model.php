@@ -80,15 +80,15 @@ class Post_model extends MY_Model
     }
 
     /**
-     * 我的发帖列表
-     * @param $uid
-     * @param $select
+     * 设置
+     * @param $pid  帖子id
+     * @param $field  字段
+     * @param $value  值
      */
-    public function myPostList($uid,$select){
-        $this->where(array('postUid'=>$uid));
-        $this->select($select);
-        $this->order_by(array('id'=>'desc'));
-        $res = $this->find_all();
+    public function postSetting($pid,$field,$value){
+        $where = array('id'=>$pid);
+        $data = array($field=>$value);
+        $res = $this->update($where,$data);
         return $res;
     }
 

@@ -43,6 +43,7 @@
                                 <th>发布时间</th>
                                 <th>发帖人</th>
                                 <th>状态</th>
+                                <th>审核</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
@@ -67,6 +68,23 @@
                                                 default:
                                                     echo '未知';
                                             }?></th>
+                                        <th>
+                                            <?php
+                                            switch(intval($value['state'])){
+                                                case 0 :
+                                                    echo '<a pid="'.$value['id'].'" onclick="postPass(this);return false;">通过</a>&nbsp;&nbsp;&nbsp;<a pid="'.$value['id'].'" onclick="postNotPass(this);return false;">不通过</a>';
+                                                    break;
+                                                case 1 :
+                                                    echo '<a pid="'.$value['id'].'" onclick="postNotPass(this);return false;">不通过</a>';
+                                                    break;
+                                                case 2 :
+                                                    echo '<a pid="'.$value['id'].'" onclick="postPass(this);return false;">通过</a>';
+                                                    break;
+                                                default :
+                                                    echo '异常';
+                                            }?>
+                                        </th>
+
                                         <th>
                                             <a data-target="#post_edit" data-toggle="modal"  pid="<?php echo $value['id'];?>" onclick="editPostPre(this);return false;" title="编辑帖子"><span class="glyphicon glyphicon-pencil"></span></a>
                                             &nbsp;&nbsp;<a data-target="#news_del" data-toggle="modal"  nid="<?php echo $value['nid'];?>" onclick="newsPostPre(this);return false;" title="删除帖子"><span class="glyphicon glyphicon-trash"></span></a>

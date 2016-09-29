@@ -62,4 +62,18 @@ class Post extends MY_Controller
         }
         $this->ajax_json(0,'请求成功',$res);
     }
+
+    /**
+     * 设置点赞数量
+     */
+    public function postSettingClick(){
+        $pid = intval($this->input->get_post('pid'));
+        $clickCount = intval($this->input->get_post('clickCount'));
+        $res = $this->post->postSetting($pid,'clickLikeCount',$clickCount);
+        if($res){
+            $this->ajax_json(0,'操作成功');
+        }else{
+            $this->ajax_json(-1,'系统错误');
+        }
+    }
 }

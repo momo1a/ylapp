@@ -30,7 +30,7 @@ class Post extends MY_Controller
         if(!empty($_FILES)){
             foreach($_FILES as $k=>$val){
                 if($val['name'] != '') {
-                    $imgFile = $this->upload_image->save('certificate', $val['tmp_name']);
+                    $imgFile = $this->upload_image->save('post', $val['tmp_name']);
                     $imgArr[$k]=$imgFile;
                 }
             }

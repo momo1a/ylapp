@@ -49,7 +49,8 @@ class User_center extends MY_Controller
             $sex = 1;
         }
         $isExists = $this->user->getRecord('nickname',$nickname);
-        if($isExists){
+        $currentNickname = $this->user->getUserByUid(self::$currentUid);
+        if($isExists && $currentNickname['nickname'] != $nickname){
             $this->response($this->responseDataFormat(1,'昵称已经存在',array()));
         }
         //$res = $this->user->saveUserDetail(self::$currentUid,$data);

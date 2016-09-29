@@ -212,7 +212,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/post/postAdd" method="post" enctype="multipart/form-data">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="opGLJ4fd419c7Lg60S3XF3gSSfFY4Hiy6aUAt98aSuAArKTFIUIo7zrex8HpDAoS3PjFeDSg"/>
     title<input type="text" name="title"/>
     content<input type="text" name="content"/>
     isAnonymous<input type="checkbox" name="isAnonymous" value="1"/>

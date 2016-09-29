@@ -1,3 +1,4 @@
+<!--  此视图废弃 -->
 <?php $this->load->view('head');?>
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
@@ -45,12 +46,12 @@
                             <thead>
                             <tr>
                                 <th>编号</th>
-                                <th>标题</th>
-                                <th>发布时间</th>
-                                <th>标签</th>
+                                <th>资讯主题</th>
+                                <th>评论内容</th>
+                                <th>评论时间</th>
+                                <th>评论人</th>
+                                <th>分类</th>
                                 <th>发布位置</th>
-                                <th>是否推荐</th>
-                                <th>是否推荐至首页</th>
                                 <th>状态</th>
                                 <th>操作</th>
                             </tr>

@@ -9,6 +9,7 @@ CREATE TABLE `YL_post` (
   `img` varchar(500) not null default '' comment '图片',
   `postTime` INT(11) unsigned NOT NULL DEFAULT '0' COMMENT '发布时间',
   `isAnonymous` tinyint(3) unsigned not null default '0' comment '是否匿名发表0否,1是',
+  `clickLikeCount` INT(11) unsigned not null default '0' comment '点赞数量',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0待审核：1通过，2未通过',
   PRIMARY KEY (`id`),
   KEY `state` (`state`) USING BTREE,

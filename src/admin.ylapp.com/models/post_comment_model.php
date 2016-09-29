@@ -17,6 +17,75 @@ class  Post_comment_model extends MY_Model
 
 
     /**
+     * 评论列表
+     * @param string $keyword
+     * @param int $state
+     * @param int $limit
+     * @param int $offset
+     */
+    public function commentList($keyword = '',$state = -1,$limit=10,$offset=0){
+        if($keyword != ''){
+            $this->like(array('recmdContent'=>$keyword));
+        }
+
+        if($state != -1){
+            $this->where(array('YL_post_comment.state'=>$state));
+        }
+        $this->select('YL_post_comment.id,pu.nickname as postUser,p.postTitle,YL_post_comment.recmdContent,from_unixtime(YL_post_comment.recmdTime) as recmdTime,cu.nickname as cmdUser,YL_post_comment.state');
+        $this->join('YL_post AS p','p.id=YL_post_comment.postId','left');
+        $this->join('YL_user AS pu','pu.uid=p.postUid','left');
+        $this->join('YL_user AS cu','cu.uid=YL_post_comment.recmdUid','left');
+        $this->offset($offset);
+        $this->limit($limit);
+        $this->order_by(array('recmdTime'=>'desc'));
+        $res = $this->find_all();
+        return $res;
+    }
+
+    /**
+     * 评论数
+     * @param string $keyword
+     * @param int $state
+     */
+    public function commentCount($keyword = '',$state = -1){
+        if($keyword != ''){
+            $this->like(array('recmdContent'=>$keyword));
+        }
+
+        if($state != -1){
+            $this->where(array('state'=>$state));
+        }
+        return $this->count_all();
+    }
+
+    /**
+     * 设置
+     * @param $cid  帖子id
+     * @param $field  字段
+     * @param $value  值
+     */
+    public function commentSetting($cid,$field,$value){
+        $where = array('id'=>$cid);
+        $data = array($field=>$value);
+        $res = $this->update($where,$data);
+        return $res;
+    }
+
+
+
+    /**
+     * 删除帖子
+     * @param $pid
+     */
+    public function commentDel($cid){
+        $where = array('id'=>$cid);
+        $res = $this->delete_where($where);
+        return $res;
+    }
+
+
+
+    /**
      * 根据帖子id获取评论
      * @param $postId
      */

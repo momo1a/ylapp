@@ -53,5 +53,105 @@ function postSave(){
         }
     });
 }
+/**
+ * 修改状态
+ * @param e
+ * @param state
+ */
+function postPass(e,state){
+    var pid = $(e).attr('pid');
+    $.ajax({
+        url: SITE_URL + "post/postStateSetting",
+        type: "post",
+        data:{state:state,pid:pid},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+}
 
 
+function commentPass(e,state){
+    var cid = $(e).attr('cid');
+    $.ajax({
+        url: SITE_URL + "post/commentStateSetting",
+        type: "post",
+        data:{state:state,cid:cid},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+}
+
+/**
+ * post删除前
+ * @param e
+ */
+function postDelPre(e){
+    var pid = $(e).attr('pid');
+    $('#post_del input[name="pid"]').val(pid);
+}
+
+/**
+ * comment删除前
+ * @param e
+ */
+function commentDelPre(e){
+    var cid = $(e).attr('cid');
+    $('#comment_del input[name="cid"]').val(cid);
+}
+
+/**
+ * post删除
+ */
+function postDel(){
+    var  pid = $('#post_del input[name="pid"]').val();
+    $.ajax({
+        url: SITE_URL + "post/postDel",
+        type: "post",
+        data:{pid:pid},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+}
+
+
+/**
+ * post删除
+ */
+function commentDel(){
+    var  cid = $('#comment_del input[name="cid"]').val();
+    $.ajax({
+        url: SITE_URL + "post/commentDel",
+        type: "post",
+        data:{cid:cid},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+}

@@ -1,8 +1,7 @@
 <?php $this->load->view('head');?>
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
-<?php $this->load->view('post/post_edit');?>
-<?php $this->load->view('post/post_del');?>
+<?php $this->load->view('post/comment_del');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -13,16 +12,16 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">交流圈管理</h3>
+                        <h3 class="box-title">交流圈评论管理</h3>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="btn btn-primary"><a href="<?php echo site_url()?>post/commentList" style="color: #000000">评论管理</a></span>
-                       <!-- <a data-target="#news_add" data-toggle="modal" onclick="newsAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加资讯</h3></a>-->
+                        <span class="btn btn-primary"><a href="<?php echo site_url()?>post/index" style="color: #000000">返回帖子列表</a></span>
+                        <!-- <a data-target="#news_add" data-toggle="modal" onclick="newsAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加资讯</h3></a>-->
                     </div>
                     <div class="bg-gray color-palette">
                         <form method="get" action="">
                             <div class="input-group">
-                                <label for="title">帖子标题：</label>
-                                <input type="search" name="keyword" id="title"   placeholder="请输入帖子标题关键字" value="<?php echo $get['keyword'];?>" style="margin-right: 20px" size="30">
+                                <label for="title">评论内容：</label>
+                                <input type="search" name="keyword" id="title"   placeholder="请输入评论内容关键字" value="<?php echo $get['keyword'];?>" style="margin-right: 20px" size="30">
                                 <label for="state">状态：</label>
                                 <select  id="state" name="state" style="height: 25px;margin-right: 20px">
                                     <?php foreach($state as $key=>$value):?>
@@ -39,9 +38,11 @@
                             <thead>
                             <tr>
                                 <th>编号</th>
-                                <th>帖子标题</th>
-                                <th>发布时间</th>
                                 <th>发帖人</th>
+                                <th>帖子</th>
+                                <th>评论内容</th>
+                                <th>评论时间</th>
+                                <th>评论人</th>
                                 <th>状态</th>
                                 <th>审核</th>
                                 <th>操作</th>
@@ -52,9 +53,11 @@
                                 <?php foreach($list as $value){?>
                                     <tr>
                                         <th><?php echo $value['id'];?></th>
-                                        <th><?php echo $value['postTitle'];?></th>
-                                        <th><?php echo date('Y-m-d H:i:s',$value['postTime']);?></th>
-                                        <th><?php echo $value['nickname'];?></th>
+                                        <th><?php echo $value['postUser'];?></th>
+                                        <th><?php echo  $value['postTitle'];?></th>
+                                        <th><?php echo $value['recmdContent'];?></th>
+                                        <th><?php echo $value['recmdTime'];?></th>
+                                        <th><?php echo $value['cmdUser'];?></th>
                                         <th><?php switch(intval($value['state'])){
                                                 case 0:
                                                     echo '待审核';
@@ -72,13 +75,13 @@
                                             <?php
                                             switch(intval($value['state'])){
                                                 case 0 :
-                                                    echo '<a pid="'.$value['id'].'" onclick="postPass(this,1);return false;">通过</a>&nbsp;&nbsp;&nbsp;<a pid="'.$value['id'].'" onclick="postPass(this,2);return false;">不通过</a>';
+                                                    echo '<a cid="'.$value['id'].'" onclick="commentPass(this,1);return false;">通过</a>&nbsp;&nbsp;&nbsp;<a cid="'.$value['id'].'" onclick="commentPass(this,2);return false;">不通过</a>';
                                                     break;
                                                 case 1 :
-                                                    echo '<a pid="'.$value['id'].'" onclick="postPass(this,2);return false;">不通过</a>';
+                                                    echo '<a cid="'.$value['id'].'" onclick="commentPass(this,2);return false;">不通过</a>';
                                                     break;
                                                 case 2 :
-                                                    echo '<a pid="'.$value['id'].'" onclick="postPass(this,1);return false;">通过</a>';
+                                                    echo '<a cid="'.$value['id'].'" onclick="commentPass(this,1);return false;">通过</a>';
                                                     break;
                                                 default :
                                                     echo '异常';
@@ -86,8 +89,8 @@
                                         </th>
 
                                         <th>
-                                            <a data-target="#post_edit" data-toggle="modal"  pid="<?php echo $value['id'];?>" onclick="editPostPre(this);return false;" title="编辑帖子"><span class="glyphicon glyphicon-pencil"></span></a>
-                                            &nbsp;&nbsp;<a data-target="#post_del" data-toggle="modal"  pid="<?php echo $value['id'];?>" onclick="postDelPre(this);return false;" title="删除帖子"><span class="glyphicon glyphicon-trash"></span></a>
+                                            <!--<a data-target="#post_edit" data-toggle="modal"  pid="<?php /*echo $value['id'];*/?>" onclick="editPostPre(this);return false;" title="编辑帖子"><span class="glyphicon glyphicon-pencil"></span></a>-->
+                                            &nbsp;&nbsp;<a data-target="#comment_del" data-toggle="modal"  cid="<?php echo $value['id'];?>" onclick="commentDelPre(this);return false;" title="删除评论"><span class="glyphicon glyphicon-trash"></span></a>
                                             <!--&nbsp;&nbsp;<a href="#" nid="<?php /*echo $value['nid'];*/?>"   title="评论管理"><span class="glyphicon glyphicon-list"></span></a>-->
                                         </th>
                                     </tr>

@@ -92,4 +92,14 @@ class Post_model extends MY_Model
         return $res;
     }
 
+    /**
+     * 删除帖子
+     * @param $pid
+     */
+    public function postDel($pid){
+        $where = array('id'=>$pid);
+        $res = $this->delete_where($where);
+        return $res;
+    }
+
 }

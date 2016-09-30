@@ -23,11 +23,11 @@
             <div class="col-xs-12">
                 <div class="box">
                     <form method="get" action="" id="cashForm">
-                    <div class="box-header">
-                        <h3 class="box-title">提现管理</h3>
-                        <button  href="javascript:void(0);" onclick="$('#doexport').val('yes')" style="float: right" class="btn primary-btn"><span class="glyphicon glyphicon-save"></span>导出excel</button>
-                    </div>
-                    <div class="bg-gray color-palette">
+                        <div class="box-header">
+                            <h3 class="box-title">提现管理</h3>
+                            <button  href="javascript:void(0);" onclick="$('#doexport').val('yes')" style="float: right" class="btn primary-btn"><span class="glyphicon glyphicon-save"></span>导出excel</button>
+                        </div>
+                        <div class="bg-gray color-palette">
                             <input type="hidden" name="doexport"  id="doexport" value="no"/>
                             <div class="input-group">
                                 <label for="keyword">姓名：</label>
@@ -47,7 +47,7 @@
                                 </select>&nbsp;&nbsp;&nbsp;
                                 <input type="submit" onclick="$('#doexport').val('no');" id="submit" value="搜索">
                             </div>
-                    </div>
+                        </div>
                     </form>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -107,7 +107,7 @@
                                                     echo '<a status="1" tid="'.$value['id'].'" onclick="setCashStat(this);return false;" >确认</a>&nbsp;&nbsp;<a status="2" tid="'.$value['id'].'" onclick="setCashStat(this);return false;" >驳回</a>';
                                                     break;
                                                 case 2:
-                                                   /* echo '<a status="1" tid="'.$value['id'].'" onclick="setCashStat(this);return false;" >确认</a>';*/
+                                                    /* echo '<a status="1" tid="'.$value['id'].'" onclick="setCashStat(this);return false;" >确认</a>';*/
                                                     break;
                                                 case 1:
                                                     /*echo '<a status="2" tid="'.$value['id'].'" onclick="setCashStat(this);return false;" >驳回</a>';*/

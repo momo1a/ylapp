@@ -33,3 +33,26 @@ function setCashStat(e){
         }
     });
 }
+
+/**
+ * 导出数据
+ */
+function exportData(){
+    var formData = new FormData(document.getElementById("cashForm"));
+    $.ajax({
+        url: SITE_URL + "cash/exportData",
+        type: "post",
+        data:formData,
+        contentType:false,
+        processData:false,
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+}

@@ -62,6 +62,9 @@ class Cash extends MY_Controller
         $data['userType'] = $this->_userType;
         $data['state'] = $this->_status;
         $data['get'] = $_GET;
+        if($this->input->get_post('doexport') == 'yes'){
+            $this->exportData();
+        }
         $this->load->view('cash/index',$data);
     }
 
@@ -78,6 +81,48 @@ class Cash extends MY_Controller
         }else{
             $this->ajax_json(1,'系统错误');
         }
+    }
+
+
+    /**
+     * 导出数据
+     */
+    protected function exportData(){
+        $filename = '提现数据('.date("Y-m-d-H:i:s", time()).').xls';
+        $keyword = $this->input->get_post('keyword');
+        $userType = intval($this->input->get_post('userType'));
+        $state = intval($this->input->get_post('state'));
+        /*默认可以导出最新的2000条数据*/
+        $data = $this->cash->cashList($keyword,$userType,$state,2000);
+        $states = array('0' => '待处理' , '1' => '通过' ,'2'=>'驳回');
+        $uType = array('1'=>'用户端','2'=>'医生端');
+        $header = array(
+            '编号',
+            '姓名',
+            '身份证号',
+            '提现银行',
+            '提现账户',
+            '开户地区',
+            '提现金额',
+            '申请时间',
+            '类型',
+            '当前状态',
+        );
+        $rows = array();
+        foreach ($data as $k=>$v){
+            $rows[$k]['id'] = $v['id'];
+            $rows[$k]['realName'] = $v['realName'];
+            $rows[$k]['identity'] = strval($v['identity']);
+            $rows[$k]['bank'] = $v['bank'];
+            $rows[$k]['cardNum'] = strval($v['cardNum']);
+            $rows[$k]['address'] = $v['address'];
+            $rows[$k]['amount'] = $v['amount'];
+            $rows[$k]['dateline'] = date('Y-m-d H:i:s',$v['dateline']);
+            $rows[$k]['userType'] = $uType[$v['userType']];
+            $rows[$k]['status'] = $states[$v['status']];
+        }
+        array_unshift($rows, $header);
+        $this->data_export($rows, $filename);
     }
 
 }

@@ -39,6 +39,46 @@ class Order_model extends MY_Model
 
 
     /**
+     * 订单列表
+     * @param int $limit
+     * @param int $offset
+     * @param string $keyword
+     * @param int $state
+     * @param int $type
+     */
+    public function orderList($limit=10,$offset=0,$keyword='',$state=0,$type=0){
+        if($keyword != ''){
+            $this->like(array('buyerName'=>$keyword));
+        }
+        if($state != 0){
+            $this->where(array('status'=>$state));
+        }
+        if($type != 0){
+            $this->where(array('type'=>$type));
+        }
+        $this->limit($limit);
+        $this->offset($offset);
+        $res = $this->find_all();
+        $this->order_by(array('dateline'=>'desc'));
+        return $res;
+    }
+
+
+    public function orderCount($keyword='',$state=0,$type=0){
+        if($keyword != ''){
+            $this->like(array('buyerName'=>$keyword));
+        }
+        if($state != 0){
+            $this->where(array('status'=>$state));
+        }
+        if($type != 0){
+            $this->where(array('type'=>$type));
+        }
+
+        return $this->count_all();
+    }
+
+    /**
      * 获取用户订单
      * @param $uid
      * @param $select

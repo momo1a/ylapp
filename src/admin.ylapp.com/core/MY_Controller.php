@@ -149,6 +149,30 @@ class MY_Controller extends CI_Controller
     }
 
 
+
+    /**
+     * 数据导出下载
+     * @param array $data 数据
+     * @param string $title 标题
+     * @param string $filename 下载文件名
+     */
+    protected function data_export($data, $filename)
+    {
+        $this->load->library('ExportCSV');
+        $this->exportcsv->export($data,$filename);
+        exit();
+
+        //把数据导出从xls格式修改为csv格式,update by 关小龙  2015-11-30 16:54:20 (备注：可通过注释代码块来切换不同格式的导出)
+        /*
+        $this->load->library('Excel_Xml', '', 'excel');
+        $this->excel->addWorksheet($title, $data);
+        // $this->excel->sendWorkbook($filename);
+        $this->excel->download($filename);
+        exit();
+        */
+    }
+
+
 }
 // End of MY_Controller class
 

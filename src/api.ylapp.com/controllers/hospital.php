@@ -23,21 +23,16 @@ class Hospital extends MY_Controller
         $limit = $limit == 0 ? 10 : $limit;
         $keyword = trim(addslashes($this->input->get_post('keyword')));
         $res = $this->hospital->getHospitalList($hid,$keyword,'hid,img,name AS hospitalName,address',$limit,$offset);
-        if($res){
-            $this->response($this->responseDataFormat(0,'请求成功',array('hospitals'=>$res,'imgServer'=>$this->getImgServer())));
-        }else{
-            $this->response($this->responseDataFormat(-1,'暂无数据',array()));
-        }
+        $this->response($this->responseDataFormat(0,'请求成功',array('hospitals'=>$res,'imgServer'=>$this->getImgServer())));
+
     }
 
 
     public function getAllHospital(){
         $res = $this->hospital->getHospitalList('','','hid,name AS hospitalName');
-        if($res){
-            $this->response($this->responseDataFormat(0,'请求成功',array($res)));
-        }else{
-            $this->response($this->responseDataFormat(-1,'暂无数据',array()));
-        }
+
+        $this->response($this->responseDataFormat(0,'请求成功',array($res)));
+
     }
 
     public function getAllOffices(){

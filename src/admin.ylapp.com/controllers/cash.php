@@ -109,17 +109,19 @@ class Cash extends MY_Controller
             '当前状态',
         );
         $rows = array();
-        foreach ($data as $k=>$v){
-            $rows[$k]['id'] = $v['id'];
-            $rows[$k]['realName'] = $v['realName'];
-            $rows[$k]['identity'] = strval($v['identity']);
-            $rows[$k]['bank'] = $v['bank'];
-            $rows[$k]['cardNum'] = strval($v['cardNum']);
-            $rows[$k]['address'] = $v['address'];
-            $rows[$k]['amount'] = $v['amount'];
-            $rows[$k]['dateline'] = date('Y-m-d H:i:s',$v['dateline']);
-            $rows[$k]['userType'] = $uType[$v['userType']];
-            $rows[$k]['status'] = $states[$v['status']];
+        if(!empty($data)) {
+            foreach ($data as $k => $v) {
+                $rows[$k]['id'] = $v['id'];
+                $rows[$k]['realName'] = $v['realName'];
+                $rows[$k]['identity'] = strval($v['identity']);
+                $rows[$k]['bank'] = $v['bank'];
+                $rows[$k]['cardNum'] = strval($v['cardNum']);
+                $rows[$k]['address'] = $v['address'];
+                $rows[$k]['amount'] = $v['amount'];
+                $rows[$k]['dateline'] = date('Y-m-d H:i:s', $v['dateline']);
+                $rows[$k]['userType'] = $uType[$v['userType']];
+                $rows[$k]['status'] = $states[$v['status']];
+            }
         }
         array_unshift($rows, $header);
         $this->data_export($rows, $filename);

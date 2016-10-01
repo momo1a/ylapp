@@ -46,16 +46,18 @@ class Order_model extends MY_Model
      * @param int $state
      * @param int $type
      */
-    public function orderList($limit=10,$offset=0,$keyword='',$state=0,$type=0){
+    public function orderList($limit=10,$offset=0,$keyword='',$state=0,$type=0,$select='*'){
         if($keyword != ''){
             $this->like(array('buyerName'=>$keyword));
         }
         if($state != 0){
-            $this->where(array('status'=>$state));
+            $this->where(array('YL_order.status'=>$state));
         }
         if($type != 0){
             $this->where(array('type'=>$type));
         }
+        $this->select($select);
+        $this->join('YL_user as u','u.uid=YL_order.buyerId','left');
         $this->limit($limit);
         $this->offset($offset);
         $res = $this->find_all();
@@ -101,5 +103,58 @@ class Order_model extends MY_Model
         $this->select($select);
         $res = $this->find_all();
         return $res;
+    }
+
+    /**
+     * 更改订单状态
+     * @param $oid
+     * @param $status
+     */
+    public function settingStatus($oid,$status){
+        $where = array('oid'=>$oid);
+        $updateData = array('status'=>$status);
+        $currentTime = time();
+        /*开始事务*/
+        $this->db->trans_begin();
+
+        $this->update($where,$updateData);  // 更新状态
+        $orderInfo = $this->select('*')->join('YL_user as u','u.uid=YL_order.buyerId','left')->find_by($where);
+        switch(intval($orderInfo['type'])){
+            case 1:
+                $tradeDesc = '疫苗接种成功购买';
+                $tradeType = 3;
+                break;
+            case 2:
+                $tradeDesc = '基因检测成功购买';
+                $tradeType = 4;
+                break;
+            default:
+                $tradeDesc = '未知';
+        }
+        /*交易记录数据*/
+        $insertData = array(
+            'uid'=>$orderInfo['buyerId'],
+            'userType'=>$orderInfo['userType'],
+            'tradeVolume'=>$orderInfo['price'],
+            'tradeDesc'=>$tradeDesc,
+            'tradeChannel'=>0,
+            'dateline'=>$currentTime,
+            'status'=>1,
+            'tradeType'=>$tradeType
+        );
+        if($status == 4) {
+            $this->db->insert('trade_log', $insertData); // 修改交易记录
+        }
+
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
+        }
     }
 }

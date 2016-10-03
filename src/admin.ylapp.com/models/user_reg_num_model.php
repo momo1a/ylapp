@@ -85,43 +85,41 @@ class User_reg_num_model extends MY_Model
 
 
     /**
-     * 医生首页待处理的预约
-     * @param $docId
+     * @param string $keyword
+     * @param int $limit
+     * @param int $offset
      */
-    public function doctorIndex($docId,$state=' =2 '){
-        $docId = intval($docId);
-        $sql = <<<SQL
-SELECT
-	r.dateline,
-	r.id,
-	u.nickname,
-	r.contacts,
-	CASE
-WHEN r.sex = 1 THEN
-	'男'
-WHEN r.sex = 2 THEN
-	'女'
-END AS sex,
- FLOOR(
-	(
-		UNIX_TIMESTAMP() - r.appointBrithday
-	) / 31536000
-) AS age,
- r.appointTel,
- FROM_UNIXTIME(r.appointTime) AS appointDate,
-'预约' as type
-FROM
-	YL_user_reg_num AS r
-LEFT JOIN YL_user AS u ON r.userId = u.uid
-WHERE
-	r.docId = {$docId}
-AND r.`status` {$state}
-SQL;
-        $query = $this->db->query($sql);
-        $res = $query->result_array();
-
-        return $res;
+    public function getAppointList($keyword='',$limit=10,$offset=0,$state=-1,$select='*'){
+        if($keyword != ''){
+            $this->where(array('contacts'=>$keyword));
+        }
+        if($state != -1){
+            $this->where(array('YL_user_reg_num.status'=>$state));
+        }
+        $this->select($select);
+        $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user_reg_num.docId','left');
+        $this->join('YL_user','YL_doctor_info.uid=YL_user.uid','left');
+        $this->join('YL_doctor_offices','YL_doctor_offices.id=YL_doctor_info.officeId','left');
+        $this->join('YL_hospital','YL_hospital.hid=YL_doctor_info.hid','left');
+        $this->limit($limit);
+        $this->offset($offset);
+        return $this->find_all();
     }
+
+    /**
+     * 统计
+     * @param $keyword
+     */
+    public function countAppoint($keyword='',$state= -1){
+        if($state != -1){
+            $this->where(array('status'=>$state));
+        }
+        if($keyword != ''){
+            $this->where(array('contacts'=>$keyword));
+        }
+        return $this->count_all();
+    }
+
 
 
 
@@ -164,6 +162,112 @@ SQL;
         $this->join('YL_user','YL_user.uid=YL_user_reg_num.userId','left');
         $this->join('YL_user_illness_history','YL_user_illness_history.illId=YL_user_reg_num.illnessId','left');
         $res = $this->find($id);
+        return $res;
+    }
+
+    /**
+     * 获取详情
+     * @param $oid
+     * @return array
+     */
+    public function getDetail($oid){
+        $where = array('id'=>$oid);
+        return $this->find_by($where);
+    }
+
+
+
+    /**
+     * 修改状态
+     * @param $oid
+     * @param $status
+     * @return bool
+     */
+    public function settingStatus($oid,$status){
+        $where = array('id'=>$oid);
+        $updateData = array('status'=>$status);
+        $currentTime = time();
+        /*开始事务*/
+        $this->db->trans_begin();
+
+        $this->update($where,$updateData);  // 更新状态
+        $orderInfo = $this->select('*,d.nickname as docName,u.nickname as userName')
+            ->join('YL_user as d','d.uid=YL_user_reg_num.docId','left')
+            ->join('YL_user as u','u.uid=YL_user_reg_num.userId','left')
+            ->find_by($where);
+        switch(intval($status)){
+            case 3:
+                $tradeDesc = '预约成功';
+                $stat = 1;
+                break;
+            case 4:
+                $tradeDesc = '预约失败';
+                $stat = 2;
+                break;
+            case 5:
+                $tradeDesc = '预约完成';
+                break;
+            default:
+                $tradeDesc = '未知';
+        }
+        /*交易记录数据*/
+        $insertData = array(
+            'uid'=>$orderInfo['userId'],
+            'userType'=>1,
+            'tradeVolume'=>$orderInfo['price'],
+            'tradeDesc'=>$tradeDesc,
+            'tradeChannel'=>0,
+            'dateline'=>$currentTime,
+            'status'=>$stat,
+            'tradeType'=>7
+        );
+        if($status == 4 || $status == 3) {
+            $this->db->insert('trade_log', $insertData); //  交易记录
+        }
+
+        if($status == 4){
+            $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['userId']);
+            if(!$updateRes){
+                $this->db->insert('money',array('uid'=>$orderInfo['userId'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
+            }
+        }
+
+
+        $docUserLog = array(
+            'userId' => $orderInfo['userId'],
+            'doctorId' => $orderInfo['docId'],
+            'comType'=>3,
+            'comState'=>$status,
+            'description'=>$tradeDesc,
+            'dateline'=>$currentTime,
+        );
+
+        // 用户医生日志表
+
+        $this->db->insert('user_doctor_log',$docUserLog);
+
+
+
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
+        }
+    }
+
+    /**
+     * 修改预约时间
+     * @param $oid
+     * @param $time
+     */
+    public function updateAppointTime($oid,$time){
+        $where = array('id'=>$oid);
+        $res = $this->update($where,array('appointTime'=>$time));
         return $res;
     }
 

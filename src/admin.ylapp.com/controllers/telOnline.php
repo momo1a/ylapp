@@ -1,13 +1,14 @@
 <?php
 /**
- * 预约挂号控制器
- * User: momo1a@qq.com
- * Date: 2016/10/1 0001
- * Time: 下午 8:35
+ * 在线问诊控制器
+ * User: Administrator
+ * Date: 2016/10/2 0002
+ * Time: 下午 10:01
  */
 
-class Reg_num extends MY_Controller
+class TelOnline extends MY_Controller
 {
+
     /**
      * 状态
      * @var null
@@ -16,15 +17,15 @@ class Reg_num extends MY_Controller
 
     public function __construct(){
         parent::__construct();
-        $this->load->model('User_reg_num_model','reg');
+        $this->load->model('User_phone_diagnosis_model','online');
         $this->_state = array(
             '-1' => '全部',
             '0' => '未支付',
-            '2' => '已支付(待处理)',
-            '3' => '预约成功',
-            '4' => '预约失败',
-            '5' => '完成',
-            '6' => '用户取消'
+            '1' => '已支付(待处理)',
+            '2' => '确认沟通时间',
+            '3' => '完成',
+            '4' => '失败',
+            '5' => '用户取消'
         );
     }
 
@@ -36,9 +37,9 @@ class Reg_num extends MY_Controller
             $state = -1;
             $_GET['state'] = -1;
         }
-        $total = $this->reg->countAppoint($keyword,$state);
+        $total = $this->online->countAppoint($keyword,$state);
         $offset = intval($this->uri->segment(3));
-        $list = $this->reg->getAppointList($keyword,$limit,$offset,$state,'*,YL_user_reg_num.id as aid,YL_user_reg_num.sex as asex,YL_user_reg_num.dateline as atime,YL_user_reg_num.status as astatus');
+        $list = $this->online->getAppointList($keyword,$limit,$offset,$state,'*,YL_user_phone_diagnosis.id as aid,YL_user_illness_history.sex as asex,YL_user_illness_history.age as aage,YL_user_phone_diagnosis.askTime as atime,YL_user_phone_diagnosis.state as astatus');
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
         $pager = $this->pager($total, $limit,$page_conf);
@@ -46,9 +47,8 @@ class Reg_num extends MY_Controller
         $data['list'] = $list;
         $data['get'] = $_GET;
         $data['state'] = $this->_state;
-        $this->load->view('reg/index',$data);
+        $this->load->view('online/index',$data);
     }
-
 
 
     /**
@@ -57,8 +57,8 @@ class Reg_num extends MY_Controller
     public function stateSetting(){
         $oid = intval($this->input->get_post('oid'));
         $status = intval($this->input->get_post('status'));
-        ($status == 3 || $status == 4 || $status == 5) || exit('状态异常');
-        $res = $this->reg->settingStatus($oid,$status);
+        ($status == 2 || $status == 3 || $status == 4) || exit('状态异常');
+        $res = $this->online->settingStatus($oid,$status);
         if($res){
             $this->ajax_json(0,'操作成功');
         }else{
@@ -67,16 +67,16 @@ class Reg_num extends MY_Controller
     }
 
     /**
-     * 获取详情
+     * 获取期望沟通时间填充表单
      */
-
     public function getDetail(){
         $oid = intval($this->input->get_post('oid'));
-        $res = $this->reg->getDetail($oid);
-        $res['adate'] = date('Y-m-d',$res['appointTime']);
-        $res['atime'] = date('H:i:s',$res['appointTime']);
+        $res = $this->online->getDetail($oid);
+        $res['adate'] = date('Y-m-d',$res['hopeCalldate']);
+        $res['atime'] = date('H:i:s',$res['hopeCalldate']);
         $this->ajax_json(0,'请求成功',$res);
     }
+
 
     /**
      * 修改预约时间
@@ -94,7 +94,7 @@ class Reg_num extends MY_Controller
         }
         $unixTime = strtotime($adate.' '.$atime);
 
-        $res = $this->reg->updateAppointTime($oid,$unixTime);
+        $res = $this->online->updateAppointTime($oid,$unixTime);
 
         if($res){
             $this->ajax_json(0,'操作成功');

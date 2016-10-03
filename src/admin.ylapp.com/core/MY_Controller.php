@@ -173,6 +173,11 @@ class MY_Controller extends CI_Controller
     }
 
 
+    protected function getDocFee(){
+
+    }
+
+
 }
 // End of MY_Controller class
 

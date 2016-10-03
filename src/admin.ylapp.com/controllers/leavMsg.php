@@ -14,6 +14,6 @@ class LeavMsg extends MY_Controller
     }
 
     public function index(){
-        echo 'li';
+        $this->load->view('leaving/index');
     }
 }

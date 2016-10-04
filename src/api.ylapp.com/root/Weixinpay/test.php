@@ -2,8 +2,8 @@
 header("Content-type: text/html; charset=utf-8");
 //include "../../config.php";
 
-$orderBody = "test商品";
-$tade_no = "abc_" . time();
+$orderBody = "呀要欧式";
+$tade_no = "def_" . time();
 $total_fee = 1;
 $WxPayHelper = new WxPayHelper();
 $response = $WxPayHelper->getPrePayOrder($orderBody, $tade_no, $total_fee);

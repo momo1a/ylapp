@@ -23,7 +23,7 @@ class Pay extends CI_Controller {
 		//$token = $this->input->get('token',TRUE);
 		$orderName = '我的测试支付';//$this->input->get('orderName',TRUE);
 		$orderNumber = 15;//$this->input->get('single_orderid',TRUE);
-		$totalFee = 1800;//$this->input->get('price',TRUE)*100;// 单位为分
+		$totalFee = 1;//$this->input->get('price',TRUE)*100;// 单位为分
 
 		$tools = new JsApiPay();	
 		$input = new WxPayUnifiedOrder();   // 构造订单参数

@@ -1032,4 +1032,25 @@ HTML;
 HTML;
         echo $form;
     }
+
+
+
+    public function pay(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/pay/weiXin" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="A\/vim2790f7c9ezwpPoopYL9maKS9tobeXgOo1qzDvckwvacadXR\/zm6d3C9\/kEItBk+ul+M"/>
+    <input type="text" name="postId"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
 }

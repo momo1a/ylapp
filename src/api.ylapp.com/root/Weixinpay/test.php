@@ -12,7 +12,7 @@ $response = $WxPayHelper->getPrePayOrder($orderBody, $tade_no, $total_fee);
 p_val($response);
 p_val("---拿到prepayId再次签名----");*/
 $x = $WxPayHelper->getOrder($response['prepay_id']);
-var_dump($x);
+exit(json_encode($x));
 //var_dump($x);
 //p_val($x);
 

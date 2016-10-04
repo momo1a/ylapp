@@ -12,6 +12,7 @@ $response = $WxPayHelper->getPrePayOrder($orderBody, $tade_no, $total_fee);
 p_val($response);
 p_val("---拿到prepayId再次签名----");*/
 $x = $WxPayHelper->getOrder($response['prepay_id']);
+var_dump($x);
 //var_dump($x);
 //p_val($x);
 
@@ -93,7 +94,7 @@ class WxPayHelper{
         //echo "【string】 =".$String."</br>";
         //签名步骤二：在string后加入KEY
         $String = $String."&key=".$this->config['api_key'];
-        echo "<textarea style='width: 50%; height: 150px;'>$String</textarea> <br />";
+        //echo "<textarea style='width: 50%; height: 150px;'>$String</textarea> <br />";
         //签名步骤三：MD5加密
         $result_ = strtoupper(md5($String));
         return $result_;

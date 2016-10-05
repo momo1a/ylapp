@@ -57,7 +57,6 @@ class Pay extends CI_Controller {
 			echo $this->_BackXml('XML解析失败');
 			return;
 		}
-        var_dump($values);exit;
 		require_once('Weixinpay/example/notify.php');
 		$QueryNotify = new PayNotifyCallBack();
 		$msg = '';
@@ -66,17 +65,17 @@ class Pay extends CI_Controller {
 			echo $this->_BackXml($msg);
 			return;
 		}
-		$this->load->model('PayModel');
+		/*$this->load->model('PayModel');
 		$check = $this->PayModel->getRow('shop_order',array('order_number'=>$values['out_trade_no']),'pay_status');
 		if($check['pay_status']){
 			echo $this->_BackXml('订单状态错误');
 			return;
-		}
-		$result = $this->PayModel->change_order_status($values['out_trade_no']);
+		}*/
+		/*$result = $this->PayModel->change_order_status($values['out_trade_no']);
 		if(!$result){			
 			echo $this->_BackXml('事务回滚');
 			return;
-		}
+		}*/
 		echo $this->_BackXml('OK',TRUE);
 	}
 	public function unifiedorder(){

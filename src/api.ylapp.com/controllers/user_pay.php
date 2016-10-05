@@ -16,7 +16,7 @@ class User_pay extends MY_Controller
         parent::__construct();
         $this->checkUserLogin();
         $this->load->library('WxPay',null,'wxpay');   // 微信支付调用类
-        $this->load->library('AliPay',null,'alipay');   // 微信支付调用类
+        $this->load->library('alipay/AliPay',null,'alipay');   // 微信支付调用类
         $this->load->helper('url');
     }
 

@@ -16,6 +16,7 @@ class User_pay extends MY_Controller
         parent::__construct();
         $this->checkUserLogin();
         $this->load->library('WxPay',null,'wxpay');   // 微信支付调用类
+        $this->load->library('AliPay',null,'alipay');   // 微信支付调用类
         $this->load->helper('url');
     }
 
@@ -37,6 +38,9 @@ class User_pay extends MY_Controller
                 $this->response($this->responseDataFormat(0,'请求成功',array('wxPayUrl'=>$wxPayUrl)));
                 break;
             case 2 :  //  支付宝支付
+                $tradeNo = 'ALCZ'.time().rand(10000,99999).$uid;
+                $amount = intval($this->input->get_post('amount'));  // 金额  单位 ： 分
+                $this->alipay->submitPay($tradeNo,$orderBody,$amount,"");
                 break;
             case 3 :  // 银联支付
                 break;

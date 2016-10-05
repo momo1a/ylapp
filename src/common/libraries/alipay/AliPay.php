@@ -23,6 +23,7 @@ class AliPay
      * 配置
      */
     public function __construct(){
+        header("content-type:text/html;charset=utf-8");
         //↓↓↓↓↓↓↓↓↓↓请在这里配置您的基本信息↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 //合作身份者ID，签约账号，以2088开头由16位纯数字组成的字符串，查看地址：https://openhome.this->.com/platform/keyManage.htm?keyType=partner
         $this->_config['partner']		= '2088311771079114';
@@ -84,7 +85,7 @@ class AliPay
      */
     public function submitPay($out_trade_no,$subject,$total_fee,$body){
         //构造要请求的参数数组，无需改动
-        header("content-type:text/html;charset=utf-8");
+
         $parameter = array(
             "service"       => $this->_config['service'],
             "partner"       => $this->_config['partner'],

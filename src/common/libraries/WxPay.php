@@ -30,7 +30,6 @@ class WxPay{
             'appid' => "wx1a13456d65204e33",    /*微信开放平台上的应用id*/
             'mch_id' => "1266284201",   /*微信申请成功之后邮件中的商户id*/
             'api_key' => "68f96eefa7b34346670149f370c7af5a",    /*在微信商户平台上自己设定的api密钥 32位*/
-            'notify_url' => 'http://123.207.87.83:8080/Weixinpay/example/notify.php' /*自定义的回调程序地址id*/
         );
 
         $this->apiUrl = "https://api.mch.weixin.qq.com/pay/unifiedorder";
@@ -45,9 +44,8 @@ class WxPay{
      * @param $total_fee  (交易额 单位：分)
      * @return array|string
      */
-    public function getPrePayOrder($body, $out_trade_no, $total_fee){
+    public function getPrePayOrder($body, $out_trade_no, $total_fee,$attach,$notify_url){
         $url = $this->apiUrl;
-        $notify_url = $this->config["notify_url"];
         $onoce_str = $this->getRandChar(32);
         $data["appid"] = $this->config["appid"];
         $data["body"] = $body;
@@ -58,6 +56,7 @@ class WxPay{
         $data["spbill_create_ip"] = $this->get_client_ip();
         $data["total_fee"] = $total_fee;
         $data["trade_type"] = "APP";
+        $data['attach'] = $attach;  //  支付成功 通知原样返回
         $s = $this->getSign($data, false);
         $data["sign"] = $s;
         $xml = $this->arrayToXml($data);

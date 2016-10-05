@@ -32,7 +32,7 @@ class WxPayHelper{
         'appid' => "wx1a13456d65204e33",    /*微信开放平台上的应用id*/
         'mch_id' => "1266284201",   /*微信申请成功之后邮件中的商户id*/
         'api_key' => "68f96eefa7b34346670149f370c7af5a",    /*在微信商户平台上自己设定的api密钥 32位*/
-        'notify_url' => 'http://123.207.87.83:8080/Weixinpay/example/notify.php' /*自定义的回调程序地址id*/
+        'notify_url' => 'http://123.207.87.83:8080/pay/notify' /*自定义的回调程序地址id*/
     );
 
     public function  __construct() {

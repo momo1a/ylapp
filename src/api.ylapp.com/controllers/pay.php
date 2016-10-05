@@ -57,6 +57,7 @@ class Pay extends CI_Controller {
 			echo $this->_BackXml('XML解析失败');
 			return;
 		}
+        var_dump($values);exit;
 		require_once('Weixinpay/example/notify.php');
 		$QueryNotify = new PayNotifyCallBack();
 		$msg = '';

@@ -1035,7 +1035,7 @@ HTML;
 
 
 
-    public function pay(){
+    public function recharge(){
         $form = <<<HTML
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -1045,10 +1045,11 @@ HTML;
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/pay/weiXin" method="post">
+<form action="http://123.207.87.83:8080/user_pay/recharge" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="A\/vim2790f7c9ezwpPoopYL9maKS9tobeXgOo1qzDvckwvacadXR\/zm6d3C9\/kEItBk+ul+M"/>
-    <input type="text" name="postId"/>
+    <input type="hidden" name="privateToken" value="AatnG483c1e6bdano9CvRo61LBd9vj3m7Fm8yPRsn0qtMxvw8xSpuWTuBpLDuOkSqsTb\/vOL"/>
+    payType<input type="text" name="payType"/>
+    amount<input type="text" name="amount"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;

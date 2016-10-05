@@ -73,6 +73,7 @@ class AliPay
         $this->_config['exter_invoke_ip'] = "";
 
 //↑↑↑↑↑↑↑↑↑↑请在这里配置防钓鱼信息，如果没开通防钓鱼功能，为空即可 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
     }
 
     /**
@@ -83,6 +84,7 @@ class AliPay
      */
     public function submitPay($out_trade_no,$subject,$total_fee,$body){
         //构造要请求的参数数组，无需改动
+        header("content-type:text/html;charset=utf-8");
         $parameter = array(
             "service"       => $this->_config['service'],
             "partner"       => $this->_config['partner'],

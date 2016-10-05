@@ -915,7 +915,7 @@ HTML;
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<form action="http://api.ylapp.com/api/login" method="post">
+<form action="http://123.207.87.83:8080/api/login" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     <!--input type="text" name="privateToken" value="jVAavd11771a9dWgMdRGYzxpYlfj5RIJKt93K1YGrMNO3vDLLOfByhSxcylD5\/9gnv\/UoYEO"/><br/>-->
     <input type="text" name="user" /><br/>

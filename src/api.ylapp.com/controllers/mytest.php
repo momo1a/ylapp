@@ -1047,7 +1047,7 @@ HTML;
 </head>
 <form action="http://123.207.87.83:8080/user_pay/recharge" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="mRAYec8e6e725THMfTFKvqubA8tvshNKjuzhUJG8c2BG2J9FizNw0K+AOUfHzhzSff1zLe5U"/>
+    <input type="hidden" name="privateToken" value="R9XFp23365ab9D\/blwKgZ4C6VOTQWJ7MckVTqy9+hQypBwO\/jE\/dU+QtjUPpEwR\/x9qeXEaY"/>
     payType<input type="text" name="payType"/>
     amount<input type="text" name="amount"/>
     <input type="submit" value="submit"/>

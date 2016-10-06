@@ -56,12 +56,30 @@ class Pay_model extends MY_Model
 
 
     /**
-     * 修改状态
-     * @param $tradeNo
+     * 充值修改状态
+     * @param $tradeNo 交易号
+     * @param $amount  金额
      */
-    public function changeStatus($tradeNo){
-        $data = array('status'=>1);
-        return $this->update_where('tradeNo',$tradeNo,$data);
+    public function changeRechargeStatus($uid,$tradeNo,$amount){
+        /*开始事务*/
+        $this->db->trans_begin();
+        $currentTime  = time();
+        $this->update_where('tradeNo',$tradeNo,array('status'=>1));
+
+        $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$amount.',`updateTime`='.$currentTime.' WHERE `uid`='.$uid);
+        if(!$updateRes){
+            $this->db->insert('money',array('uid'=>$uid,'amount'=>$amount,'updateTime'=>$currentTime));
+        }
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
+        }
     }
 
 }

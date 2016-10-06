@@ -45,7 +45,7 @@ class Notice extends CI_Controller
             echo $this->_BackXml('订单状态错误(或已经支付)');
             return;
         }
-        $result = $this->pay->changeStatus($values['out_trade_no']);
+        $result = $this->pay->changeRechargeStatus($check['uid'],$values['out_trade_no'],$values['total_fee']/100);
         if(!$result){
             echo $this->_BackXml('事务回滚');
             return;

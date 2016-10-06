@@ -50,7 +50,7 @@ class AliPay
 
 //ca证书路径地址，用于curl中ssl校验
 //请保证cacert.pem文件在当前文件夹目录中
-        $this->_config['cacert']    = dirname(__FILE__).'\\cacert.pem';
+        $this->_config['cacert']    = getcwd().'\\cacert.pem';
 
 //访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
         $this->_config['transport']    = 'http';
@@ -73,7 +73,6 @@ class AliPay
         $this->_config['exter_invoke_ip'] = "";
 
 //↑↑↑↑↑↑↑↑↑↑请在这里配置防钓鱼信息，如果没开通防钓鱼功能，为空即可 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-        //var_dump($this->_config);exit;
 
     }
 

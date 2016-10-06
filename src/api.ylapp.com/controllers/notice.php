@@ -139,6 +139,7 @@ class Notice extends CI_Controller
         );
         $this->load->library('alipay/AliPay', $config, 'alipay');   // 支付宝支付调用类
         $verifyResult = $this->alipay->notify();
+        var_dump($verifyResult);
         if ($verifyResult) {//验证成功
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //请在这里加上商户的业务逻辑程序代码

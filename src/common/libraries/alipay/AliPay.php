@@ -6,8 +6,8 @@
  * Time: 下午 9:35
  */
 
-require_once("lib/alipay_submit.class.php");  //  构造请求类
-require_once("lib/alipay_notify.class.php");  //  通知处理类
+require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."lib/alipay_submit.class.php");  //  构造请求类
+require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."lib/alipay_notify.class.php");  //  通知处理类
 
 
 class AliPay

@@ -49,14 +49,14 @@ class User_pay extends MY_Controller
                 $this->response($this->responseDataFormat(0,'请求成功',array('wxPayUrl'=>$wxPayUrl)));
                 break;
             case 2 :  //  支付宝支付
-                /*$config = array(
+                $config = array(
                     'notifyUrl' => site_url().'notice/ali_recharge',
                     'returnUrl' => site_url().'notice/ali_return'
-                );*/
-                $config = array(
+                );
+               /* $config = array(
                     'notifyUrl' =>  'http://123.207.87.83:8080/alipay/notify_url.php',
                     'returnUrl' => 'http://123.207.87.83:8080/alipay/return_url.php'
-                );
+                );*/
                 $this->load->library('alipay/AliPay',$config,'alipay');   // 支付宝支付调用类
                 $tradeNo = 'ALCZ'.time().rand(10000,99999).$uid;
                 $data['tradeNo'] = $tradeNo;

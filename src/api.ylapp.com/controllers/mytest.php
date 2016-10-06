@@ -915,7 +915,7 @@ HTML;
         <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<form action="http://123.207.87.83:8080/api/login" method="post">
+<form action="http://api.ylapp.com/api/login" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     <!--input type="text" name="privateToken" value="jVAavd11771a9dWgMdRGYzxpYlfj5RIJKt93K1YGrMNO3vDLLOfByhSxcylD5\/9gnv\/UoYEO"/><br/>-->
     <input type="text" name="user" /><br/>
@@ -1045,9 +1045,9 @@ HTML;
         }
 </style>
 </head>
-<form action="http://123.207.87.83:8080/user_pay/recharge" method="post">
+<form action="http://api.ylapp.com/user_pay/recharge" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="+KnbI39ae071eU8Ar4gVzbZmj2T2YoKnA3IlQ5nxn8PWQGsT+icH65JPS4a1te8qiiZxzz3j"/>
+    <input type="hidden" name="privateToken" value="fMhKj99405ddcayiA51\/WSm1rJ5q6Mf3\/4spasyidWq+agm86+SQMG64xSQ+DeMwuchfxHPO"/>
     payType<input type="text" name="payType"/>
     amount<input type="text" name="amount"/>
     <input type="submit" value="submit"/>

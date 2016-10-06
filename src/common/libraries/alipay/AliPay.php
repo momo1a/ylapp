@@ -6,8 +6,8 @@
  * Time: 下午 9:35
  */
 
-require_once("lib/alipay_submit.class.php");
-
+require_once("lib/alipay_submit.class.php");  //  构造请求类
+require_once("lib/alipay_notify.class.php");  //  通知处理类
 
 
 class AliPay
@@ -22,7 +22,7 @@ class AliPay
     /**
      * 配置
      */
-    public function __construct(){
+    public function __construct($config){
         //↓↓↓↓↓↓↓↓↓↓请在这里配置您的基本信息↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 //合作身份者ID，签约账号，以2088开头由16位纯数字组成的字符串，查看地址：https://openhome.this->.com/platform/keyManage.htm?keyType=partner
         $this->_config['partner']		= '2088311771079114';
@@ -37,10 +37,10 @@ class AliPay
         $this->_config['this->_public_key']= 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnxj/9qwVfgoUh/y2W89L6BkRAFljhNhgPdyPuBV64bfQNN1PjbCzkIM6qRdKBoLPXmKKMiFYnkd6rAoprih3/PrQEB/VsW8OoM8fxn67UDYuyBTqA23MML9q1+ilIZwBC2AQ2UBVOrFXfFl75p6/B5KsiNG9zpgmLCUYuLkxpLQIDAQAB';
 
 // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-        $this->_config['notify_url'] = "http://123.207.87.83:8080/this->/notify_url.php";
+        $this->_config['notify_url'] = $config['notifyUrl'];
 
 // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-        $this->_config['return_url'] = "http://123.207.87.83:8080/this->/return_url.php";
+        $this->_config['return_url'] = $config['returnUrl'];
 
 //签名方式
         $this->_config['sign_type']    = strtoupper('RSA');
@@ -110,5 +110,73 @@ class AliPay
     }
 
 
+    public function notify(){
+        //计算得出通知验证结果
+        $alipayNotify = new AlipayNotify($this->_config);
+        $verify_result = $alipayNotify->verifyNotify();
+
+        return $verify_result;
+        if($verify_result) {//验证成功
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //请在这里加上商户的业务逻辑程序代
+
+
+            //——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
+
+            //获取支付宝的通知返回参数，可参考技术文档中服务器异步通知参数列表
+
+            //商户订单号
+            $out_trade_no = $_POST['out_trade_no'];
+
+            //支付宝交易号
+            $trade_no = $_POST['trade_no'];
+
+            //交易状态
+            $trade_status = $_POST['trade_status'];
+
+
+            if($_POST['trade_status'] == 'TRADE_FINISHED') {
+                //判断该笔订单是否在商户网站中已经做过处理
+                //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+                //请务必判断请求时的total_fee、seller_id与通知时获取的total_fee、seller_id为一致的
+                //如果有做过处理，不执行商户的业务程序
+
+                //注意：
+                //退款日期超过可退款期限后（如三个月可退款），支付宝系统发送该交易状态通知
+
+                //调试用，写文本函数记录程序运行情况是否正常
+                //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+            }
+            else if ($_POST['trade_status'] == 'TRADE_SUCCESS') {
+                //判断该笔订单是否在商户网站中已经做过处理
+                //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+                //请务必判断请求时的total_fee、seller_id与通知时获取的total_fee、seller_id为一致的
+                //如果有做过处理，不执行商户的业务程序
+
+                //注意：
+                //付款完成后，支付宝系统发送该交易状态通知
+
+                //调试用，写文本函数记录程序运行情况是否正常
+                //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+            }else{
+                //
+
+
+            }
+
+            //——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
+
+            echo "success";		//请不要修改或删除
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        }
+        else {
+            //验证失败
+            echo "fail";
+
+            //调试用，写文本函数记录程序运行情况是否正常
+            //logResult("这里写入想要调试的代码变量值，或其他运行的结果记录");
+        }
+    }
 
 }

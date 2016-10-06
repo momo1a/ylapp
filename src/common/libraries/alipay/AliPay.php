@@ -111,12 +111,25 @@ class AliPay
         return $return;*/
     }
 
-
-    public function notify()
+    /**
+     *
+     * @param string $type 默认通知验签
+     * @return 验证结果
+     */
+    public function notify($type='notice')
     {
-        //计算得出通知验证结果
+
         $alipayNotify = new AlipayNotify($this->_config);
-        $verify_result = $alipayNotify->verifyNotify();
+        //计算得出通知验证结果
+        switch($type){
+            case 'notice':
+                $verify_result = $alipayNotify->verifyNotify();
+                break;
+            case 'return':
+                $verify_result = $alipayNotify->verifyReturn();
+        }
+
+
 
         return $verify_result;
     }

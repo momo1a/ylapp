@@ -138,7 +138,7 @@ class Notice extends CI_Controller
             'returnUrl' => site_url() . 'notice/ali_return'
         );
         $this->load->library('alipay/AliPay', $config, 'alipay');   // 支付宝支付调用类
-        $verifyResult = $this->alipay->notify();
+        $verifyResult = $this->alipay->notify('return');
         var_dump($verifyResult);
         if ($verifyResult) {//验证成功
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

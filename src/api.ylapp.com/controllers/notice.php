@@ -133,6 +133,7 @@ class Notice extends CI_Controller
 
     public function ali_return()
     {
+        header('content-type:text/html;charset=utf-8');
         $config = $config = array(
             'notifyUrl' => site_url() . 'notice/ali_recharge',
             'returnUrl' => site_url() . 'notice/ali_return'

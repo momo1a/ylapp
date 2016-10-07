@@ -24,7 +24,7 @@ class Pay_model extends MY_Model
 
         $this->insert($data);  //  支付表
 
-        $this->db->insert('trade_log',array_diff($data,array('tradeNo'=>$data['tradeNo']))); // 交易记录表
+        $this->db->insert('trade_log',array_diff($data,array('tradeNo'=>$data['tradeNo'],'oid'=>$data['oid']))); // 交易记录表
 
 
         // 用户医生日志表

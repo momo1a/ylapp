@@ -134,13 +134,12 @@ class Notice extends CI_Controller
     public function ali_return()
     {
         header('content-type:text/html;charset=utf-8');
-        $config = $config = array(
+        $config = array(
             'notifyUrl' => site_url() . 'notice/ali_recharge',
             'returnUrl' => site_url() . 'notice/ali_return'
         );
         $this->load->library('alipay/AliPay', $config, 'alipay');   // 支付宝支付调用类
         $verifyResult = $this->alipay->notify('return');
-        var_dump($_GET);
         if ($verifyResult) {//验证成功
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //请在这里加上商户的业务逻辑程序代码
@@ -173,5 +172,42 @@ class Notice extends CI_Controller
             //////////////
         }
 
+    }
+
+    /**
+     * 疫苗下单通知地址
+     */
+    public function wx_ym_notify(){
+        $xml = $GLOBALS['HTTP_RAW_POST_DATA'];
+        if(!$xml){
+            echo $this->_BackXml('获取XML为空');
+            return;
+        }
+        libxml_disable_entity_loader(true);
+        $values = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+        if(!$values){
+            echo $this->_BackXml('XML解析失败');
+            return;
+        }
+        require_once('Weixinpay/example/notify.php');
+        $QueryNotify = new PayNotifyCallBack();
+        $msg = '';
+        $notify = $QueryNotify->NotifyProcess($values,$msg);
+        if(!$notify){
+            echo $this->_BackXml($msg);
+            return;
+        }
+
+        $check = $this->pay->getRow($values['out_trade_no']);
+        if($check['status']){
+            echo $this->_BackXml('订单状态错误(或已经支付)');
+            return;
+        }
+        $result = $this->pay->changeRechargeStatus($check['uid'],$values['out_trade_no'],$values['total_fee']/100);
+        if(!$result){
+            echo $this->_BackXml('事务回滚');
+            return;
+        }
+        echo $this->_BackXml('OK',TRUE);
     }
 }

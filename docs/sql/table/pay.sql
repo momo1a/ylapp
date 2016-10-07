@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS  `YL_pay`;
 CREATE TABLE `YL_pay` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(11) unsigned not null default '0' comment '用户id',
+  `oid` int(11) unsigned not null default '0' comment '订单id',
   `userType` tinyint(3) unsigned  not null default  '0' comment '用户类型1用户，2医生',
   `tradeVolume` DECIMAL(9,2) unsigned not null default '0' comment '交易额',
   `tradeNo` VARCHAR(32) NOT NULL DEFAULT '' comment '交易号',

@@ -53,7 +53,7 @@ class User_pay extends MY_Controller
                     'notifyUrl' => site_url().'notice/ali_recharge',
                     'returnUrl' => site_url().'notice/ali_return'
                 );
-               /* $config = array(
+                /*$config = array(
                     'notifyUrl' =>  'http://123.207.87.83:8080/alipay/notify_url.php',
                     'returnUrl' => 'http://123.207.87.83:8080/alipay/return_url.php'
                 );*/
@@ -63,8 +63,8 @@ class User_pay extends MY_Controller
                 $data['tradeChannel'] = 1;
                 $this->pay->submitPay($data) ? '' : $this->response($this->responseDataFormat(-1,'系统数据库错误',array()));
                 $amount = $amount / 100;
-                $submit = $this->alipay->submitPay($tradeNo,$orderBody,$amount,"testBody");
-                //$this->response($this->responseDataFormat(0,'请求成功',array('aliSubmitParam'=>$submit)));
+                $submit = $this->alipay->submitPay($tradeNo,$orderBody,$amount,"");
+                $this->response($this->responseDataFormat(0,'请求成功',array('aliSubmitParam'=>$submit)));
                 break;
             case 3 :  // 银联支付
                 break;

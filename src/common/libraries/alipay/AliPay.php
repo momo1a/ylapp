@@ -105,10 +105,10 @@ class AliPay
 
 
         $alipaySubmit = new AlipaySubmit($this->_config);
-        $html_text = $alipaySubmit->buildRequestForm($parameter,"get", "确认");
-        echo $html_text;
-        /*$return = $alipaySubmit->buildRequestPara($parameter);  // 返回参数给客户端请求支付
-        return $return;*/
+       /* $html_text = $alipaySubmit->buildRequestForm($parameter,"get", "确认");
+        echo $html_text;*/
+        $return = $alipaySubmit->buildRequestPara($parameter);  // 返回参数给客户端请求支付
+        return $return;
     }
 
     /**

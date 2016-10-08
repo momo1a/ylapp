@@ -26,4 +26,16 @@ class Wxpay_return extends CI_Controller
     }
 
 
+    /**
+     * 微信支付测试
+     */
+    public function toWxpayTest(){
+        $orderBody = '我的微信测试支付';
+        $tradeNo = 'WXCZ'.time().rand(10000,99999).'1';
+        $noticeUrl = site_url().'notice/wx_recharge';
+        $response = $this->wxpay->getPrePayOrder($orderBody, $tradeNo, 1,1,$noticeUrl);
+        $backClient = $this->wxpay->getOrder($response['prepay_id']);
+        exit(json_encode($backClient));  //  返回数据给客户端发起支付请求
+    }
+
 }

@@ -183,7 +183,7 @@ class  AliPay
         //去掉最后一个&字符
         $arg = substr($arg,0,count($arg)-2);
         //如果存在转义字符，那么去掉转义
-        //if(get_magic_quotes_gpc()){$arg = stripslashes($arg);}
+        if(get_magic_quotes_gpc()){$arg = stripslashes($arg);}
         return $arg;
     }
 
@@ -193,10 +193,22 @@ class  AliPay
      * @return string
      */
     protected function rsaSign($data) {
-        $priKey = "-----BEGIN RSA PRIVATE KEY-----
-MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMtKIMiktTFClCknLwvXoS7RPymMzxf1Qq0QeySREXHfLSYfLzlNBie8JONJcbtddNN1z7s275tGqrDS4squs9Nv1SvuKtKnxUFtuDgCJw4qM7MG5GTSUJ1Vay7qBa1mVTHQPiYHR0ibd05iVogcfmdi2lOWRpBZblDRwFoi8W7XAgMBAAECgYB+W/VEwhxeIiQ18EUt9zoY/7di/EM9gRWQvU3NzN4rCa3mpDuWQmoxCKFlJaGr9MtJJVGZ7OvCeIpgnrSZhz3+ctKaeS+F4IlOkV9lsgJFlFnZvC8LYXQSYW+KqgFcTE7ZsfJvZbd43Z7f5ZmQz0V+Y3iOVI8j/l8eiVmgaqhmAQJBAPGrrxQx1DRn0ANa1y/6XmM/2EasT7qEFfQ/go2aQ6YgTlre/XXMhUANCaVs8iKoA/tmJeHkz5wCvkFvVmEuSakCQQDXV9uySwxtPJGf+Ht1N2XU1P9p5GCaUO3OJ5NDm9apNg6wnrKScR6GGaSiaIpBsOXcjQDG5h+S9/WnFwlcWkR/AkBX1WklctLIVS6x+XMaOenSMqMdVIUJqfX8tpRxeK67kyRHPKJsDPAlDlgCKq16UQxZc4+zISEfd5PEXn3LhjI5AkBw14MybI04eLK+pxDanYro+ixVKu1ML/hNPQO4O+NCjCcqeh6NCmW6U5mn2SwJvE7XQbQUheYpt3Gsey/Wix61AkEAlcjwdbAfo4HMqtKxmkdsW7P/r1r5uLs9wO4zItRk38dynC47LjeilSZEp5apN+ZjndYGxGDFiLxyAvTrn4mEmQ==
------END RSA PRIVATE KEY-----";
-        $priKey = openssl_pkcs12_read($priKey);
+        $priKey = "-----BEGIN PRIVATE KEY-----
+MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAK6iErqFuscqeygS
+AMPtz0rke+Hu6+9/Qg76H0fr/GYLe8lxWVm4kLysgznltPf56TJfBZiayAh2KEsJ
+N9txQKnvaQhYcqAoh6EMb6qeycMsGYBeI5H7CGCYy+YDi6UWXdxzQKQDNNpKPdv4
+DT+xyVX/sndEe/DjnESk+yMc+dEFAgMBAAECgYBi2mfToeOq3kc81YQNZM6UzGW7
+7S0tM1JHfBq88b68XP/DdiBoA2wbAWR/H6KjRJpW4ycdzXAyKgCBCUTPOXqqR4L/
+VT1+aXvzSjEPpxJk1dCMrhwgyTepuPdstTNjjsaR6uGU0Ai/UUhDLSfN/AFtOdxk
+OONmXEOltq4j3BH3OQJBAOC68GLhaMfszySdn9e+MtqsJvH10/X4b7ZwbYmUMwL8
+OONWr9Kw0CmzMmxMZEqBZ2aRx/gRFF9y6tRu12Tm+5cCQQDG7qLor1jPpbs+LDT7
+Hfms9iTq/jtosM1egXfBI55Hs4DbELlJzYIdgh26qDpJ3+Aqu92l72Z56DkFQZJo
+YtvDAkBX9XMvEJDFZ4+wAi3U8HHRGv5nR9N9e46l9p048xOAQJ43hO9uZJwlJik/
+MCs06i9Bex+snWq+7SiymuudZ7bjAkAMwsoYewcLauoz9sn/QdD+U1vS5zQQZycF
+ZPC1pv9EQjOF2fDI1zH9ipc1ngz/KClNFHgHaO/96fOebrJhl9XZAkA0EMpwXiFA
+1IM5qujvgbOfP3GsseY5t/2tYPZYvXTb/puKMoyp5AGKozEVEOLQzAKpwdOnH/8R
+bbWgp25A5hrv
+-----END PRIVATE KEY-----";
         $res = openssl_get_privatekey($priKey);
         openssl_sign($data, $sign, $res);
         openssl_free_key($res);

@@ -13,6 +13,7 @@ class Wxpay_return extends CI_Controller
         parent::__construct();
         $this->load->library('WxPay',null,'wxpay');   // 微信支付调用类
         $this->load->helper('url');
+        $this->load->model('Pay_model','pay');
     }
 
 
@@ -30,8 +31,19 @@ class Wxpay_return extends CI_Controller
      * 微信支付测试
      */
     public function toWxpayTest(){
+        $data = array(
+            'uid' => 1,
+            'userType' => 1,
+            'tradeVolume'=>1/100,
+            'tradeDesc'=>'充值',
+            'dateline'=>time(),
+            'tradeType'=>1
+        );
         $orderBody = '我的微信测试支付';
-        $tradeNo = 'WXCZ'.time().rand(10000,99999).'1';
+        $tradeNo = 'CSWXCZ'.time().rand(10000,99999).'1';
+        $data['tradeNo'] = $tradeNo;
+        $data['tradeChannel'] = 2;
+        $this->pay->submitPay($data) ? '' : exit(json_encode(array('code'=>-1,'msg'=>'数据库错误')));
         $noticeUrl = site_url().'notice/wx_recharge';
         $response = $this->wxpay->getPrePayOrder($orderBody, $tradeNo, 1,1,$noticeUrl);
         $backClient = $this->wxpay->getOrder($response['prepay_id']);

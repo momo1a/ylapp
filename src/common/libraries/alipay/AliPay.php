@@ -30,7 +30,7 @@ class AliPayWeb
 //收款支付宝账号，以2088开头由16位纯数字组成的字符串，一般情况下收款账号就是签约账号
         $this->_config['seller_id']	= $this->_config['partner'];
 
-//商户的私钥,此处填写原始私钥去头去尾，RSA公私钥生成：https://doc.open.this->.com/doc2/detail.htm?spm=a219a.7629140.0.0.nBDxfy&treeId=58&articleId=103242&docType=1
+//商户的私钥,此处填写原始私钥去头去尾，RSA公私钥生成：https://doc.open.alipay.com/doc2/detail.htm?spm=a219a.7629140.0.0.nBDxfy&treeId=58&articleId=103242&docType=1
         $this->_config['private_key']	= 'MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMtKIMiktTFClCknLwvXoS7RPymMzxf1Qq0QeySREXHfLSYfLzlNBie8JONJcbtddNN1z7s275tGqrDS4squs9Nv1SvuKtKnxUFtuDgCJw4qM7MG5GTSUJ1Vay7qBa1mVTHQPiYHR0ibd05iVogcfmdi2lOWRpBZblDRwFoi8W7XAgMBAAECgYB+W/VEwhxeIiQ18EUt9zoY/7di/EM9gRWQvU3NzN4rCa3mpDuWQmoxCKFlJaGr9MtJJVGZ7OvCeIpgnrSZhz3+ctKaeS+F4IlOkV9lsgJFlFnZvC8LYXQSYW+KqgFcTE7ZsfJvZbd43Z7f5ZmQz0V+Y3iOVI8j/l8eiVmgaqhmAQJBAPGrrxQx1DRn0ANa1y/6XmM/2EasT7qEFfQ/go2aQ6YgTlre/XXMhUANCaVs8iKoA/tmJeHkz5wCvkFvVmEuSakCQQDXV9uySwxtPJGf+Ht1N2XU1P9p5GCaUO3OJ5NDm9apNg6wnrKScR6GGaSiaIpBsOXcjQDG5h+S9/WnFwlcWkR/AkBX1WklctLIVS6x+XMaOenSMqMdVIUJqfX8tpRxeK67kyRHPKJsDPAlDlgCKq16UQxZc4+zISEfd5PEXn3LhjI5AkBw14MybI04eLK+pxDanYro+ixVKu1ML/hNPQO4O+NCjCcqeh6NCmW6U5mn2SwJvE7XQbQUheYpt3Gsey/Wix61AkEAlcjwdbAfo4HMqtKxmkdsW7P/r1r5uLs9wO4zItRk38dynC47LjeilSZEp5apN+ZjndYGxGDFiLxyAvTrn4mEmQ==';
 
 //支付宝的公钥，查看地址：https://b.this->.com/order/pidAndKey.htm
@@ -162,8 +162,8 @@ class  AliPay
         $this->_config['_input_charset'] = 'UTF-8';
         $this->_config['payment_type'] = '1';
         $this->_config['it_b_pay'] = '1d';
-        $this->_config['notify_url'] = $config[0];
-        $this->_config['show_url'] = $config[1];
+        $this->_config['notify_url'] = $config['notifyUrl'];
+        $this->_config['show_url'] =  $config['returnUrl'];
     }
 
 

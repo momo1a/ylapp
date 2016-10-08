@@ -65,7 +65,9 @@ class Notice extends CI_Controller
      * 支付充值通知地址
      */
     public function ali_recharge(){
-
+        header('Access-Control-Allow-Origin: *');
+        header('Content-type: text/plain');
+        
         $out_trade_no = $_POST['out_trade_no'];
 
         //支付宝交易号

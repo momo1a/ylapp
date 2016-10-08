@@ -6,16 +6,16 @@
  * Time: 下午 9:35
  */
 
-require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."lib/alipay_submit.class.php");  //  构造请求类
-require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."lib/alipay_notify.class.php");  //  通知处理类
+/*require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."lib/alipay_submit.class.php");  //  构造请求类
+require_once(dirname(__FILE__).DIRECTORY_SEPARATOR."lib/alipay_notify.class.php");  //  通知处理类*/
 
 
-class AliPay
+class AliPayWeb
 {
     /**
      * 配置
      * @var null
-     */
+
     protected $_config = null;
 
 
@@ -143,5 +143,85 @@ class AliPay
 
         return $verify_result;
     }
+
+
+
+}
+
+class  AliPay
+{
+
+    protected $_config = array();
+    /**
+     * 初始化
+     */
+    public function __construct($config){
+        $this->_config['service'] = 'mobile.securitypay.pay';
+        $this->_config['partner'] = '2088311771079114';
+        $this->_config['seller_id'] = 'wqdzhifu@qq.com';
+        $this->_config['_input_charset'] = 'UTF-8';
+        $this->_config['payment_type'] = '1';
+        $this->_config['it_b_pay'] = '1d';
+        $this->_config['notify_url'] = $config[0];
+        $this->_config['show_url'] = $config[1];
+    }
+
+
+
+
+
+    /**
+     * 对签名字符串转义
+     * @param $para
+     * @return string
+     */
+    protected function createLinkstring($para) {
+        $arg  = "";
+        while (list ($key, $val) = each ($para)) {
+            $arg.=$key.'="'.$val.'"&';
+        }
+        //去掉最后一个&字符
+        $arg = substr($arg,0,count($arg)-2);
+        //如果存在转义字符，那么去掉转义
+        if(get_magic_quotes_gpc()){$arg = stripslashes($arg);}
+        return $arg;
+    }
+
+    /**
+     * 签名生成订单信息
+     * @param $data
+     * @return string
+     */
+    protected function rsaSign($data) {
+        $priKey = "-----BEGIN RSA PRIVATE KEY-----
+        MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMtKIMiktTFClCknLwvXoS7RPymMzxf1Qq0QeySREXHfLSYfLzlNBie8JONJcbtddNN1z7s275tGqrDS4squs9Nv1SvuKtKnxUFtuDgCJw4qM7MG5GTSUJ1Vay7qBa1mVTHQPiYHR0ibd05iVogcfmdi2lOWRpBZblDRwFoi8W7XAgMBAAECgYB+W/VEwhxeIiQ18EUt9zoY/7di/EM9gRWQvU3NzN4rCa3mpDuWQmoxCKFlJaGr9MtJJVGZ7OvCeIpgnrSZhz3+ctKaeS+F4IlOkV9lsgJFlFnZvC8LYXQSYW+KqgFcTE7ZsfJvZbd43Z7f5ZmQz0V+Y3iOVI8j/l8eiVmgaqhmAQJBAPGrrxQx1DRn0ANa1y/6XmM/2EasT7qEFfQ/go2aQ6YgTlre/XXMhUANCaVs8iKoA/tmJeHkz5wCvkFvVmEuSakCQQDXV9uySwxtPJGf+Ht1N2XU1P9p5GCaUO3OJ5NDm9apNg6wnrKScR6GGaSiaIpBsOXcjQDG5h+S9/WnFwlcWkR/AkBX1WklctLIVS6x+XMaOenSMqMdVIUJqfX8tpRxeK67kyRHPKJsDPAlDlgCKq16UQxZc4+zISEfd5PEXn3LhjI5AkBw14MybI04eLK+pxDanYro+ixVKu1ML/hNPQO4O+NCjCcqeh6NCmW6U5mn2SwJvE7XQbQUheYpt3Gsey/Wix61AkEAlcjwdbAfo4HMqtKxmkdsW7P/r1r5uLs9wO4zItRk38dynC47LjeilSZEp5apN+ZjndYGxGDFiLxyAvTrn4mEmQ==
+        -----END RSA PRIVATE KEY-----";
+        $res = openssl_get_privatekey($priKey);
+        openssl_sign($data, $sign, $res);
+        openssl_free_key($res);
+        $sign = base64_encode($sign);
+        $sign = urlencode($sign);
+        return $sign;
+    }
+
+    /**
+     * 生成订单
+     * @param $tradeNo  交易号
+     * @param $orderTitle
+     * @param $amount
+     * @param $orderBody
+     * @return string
+     */
+
+     public function createOrder($tradeNo,$orderTitle,$amount,$orderBody){
+         $this->_config['body'] = $orderBody;   //必填商品详情
+         $this->_config['subject'] = $orderTitle;   //必填商品名称
+         $this->_config['out_trade_no'] = $tradeNo;   //必填交易号
+         $this->_config['total_fee'] = $amount;   // 交易额
+         $orderInfo = $this->createLinkstring($this->_config);
+         $sign = $this->rsaSign($orderInfo);
+         $returnStr = $orderInfo.'&sign="'.$sign.'"&sign_type="RSA"';
+         return $returnStr;
+     }
 
 }

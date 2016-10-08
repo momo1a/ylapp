@@ -64,8 +64,8 @@ class User_pay extends MY_Controller
                 $data['tradeChannel'] = 1;
                 $this->pay->submitPay($data) ? '' : $this->response($this->responseDataFormat(-1,'系统数据库错误',array()));
                 $amount = $amount / 100;
-                $submit = $this->alipay->submitPay($tradeNo,$orderBody,$amount,"");
-                //$this->response($this->responseDataFormat(0,'请求成功',array('aliSubmitParam'=>$submit)));
+                $submit = $this->alipay->createOrder($tradeNo,$orderBody,$amount,$orderBody);
+                $this->response($this->responseDataFormat(0,'请求成功',array('alipayReqStr'=>$submit)));
                 break;
             case 3 :  // 银联支付
                 break;
@@ -158,7 +158,7 @@ class User_pay extends MY_Controller
                 $data['tradeChannel'] = 1;
                 $this->pay->submitPay($data) ? '' : $this->response($this->responseDataFormat(-1,'系统数据库错误',array()));
                 $amount = $amount / 100;
-                $submit = $this->alipay->submitPay($tradeNo,$orderBody,$amount,"");
+                $submit = $this->alipay->createOrder($tradeNo,$orderBody,$amount,$orderBody);
                 $this->response($this->responseDataFormat(0,'请求成功',array('aliSubmitParam'=>$submit)));
                 break;
 

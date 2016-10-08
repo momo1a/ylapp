@@ -82,4 +82,39 @@ class Pay_model extends MY_Model
         }
     }
 
+
+    public function changeOrderStatus($tradeNo,$oid,$orderType){
+        /*开始事务*/
+        $this->db->trans_begin();
+        //$currentTime  = time();
+        $this->update_where('tradeNo',$tradeNo,array('status'=>1));  // 修改支付表交易状态
+        switch(intval($orderType)){
+            case 2: // 疫苗
+            case 3: // 基因
+                $this->db->query('UPDATE YL_order set `status`=2 WHERE oid='.$oid);  // 修改订单状态
+                break;
+            case 4: // 电话问诊
+                $this->db->query('UPDATE YL_user_phone_diagnosis SET `state`=1 WHERE id='.$oid); // 修改订单状态
+                break;
+            case 5: // 留言问答
+                $this->db->query('UPDATE YL_user_leaving_msg SET `state`=2 WHERE id='.$oid); // 修改订单状态
+                break;
+            case 6: // 预约挂号
+                $this->db->query('UPDATE YL_user_reg_num SET `status`=2 WHERE id='.$oid); // 修改订单状态
+                break;
+            default :
+                break;
+        }
+
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
+        }
+    }
 }

@@ -50,8 +50,6 @@ class User_pay extends MY_Controller
                 $this->response($this->responseDataFormat(0,'请求成功',array('wxPayUrl'=>$wxPayUrl)));
                 break;
             case 2 :  //  支付宝支付
-                header('Access-Control-Allow-Origin: *');
-                header('Content-type: text/plain');
                 $config = array(
                     'notifyUrl' => site_url().'notice/ali_recharge',
                     'returnUrl' => site_url().'notice/ali_return'
@@ -67,8 +65,7 @@ class User_pay extends MY_Controller
                 $this->pay->submitPay($data) ? '' : $this->response($this->responseDataFormat(-1,'系统数据库错误',array()));
                 $amount = $amount / 100;
                 $submit = $this->alipay->createOrder($tradeNo,$orderBody,$amount,$orderBody);
-                exit($submit);
-                //$this->response($this->responseDataFormat(0,'请求成功',array('alipayReqStr'=>$submit)));
+                $this->response($this->responseDataFormat(0,'请求成功',array('alipayReqStr'=>$submit)));
                 break;
             case 3 :  // 银联支付
                 break;
@@ -147,8 +144,8 @@ class User_pay extends MY_Controller
                 $this->response($this->responseDataFormat(0,'请求成功',array('wxPayUrl'=>$wxPayUrl)));
                 break;
             case 2:  //  支付宝支付
-                header('Access-Control-Allow-Origin: *');
-                header('Content-type: text/plain');
+                /*header('Access-Control-Allow-Origin: *');
+                header('Content-type: text/plain');*/
                 $config = array(
                     'notifyUrl' => site_url().'notice/ali_order_notify',
                     'returnUrl' => site_url().'notice/ali_return'
@@ -164,8 +161,7 @@ class User_pay extends MY_Controller
                 $this->pay->submitPay($data) ? '' : $this->response($this->responseDataFormat(-1,'系统数据库错误',array()));
                 $amount = $amount / 100;
                 $submit = $this->alipay->createOrder($tradeNo,$orderBody,$amount,$orderBody);
-                exit($submit);
-                //$this->response($this->responseDataFormat(0,'请求成功',array('aliSubmitParam'=>$submit)));
+                $this->response($this->responseDataFormat(0,'请求成功',array('aliSubmitParam'=>$submit)));
                 break;
 
             case 3:

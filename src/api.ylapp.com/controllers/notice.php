@@ -35,11 +35,11 @@ class Notice extends CI_Controller
         }
         file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'11111',FILE_APPEND);
 
-        require_once('Weixinpay/example/notify.php');
+        require_once(dirname(__FILE__).'/Weixinpay/example/notify.php');
         $QueryNotify = new PayNotifyCallBack();
         $msg = '';
         $notify = $QueryNotify->NotifyProcess($values,$msg);
-        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'55555',FILE_APPEND);
+        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'5555',FILE_APPEND);
         if(!$notify){
             echo $this->_BackXml($msg);
             return;

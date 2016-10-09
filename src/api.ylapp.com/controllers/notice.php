@@ -39,6 +39,7 @@ class Notice extends CI_Controller
         $QueryNotify = new PayNotifyCallBack();
         $msg = '';
         $notify = $QueryNotify->NotifyProcess($values,$msg);
+        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'55555',FILE_APPEND);
         if(!$notify){
             echo $this->_BackXml($msg);
             return;

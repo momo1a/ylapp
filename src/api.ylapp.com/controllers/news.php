@@ -11,11 +11,13 @@ class News extends MY_Controller
 
     protected static $_imgServer = null;
 
+    protected static $_detailSite = null;
     public function __construct(){
         parent::__construct();
         $this->load->model('News_model','news');
         $this->load->model('News_collections_model','news_collection');
         self::$_imgServer = $this->getImgServer();
+        self::$_detailSite = config_item('domain_detail') or exit('资讯详情页站点未配置');
     }
 
     /**
@@ -54,8 +56,9 @@ class News extends MY_Controller
         $isCollection = $isCollection ? '已收藏' : '未收藏';
         $collId = $this->news_collection->getCollId(self::$currentUid,$nid);
         $collId = $collId ? $collId : 0;
+        $shareLink = self::$_detailSite.$nid;
         if($res){
-            $this->response($this->responseDataFormat(0,'请求成功',array('news'=>$res,'isColl'=>$isCollection,'collId'=>intval($collId))));
+            $this->response($this->responseDataFormat(0,'请求成功',array('news'=>$res,'isColl'=>$isCollection,'collId'=>intval($collId),'shareLink'=>$shareLink)));
         }else{
             $this->response($this->responseDataFormat(-1,'请求失败',array()));
         }

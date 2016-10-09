@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact</title>
+    <title><?php echo $detail['title'];?>-移动医疗</title>
     <link href="<?php echo config_item('domain_static')?>admin/bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
     <!-- Custom Theme files -->
     <link href="<?php echo config_item('domain_static')?>admin/css/style.css" rel="stylesheet" type="text/css" media="all" />

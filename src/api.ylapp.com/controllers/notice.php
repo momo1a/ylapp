@@ -22,6 +22,7 @@ class Notice extends CI_Controller
      */
     public function wx_recharge(){
         $xml = $GLOBALS['HTTP_RAW_POST_DATA'];
+        file_put_contents(dirname(__FILE__).'/wx.xml',$xml);
         if(!$xml){
             echo $this->_BackXml('获取XML为空');
             return;

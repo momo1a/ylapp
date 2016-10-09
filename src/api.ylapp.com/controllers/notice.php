@@ -28,12 +28,12 @@ class Notice extends CI_Controller
         }
         libxml_disable_entity_loader(true);
         $values = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
-        file_put_contents(dirname(__FILE__).'wx.xml',PHP_EOL.var_export($values),FILE_APPEND);
+
         if(!$values){
             echo $this->_BackXml('XML解析失败');
             return;
         }
-        file_put_contents(dirname(__FILE__).'wx.xml',PHP_EOL.'11111',FILE_APPEND);
+        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'11111',FILE_APPEND);
 
         require_once('Weixinpay/example/notify.php');
         $QueryNotify = new PayNotifyCallBack();
@@ -43,15 +43,15 @@ class Notice extends CI_Controller
             echo $this->_BackXml($msg);
             return;
         }
-        file_put_contents(dirname(__FILE__).'wx.xml',PHP_EOL.'22222',FILE_APPEND);
+        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'22222',FILE_APPEND);
         $check = $this->pay->getRow($values['out_trade_no']);
         if($check['status']){
             echo $this->_BackXml('订单状态错误(或已经支付)');
             return;
         }
-        file_put_contents(dirname(__FILE__).'wx.xml',PHP_EOL.'33333',FILE_APPEND);
+        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'33333',FILE_APPEND);
         $result = $this->pay->changeRechargeStatus($check['uid'],$values['out_trade_no'],$values['total_fee']/100);
-        file_put_contents(dirname(__FILE__).'wx.xml',PHP_EOL.'44444',FILE_APPEND);
+        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'44444',FILE_APPEND);
         if(!$result){
             echo $this->_BackXml('事务回滚');
             return;

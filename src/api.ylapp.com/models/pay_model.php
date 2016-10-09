@@ -66,8 +66,8 @@ class Pay_model extends MY_Model
         $currentTime  = time();
         $this->update_where('tradeNo',$tradeNo,array('status'=>1));
 
-        $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$amount.',`updateTime`='.$currentTime.' WHERE `uid`='.$uid);
-        if(!$updateRes){
+        $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$amount.',`updateTime`='.$currentTime.' WHERE `uid`='.$uid);
+        if(!$this->db->affected_rows()){
             $this->db->insert('money',array('uid'=>$uid,'amount'=>$amount,'updateTime'=>$currentTime));
         }
         if ($this->db->trans_status() === FALSE)

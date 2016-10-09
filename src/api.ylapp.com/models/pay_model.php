@@ -90,6 +90,8 @@ class Pay_model extends MY_Model
         $this->db->trans_begin();
         //$currentTime  = time();
         $this->update_where('tradeNo',$tradeNo,array('status'=>1));  // 修改支付表交易状态
+
+
         switch(intval($orderType)){
             case 2: // 疫苗
             case 3: // 基因
@@ -107,7 +109,9 @@ class Pay_model extends MY_Model
             default :
                 break;
         }
-
+        $this->db->where('tradeNo',$tradeNo);
+        $this->db->update('trade_log',array('status'=>1));
+        
         if ($this->db->trans_status() === FALSE)
         {
             $this->db->trans_rollback();

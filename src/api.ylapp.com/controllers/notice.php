@@ -45,8 +45,9 @@ class Notice extends CI_Controller
         }*/
 
         $check = $this->pay->getRow($values['out_trade_no']);
+        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.$check['status'],FILE_APPEND);
         if($check['status'] == 1){
-            echo $this->_BackXml('订单状态错误(或已经支付)');
+            echo $this->_BackXml('已经支付',true);
             return;
         }
 

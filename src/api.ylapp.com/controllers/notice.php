@@ -33,7 +33,6 @@ class Notice extends CI_Controller
             echo $this->_BackXml('XML解析失败');
             return;
         }
-        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'11111',FILE_APPEND);
 
         //require_once(dirname(__FILE__).'/Weixinpay/example/notify.php');
         /*$QueryNotify = new PayNotifyCallBack();
@@ -44,13 +43,13 @@ class Notice extends CI_Controller
             echo $this->_BackXml($msg);
             return;
         }*/
-        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'22222',FILE_APPEND);
+
         $check = $this->pay->getRow($values['out_trade_no']);
-        if($check['status']){
+        if($check['status'] == 1){
             echo $this->_BackXml('订单状态错误(或已经支付)');
             return;
         }
-        file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'33333',FILE_APPEND);
+
         $result = $this->pay->changeRechargeStatus($check['uid'],$values['out_trade_no'],$values['total_fee']/100);
         file_put_contents(dirname(__FILE__).'/wx.xml',PHP_EOL.'44444',FILE_APPEND);
         if(!$result){

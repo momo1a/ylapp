@@ -52,6 +52,7 @@ class News extends MY_Controller
     public function getNewsDetail(){
         $nid = intval($this->input->get_post('nid'));
         $res = $this->news->getNewsDetail($nid,'title,author,FROM_UNIXTIME(createTime) AS createTime,content');
+        $res['content'] = trim($res['content']);
         $res['content'] = ltrim($res['content'],'<p>');
         $res['content'] = rtrim($res['content'],'</p>');
         $isCollection = $this->news_collection->getCollectionByUidAndNid(self::$currentUid,$nid);

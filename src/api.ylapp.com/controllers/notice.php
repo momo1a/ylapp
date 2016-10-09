@@ -28,6 +28,7 @@ class Notice extends CI_Controller
         }
         libxml_disable_entity_loader(true);
         $values = json_decode(json_encode(simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
+        file_put_contents(dirname(__FILE__).'wx.xml',PHP_EOL.var_export($values),FILE_APPEND);
         if(!$values){
             echo $this->_BackXml('XML解析失败');
             return;

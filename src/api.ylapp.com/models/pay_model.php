@@ -24,7 +24,7 @@ class Pay_model extends MY_Model
 
         $this->insert($data);  //  支付表
 
-        $this->db->insert('trade_log',array_diff($data,array('tradeNo'=>$data['tradeNo'],'oid'=>$data['oid']))); // 交易记录表
+        $this->db->insert('trade_log',array_diff($data,array('oid'=>$data['oid']))); // 交易记录表
 
 
         // 用户医生日志表
@@ -70,6 +70,8 @@ class Pay_model extends MY_Model
         if(!$this->db->affected_rows()){
             $this->db->insert('money',array('uid'=>$uid,'amount'=>$amount,'updateTime'=>$currentTime));
         }
+        $this->db->where('tradeNo',$tradeNo);
+        $this->db->update('trade_log',array('status'=>1));
         if ($this->db->trans_status() === FALSE)
         {
             $this->db->trans_rollback();

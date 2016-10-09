@@ -16,7 +16,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <!-- header-section-starts -->
-<div class="header">
+<!--<div class="header" style="background:gainsboro">
     <div class="container">
         <div class="logo">
             <a href="index.html"><h1>konstructs</h1></a>
@@ -37,83 +37,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="clearfix"></div>
     </div>
-</div>
+</div>-->
 <div class="container">
     <div class="header-bottom">
-        <div class="type">
-            <h5>Article Types</h5>
+        <div class="row" style="text-align: center">
+            <h4><?php echo $detail['title'];?></h4>
         </div>
-        <span class="menu"></span>
-        <div class="list-nav">
-            <ul>
-                <li><a href="3dprinting.html">3D Printing</a></li>|
-                <li><a href="materials.html">Materials</a></li>|
-                <li><a href="printing.html">Printing</a></li>|
-                <li><a href="filestoprint.html">Files to Print</a></li>|
-                <li><a href="404.html">Videos</a></li>|
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-        <!-- script for menu -->
-        <script>
-            $( "span.menu" ).click(function() {
-                $( ".list-nav" ).slideToggle( "slow", function() {
-                    // Animation complete.
-                });
-            });
-        </script>
-        <!-- script for menu -->
-        <div class="clearfix"></div>
+        <!--<div class="clearfix"></div>-->
     </div>
 </div>
 <div class="container">
     <div class="content">
         <div class="contact-section">
-            <h3 class="c-head">contact-us</h3>
-            <div class="singel_right">
-                <div class="lcontact span_1_of_contact">
-                    <div class="contact-form">
-                        <form method="post" action="">
-                            <p class="comment-form-author"><label for="author">Your Name:</label>
-                                <input type="text" class="textbox" value="Enter your name here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name here...';}">
-                            </p>
-                            <p class="comment-form-author"><label for="author">Email:</label>
-                                <input type="text" class="textbox" value="Enter your email here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
-                            </p>
-                            <p class="comment-form-author"><label for="author">Message:</label>
-                                <textarea value="Enter your message here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Enter your message here...</textarea>
-                            </p>
-                            <input name="submit" type="submit" id="submit" value="Submit">
-                        </form>
-                    </div>
-                </div>
-                <div class="contact_grid span_2_of_contact_right">
-                    <h3>Address</h3>
-                    <div class="address">
-                        <i class="pin_icon"></i>
-                        <div class="contact_address">
-                            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="address">
-                        <i class="phone"></i>
-                        <div class="contact_address">
-                            1-25-2568-897
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="address">
-                        <i class="mail"></i>
-                        <div class="contact_email">
-                            <a href="mailto:example@gmail.com">info(at)company.com</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-xs-6"><span><strong>作者：</strong></span><?php echo $detail['author']?></div>
+                <div class="col-xs-6" style="text-align: right"><span><?php echo date('Y-m-d H:i:s',$detail['createTime']);?></span></div>
+                <hr/>
             </div>
 
+            <div>
+                <?php echo $detail['content'];?>
+            </div>
         </div>
     </div>
 </div>

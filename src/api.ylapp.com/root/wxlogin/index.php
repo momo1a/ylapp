@@ -10,6 +10,6 @@ session_start();
 $state  = md5(uniqid(rand(), TRUE));
 $_SESSION["wx_state"]    =   $state; //存到SESSION
 $callback = urlencode($callback);
-$wxurl = "https://open.weixin.qq.com/connect/qrconnect?appid=".$AppID."&redirect_uri={$callback}&response_type=code&scope=snsapi_login&state={$state}#wechat_redirect";
+$wxurl = "https://open.weixin.qq.com/connect/qrconnect?appid=".$AppID."&redirect_uri={$callback}&response_type=code&scope=snsapi_userinfo&state={$state}#wechat_redirect";
 header("Location: $wxurl");
 

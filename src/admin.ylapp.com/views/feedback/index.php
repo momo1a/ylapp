@@ -14,15 +14,14 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">医院管理</h3>
-                        <a data-target="#hospital_add" data-toggle="modal"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加医院</h3></a>
+                        <h3 class="box-title">用户反馈</h3>
                     </div>
                     <div class="bg-gray color-palette">
-                        <form method="get" id="hospital-search" action="<?php echo site_url()?>hospital/index">
+                        <form method="get" id="feedback-search" action="<?php echo site_url()?>feedback/index">
                             <div class="input-group">
-                                <label for="nickname">医院名称：</label>
-                                <input type="search" name="keyword"   placeholder="请输入医院名称关键字" value="<?php echo $get['keyword'];?>" style="margin-right: 10px" size="30">
-                                <input type="button" onclick="$('#hospital-search').submit()" value="搜索">
+                                <label for="nickname">用户名：</label>
+                                <input type="search" name="keyword"   placeholder="请输入反馈用户名关键字" value="<?php echo $get['keyword'];?>" style="margin-right: 10px" size="30">
+                                <input type="button" onclick="$('#feedback-search').submit()" value="搜索">
                             </div>
                         </form>
                     </div>
@@ -32,22 +31,22 @@
                             <thead>
                             <tr>
                                 <th>编号</th>
-                                <th>医院名称</th>
-                                <th>地址</th>
-                                <th>详情</th>
-                                <th>操作</th>
+                                <th>反馈内容</th>
+                                <th>反馈时间</th>
+                                <th>用户名</th>
+                                <th>位置</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php if(!empty($list)){;?>
                                 <?php foreach($list as $value){?>
                                     <tr>
-                                        <th><?php echo $value['hid'];?></th>
-                                        <th><?php echo $value['name'];?></th>
-                                        <th><?php echo $value['address'];?></th>
-                                        <th><a data-target="#hospital_detail" data-toggle="modal" hid="<?php echo $value['hid'];?>" onclick="getHospitalDetail(this);" title="医院详情">详情</a></th>
-                                        <th><a data-target="#hospital_del" data-toggle="modal"  hid="<?php echo $value['hid'];?>" onclick="hospitalDelPre(this);return
-                                         false;" title="删除医院"><span class="glyphicon glyphicon-trash"></span></a></th>
+                                        <th><?php echo $value['id'];?></th>
+                                        <th><?php echo $value['content'];?></th>
+                                        <th><?php echo date('Y-m-d H:i:s',$value['dateline']);?></th>
+                                        <th><?php echo $value['nickname'];?></th>
+                                        <?php $pos = array('1'=>'用户端','2'=>'医生端');?>
+                                        <th><?php echo $pos[$value['userType']];?></th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

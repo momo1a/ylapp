@@ -9,7 +9,7 @@ session_start();
 //-------生成唯一随机串防CSRF攻击
 $state  = md5(uniqid(rand(), TRUE));
 $_SESSION["wx_state"]    =   $state; //存到SESSION
-$callback = urlencode($this->callback);
-$wxurl = "https://open.weixin.qq.com/connect/qrconnect?appid=".$this->AppID."&redirect_uri={$callback}&response_type=code&scope=snsapi_login&state={$state}#wechat_redirect";
+$callback = urlencode($callback);
+$wxurl = "https://open.weixin.qq.com/connect/qrconnect?appid=".$AppID."&redirect_uri={$callback}&response_type=code&scope=snsapi_login&state={$state}#wechat_redirect";
 header("Location: $wxurl");
 

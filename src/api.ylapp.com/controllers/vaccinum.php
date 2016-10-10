@@ -49,7 +49,7 @@ class Vaccinum extends MY_Controller
         $this->checkUserLogin();
         $vaccinumId = intval($this->input->get_post('vaccinumId'));
         $vaccinumPrice = $this->vaccinum->getvaccinumDetail($vaccinumId,'price');
-        $money = $this->money->getUserMoney(self::$currentUid);
+
 
         /*添加订单*/
         $userName =$this->user->getUserInfoByUid(self::$currentUid,'nickname');
@@ -69,6 +69,17 @@ class Vaccinum extends MY_Controller
             'status'=>1
         );
         $orderId = $this->order->addOrder($data);
-        $this->response($this->responseDataFormat(0,'请求成功',array('remainAmount'=>$money,'price'=>$vaccinumPrice,'orderId'=>$orderId)));
+        $this->response($this->responseDataFormat(0,'请求成功',array('price'=>$vaccinumPrice,'orderId'=>$orderId)));
+    }
+
+    /**
+     * 支付页面第二步
+     */
+    public function payViewStepS(){
+        $this->checkUserLogin();
+        $oid = intval($this->input->get_post('orderId'));
+        $money = $this->money->getUserMoney(self::$currentUid);
+        $orderInfo = $this->order->getOrderById($oid);
+        $this->response($this->responseDataFormat(0,'请求成功',array('orderInfo'=>$orderInfo,'remainAmount'=>$money)));
     }
 }

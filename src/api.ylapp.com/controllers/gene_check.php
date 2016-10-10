@@ -47,7 +47,6 @@ class Gene_check extends MY_Controller
         $this->checkUserLogin();
         $geneId = intval($this->input->get_post('geneId'));
         $genePrice = $this->gene->getGeneDetail($geneId,'price');
-        $money = $this->money->getUserMoney(self::$currentUid);
 
         /*添加订单*/
         $userName =$this->user->getUserInfoByUid(self::$currentUid,'nickname');
@@ -67,6 +66,18 @@ class Gene_check extends MY_Controller
             'status'=>1
         );
         $orderId = $this->order->addOrder($data);
-        $this->response($this->responseDataFormat(0,'请求成功',array('remainAmount'=>$money,'price'=>$genePrice,'orderId'=>$orderId)));
+        $this->response($this->responseDataFormat(0,'请求成功',array('price'=>$genePrice,'orderId'=>$orderId)));
+    }
+
+
+    /**
+     * 支付页面第二步
+     */
+    public function payViewStepS(){
+        $this->checkUserLogin();
+        $oid = intval($this->input->get_post('orderId'));
+        $money = $this->money->getUserMoney(self::$currentUid);
+        $orderInfo = $this->order->getOrderById($oid);
+        $this->response($this->responseDataFormat(0,'请求成功',array('orderInfo'=>$orderInfo,'remainAmount'=>$money)));
     }
 }

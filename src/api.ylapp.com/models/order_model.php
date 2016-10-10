@@ -65,4 +65,12 @@ class Order_model extends MY_Model
         $res = $this->find_all();
         return $res;
     }
+
+    /**
+     * 获取订单
+     * @param $oid
+     */
+    public function getOrderById($oid){
+        return $this->find_by(array('oid'=>$oid));
+    }
 }

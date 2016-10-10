@@ -114,12 +114,6 @@ class User_center extends MY_Controller
         $this->myMoney();
     }
 
-    /**
-     * 充值待开发
-     */
-    public function recharge(){
-
-    }
 
     /**
      * 提现页面
@@ -152,7 +146,7 @@ class User_center extends MY_Controller
         $limit = intval($this->input->get_post('limit'));
         $limit = $limit == 0 ? 10 : $limit;
         $offset = intval($this->input->get_post('offset'));
-        $res = $this->online_ask->getListByUid(self::$currentUid,'id,docName,FROM_UNIXTIME(askTime) as dateline,askContent,(case when state=0 then "未支付" when state=1 then "待处理" when state=2 then "已确认沟通时间" when state=3 then "完成" when state=4 then "失败" end) as state',$limit,$offset);
+        $res = $this->online_ask->getListByUid(self::$currentUid,'id,docName,FROM_UNIXTIME(askTime) as dateline,price,askContent,(case when state=0 then "未支付" when state=1 then "待处理" when state=2 then "已确认沟通时间" when state=3 then "完成" when state=4 then "失败" end) as state',$limit,$offset);
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 
@@ -162,7 +156,7 @@ class User_center extends MY_Controller
 
     public function onlineAskDetail(){
         $id = intval($this->input->get_post('id'));
-        $res = $this->online_ask->getDetailById(self::$currentUid,$id,'askNickname as name,docId,docName,askTelephone,FROM_UNIXTIME(hopeCalldate) AS hopeDate,phoneTimeLen as timeLen,price,askContent,(case when state=0 then "未支付" when state=1 then "待处理" when state=2 then "已确认沟通时间" when state=3 then "完成" when state=4 then "失败" end) as state');
+        $res = $this->online_ask->getDetailById(self::$currentUid,$id,'id,askNickname as name,docId,docName,askTelephone,FROM_UNIXTIME(hopeCalldate) AS hopeDate,phoneTimeLen as timeLen,price,askContent,(case when state=0 then "未支付" when state=1 then "待处理" when state=2 then "已确认沟通时间" when state=3 then "完成" when state=4 then "失败" end) as state');
 
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
@@ -217,7 +211,7 @@ class User_center extends MY_Controller
         $limit = intval($this->input->get_post('limit'));
         $limit = $limit == 0 ? 10 : $limit;
         $offset = intval($this->input->get_post('offset'));
-        $res = $this->appoint->appointList(self::$currentUid,'YL_user_reg_num.id,YL_user_reg_num.docName,YL_hospital.name as hosName,YL_hospital.address,FROM_UNIXTIME(YL_user_reg_num.appointTime) AS dateline,(case when YL_user_reg_num.status=0 then "未支付" when YL_user_reg_num.status=2 then "待处理" when YL_user_reg_num.status=3 then "预约成功" when YL_user_reg_num.status=4 then "预约失败" when YL_user_reg_num.status=5 then "完成" end) as status',$limit,$offset);
+        $res = $this->appoint->appointList(self::$currentUid,'YL_user_reg_num.id,YL_user_reg_num.docName,YL_hospital.name as hosName,YL_user_reg_num.price,YL_hospital.address,FROM_UNIXTIME(YL_user_reg_num.appointTime) AS dateline,(case when YL_user_reg_num.status=0 then "未支付" when YL_user_reg_num.status=2 then "待处理" when YL_user_reg_num.status=3 then "预约成功" when YL_user_reg_num.status=4 then "预约失败" when YL_user_reg_num.status=5 then "完成" end) as status',$limit,$offset);
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 

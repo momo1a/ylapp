@@ -8,14 +8,14 @@ class Test
      * 阿里平台分配
      * @var string
      */
-    protected $_appKye = '23424993';
+    protected $_appKye = '23475933';
 
 
     /**
      * 阿里平台分配
      * @var string
      */
-    protected $_sectet = '64245849464c8b0fc4ebed0bf58f33e5';
+    protected $_sectet = 'a3af895021da1f5784d872f14c7124c0';
 
 
     public function __construct(){
@@ -43,7 +43,11 @@ class Test
         $userinfos['weibo']="demo";
         $req->setUserinfos(json_encode($userinfos));
         $resp = $c->execute($req);
+        var_dump($resp);
     }
+
+
+
 
 
 

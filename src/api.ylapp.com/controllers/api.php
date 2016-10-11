@@ -38,25 +38,36 @@ class Api extends MY_Controller
 	}
 
     /**
-     * 登陆接口
+     * 登录接口
+     * @param bool $isThirdPart  默认非第三方平台登录
      */
-    public function login(){
-        $this->load->model('user_model','user');
-        $user = addslashes(trim($this->input->post('user')));
-        $pwd = $this->input->post('pwd');
-        if(empty($user)){
-            $this->response($this->responseDataFormat(4,'账号不能为空',array())); //用户状态异常
-        }
-        $res = $this->user->getRecord('phone',$user);
-        if(!$res){
-            $this->response($this->responseDataFormat(1,'用户不存在',array())); //用户用户不存在
-        }
-        if($this->encryption($pwd) != $res['password']){
-            $this->response($this->responseDataFormat(2,'密码不正确',array())); //用户类型不存在
-        }
+    public function login($isThirdPart = false,$data = array()){
+        if(!$isThirdPart) {
+            $this->load->model('user_model', 'user');
+            $user = addslashes(trim($this->input->post('user')));
+            $pwd = $this->input->post('pwd');
+            $userType = intval($this->input->get_post('userType'));  // 添加用户类型参数传递
+            if (empty($user)) {
+                $this->response($this->responseDataFormat(4, '账号不能为空', array())); //用户状态异常
+            }
+            $res = $this->user->getUserCondition(array('phone' => $user, 'userType' => $userType));
+            if (!$res) {
+                $this->response($this->responseDataFormat(1, '用户不存在', array())); //用户用户不存在
+            }
+            if ($this->encryption($pwd) != $res['password']) {
+                $this->response($this->responseDataFormat(2, '密码不正确', array())); //用户密码不正确
+            }
 
-        if($res['isBlack'] != 0 || $res['status'] != 0){
-            $this->response($this->responseDataFormat(3,'用户状态异常',array())); //用户状态异常
+            if ($res['isBlack'] != 0 || $res['status'] != 0) {
+                $this->response($this->responseDataFormat(3, '用户状态异常', array())); //用户状态异常
+            }
+
+        }else{
+            $res = $data;
+            if ($res['isBlack'] != 0 || $res['status'] != 0) {
+                $this->response($this->responseDataFormat(3, '用户状态异常', array())); //用户状态异常
+            }
+
         }
         /*  检测通过 */
         $privateToken = $this->crypt->encode($res['uid'].'-'.$user.'-'.time().'-'.$res['userType']);  //私有token
@@ -69,6 +80,62 @@ class Api extends MY_Controller
         
 
     }
+
+    /**
+     * 检测绑定接口
+     */
+    public function checkBind(){
+        $bindType = intval($this->input->get_post('bindType'));  // 绑定类型 1 微信 2 。。
+        switch($bindType){
+            case 1:  //  检查微信绑定
+                $openId = trim($this->input->get_post('openId'));  // 微信唯一标识
+                $isBind = $this->user->getRecord('wechatOpenid',$openId);   // 判断是否绑定 绑定直接跳到登录接口
+                if($isBind){  // 已经绑定 直接返回登录信息
+                    $this->login(true,$isBind);
+                }else{
+                    $this->response($this->responseDataFormat(5, '微信账号没有绑定', array())); //登陆失败
+                }
+                break;
+            default:
+                $this->response($this->responseDataFormat(-1, '未知绑定类型', array())); //未知绑定类型
+        }
+    }
+
+    /**
+     * 第三方绑定接口
+     */
+    public function thirdPartBind(){
+        $bindType = intval($this->input->get_post('bindType'));  // 绑定类型 1 微信 2 。。
+        switch($bindType){
+            case 1:  //  微信绑定
+                $openId = trim($this->input->get_post('openId'));  // 微信唯一标识
+                $user = trim($this->input->get_post('telephone'));  // 用户手机号
+
+                /* 这里先走发送验证码接口 sendIdentifyCode(mobile=电话号码,flag=1)*/
+
+                $code = $this->input->get_post('code');    //  验证码
+                $serverMsgCode = $this->cache->get($user);  //获取存在服务器的验证码
+                if($code != $serverMsgCode){
+                    $this->response($this->responseDataFormat(1,'验证码不正确或者已经过期',array()));
+                }
+
+                /*开始绑定*/
+
+                $res = $this->user->bindThirdPart($openId,$user);
+                if(!$res){
+                    $this->response($this->responseDataFormat(-1, '系统错误绑定失败', array())); //登陆失败
+                }
+
+                $this->login(true,$res);  // 转到登录接口
+
+                break;
+            case 2: //  其他绑定待开发
+                break;
+            default :
+                $this->response($this->responseDataFormat(-1, '未知绑定类型', array())); //登陆失败
+        }
+    }
+
 
     /**
      * 注册接口

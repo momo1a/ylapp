@@ -24,7 +24,8 @@ class Diagnosis_online extends MY_Controller
         $docId = intval($this->input->get_post('docId'));
         $illness = $this->illness_history->illnessList(self::$currentUid);
         $timeLen = $this->fee_setting->getFeeSettingByUid($docId,'phoneTimeLenFirst,phoneFeeFirst,phoneTimeLenSecond,phoneFeeSecond,phoneTimeLenThird,phoneFeeThird');
-        $this->response($this->responseDataFormat(0,'请求成功',array('illness'=>$illness,'timeLen'=>$timeLen)));
+        $userInfo = $this->user->getUserByUid(self::$currentUid,'nickname,phone,(case when sex=1 then "男" when sex=2 then "女" end)as sex');
+        $this->response($this->responseDataFormat(0,'请求成功',array('illness'=>$illness,'timeLen'=>$timeLen,'userInfo'=>$userInfo)));
     }
 
 

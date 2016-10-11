@@ -15,6 +15,8 @@ CREATE TABLE `YL_user` (
   `birthday` int(11)  NOT NULL DEFAULT '0' COMMENT '出生日期',
   `avatar` varchar(50) not null default '' comment '头像',
   `isBlack` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否黑名单:0否,1是',
+  `isBindWechat` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否绑定微信:0否,1是',
+  `wechatOpenid`  VARCHAR(32) NOT NULL DEFAULT '' COMMENT '微信唯一标识openid',
   `isBackgroundUser` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '是否后台管理员:0否,1是',
   `role` VARCHAR(20) NOT NULL DEFAULT '' comment '角色名',
   `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '用户状态：0正常，N保留',

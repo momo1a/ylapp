@@ -28,7 +28,8 @@ class Reg_num extends MY_Controller
         $illness = $this->illness->illnessList(self::$currentUid,'illId,illName');
         $fee = $this->fee_setting->getFeeSettingByUid($docId,'regNumFee');
         $hospitalAddress = $this->user->getDoctorDetail($docId,'YL_hospital.address');
-        $this->response($this->responseDataFormat(0,'请求成功',array('illness'=>$illness,'fee'=>$fee,'address'=>$hospitalAddress)));
+        $userInfo = $this->user->getUserByUid(self::$currentUid,'nickname,phone,(case when sex=1 then "男" when sex=2 then "女" end)as sex');
+        $this->response($this->responseDataFormat(0,'请求成功',array('illness'=>$illness,'fee'=>$fee,'address'=>$hospitalAddress,'userInfo'=>$userInfo)));
     }
 
     /**

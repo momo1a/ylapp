@@ -70,6 +70,40 @@ class User_model extends MY_Model
     }
 
     /**
+     * 依据条件获取一条用户数据
+     * @param $condition
+     */
+    public function getUserCondition($condition){
+        return $this->find_by($condition);
+    }
+
+
+    /**
+     * 绑定第三方账号
+     * @param $flag  绑定唯一标识
+     * @param $phone 用户手机号
+     * @param $type  绑定类型 1 微信 ，2 。。。 默认微信
+     */
+    public function bindThirdPart($flag,$phone,$type=1){
+        switch($type){
+            case 1:
+                $where = array('phone'=>$phone,'userType'=>1);
+                $data = array('isBindWechat'=>1,'wechatOpenid'=>$flag);
+                $res = $this->update($where,$data);
+                if($res){
+                    return $this->find_by($where);
+                }else{
+                    return false;
+                }
+                break;
+            default:
+                exit('绑定类型错误');
+        }
+
+
+    }
+
+    /**
      * 根据uid获取一条用户记录
      * @param $uid
      */

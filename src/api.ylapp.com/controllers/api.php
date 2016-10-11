@@ -89,6 +89,9 @@ class Api extends MY_Controller
         switch($bindType){
             case 1:  //  检查微信绑定
                 $openId = trim($this->input->get_post('openId'));  // 微信唯一标识
+                if(empty($openId)){
+                    $this->response($this->responseDataFormat(-1, 'openId不能为空', array())); //未知绑定类型
+                }
                 $isBind = $this->user->getRecord('wechatOpenid',$openId);   // 判断是否绑定 绑定直接跳到登录接口
                 if($isBind){  // 已经绑定 直接返回登录信息
                     $this->login(true,$isBind);
@@ -110,7 +113,9 @@ class Api extends MY_Controller
             case 1:  //  微信绑定
                 $openId = trim($this->input->get_post('openId'));  // 微信唯一标识
                 $user = trim($this->input->get_post('telephone'));  // 用户手机号
-
+                if(empty($openId)){
+                    $this->response($this->responseDataFormat(-1, 'openId不能为空', array())); //未知绑定类型
+                }
                 /* 这里先走发送验证码接口 sendIdentifyCode(mobile=电话号码,flag=1)*/
 
                 $code = $this->input->get_post('code');    //  验证码
@@ -123,7 +128,7 @@ class Api extends MY_Controller
 
                 $res = $this->user->bindThirdPart($openId,$user);
                 if(!$res){
-                    $this->response($this->responseDataFormat(-1, '系统错误绑定失败', array())); //登陆失败
+                    $this->response($this->responseDataFormat(-1, '系统错误绑定失败', array())); //绑定失败
                 }
 
                 $this->login(true,$res);  // 转到登录接口

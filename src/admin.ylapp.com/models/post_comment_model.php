@@ -31,7 +31,7 @@ class  Post_comment_model extends MY_Model
         if($state != -1){
             $this->where(array('YL_post_comment.state'=>$state));
         }
-        $this->select('YL_post_comment.id,pu.nickname as postUser,p.postTitle,YL_post_comment.recmdContent,from_unixtime(YL_post_comment.recmdTime) as recmdTime,cu.nickname as cmdUser,YL_post_comment.state');
+        $this->select('YL_post_comment.id,pu.nickname as postUser,post.postTitle,YL_post_comment.recmdContent,from_unixtime(YL_post_comment.recmdTime) as recmdTime,cu.nickname as cmdUser,YL_post_comment.state');
         $this->join('YL_post','YL_post.id=YL_post_comment.postId','left');
         $this->join('YL_user AS pu','pu.uid=p.postUid','left');
         $this->join('YL_user AS cu','cu.uid=YL_post_comment.recmdUid','left');

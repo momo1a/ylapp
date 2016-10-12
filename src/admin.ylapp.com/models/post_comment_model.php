@@ -25,14 +25,14 @@ class  Post_comment_model extends MY_Model
      */
     public function commentList($keyword = '',$state = -1,$limit=10,$offset=0){
         if($keyword != ''){
-            $this->like(array('p.postTitle'=>$keyword));
+            $this->like(array('YL_post.postTitle'=>$keyword));
         }
 
         if($state != -1){
             $this->where(array('YL_post_comment.state'=>$state));
         }
         $this->select('YL_post_comment.id,pu.nickname as postUser,p.postTitle,YL_post_comment.recmdContent,from_unixtime(YL_post_comment.recmdTime) as recmdTime,cu.nickname as cmdUser,YL_post_comment.state');
-        $this->join('YL_post AS p','p.id=YL_post_comment.postId','left');
+        $this->join('YL_post','YL_post.id=YL_post_comment.postId','left');
         $this->join('YL_user AS pu','pu.uid=p.postUid','left');
         $this->join('YL_user AS cu','cu.uid=YL_post_comment.recmdUid','left');
         $this->offset($offset);
@@ -49,13 +49,13 @@ class  Post_comment_model extends MY_Model
      */
     public function commentCount($keyword = '',$state = -1){
         if($keyword != ''){
-            $this->like(array('p.postTitle'=>$keyword));
+            $this->like(array('YL_post.postTitle'=>$keyword));
         }
 
         if($state != -1){
             $this->where(array('state'=>$state));
         }
-        $this->join('YL_post AS p','p.id=YL_post_comment.postId','left');
+        $this->join('YL_post','YL_post.id=YL_post_comment.postId','left');
         return $this->count_all();
     }
 

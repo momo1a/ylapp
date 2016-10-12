@@ -31,7 +31,7 @@ class MY_Controller extends CI_Controller
         $this->load->library('Upload_image',null,'upload');
         /* 未登录 */
         if(!get_user()){
-            redirect(site_url().'login/index?request_url='.site_url().$this->input->server('REQUEST_URI'));
+            redirect(site_url().'login/index?request_url='.trim(site_url(),'/').$this->input->server('REQUEST_URI'));
         }
         /*  是否超级管理员 */
         $supers = config_item('super_admin');

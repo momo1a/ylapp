@@ -88,6 +88,7 @@ class Cash extends MY_Controller
      * 导出数据
      */
     protected function exportData(){
+        header("Content-type:application/vnd.ms-excel");
         $filename = '提现数据('.date("Y-m-d-H:i:s", time()).').xls';
         $keyword = $this->input->get_post('keyword');
         $userType = intval($this->input->get_post('userType'));

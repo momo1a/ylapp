@@ -79,7 +79,7 @@ class  Take_cash_model extends MY_Model
             'tradeChannel'=>0,
             'dateline'=>$currentTime,
             'status'=>$status,
-            'tradeType'=>1
+            'tradeType'=>0
         );
         $this->db->insert('trade_log',$insertData); // 修改交易记录
 

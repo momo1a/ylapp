@@ -135,7 +135,7 @@ class User_phone_diagnosis_model extends MY_Model
             $this->where(array('askNickname'=>$keyword));
         }
         if($state != -1){
-            $this->where(array('YL_user_reg_num.state'=>$state));
+            $this->where(array('YL_user_phone_diagnosis.state'=>$state));
         }
         $this->select($select);
         $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user_phone_diagnosis.docId','left');

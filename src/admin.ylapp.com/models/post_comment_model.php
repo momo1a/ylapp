@@ -25,7 +25,7 @@ class  Post_comment_model extends MY_Model
      */
     public function commentList($keyword = '',$state = -1,$limit=10,$offset=0){
         if($keyword != ''){
-            $this->like(array('YL_post.postTitle'=>$keyword));
+            $this->like(array('p.postTitle'=>$keyword));
         }
 
         if($state != -1){
@@ -49,7 +49,7 @@ class  Post_comment_model extends MY_Model
      */
     public function commentCount($keyword = '',$state = -1){
         if($keyword != ''){
-            $this->like(array('YL_post.postTitle'=>$keyword));
+            $this->like(array('p.postTitle'=>$keyword));
         }
 
         if($state != -1){

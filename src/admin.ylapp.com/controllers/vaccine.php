@@ -37,6 +37,7 @@ class Vaccine extends MY_Controller
         $status = intval($this->input->get_post('status'));
         $type = intval($this->input->get_post('type'));
         $price = floatval($this->input->get_post('price'));
+        $remainAmount = floatval($this->input->get_post('remainAmount'));
         $thumbnail_relative_path = '';
         if($_FILES['thumbnail']['tmp_name'] != '') {
             $thumbnail_relative_path = $this->upload->save('package', $_FILES['thumbnail']['tmp_name']);
@@ -47,6 +48,7 @@ class Vaccine extends MY_Controller
                 'detail' => $content,
                 'thumbnail' => $thumbnail_relative_path,
                 'price'=>$price,
+                'remainAmount'=>$remainAmount,
                 'type'=> $type,
                 'dateline' => time(),
                 'status' => $status
@@ -57,6 +59,7 @@ class Vaccine extends MY_Controller
                 'name' => $title,
                 'detail' => $content,
                 'price'=>$price,
+                'remainAmount'=>$remainAmount,
                 'type'=> $type,
                 'dateline' => time(),
                 'status' => $status

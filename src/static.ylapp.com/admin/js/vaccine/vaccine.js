@@ -85,6 +85,7 @@ function editPackagePre(e){
             $('#package_edit #statusEdit').val(result.data.status);
             $('#package_edit #typeEdit').val(result.data.type);
             $('#package_edit #price').val(result.data.price);
+            $('#package_edit #remainAmount').val(result.data.remainAmount);
         }
     });
 

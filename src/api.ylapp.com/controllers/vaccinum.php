@@ -48,7 +48,7 @@ class Vaccinum extends MY_Controller
     public function payView(){
         $this->checkUserLogin();
         $vaccinumId = intval($this->input->get_post('vaccinumId'));
-        $vaccinumPrice = $this->vaccinum->getvaccinumDetail($vaccinumId,'price');
+        $vaccinumPrice = $this->vaccinum->getVaccinumDetail($vaccinumId,'price,remainAmount');
 
 
         /*添加订单*/

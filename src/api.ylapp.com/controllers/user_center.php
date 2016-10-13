@@ -285,8 +285,8 @@ class User_center extends MY_Controller
         $limit = intval($this->input->get_post('limit'));
         $limit = $limit == 0 ? 10 : $limit;
         $offset = intval($this->input->get_post('offset'));
-        $selectVac = 'YL_order.oid,YL_vaccinum.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price,(case when YL_order.type=1 then "疫苗订单" end) as orderType';
-        $selectGene = 'YL_order.oid,YL_gene_check.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price,(case when YL_order.type=2 then "基因订单" end) as orderType';
+        $selectVac = 'YL_order.oid,YL_order.packageId as gid,YL_vaccinum.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price,(case when YL_order.type=1 then "疫苗订单" end) as orderType';
+        $selectGene = 'YL_order.oid,YL_order.packageId as gid,YL_gene_check.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price,(case when YL_order.type=2 then "基因订单" end) as orderType';
         $resVac = $this->order->getOrdersByUid(self::$currentUid,$selectVac);  // 疫苗订单
         $resGene = $this->order->getOrdersByUid(self::$currentUid,$selectGene,2);  // 基因订单
         $arr = array();

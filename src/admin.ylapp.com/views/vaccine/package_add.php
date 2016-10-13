@@ -52,8 +52,15 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="input-group">
-                                <span class="input-group-addon">价格：</span>
+                                <span class="input-group-addon">定金：</span>
                                 <input type="text" class="form-control" name="price" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">剩余款项：</span>
+                                <input type="text" class="form-control" name="remainAmount" />
                             </div>
                         </div>
                     </div>

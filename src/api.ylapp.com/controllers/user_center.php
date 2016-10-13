@@ -285,8 +285,8 @@ class User_center extends MY_Controller
         $limit = intval($this->input->get_post('limit'));
         $limit = $limit == 0 ? 10 : $limit;
         $offset = intval($this->input->get_post('offset'));
-        $selectVac = 'YL_order.oid,YL_vaccinum.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price,(case when YL_order.type=1 then "疫苗订单" end) as orderType';
-        $selectGene = 'YL_order.oid,YL_gene_check.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price,(case when YL_order.type=2 then "基因订单" end) as orderType';
+        $selectVac = 'YL_order.oid,YL_order.packageId as gid,YL_vaccinum.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price,(case when YL_order.type=1 then "疫苗订单" end) as orderType';
+        $selectGene = 'YL_order.oid,YL_order.packageId as gid,YL_gene_check.thumbnail,YL_order.packageTitle,(CASE WHEN `YL_order`.`status`=1 THEN "未付款" WHEN `YL_order`.`status`=2 OR  `YL_order`.`status`=3 OR `YL_order`.`status`=4 THEN "已付款" WHEN `YL_order`.`status` = 5 THEN "完成" END) AS `status`,YL_order.price,(case when YL_order.type=2 then "基因订单" end) as orderType';
         $resVac = $this->order->getOrdersByUid(self::$currentUid,$selectVac);  // 疫苗订单
         $resGene = $this->order->getOrdersByUid(self::$currentUid,$selectGene,2);  // 基因订单
         $arr = array();
@@ -389,7 +389,7 @@ class User_center extends MY_Controller
         $msgF = $this->online_ask->getListByUid(self::$currentUid,'id,docName,askContent,FROM_UNIXTIME(askTime) as dateline,(case when state=0 then "未支付" when state=1 then "待处理" when state=2 then "已确认沟通时间" when state=3 then "完成" when state=4 then "失败" end) as state,(case when not isnull(docId) then "在线问诊" end) as msgType',1000);
         $msgS = $this->appoint->appointList(self::$currentUid,'YL_user_reg_num.id,docName,officeName,YL_hospital.name as hosName,address,FROM_UNIXTIME(dateline) as dateline,(case when YL_user_reg_num.status=0 then "未支付" when YL_user_reg_num.status=2 then "待处理" when YL_user_reg_num.status=3 then "预约成功" when YL_user_reg_num.status=4 then "预约失败" when YL_user_reg_num.status=5 then "完成" end) as state,(case when not isnull(docId) then "预约挂号" end) as msgType',1000);
         $msgT = $this->leaving_msg->getMsgList(self::$currentUid,'id,docName,from_unixtime(askTime) as dateline,(case when state=0 then "未支付" when state=2 then "通过" when state=3 then "不通过" when state=4 then "完成" when state=5 then "待审核" end) as state,(case when not isnull(docId) then "留言问答" end) as msgType',1000,0,'(state IN(0,2,3,4,5))');
-        $msgFo = $this->order->getOrdersMsg(self::$currentUid,'oid as id,packageTitle,from_unixtime(dateline) as dateline,(case when status=1 then "待支付" when status=2 then "已支付" when status=3 then "待处理" when status=4 then "已通知" when status=5 then "完成" end) as state,(case when type=1 then "疫苗接种" when type=2 then "基因检测" end) as msgType');
+        $msgFo = $this->order->getOrdersMsg(self::$currentUid,'oid as id,packageId as gid,packageTitle,from_unixtime(dateline) as dateline,(case when status=1 then "待支付" when status=2 then "已支付" when status=3 then "待处理" when status=4 then "已通知" when status=5 then "完成" end) as state,(case when type=1 then "疫苗接种" when type=2 then "基因检测" end) as msgType');
         $msg = array();
         $i = 0;
 

@@ -36,7 +36,7 @@ class Vaccinum extends MY_Controller
 
     public function vaccinumDetail(){
         $vaccinumId = intval($this->input->get_post('vaccinumId'));
-        $res = $this->vaccinum->getvaccinumDetail($vaccinumId,'id,name,detail,price');
+        $res = $this->vaccinum->getvaccinumDetail($vaccinumId,'id,name,detail,price,remainAmount');
         $res[0]['detail'] =  htmlspecialchars(str_replace('"','\'',$res[0]['detail']));
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
@@ -48,7 +48,7 @@ class Vaccinum extends MY_Controller
     public function payView(){
         $this->checkUserLogin();
         $vaccinumId = intval($this->input->get_post('vaccinumId'));
-        $vaccinumPrice = $this->vaccinum->getVaccinumDetail($vaccinumId,'price,remainAmount');
+        $vaccinumPrice = $this->vaccinum->getVaccinumDetail($vaccinumId,'price');
 
 
         /*添加订单*/

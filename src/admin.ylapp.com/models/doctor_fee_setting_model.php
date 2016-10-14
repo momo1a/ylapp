@@ -31,9 +31,16 @@ class Doctor_fee_setting_model extends MY_Model
      */
     public function saveDoctorFee($docId,$data){
         $where = array('docId'=>$docId);
-        if($this->update($where,$data)){
+        $this->update($where,$data);
+        if($this->db->affected_rows() != 0){
             return $this->db->affected_rows();
         }else{
+            $data['docId'] = $docId;
+            $data['dateline'] = time();
+            $query = $this->db->get_where('user',array('uid'=>$docId));
+            $result = $query->row_array();
+            //var_dump($result);exit;
+            $data['docNicname'] = $result['nickname'];
             $this->insert($data);
             return $this->db->insert_id();
         }

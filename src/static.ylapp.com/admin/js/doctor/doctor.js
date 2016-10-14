@@ -266,7 +266,7 @@ function getTradeInfo(e){
 function getFeeInfo(e){
     var uid = $(e).attr('uid');
     $('input[type="text"]').val('');
-    $('input[name="uid"]').val(uid);
+    $('#fee_setting input[name="uid"]').val(uid);
     $.ajax({
         url: SITE_URL + "doctor/getDoctorFee",
         type: "post",
@@ -288,7 +288,7 @@ function getFeeInfo(e){
                 $("input[name='fee[ask_fee_t]']").val(result.data.phoneFeeThird);
                 $("input[name='fee[ask_per_t]']").val(result.data.phonePerThird);
             }else{
-                $('input').val(0);
+                $('input[name!="uid"]').val(0);
             }
         }
     });
@@ -311,7 +311,7 @@ function saveDoctorFee(){
     var phoneTimeLenThird = $('#fee_setting input[name="fee[t_len_t]"]').val();
     var phoneFeeThird = $('#fee_setting input[name="fee[ask_fee_t]"]').val();
     var phonePerThird = $('#fee_setting input[name="fee[ask_per_t]"]').val();
-    var uid = $('input[name="uid"]').val();
+    var uid = $('#fee_setting input[name="uid"]').val();
     $.ajax({
         url: SITE_URL + "doctor/saveDoctorFee",
         type: "post",

@@ -158,7 +158,7 @@ class User_center extends MY_Controller
         $id = intval($this->input->get_post('id'));
         $res = $this->online_ask->getDetailById(self::$currentUid,$id,'id,askNickname as name,docId,docName,askTelephone,FROM_UNIXTIME(hopeCalldate) AS hopeDate,phoneTimeLen as timeLen,price,askContent,(case when state=0 then "未支付" when state=1 then "待处理" when state=2 then "已确认沟通时间" when state=3 then "完成" when state=4 then "失败" end) as state');
         $hosAddr = $this->user->getDoctorDetail($res['docId'],'YL_hospital.address as hosAddr');
-        $res['hosAddr'] = $hosAddr;
+        $res['hosAddr'] = $hosAddr[0]['hosAddr'];
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 

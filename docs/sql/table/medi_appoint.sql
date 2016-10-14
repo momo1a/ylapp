@@ -1,6 +1,6 @@
 # 药品表预约表
-DROP TABLE IF EXISTS  `YL_medicine`;
-CREATE TABLE `YL_medicine` (
+DROP TABLE IF EXISTS  `YL_medi_appoint`;
+CREATE TABLE `YL_medi_appoint` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) not null default '' comment '预约人姓名',
   `telephone` VARCHAR(15) not null DEFAULT '' comment '预约人电话',

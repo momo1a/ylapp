@@ -64,6 +64,15 @@
                     </div>
                 </div>
                 <hr/>
+                <div class="row">
+                    <div class="checkbox" style="margin-left: 5%">
+                        <label>
+                            <input type="checkbox" name="isDude" id="isDude" value="1" >
+                            是否药房伙计
+                        </label>
+                    </div>
+                </div>
+                <hr/>
                 <div class="row" style="text-align: center"><button type="button" class="btn btn-default" onclick="saveDoctor();return false;">保存</button></div>
             </div>
             <!--<div class="modal-footer">

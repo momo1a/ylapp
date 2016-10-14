@@ -42,7 +42,7 @@ class Doctor extends MY_Controller{
         }
         $total = $this->user->getUserCount($nickname,$phone,2,$state);
         $offset = intval($this->uri->segment(3));
-        $list = $this->user->getUserList($limit,$offset,$nickname,$phone,2,'YL_user.*,YL_money.amount,YL_doctor_info.state as doctorState',$state);
+        $list = $this->user->getUserList($limit,$offset,$nickname,$phone,2,'YL_user.*,YL_money.amount,YL_doctor_info.state as doctorState,YL_doctor_info.isDude',$state);
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
         $pager = $this->pager($total, $limit,$page_conf);
@@ -162,9 +162,10 @@ class Doctor extends MY_Controller{
         $sex = intval($this->input->get_post('sex'));
         $hid = intval($this->input->get_post('hid'));
         $officeId = intval($this->input->get_post('officeId'));
+        $isDude = intval($this->input->get_post('isDude'));
         $this->user->getRecord('phone',$phone) ? $this->ajax_json(-1,'手机号已经注册') : '';
         $this->user->getRecord('nickname',$nickname) ? $this->ajax_json(-1,'昵称已经存在') : '';
-        $res = $this->user->addDoctor($phone,$password,$nickname,$sex,$hid,$officeId);
+        $res = $this->user->addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude);
         if($res){
             $this->ajax_json(0,'操作成功');
         }else{

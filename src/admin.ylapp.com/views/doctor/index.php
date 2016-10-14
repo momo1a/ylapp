@@ -53,6 +53,7 @@
                                 <th>交易记录</th>
                                 <th>费用设置</th>
                                 <th>当前状态</th>
+                                <th>药房伙计</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
@@ -82,6 +83,8 @@
                                                 default:
                                                     echo '未知状态';
                                             }?></th>
+                                        <?php $isDude = array('0'=>'否','1'=>'是');?>
+                                        <th><?php echo $isDude[$value['isDude']];?></th>
                                         <th><?php switch(intval($value['doctorState'])){
                                                 case 0:
                                                     echo '<a state="1" uid="'.$value['uid'].'" onclick="setDoctorStat(this);return false;" >通过</a>&nbsp;&nbsp;<a state="2" uid="'.$value['uid'].'" onclick="setDoctorStat(this);return false;" >不通过</a>';

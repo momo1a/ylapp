@@ -188,11 +188,11 @@ class User_model extends My_Model{
      * @param $hid
      * @param $officeId
      */
-    public function addDoctor($phone,$password,$nickname,$sex,$hid,$officeId){
+    public function addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude){
         $this->db->trans_begin();
         $resF = $this->insert(array('phone'=>$phone,'password'=>$password,'nickname'=>$nickname,'sex'=>$sex,'userType'=>2,'dateline'=>time(),'regIp'=>ip2long($_SERVER['REMOTE_ADDR'])));
         $docId = $this->db->insert_id();
-        $resS = $this->db->insert('doctor_info',array('uid'=>$docId,'hid'=>$hid,'officeId'=>$officeId,'sex'=>$sex));
+        $resS = $this->db->insert('doctor_info',array('uid'=>$docId,'hid'=>$hid,'officeId'=>$officeId,'sex'=>$sex,'isDude'=>$isDude));
         if (!$resF || !$resS)
         {
             $this->db->trans_rollback();

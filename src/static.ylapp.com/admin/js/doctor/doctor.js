@@ -339,6 +339,7 @@ function saveDoctor(){
     var sex = $("#doctor_add select[name='sex']").val();
     var hospital = $("#doctor_add select[name='hospital']").val();
     var office = $("#doctor_add select[name='office']").val();
+    var isDude = $("#doctor_add input:checked[name='isDude']:checked").val();
     var phonePattern =   /^1[3|4|5|6|8|7]\d{9}$/;
     if(!phonePattern.test(account)){
         alert('请填写正确手机号');
@@ -359,11 +360,11 @@ function saveDoctor(){
         return false;
     }
 
-
+    isDude = isDude == undefined ? 0 : isDude;
     $.ajax({
         url: SITE_URL + "doctor/addDoctor",
         type: "post",
-        data: {phone:account,password:pwd,nickname:username,sex:sex,hid:hospital,officeId:office},
+        data: {phone:account,password:pwd,nickname:username,sex:sex,hid:hospital,officeId:office,isDude:isDude},
         dataType: 'json',
         success: function (result) {
             if(result.code == 0){

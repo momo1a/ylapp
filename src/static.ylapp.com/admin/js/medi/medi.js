@@ -76,6 +76,31 @@ function editMediPre(e){
 
 }
 
+
+/**
+ * 添加药品分类
+ * @param e
+ */
+function addCate(){
+    var cateName = $('#cate_add input[name="cateName"]').val();
+
+    $.ajax({
+        url: SITE_URL + "medicine/addCate",
+        type: "post",
+        data:{cateName:cateName},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+
+}
+
 /**
  * 删除前
  * @param e

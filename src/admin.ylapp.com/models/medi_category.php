@@ -24,4 +24,13 @@ class Medi_category extends MY_Model
         $this->where(array('pid'=>0));
         return $this->find_all();
     }
+
+    /**
+     * 添加药品分类（顶级分类）
+     * @param $cateName
+     */
+    public function add_cate($cateName){
+        $this->insert(array('name'=>$cateName));
+        return $this->db->insert_id();
+    }
 }

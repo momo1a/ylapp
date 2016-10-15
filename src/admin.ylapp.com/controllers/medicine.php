@@ -96,4 +96,17 @@ class Medicine extends MY_Controller
         $res = $this->medi->getMedicineDetail($mid);
         $this->ajax_json(0,'请求成功',$res);
     }
+
+    /**
+     * 添加药品分类
+     */
+    public function addCate(){
+        $cateName = trim(addslashes($this->input->get_post('cateName')));
+        $res = $this->cate->add_cate($cateName);
+        if ($res) {
+            $this->ajax_json(0, '操作成功');
+        } else {
+            $this->ajax_json(-1, '系统错误');
+        }
+    }
 }

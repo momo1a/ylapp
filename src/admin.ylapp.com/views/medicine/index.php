@@ -2,6 +2,7 @@
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
 <?php $this->load->view('medicine/medi_add');?>
+<?php $this->load->view('medicine/cate_add');?>
 <?php $this->load->view('medicine/medi_edit');?>
 <?php /*$this->load->view('gene/package_del');*/?>
 
@@ -17,7 +18,7 @@
                     <div class="box-header">
                         <h3 class="box-title">药品管理</h3>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="btn btn-primary btn-xs"><a href="<?php echo site_url()?>post/commentList" style="color: #000000">添加分类</a></span>
+                        <span class="btn btn-primary btn-xs"><a data-target="#cate_add" data-toggle="modal"  style="color: #000000">添加分类</a></span>
                         <span class="btn btn-primary btn-xs" style="margin-left: 20px"><a href="<?php echo site_url()?>post/commentList" style="color: #000000">药品预约管理</a></span>
                         <a data-target="#medi_add" data-toggle="modal" onclick="mediAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加药品</h3></a>
                     </div>

@@ -11,6 +11,7 @@ class Medicine extends MY_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('Medicine_model','medi');
+        $this->load->model('Medi_category','cate');
     }
 
 
@@ -19,15 +20,80 @@ class Medicine extends MY_Controller
         $cate = intval($this->input->get_post('cate'));
         $total = $this->medi->mediCount($cate);
         $offset = intval($this->uri->segment(3));
-        $list = $this->medi->mediList($limit,$offset,'*',$cate);
+        $list = $this->medi->mediList($limit,$offset,'*,YL_medicine.name as mediName',$cate);
+        $cates = $this->cate->get_all();
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
         $pager = $this->pager($total, $limit,$page_conf);
         $data['pager'] = $pager;
         $data['list'] = $list;
+        $data['cates'] = $cates;
         $data['get'] = $_GET;
-        $this->load->view('gene/index',$data);
+        $this->load->view('medicine/index',$data);
     }
 
 
+    public function mediSave(){
+        $mid = intval($this->input->get_post('mid'));
+        $name = trim($this->input->get_post('name'));
+        $outline = trim($this->input->get_post('outline'));
+        $content = $this->input->get_post('content');
+        $cate = intval($this->input->get_post('cate'));
+        $thumbnail_relative_path = '';
+        if($_FILES['thumbnail']['tmp_name'] != '') {
+            $thumbnail_relative_path = $this->upload->save('medicine', $_FILES['thumbnail']['tmp_name']);
+        }
+        $banner_relative_path = '';
+        if($_FILES['banner']['tmp_name'] != '') {
+            $banner_relative_path = $this->upload->save('medicine', $_FILES['banner']['tmp_name']);
+        }
+        if($mid == 0) {  // 添加资讯
+            $data = array(
+                'name' => $name,
+                'outline' => $outline,
+                'content' => $content,
+                'thumbnail' => $thumbnail_relative_path,
+                'banner' => $banner_relative_path,
+                'cid' =>$cate,
+                'dateline' => time(),
+            );
+            $res = $this->medi->mediAdd($data);
+        }else{   // 编辑资讯
+            $data = array(
+                'name' => $name,
+                'content' => $content,
+                'outline' => $outline,
+                'cid'=>$cate,
+                'editTime'=>time()
+            );
+            if($banner_relative_path != ''){
+                $data['banner'] = $banner_relative_path;
+                // 删除原来图片
+                @unlink(config_item('upload_image_save_path').$this->input->post('origin-news-banner'));
+            }
+
+            if($thumbnail_relative_path != ''){
+                $data['thumbnail'] = $thumbnail_relative_path;
+                // 删除原来图片
+                @unlink(config_item('upload_image_save_path').$this->input->post('origin-news-img'));
+
+            }
+
+            $res = $this->medi->mediEdit($mid,$data);
+        }
+
+        if ($res) {
+            $this->ajax_json(0, '操作成功');
+        } else {
+            $this->ajax_json(-1, '系统错误');
+        }
+    }
+
+
+
+    public function  getMedicineDetail(){
+        $mid = intval($this->input->get_post('mid'));
+        $res = $this->medi->getMedicineDetail($mid);
+        $this->ajax_json(0,'请求成功',$res);
+    }
 }

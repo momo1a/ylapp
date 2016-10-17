@@ -11,6 +11,7 @@ class Medicine extends MY_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('Medicine_model','medi');
+        $this->load->model('Medi_appoint_model','appoint');
         $this->load->model('Medi_category','cate');
     }
 
@@ -109,4 +110,30 @@ class Medicine extends MY_Controller
             $this->ajax_json(-1, '系统错误');
         }
     }
+
+
+    /*预约管理  start*/
+
+    //  预约列表
+    public function appointList(){
+        $limit = 10;
+        $illName = addslashes(trim($this->input->get_post('illName')));   // 患者姓名
+        $mediName = addslashes(trim($this->input->get_post('mediName'))); // 药品名称
+        $startTime = strtotime($this->input->get_post('startTime'));     // 预约开始时间
+        $endTime = strtotime($this->input->get_post('endTime'));       // 预约结束时间
+        $total = $this->appoint->appointCount($illName,$mediName,$startTime,$endTime);
+        $offset = intval($this->uri->segment(3));
+        $list = $this->appoint->appointList($limit,$offset,$illName,$mediName,$startTime,$endTime);
+        $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
+        $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
+        $pager = $this->pager($total, $limit,$page_conf);
+        $data['pager'] = $pager;
+        $data['list'] = $list;
+        $data['get'] = $_GET;
+        $this->load->view('medicine/appoint_list',$data);
+    }
+
+
+
+    /*预约管理  end*/
 }

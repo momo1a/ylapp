@@ -52,9 +52,9 @@ class News extends MY_Controller
     public function getNewsDetail(){
         $nid = intval($this->input->get_post('nid'));
         $res = $this->news->getNewsDetail($nid,'title,author,FROM_UNIXTIME(createTime) AS createTime,content');
-        $res['content'] = trim($res['content']);
+        /*$res['content'] = trim($res['content']);
         $res['content'] = ltrim($res['content'],'<p>');
-        $res['content'] = rtrim($res['content'],'</p>');
+        $res['content'] = rtrim($res['content'],'</p>');*/
         $isCollection = $this->news_collection->getCollectionByUidAndNid(self::$currentUid,$nid);
         $isCollection = $isCollection ? '已收藏' : '未收藏';
         $collId = $this->news_collection->getCollId(self::$currentUid,$nid);

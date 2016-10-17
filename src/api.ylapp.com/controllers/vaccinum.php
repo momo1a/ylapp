@@ -37,10 +37,10 @@ class Vaccinum extends MY_Controller
     public function vaccinumDetail(){
         $vaccinumId = intval($this->input->get_post('vaccinumId'));
         $res = $this->vaccinum->getvaccinumDetail($vaccinumId,'id,name,detail,price,remainAmount');
-        $res[0]['detail'] =  str_replace('"','\'',$res[0]['detail']);
+        /*$res[0]['detail'] =  str_replace('"','\'',$res[0]['detail']);
         $res[0]['detail'] = trim($res[0]['detail']);
         $res[0]['detail'] = ltrim($res[0]['detail'],'<p>');
-        $res[0]['detail'] = rtrim($res[0]['detail'],'</p>');
+        $res[0]['detail'] = rtrim($res[0]['detail'],'</p>');*/
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 

@@ -136,6 +136,9 @@ class News extends MY_Controller
     public function getNewsDetail(){
         $nid = intval($this->input->get_post('nid'));
         $res = $this->news->getNewsDetail($nid);
+        $res['content'] = trim($res['content']);
+        $res['content'] = ltrim($res['content'],'<p>');
+        $res['content'] = rtrim($res['content'],'</p>');
         $this->ajax_json(0,'请求成功',$res);
     }
 

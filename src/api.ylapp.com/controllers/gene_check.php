@@ -36,6 +36,9 @@ class Gene_check extends MY_Controller
         $geneId = intval($this->input->get_post('geneId'));
         $res = $this->gene->getGeneDetail($geneId,'id,name,detail,price');
         $res[0]['detail'] =  htmlspecialchars(str_replace('"','\'',$res[0]['detail']));
+        $res[0]['detail'] = trim($res[0]['detail']);
+        $res[0]['detail'] = ltrim($res[0]['detail'],'<p>');
+        $res[0]['detail'] = rtrim($res[0]['detail'],'</p>');
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 

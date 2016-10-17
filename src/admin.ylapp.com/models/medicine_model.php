@@ -27,6 +27,7 @@ class  Medicine_model extends MY_Model
         $this->limit($limit);
         $this->offset($offset);
         $this->join('YL_medi_category','YL_medi_category.cid=YL_medicine.cid','left');
+        $this->order_by(array('editTime'=>'desc','id'=>'desc'));
         return $this->find_all();
 
     }
@@ -41,5 +42,35 @@ class  Medicine_model extends MY_Model
         }
 
         return $this->count_all();
+    }
+
+
+    /**
+     * 添加药品
+     * @param $data
+     */
+    public function mediAdd($data){
+        $this->insert($data);
+        return $this->db->insert_id();
+    }
+
+
+    /**
+     * 获取药品详情
+     * @param $mid
+     * @return array
+     */
+    public function getMedicineDetail($mid){
+        return $this->find_by(array('id'=>$mid));
+    }
+
+    /**
+     * 编辑药品
+     * @param $mid
+     * @param $data
+     * @return bool
+     */
+    public function mediEdit($mid,$data){
+        return $this->update(array('id'=>$mid),$data);
     }
 }

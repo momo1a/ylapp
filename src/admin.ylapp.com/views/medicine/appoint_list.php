@@ -16,11 +16,10 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">药品管理</h3>
+                        <h3 class="box-title">药品预约管理</h3>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span class="btn btn-primary btn-xs"><a data-target="#cate_add" data-toggle="modal"  style="color: #000000">添加分类</a></span>
-                        <span class="btn btn-primary btn-xs" style="margin-left: 20px"><a href="<?php echo site_url()?>post/commentList" style="color: #000000">药品预约管理</a></span>
-                        <a data-target="#medi_add" data-toggle="modal" onclick="mediAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加药品</h3></a>
+                        <span class="btn btn-primary btn-xs" style="margin-left: 20px"><a href="<?php echo site_url()?>medicine/index" style="color: #000000">返回药品管理</a></span>
+                        <!--<a data-target="#medi_add" data-toggle="modal" onclick="mediAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加药品</h3></a>-->
                     </div>
                     <div class="bg-gray color-palette">
                         <form method="get" action="">
@@ -43,9 +42,10 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>编号</th>
-                                <th>品名</th>
-                                <th>概述</th>
+                                <th>预约时间</th>
+                                <th>手机号码</th>
+                                <th>药品名</th>
+                                <th>详情</th>
                                 <th>操作</th>
                             </tr>
                             </thead>

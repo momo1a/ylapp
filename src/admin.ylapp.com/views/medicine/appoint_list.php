@@ -1,9 +1,7 @@
 <?php $this->load->view('head');?>
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
-<?php $this->load->view('medicine/medi_add');?>
-<?php $this->load->view('medicine/cate_add');?>
-<?php $this->load->view('medicine/medi_edit');?>
+<?php $this->load->view('medicine/appoint_add');?>
 <?php /*$this->load->view('gene/package_del');*/?>
 
 
@@ -19,20 +17,22 @@
                         <h3 class="box-title">药品预约管理</h3>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="btn btn-primary btn-xs" style="margin-left: 20px"><a href="<?php echo site_url()?>medicine/index" style="color: #000000">返回药品管理</a></span>
-                        <!--<a data-target="#medi_add" data-toggle="modal" onclick="mediAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加药品</h3></a>-->
+                        <a data-target="#appoint_add" data-toggle="modal"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加预约</h3></a>
                     </div>
                     <div class="bg-gray color-palette">
                         <form method="get" action="">
                             <div class="input-group">
                                 <!-- <label for="title">癌种分类：</label>
                                 <input type="search" name="state" id="title"   placeholder="请输入分类名称关键字" value="<?php /*echo $get['keyword'];*/?>" style="margin-right: 20px" size="30">-->
-                                <label for="cate">癌种分类：</label>
-                                <select  id="cate" name="cate" style="height: 25px;margin-right: 20px">
-                                    <option value="0" selected>全部</option>
-                                    <?php foreach($cates as $value):?>
-                                        <option value="<?php echo $value['cid'];?>" <?php if($get['cate'] == $value['cid']){ echo 'selected';}?>><?php echo $value['name'];?></option>
-                                    <?php endforeach;?>
-                                </select>
+                                <label for="illName">患者姓名：</label>
+                                <input type="search" name="illName" id="illName"   placeholder="请输入患者姓名关键字" value="<?php echo $get['illName'];?>" style="margin-right: 20px" size="30">
+                                <label for="telephone">患者手机：</label>
+                                <input type="search" name="telephone" id="telephone"   placeholder="请输入患者手机号码关键字" value="<?php echo $get['telephone'];?>" style="margin-right: 20px" size="30">
+                                <label for="mediName">药品名称：</label>
+                                <input type="search" name="mediName" id="mediName"   placeholder="请输入药品名称关键字" value="<?php echo $get['mediName'];?>" style="margin-right: 20px" size="30">
+                                <label for="startTime">预约时间：</label>
+                                <input type="text" id="startTime"  size="30"/> -
+                                <input type="text" id="endTime" style="margin-right: 20px" size="30"/>
                                 <input type="submit" id="submit" value="搜索">
                             </div>
                         </form>
@@ -73,11 +73,20 @@
             </div>
             <!-- /.col -->
         </div>
-
     </section>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 <!-- Main Footer -->
 <?php $this->load->view('foot');?>
-<script src="<?php echo config_item('domain_static').'admin/';?>js/medi/medi.js"></script>
+<script>
+    $('#startTime').datetimepicker({
+        format:"Y-m-d H:i:s",      //格式化日期
+        lang:"ch"
+    });
+    $('#endTime').datetimepicker({
+        format:"Y-m-d H:i:s",      //格式化日期
+        lang:"ch"
+    });
+</script>
+<script src="<?php echo config_item('domain_static').'admin/';?>js/medi/appoint.js"></script>

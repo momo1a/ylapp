@@ -117,8 +117,10 @@ class Medicine extends MY_Controller
     //  预约列表
     public function appointList(){
         $limit = 10;
+        $allMedicine = $this->medi->getAllMedicine();
         $illName = addslashes(trim($this->input->get_post('illName')));   // 患者姓名
         $mediName = addslashes(trim($this->input->get_post('mediName'))); // 药品名称
+        $telephone = addslashes(trim($this->input->get_post('telephone'))); // 患者手机号码
         $startTime = strtotime($this->input->get_post('startTime'));     // 预约开始时间
         $endTime = strtotime($this->input->get_post('endTime'));       // 预约结束时间
         $total = $this->appoint->appointCount($illName,$mediName,$startTime,$endTime);
@@ -129,6 +131,7 @@ class Medicine extends MY_Controller
         $pager = $this->pager($total, $limit,$page_conf);
         $data['pager'] = $pager;
         $data['list'] = $list;
+        $data['medicines'] = $allMedicine;
         $data['get'] = $_GET;
         $this->load->view('medicine/appoint_list',$data);
     }

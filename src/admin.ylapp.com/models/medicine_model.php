@@ -13,6 +13,14 @@ class  Medicine_model extends MY_Model
         parent::__construct();
     }
 
+
+
+
+    public function getAllMedicine($limit = 1000){
+        $this->limit($limit);
+        return $this->find_all();
+    }
+
     /**
      * 列表
      * @param int $limit
@@ -27,7 +35,7 @@ class  Medicine_model extends MY_Model
         $this->limit($limit);
         $this->offset($offset);
         $this->join('YL_medi_category','YL_medi_category.cid=YL_medicine.cid','left');
-        $this->order_by(array('editTime'=>'desc','id'=>'desc'));
+        $this->order_by(array('id'=>'desc','editTime'=>'desc'));
         return $this->find_all();
 
     }

@@ -104,6 +104,7 @@
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/datepicker/bootstrap-datepicker.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<script src="<?php echo config_item('domain_static').'admin/';?>plugins/date/jquery.datetimepicker.full.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>js/common.js"></script>
 <script>
     var IMG_SERVER = "<?php $servers = config_item('image_servers'); echo $servers[0];?>";

@@ -7,13 +7,7 @@ class User_model extends My_Model{
 		parent::__construct();
 	}
 	
-	/*
-	 * 获取权限列表
-	*/
-	public function get_acl($role_id){
 
-
-	}
 	
 	/*
 	 * 用户登录检测
@@ -24,7 +18,22 @@ class User_model extends My_Model{
         $res = $this->find_all_by($where);
         return $res;
 	}
-	
+
+
+    /**
+     * 获取用户信息
+     * @param int $userType 默认用户端
+     * @param array $where 查询条件
+     */
+    public function getAllUser($userType=1,$where=null){
+        if(is_array($where)){
+            $this->where($where);
+        }
+
+        $this->where(array('userType'=>$userType,'isBlack'=>0));
+
+        return $this->find_all();
+    }
 
 
     /**

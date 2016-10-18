@@ -1,6 +1,6 @@
 $(function(){
-    /*$("#news_add .modal-dialog").css('width','800');
-    $("#news_edit .modal-dialog").css('width','800');*/
+    $("#appoint_add .modal-dialog").css('width','800');
+    /*$("#news_edit .modal-dialog").css('width','800');*/
     CKEDITOR.replace('content');
     /*CKEDITOR.replace('contentEdit');
     initFileInput("medi-img", "/news/newsAdd",350,350);
@@ -12,7 +12,34 @@ $(function(){
         format:"Y-m-d H:i:s",      //格式化日期
         lang:"ch"
     });
+
+
+    // 药品筛选
+
+    $('#medi-btn').bind('click',function(){
+        console.log('test');
+    });
+
+
 });
+
+
+//  药品选择
+function selectMedi(e){
+    $.ajax({
+        url: SITE_URL + "medicine/getAllMedicine",
+        type: "post",
+        data: {},
+        dataType: 'json',
+        success: function (result) {
+            if(result.data != false){
+                $.each(function(i,d){
+                    $(e).append('<option value="'+ d.id +'">'+ d.name +'</option>');
+                });
+            }
+        }
+    });
+}
 
 //  添加预约
 function addAppoint(){

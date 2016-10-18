@@ -13,6 +13,7 @@ class Medicine extends MY_Controller
         $this->load->model('Medicine_model','medi');
         $this->load->model('Medi_appoint_model','appoint');
         $this->load->model('Medi_category','cate');
+        $this->load->model('User_model','user');
     }
 
 
@@ -117,23 +118,41 @@ class Medicine extends MY_Controller
     //  预约列表
     public function appointList(){
         $limit = 10;
-        $allMedicine = $this->medi->getAllMedicine();
-        $illName = addslashes(trim($this->input->get_post('illName')));   // 患者姓名
+        $searchKey = $this->input->get_post('search-key');
+        isset($_GET['search-key']) || $searchKey = '';
+        if($searchKey != 'illName' && $searchKey != 'telephone' && $searchKey != ''){
+            exit('滚粗，想干什么！');
+        }
+        $searchValue = trim(addslashes($this->input->get_post('search-value')));
         $mediName = addslashes(trim($this->input->get_post('mediName'))); // 药品名称
-        $telephone = addslashes(trim($this->input->get_post('telephone'))); // 患者手机号码
         $startTime = strtotime($this->input->get_post('startTime'));     // 预约开始时间
         $endTime = strtotime($this->input->get_post('endTime'));       // 预约结束时间
-        $total = $this->appoint->appointCount($illName,$mediName,$startTime,$endTime);
+
+        $total = $this->appoint->appointCount($searchKey,$searchValue,$mediName,$startTime,$endTime);
         $offset = intval($this->uri->segment(3));
-        $list = $this->appoint->appointList($limit,$offset,$illName,$mediName,$startTime,$endTime);
+        $list = $this->appoint->appointList($limit,$offset,$searchKey,$searchValue,$mediName,$startTime,$endTime);
+        //var_dump($this->db->last_query());
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
         $pager = $this->pager($total, $limit,$page_conf);
         $data['pager'] = $pager;
         $data['list'] = $list;
-        $data['medicines'] = $allMedicine;
         $data['get'] = $_GET;
         $this->load->view('medicine/appoint_list',$data);
+    }
+
+
+    // 获取所有药品
+    public function getAllMedicine(){
+        $allMedicine = $this->medi->getAllMedicine();
+        $this->ajax_json(0,'请求成功',$allMedicine);
+
+    }
+
+    //  获取所有正常用户
+    public function getAllUser(){
+        $users = $this->user->getAllUser();  // 获取所有正常用户
+        $this->ajax_json(0,'请求成功',$users);
     }
 
 
@@ -141,10 +160,44 @@ class Medicine extends MY_Controller
     public function appointAdd(){
         $appointTime = $this->input->get_post('appointTime');
         if(strtotime($appointTime) < time()){
-
+            $this->ajax_json(1, '请输入合理的时间');
         }
-        $data = array();
-        $this->appoint->appointAdd($data);
+        $realName = addslashes(trim($this->input->get_post('realName')));
+        if(mb_strlen($realName) > 20 || mb_strlen($realName) < 2){
+            $this->ajax_json(1, '姓名不能大于20个字符小于2个字符');
+        }
+
+        $telephone = trim($this->input->get_post('telephone'));
+        if(mb_strlen($telephone) > 20 || mb_strlen($telephone) < 5){
+            $this->ajax_json(1, '电话号码不能大于20个字符小于5个字符');
+        }
+
+        $mediId = intval($this->input->get_post('mediName'));
+        if($mediId == 0){
+            $this->ajax_json(1, '请选择药品名');
+        }
+
+        $content = trim($this->input->get_post('content'));
+        if(mb_strlen($content) > 20000 || mb_strlen($content) < 15){
+            $this->ajax_json(1, '图文信息不能大于20000个字符小于15个字符');
+        }
+
+
+        $data = array(
+            'name'=>$realName,
+            'appointTime'=>strtotime($appointTime),
+            'telephone'=>$telephone,
+            'mediId'=>$mediId,
+            'content'=>$content,
+            'dateline'=>time()
+        );
+        $res = $this->appoint->appointAdd($data);
+        if($res){
+            $this->ajax_json(0, '添加成功');
+        }else{
+            $this->ajax_json(-1,'添加失败');
+        }
+
     }
     /*预约管理  end*/
 }

@@ -26,12 +26,21 @@ class   Medi_appoint_model extends MY_Model
      * @param int $startTime
      * @param $endTime
      */
-    public function appointList($limit=10,$offset= 0,$illName='',$mediName='',$startTime=0,$endTime=0){
-        if($illName != ''){
-            $this->where(array('YL_medi_appoint.name'=>$illName));
+    public function appointList($limit=10,$offset= 0,$searchKey='',$searchValue='',$mediName='',$startTime=0,$endTime=0){
+        if($searchKey != '' && $searchValue != ''){
+            switch($searchKey){
+                case 'illName':
+                    $this->like(array('YL_medi_appoint.name'=>$searchValue));
+                    break;
+                case 'telephone':
+                    $this->like(array('YL_medi_appoint.telephone'=>$searchValue));
+                    break;
+                default:
+                    break;
+            }
         }
         if($mediName != ''){
-            $this->where(array('YL_medicine.name'=>$mediName));
+            $this->like(array('medi.name'=>$mediName));
         }
         if($startTime == 0 && $endTime == 0){
             $this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
@@ -62,9 +71,18 @@ class   Medi_appoint_model extends MY_Model
      * @param int $startTime
      * @param int $endTime
      */
-    public function appointCount($illName='',$mediName='',$startTime=0,$endTime=0){
-        if($illName != ''){
-            $this->where(array('YL_medi_appoint.name'=>$illName));
+    public function appointCount($searchKey='',$searchValue='',$mediName='',$startTime=0,$endTime=0){
+        if($searchKey != '' && $searchValue != ''){
+            switch($searchKey){
+                case 'illName':
+                    $this->like(array('YL_medi_appoint.name'=>$searchValue));
+                    break;
+                case 'telephone':
+                    $this->like(array('YL_medi_appoint.telephone'=>$searchValue));
+                    break;
+                default:
+                    break;
+            }
         }
         if($mediName != ''){
             $this->where(array('medi.name'=>$mediName));

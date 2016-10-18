@@ -17,7 +17,7 @@
                         <h3 class="box-title">药品预约管理</h3>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="btn btn-primary btn-xs" style="margin-left: 20px"><a href="<?php echo site_url()?>medicine/index" style="color: #000000">返回药品管理</a></span>
-                        <a data-target="#appoint_add" data-toggle="modal"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加预约</h3></a>
+                        <a data-target="#appoint_add" data-toggle="modal" onclick="appointAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加预约</h3></a>
                     </div>
                     <div class="bg-gray color-palette">
                         <form method="get" action="">
@@ -28,9 +28,9 @@
                                 <input type="search" name="illName" id="illName"   placeholder="请输入患者姓名关键字" value="<?php /*echo $get['illName'];*/?>" style="margin-right: 20px" size="30">
                                 <label for="telephone">患者手机：</label>
                                 <input type="search" name="telephone" id="telephone"   placeholder="请输入患者手机号码关键字" value="<?php /*echo $get['telephone'];*/?>" style="margin-right: 20px" size="30">-->
-                                <select name="search_key">
+                                <select name="search-key">
                                     <option value="illName">患者姓名</option>
-                                    <option value="telephone">患者手机</option>
+                                    <option value="telephone">患者电话</option>
                                 </select>
                                 <input type="search" name="search-value"  value="<?php /*echo $get['telephone'];*/?>" style="margin-right: 20px" size="20">
                                 <label for="mediName">药品名称：</label>

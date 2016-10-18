@@ -17,7 +17,33 @@ $(function(){
     // 药品筛选
 
     $('#medi-btn').bind('click',function(){
-        console.log('test');
+        //console.log('');
+        var patternStr = $.trim($("#medi-shaixuan").val());
+        if(patternStr.length == 0){
+            alert('请输入筛选内容');
+            return false;
+        }
+        pattern = new  RegExp('/.?'+ patternStr +'.?/i');
+
+        $.ajax({
+            url: SITE_URL + "medicine/getAllMedicine",
+            type: "post",
+            data: {},
+            dataType: 'json',
+            success: function (result) {
+                var ele = $('#appoint_add #mediName');
+                ele.html('<option value="0">请选择药品</option>');
+                if(result.data != false){
+                    $.each(result.data,function(i,d){
+                        console.log(d);
+                        if(pattern.test(d.name)) {
+                            ele.append('<option value="' + d.id + '">' + d.name + '</option>');
+                        }
+                    });
+                }
+            }
+        });
+
     });
 
 
@@ -25,7 +51,7 @@ $(function(){
 
 
 //  药品选择
-function selectMedi(e){
+function appointAddPre(){
     $.ajax({
         url: SITE_URL + "medicine/getAllMedicine",
         type: "post",
@@ -33,8 +59,23 @@ function selectMedi(e){
         dataType: 'json',
         success: function (result) {
             if(result.data != false){
-                $.each(function(i,d){
-                    $(e).append('<option value="'+ d.id +'">'+ d.name +'</option>');
+                $.each(result.data,function(i,d){
+                    $('#appoint_add #mediName').append('<option value="'+ d.id +'">'+ d.name +'</option>');
+                });
+            }
+        }
+    });
+
+
+    $.ajax({
+        url: SITE_URL + "medicine/getAllUser",
+        type: "post",
+        data: {},
+        dataType: 'json',
+        success: function (result) {
+            if(result.data != false){
+                $.each(result.data,function(i,d){
+                    $('#appoint_add #regTel').append('<option value="'+ d.uid +'">'+ d.phone +'</option>');
                 });
             }
         }

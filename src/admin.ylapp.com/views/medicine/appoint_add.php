@@ -41,7 +41,7 @@
 
                     <div class="row">
                         <div class="col-sm-4">
-                            <select class="form-control" name="mediName" id="mediName" onclick="selectMedi(this);return false;">
+                            <select class="form-control" name="mediName" id="mediName">
                                 <option value="0">请选择药品</option>
                                 <!--<?php /*if(!empty($medicines)):foreach($medicines as $value):*/?>
                                     <option value="<?php /*echo $value['id'];*/?>"><?php /*echo $value['name'];*/?></option>
@@ -59,13 +59,21 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-4">
                             <select class="form-control" name="regTel" id="regTel">
                                 <option value="0">请选择用户注册手机号码</option>
-                                <?php if(!empty($users)):foreach($users as $value):?>
-                                    <option value="<?php echo $value['uid'];?>"><?php echo $value['phone'];?></option>
-                                <?php endforeach;endif;?>
+                                <?php /*if(!empty($users)):foreach($users as $value):*/?><!--
+                                    <option value="<?php /*echo $value['uid'];*/?>"><?php /*echo $value['phone'];*/?></option>
+                                --><?php /*endforeach;endif;*/?>
                             </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="user-shaixuan" id="user-shaixuan" />
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="button" id="user-btn" class="btn btn-default" value="筛选手机"/>
                         </div>
                     </div>
 

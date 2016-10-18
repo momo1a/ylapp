@@ -137,6 +137,14 @@ class Medicine extends MY_Controller
     }
 
 
+    //  添加预约
+    public function appointAdd(){
+        $appointTime = $this->input->get_post('appointTime');
+        if(strtotime($appointTime) < time()){
 
+        }
+        $data = array();
+        $this->appoint->appointAdd($data);
+    }
     /*预约管理  end*/
 }

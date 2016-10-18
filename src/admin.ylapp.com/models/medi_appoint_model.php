@@ -87,4 +87,14 @@ class   Medi_appoint_model extends MY_Model
 
         return $this->count_all();
     }
+
+
+    /**
+     * 添加预约
+     * @param $data
+     */
+    public function appointAdd($data){
+        $this->insert($data);
+        return $this->db->insert_id();
+    }
 }

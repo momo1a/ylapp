@@ -24,15 +24,20 @@
                             <div class="input-group">
                                 <!-- <label for="title">癌种分类：</label>
                                 <input type="search" name="state" id="title"   placeholder="请输入分类名称关键字" value="<?php /*echo $get['keyword'];*/?>" style="margin-right: 20px" size="30">-->
-                                <label for="illName">患者姓名：</label>
-                                <input type="search" name="illName" id="illName"   placeholder="请输入患者姓名关键字" value="<?php echo $get['illName'];?>" style="margin-right: 20px" size="30">
+                               <!-- <label for="illName">患者姓名：</label>
+                                <input type="search" name="illName" id="illName"   placeholder="请输入患者姓名关键字" value="<?php /*echo $get['illName'];*/?>" style="margin-right: 20px" size="30">
                                 <label for="telephone">患者手机：</label>
-                                <input type="search" name="telephone" id="telephone"   placeholder="请输入患者手机号码关键字" value="<?php echo $get['telephone'];?>" style="margin-right: 20px" size="30">
+                                <input type="search" name="telephone" id="telephone"   placeholder="请输入患者手机号码关键字" value="<?php /*echo $get['telephone'];*/?>" style="margin-right: 20px" size="30">-->
+                                <select name="search_key">
+                                    <option value="illName">患者姓名</option>
+                                    <option value="telephone">患者手机</option>
+                                </select>
+                                <input type="search" name="search-value"  value="<?php /*echo $get['telephone'];*/?>" style="margin-right: 20px" size="20">
                                 <label for="mediName">药品名称：</label>
-                                <input type="search" name="mediName" id="mediName"   placeholder="请输入药品名称关键字" value="<?php echo $get['mediName'];?>" style="margin-right: 20px" size="30">
+                                <input type="search" name="mediName" id="mediName"   placeholder="请输入药品名称关键字" value="<?php echo $get['mediName'];?>" style="margin-right: 20px" size="20">
                                 <label for="startTime">预约时间：</label>
-                                <input type="text" id="startTime"  size="30"/> -
-                                <input type="text" id="endTime" style="margin-right: 20px" size="30"/>
+                                <input type="text" id="startTime"  size="20"/> -
+                                <input type="text" id="endTime" style="margin-right: 20px" size="20"/>
                                 <input type="submit" id="submit" value="搜索">
                             </div>
                         </form>

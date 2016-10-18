@@ -13,3 +13,32 @@ $(function(){
         lang:"ch"
     });
 });
+
+//  添加预约
+function addAppoint(){
+    var appointTime = $('#appoint_add #appointTime').val();  // 预约时间
+    var realName = $('#appoint_add #realName').val();        // 姓名
+    var telephone = $('#appoint_add #telephone').val();     // 预约人电话
+    var mediName = $('#appoint_add #mediName').val();       // 药品id
+    var content = CKEDITOR.instances.content.getData();
+    for(instance in CKEDITOR.instances){
+        CKEDITOR.instances[instance].updateElement();
+    }
+    var formData = new FormData(document.getElementById("appointAdd"));
+    $.ajax({
+        url: SITE_URL + "medicine/appointAdd",
+        type: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: 'json',
+        success: function (result) {
+            if (result.code == 0) {
+                alert(result.msg);
+                location.reload();
+            } else {
+                alert(result.msg);
+            }
+        }
+    });
+}

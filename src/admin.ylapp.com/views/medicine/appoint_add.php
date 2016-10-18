@@ -12,7 +12,7 @@
                 <h4 class="modal-title" id="news-edit-title">添加药品预约用户</h4>
             </div>
             <div class="modal-body">
-                <form name="newsAdd" id="appointAdd">
+                <form name="appointAdd" id="appointAdd">
                     <div class="row">
                         <div class="col-sm-10">
                             <div class="input-group">
@@ -41,7 +41,7 @@
 
                     <div class="row">
                         <div class="col-sm-8">
-                            <select class="form-control" name="cate" id="cate">
+                            <select class="form-control" name="mediName" id="mediName">
                                 <option value="0">请选择药品</option>
                                 <?php if(!empty($medicines)):foreach($medicines as $value):?>
                                     <option value="<?php echo $value['id'];?>"><?php echo $value['name'];?></option>

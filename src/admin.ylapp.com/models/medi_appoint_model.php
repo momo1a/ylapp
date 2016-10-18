@@ -26,7 +26,7 @@ class   Medi_appoint_model extends MY_Model
      * @param int $startTime
      * @param $endTime
      */
-    public function appointList($limit=10,$offset= 0,$searchKey='',$searchValue='',$mediName='',$startTime=0,$endTime=0){
+    public function appointList($limit=10,$offset= 0,$searchKey='',$searchValue='',$mediName='',$startTime=0,$endTime=0,$select='*'){
         if($searchKey != '' && $searchValue != ''){
             switch($searchKey){
                 case 'illName':
@@ -43,8 +43,8 @@ class   Medi_appoint_model extends MY_Model
             $this->like(array('medi.name'=>$mediName));
         }
         if($startTime == 0 && $endTime == 0){
-            $this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
-            $this->where(array('YL_medi_appoint.appointTime <= '=>time()));
+            //$this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
+            //$this->where(array('YL_medi_appoint.appointTime <= '=>time()));
         }elseif($startTime == 0 && $endTime != 0 ){
             $this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
             $this->where(array('YL_medi_appoint.appointTime <= '=>$endTime));
@@ -55,7 +55,7 @@ class   Medi_appoint_model extends MY_Model
             $this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
             $this->where(array('YL_medi_appoint.appointTime <= '=>$endTime));
         }
-
+        $this->select($select);
         $this->join('YL_user as user','YL_medi_appoint.userId=user.uid','left');
         $this->join('YL_user as guys','YL_medi_appoint.guysId=guys.uid','left');
         $this->join('YL_medicine as medi','YL_medi_appoint.mediId=medi.id','left');
@@ -88,8 +88,8 @@ class   Medi_appoint_model extends MY_Model
             $this->where(array('medi.name'=>$mediName));
         }
         if($startTime == 0 && $endTime == 0){
-            $this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
-            $this->where(array('YL_medi_appoint.appointTime <= '=>time()));
+            //$this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
+            //$this->where(array('YL_medi_appoint.appointTime <= '=>time()));
         }elseif($startTime == 0 && $endTime != 0 ){
             $this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
             $this->where(array('YL_medi_appoint.appointTime <= '=>$endTime));
@@ -114,5 +114,14 @@ class   Medi_appoint_model extends MY_Model
     public function appointAdd($data){
         $this->insert($data);
         return $this->db->insert_id();
+    }
+
+    /**
+     * 获取预约详情
+     * @param $aid
+     */
+    public function getDetail($aid,$select='*'){
+        $this->select($select);
+        return $this->find_by(array('id'=>$aid));
     }
 }

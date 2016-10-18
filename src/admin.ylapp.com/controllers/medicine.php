@@ -118,6 +118,7 @@ class Medicine extends MY_Controller
     //  预约列表
     public function appointList(){
         $limit = 10;
+        $state = array('0'=>'未分配','1'=>'已分配');
         $searchKey = $this->input->get_post('search-key');
         isset($_GET['search-key']) || $searchKey = '';
         if($searchKey != 'illName' && $searchKey != 'telephone' && $searchKey != ''){
@@ -127,10 +128,12 @@ class Medicine extends MY_Controller
         $mediName = addslashes(trim($this->input->get_post('mediName'))); // 药品名称
         $startTime = strtotime($this->input->get_post('startTime'));     // 预约开始时间
         $endTime = strtotime($this->input->get_post('endTime'));       // 预约结束时间
-
+        $startTime = !$startTime ? 0 : $startTime;
+        $endTime = !$endTime ? 0 : $endTime;
+        //var_dump($startTime,$endTime);
         $total = $this->appoint->appointCount($searchKey,$searchValue,$mediName,$startTime,$endTime);
         $offset = intval($this->uri->segment(3));
-        $list = $this->appoint->appointList($limit,$offset,$searchKey,$searchValue,$mediName,$startTime,$endTime);
+        $list = $this->appoint->appointList($limit,$offset,$searchKey,$searchValue,$mediName,$startTime,$endTime,'*,YL_medi_appoint.name as illName,medi.name as mediName,YL_medi_appoint.id as aid,YL_medi_appoint.state as appointState');
         //var_dump($this->db->last_query());
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
@@ -138,6 +141,7 @@ class Medicine extends MY_Controller
         $data['pager'] = $pager;
         $data['list'] = $list;
         $data['get'] = $_GET;
+        $data['state'] = $state;
         $this->load->view('medicine/appoint_list',$data);
     }
 
@@ -177,6 +181,10 @@ class Medicine extends MY_Controller
             $this->ajax_json(1, '请选择药品名');
         }
 
+        $userId = intval($this->input->get_post('regTel'));
+        if($userId == 0){
+            $this->ajax_json(1, '请选择用户注册手机号');
+        }
         $content = trim($this->input->get_post('content'));
         if(mb_strlen($content) > 20000 || mb_strlen($content) < 15){
             $this->ajax_json(1, '图文信息不能大于20000个字符小于15个字符');
@@ -188,6 +196,7 @@ class Medicine extends MY_Controller
             'appointTime'=>strtotime($appointTime),
             'telephone'=>$telephone,
             'mediId'=>$mediId,
+            'userId'=>$userId,
             'content'=>$content,
             'dateline'=>time()
         );
@@ -198,6 +207,13 @@ class Medicine extends MY_Controller
             $this->ajax_json(-1,'添加失败');
         }
 
+    }
+
+    // 获取预约详情
+    public function getAppointDetail(){
+        $aid = intval($this->input->get_post('aid'));
+        $res = $this->appoint->getDetail($aid);
+        $this->ajax_json(0, '请求成功',$res);
     }
     /*预约管理  end*/
 }

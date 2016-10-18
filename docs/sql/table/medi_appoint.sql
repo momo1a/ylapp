@@ -6,7 +6,6 @@ CREATE TABLE `YL_medi_appoint` (
   `telephone` VARCHAR(15) not null DEFAULT '' comment '预约人电话',
   `mediId` int(11) not null default '0' comment '药品id',
   `content` VARCHAR(20000) not null default '' comment '内容',
-  `regPhone` VARCHAR(15) not null default '' comment '用户注册手机号',
   `userId` INT(11) not null default '0' comment '用户uid',
   `guysId` INT(11) not null DEFAULT '0' comment '伙计id',
   `dateline` int(11) not null default '0' comment '记录时间',

@@ -2,6 +2,7 @@
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
 <?php $this->load->view('medicine/appoint_add');?>
+<?php $this->load->view('medicine/appoint_detail');?>
 <?php /*$this->load->view('gene/package_del');*/?>
 
 
@@ -47,10 +48,13 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                             <tr>
+                                <th>编号</th>
                                 <th>预约时间</th>
-                                <th>手机号码</th>
+                                <th>患者手机</th>
+                                <th>患者姓名</th>
                                 <th>药品名</th>
                                 <th>详情</th>
+                                <th>当前状态</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
@@ -58,14 +62,18 @@
                             <?php if(!empty($list)){;?>
                                 <?php foreach($list as $value){?>
                                     <tr>
-                                        <th><?php echo $value['id'];?></th>
+                                        <th><?php echo $value['aid'];?></th>
+                                        <th><?php echo date('Y-m-d H:i:s',$value['appointTime']);?></th>
+                                        <th><?php echo $value['telephone'];?></th>
+                                        <th><?php echo $value['illName'];?></th>
                                         <th><?php echo $value['mediName'];?></th>
-                                        <th><?php echo $value['outline'];?></th>
                                         <th>
-                                            <a data-target="#medi_edit" data-toggle="modal"  mid="<?php echo $value['id'];?>" onclick="editMediPre(this);return false;" title="编辑药品"><span class="glyphicon glyphicon-pencil"></span></a><!--
+                                            <a data-target="#appoint_detail" data-toggle="modal"  aid="<?php echo $value['aid'];?>" onclick="appointDetailPre(this);return false;" title="预约详情"><span class="glyphicon glyphicon-list-alt"></span></a><!--
                                             &nbsp;&nbsp;<a data-target="#package_del" data-toggle="modal"  pid="<?php /*echo $value['id'];*/?>" onclick="packageDelPre(this);return false;" title="删除套餐"><span class="glyphicon glyphicon-trash"></span></a>-->
                                             <!--&nbsp;&nbsp;<a href="#" nid="<?php /*echo $value['nid'];*/?>"   title="评论管理"><span class="glyphicon glyphicon-list"></span></a>-->
                                         </th>
+                                        <th><?php echo $state[$value['appointState']];?></th>
+                                        <th>分配</th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

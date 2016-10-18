@@ -23,7 +23,7 @@ $(function(){
             alert('请输入筛选内容');
             return false;
         }
-        pattern = new  RegExp('/.?'+ patternStr +'.?/i');
+        pattern =  new RegExp('.?'+ patternStr + '.?','i');
 
         $.ajax({
             url: SITE_URL + "medicine/getAllMedicine",
@@ -47,8 +47,71 @@ $(function(){
     });
 
 
+    // 用户手机筛选
+
+    $('#user-btn').bind('click',function(){
+        //console.log('');
+        var patternStr = $.trim($("#user-shaixuan").val());
+        if(patternStr.length == 0){
+            alert('请输入筛选内容');
+            return false;
+        }
+        patt =  new RegExp('.?'+ patternStr + '.?','i');
+
+        $.ajax({
+            url: SITE_URL + "medicine/getAllUser",
+            type: "post",
+            data: {},
+            dataType: 'json',
+            success: function (result) {
+                var elem = $('#appoint_add #regTel');
+                elem.html('<option value="0">请选择用户注册手机</option>');
+                if(result.data != false){
+                    $.each(result.data,function(i,d){
+                        //console.log(d);
+                        if(patt.test(d.phone)) {
+                            elem.append('<option value="' + d.uid + '">' + d.phone + '</option>');
+                        }
+                    });
+                }
+            }
+        });
+
+    });
+
+
+    $('#medi-shaixuan').bind('blur',function(){
+        $('#appoint_add #mediName').html('<option value="0">请选择药品</option>');
+        appointAddPre();
+    });
+
+    $('#user-shaixuan').bind('blur',function(){
+        $('#appoint_add #regTel').html('<option value="0">请选择用户注册手机</option>');
+        appointAddPre();
+    });
+
+
 });
 
+
+
+// 获取预约详情
+function appointDetailPre(e){
+    var aid = $(e).attr('aid');
+    console.log(aid);
+    $.ajax({
+        url: SITE_URL + "medicine/getAppointDetail",
+        type: "post",
+        data: {aid:aid},
+        dataType: 'json',
+        success: function (result) {
+            if(result.data != false){
+                console.log(result);
+                $('#appoint_detail #appoint-content').html(result.data.content);
+            }
+        }
+    });
+}
 
 //  药品选择
 function appointAddPre(){

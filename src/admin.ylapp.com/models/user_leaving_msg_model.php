@@ -198,11 +198,14 @@ class User_leaving_msg_model extends MY_Model
             if(!$updateRes){
                 $this->db->insert('money',array('uid'=>$orderInfo['askerUid'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
             }
+
+            $this->db->query('UPDATE YL_doctor_reply SET `state`=2 WHERE `type`=1 AND `themeId`='.$oid); // 修改医生回复表状态
         }
 
         if($status == 4){  // 完成需要付钱给医生
 
             // todo
+            $this->db->query('UPDATE YL_doctor_reply SET `state`=1 WHERE `type`=1 AND `themeId`='.$oid); // 修改医生回复表状态
 
         }
 

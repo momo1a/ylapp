@@ -3,6 +3,7 @@
 <?php $this->load->view('left');?>
 <?php $this->load->view('medicine/appoint_add');?>
 <?php $this->load->view('medicine/appoint_detail');?>
+<?php $this->load->view('medicine/appoint_allot');?>
 <?php /*$this->load->view('gene/package_del');*/?>
 
 
@@ -73,7 +74,7 @@
                                             <!--&nbsp;&nbsp;<a href="#" nid="<?php /*echo $value['nid'];*/?>"   title="评论管理"><span class="glyphicon glyphicon-list"></span></a>-->
                                         </th>
                                         <th><?php echo $state[$value['appointState']];?></th>
-                                        <th>分配</th>
+                                        <th><a data-target="#appoint_allot" data-toggle="modal" onclick="appointAllotPre();return false;"><span class="glyphicon glyphicon-compressed" style="cursor: pointer"></span>分配</a></th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

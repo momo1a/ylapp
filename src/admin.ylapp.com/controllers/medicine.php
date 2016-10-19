@@ -160,6 +160,14 @@ class Medicine extends MY_Controller
     }
 
 
+    // 获取伙计
+
+    public function getGuys(){
+        $guys = $this->user->getAllUser(2,array());
+        $this->ajax_json(0,'请求成功',$guys);
+    }
+
+
     //  添加预约
     public function appointAdd(){
         $appointTime = $this->input->get_post('appointTime');

@@ -64,6 +64,7 @@ class Doctor_center extends MY_Controller
         $offset = intval($this->input->get_post('offset'));
         $regOrder = $this->reg_num->doctorIndex(self::$currentUid,'in(2,3,4,5,6)');  //预约挂号
         $diagOrder = $this->diagnosis->doctorIndex(self::$currentUid,' in(2,3,4) '); //在线问诊
+        //var_dump($this->db->last_query());
         $msgOrder = $this->levemsg->doctorIndex(self::$currentUid,'in(2,3,4) '); //留言问答
         if(!empty($msgOrder)){
             foreach($msgOrder as $key=>$value){
@@ -76,7 +77,7 @@ class Doctor_center extends MY_Controller
         $this->orderContainer($diagOrder,$i,$order);
         $this->orderContainer($msgOrder,$i,$order);
         $this->sortArrByField($order,'dateline',true);
-        $result = array_slice($order,$offset,$limit,true);
+        $result = array_slice($order,$offset,$limit);
         $imgServer = $this->getImgServer();
         $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i,'imgServer'=>$imgServer)));
     }

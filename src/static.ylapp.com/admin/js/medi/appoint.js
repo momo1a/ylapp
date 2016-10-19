@@ -35,7 +35,7 @@ $(function(){
                 ele.html('<option value="0">请选择药品</option>');
                 if(result.data != false){
                     $.each(result.data,function(i,d){
-                        console.log(d);
+                        //console.log(d);
                         if(pattern.test(d.name)) {
                             ele.append('<option value="' + d.id + '">' + d.name + '</option>');
                         }
@@ -80,6 +80,41 @@ $(function(){
     });
 
 
+    //  筛选伙计
+
+    $('#guys-btn').bind('click',function(){
+        //console.log('');
+        var patternStr = $.trim($("#guys-shaixuan").val());
+        if(patternStr.length == 0){
+            alert('请输入筛选内容');
+            return false;
+        }
+        patt =  new RegExp('.?'+ patternStr + '.?','i');
+
+        $.ajax({
+            url: SITE_URL + "medicine/getGuys",
+            type: "post",
+            data: {},
+            dataType: 'json',
+            success: function (result) {
+                var elem = $('#appoint_allot #guys');
+                elem.html('<option value="0">请选择药房伙计</option>');
+                if(result.data != false){
+                    $.each(result.data,function(i,d){
+                        //console.log(d);
+                        if(patt.test(d.nickname)) {
+                            elem.append('<option value="' + d.uid + '">' + d.nickname + '</option>');
+                        }
+                    });
+                }
+            }
+        });
+
+    });
+
+
+
+
     $('#medi-shaixuan').bind('blur',function(){
         $('#appoint_add #mediName').html('<option value="0">请选择药品</option>');
         appointAddPre();
@@ -88,6 +123,24 @@ $(function(){
     $('#user-shaixuan').bind('blur',function(){
         $('#appoint_add #regTel').html('<option value="0">请选择用户注册手机</option>');
         appointAddPre();
+    });
+
+    $('#guys-shaixuan').bind('blur',function(){
+        $('#appoint_allot #guys').html('<option value="0">请选择药房伙计</option>');
+        $.ajax({
+            url: SITE_URL + "medicine/getGuys",
+            type: "post",
+            data: {},
+            dataType: 'json',
+            success: function (result) {
+                //console.log(result);
+                if(result.data != false){
+                    $.each(result.data,function(i,d){
+                        $('#appoint_allot #guys').append('<option value="'+ d.uid +'">'+ d.nickname +'</option>');
+                    });
+                }
+            }
+        });
     });
 
 
@@ -108,6 +161,26 @@ function appointDetailPre(e){
             if(result.data != false){
                 console.log(result);
                 $('#appoint_detail #appoint-content').html(result.data.content);
+            }
+        }
+    });
+}
+
+// 初始化分配药品页面
+function appointAllotPre(e){
+    var aid =  $(e).attr('aid');
+    $('#appoint_allot input[name="aid"]').val(aid);
+    $.ajax({
+        url: SITE_URL + "medicine/getGuys",
+        type: "post",
+        data: {},
+        dataType: 'json',
+        success: function (result) {
+            console.log(result);
+            if(result.data != false){
+                $.each(result.data,function(i,d){
+                    $('#appoint_allot #guys').append('<option value="'+ d.uid +'">'+ d.nickname +'</option>');
+                });
             }
         }
     });
@@ -172,4 +245,26 @@ function addAppoint(){
             }
         }
     });
+}
+
+// 分配伙计
+function appointToAllot(){
+    var formData = new FormData(document.getElementById("appointAllot"));
+    $.ajax({
+        url: SITE_URL + "medicine/allot",
+        type: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
+        dataType: 'json',
+        success: function (result) {
+            if (result.code == 0) {
+                alert(result.msg);
+                location.reload();
+            } else {
+                alert(result.msg);
+            }
+        }
+    });
+
 }

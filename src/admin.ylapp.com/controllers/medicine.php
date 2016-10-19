@@ -163,8 +163,20 @@ class Medicine extends MY_Controller
     // 获取伙计
 
     public function getGuys(){
-        $guys = $this->user->getAllUser(2,array());
+        $guys = $this->user->getAllUser(2,array('YL_doctor_info.isDude'=>1),true);
         $this->ajax_json(0,'请求成功',$guys);
+    }
+
+
+    // 分配
+
+    public function allot(){
+        $aid = intval($this->input->get_post('aid'));
+        $guysId = intval($this->input->get_post('guys'));
+        if($guysId == 0){
+            $this->ajax_json(1, '请选择药房伙计');
+        }
+
     }
 
 

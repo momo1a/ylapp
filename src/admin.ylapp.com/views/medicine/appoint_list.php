@@ -74,7 +74,7 @@
                                             <!--&nbsp;&nbsp;<a href="#" nid="<?php /*echo $value['nid'];*/?>"   title="评论管理"><span class="glyphicon glyphicon-list"></span></a>-->
                                         </th>
                                         <th><?php echo $state[$value['appointState']];?></th>
-                                        <th><a data-target="#appoint_allot" data-toggle="modal" onclick="appointAllotPre();return false;"><span class="glyphicon glyphicon-compressed" style="cursor: pointer"></span>分配</a></th>
+                                        <th><a data-target="#appoint_allot" data-toggle="modal" aid="<?php echo $value['aid'];?>" onclick="appointAllotPre(this);return false;"><span class="glyphicon glyphicon-compressed" style="cursor: pointer"></span>分配</a></th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

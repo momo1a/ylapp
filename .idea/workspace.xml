@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8df0e38-6e17-4f20-9398-32df1adec543" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_allot.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/static.ylapp.com/admin/js/medi/appoint.js" afterPath="$PROJECT_DIR$/src/static.ylapp.com/admin/js/medi/appoint.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_allot.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_allot.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/database.php" afterPath="$PROJECT_DIR$/src/common/config/development/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/sql/table/medi_appoint.sql" afterPath="$PROJECT_DIR$/docs/sql/table/medi_appoint.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/memcached.php" afterPath="$PROJECT_DIR$/src/common/config/development/memcached.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/models/user_model.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/models/user_model.php" />
     </list>
     <ignored path="ylapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +40,8 @@
       <file leaf-file-name="appoint.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/static.ylapp.com/admin/js/medi/appoint.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2376" max-vertical-offset="3960">
-              <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
+            <state vertical-scroll-proportion="-6.133333" vertical-offset="5316" max-vertical-offset="6050">
+              <caret line="250" column="23" selection-start-line="250" selection-start-column="9" selection-end-line="250" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -50,18 +50,8 @@
       <file leaf-file-name="medicine.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4888889" vertical-offset="3278" max-vertical-offset="5016">
-              <caret line="165" column="48" selection-start-line="165" selection-start-column="48" selection-end-line="165" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="appoint_detail.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_detail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.483871" vertical-offset="107" max-vertical-offset="660">
-              <caret line="14" column="40" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.4021739" vertical-offset="3408" max-vertical-offset="5280">
+              <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -70,7 +60,7 @@
       <file leaf-file-name="medi_appoint_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/medi_appoint_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.032258" vertical-offset="2373" max-vertical-offset="2926">
+            <state vertical-scroll-proportion="-10.741936" vertical-offset="2351" max-vertical-offset="2904">
               <caret line="122" column="29" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="29" />
               <folding>
                 <element signature="e#6#81#0#PHP" expanded="true" />
@@ -82,8 +72,8 @@
       <file leaf-file-name="appoint_list.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.548387" vertical-offset="1782" max-vertical-offset="2750">
-              <caret line="76" column="74" selection-start-line="76" selection-start-column="61" selection-end-line="76" selection-end-column="74" />
+            <state vertical-scroll-proportion="-1.4193548" vertical-offset="1628" max-vertical-offset="2750">
+              <caret line="76" column="263" selection-start-line="76" selection-start-column="263" selection-end-line="76" selection-end-column="263" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#a#0;n#th#7;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -94,8 +84,8 @@
       <file leaf-file-name="appoint_allot.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_allot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.548387" vertical-offset="0" max-vertical-offset="2156">
-              <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+            <state vertical-scroll-proportion="-12.064516" vertical-offset="528" max-vertical-offset="1100">
+              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -104,8 +94,8 @@
       <file leaf-file-name="user_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4193548" vertical-offset="550" max-vertical-offset="5038">
-              <caret line="27" column="40" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="40" />
+            <state vertical-scroll-proportion="-9.935484" vertical-offset="418" max-vertical-offset="5126">
+              <caret line="33" column="68" selection-start-line="33" selection-start-column="68" selection-end-line="33" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -159,16 +149,16 @@
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/foot.php" />
         <option value="$PROJECT_DIR$/src/static.ylapp.com/admin/js/medi/medi.js" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/medicine_model.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/user_model.php" />
         <option value="$PROJECT_DIR$/src/static.ylapp.com/admin/third/font_awesome.min.css" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/head.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_add.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_detail.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/medi_appoint_model.php" />
-        <option value="$PROJECT_DIR$/src/static.ylapp.com/admin/js/medi/appoint.js" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_allot.php" />
         <option value="$PROJECT_DIR$/docs/sql/table/medi_appoint.sql" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/user_model.php" />
+        <option value="$PROJECT_DIR$/src/static.ylapp.com/admin/js/medi/appoint.js" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_allot.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php" />
       </list>
     </option>
@@ -335,28 +325,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ylapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ylapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="table" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -427,7 +395,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23556231" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20440729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -757,29 +725,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/static.ylapp.com/admin/js/medi/appoint.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2349" max-vertical-offset="4860">
-          <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_add.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39783" vertical-offset="1298" max-vertical-offset="2156">
           <caret line="68" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="91" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.548387" vertical-offset="1782" max-vertical-offset="2750">
-          <caret line="76" column="74" selection-start-line="76" selection-start-column="61" selection-end-line="76" selection-end-column="74" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#a#0;n#th#7;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -791,25 +741,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_model.php">
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_detail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4193548" vertical-offset="550" max-vertical-offset="5038">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_allot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.548387" vertical-offset="0" max-vertical-offset="2156">
-          <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.4039855" vertical-offset="107" max-vertical-offset="660">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/medi_appoint_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.032258" vertical-offset="2373" max-vertical-offset="2926">
+        <state vertical-scroll-proportion="-10.741936" vertical-offset="2351" max-vertical-offset="2904">
           <caret line="122" column="29" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="29" />
           <folding>
             <element signature="e#6#81#0#PHP" expanded="true" />
@@ -817,18 +759,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_detail.php">
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.483871" vertical-offset="107" max-vertical-offset="660">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="40" />
+        <state vertical-scroll-proportion="-9.935484" vertical-offset="418" max-vertical-offset="5126">
+          <caret line="33" column="68" selection-start-line="33" selection-start-column="68" selection-end-line="33" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4193548" vertical-offset="1628" max-vertical-offset="2750">
+          <caret line="76" column="263" selection-start-line="76" selection-start-column="263" selection-end-line="76" selection-end-column="263" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#th#7;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_allot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.064516" vertical-offset="528" max-vertical-offset="1100">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/static.ylapp.com/admin/js/medi/appoint.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.133333" vertical-offset="5316" max-vertical-offset="6050">
+          <caret line="250" column="23" selection-start-line="250" selection-start-column="9" selection-end-line="250" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4888889" vertical-offset="3278" max-vertical-offset="5016">
-          <caret line="165" column="48" selection-start-line="165" selection-start-column="48" selection-end-line="165" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.4021739" vertical-offset="3408" max-vertical-offset="5280">
+          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -25,9 +25,13 @@ class User_model extends My_Model{
      * @param int $userType 默认用户端
      * @param array $where 查询条件
      */
-    public function getAllUser($userType=1,$where=null){
+    public function getAllUser($userType=1,$where=null,$flag=false){
         if(is_array($where)){
             $this->where($where);
+        }
+
+        if($flag){
+            $this->join('YL_doctor_info','YL_user.uid=YL_doctor_info.uid','left');
         }
 
         $this->where(array('userType'=>$userType,'isBlack'=>0));

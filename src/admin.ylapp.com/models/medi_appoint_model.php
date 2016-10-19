@@ -40,7 +40,7 @@ class   Medi_appoint_model extends MY_Model
             }
         }
         if($mediName != ''){
-            $this->like(array('medi.name'=>$mediName));
+            $this->like(array('YL_medicine.name'=>$mediName));
         }
         if($startTime == 0 && $endTime == 0){
             //$this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
@@ -58,7 +58,7 @@ class   Medi_appoint_model extends MY_Model
         $this->select($select);
         $this->join('YL_user as user','YL_medi_appoint.userId=user.uid','left');
         $this->join('YL_user as guys','YL_medi_appoint.guysId=guys.uid','left');
-        $this->join('YL_medicine as medi','YL_medi_appoint.mediId=medi.id','left');
+        $this->join('YL_medicine','YL_medi_appoint.mediId=YL_medicine.id','left');
         $this->offset($offset);
         $this->limit($limit);
         return $this->find_all();
@@ -85,7 +85,7 @@ class   Medi_appoint_model extends MY_Model
             }
         }
         if($mediName != ''){
-            $this->where(array('medi.name'=>$mediName));
+            $this->where(array('YL_medicine.name'=>$mediName));
         }
         if($startTime == 0 && $endTime == 0){
             //$this->where(array('YL_medi_appoint.appointTime > '=>$startTime));
@@ -101,7 +101,7 @@ class   Medi_appoint_model extends MY_Model
             $this->where(array('YL_medi_appoint.appointTime <= '=>$endTime));
         }
 
-        $this->join('YL_medicine as medi','YL_medi_appoint.mediId=medi.id','left');
+        $this->join('YL_medicine','YL_medi_appoint.mediId=YL_medicine.id','left');
 
         return $this->count_all();
     }
@@ -123,5 +123,16 @@ class   Medi_appoint_model extends MY_Model
     public function getDetail($aid,$select='*'){
         $this->select($select);
         return $this->find_by(array('id'=>$aid));
+    }
+
+    /**
+     * 预约分配
+     * @param $aid
+     * @param $data
+     */
+    public function appointAllot($aid,$data){
+        $where = array('id'=>$aid);
+        $this->update($where,$data);
+        return $this->db->affected_rows();
     }
 }

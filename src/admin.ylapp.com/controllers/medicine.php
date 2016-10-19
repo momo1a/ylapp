@@ -119,10 +119,13 @@ class Medicine extends MY_Controller
     public function appointList(){
         $limit = 10;
         $state = array('0'=>'未分配','1'=>'已分配');
+        $search = array('illName'=>'患者姓名','telephone'=>'患者电话');
         $searchKey = $this->input->get_post('search-key');
         isset($_GET['search-key']) || $searchKey = '';
         if($searchKey != 'illName' && $searchKey != 'telephone' && $searchKey != ''){
-            exit('滚粗，想干什么！');
+            header('content-type:text/html;charset=utf-8');
+            echo '<script>alert("搜索非法请求！");</script>';
+            return;
         }
         $searchValue = trim(addslashes($this->input->get_post('search-value')));
         $mediName = addslashes(trim($this->input->get_post('mediName'))); // 药品名称
@@ -131,9 +134,14 @@ class Medicine extends MY_Controller
         $startTime = !$startTime ? 0 : $startTime;
         $endTime = !$endTime ? 0 : $endTime;
         //var_dump($startTime,$endTime);
+        if($startTime > $endTime){
+            header('content-type:text/html;charset=utf-8');
+            echo '<script>alert("开始时间不能大于结束时间！");</script>';
+            return false;
+        }
         $total = $this->appoint->appointCount($searchKey,$searchValue,$mediName,$startTime,$endTime);
         $offset = intval($this->uri->segment(3));
-        $list = $this->appoint->appointList($limit,$offset,$searchKey,$searchValue,$mediName,$startTime,$endTime,'*,YL_medi_appoint.name as illName,medi.name as mediName,YL_medi_appoint.id as aid,YL_medi_appoint.state as appointState');
+        $list = $this->appoint->appointList($limit,$offset,$searchKey,$searchValue,$mediName,$startTime,$endTime,'*,YL_medi_appoint.name as illName,YL_medicine.name as mediName,YL_medi_appoint.id as aid,YL_medi_appoint.state as appointState');
         //var_dump($this->db->last_query());
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
@@ -142,7 +150,66 @@ class Medicine extends MY_Controller
         $data['list'] = $list;
         $data['get'] = $_GET;
         $data['state'] = $state;
+        $data['search'] = $search;
+        if($this->input->get_post('doexport') == 'yes'){
+            $this->exportData();
+        }
         $this->load->view('medicine/appoint_list',$data);
+    }
+
+
+    //  预约数据导出
+    protected function exportData(){
+        //header("Content-type:application/vnd.ms-excel");
+        $filename = '药品预约数据'.date("Y-m-d-H:i:s", time()).'.xls';
+
+
+        $searchKey = $this->input->get_post('search-key');
+        isset($_GET['search-key']) || $searchKey = '';
+        if($searchKey != 'illName' && $searchKey != 'telephone' && $searchKey != ''){
+            header('content-type:text/html;charset=utf-8');
+            echo '<script>alert("搜索非法请求！");</script>';
+            return;
+        }
+        $searchValue = trim(addslashes($this->input->get_post('search-value')));
+        $mediName = addslashes(trim($this->input->get_post('mediName'))); // 药品名称
+        $startTime = strtotime($this->input->get_post('startTime'));     // 预约开始时间
+        $endTime = strtotime($this->input->get_post('endTime'));       // 预约结束时间
+        $startTime = !$startTime ? 0 : $startTime;
+        $endTime = !$endTime ? 0 : $endTime;
+        //var_dump($startTime,$endTime);
+        if($startTime > $endTime){
+            header('content-type:text/html;charset=utf-8');
+            echo '<script>alert("开始时间不能大于结束时间！");</script>';
+            return;
+        }
+
+
+        /*默认可以导出最新的2000条数据*/
+        $data = $this->appoint->appointList(2000,0,$searchKey,$searchValue,$mediName,$startTime,$endTime,'*,YL_medi_appoint.name as illName,YL_medicine.name as mediName,YL_medi_appoint.id as aid,YL_medi_appoint.state as appointState');
+        $state = array('0'=>'未分配','1'=>'已分配');
+        $header = array(
+            '编号',
+            '预约时间',
+            '患者手机',
+            '患者姓名',
+            '药品名',
+            '当前状态',
+        );
+
+        $rows = array();
+        if(!empty($data)) {
+            foreach ($data as $k => $v) {
+                $rows[$k]['aid'] = $v['aid'];
+                $rows[$k]['appointTime'] = date('Y-m-d H:i:s',$v['appointTime']);
+                $rows[$k]['telephone'] = $v['telephone'];
+                $rows[$k]['illName'] = $v['illName'];
+                $rows[$k]['mediName'] = $v['mediName'];
+                $rows[$k]['appointState'] = $state[$v['appointState']];
+            }
+        }
+        array_unshift($rows, $header);
+        $this->data_export($rows, $filename);
     }
 
 
@@ -176,7 +243,12 @@ class Medicine extends MY_Controller
         if($guysId == 0){
             $this->ajax_json(1, '请选择药房伙计');
         }
-
+        $res = $this->appoint->appointAllot($aid,array('guysId'=>$guysId,'allotTime'=>time(),'state'=>1));
+        if($res){
+            $this->ajax_json(0, '分配成功');
+        }else{
+            $this->ajax_json(-1, '分配失败');
+        }
     }
 
 

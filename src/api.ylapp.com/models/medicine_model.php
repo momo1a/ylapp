@@ -42,8 +42,20 @@ class  Medicine_model extends MY_Model
      * @param $mid
      * @return array
      */
-    public function getMedicineDetail($mid){
+    public function getMedicineDetail($mid,$select='*'){
+        $this->select($select);
         return $this->find_by(array('id'=>$mid));
+    }
+
+    /**
+     * 获取药品banner
+     * @param $num  获取数量
+     */
+    public function getMedicineBanner($num=3){
+        $this->limit($num);
+        $this->select('id as mid,banner');
+        $this->order_by(array('id'=>'desc'));
+        return $this->find_all();
     }
 
 

@@ -34,4 +34,15 @@ class Medicine extends MY_Controller
         $category = $this->cate->get_all($select="cid,name as cateName");  // 所有分类
         $this->response($this->responseDataFormat(0,'请求成功',array('category'=>$category,'medicine'=>$medicine,'imgServer'=>self::$_imgServer)));
     }
+
+    // 药品详情页
+
+    public function medicineDetail(){
+        $mid = intval($this->input->get_post('mid'));  // 药品id
+        $num = intval($this->input->get_post('num'));  // 获取banner数量
+        $num = $num ? $num : 3;
+        $detail = $this->medicine->getMedicineDetail($mid,'id,name,content');  // 药品详情
+        $banner = $this->medicine->getMedicineBanner($num);
+        $this->response($this->responseDataFormat(0,'请求成功',array('detail'=>$detail,'banner'=>$banner,'imgServer'=>self::$_imgServer)));
+    }
 }

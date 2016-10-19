@@ -247,6 +247,12 @@ class User_center extends MY_Controller
         }
     }
 
+    // 重新预约
+    public function reAppoint(){
+        $uid = self::$currentUid;
+        $oid = intval($this->input->get_post('oid'));
+    }
+
 
     /*************问答记录****************/
 

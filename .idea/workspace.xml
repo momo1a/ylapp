@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8df0e38-6e17-4f20-9398-32df1adec543" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/system/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static.ylapp.com/admin/js/system/system.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/system.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/models/system_setting_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/database.php" afterPath="$PROJECT_DIR$/src/common/config/development/database.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/memcached.php" afterPath="$PROJECT_DIR$/src/common/config/development/memcached.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/models/user_leaving_msg_model.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/models/user_leaving_msg_model.php" />
     </list>
     <ignored path="ylapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_center.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user_center.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60120845" vertical-offset="10493" max-vertical-offset="10824">
+            <state vertical-scroll-proportion="6.836066" vertical-offset="10493" max-vertical-offset="10824">
               <caret line="458" column="1" selection-start-line="458" selection-start-column="1" selection-end-line="458" selection-end-column="1" />
               <folding />
             </state>
@@ -117,9 +112,21 @@
       <file leaf-file-name="doctor_center.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/doctor_center.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="1210" max-vertical-offset="11374">
-              <caret line="60" column="27" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="27" />
+            <state vertical-scroll-proportion="-4.967742" vertical-offset="1210" max-vertical-offset="11374">
+              <caret line="67" column="47" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="47" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_leaving_msg_model.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/user_leaving_msg_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6806883" vertical-offset="1272" max-vertical-offset="3542">
+              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+              <folding>
+                <marker date="1476931860206" expanded="true" signature="1286:1707" placeholder="SELECT m.ask..YL_user_leaving_msg..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -378,7 +385,6 @@
         <option value="$PROJECT_DIR$/docs/sql/table/gene_check.sql" />
         <option value="$PROJECT_DIR$/docs/sql/table/vaccinum.sql" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/user_leaving_msg_model.php" />
-        <option value="$PROJECT_DIR$/src/api.ylapp.com/models/user_leaving_msg_model.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/doctor_center.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/system_setting_model.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/system.php" />
@@ -386,6 +392,7 @@
         <option value="$PROJECT_DIR$/src/static.ylapp.com/admin/js/system/system.js" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php" />
+        <option value="$PROJECT_DIR$/src/api.ylapp.com/models/user_leaving_msg_model.php" />
       </list>
     </option>
   </component>
@@ -769,7 +776,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29200652" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29200652" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1061,13 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/user_leaving_msg_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3417722" vertical-offset="820" max-vertical-offset="3520">
-          <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_leaving_msg_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.079566" vertical-offset="4708" max-vertical-offset="5302">
@@ -1148,14 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="584">
           <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/doctor_center.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1210" max-vertical-offset="11022">
-          <caret line="60" column="27" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1375,9 +1367,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60120845" vertical-offset="10493" max-vertical-offset="10824">
+        <state vertical-scroll-proportion="6.836066" vertical-offset="10493" max-vertical-offset="10824">
           <caret line="458" column="1" selection-start-line="458" selection-start-column="1" selection-end-line="458" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/doctor_center.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.967742" vertical-offset="1210" max-vertical-offset="11374">
+          <caret line="67" column="47" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/user_leaving_msg_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6806883" vertical-offset="1272" max-vertical-offset="3542">
+          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+          <folding>
+            <marker date="1476931860206" expanded="true" signature="1286:1707" placeholder="SELECT m.ask..YL_user_leaving_msg..." />
+          </folding>
         </state>
       </provider>
     </entry>

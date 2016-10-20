@@ -20,7 +20,6 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="" method="post">
-                            <input type="hidden" name="dosave" value="telephone"/>
                             <div class="alert alert-info alert-dismissible">
                                 <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
                                 <h4><i class="glyphicon glyphicon-phone-alt"></i>客服电话设置</h4>
@@ -34,7 +33,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-5">
-                                        <input type="submit" class="btn btn-default btn-sm" value="保存">
+                                        <input type="button" onclick="setting('c-phone','telephone',$('#c-phone').val());return false;" class="btn btn-default btn-sm" value="保存">
                                     </div>
                                 </div>
                             </div>

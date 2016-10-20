@@ -152,7 +152,7 @@ class Medical extends MY_Controller
         $sex = intval($this->input->get_post('sex'));
         $allergyHistory = addslashes(trim($this->input->get_post('allergyHistory')));
         $result = trim($this->input->get_post('result'));
-        $stages = trim($this->input->get_post('stages'));
+        $stages = intval($this->input->get_post('stages'));
         $situation = addslashes($this->input->get_post('situation'));
         $data = array(
             'illName'=>$illName,

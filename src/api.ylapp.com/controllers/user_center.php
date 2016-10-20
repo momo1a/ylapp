@@ -18,6 +18,7 @@ class User_center extends MY_Controller
         $this->load->model('Doctor_reply_model','reply');
         $this->load->model('Order_model','order');
         $this->load->model('Post_model','post');
+        $this->load->model('Medi_appoint_model','appo');
         $this->load->model('Post_comment_model','post_comment');
     }
 
@@ -414,6 +415,9 @@ class User_center extends MY_Controller
         $msgT = $this->leaving_msg->getMsgList(self::$currentUid,'id,docName,from_unixtime(askTime) as dateline,(case when state=0 then "未支付" when state=2 then "通过" when state=3 then "不通过" when state=4 then "完成" when state=5 then "待审核" end) as state,(case when not isnull(docId) then "留言问答" end) as msgType',1000,0,'(state IN(0,2,3,4,5))');
 
         $msgFo = $this->order->getOrdersMsg(self::$currentUid,'oid as id,packageId as gid,packageTitle,from_unixtime(dateline) as dateline,(case when status=1 then "待支付" when status=2 then "已支付" when status=3 then "待处理" when status=4 then "已通知" when status=5 then "完成" end) as state,(case when type=1 then "疫苗接种" when type=2 then "基因检测" end) as msgType');
+
+        $msgFi = $this->appo->getMsg(1,self::$currentUid);
+
         $msg = array();
         $i = 0;
 
@@ -421,9 +425,10 @@ class User_center extends MY_Controller
         $this->orderContainer($msgS,$i,$msg);
         $this->orderContainer($msgT,$i,$msg);
         $this->orderContainer($msgFo,$i,$msg);
+        $this->orderContainer($msgFi,$i,$msg);
         $this->sortArrByField($msg,'dateline',true);
 
-        $this->response($this->responseDataFormat(0,'请求成功',array('msgList'=>$msg,'count'=>$i)));
+        $this->response($this->responseDataFormat(0,'请求成功',array('msgList'=>$msg,'count'=>$i,'imgServer'=>$this->getImgServer())));
     }
 
 

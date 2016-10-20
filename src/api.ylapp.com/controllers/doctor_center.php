@@ -24,6 +24,7 @@ class Doctor_center extends MY_Controller
         $this->load->model('Doctor_info_model','doc_info');
         $this->load->model('Banner_model','banner');
         $this->load->model('News_model','news');
+        $this->load->model('Medi_appoint_model','appoint');
         $this->load->library('Upload_image',null,'upload_image');
         $this->imgServer = $this->getImgServer();
     }
@@ -66,6 +67,7 @@ class Doctor_center extends MY_Controller
         $diagOrder = $this->diagnosis->doctorIndex(self::$currentUid,' in(2,3,4) '); //在线问诊
         //var_dump($this->db->last_query());
         $msgOrder = $this->levemsg->doctorIndex(self::$currentUid,'in(2,3,4) '); //留言问答
+        $medicineOrder = $this->appoint->getMsg(2,self::$currentUid);   // 药品分配
         if(!empty($msgOrder)){
             foreach($msgOrder as $key=>$value){
                 $msgOrder[$key]['img'] = json_decode($value['img'],true);
@@ -76,6 +78,7 @@ class Doctor_center extends MY_Controller
         $this->orderContainer($regOrder,$i,$order);
         $this->orderContainer($diagOrder,$i,$order);
         $this->orderContainer($msgOrder,$i,$order);
+        $this->orderContainer($medicineOrder,$i,$order);
         $this->sortArrByField($order,'dateline',true);
         $result = array_slice($order,$offset,$limit);
         $imgServer = $this->getImgServer();

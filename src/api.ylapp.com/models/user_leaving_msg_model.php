@@ -75,6 +75,7 @@ SELECT
 	m.price,
 	m.askerContent,
 	m.img,
+	(IF(m.state=4,'完成','未完成')) AS state,
 	'留言问诊' as type
 FROM
 	YL_user_leaving_msg AS m

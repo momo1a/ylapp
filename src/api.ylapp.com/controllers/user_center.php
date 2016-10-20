@@ -326,7 +326,13 @@ class User_center extends MY_Controller
     public function postList(){
         $select = 'id,img,postTitle,postContent,from_unixtime(postTime) as dateline';
         $res = $this->post->myPostList(self::$currentUid,$select);
-        $this->response($this->responseDataFormat(0,'请求成功',$res));
+        if(!empty($res)){
+            foreach($res as $key=>$value){
+                $res[$key]['img'] = json_decode($value['img'],true);
+            }
+        }
+        $imgServer = $this->getImgServer();
+        $this->response($this->responseDataFormat(0,'请求成功',array('list'=>$res,'imgServer'=>$imgServer)));
     }
 
 
@@ -337,7 +343,8 @@ class User_center extends MY_Controller
     public function myPostReply(){
         $select = 'YL_post.id as postId,YL_post_comment.id as commentId,YL_user.avatar,YL_user.nickname,from_unixtime(YL_post_comment.recmdTime) as dateline,YL_post_comment.recmdContent as commentContent,YL_post.postTitle,YL_post.postContent';
         $res = $this->post_comment->myReply(self::$currentUid,$select);
-        $this->response($this->responseDataFormat(0,'请求成功',$res));
+        $imgServer = $this->getImgServer();
+        $this->response($this->responseDataFormat(0,'请求成功',array('result'=>$res,'imgServer'=>$imgServer)));
     }
 
     /**
@@ -347,7 +354,8 @@ class User_center extends MY_Controller
     public function myPostComment(){
         $select = 'YL_post.id as postId,YL_post_comment.id as commentId,YL_user.avatar,YL_user.nickname,from_unixtime(YL_post_comment.recmdTime) as dateline,YL_post_comment.recmdContent as commentContent,YL_post.postTitle,YL_post.postContent,YL_post_comment.state';
         $res = $this->post_comment->myComment(self::$currentUid,$select);
-        $this->response($this->responseDataFormat(0,'请求成功',$res));
+        $imgServer = $this->getImgServer();
+        $this->response($this->responseDataFormat(0,'请求成功',array('result'=>$res,'imgServer'=>$imgServer)));
     }
 
 
@@ -400,8 +408,11 @@ class User_center extends MY_Controller
      */
     public function msgList(){
         $msgF = $this->online_ask->getListByUid(self::$currentUid,'id,docName,askContent,FROM_UNIXTIME(askTime) as dateline,(case when state=0 then "未支付" when state=1 then "待处理" when state=2 then "已确认沟通时间" when state=3 then "完成" when state=4 then "失败" end) as state,(case when not isnull(docId) then "在线问诊" end) as msgType',1000);
+
         $msgS = $this->appoint->appointList(self::$currentUid,'YL_user_reg_num.id,docName,officeName,YL_hospital.name as hosName,address,FROM_UNIXTIME(dateline) as dateline,(case when YL_user_reg_num.status=0 then "未支付" when YL_user_reg_num.status=2 then "待处理" when YL_user_reg_num.status=3 then "预约成功" when YL_user_reg_num.status=4 then "预约失败" when YL_user_reg_num.status=5 then "完成" end) as state,(case when not isnull(docId) then "预约挂号" end) as msgType',1000);
+
         $msgT = $this->leaving_msg->getMsgList(self::$currentUid,'id,docName,from_unixtime(askTime) as dateline,(case when state=0 then "未支付" when state=2 then "通过" when state=3 then "不通过" when state=4 then "完成" when state=5 then "待审核" end) as state,(case when not isnull(docId) then "留言问答" end) as msgType',1000,0,'(state IN(0,2,3,4,5))');
+
         $msgFo = $this->order->getOrdersMsg(self::$currentUid,'oid as id,packageId as gid,packageTitle,from_unixtime(dateline) as dateline,(case when status=1 then "待支付" when status=2 then "已支付" when status=3 then "待处理" when status=4 then "已通知" when status=5 then "完成" end) as state,(case when type=1 then "疫苗接种" when type=2 then "基因检测" end) as msgType');
         $msg = array();
         $i = 0;

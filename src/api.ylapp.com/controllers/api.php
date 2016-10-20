@@ -308,6 +308,16 @@ class Api extends MY_Controller
     }
 
 
+    /**
+     * 获取客服电话
+     */
+    public function customerTel(){
+        $this->load->model('System_setting_model','system');
+        $res = $this->system->getValue('customer_tel');
+        $tel = $res ? $res['settingValue'] : '客服电话未设置';
+        $this->response($this->responseDataFormat(0,'请求成功',array('tel'=>$tel)));
+    }
+
     /*
      * 404处理
      */

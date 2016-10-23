@@ -43,10 +43,12 @@ class Customer extends MY_Controller
             $infos = $this->object2array($infos->userinfos);
             $infos['userinfos'][0]->groupid = config_item('openim_group_id');
             $infos['userinfos'][0]->touid = config_item('openim_touid');
+            $infos['userinfos'][0]->appkey = config_item('openim_appkey');
             $this->response($this->responseDataFormat(0,'请求成功',$infos['userinfos'][0]));
         }else{
             $userInfo['userinfos'][0]->groupid = config_item('openim_group_id');
             $userInfo['userinfos'][0]->touid = config_item('openim_touid');
+            $userInfo['userinfos'][0]->appkey = config_item('openim_appkey');
             $this->response($this->responseDataFormat(0,'请求成功',$userInfo['userinfos'][0]));
         }
     }

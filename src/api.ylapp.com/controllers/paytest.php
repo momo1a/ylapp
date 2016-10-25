@@ -20,7 +20,7 @@ class Paytest extends CI_Controller
 </head>
 <form action="http://api.ylapp.com/user_pay/recharge" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="CCYuZ09d9f315bphPdjnGi1BpM0nhr4i0TC7g7uNOMkC0o4f1SV0T9cv\/DVXpQcvlRWetAyQ"/>
+    <input type="hidden" name="privateToken" value="PG1DR45dbd797ticmkzZlXInRhryKDQoznw6DyD0xhrFJTLat0qOgDvLRTlIv4cy9BuWsC\/Z"/>
     payType<input type="text" name="payType"/>
     amount<input type="text" name="amount"/>
     <input type="submit" value="submit"/>

@@ -68,9 +68,9 @@ class User_pay extends MY_Controller
                 $this->response($this->responseDataFormat(0,'请求成功',array('alipayReqStr'=>$submit)));
                 break;
             case 3 :  // 银联支付
-                $this->load->library('unionpay/Unionpay',null,'unipay');
+                $this->load->library('union/Unionpay',null,'unipay');
                 $tradeNo = 'UNIONCZ'.time().rand(10000,99999).$uid;
-                $this->unipay->orderPay($orderBody,$tradeNo,$amount);
+                $this->unipay->orderPay($tradeNo,$amount);
                 break;
             default :
                 $this->response($this->responseDataFormat(-1,'请选择正确的支付方式',array()));

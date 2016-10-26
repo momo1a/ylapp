@@ -561,10 +561,10 @@ HTML;
 </style>
 </head>
 
-<form action="http://123.207.87.83:8080/diagnosis_online/diaDoPostTempOne" method="post">
+<form action="http://api.ylapp.com/diagnosis_online/diaDoPostTempOne" method="post">
 
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="Gunbh0b63a168VZFX7\/QzDj1faeV7ylH3QyQQ1Rne\/d5ZXgOUFmaIALEDSkg04VXnrotj2Ti"/>
+    <input type="hidden" name="privateToken" value="9\/bCx439be71fdEAWbnvn\/jJ19iD+gP1cvtF2vaxw6dtFUX03VV8+5iZnWODRe75upunlBXn"/>
     docId<input type="text" name="docId"/>
     phoneTimeLen<input type="text" name="phoneTimeLen"/>
     price<input type="text" name="price"/>

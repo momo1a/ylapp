@@ -98,7 +98,7 @@
                                                    echo $action;
                                                    break;
                                                case 4:
-                                                   $action = '<button onclick="setOrderStat(this);return false;" oid="'.$value['aid'].'"  status="5"  class="btn btn-primary btn-xs btn-action">完&nbsp;&nbsp;&nbsp;&nbsp;成</button>';
+                                                   /*$action = '<button onclick="setOrderStat(this);return false;" oid="'.$value['aid'].'"  status="5"  class="btn btn-primary btn-xs btn-action">完&nbsp;&nbsp;&nbsp;&nbsp;成</button>';*/
                                                    echo $action;
                                                    break;
                                               /* case 6 :

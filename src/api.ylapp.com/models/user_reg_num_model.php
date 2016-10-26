@@ -77,6 +77,25 @@ class User_reg_num_model extends MY_Model
         }
     }
 
+    /**
+     * 根据id获取一条数据
+     * @param $oid
+     */
+    public function getDetailById($oid){
+        return $this->find_by(array('id'=>$oid));
+    }
+
+    /**
+     *
+     * @param $oid
+     * @param $data
+     */
+    public function reAppoint($oid,$data){
+        $where = array('id'=>$oid);
+        $res = $this->update($where,$data);
+        return $res;
+    }
+
 
     /**
      * 医生首页待处理的预约

@@ -45,10 +45,10 @@ const SDK_FRONT_NOTIFY_URL = 'http://localhost:8085/upacp_demo_app/demo/api_05_a
 const SDK_BACK_NOTIFY_URL = 'http://222.222.222.222/upacp_demo_app/demo/api_05_app/BackReceive.php';
 
 //文件下载目录 
-const SDK_FILE_DOWN_PATH = 'D:/file/';
+const SDK_FILE_DOWN_PATH = '/var/file/';
 
 //日志 目录 
-const SDK_LOG_FILE_PATH = 'D:/logs/';
+const SDK_LOG_FILE_PATH = '/var/logs/';
 
 //日志级别，关掉的话改PhpLog::OFF
 const SDK_LOG_LEVEL = PhpLog::DEBUG;

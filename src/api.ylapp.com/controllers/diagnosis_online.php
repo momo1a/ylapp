@@ -35,6 +35,7 @@ class Diagnosis_online extends MY_Controller
     public function diaDoPostTempOne(){
         $docId = intval($this->input->get_post('docId'));
         $phoneTimeLen = intval($this->input->get_post('phoneTimeLen')); // 通话时长
+        $timeLenKey = trim($this->input->get_post('timeLenKey'));  // 时长key
         $price = floatval($this->input->get_post('price'));  //价钱
         $ask_sex = intval($this->input->get_post('sex'));  // 性别
         $askNickname = trim(addslashes($this->input->get_post('person'))); // 联系人
@@ -57,6 +58,7 @@ class Diagnosis_online extends MY_Controller
             'docId'=>$docId,
             'docName'=>$this->user->getUserInfoByUid($docId,'nickname'),
             'docTelephone'=>$this->user->getUserInfoByUid($docId,'phone'),
+            'timeLenKey'=>$timeLenKey,
             'askTime'=>time()
         );
 

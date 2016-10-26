@@ -162,9 +162,10 @@ class User_leaving_msg_model extends MY_Model
 
         $this->update($where,$updateData);  // 更新订单状态
 
-        $orderInfo = $this->select('*,d.nickname as docName,u.nickname as userName')
+        $orderInfo = $this->select('*,d.nickname as docName,u.nickname as userName,YL_user_leaving_msg.price as leavingFee')
             ->join('YL_user as d','d.uid=YL_user_leaving_msg.docId','left')
             ->join('YL_user as u','u.uid=YL_user_leaving_msg.askerUid','left')
+            ->join('YL_doctor_fee_seting as s','s.docId=YL_user_leaving_msg.docId','left')
             ->find_by($where);
         switch(intval($status)){
             case 3:
@@ -207,6 +208,16 @@ class User_leaving_msg_model extends MY_Model
 
             // todo
             $this->db->query('UPDATE YL_doctor_reply SET `state`=1 WHERE `type`=1 AND `themeId`='.$oid); // 修改医生回复表状态
+
+            // 预约费用款项分配到医生钱包
+            if(!$orderInfo['leavMsgPer']){
+                $orderInfo['leavMsgPer'] = 0;
+            }
+            $docGetFee = bcmul($orderInfo['leavingFee'],$orderInfo['leavMsgPer']/100,2);  //  医生获得费用
+            $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
+            if(!$updateRes){
+                $this->db->insert('money',array('uid'=>$orderInfo['docId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
+            }
 
         }
 

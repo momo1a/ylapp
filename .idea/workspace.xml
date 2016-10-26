@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b8df0e38-6e17-4f20-9398-32df1adec543" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/database.php" afterPath="$PROJECT_DIR$/src/common/config/development/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/diagnosis_online.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/diagnosis_online.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/memcached.php" afterPath="$PROJECT_DIR$/src/common/config/development/memcached.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/models/user_phone_diagnosis_model.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/models/user_phone_diagnosis_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/models/user_phone_diagnosis_model.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/models/user_phone_diagnosis_model.php" />
     </list>
     <ignored path="ylapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,32 +55,41 @@
       <file leaf-file-name="SDKConfig.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/libraries/union/sdk/SDKConfig.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.741936" vertical-offset="811" max-vertical-offset="1628">
-              <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+            <state vertical-scroll-proportion="-12.16129" vertical-offset="1075" max-vertical-offset="1628">
+              <caret line="66" column="26" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_phone_diagnosis_model.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_phone_diagnosis_model.php">
+      <file leaf-file-name="diagnosis_online.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/diagnosis_online.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6112116" vertical-offset="3820" max-vertical-offset="6248">
-              <caret line="187" column="60" selection-start-line="187" selection-start-column="56" selection-end-line="187" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.801085" vertical-offset="2329" max-vertical-offset="2948">
+              <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reg_num.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/reg_num.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.193548" vertical-offset="2351" max-vertical-offset="2926">
+              <caret line="117" column="7" selection-start-line="117" selection-start-column="7" selection-end-line="121" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_phone_diagnosis_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/user_phone_diagnosis_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.612904" vertical-offset="1273" max-vertical-offset="4356">
+              <caret line="70" column="25" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="25" />
               <folding>
-                <marker date="1477465692181" expanded="true" signature="5887:5982" placeholder="UPDATE YL_mo..." />
-                <marker date="1477465692181" expanded="true" signature="7022:7126" placeholder="UPDATE YL_mo..." />
+                <marker date="1477468334211" expanded="true" signature="2674:3113" placeholder="SELECT d.ask..YL_user_phone_diagnosis..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user_reg_num_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_reg_num_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.967742" vertical-offset="4443" max-vertical-offset="6512">
-              <caret line="216" column="17" selection-start-line="209" selection-start-column="16" selection-end-line="216" selection-end-column="17" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -92,7 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_add.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_detail.php" />
         <option value="$PROJECT_DIR$/docs/sql/table/medi_appoint.sql" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/user_model.php" />
@@ -140,9 +149,10 @@
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/user_reg_num_model.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/reg/index.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/user_leaving_msg_model.php" />
-        <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/diagnosis_online.php" />
         <option value="$PROJECT_DIR$/docs/sql/table/user_phone_diagnosis.sql" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/user_phone_diagnosis_model.php" />
+        <option value="$PROJECT_DIR$/src/api.ylapp.com/models/user_phone_diagnosis_model.php" />
+        <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/diagnosis_online.php" />
       </list>
     </option>
   </component>
@@ -226,7 +236,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemId" value="api.ylapp.com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,7 +254,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemId" value="api.ylapp.com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -262,7 +272,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -337,7 +387,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22036473" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23556231" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -372,20 +422,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/common/libraries/aliyun/TopSdk.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1107">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60211265" vertical-offset="11016" max-vertical-offset="13500">
-          <caret line="408" column="7" selection-start-line="408" selection-start-column="7" selection-end-line="408" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.1725352" vertical-offset="6924" max-vertical-offset="8991">
@@ -646,22 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/sql/table/user_reg_num.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.24719101" vertical-offset="132" max-vertical-offset="726">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/reg_num.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.641953" vertical-offset="635" max-vertical-offset="2926">
-          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.2580645" vertical-offset="12280" max-vertical-offset="14938">
@@ -772,22 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/sql/table/user_phone_diagnosis.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.670412" vertical-offset="82" max-vertical-offset="748">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/diagnosis_online.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.358047" vertical-offset="679" max-vertical-offset="1782">
-          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_leaving_msg_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4537037" vertical-offset="4661" max-vertical-offset="5742">
@@ -813,24 +817,8 @@
         <state vertical-scroll-proportion="0.32592592" vertical-offset="0" max-vertical-offset="3300">
           <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/libraries/union/sdk/SDKConfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.741936" vertical-offset="811" max-vertical-offset="1628">
-          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_reg_num_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.967742" vertical-offset="4443" max-vertical-offset="6512">
-          <caret line="216" column="17" selection-start-line="209" selection-start-column="16" selection-end-line="216" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,12 +832,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_phone_diagnosis_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6112116" vertical-offset="3820" max-vertical-offset="6248">
-          <caret line="187" column="60" selection-start-line="187" selection-start-column="56" selection-end-line="187" selection-end-column="60" />
+        <state vertical-scroll-proportion="-1.4972875" vertical-offset="5206" max-vertical-offset="6248">
+          <caret line="196" column="26" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="26" />
           <folding>
-            <marker date="1477465692181" expanded="true" signature="5887:5982" placeholder="UPDATE YL_mo..." />
-            <marker date="1477465692181" expanded="true" signature="7022:7126" placeholder="UPDATE YL_mo..." />
+            <marker date="1477465692181" expanded="true" signature="-1:-1" placeholder="UPDATE YL_mo..." />
+            <marker date="1477465692181" expanded="true" signature="-1:-1" placeholder="UPDATE YL_mo..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_reg_num_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0018083183" vertical-offset="4443" max-vertical-offset="6512">
+          <caret line="201" column="26" selection-start-line="201" selection-start-column="26" selection-end-line="201" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/wxpay_return.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1166">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/libraries/union/sdk/SDKConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.16129" vertical-offset="1075" max-vertical-offset="1628">
+          <caret line="66" column="26" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/sql/table/user_phone_diagnosis.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.670412" vertical-offset="82" max-vertical-offset="748">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/sql/table/user_reg_num.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.24719101" vertical-offset="132" max-vertical-offset="726">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/reg_num.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.193548" vertical-offset="2351" max-vertical-offset="2926">
+          <caret line="117" column="7" selection-start-line="117" selection-start-column="7" selection-end-line="121" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/user_phone_diagnosis_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.612904" vertical-offset="1273" max-vertical-offset="4356">
+          <caret line="70" column="25" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="25" />
+          <folding>
+            <marker date="1477468334211" expanded="true" signature="2674:3113" placeholder="SELECT d.ask..YL_user_phone_diagnosis..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/diagnosis_online.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.801085" vertical-offset="2329" max-vertical-offset="2948">
+          <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

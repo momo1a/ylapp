@@ -55,7 +55,24 @@ class User_phone_diagnosis_model extends MY_Model
         return $res;
     }
 
+    /**
+     * 获取订单信息
+     * @param $oid
+     */
+    public function getOrderById($oid){
+        return $this->find_by(array('id'=>$oid));
+    }
 
+    /**
+     * 重新预约问诊
+     * @param $oid
+     * @param $data
+     */
+    public function reDia($oid,$data){
+        $where = array('id'=>$oid);
+        $res = $this->update($where,$data);
+        return $res;
+    }
 
     /**
      * 取消在线问诊

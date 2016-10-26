@@ -164,9 +164,10 @@ class User_phone_diagnosis_model extends MY_Model
         $this->db->trans_begin();
 
         $this->update($where,$updateData);  // 更新状态
-        $orderInfo = $this->select('*,d.nickname as docName,u.nickname as userName')
+        $orderInfo = $this->select('*,d.nickname as docName,u.nickname as userName,YL_user_phone_diagnosis.price as diaFee')
             ->join('YL_user as d','d.uid=YL_user_phone_diagnosis.docId','left')
             ->join('YL_user as u','u.uid=YL_user_phone_diagnosis.askUid','left')
+            ->join('YL_doctor_fee_seting as s','s.docId=YL_user_phone_diagnosis.docId','left')
             ->find_by($where);
         switch(intval($status)){
             case 2:
@@ -174,6 +175,21 @@ class User_phone_diagnosis_model extends MY_Model
                 $stat = 0;
                 break;
             case 3:
+                if(!$orderInfo['timeLenKey']){
+                    $per = 0;
+                }else{
+                    $perKey = str_replace('TimeLen','Per',$orderInfo['timeLenKey']);
+                }
+                if(!$orderInfo[$perKey]){
+                    $per = 0;
+                }else{
+                    $per = $orderInfo[$perKey];
+                }
+                $docGetFee = bcmul($orderInfo['diaFee'],$per/100,2);  //  医生获得费用
+                $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
+                if(!$updateRes){
+                    $this->db->insert('money',array('uid'=>$orderInfo['docId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
+                }
                 $tradeDesc = '电话问诊预约完成';
                 $stat = 1;
                 break;
@@ -199,12 +215,13 @@ class User_phone_diagnosis_model extends MY_Model
             $this->db->insert('trade_log', $insertData); //  交易记录
         }
 
-        if($status == 4){  // 预约失败 返回金额到用户钱包
+        /*需求不需要退款*/
+        /*if($status == 4){  // 预约失败 返回金额到用户钱包
             $updateRes = $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askUid']);
             if(!$updateRes){
                 $this->db->insert('money',array('uid'=>$orderInfo['askUid'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
             }
-        }
+        }*/
 
         $docUserLog = array(
             'userId' => $orderInfo['askUid'],

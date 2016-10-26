@@ -85,6 +85,11 @@ class Notice extends CI_Controller
 
     }
 
+    //  银联充值通知地址
+    public function union_recharge(){
+        file_put_contents(dirname(__FILE__).'union.txt',var_export($_REQUEST),FILE_APPEND);
+    }
+
     public function ali_return()
     {
         //商户订单号
@@ -168,5 +173,10 @@ class Notice extends CI_Controller
 
         echo "success";		//请不要修改或删除
 
+    }
+
+    // 银联支付订单通知
+    public function union_order_notify(){
+        file_put_contents(dirname(__FILE__).'union_order.txt',var_export($_REQUEST),FILE_APPEND);
     }
 }

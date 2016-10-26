@@ -10,7 +10,7 @@ class Unionpay
 {
     protected $_request;
 
-    public function __construct(){
+    public function __construct($config){
         //以下信息非特殊情况不需要改动
         $this->_request = array(
             'version' => '5.0.0',                 //版本号
@@ -19,7 +19,8 @@ class Unionpay
             'txnSubType' => '01',				  //交易子类
             'bizType' => '000201',				  //业务类型
             'frontUrl' =>  com\unionpay\acp\sdk\SDK_FRONT_NOTIFY_URL,  //前台通知地址
-            'backUrl' => com\unionpay\acp\sdk\SDK_BACK_NOTIFY_URL,	  //后台通知地址
+            //'backUrl' => com\unionpay\acp\sdk\SDK_BACK_NOTIFY_URL,	  //后台通知地址
+            'backUrl' => $config[0],	  //后台通知地址
             'signMethod' => '01',	              //签名方法
             'channelType' => '08',	              //渠道类型，07-PC，08-手机
             'accessType' => '0',		          //接入类型
@@ -40,7 +41,10 @@ class Unionpay
         com\unionpay\acp\sdk\AcpService::sign ($this->_request); // 签名
         $url = com\unionpay\acp\sdk\SDK_App_Request_Url;
         $result_arr = com\unionpay\acp\sdk\AcpService::post ($this->_request,$url);
-        var_dump($result_arr);
+        if(count($result_arr)<=0){
+            return false;
+        }
+        return $result_arr;
     }
 }
 

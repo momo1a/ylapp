@@ -44,7 +44,10 @@ class Unionpay
         //echo $html_form;
 
         if($postWay == 'wap'){
-            return $this->_request;
+            $url = com\unionpay\acp\sdk\SDK_FRONT_TRANS_URL;
+            $html_form = com\unionpay\acp\sdk\AcpService::createAutoFormHtml($this->_request, $url );
+            echo $html_form;
+            //return $this->_request;
         }
         elseif($postWay == 'ctrl'){
             $result_arr = com\unionpay\acp\sdk\AcpService::post ($this->_request,$url);

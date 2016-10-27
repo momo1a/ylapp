@@ -68,12 +68,16 @@ class User_pay extends MY_Controller
                 $this->response($this->responseDataFormat(0,'请求成功',array('alipayReqStr'=>$submit)));
                 break;
             case 3 :  // 银联支付
+                $way = trim($this->input->get_post('way'));
+                if(!$way){
+                    $way = 'wap';
+                }
                 $this->load->library('union/Unionpay',array(site_url().'notice/union_recharge'),'unipay');
                 $tradeNo = 'UNIONCZ'.time().rand(10000,99999).$uid;
                 $data['tradeNo'] = $tradeNo;
                 $data['tradeChannel'] = 3;
                 $this->pay->submitPay($data) ? '' : $this->response($this->responseDataFormat(-1,'系统数据库错误',array()));
-                $response = $this->unipay->orderPay($tradeNo,$amount);
+                $response = $this->unipay->orderPay($tradeNo,$amount,$way);
                 if(!$response){$this->response($this->responseDataFormat(-1,'银联接口异常',array()));}
                 $this->response($this->responseDataFormat(0,'请求成功',$response));
                 break;
@@ -173,12 +177,16 @@ class User_pay extends MY_Controller
                 break;
 
             case 3:
+                $way = trim($this->input->get_post('way'));
+                if(!$way){
+                    $way = 'wap';
+                }
                 $this->load->library('union/Unionpay',array(site_url().'notice/union_order_notify'),'unipay');
                 $tradeNo = 'UNI'.$tradeNoPre[$orderType].time().rand(10000,99999).$uid;
                 $data['tradeNo'] = $tradeNo;
                 $data['tradeChannel'] = 3;
                 $this->pay->submitPay($data) ? '' : $this->response($this->responseDataFormat(-1,'系统数据库错误',array()));
-                $response = $this->unipay->orderPay($tradeNo,$amount);
+                $response = $this->unipay->orderPay($tradeNo,$amount,$way);
                 if(!$response){$this->response($this->responseDataFormat(-1,'银联接口异常',array()));}
                 $this->response($this->responseDataFormat(0,'请求成功',$response));
                 break;

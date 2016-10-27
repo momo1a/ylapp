@@ -82,13 +82,23 @@ class User_model extends MY_Model
      * 绑定第三方账号
      * @param $flag  绑定唯一标识
      * @param $phone 用户手机号
-     * @param $type  绑定类型 1 微信 ，2 。。。 默认微信
+     * @param $type  绑定类型 1 微信 ，2 qq。。。 默认微信
      */
     public function bindThirdPart($flag,$phone,$type=1){
         switch($type){
             case 1:
                 $where = array('phone'=>$phone,'userType'=>1);
                 $data = array('isBindWechat'=>1,'wechatOpenid'=>$flag);
+                $res = $this->update($where,$data);
+                if($res){
+                    return $this->find_by($where);
+                }else{
+                    return false;
+                }
+                break;
+            case 2:
+                $where = array('phone'=>$phone,'userType'=>1);
+                $data = array('isBindQQ'=>1,'QQOpenid'=>$flag);
                 $res = $this->update($where,$data);
                 if($res){
                     return $this->find_by($where);

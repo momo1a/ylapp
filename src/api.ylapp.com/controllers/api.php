@@ -108,7 +108,7 @@ class Api extends MY_Controller
                 if($isBind){  // 已经绑定 直接返回登录信息
                     $this->login(true,$isBind);
                 }else{
-                    $this->response($this->responseDataFormat(5, '微信账号没有绑定', array())); //登陆失败
+                    $this->response($this->responseDataFormat(5, 'QQ号没有绑定', array())); //登陆失败
                 }
                 break;
             default:

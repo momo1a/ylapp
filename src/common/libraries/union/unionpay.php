@@ -35,17 +35,30 @@ class Unionpay
      * @param $tradeNo
      * @param $amount
      */
-    public function orderPay($tradeNo,$amount){
+    public function orderPay($tradeNo,$amount,$postWay = 'wap'){
         $this->_request['orderId'] = $tradeNo;
         $this->_request['txnAmt'] = $amount;
         com\unionpay\acp\sdk\AcpService::sign ($this->_request); // 签名
-        $url = com\unionpay\acp\sdk\SDK_FRONT_TRANS_URL;
-        $html_form = com\unionpay\acp\sdk\AcpService::createAutoFormHtml($this->_request, $url );
-        echo $html_form;
+        $url = com\unionpay\acp\sdk\SDK_App_Request_Url;
+        //$html_form = com\unionpay\acp\sdk\AcpService::createAutoFormHtml($this->_request, $url );
+        //echo $html_form;
+
+        if($postWay == 'wap'){
+            return $this->_request;
+        }
+        elseif($postWay == 'ctrl'){
+            $result_arr = com\unionpay\acp\sdk\AcpService::post ($this->_request,$url);
+            if(count($result_arr)<=0){
+                return false;
+            }
+
+            return $result_arr;
+        }
         /*$result_arr = com\unionpay\acp\sdk\AcpService::post ($this->_request,$url);
         if(count($result_arr)<=0){
             return false;
         }
+
         return $result_arr;*/
     }
 }

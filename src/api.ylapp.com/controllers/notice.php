@@ -88,6 +88,7 @@ class Notice extends CI_Controller
     //  银联充值通知地址
     public function union_recharge(){
         file_put_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'union.txt',var_export($_REQUEST,true),FILE_APPEND);
+        echo 'success';
     }
 
     public function ali_return()

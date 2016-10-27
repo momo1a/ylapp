@@ -2,16 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8df0e38-6e17-4f20-9398-32df1adec543" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/libraries/union/certs/ylapp.pfx" />
-      <change type="DELETED" beforePath="E:\myweb\ylapp\src\common\libraries\union\certs\acp_test_enc.cer" afterPath="" />
-      <change type="DELETED" beforePath="E:\myweb\ylapp\src\common\libraries\union\certs\acp_test_sign.pfx" afterPath="" />
-      <change type="DELETED" beforePath="E:\myweb\ylapp\src\common\libraries\union\certs\acp_test_verify_sign.cer" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/libraries/union/sdk/SDKConfig.php" afterPath="$PROJECT_DIR$/src/common/libraries/union/sdk/SDKConfig.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/对账文件样例/802310048993424_20150905.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/测试环境证书/acp_test_sign.pfx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/windows开启openssl所需dll文件/libeay32.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/windows开启openssl所需dll文件/libssl32.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/windows开启openssl所需dll文件/ssleay32.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-bg_flat_10_000000_40x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-bg_glass_100_f6f6f6_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-bg_glass_100_fdf5ce_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-icons_222222_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-icons_228ef1_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-icons_ef8c08_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-icons_ffd27a_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/images/ui-icons_ffffff_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/.buildpath" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/.project" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/BackReceive.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_2_FrontConsume.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_3_ConsumeUndo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_4_Refund.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_5_Query.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_6_FileTransfer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_7_1_FrontPreauth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_7_2_PreauthUndo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_7_3_PreauthFinish.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_7_4_PreauthFinishUndo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/FrontReceive.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/生产环境配置文件/SDKConfig.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/sdk/SDKConfig.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/生产环境证书/acp_prod_enc.cer" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/生产环境证书/acp_prod_verify_sign.cer" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/sdk/acp_service.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/测试环境证书/acp_test_enc.cer" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/测试环境证书/acp_test_verify_sign.cer" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/sdk/cert_util.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/sdk/common.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/consume.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/consume_intro.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/consume_undo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/demo.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/demo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/dev_faq.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/file_transfer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/getdir.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/index_01_gateway.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/introduction.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/jquery-1.11.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/jquery-ui.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/jquery-ui.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/sdk/log.class.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/more_faq.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/multiCertDemo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/.settings/org.eclipse.core.resources.prefs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/.settings/org.eclipse.php.core.prefs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/.settings/org.eclipse.wst.common.project.facet.core.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/preauth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/preauth_finish.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/preauth_finish_undo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/preauth_intro.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/preauth_undo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/query.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/readme.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/refund.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/special_use_preauth.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/special_use_purchase.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/static/subpage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/database.php" afterPath="$PROJECT_DIR$/src/common/config/development/database.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/memcached.php" afterPath="$PROJECT_DIR$/src/common/config/development/memcached.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/libraries/union/unionpay.php" afterPath="$PROJECT_DIR$/src/common/libraries/union/unionpay.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ylapp.iws" />
@@ -46,7 +113,7 @@
       <file leaf-file-name="mytest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="28.0" vertical-offset="26146" max-vertical-offset="26818">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="25278" max-vertical-offset="25542">
               <caret line="1149" column="12" selection-start-line="1149" selection-start-column="4" selection-end-line="1149" selection-end-column="12" />
               <folding>
                 <marker date="1477548842390" expanded="true" signature="354:512" placeholder="..." />
@@ -254,21 +321,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unionpay.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="unionpay.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/common/libraries/union/unionpay.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.935484" vertical-offset="220" max-vertical-offset="2222">
-              <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.39783" vertical-offset="660" max-vertical-offset="2266">
+              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_pay.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_pay.php">
+      <file leaf-file-name="Form_6_2_FrontConsume.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_2_FrontConsume.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.870968" vertical-offset="2637" max-vertical-offset="4246">
-              <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+            <state vertical-scroll-proportion="-7.193548" vertical-offset="899" max-vertical-offset="1452">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -277,7 +344,7 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.387097" vertical-offset="2090" max-vertical-offset="8096">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="2288" max-vertical-offset="8096">
               <caret line="104" column="40" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
               <folding />
             </state>
@@ -287,18 +354,38 @@
       <file leaf-file-name="notice.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/notice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.096775" vertical-offset="3165" max-vertical-offset="4114">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3850" max-vertical-offset="4004">
               <caret line="180" column="5" selection-start-line="180" selection-start-column="5" selection-end-line="180" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SDKConfig.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SDKConfig.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/libraries/union/sdk/SDKConfig.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4074074" vertical-offset="0" max-vertical-offset="1694">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+            <state vertical-scroll-proportion="19.161291" vertical-offset="638" max-vertical-offset="1694">
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index_01_gateway.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/index_01_gateway.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.548387" vertical-offset="1320" max-vertical-offset="2310">
+              <caret line="65" column="49" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="consume.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/consume.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.548387" vertical-offset="0" max-vertical-offset="1298">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -307,7 +394,7 @@
       <file leaf-file-name="SDKConfig.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/libraries/union/assets/生产环境配置文件/SDKConfig.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.645161" vertical-offset="604" max-vertical-offset="1606">
+            <state vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="1606">
               <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="83" />
               <folding />
             </state>
@@ -317,28 +404,9 @@
       <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/libraries/union/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1826" max-vertical-offset="2750">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1628" max-vertical-offset="2574">
               <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paytest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.677419" vertical-offset="198" max-vertical-offset="1276">
-              <caret line="22" column="125" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="125" />
-              <folding>
-                <marker date="1477548703546" expanded="true" signature="210:368" placeholder="..." />
-                <marker date="1477548703546" expanded="true" signature="302:360" placeholder="..." />
-                <marker date="1477548703546" expanded="true" signature="317:352" placeholder="{...}" />
-                <marker date="1477548703546" expanded="true" signature="437:781" placeholder="..." />
-                <marker date="1477548703546" expanded="true" signature="916:1074" placeholder="..." />
-                <marker date="1477548703546" expanded="true" signature="1008:1066" placeholder="..." />
-                <marker date="1477548703546" expanded="true" signature="1023:1058" placeholder="{...}" />
-                <marker date="1477548703546" expanded="true" signature="1143:1584" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -389,7 +457,6 @@
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/user_phone_diagnosis_model.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/models/user_phone_diagnosis_model.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/diagnosis_online.php" />
-        <option value="$PROJECT_DIR$/src/common/libraries/union/unionpay.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/notice.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_pay.php" />
         <option value="$PROJECT_DIR$/src/common/config/development/ue_msg.php" />
@@ -402,6 +469,7 @@
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php" />
         <option value="$PROJECT_DIR$/src/common/libraries/union/sdk/SDKConfig.php" />
+        <option value="$PROJECT_DIR$/src/common/libraries/union/unionpay.php" />
       </list>
     </option>
   </component>
@@ -438,6 +506,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -550,19 +619,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="api.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libraries" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="union" />
+              <option name="myItemId" value="api.ylapp.com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="certs" />
+              <option name="myItemId" value="root" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -582,7 +661,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -592,10 +670,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\myweb\ylapp\src\api.ylapp.com\root" />
       <recent name="E:\myweb\ylapp\src\common\libraries\union\certs" />
       <recent name="G:\myweb\yl\ylapp\src\common\libraries\union\certs" />
       <recent name="E:\myweb\ylapp\src\api.ylapp.com\root\union\certs" />
-      <recent name="E:\myweb\ylapp\src\api.ylapp.com\root" />
       <recent name="E:\myweb\ylapp\src\common\libraries" />
     </key>
   </component>
@@ -614,9 +692,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -624,6 +699,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -643,27 +721,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45676997" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3237082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21276596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45676997" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -687,34 +765,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.806452" vertical-offset="635" max-vertical-offset="1716">
-          <caret line="61" column="46" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/libraries/aliyun/kefu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.741936" vertical-offset="0" max-vertical-offset="1870">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/libraries/union/demo/multiCertDemo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.506329" vertical-offset="833" max-vertical-offset="1848">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/libraries/union/pages/dev_faq.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/libraries/union/.buildpath">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="501">
@@ -876,7 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.80985916" vertical-offset="2199" max-vertical-offset="3537">
           <caret line="105" column="26" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,7 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.80985916" vertical-offset="2712" max-vertical-offset="3564">
           <caret line="125" column="1" selection-start-line="125" selection-start-column="1" selection-end-line="125" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,7 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03169014" vertical-offset="2376" max-vertical-offset="5292">
           <caret line="88" column="25" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,7 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32234433" vertical-offset="0" max-vertical-offset="273">
           <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.159132" vertical-offset="0" max-vertical-offset="553">
           <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.159132" vertical-offset="0" max-vertical-offset="553">
           <caret line="4" column="25" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.074141" vertical-offset="792" max-vertical-offset="1826">
           <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47565544" vertical-offset="186" max-vertical-offset="792">
           <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,9 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.147541" vertical-offset="1458" max-vertical-offset="3586">
           <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
-          <folding>
-            <marker date="1477533376354" expanded="true" signature="-1:-1" placeholder="SELECT m.ask..YL_user_leaving_msg..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -971,21 +1010,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49186257" vertical-offset="2456" max-vertical-offset="11462">
           <caret line="128" column="45" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/libraries/union/unionpay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.935484" vertical-offset="220" max-vertical-offset="2222">
-          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_pay.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.870968" vertical-offset="2637" max-vertical-offset="4246">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3036" max-vertical-offset="4224">
           <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
           <folding />
         </state>
@@ -993,17 +1023,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.677419" vertical-offset="198" max-vertical-offset="1276">
+        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1232">
           <caret line="22" column="125" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="125" />
           <folding>
-            <marker date="1477548703546" expanded="true" signature="210:368" placeholder="..." />
-            <marker date="1477548703546" expanded="true" signature="302:360" placeholder="..." />
-            <marker date="1477548703546" expanded="true" signature="317:352" placeholder="{...}" />
-            <marker date="1477548703546" expanded="true" signature="437:781" placeholder="..." />
-            <marker date="1477548703546" expanded="true" signature="916:1074" placeholder="..." />
-            <marker date="1477548703546" expanded="true" signature="1008:1066" placeholder="..." />
-            <marker date="1477548703546" expanded="true" signature="1023:1058" placeholder="{...}" />
-            <marker date="1477548703546" expanded="true" signature="1143:1584" placeholder="..." />
+            <marker date="1477548703546" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1477548703546" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1477548703546" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1477548703546" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1477548703546" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1477548703546" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1477548703546" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1477548703546" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1018,7 +1048,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="28.0" vertical-offset="26146" max-vertical-offset="26818">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="25278" max-vertical-offset="25542">
           <caret line="1149" column="12" selection-start-line="1149" selection-start-column="4" selection-end-line="1149" selection-end-column="12" />
           <folding>
             <marker date="1477548842390" expanded="true" signature="354:512" placeholder="..." />
@@ -1229,21 +1259,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.3231359" vertical-offset="3349" max-vertical-offset="5038">
           <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.387097" vertical-offset="2090" max-vertical-offset="8096">
-          <caret line="104" column="40" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/notice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.096775" vertical-offset="3165" max-vertical-offset="4114">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3850" max-vertical-offset="4004">
           <caret line="180" column="5" selection-start-line="180" selection-start-column="5" selection-end-line="180" selection-end-column="5" />
           <folding />
         </state>
@@ -1253,22 +1274,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/libraries/union/assets/生产环境配置文件/SDKConfig.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.645161" vertical-offset="604" max-vertical-offset="1606">
+        <state vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="1606">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/sdk/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.596745" vertical-offset="242" max-vertical-offset="3542">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/index_01_gateway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.548387" vertical-offset="1320" max-vertical-offset="2310">
+          <caret line="65" column="49" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/libraries/union/sdk/SDKConfig.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4074074" vertical-offset="0" max-vertical-offset="1694">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        <state vertical-scroll-proportion="19.161291" vertical-offset="638" max-vertical-offset="1694">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2288" max-vertical-offset="8052">
+          <caret line="104" column="40" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/pages/api_01_gateway/consume.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.548387" vertical-offset="0" max-vertical-offset="1298">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/assets/生产环境配置文件/SDKConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35081375" vertical-offset="180" max-vertical-offset="1606">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/root/upacp_demo_b2c/demo/api_01_gateway/Form_6_2_FrontConsume.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.193548" vertical-offset="899" max-vertical-offset="1452">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/libraries/union/unionpay.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39783" vertical-offset="660" max-vertical-offset="2266">
+          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
           <folding />
         </state>
       </provider>

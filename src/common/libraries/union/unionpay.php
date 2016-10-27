@@ -39,12 +39,14 @@ class Unionpay
         $this->_request['orderId'] = $tradeNo;
         $this->_request['txnAmt'] = $amount;
         com\unionpay\acp\sdk\AcpService::sign ($this->_request); // 签名
-        $url = com\unionpay\acp\sdk\SDK_App_Request_Url;
-        $result_arr = com\unionpay\acp\sdk\AcpService::post ($this->_request,$url);
+        $url = com\unionpay\acp\sdk\SDK_FRONT_TRANS_URL;
+        $html_form = com\unionpay\acp\sdk\AcpService::createAutoFormHtml($this->_request, $url );
+        echo $html_form;
+        /*$result_arr = com\unionpay\acp\sdk\AcpService::post ($this->_request,$url);
         if(count($result_arr)<=0){
             return false;
         }
-        return $result_arr;
+        return $result_arr;*/
     }
 }
 

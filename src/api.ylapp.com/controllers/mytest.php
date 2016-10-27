@@ -918,6 +918,36 @@ HTML;
 <form action="http://api.ylapp.com/api/login" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     <!--input type="text" name="privateToken" value="jVAavd11771a9dWgMdRGYzxpYlfj5RIJKt93K1YGrMNO3vDLLOfByhSxcylD5\/9gnv\/UoYEO"/><br/>-->
+    <input type="hidden"   name="userType" value="1" /><br/>
+    <input type="text" name="user" /><br/>
+    <input type="text" name="pwd" /><br/>
+    <!--<input type="text" name="rePwd"/><br/>-->
+    <input type="submit" value="submit"/>
+
+</form>
+HTML;
+        echo $form;
+
+    }
+
+
+
+    public function slogin()
+    {
+
+        /*var_dump($this->cache->get('15977675495'));*/
+        var_dump($this->encryption(111111));
+        var_dump($this->encryption(111111));
+        var_dump(time());
+        var_dump(ip2long($_SERVER['REMOTE_ADDR']));
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<form action="http://123.207.87.83:8080/api/login" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
+    <!--input type="text" name="privateToken" value="jVAavd11771a9dWgMdRGYzxpYlfj5RIJKt93K1YGrMNO3vDLLOfByhSxcylD5\/9gnv\/UoYEO"/><br/>-->
+    <input type="hidden"   name="userType" value="1" /><br/>
     <input type="text" name="user" /><br/>
     <input type="text" name="pwd" /><br/>
     <!--<input type="text" name="rePwd"/><br/>-->
@@ -1050,6 +1080,49 @@ HTML;
     <input type="hidden" name="privateToken" value="MuBi48227bd74sCxb25dBtrRxlRNM44qZJnpXRnhBTaCUukAYAdjcXYz0NFMytDzjcxQX7v\/"/>
     payType<input type="text" name="payType"/>
     amount<input type="text" name="amount"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+    public function medicineDetail(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/medicine/medicineDetail" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="MuBi48227bd74sCxb25dBtrRxlRNM44qZJnpXRnhBTaCUukAYAdjcXYz0NFMytDzjcxQX7v\/"/>
+    num<input type="text" name="num"/>
+    mid<input type="text" name="mid"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+    public function customer(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://api.ylapp.com/customer" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="ldn9Ve7ebcd87u71cUGusWiLu5tcQgACtbefZX4ovJzU7nouFJt7a88t1Zko7kBM94CPXZt+"/>
+    num<input type="text" name="num"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;

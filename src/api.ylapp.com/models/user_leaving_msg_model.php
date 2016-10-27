@@ -114,6 +114,7 @@ SQL;
                 YL_user_illness_history.result,
                 YL_user_leaving_msg.askerContent,
                 YL_user_leaving_msg.img,
+                YL_user_illness_history.situation,
                 YL_doctor_reply.replyContent
                 '
             );
@@ -126,6 +127,7 @@ SQL;
             YL_user_leaving_msg.askerNickname,
             YL_user_leaving_msg.askerContent,
             YL_user_illness_history.age,
+            YL_user_illness_history.situation,
             YL_user_leaving_msg.img'
             );
         }

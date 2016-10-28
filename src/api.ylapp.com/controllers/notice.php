@@ -104,7 +104,7 @@ class Notice extends CI_Controller
     }
 
 
-    
+
     public function ali_return()
     {
         //商户订单号
@@ -192,6 +192,19 @@ class Notice extends CI_Controller
 
     // 银联支付订单通知
     public function union_order_notify(){
-        file_put_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'union_order.txt',var_export($_REQUEST),FILE_APPEND);
+
+        $out_trade_no = $_REQUEST['orderId'];
+
+        $check = $this->pay->getRow($out_trade_no);
+        if($check['status'] == 1){
+            echo "success";
+            return;
+        }
+
+        $this->pay->changeOrderStatus($out_trade_no,$check['oid'],$check['tradeType']);
+
+        //——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
+
+        echo "success";		//请不要修改或删除
     }
 }

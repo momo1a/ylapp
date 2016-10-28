@@ -117,7 +117,7 @@ class User_phone_diagnosis_model extends MY_Model
             $this->where(array('state'=>$state));
         }
         if($keyword != ''){
-            $this->where(array('askNickname'=>$keyword));
+            $this->like(array('askNickname'=>$keyword));
         }
         return $this->count_all();
     }
@@ -132,7 +132,7 @@ class User_phone_diagnosis_model extends MY_Model
      */
     public function getAppointList($keyword='',$limit=10,$offset=0,$state=-1,$select='*'){
         if($keyword != ''){
-            $this->where(array('askNickname'=>$keyword));
+            $this->like(array('askNickname'=>$keyword));
         }
         if($state != -1){
             $this->where(array('YL_user_phone_diagnosis.state'=>$state));

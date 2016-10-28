@@ -59,7 +59,7 @@ class User_leaving_msg_model extends MY_Model
      */
     public function msgList($keyword = '',$isReply = -1 ,$state = -1,$limit = 10 ,$offset = 0,$select='*'){
         if($keyword != ''){
-            $this->where(array('YL_user_leaving_msg.askerNickname'=>$keyword));  // 医生已经回答
+            $this->like(array('YL_user_leaving_msg.askerNickname'=>$keyword));  // 医生已经回答
         }
         switch(intval($isReply)){
             case 1:
@@ -100,7 +100,7 @@ class User_leaving_msg_model extends MY_Model
      */
     public function msgCount($keyword = '',$isReply = -1 ,$state = -1){
         if($keyword != ''){
-            $this->where(array('askerNickname'=>$keyword));  // 医生已经回答
+            $this->like(array('askerNickname'=>$keyword));  // 医生已经回答
         }
         switch(intval($isReply)){
             case 1:

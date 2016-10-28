@@ -91,7 +91,7 @@ class User_reg_num_model extends MY_Model
      */
     public function getAppointList($keyword='',$limit=10,$offset=0,$state=-1,$select='*'){
         if($keyword != ''){
-            $this->where(array('contacts'=>$keyword));
+            $this->like(array('contacts'=>$keyword));
         }
         if($state != -1){
             $this->where(array('YL_user_reg_num.status'=>$state));
@@ -115,7 +115,7 @@ class User_reg_num_model extends MY_Model
             $this->where(array('status'=>$state));
         }
         if($keyword != ''){
-            $this->where(array('contacts'=>$keyword));
+            $this->like(array('contacts'=>$keyword));
         }
         return $this->count_all();
     }

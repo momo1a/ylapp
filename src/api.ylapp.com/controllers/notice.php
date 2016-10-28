@@ -207,4 +207,15 @@ class Notice extends CI_Controller
 
         echo "success";		//请不要修改或删除
     }
+
+
+    //银联充值前端通知地址
+    public function front_recharge_notify(){
+        $this->load->view('notice/charge_success');
+    }
+
+    //银联下单前端通知地址
+    public function front_order_notify(){
+        $this->load->view('notice/pay_success');
+    }
 }

@@ -18,7 +18,8 @@ class Unionpay
             'txnType' => '01',				      //交易类型
             'txnSubType' => '01',				  //交易子类
             'bizType' => '000201',				  //业务类型
-            'frontUrl' =>  com\unionpay\acp\sdk\SDK_FRONT_NOTIFY_URL,  //前台通知地址
+            //'frontUrl' =>  com\unionpay\acp\sdk\SDK_FRONT_NOTIFY_URL,  //前台通知地址
+            'frontUrl' =>  $config[1],  //前台通知地址
             //'backUrl' => com\unionpay\acp\sdk\SDK_BACK_NOTIFY_URL,	  //后台通知地址
             'backUrl' => $config[0],	  //后台通知地址
             'signMethod' => '01',	              //签名方法

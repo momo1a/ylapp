@@ -72,7 +72,7 @@ class User_pay extends MY_Controller
                 if(!$way){
                     $way = 'wap';
                 }
-                $this->load->library('union/Unionpay',array(site_url().'notice/union_recharge'),'unipay');
+                $this->load->library('union/Unionpay',array(site_url().'notice/union_recharge',site_url().'notice/front_recharge_notify'),'unipay');
                 $tradeNo = 'UNIONCZ'.time().rand(10000,99999).$uid;
                 $data['tradeNo'] = $tradeNo;
                 $data['tradeChannel'] = 3;
@@ -181,7 +181,7 @@ class User_pay extends MY_Controller
                 if(!$way){
                     $way = 'wap';
                 }
-                $this->load->library('union/Unionpay',array(site_url().'notice/union_order_notify'),'unipay');
+                $this->load->library('union/Unionpay',array(site_url().'notice/union_order_notify',site_url().'notice/front_order_notify'),'unipay');
                 $tradeNo = 'UNI'.$tradeNoPre[$orderType].time().rand(10000,99999).$uid;
                 $data['tradeNo'] = $tradeNo;
                 $data['tradeChannel'] = 3;

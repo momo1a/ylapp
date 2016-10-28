@@ -20,7 +20,7 @@ class News_model extends MY_Model
      * @param $postPos 发布位置
      */
     public function getNewsList($limit,$postPos,$select,$recmdToIndex=false,$offset=0,$keyword = ''){
-        $where = array('YL_news.postPos'=>$postPos,'YL_news.state'=>1);
+        $where = array('YL_news.state'=>1);
         if($recmdToIndex){
             $this->where('isRecmdIndex',1);
         }
@@ -28,6 +28,7 @@ class News_model extends MY_Model
             $this->like('title',$keyword);
             $this->or_like('tag',$keyword);
         }
+        $this->where('YL_news.postPos',$postPos);
         $this->or_where('YL_news.postPos',0);
         $this->select($select);
         $this->join('YL_news_category','YL_news_category.cid=YL_news.cid','left');

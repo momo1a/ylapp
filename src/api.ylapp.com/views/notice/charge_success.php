@@ -73,9 +73,21 @@
     <h4>充值成功</h4>
     <div class="pic">
         <img src="<?php echo config_item('domain_static')?>api/images/pic_1.png" />
-        <a href="javascript:window.opener=null;window.open('','_self');window.close();">点击返回</a>
+        <a href="javascript:closeWindows();">点击返回</a>
         <img src="<?php echo config_item('domain_static')?>api/images/pic_2.png" />
     </div>
 </div>
+<script type="text/javascript">
+    function closeWindows() {
+        if (navigator.userAgent.indexOf("Firefox") != -1 || navigator.userAgent.indexOf("Chrome") !=-1) {
+            window.location.href="about:blank";
+            window.close();
+        } else {
+            window.opener = null;
+            window.open("", "_self");
+            window.close();
+        }
+    }
+</script>
 </body>
 </html>

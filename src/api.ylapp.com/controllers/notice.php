@@ -87,10 +87,24 @@ class Notice extends CI_Controller
 
     //  银联充值通知地址
     public function union_recharge(){
-        file_put_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'union.txt',var_export($_REQUEST,true),FILE_APPEND);
+        //file_put_contents(dirname(__FILE__).DIRECTORY_SEPARATOR.'union.txt',var_export($_REQUEST,true),FILE_APPEND);
+        //银联支付商户交易号
+        $out_trade_no = $_REQUEST['orderId'];
+
+        $total_fee = intval($_REQUEST['txnAmt'])/100;
+
+        $check = $this->pay->getRow($out_trade_no);
+
+        if($check['status'] == 1){  // 已经支付
+            echo 'success';
+            return;
+        }
+        $this->pay->changeRechargeStatus($check['uid'],$out_trade_no,$total_fee);
         echo 'success';
     }
 
+
+    
     public function ali_return()
     {
         //商户订单号

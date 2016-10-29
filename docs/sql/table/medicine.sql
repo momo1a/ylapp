@@ -7,7 +7,7 @@ CREATE TABLE `YL_medicine` (
   `outline` VARCHAR(300) NOT NULL DEFAULT '' comment '概述',
   `content` varchar(15000) NOT NULL DEFAULT '' COMMENT '正文内容',
   `thumbnail`varchar(80) NOT NULL DEFAULT '' COMMENT '缩略图',
-  `banner`varchar(80) NOT NULL DEFAULT '' COMMENT '药品banner',
+  `banner`varchar(600) NOT NULL DEFAULT '' COMMENT '药品banner',
   `dateline` int(11) not null default '0' comment '添加时间',
   `editTime` int(11) not null default '0' comment '编辑时间',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态：0正常，1预留',

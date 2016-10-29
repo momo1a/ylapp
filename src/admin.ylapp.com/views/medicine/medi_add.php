@@ -41,7 +41,31 @@
                         <div class="col-sm-6 banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
-                            <input id="banner" name="banner" type="file">
+                            <input id="banner-1" name="banner-1" type="file">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 banner-img">
+                            <span style="color: #000000">上传banner图：</span>
+                            <br />
+                            <input id="banner-2" name="banner-2" type="file">
+                        </div>
+                        <div class="col-sm-6 banner-img">
+                            <span style="color: #000000">上传banner图：</span>
+                            <br />
+                            <input id="banner-3" name="banner-3" type="file">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 banner-img">
+                            <span style="color: #000000">上传banner图：</span>
+                            <br />
+                            <input id="banner-4" name="banner-4" type="file">
+                        </div>
+                        <div class="col-sm-6 banner-img">
+                            <span style="color: #000000">上传banner图：</span>
+                            <br />
+                            <input id="banner-5" name="banner-5" type="file">
                         </div>
                     </div>
 

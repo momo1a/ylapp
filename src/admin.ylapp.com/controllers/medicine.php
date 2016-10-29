@@ -41,14 +41,37 @@ class Medicine extends MY_Controller
         $outline = trim($this->input->get_post('outline'));
         $content = $this->input->get_post('content');
         $cate = intval($this->input->get_post('cate'));
+        $i = 0;
+        $banner_relative_path_arr = array();
+        if(!empty($_FILES)){
+            foreach($_FILES as $key=>$value){
+                if(preg_match('/^banner/',$key) &&  $_FILES[$key]['tmp_name'] != ''){
+                    $i++;
+                }
+            }
+            if($mid == 0) {
+                if ($i < 3) {
+                    $this->ajax_json(-2, 'banner图片必须上传三张或三张以上');
+                }
+            }
+            foreach($_FILES as $key=>$value){
+                if(preg_match('/^banner/',$key) &&  $_FILES[$key]['tmp_name'] != ''){
+                    $banner_relative_path_arr[$key]=$this->upload->save('medicine', $_FILES[$key]['tmp_name']);
+                }
+            }
+        }
+
+        $banner_relative_path = json_encode($banner_relative_path_arr);
+
         $thumbnail_relative_path = '';
         if($_FILES['thumbnail']['tmp_name'] != '') {
             $thumbnail_relative_path = $this->upload->save('medicine', $_FILES['thumbnail']['tmp_name']);
         }
-        $banner_relative_path = '';
+        /*$banner_relative_path = '';
         if($_FILES['banner']['tmp_name'] != '') {
             $banner_relative_path = $this->upload->save('medicine', $_FILES['banner']['tmp_name']);
-        }
+        }*/
+
         if($mid == 0) {  // 添加资讯
             $data = array(
                 'name' => $name,
@@ -69,9 +92,20 @@ class Medicine extends MY_Controller
                 'editTime'=>time()
             );
             if($banner_relative_path != ''){
+                $bannerArr = $this->medi->getMedicineDetail($mid);
+                $banner = json_decode($bannerArr['banner'],true);
+                $bannerMergeArr = array_merge($banner,json_decode($banner_relative_path,true));
+                $banner_relative_path = json_encode($bannerMergeArr);
                 $data['banner'] = $banner_relative_path;
+                $delBannerArr = array_diff(array_values($banner),array_values($bannerMergeArr));
                 // 删除原来图片
-                @unlink(config_item('upload_image_save_path').$this->input->post('origin-news-banner'));
+                if(!empty($delBannerArr)){
+                    foreach($delBannerArr as $val){
+                        @unlink(config_item('upload_image_save_path').$val);
+                    }
+                }
+
+
             }
 
             if($thumbnail_relative_path != ''){
@@ -96,6 +130,7 @@ class Medicine extends MY_Controller
     public function  getMedicineDetail(){
         $mid = intval($this->input->get_post('mid'));
         $res = $this->medi->getMedicineDetail($mid);
+        $res['banner'] = json_decode($res['banner'],true);
         $this->ajax_json(0,'请求成功',$res);
     }
 

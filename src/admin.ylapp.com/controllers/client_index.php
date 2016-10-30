@@ -73,7 +73,7 @@ class Client_index extends MY_Controller
     // 添加滚动消息
     public function rollingAdd(){
         $content = trim(addslashes($this->input->get_post('content')));
-        $res = $this->roll->add(array('content'=>$content));
+        $res = $this->roll->add(array('content'=>$content,'dateline'=>time()));
         if($res){
             $this->ajax_json(0,'操作成功');
         }else{

@@ -39,7 +39,7 @@
                                     <tr>
                                         <th><?php echo $value['id'];?></th>
                                         <th><?php echo $value['content'];?></th>
-                                        <th><?php echo date('Y-m-d',$value['dateline']);?></th>
+                                        <th><?php echo date('Y-m-d H:i:s',$value['dateline']);?></th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

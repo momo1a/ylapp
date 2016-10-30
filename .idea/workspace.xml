@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8df0e38-6e17-4f20-9398-32df1adec543" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling_add.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/sql/table/rolling_msg.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/models/rolling_msg_model.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/models/rolling_msg_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/client_index.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/client_index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/static.ylapp.com/admin/js/clientindex/clientindex.js" afterPath="$PROJECT_DIR$/src/static.ylapp.com/admin/js/clientindex/clientindex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/index.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/views/system/index.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/system/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/sql/table/rolling_msg.sql" afterPath="$PROJECT_DIR$/docs/sql/table/rolling_msg.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/system.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/system.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_index.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ylapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,10 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mytest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mytest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.18131869" vertical-offset="26127" max-vertical-offset="31266">
+            <state vertical-scroll-proportion="2.75" vertical-offset="26127" max-vertical-offset="31266">
               <caret line="964" column="37" selection-start-line="964" selection-start-column="20" selection-end-line="964" selection-end-column="37" />
               <folding>
                 <marker date="1477717608344" expanded="true" signature="354:512" placeholder="..." />
@@ -278,6 +269,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="client_index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/client_index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.9166665" vertical-offset="1605" max-vertical-offset="2241">
+              <caret line="75" column="76" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rolling.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5769231" vertical-offset="819" max-vertical-offset="1863">
+              <caret line="41" column="72" selection-start-line="41" selection-start-column="72" selection-end-line="41" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -324,19 +335,19 @@
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/evaluate.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/doctor_evaluate_model.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/evaluate/index.php" />
-        <option value="$PROJECT_DIR$/docs/sql/table/rolling_msg.sql" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/index.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/rolling_msg.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/doctor/index.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling_add.php" />
         <option value="$PROJECT_DIR$/src/static.ylapp.com/admin/js/clientindex/clientindex.js" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/client_index.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/system/index.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/system.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/rolling_msg_model.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/models/rolling_msg_model.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_index.php" />
+        <option value="$PROJECT_DIR$/docs/sql/table/rolling_msg.sql" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/client_index.php" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling.php" />
       </list>
     </option>
   </component>
@@ -420,6 +431,126 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="api.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientindex" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -745,14 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/sql/table/rolling_msg.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.32" vertical-offset="0" max-vertical-offset="378">
-          <caret line="8" column="51" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/evaluate/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65140843" vertical-offset="1254" max-vertical-offset="3105">
@@ -825,17 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63380283" vertical-offset="0" max-vertical-offset="1863">
-          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33292684" vertical-offset="888" max-vertical-offset="9882">
@@ -880,14 +992,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/client_index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0164835" vertical-offset="1281" max-vertical-offset="2241">
-          <caret line="73" column="30" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/core/MY_Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.1263735" vertical-offset="1296" max-vertical-offset="5157">
@@ -915,14 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/system_setting_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="729">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10989011" vertical-offset="2019" max-vertical-offset="2646">
@@ -939,9 +1035,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/sql/table/rolling_msg.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25375938" vertical-offset="0" max-vertical-offset="532">
+          <caret line="5" column="64" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.18131869" vertical-offset="26127" max-vertical-offset="31266">
+        <state vertical-scroll-proportion="2.75" vertical-offset="26127" max-vertical-offset="31266">
           <caret line="964" column="37" selection-start-line="964" selection-start-column="20" selection-end-line="964" selection-end-column="37" />
           <folding>
             <marker date="1477717608344" expanded="true" signature="354:512" placeholder="..." />
@@ -1145,6 +1249,30 @@
             <marker date="1477717608344" expanded="true" signature="34605:34640" placeholder="{...}" />
             <marker date="1477717608344" expanded="true" signature="34734:35071" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/system_setting_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="729">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/client_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.9166665" vertical-offset="1605" max-vertical-offset="2241">
+          <caret line="75" column="76" selection-start-line="75" selection-start-column="76" selection-end-line="75" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/clientindex/rolling.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5769231" vertical-offset="819" max-vertical-offset="1863">
+          <caret line="41" column="72" selection-start-line="41" selection-start-column="72" selection-end-line="41" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>

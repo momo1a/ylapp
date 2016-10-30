@@ -70,10 +70,25 @@ class User_index extends MY_Controller
      */
     public function getIndexScrollLog(){
         $this->load->model('user_doctor_log_model','udlog');
+        $this->load->model('System_setting_model','system_setting');
+        $this->load->model('Rolling_msg_model','roll_msg');
         $uid = self::$currentUid;
-        $res = $this->udlog->getIndexScrollLog($uid,'l.description,u.nickname as user,d.nickname doctor');
-        return $res;
-        //$this->response($this->responseDataFormat(0,'请求成功',$res));
+        $patt = $this->system_setting->getValue('rollmsg_pattern');
+        switch($patt['settingValue']){
+            case 'manual':  // 手动消息
+                $res = $this->roll_msg->msgList();
+                $msgKey = $patt['settingValue'];
+                break;
+            case 'auto':  //  自动滚动消息
+                $res = $this->udlog->getIndexScrollLog($uid,'l.description,u.nickname as user,d.nickname doctor');
+                $msgKey = $patt['settingValue'];
+                break;
+            default:  // 默认自动滚动
+                $msgKey = 'auto';
+                $res = $this->udlog->getIndexScrollLog($uid,'l.description,u.nickname as user,d.nickname doctor');
+        }
+        return array($msgKey=>$res);
+        //$this->response($this->responseDataFormat(0,'请求成功',array($msgKey=>$res)));
     }
 
 

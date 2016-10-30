@@ -38,6 +38,27 @@
                                 </div>
                             </div>
                         </form>
+                        <hr/>
+
+                        <form action="" method="post">
+                            <div class="alert alert-info alert-dismissible">
+                                <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
+                                <h4><i class="glyphicon glyphicon-volume-up"></i>滚动消息设置</h4>
+                                <div class="row">
+                                    <div class="col-xs-5" style="margin-right: 20px">
+                                        <?php $patt = array('auto'=>'自动读取模式','manual'=>'手动添加模式');?>
+                                        <select class="form-control" name="msg_pattern" id="msg_pattern">
+                                            <?php foreach($patt as $key=>$val):?>
+                                                <option value="<?php echo $key;?>" <?php if($key == $msgPattern){echo 'selected';}?>><?php echo $val;?></option>
+                                            <?php endforeach;?>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <input type="button" onclick="setting('msg_pattern','rollmsg',$('#msg_pattern').val());return false;" class="btn btn-default btn-sm" value="保存">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

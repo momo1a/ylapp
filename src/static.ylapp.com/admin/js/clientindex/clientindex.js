@@ -26,3 +26,23 @@ function bannerDel(){
 
     });
 }
+
+function addRollingMsg(){
+    var  content = $('#rolling_add input[name="content"]').val();
+
+    $.ajax({
+        url: SITE_URL + "client_index/rollingAdd",
+        type: "post",
+        data: {content:content},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+
+    });
+}

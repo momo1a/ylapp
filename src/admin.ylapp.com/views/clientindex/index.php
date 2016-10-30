@@ -18,6 +18,8 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">首页管理</h3>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="<?php echo site_url()?>client_index/rolling" class="btn btn-primary">滚动消息设置</a>
                     </div>
                     <div class="bg-gray color-palette">
                         &nbsp;

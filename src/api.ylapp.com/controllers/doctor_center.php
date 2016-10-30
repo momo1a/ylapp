@@ -404,6 +404,27 @@ class Doctor_center extends MY_Controller
 
     }
 
+    // 删除图片
+    public function delImg(){
+        $imgKey = $this->input->get_post('imgKey');
+        $imgValue = $this->input->get_post('imgValue');
+        if(!$imgValue){
+            $imgValue = rand(10000,99999).'.png';  // 防止客户端未传图片 误删目录 构造一张不存在的图片来执行删除
+        }
+        $currentDocCertificateImg = $this->doc_info->getInfoByUid(self::$currentUid,'certificateImg');
+        $currentDocCertificateImg = json_decode($currentDocCertificateImg,true);
+        unset($currentDocCertificateImg[$imgKey]);
+        //var_dump($currentDocCertificateImg);exit;
+        $res = $this->doc_info->updateDocInfo(self::$currentUid,array('certificateImg'=>json_encode($currentDocCertificateImg)));
+        // 删除服务器图片
+        @unlink(config_item('upload_image_save_path').$imgValue);
+        if($res){
+            $this->response($this->responseDataFormat(0,'操作成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'操作失败',array()));
+        }
+    }
+
     /**
      * 我的钱包
      */

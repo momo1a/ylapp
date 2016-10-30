@@ -79,6 +79,12 @@ function hospitalDelPre(e){
     $("input[name='hid']").val(hid);
 }
 
+// 添加医院之前
+function hosAddPre(){
+    $('#hospital_add input[name="hos_name"]').val('');
+    $('#hospital_add input[name="address"]').val('');
+    $('.hidden-xs').trigger('click');
+}
 
 function hospitalDel(){
     var hid = $("input[name='hid']").val();

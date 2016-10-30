@@ -15,7 +15,7 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">医院管理</h3>
-                        <a data-target="#hospital_add" data-toggle="modal"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加医院</h3></a>
+                        <a data-target="#hospital_add" data-toggle="modal" onclick="hosAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加医院</h3></a>
                     </div>
                     <div class="bg-gray color-palette">
                         <form method="get" id="hospital-search" action="<?php echo site_url()?>hospital/index">

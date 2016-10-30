@@ -14,13 +14,13 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">用户反馈</h3>
+                        <h3 class="box-title">评价管理</h3>
                     </div>
                     <div class="bg-gray color-palette">
-                        <form method="get" id="feedback-search" action="<?php echo site_url()?>feedback/index">
+                        <form method="get" id="feedback-search" action="<?php echo site_url()?>evaluate/index">
                             <div class="input-group">
-                                <label for="nickname">用户名：</label>
-                                <input type="search" name="keyword"   placeholder="请输入反馈用户名关键字" value="<?php echo $get['keyword'];?>" style="margin-right: 10px" size="30">
+                                <label for="nickname">评价内容：</label>
+                                <input type="search" name="keyword"   placeholder="请输入评价内容关键字" value="<?php echo $get['keyword'];?>" style="margin-right: 10px" size="30">
                                 <input type="button" onclick="$('#feedback-search').submit()" value="搜索">
                             </div>
                         </form>
@@ -50,16 +50,17 @@
                                         <th><?php echo date('Y-m-d H:i:s',$value['evaluateDate']);?></th>
                                         <th><?php echo $state[$value['estate']];?></th>
                                         <th>
-                                            <?php if($value == 0):;?>
-
+                                            <?php if($value['estate'] == 0):;?>
+                                                <button class="btn btn-primary btn-xs" title="通过" state="1" onclick="checkEvaluate(this);return false;" vid=<?php echo $value['vid'];?>>通过</button><br/>
+                                                <button class="btn btn-primary btn-xs" title="不通过" state="2" onclick="checkEvaluate(this);return false;" vid=<?php echo $value['vid'];?>>不通过</button>
                                             <?php endif;?>
 
-                                            <?php if($value == 1):;?>
-
+                                            <?php if($value['estate'] == 1):;?>
+                                                <button class="btn btn-primary btn-xs" title="不通过" state="2" onclick="checkEvaluate(this);return false;" vid=<?php echo $value['vid'];?>>不通过</button>
                                             <?php endif;?>
 
-                                            <?php if($value == 2):;?>
-
+                                            <?php if($value['estate'] == 2):;?>
+                                                <button class="btn btn-primary btn-xs" title="通过" state="1" onclick="checkEvaluate(this);return false;" vid=<?php echo $value['vid'];?>>通过</button>
                                             <?php endif;?>
                                         </th>
                                     </tr>
@@ -81,4 +82,23 @@
 <!-- /.content-wrapper -->
 <!-- Main Footer -->
 <?php $this->load->view('foot');?>
-<script src="<?php echo config_item('domain_static').'admin/';?>js/hospital/hospital.js"></script>
+<script>
+    function checkEvaluate(e){
+        var state = $(e).attr('state');
+        var vid = $(e).attr('vid');
+        $.ajax({
+            url: SITE_URL + "evaluate/checkPass",
+            type: "post",
+            data:{state:state,vid:vid},
+            dataType: 'json',
+            success: function (result) {
+                if(result.code == 0){
+                    alert(result.msg);
+                    location.reload();
+                }else{
+                    alert(result.msg);
+                }
+            }
+        });
+    }
+</script>

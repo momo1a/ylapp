@@ -15,11 +15,11 @@ class Evaluate extends MY_Controller
 
     public function index(){
         $limit = 10;
-        //$keyword = addslashes(trim($this->input->get_post('keyword')));
+        $keyword = addslashes(trim($this->input->get_post('keyword')));
         $state = array('0'=>'待处理','1'=>'通过','2'=>'不通过');
-        $total = $this->evaluate->getCount();
+        $total = $this->evaluate->getCount($keyword);
         $offset = intval($this->uri->segment(3));
-        $list = $this->evaluate->getList($limit,$offset,'*,d.nickname as docName,u.nickname as userName,YL_doctor_evaluate.dateline as evaluateDate,YL_doctor_evaluate.state as estate');
+        $list = $this->evaluate->getList($keyword,$limit,$offset,'*,d.nickname as docName,u.nickname as userName,YL_doctor_evaluate.dateline as evaluateDate,YL_doctor_evaluate.state as estate');
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
         $pager = $this->pager($total, $limit,$page_conf);
@@ -30,5 +30,14 @@ class Evaluate extends MY_Controller
         $this->load->view('evaluate/index',$data);
     }
 
-
+    public function checkPass(){
+        $state = intval($this->input->get_post('state'));
+        $vid = intval($this->input->get_post('vid'));
+        $res = $this->evaluate->checkPass($vid,$state);
+        if($res){
+            $this->ajax_json(0,'设置成功');
+        }else{
+            $this->ajax_json(-1,'设置失败');
+        }
+    }
 }

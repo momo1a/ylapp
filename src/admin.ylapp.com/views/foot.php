@@ -96,6 +96,7 @@
 <script src="<?php echo config_item('domain_static').'admin/';?>dist/js/app.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo config_item('domain_static').'admin/';?>plugins/fastclick/fastclick.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/iCheck/icheck.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>validform/Validform.min.js"></script>
 <script src="<?php echo config_item('domain_static').'admin/';?>plugins/fileinput/fileinput.min.js"></script>

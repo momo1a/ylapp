@@ -30,6 +30,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/datepicker/datepicker3.css">
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/timepicker/bootstrap-timepicker.min.css">
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/date/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <link rel="stylesheet" href="<?php echo config_item('domain_static').'admin/';?>css/common.css">
 
     <script type="text/javascript">

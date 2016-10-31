@@ -63,7 +63,7 @@ class User_leaving_msg_model extends MY_Model
      * 医生首页
      * @param $docId
      */
-    public function doctorIndex($docId,$state=' in(2,3)',$limit=10,$offset=0){
+    public function doctorIndex($docId,$state=' in(2,3)',$limit=1000,$offset=0){
         $docId = intval($docId);
         $sql = <<<SQL
 SELECT

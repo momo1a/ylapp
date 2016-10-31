@@ -268,3 +268,10 @@ function appointToAllot(){
     });
 
 }
+
+function cleanForm(){
+    document.appointAdd.reset();
+    $("#appoint_add #mediName").html('<option value="0">请选择药品</option>');
+    $("#appoint_add #regTel").html('<option value="0">请选择用户注册手机号码</option>');
+    CKEDITOR.instances.content.setData('');
+}

@@ -7,7 +7,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cleanForm();return false;">
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="news-edit-title">添加药品预约用户</h4>
             </div>
@@ -83,7 +83,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline " data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-outline " data-dismiss="modal" onclick="cleanForm();return false;">取消</button>
                 <button type="button" onclick="addAppoint();return false;" class="btn btn-outline pull-left">确定</button>
             </div>
         </div>

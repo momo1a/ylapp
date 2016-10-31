@@ -151,6 +151,7 @@ class Doctor_center extends MY_Controller
 
     public function commitReply(){
         $id = intval($this->input->get_post('id'));  // 留言id
+        $flag = $this->input->get_post('flag');
         $replyContent = addslashes($this->input->get_post('content'));
         if(!$id){
             $this->response($this->responseDataFormat(1,'请传入留言id',array()));
@@ -176,10 +177,15 @@ class Doctor_center extends MY_Controller
         );
         $this->load->model('Common_user_doctor_log_model','udlog');
         $this->db->trans_begin();
-        $insertId = $this->reply->recordAdd($data);
+        if($flag == 1){  //  重新回答问题
+            $data['state'] = 0;
+            $res = $this->reply->recordEdit($id,$data);
+        }else{
+            $res = $this->reply->recordAdd($data);
+        }
         $update = $this->levemsg->updateStatusById($id,5);  // 更改状态为已回答待审核
         $log = $this->udlog->saveLog($logData);
-        if ($insertId && $update && $log) {
+        if ($res && $update && $log) {
             $this->db->trans_commit();
             $this->response($this->responseDataFormat(0,'请求成功',array()));
         } else {

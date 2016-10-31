@@ -63,7 +63,7 @@ class User_leaving_msg_model extends MY_Model
      * 医生首页
      * @param $docId
      */
-    public function doctorIndex($docId,$state=' =2 ',$limit=10,$offset=0){
+    public function doctorIndex($docId,$state=' in(2,3)',$limit=10,$offset=0){
         $docId = intval($docId);
         $sql = <<<SQL
 SELECT
@@ -75,12 +75,14 @@ SELECT
 	m.price,
 	m.askerContent,
 	m.img,
-	(IF(m.state=4,'完成','未完成')) AS state,
+	/*(IF(m.state=4,'完成','未完成')) AS state,*/
+	(CASE WHEN m.state=3 THEN '未通过' WHEN m.state=2 THEN '待回答' WHEN m.state=4 THEN '完成' END ) AS state,
 	'留言问诊' as type
 FROM
 	YL_user_leaving_msg AS m
 LEFT JOIN YL_user AS u ON m.askerUid = u.uid
 LEFT JOIN YL_user_illness_history AS ill ON m.illId=ill.illId
+LEFT JOIN YL_doctor_reply AS r ON r.themeId=m.id AND r.type=1
 WHERE
 	m.state {$state}
 AND m.docId = {$docId}

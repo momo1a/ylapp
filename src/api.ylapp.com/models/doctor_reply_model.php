@@ -45,4 +45,15 @@ class Doctor_reply_model extends MY_Model
         $this->insert($data);
         return $this->db->insert_id();
     }
+
+
+    /**
+     * 重新回答
+     * @param $oid
+     * @param $data
+     */
+    public function recordEdit($oid,$data){
+        $where = array('themeId'=>$oid,'type'=>1);
+        return $this->update($where,$data);
+    }
 }

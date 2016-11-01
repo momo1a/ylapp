@@ -115,6 +115,16 @@ desired effect
                                             case '评论':
                                                 echo msgTemplate(site_url().'post/commentList?keyword='.$val['recmdContent'],mb_substr($val['recmdContent'],0,10).'...');
                                                 break;
+                                            case '留言':
+                                                break;
+                                            case '电话':
+                                                break;
+                                            case '挂号':
+                                                break;
+                                            case '订单':
+                                                break;
+                                            case '提现':
+                                                break;
 
                                         }?>
                                     <?php  endforeach;endif;?>

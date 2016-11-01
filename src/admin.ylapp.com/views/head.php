@@ -110,7 +110,10 @@ desired effect
                                          <?php
                                         switch($val['msgType']){
                                             case '帖子':
-                                                echo msgTemplate('#',mb_substr($val['postTitle'],0,10).'...');
+                                                echo msgTemplate(site_url().'post/index?keyword='.$val['postTitle'],mb_substr($val['postTitle'],0,10).'...');
+                                                break;
+                                            case '评论':
+                                                echo msgTemplate(site_url().'post/commentList?keyword='.$val['recmdContent'],mb_substr($val['recmdContent'],0,10).'...');
                                                 break;
 
                                         }?>

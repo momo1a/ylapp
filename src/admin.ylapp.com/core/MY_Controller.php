@@ -65,6 +65,7 @@ class MY_Controller extends CI_Controller
                 exit;
             }
         }
+        $this->msgList();
         $this->load->vars('vars',array(self::$_top_menu ,get_user()));
     }
 
@@ -179,11 +180,61 @@ class MY_Controller extends CI_Controller
         $this->load->model('User_leaving_msg_model','leaving');
         $this->load->model('User_phone_diagnosis_model','diagnosis');
         $this->load->model('User_reg_num_model','reg');
+        $this->load->model('Order_model','order');
+        $this->load->model('Take_cash_model','cash');
         $postMsg = $this->post->getNotDeal();  //  帖子
         $postCommentMsg = $this->comment->getNotDeal();   //  帖子评论
         $leavingMsg = $this->leaving->getNotDeal();  //  留言问答
         $diaMsg = $this->diagnosis->getNotDeal();   //   电话问诊
-        $diaMsg = $this->reg->getNotDeal();   // 预约挂号
+        $regMsg = $this->reg->getNotDeal();   // 预约挂号
+        $orderMsg = $this->order->getNotDeal();   // 订单
+        $cashMsg = $this->cash->getNotDeal();   // 提现
+        $msg = array();
+        $i = 0;
+        $this->msgContainer($postMsg,$i,$msg);
+        $this->msgContainer($postCommentMsg,$i,$msg);
+        $this->msgContainer($leavingMsg,$i,$msg);
+        $this->msgContainer($diaMsg,$i,$msg);
+        $this->msgContainer($regMsg,$i,$msg);
+        $this->msgContainer($orderMsg,$i,$msg);
+        $this->msgContainer($cashMsg,$i,$msg);
+
+        var_dump($msg);
+    }
+
+
+
+    /**
+     * @param $order
+     * @param $i
+     * @param $container
+     */
+    protected function msgContainer($msg,&$i,&$container){
+        if(is_array($msg)){
+            if(!empty($order)){
+                foreach($order as $val){
+                    array_push($container,$val);
+                    $i++;
+                }
+            }
+        }
+    }
+
+    /**
+     * 多维数组排序
+     * @param $array
+     * @param $field
+     * @param bool $desc
+     */
+    protected function sortArrByField(&$array, $field, $desc = false){
+        $fieldArr = array();
+        if(!empty($array)){
+            foreach ($array as $k => $v) {
+                $fieldArr[$k] = $v[$field];
+            }
+        }
+        $sort = $desc == false ? SORT_ASC : SORT_DESC;
+        array_multisort($fieldArr, $sort, $array);
     }
 
 

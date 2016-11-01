@@ -157,4 +157,13 @@ class Order_model extends MY_Model
             return true;
         }
     }
+
+
+    //  获取管理员未处理的
+    public function getNotDeal($select='*'){
+        $this->select($select);
+        $this->where(array('status'=>2));
+        return $this->find_all();
+    }
+
 }

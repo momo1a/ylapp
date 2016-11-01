@@ -287,7 +287,7 @@ class User_reg_num_model extends MY_Model
     //  获取管理员未处理的
     public function getNotDeal($select='*'){
         $this->select($select);
-        $this->where(array('state'=>2));
+        $this->where(array('status'=>2));
         return $this->find_all();
     }
 

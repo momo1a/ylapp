@@ -85,7 +85,7 @@
                                         <th><?php echo $state[$value['orderStatus']];?></th>
                                         <th><?php switch(intval($value['orderStatus'])){
                                                 case 2:
-                                                    echo '<a status="4" oid="'.$value['oid'].'" onclick="setOrderStat(this);return false;" >已通知</a>';
+                                                    echo '<a status="4" oid="'.$value['oid'].'" onclick="setOrderStat(this);return false;" >通知</a>';
                                                     break;
                                                 case 4:
                                                     echo '<a status="5" oid="'.$value['oid'].'" onclick="setOrderStat(this);return false;" >完成</a>';

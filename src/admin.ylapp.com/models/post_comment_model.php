@@ -141,4 +141,12 @@ class  Post_comment_model extends MY_Model
     }
 
 
+    //  获取管理员未处理的
+    public function getNotDeal($select='*'){
+        $this->select($select);
+        $this->where(array('state'=>0));
+        return $this->find_all();
+    }
+
+
 }

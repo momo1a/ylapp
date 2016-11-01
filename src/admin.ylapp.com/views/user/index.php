@@ -52,7 +52,7 @@
                                         <th><?php echo date('Y-m-d',$value['birthday']);?></th>
                                         <th><a data-target="#ill_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getIllInfo(this);">详情</a></th>
                                         <th><a data-target="#order_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getOrderInfo(this);">详情</a></th>
-                                        <th>￥<?php echo intval($value['amount']);?></th>
+                                        <th>￥<?php echo $value['amount'];?></th>
                                         <th><a data-target="#trade_info" data-toggle="modal" uid="<?php echo $value['uid'];?>" onclick="getTradeInfo(this);">详情</a></th>
                                         <th><?php if(intval($value['isBlack']) == 1){ echo '<a flag="2" uid="'.$value['uid'].'" onclick="setUserBlank(this);return false">解除黑名单</a>'; }else{ echo '<a flag="1"  uid="'.$value['uid'].'" onclick="setUserBlank(this);return false">加入黑名单</a>';}?></th>
                                     </tr>

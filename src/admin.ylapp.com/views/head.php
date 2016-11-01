@@ -95,7 +95,7 @@ desired effect
                             <span class="label label-warning">10</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
+                            <li class="header">您有10个通知</li>
                             <li>
                                 <!-- Inner Menu: contains the notifications -->
                                 <ul class="menu">
@@ -107,7 +107,7 @@ desired effect
                                     <!-- end notification -->
                                 </ul>
                             </li>
-                            <li class="footer"><a href="#">View all</a></li>
+                            <!--<li class="footer"><a href="#">View all</a></li>-->
                         </ul>
                     </li>
                     <!-- User Account Menu -->
@@ -145,9 +145,9 @@ desired effect
                             </li>-->
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
+                               <!-- <div class="pull-left">
                                     <a href="#" class="btn btn-default btn-flat">简介</a>
-                                </div>
+                                </div>-->
                                 <div class="pull-right">
                                     <a href="<?php echo site_url()?>/home/logout" class="btn btn-default btn-flat">退出</a>
                                 </div>

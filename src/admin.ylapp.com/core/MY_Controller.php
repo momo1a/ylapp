@@ -173,8 +173,17 @@ class MY_Controller extends CI_Controller
     }
 
 
-    protected function getDocFee(){
-
+    protected function msgList(){
+        $this->load->model('Post_model','post');
+        $this->load->model('Post_comment_model','comment');
+        $this->load->model('User_leaving_msg_model','leaving');
+        $this->load->model('User_phone_diagnosis_model','diagnosis');
+        $this->load->model('User_reg_num_model','reg');
+        $postMsg = $this->post->getNotDeal();  //  帖子
+        $postCommentMsg = $this->comment->getNotDeal();   //  帖子评论
+        $leavingMsg = $this->leaving->getNotDeal();  //  留言问答
+        $diaMsg = $this->diagnosis->getNotDeal();   //   电话问诊
+        $diaMsg = $this->reg->getNotDeal();   // 预约挂号
     }
 
 

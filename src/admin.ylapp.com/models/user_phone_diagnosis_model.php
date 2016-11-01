@@ -271,5 +271,12 @@ class User_phone_diagnosis_model extends MY_Model
         return $res;
     }
 
+    //  获取管理员未处理的
+    public function getNotDeal($select='*'){
+        $this->select($select);
+        $this->where(array('state'=>1));
+        return $this->find_all();
+    }
+
 
 }

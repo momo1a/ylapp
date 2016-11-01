@@ -28,7 +28,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <textarea id="content" name="content" rows="10" cols="60"></textarea>
+                    <!--<textarea id="content" name="content" rows="10" cols="60"></textarea>-->
+                    <div class="box-body pad" style="z-index: 9999">
+                    <textarea id="content" name="content" rows="10" cols="80">
+                                            &nbsp;
+                    </textarea>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 news-img">

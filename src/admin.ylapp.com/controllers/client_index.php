@@ -30,6 +30,8 @@ class Client_index extends MY_Controller
                         array_push($doctorClient,$value);
                         break;
                     default:
+                        array_push($userClient,$value);
+                        array_push($doctorClient,$value);
                         break;
                 }
             }
@@ -78,6 +80,40 @@ class Client_index extends MY_Controller
             $this->ajax_json(0,'操作成功');
         }else{
             $this->ajax_json(-1,'操作失败');
+        }
+    }
+
+    // 删除滚动消息
+
+    public function rollingDel(){
+        $rid = intval($this->input->get_post('rid'));
+        $res = $this->roll->delRolling($rid);
+        if ($res) {
+            $this->ajax_json(0, '操作成功');
+        } else {
+            $this->ajax_json(-1, '系统错误');
+        }
+
+    }
+
+    public function getRolling(){
+        $rid = intval($this->input->get_post('rid'));
+        $res = $this->roll->getRollingById($rid);
+        if ($res) {
+            $this->ajax_json(0, '请求成功',$res);
+        } else {
+            $this->ajax_json(-1, '系统错误');
+        }
+    }
+
+    public function editRolling(){
+        $rid = intval($this->input->get_post('rid'));
+        $content = trim($this->input->get_post('content'));
+        $res = $this->roll->editRolling($rid,array('content'=>$content));
+        if ($res) {
+            $this->ajax_json(0, '操作成功');
+        } else {
+            $this->ajax_json(-1, '系统错误');
         }
     }
 }

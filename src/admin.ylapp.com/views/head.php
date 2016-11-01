@@ -116,14 +116,19 @@ desired effect
                                                 echo msgTemplate(site_url().'post/commentList?keyword='.$val['recmdContent'],mb_substr($val['recmdContent'],0,10).'...');
                                                 break;
                                             case '留言':
+                                                echo msgTemplate(site_url().'leavMsg/index?keyword='.$val['askerNickname'].'&state=5',$val['docName'].'回答了'.$val['askerNickname'].'的问题');
                                                 break;
                                             case '电话':
+                                                echo msgTemplate(site_url().'telOnline/index?keyword='.$val['askNickname'].'&state=1',$val['askNickname'].'预约了'.$val['docName'].'电话问诊');
                                                 break;
                                             case '挂号':
+                                                echo msgTemplate(site_url().'reg_num/index?keyword='.$val['contacts'].'&state=2',$val['contacts'].'预约了'.$val['docName'].'挂号');
                                                 break;
                                             case '订单':
+                                                echo msgTemplate(site_url().'order/index?keyword='.$val['buyerName'].'&state=2',$val['buyerName'].'的订单待处理');
                                                 break;
                                             case '提现':
+                                                echo msgTemplate(site_url().'cash/index?keyword='.$val['buyerName'].'&state=0',$val['realName'].'的提现待处理');
                                                 break;
 
                                         }?>

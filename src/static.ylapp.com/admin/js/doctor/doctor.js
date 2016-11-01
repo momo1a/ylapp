@@ -339,6 +339,7 @@ function saveDoctor(){
     var sex = $("#doctor_add select[name='sex']").val();
     var hospital = $("#doctor_add select[name='hospital']").val();
     var office = $("#doctor_add select[name='office']").val();
+    var docLevel = $("#doctor_add input[name='docLevel']").val();
     var isDude = $("#doctor_add input:checked[name='isDude']:checked").val();
     var phonePattern =   /^1[3|4|5|6|8|7]\d{9}$/;
     if(!phonePattern.test(account)){
@@ -359,12 +360,15 @@ function saveDoctor(){
         alert('姓名不能大于20位小于2位');
         return false;
     }
-
+    if(docLevel.length < 4 || docLevel.length > 20){
+        alert('医生职称不能大于20位小于4位');
+        return false;
+    }
     isDude = isDude == undefined ? 0 : isDude;
     $.ajax({
         url: SITE_URL + "doctor/addDoctor",
         type: "post",
-        data: {phone:account,password:pwd,nickname:username,sex:sex,hid:hospital,officeId:office,isDude:isDude},
+        data: {phone:account,password:pwd,nickname:username,sex:sex,hid:hospital,officeId:office,isDude:isDude,docLevel:docLevel},
         dataType: 'json',
         success: function (result) {
             if(result.code == 0){

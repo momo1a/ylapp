@@ -41,7 +41,7 @@
                         <div class="col-sm-6 banner-1 banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
-                            <input id="banner-edit-1" name="banner-1" type="file">
+                            <input id="banner-edit-1" name="banner_1" type="file">
                         </div>
                     </div>
 
@@ -49,12 +49,12 @@
                         <div class="col-sm-6 banner-2 banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
-                            <input id="banner-edit-2" name="banner-2" type="file">
+                            <input id="banner-edit-2" name="banner_2" type="file">
                         </div>
                         <div class="col-sm-6 banner-3 banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
-                            <input id="banner-edit-3" name="banner-3" type="file">
+                            <input id="banner-edit-3" name="banner_3" type="file">
                         </div>
                     </div>
 
@@ -62,12 +62,12 @@
                         <div class="col-sm-6 banner-4 banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
-                            <input id="banner-edit-4" name="banner-4" type="file">
+                            <input id="banner-edit-4" name="banner_4" type="file">
                         </div>
                         <div class="col-sm-6 banner-5  banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
-                            <input id="banner-edit-5" name="banner-5" type="file">
+                            <input id="banner-edit-5" name="banner_5" type="file">
                         </div>
                     </div>
 

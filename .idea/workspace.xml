@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8df0e38-6e17-4f20-9398-32df1adec543" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/union_notice/images/icon_ylcg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/union_notice/images/icon_ylcg1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/union_notice/images/pic_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/union_notice/images/pic_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/union_notice/css/mui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/union_notice/js/mui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/union_notice/pay_success.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api.ylapp.com/root/union_notice/recharge_success.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/database.php" afterPath="$PROJECT_DIR$/src/common/config/development/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/views/head.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/head.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/memcached.php" afterPath="$PROJECT_DIR$/src/common/config/development/memcached.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/models/post_comment_model.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/models/post_comment_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_pay.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_pay.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ylapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,8 +105,8 @@
       <file leaf-file-name="user_pay.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_pay.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.083333336" vertical-offset="3936" max-vertical-offset="4488">
-              <caret line="183" column="101" selection-start-line="183" selection-start-column="101" selection-end-line="183" selection-end-column="101" />
+            <state vertical-scroll-proportion="0.4384058" vertical-offset="3762" max-vertical-offset="4488">
+              <caret line="183" column="140" selection-start-line="183" selection-start-column="140" selection-end-line="183" selection-end-column="140" />
               <folding />
             </state>
           </provider>
@@ -815,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_pay.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.083333336" vertical-offset="3936" max-vertical-offset="4488">
-          <caret line="183" column="101" selection-start-line="183" selection-start-column="101" selection-end-line="183" selection-end-column="101" />
+        <state vertical-scroll-proportion="0.4384058" vertical-offset="3762" max-vertical-offset="4488">
+          <caret line="183" column="140" selection-start-line="183" selection-start-column="140" selection-end-line="183" selection-end-column="140" />
           <folding />
         </state>
       </provider>

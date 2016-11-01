@@ -92,13 +92,20 @@ desired effect
                         <!-- Menu toggle button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
+                            <span class="label label-warning"><?php echo $vars[2]['count'];?></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">您有10个通知</li>
+                            <li class="header">您有<?php echo $vars[2]['count'];?>个通知</li>
                             <li>
                                 <!-- Inner Menu: contains the notifications -->
                                 <ul class="menu">
+                                    <?php if(!empty($vars[2]['msg'])): foreach($vars[2]['msg'] as $val): ?>
+                                         <?php
+                                        switch($val['msgType']){
+                                            case '帖子':
+
+                                        }?>
+                                    <?php  endforeach;endif;?>
                                     <li><!-- start notification -->
                                         <a href="#">
                                             <i class="fa fa-users text-aqua"></i> 5 new members joined today

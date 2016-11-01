@@ -65,8 +65,7 @@ class MY_Controller extends CI_Controller
                 exit;
             }
         }
-        $this->msgList();
-        $this->load->vars('vars',array(self::$_top_menu ,get_user()));
+        $this->load->vars('vars',array(self::$_top_menu ,get_user(),$this->msgList()));
     }
 
 
@@ -182,13 +181,13 @@ class MY_Controller extends CI_Controller
         $this->load->model('User_reg_num_model','reg');
         $this->load->model('Order_model','order');
         $this->load->model('Take_cash_model','cash');
-        $postMsg = $this->post->getNotDeal();  //  帖子
-        $postCommentMsg = $this->comment->getNotDeal();   //  帖子评论
-        $leavingMsg = $this->leaving->getNotDeal();  //  留言问答
-        $diaMsg = $this->diagnosis->getNotDeal();   //   电话问诊
-        $regMsg = $this->reg->getNotDeal();   // 预约挂号
-        $orderMsg = $this->order->getNotDeal();   // 订单
-        $cashMsg = $this->cash->getNotDeal();   // 提现
+        $postMsg = $this->post->getNotDeal('*,postTime as dateline,"帖子" as msgType');  //  帖子
+        $postCommentMsg = $this->comment->getNotDeal('*,recmdTime as dateline,"评论" as msgType');   //  帖子评论
+        $leavingMsg = $this->leaving->getNotDeal('*,askTime as dateline,"留言" as msgType');  //  留言问答
+        $diaMsg = $this->diagnosis->getNotDeal('*,askTime as dateline,"电话" as msgType');   //   电话问诊
+        $regMsg = $this->reg->getNotDeal('*,"挂号" as msgType');   // 预约挂号
+        $orderMsg = $this->order->getNotDeal('*,"订单" as msgType');   // 订单
+        $cashMsg = $this->cash->getNotDeal('*,"提现" as msgType');   // 提现
         $msg = array();
         $i = 0;
         $this->msgContainer($postMsg,$i,$msg);
@@ -199,7 +198,8 @@ class MY_Controller extends CI_Controller
         $this->msgContainer($orderMsg,$i,$msg);
         $this->msgContainer($cashMsg,$i,$msg);
 
-        var_dump($msg);
+        $this->sortArrByField($msg,'dateline',true);
+        return array('msg'=>$msg,'count'=>$i);
     }
 
 
@@ -211,8 +211,8 @@ class MY_Controller extends CI_Controller
      */
     protected function msgContainer($msg,&$i,&$container){
         if(is_array($msg)){
-            if(!empty($order)){
-                foreach($order as $val){
+            if(!empty($msg)){
+                foreach($msg as $val){
                     array_push($container,$val);
                     $i++;
                 }

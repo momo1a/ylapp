@@ -99,18 +99,22 @@ desired effect
                             <li>
                                 <!-- Inner Menu: contains the notifications -->
                                 <ul class="menu">
+                                    <?php
+                                    function msgTemplate($href,$content)
+                                    {
+                                        $msgTemplate = ' <li><a href="'.$href.'"><i class="fa fa-users text-aqua"></i>'.$content.'</a></li>';
+                                        return $msgTemplate;
+                                    }
+                                    ?>
                                     <?php if(!empty($vars[2]['msg'])): foreach($vars[2]['msg'] as $val): ?>
                                          <?php
                                         switch($val['msgType']){
                                             case '帖子':
+                                                echo msgTemplate('#',mb_substr($val['postTitle'],0,10).'...');
+                                                break;
 
                                         }?>
                                     <?php  endforeach;endif;?>
-                                    <li><!-- start notification -->
-                                        <a href="#">
-                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                        </a>
-                                    </li>
                                     <!-- end notification -->
                                 </ul>
                             </li>

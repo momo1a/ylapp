@@ -73,14 +73,20 @@
     <h4>充值成功</h4>
     <div class="pic">
         <img src="<?php echo config_item('domain_static')?>api/images/pic_1.png" />
-        <a href="javascript:closeWindows();">点击返回</a>
+        <a href="#" id="strolls">点击返回</a>
         <img src="<?php echo config_item('domain_static')?>api/images/pic_2.png" />
     </div>
 </div>
-<script type="text/javascript">
-    function closeWindows() {
-        window.opener=null;window.close();
-    }
+<script src="<?php echo config_item('domain_static')?>api/js/mui.min.js"></script>
+<script>
+    mui.init({
+        swipeBack:true //启用右滑关闭功能
+    });
+    mui.plusReady(function(){
+        document.getElementById("strolls").addEventListener('tap',function(){
+            plus.webview.currentWebview().close();
+        });
+    });
 </script>
 </body>
 </html>

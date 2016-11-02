@@ -404,6 +404,22 @@ class User_center extends MY_Controller
 
 
 
+    //  检测支付密码是否设置
+    public function checkUserPayPwd(){
+        $currentInfo = $this->user->getUserCondition(array('uid'=>self::$currentUid));
+        if(!empty($currentInfo)){
+            if(!empty($currentInfo['payPassword'])){
+                $this->response($this->responseDataFormat(0,'支付密码已经设置',array()));
+            }else{
+                $this->response($this->responseDataFormat(1,'支付密码未设置',array()));
+            }
+        }else{
+            $this->response($this->responseDataFormat(-1,'用户异常',array()));
+        }
+    }
+
+
+
     /**
      * 用户首页消息列表
      */

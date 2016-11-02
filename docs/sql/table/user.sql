@@ -4,6 +4,7 @@ CREATE TABLE `YL_user` (
   `uid` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nickname` varchar(50) NOT NULL DEFAULT '' COMMENT '用户昵称',
   `password` varchar(50) NOT NULL DEFAULT '' COMMENT '密码',
+  `payPassword` varchar(50) NOT NULL DEFAULT '' COMMENT '支付密码',
   `userType` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT '用户类型（1：用户，2：医生）',
   `dateline` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '注册时间',
   `regIp` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '注册IP',

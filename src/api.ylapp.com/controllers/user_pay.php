@@ -135,6 +135,14 @@ class User_pay extends MY_Controller
 
         switch($payType){
             case 0:  // 余额支付
+                $inputPwd = trim($this->input->get_post('payPwd'));  // 支付密码
+                if(empty($inputPwd)){
+                    $this->response($this->responseDataFormat(2,'支付密码不能为空',array()));
+                }
+                $userInfo = $this->user->getUserCondition(array('uid'=>self::$currentUid));
+                if($this->encryption($inputPwd) != $userInfo['payPassword']){
+                    $this->response($this->responseDataFormat(1,'支付密码不正确',array()));
+                }
                 $remainAmount = $this->money->getUserMoney($uid); // 当前用户余额
                 $amount = $amount / 100;
                 $amount > $remainAmount[0]['amount'] ? $this->response($this->responseDataFormat(-1,'余额不足',array())) : '';

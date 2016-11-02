@@ -419,6 +419,35 @@ class User_center extends MY_Controller
     }
 
 
+    // 设置支付密码
+    public function setPayPassword(){
+        $payPwd = trim($this->input->get_post('payPwd'));
+        $rePayPwd = trim($this->input->get_post('rePayPwd'));
+        if(!self::$currentUid){
+            $this->response($this->responseDataFormat(2,'用户请求异常',array()));
+        }
+        if(strlen($payPwd) < 6){
+            $this->response($this->responseDataFormat(3,'密码不得小于6位',array()));
+        }
+        if(is_numeric($payPwd)){
+            $this->response($this->responseDataFormat(4,'密码不得是纯数字',array()));
+        }
+        if($payPwd != $rePayPwd){
+            $this->response($this->responseDataFormat(5,'第一次密码跟第二次密码不一致',array()));
+        }
+
+        $res = $this->user->saveUserDetail(self::$currentUid,array('payPassword'=>$this->encryption($payPwd)));
+
+        if($res){
+            $this->response($this->responseDataFormat(0,'设置成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'设置失败',array()));
+        }
+    }
+
+
+
+
 
     /**
      * 用户首页消息列表

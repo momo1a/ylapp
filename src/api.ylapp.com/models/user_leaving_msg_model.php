@@ -77,6 +77,7 @@ SELECT
 	m.img,
 	/*(IF(m.state=4,'完成','未完成')) AS state,*/
 	(CASE WHEN m.state=3 THEN '未通过' WHEN m.state=2 THEN '待回答' WHEN m.state=4 THEN '完成' END ) AS state,
+	ill.situation,
 	'留言问诊' as type
 FROM
 	YL_user_leaving_msg AS m

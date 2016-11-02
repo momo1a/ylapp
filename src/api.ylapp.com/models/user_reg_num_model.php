@@ -122,10 +122,12 @@ END AS sex,
 ) AS age,
  r.appointTel,
  FROM_UNIXTIME(r.appointTime) AS appointDate,
+ h.situation,
 '预约' as type
 FROM
 	YL_user_reg_num AS r
 LEFT JOIN YL_user AS u ON r.userId = u.uid
+LEFT JOIN YL_user_illness_history AS h ON r.illnessId = h.illId
 WHERE
 	r.docId = {$docId}
 AND r.`status` {$state}

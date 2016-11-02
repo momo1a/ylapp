@@ -206,7 +206,7 @@ class Doctor_center extends MY_Controller
         $limit = intval($this->input->get_post('limit'));
         $limit = $limit == 0 ? 10 : $limit;
         $offset = intval($this->input->get_post('offset'));
-        $select = 'id,nickname as username,(case  when ask_sex=1 then "男" when ask_sex=2 then "女" end) as sex,YL_user_illness_history.age,askNickname,askTelephone,phoneTimeLen,FROM_UNIXTIME(hopeCalldate) hopeCalldate,askContent,docRemark';
+        $select = 'id,nickname as username,(case  when ask_sex=1 then "男" when ask_sex=2 then "女" end) as sex,YL_user_illness_history.age,askNickname,askTelephone,phoneTimeLen,FROM_UNIXTIME(hopeCalldate) hopeCalldate,askContent,docRemark,YL_user_illness_history.situation';
         $res = $this->diagnosis->getDoctorDiaList(self::$currentUid,$select,$flag,$limit,$offset);
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
@@ -218,7 +218,7 @@ class Doctor_center extends MY_Controller
 
     public function getOnlineDiaDetail(){
         $id = intval($this->input->get_post('id'));  // 问诊id
-        $select = 'nickname as username,(case  when ask_sex=1 then "男" when ask_sex=2 then "女" end) as sex,YL_user_illness_history.age,askNickname,allergyHistory,stages,askTelephone,askContent,phoneTimeLen,FROM_UNIXTIME(hopeCalldate) AS hopeCalldate,illnessId,docRemark,result';
+        $select = 'nickname as username,(case  when ask_sex=1 then "男" when ask_sex=2 then "女" end) as sex,YL_user_illness_history.age,askNickname,allergyHistory,stages,askTelephone,askContent,phoneTimeLen,FROM_UNIXTIME(hopeCalldate) AS hopeCalldate,illnessId,docRemark,result,YL_user_illness_history.situation';
         $order = $this->diagnosis->getDoctorDiaDetail($id,$select);
         if($order) {
             $remarkSelect = 'FROM_UNIXTIME(visitDate) as visitDate,stage,content,img';
@@ -283,7 +283,7 @@ class Doctor_center extends MY_Controller
 
     public function getRegNumDetail(){
         $id = intval($this->input->get_post('id'));  // 预约id
-        $select = 'nickname as username,(case  when YL_user_reg_num.sex=1 then "男" when YL_user_reg_num.sex=2 then "女" end) as sex,YL_user_illness_history.age,result,contacts,allergyHistory,stages,appointTel,userRemark,FROM_UNIXTIME(appointTime) AS appointTime,illnessId';
+        $select = 'nickname as username,(case  when YL_user_reg_num.sex=1 then "男" when YL_user_reg_num.sex=2 then "女" end) as sex,YL_user_illness_history.age,result,contacts,allergyHistory,stages,appointTel,userRemark,FROM_UNIXTIME(appointTime) AS appointTime,illnessId,YL_user_illness_history.situation';
         $order = $this->reg_num->getDoctorRegDetail($id,$select);
         if($order) {
             $remarkSelect = 'FROM_UNIXTIME(visitDate) as visitDate,stage,content,img';

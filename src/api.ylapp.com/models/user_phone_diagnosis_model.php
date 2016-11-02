@@ -117,6 +117,7 @@ SELECT
 	d.phoneTimeLen,
 	FROM_UNIXTIME(d.hopeCalldate) AS callDate,
 	d.askContent,
+	i.situation,
 	'在线问诊' AS type
 
 FROM

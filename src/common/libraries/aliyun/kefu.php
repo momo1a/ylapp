@@ -33,6 +33,13 @@ class Kefu
 
 
     /**
+     * 修改用户请求对象
+     * @var null
+     */
+    protected static $_usersUpdateRequest = null;
+
+
+    /**
      * 初始化
      */
     public function __construct(){
@@ -44,6 +51,7 @@ class Kefu
         self::$_TopClientInstance->secretKey = config_item('openim_sectet');
         self::$_userAddRequest = new OpenimUsersAddRequest;
         self::$_usersGetRequest = new OpenimUsersGetRequest;
+        self::$_usersUpdateRequest = new OpenimUsersUpdateRequest;
     }
 
 
@@ -74,6 +82,23 @@ class Kefu
         return $response;
     }
 
+
+    /**
+     * 修改用户信息
+     * @param $userInfos
+     * @return mixed|ResultSet|SimpleXMLElement
+     */
+    public function updateUserInfo($userInfos){
+        $userInfo = new Userinfos;
+        $userInfo->nick = $userInfos['nick'];
+        $userInfo->icon_url = $userInfos['icon_url'];
+        $userInfo->userid = $userInfos['userid'];
+        $userInfo->password = $userInfos['password'];
+        $userInfo->gender = $userInfos['gender'];
+        self::$_usersUpdateRequest->setUserinfos(json_encode($userInfo));
+        $response = self::$_TopClientInstance->execute(self::$_usersUpdateRequest);
+        return $response;
+    }
 
 
 }

@@ -28,7 +28,9 @@ $config['image_servers'] = array('http://img.ylapp.com/');
 
 // 各站点域名
 $config['domain_static'] = 'http://static.ylapp.com/';
+$config['domain_detail'] = 'http://detail.ylapp.com/';
 
+$config['super_admin'] = array(4);
 
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'shs_system.php';
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'static_url.php';  //加载众划算静态URL

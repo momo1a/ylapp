@@ -18,11 +18,12 @@ class Paytest extends CI_Controller
         }
 </style>
 </head>
-<form action="http://api.ylapp.com/user_pay/recharge" method="post">
+<form action="http://123.207.87.83:8080/user_pay/recharge" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="PG1DR45dbd797ticmkzZlXInRhryKDQoznw6DyD0xhrFJTLat0qOgDvLRTlIv4cy9BuWsC\/Z"/>
+    <input type="hidden" name="privateToken" value="YvfJE795d0a6bvjIHqadkNKfGpRsdBjyTuctSVnwCo9uAw9WmVBGy4m11sd0Y3eHuBod\/H+R"/>
     payType<input type="text" name="payType"/>
     amount<input type="text" name="amount"/>
+    way<input type="text" name="way"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;
@@ -44,7 +45,7 @@ HTML;
 </head>
 <form action="http://api.ylapp.com/user_pay/orderPay" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
-    <input type="hidden" name="privateToken" value="rw2S+9c63cad0+y4oZQHn1GtqOoz1c0RxMJnw0ePrusc+NN4hncOBHNfUCorjkjUu8gkbzAf"/>
+    <input type="hidden" name="privateToken" value="YvfJE795d0a6bvjIHqadkNKfGpRsdBjyTuctSVnwCo9uAw9WmVBGy4m11sd0Y3eHuBod\/H+R"/>
     payType<input type="text" name="payType"/>
     amount<input type="text" name="amount"/>
     orderType<input type="text" name="orderType"/>

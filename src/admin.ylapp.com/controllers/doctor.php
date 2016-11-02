@@ -162,10 +162,11 @@ class Doctor extends MY_Controller{
         $sex = intval($this->input->get_post('sex'));
         $hid = intval($this->input->get_post('hid'));
         $officeId = intval($this->input->get_post('officeId'));
+        $docLevel = intval($this->input->get_post('docLevel'));
         $isDude = intval($this->input->get_post('isDude'));
         $this->user->getRecord('phone',$phone) ? $this->ajax_json(-1,'手机号已经注册') : '';
         $this->user->getRecord('nickname',$nickname) ? $this->ajax_json(-1,'昵称已经存在') : '';
-        $res = $this->user->addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude);
+        $res = $this->user->addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude,$docLevel);
         if($res){
             $this->ajax_json(0,'操作成功');
         }else{

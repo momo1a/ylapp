@@ -2,6 +2,8 @@
 <!-- Left side column. contains the logo and sidebar -->
 <?php $this->load->view('left');?>
 <?php $this->load->view('clientindex/rolling_add');?>
+<?php $this->load->view('clientindex/rolling_edit');?>
+<?php $this->load->view('clientindex/rolling_del');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -31,6 +33,7 @@
                                 <th>编号</th>
                                 <th>消息</th>
                                 <th>添加时间</th>
+                                <th>操作</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -40,6 +43,10 @@
                                         <th><?php echo $value['id'];?></th>
                                         <th><?php echo $value['content'];?></th>
                                         <th><?php echo date('Y-m-d H:i:s',$value['dateline']);?></th>
+                                        <th>
+                                            <a data-target="#rolling_edit" data-toggle="modal"  rid="<?php echo $value['id'];?>" onclick="editRollingPre(this);return false;" title="编辑消息"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a data-target="#rolling_del" data-toggle="modal"  rid="<?php echo $value['id'];?>" onclick="rollingDelPre(this);return false;" title="删除消息"><span class="glyphicon glyphicon-trash"></span></a>
+                                        </th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

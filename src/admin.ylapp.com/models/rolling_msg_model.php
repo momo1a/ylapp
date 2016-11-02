@@ -34,4 +34,24 @@ class Rolling_msg_model extends MY_Model
         $this->insert($data);
         return $this->db->insert_id();
     }
+
+    /**
+     * 删除滚动消息
+     * @param $rid
+     * @return bool
+     */
+    public function delRolling($rid){
+        $where = array('id'=>$rid);
+        $res = $this->delete_where($where);
+        return $res;
+    }
+
+    public function getRollingById($id){
+        return $this->find_by(array('id'=>$id));
+    }
+
+    public function editRolling($rid,$data){
+        $where = array('id'=>$rid);
+        return $this->update($where,$data);
+    }
 }

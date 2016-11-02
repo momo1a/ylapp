@@ -65,6 +65,15 @@
                 </div>
                 <hr/>
                 <div class="row">
+                    <div class=" col-xs-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">医生职称</span>
+                            <input type="text" class="form-control" name="docLevel">
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
                     <div class="checkbox" style="margin-left: 5%">
                         <label>
                             <input type="checkbox" name="isDude" id="isDude" value="1" >

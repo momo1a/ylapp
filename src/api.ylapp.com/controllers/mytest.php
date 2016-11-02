@@ -931,6 +931,33 @@ HTML;
     }
 
 
+    public function dlogin()
+    {
+
+        /*var_dump($this->cache->get('15977675495'));*/
+        var_dump($this->encryption(111111));
+        var_dump($this->encryption(111111));
+        var_dump(time());
+        var_dump(ip2long($_SERVER['REMOTE_ADDR']));
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<form action="http://api.ylapp.com/api/login" method="post">
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
+    <!--input type="text" name="privateToken" value="jVAavd11771a9dWgMdRGYzxpYlfj5RIJKt93K1YGrMNO3vDLLOfByhSxcylD5\/9gnv\/UoYEO"/><br/>-->
+    <input type="hidden"   name="userType" value="2" /><br/>
+    <input type="text" name="user" /><br/>
+    <input type="text" name="pwd" /><br/>
+    <!--<input type="text" name="rePwd"/><br/>-->
+    <input type="submit" value="submit"/>
+
+</form>
+HTML;
+        echo $form;
+
+    }
+
 
     public function slogin()
     {
@@ -947,7 +974,7 @@ HTML;
 <form action="http://123.207.87.83:8080/api/login" method="post">
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/><br/>
     <!--input type="text" name="privateToken" value="jVAavd11771a9dWgMdRGYzxpYlfj5RIJKt93K1YGrMNO3vDLLOfByhSxcylD5\/9gnv\/UoYEO"/><br/>-->
-    <input type="hidden"   name="userType" value="1" /><br/>
+    <input type="hidden"   name="userType" value="2" /><br/>
     <input type="text" name="user" /><br/>
     <input type="text" name="pwd" /><br/>
     <!--<input type="text" name="rePwd"/><br/>-->
@@ -1123,6 +1150,30 @@ HTML;
     <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
     <input type="hidden" name="privateToken" value="ldn9Ve7ebcd87u71cUGusWiLu5tcQgACtbefZX4ovJzU7nouFJt7a88t1Zko7kBM94CPXZt+"/>
     num<input type="text" name="num"/>
+    <input type="submit" value="submit"/>
+HTML;
+        echo $form;
+    }
+
+
+
+    public function docMsgList(){
+        $form = <<<HTML
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+        input{
+        display: block;
+        }
+</style>
+</head>
+<form action="http://123.207.87.83:8080/doctor_center/msgList" method="post">
+<!--<form action="http://api.ylapp.com/doctor_center/index" method="post">-->
+    <input type="hidden" name="token" value="96E79218965EB72C92A549DD5A330112"/>
+    <input type="hidden" name="privateToken" value="ah20U8bdc5e24Ipa8TM6dO\/w67Ypm2FuuFlCZ6SPbi1SeBPMEyWaaD0zJa8l9WDJbrZ9+cX9"/>
+     <!--<input type="hidden" name="privateToken" value="SwAEz7e99ea33HRNuXhkKhOOvCkuzYGbBm4GT29vXP31jl4akQTEH6x4mi4jqXiwDfDdSvuo"/>-->
+    limit<input type="text" name="limit"/>
+    offset<input type="text" name="offset"/>
     <input type="submit" value="submit"/>
 HTML;
         echo $form;

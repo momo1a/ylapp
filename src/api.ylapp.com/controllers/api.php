@@ -273,11 +273,20 @@ class Api extends MY_Controller
         $phone = trim($this->input->get_post('telephone')); // 手机号码
         $flag = intval($this->input->get_post('flag'));  // 是否是支付密码修改
         $flag = $flag ? true : false;
-        if(strlen($pwd) < 6){
-            $this->response($this->responseDataFormat(1,'密码不的小于6位',array()));
-        }
-        if(is_numeric($pwd)){
-            $this->response($this->responseDataFormat(2,'密码不得是纯数字',array()));
+        if(!$flag) {
+            if (strlen($pwd) < 6) {
+                $this->response($this->responseDataFormat(1, '密码不的小于6位', array()));
+            }
+            if (is_numeric($pwd)) {
+                $this->response($this->responseDataFormat(2, '密码不得是纯数字', array()));
+            }
+        }else{
+            if (strlen($pwd) != 6) {
+                $this->response($this->responseDataFormat(1, '支付密码请设置成6位数字', array()));
+            }
+            if (!is_numeric($pwd)) {
+                $this->response($this->responseDataFormat(2, '支付密码请设置成6位数字', array()));
+            }
         }
         if($pwd != $rePwd){
             $this->response($this->responseDataFormat(3,'第一次密码跟第二次密码不一致',array()));

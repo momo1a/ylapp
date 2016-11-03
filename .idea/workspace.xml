@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8df0e38-6e17-4f20-9398-32df1adec543" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/libraries/Upload_image.php" afterPath="$PROJECT_DIR$/src/common/libraries/Upload_image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/paytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php" />
     </list>
     <ignored path="ylapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +51,8 @@
       <file leaf-file-name="user_center.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.0" vertical-offset="9298" max-vertical-offset="12914">
-              <caret line="406" column="14" selection-start-line="406" selection-start-column="12" selection-end-line="406" selection-end-column="14" />
+            <state vertical-scroll-proportion="3.1147542" vertical-offset="9628" max-vertical-offset="12914">
+              <caret line="429" column="69" selection-start-line="429" selection-start-column="57" selection-end-line="429" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -268,28 +268,18 @@
       <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/config/development/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.1290324" vertical-offset="396" max-vertical-offset="1078">
-              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            <state vertical-scroll-proportion="-10.645162" vertical-offset="396" max-vertical-offset="1078">
+              <caret line="33" column="31" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Upload_image.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/common/libraries/Upload_image.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5660377" vertical-offset="1496" max-vertical-offset="7392">
-              <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.163934" vertical-offset="5774" max-vertical-offset="8096">
-              <caret line="274" column="22" selection-start-line="274" selection-start-column="22" selection-end-line="274" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.25441697" vertical-offset="6170" max-vertical-offset="8294">
+              <caret line="287" column="74" selection-start-line="287" selection-start-column="74" selection-end-line="287" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -357,13 +347,13 @@
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_pay.php" />
         <option value="$PROJECT_DIR$/src/common/libraries/aliyun/kefu.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/customer.php" />
-        <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php" />
         <option value="$PROJECT_DIR$/src/common/config/development/memcached.php" />
         <option value="$PROJECT_DIR$/src/common/config/development/database.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/models/user_model.php" />
-        <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php" />
         <option value="$PROJECT_DIR$/src/common/libraries/Upload_image.php" />
+        <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php" />
+        <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php" />
       </list>
     </option>
   </component>
@@ -918,14 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/config/development/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1290324" vertical-offset="396" max-vertical-offset="1078">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5081967" vertical-offset="8180" max-vertical-offset="25058">
@@ -1131,14 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.0" vertical-offset="9298" max-vertical-offset="12914">
-          <caret line="406" column="14" selection-start-line="406" selection-start-column="12" selection-end-line="406" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.2459016" vertical-offset="1000" max-vertical-offset="5126">
@@ -1147,18 +1121,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php">
+    <entry file="file://$PROJECT_DIR$/src/common/libraries/Upload_image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.163934" vertical-offset="5774" max-vertical-offset="8096">
-          <caret line="274" column="22" selection-start-line="274" selection-start-column="22" selection-end-line="274" selection-end-column="22" />
+        <state vertical-scroll-proportion="-0.7169811" vertical-offset="3080" max-vertical-offset="7392">
+          <caret line="120" column="61" selection-start-line="120" selection-start-column="61" selection-end-line="120" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/libraries/Upload_image.php">
+    <entry file="file://$PROJECT_DIR$/src/common/config/development/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5660377" vertical-offset="1496" max-vertical-offset="7392">
-          <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
+        <state vertical-scroll-proportion="-10.645162" vertical-offset="396" max-vertical-offset="1078">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.1147542" vertical-offset="9628" max-vertical-offset="12914">
+          <caret line="429" column="69" selection-start-line="429" selection-start-column="57" selection-end-line="429" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25441697" vertical-offset="6170" max-vertical-offset="8294">
+          <caret line="287" column="74" selection-start-line="287" selection-start-column="74" selection-end-line="287" selection-end-column="74" />
           <folding />
         </state>
       </provider>

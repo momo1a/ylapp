@@ -426,11 +426,11 @@ class User_center extends MY_Controller
         if(!self::$currentUid){
             $this->response($this->responseDataFormat(2,'用户请求异常',array()));
         }
-        if(strlen($payPwd) < 6){
-            $this->response($this->responseDataFormat(3,'密码不得小于6位',array()));
+        if(strlen($payPwd) != 6 ){
+            $this->response($this->responseDataFormat(3,'支付密码请设置成6位数字',array()));
         }
-        if(is_numeric($payPwd)){
-            $this->response($this->responseDataFormat(4,'密码不得是纯数字',array()));
+        if(!is_numeric($payPwd)){
+            $this->response($this->responseDataFormat(4,'支付密码请设置成6位数字',array()));
         }
         if($payPwd != $rePayPwd){
             $this->response($this->responseDataFormat(5,'第一次密码跟第二次密码不一致',array()));
@@ -459,11 +459,11 @@ class User_center extends MY_Controller
         if($this->encryption($inputOriPwd) != $currentInfo['payPassword']){
             $this->response($this->responseDataFormat(6,'原密码不正确',array()));
         }
-        if(strlen($payPwd) < 6){
-            $this->response($this->responseDataFormat(3,'密码不得小于6位',array()));
+        if(strlen($payPwd) != 6){
+            $this->response($this->responseDataFormat(3,'支付密码请设置成6位数字',array()));
         }
-        if(is_numeric($payPwd)){
-            $this->response($this->responseDataFormat(4,'密码不得是纯数字',array()));
+        if(!is_numeric($payPwd)){
+            $this->response($this->responseDataFormat(4,'支付密码请设置成6位数字',array()));
         }
         if($payPwd != $rePayPwd){
             $this->response($this->responseDataFormat(5,'第一次密码跟第二次密码不一致',array()));

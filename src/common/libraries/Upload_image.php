@@ -77,6 +77,9 @@ class Upload_image {
      *
      */
     public function save($type, $file_path, $thumb_sizes = NULL,$original_no = FALSE) {
+        if(filesize($file_path)/(1024*1024) > 2){
+            exit(json_encode(array('code'=>-1,'msg'=>'上传文件不能大于2M','data'=>array())));
+        }
         if (!$thumb_sizes) {
             $thumb_sizes = isset($this->thumb_size[$type]) ? $this->thumb_size[$type] : NULL;
         }

@@ -18,7 +18,7 @@ class Feedback extends MY_Controller
         $keyword = addslashes(trim($this->input->get_post('keyword')));
         $total = $this->feedback->feedbackCount($keyword);
         $offset = intval($this->uri->segment(3));
-        $list = $this->feedback->getList($keyword,$limit,$offset,'*');
+        $list = $this->feedback->getList($keyword,$limit,$offset,'*,YL_feedback.dateline as feedDate');
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
         $pager = $this->pager($total, $limit,$page_conf);

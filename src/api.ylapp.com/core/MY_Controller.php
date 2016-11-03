@@ -306,8 +306,8 @@ class MY_Controller extends CI_Controller
      */
     protected function commitFeedback(){
         $content = addslashes($this->input->get_post('content'));
-        if(mb_strlen($content) > 300){
-            $this->response($this->responseDataFormat(1,'字数超过限定大小',array()));
+        if(mb_strlen($content) > 300 || mb_strlen($content) < 6){
+            $this->response($this->responseDataFormat(1,'字数不能小于6大于300',array()));
         }
         $this->load->model('Feedback_model','feedback');
         $data = array(

@@ -43,7 +43,7 @@
                                     <tr>
                                         <th><?php echo $value['id'];?></th>
                                         <th><?php echo $value['content'];?></th>
-                                        <th><?php echo date('Y-m-d H:i:s',$value['dateline']);?></th>
+                                        <th><?php echo date('Y-m-d H:i:s',$value['feedDate']);?></th>
                                         <th><?php echo $value['nickname'];?></th>
                                         <?php $pos = array('1'=>'用户端','2'=>'医生端');?>
                                         <th><?php echo $pos[$value['userType']];?></th>

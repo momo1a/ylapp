@@ -288,7 +288,7 @@ function getTradeInfo(e){
                 info.html('');
                 $.each(result.data,function(i,d){
                     switch (d.tradeType){
-                        case '2':
+                        case '1':
                             flag = '<strong style="color: green;font-weight: bold">+&nbsp;</strong>';
                             break;
                         default :

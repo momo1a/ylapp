@@ -130,7 +130,8 @@ class Upload_image {
             imagedestroy($output);
         } else {
             $this->error = array('errcode' => 'UNKNOWN_FILE_TYPE', 'errtxt' => '不支持的上传图片类型。');
-            return FALSE;
+            exit(json_encode(array('code'=>-1,'msg'=>'不支持的上传文件类型','data'=>array())));
+            //return FALSE;
         }
 
         // 生成缩略图

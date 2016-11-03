@@ -52,9 +52,13 @@ class User_model extends MY_Model
      * @param $pwd
      * @return bool
      */
-    public function reSettingForgotPwd($phone,$pwd){
+    public function reSettingForgotPwd($phone,$pwd,$flag=false){
+        if($flag){
+            $data = array('payPassword'=>$pwd);
+        }else{
+            $data = array('password'=>$pwd);
+        }
         $where = array('phone'=>$phone);
-        $data = array('password'=>$pwd);
         $res = $this->update($where,$data);
         return $res;
     }

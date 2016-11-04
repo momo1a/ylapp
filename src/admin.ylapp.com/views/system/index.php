@@ -61,34 +61,38 @@
                         </form>
 
 
-                        <form action="" method="post">
-                            <div class="alert alert-info alert-dismissible">
+                        <form action="" method="post" name="user-manual-form" id="user-manual-form">
+                            <div class="alert alert-info alert-dismissible" style="position: relative;">
                                 <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
                                 <h4><i class="glyphicon glyphicon-th-list"></i>用户使用手册设置</h4>
                                 <div class="row">
                                     <div class="col-xs-5" style="margin-right: 20px">
-                                        <?php $patt = array('auto'=>'自动读取模式','manual'=>'手动添加模式');?>
-                                        <textarea id="user-manual" name="user-manual"></textarea>
+                                        <textarea id="user-manual" name="value">
+                                            <?php echo $userManual;?>
+                                        </textarea>
                                     </div>
-                                    <div class="col-xs-5" style="padding-top: 260px">
-                                        <input type="button" onclick="setting('msg_pattern','rollmsg',$('#msg_pattern').val());return false;" class="btn btn-default btn-sm" value="保存">
+                                    <div class="col-xs-5" style="position: absolute;left:50%;bottom: 15px">
+                                        <input type="button" onclick="textSetting('user-manual-form',$('#user-manual').val());return false;" class="btn btn-default btn-sm" value="保存">
+                                        <input type="hidden" name="dosave" value="user-manual-save"/>
                                     </div>
                                 </div>
                             </div>
                         </form>
 
 
-                        <form action="" method="post">
-                            <div class="alert alert-info alert-dismissible">
+                        <form action="" method="post" name="agree-book-form" id="agree-book-form">
+                            <div class="alert alert-info alert-dismissible" style="position: relative;">
                                 <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
                                 <h4><i class="glyphicon glyphicon-list-alt"></i>知情同意书设置</h4>
                                 <div class="row">
                                     <div class="col-xs-5" style="margin-right: 20px">
-                                        <?php $patt = array('auto'=>'自动读取模式','manual'=>'手动添加模式');?>
-                                        <textarea id="agree" name="agree"></textarea>
+                                        <textarea id="agree" name="agree">
+                                            <?php echo $agree;?>
+                                        </textarea>
                                     </div>
-                                    <div class="col-xs-5" style="padding-top: 260px">
-                                        <input type="button" onclick="setting('msg_pattern','rollmsg',$('#msg_pattern').val());return false;" class="btn btn-default btn-sm" value="保存">
+                                    <input type="hidden" name="dosave" value="agree-book-save"/>
+                                    <div class="col-xs-5" style="position: absolute;left:50%;bottom: 15px" >
+                                        <input type="button" onclick="textSetting('agree-book-form',$('#user-manual').val());return false;" class="btn btn-default btn-sm" value="保存">
                                     </div>
                                 </div>
                             </div>
@@ -109,4 +113,7 @@
 <script>
     CKEDITOR.replace('user-manual');
     CKEDITOR.replace('agree');
+    $(function(){
+
+    })
 </script>

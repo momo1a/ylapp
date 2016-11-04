@@ -362,6 +362,19 @@ class Api extends MY_Controller
         $this->response($this->responseDataFormat(0,'请求成功',array('tel'=>$tel)));
     }
 
+
+    /**
+     * 获取系统设置
+     */
+    public function systemSetting(){
+        /*user_manual 用户手册  agree_book 同意书*/
+        $this->load->model('System_setting_model','system');
+        $systemKey = trim($this->input->get_post('systemKey'));
+        $res = $this->system->getValue($systemKey);
+        $value = $res ? $res['settingValue'] : $systemKey.'未设置或不存在';
+        $this->response($this->responseDataFormat(0,'请求成功',array('systemValue'=>$value)));
+    }
+
     /*
      * 404处理
      */

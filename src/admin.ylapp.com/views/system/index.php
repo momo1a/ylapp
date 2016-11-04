@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                         </form>
-
+                        <hr/>
 
                         <form action="" method="post" name="user-manual-form" id="user-manual-form">
                             <div class="alert alert-info alert-dismissible" style="position: relative;">
@@ -78,7 +78,7 @@
                                 </div>
                             </div>
                         </form>
-
+                        <hr/>
 
                         <form action="" method="post" name="agree-book-form" id="agree-book-form">
                             <div class="alert alert-info alert-dismissible" style="position: relative;">
@@ -97,6 +97,50 @@
                                 </div>
                             </div>
                         </form>
+                        <hr/>
+                        <div class="bg-green-active color-palette" style="margin: 20px 0px">&nbsp;</div>
+
+
+                            <div class="alert alert-info alert-dismissible">
+                                <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
+                                <h4><i class="glyphicon glyphicon-th-large"></i>APP最新版本号设置</h4>
+                                <form action="" method="post">
+                                <div class="row">
+                                    <div class="col-xs-5" style="margin-right: 20px">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="glyphicon glyphicon-tag"></i>
+                                            </div>
+                                            <input type="text" name="app-version" id="app-version" class="form-control" value="<?php echo $appVersion;?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <input type="button" onclick="setting('app-version','app-version-save',$('#app-version').val());return false;" class="btn btn-default btn-sm" value="保存">
+                                    </div>
+                                </div>
+                                </form>
+
+                                <hr style="background: green"/>
+                                <form action="" method="post"  enctype="multipart/form-data" name="package-upload" id="package-upload">
+                                <div class="row" style="margin-top: 20px">
+                                    <div class="col-xs-5" style="margin-right: 20px">
+                                        <div class="form-group">
+                                            <label for="app-update-package">APP升级包上传</label>
+                                            <input type="file" name="app-update-package" id="app-update-package" style="border: solid 1px green">
+                                            <p class="help-block">上传.wgt文件，10M以内</p>
+                                            <input type="hidden" name="dosave" value="app-update-upload"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <input type="submit" onclick="fileUpload('package-upload');return false;" class="btn btn-default btn-sm" value="上传">
+                                    </div>
+                                </div>
+                                </form>
+
+                            </div>
+
+
+
                     </div>
                 </div>
             </div>

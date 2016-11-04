@@ -39,3 +39,24 @@ function textSetting(ele,value){
         }
     });
 }
+
+
+function fileUpload(ele){
+    var formData = new FormData(document.getElementById(ele));
+    console.log(formData);
+    $.ajax({
+        url: SITE_URL + "system/index",
+        type: "post",
+        data:formData,
+        contentType:false,
+        processData:false,
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert('上传成功');
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+}

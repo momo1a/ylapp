@@ -29,6 +29,9 @@ $config['image_servers'] = array('http://123.207.87.83:8081/');
 $config['domain_static'] = 'http://123.207.87.83:8083/';
 $config['domain_detail'] = 'http://123.207.87.83:8084/';
 
+// app升级包上传目录
+$config['app_update_package_upload_path'] = '/home/www/app/upload/';
+
 $config['super_admin'] = array(89);
 
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'shs_system.php';

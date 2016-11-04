@@ -15,7 +15,7 @@ class System extends MY_Controller
     }
 
     public function index(){
-        //var_dump($_REQUEST);return;
+        //var_dump($_REQUEST,$_FILES);return;
         $telephone = $this->system->getValue('customer_tel');
         $telephone = $telephone ? $telephone['settingValue'] : '';
 
@@ -27,6 +27,10 @@ class System extends MY_Controller
 
         $agree = $this->system->getValue('agree_book');
         $agree = $agree ? $agree['settingValue'] : '';
+
+
+        $appVersion = $this->system->getValue('app_version');
+        $appVersion = $appVersion ? $appVersion['settingValue'] : '';
 
 
         // 客服电话设置
@@ -79,7 +83,34 @@ class System extends MY_Controller
         }
 
 
+        // app最新版本设置
+        if($this->input->get_post('dosave') == 'app-version-save'){
+            //var_dump($_REQUEST);
+            $version = addslashes(trim($this->input->get_post('value')));
+            $res = $this->system->settingValue('app_version',$version);
+            if($res){
+                $this->ajax_json(0,'保存成功');
+            }else{
+                $this->ajax_json(-1,'设置失败');
+            }
+        }
 
+        // app升级包上传
+        if($this->input->get_post('dosave') == 'app-update-upload'){
+            //var_dump($_REQUEST);
+            $this->load->library('FileUpload',null,'fileupload');
+            $res = $this->fileupload
+                ->set('path',config_item('app_update_package_upload_path'))
+                ->set('allowtype',array('wgt'))
+                ->set('maxsize',10485760)
+                ->upload('app-update-package');
+            var_dump($res);return;
+            if($res){
+                $this->ajax_json(0,'保存成功');
+            }else{
+                $this->ajax_json(-1,'设置失败');
+            }
+        }
 
 
 

@@ -31,6 +31,9 @@ $config['domain_detail'] = 'http://123.207.87.83:8084/';
 // 超级管理员uid
 $config['super_admin'] = array(1);
 
+// app升级包上传目录
+$config['app_update_package_upload_path'] = '/home/www/app/upload/';
+
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'shs_system.php';
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'static_url.php';  //加载众划算静态URL
 

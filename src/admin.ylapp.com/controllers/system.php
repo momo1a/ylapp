@@ -102,7 +102,7 @@ class System extends MY_Controller
             $res = $this->fileupload
                 ->set('path',config_item('app_update_package_upload_path'))
                 ->set('allowtype',array('wgt'))
-                ->set('maxsize',10485760)
+                ->set('maxsize',10485760)  //  最大上传10M
                 ->upload('app-update-package');
             var_dump($res);return;
             if($res){

@@ -137,7 +137,7 @@ class FileUpload {
 
     /* 设置上传出错信息 */
     private function getError() {
-        $str = "上传文件<font color='red'>{$this->originName}</font>时出错 : ";
+        $str = "上传文件{$this->originName}时出错 : ";
         switch ($this->errorNum) {
             case 4: $str .= "没有文件被上传"; break;
             case 3: $str .= "文件只有部分被上传"; break;
@@ -150,7 +150,7 @@ class FileUpload {
             case -5: $str .= "必须指定上传文件的路径"; break;
             default: $str .= "未知错误";
         }
-        return $str.'<br>';
+        return $str;
     }
 
     /* 设置和$_FILES有关的内容 */

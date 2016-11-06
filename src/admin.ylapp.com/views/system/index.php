@@ -113,6 +113,7 @@
                                             </div>
                                             <input type="text" name="app-version" id="app-version" class="form-control" value="<?php echo $appVersion;?>">
                                         </div>
+                                        <label>请填写标准的版本号，例如：1.0.2或者1.0</label>
                                     </div>
                                     <div class="col-xs-5">
                                         <input type="button" onclick="setting('app-version','app-version-save',$('#app-version').val());return false;" class="btn btn-default btn-sm" value="保存">

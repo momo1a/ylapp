@@ -10,12 +10,12 @@ class FileUpload {
     private $israndname = true;           //设置是否随机重命名文件， false不随机
 
     private $originName;              //源文件名
-    private $tmpFileName;              //临时文件名
-    private $fileType;               //文件类型(文件后缀)
-    private $fileSize;               //文件大小
-    private $newFileName;              //新文件名
-    private $errorNum = 0;             //错误号
-    private $errorMess="";             //错误报告消息
+    private $tmpFileName;             //临时文件名
+    private $fileType;                //文件类型(文件后缀)
+    private $fileSize;                //文件大小
+    private $newFileName;             //新文件名
+    private $errorNum = 0;            //错误号
+    private $errorMess="";            //错误报告消息
 
     /**
      * 用于设置成员属性（$path, $allowtype,$maxsize, $israndname）
@@ -35,15 +35,20 @@ class FileUpload {
     /**
      * 调用该方法上传文件
      * @param  string $fileFile  上传文件的表单名称
+     * $param  bool  $ajax 是否ajax调用 多文件暂未支持，用到该工具的开发者自行编写逻辑
      * @return bool        如果上传成功返回数true
      */
 
-    public function upload($fileField) {
-        $return = true;
+    public function upload($fileField,$ajax = false) {
+        $return = !$ajax ? true : array('code'=>0,'msg'=>'上传成功');
         /* 检查文件路径是滞合法 */
-        if( !$this->checkFilePath() ) {
+        if( !$this->checkFilePath()) {
             $this->errorMess = $this->getError();
-            return false;
+            if($ajax){
+                return array('code'=>$this->errorNum,'msg'=>$this->errorMess);
+            }else{
+                return false;
+            }
         }
         /* 将文件上传的信息取出赋给变量 */
         $name = $_FILES[$fileField]['name'];
@@ -99,15 +104,15 @@ class FileUpload {
                     $this->setNewFileName();
                     /* 上传文件  返回0为成功， 小于0都为错误 */
                     if($this->copyFile()){
-                        return true;
+                        return $return;
                     }else{
-                        $return=false;
+                        $return= !$ajax ? false : array('code'=>$this->errorNum,'msg'=>$this->getError());
                     }
                 }else{
-                    $return=false;
+                    $return= !$ajax ? false : array('code'=>$this->errorNum,'msg'=>$this->getError());
                 }
             } else {
-                $return=false;
+                $return= !$ajax ? false : array('code'=>$this->errorNum,'msg'=>$this->getError());
             }
             //如果$return为false, 则出错，将错误信息保存在属性errorMess中
             if(!$return)
@@ -217,7 +222,7 @@ class FileUpload {
 
     /* 设置随机文件名 */
     private function proRandName() {
-        $fileName = date('YmdHis')."_".rand(100,999);
+        $fileName = rand(100,999).'_'.time();
         return $fileName.'.'.$this->fileType;
     }
 

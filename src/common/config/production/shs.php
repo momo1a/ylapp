@@ -28,6 +28,7 @@ $config['image_servers'] = array('http://123.207.87.83:8081/');
 //$config['domain_www'] = 'http://www.ylapp.com/';
 $config['domain_static'] = 'http://123.207.87.83:8083/';
 $config['domain_detail'] = 'http://123.207.87.83:8084/';
+$config['domain_download'] = 'http://123.207.87.83:8085/';  // 下载站点
 
 // app升级包上传目录
 $config['app_update_package_upload_path'] = '/home/www/app/upload/';

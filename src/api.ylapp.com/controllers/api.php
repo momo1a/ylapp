@@ -375,6 +375,34 @@ class Api extends MY_Controller
         $this->response($this->responseDataFormat(0,'请求成功',array('systemValue'=>$value)));
     }
 
+    // 检测app最新版本
+    public function checkVersion(){
+        $this->load->model('System_setting_model','system');
+        $clientVersion = $this->input->get_post('clientVersion');  // 客户端当前版本
+        $lastVersion = $this->system->getValue('app_version');  // 管理员设置的最新版本
+        $package = scandir(config_item('app_update_package_upload_path'));
+        if(!$lastVersion){
+            $this->response($this->responseDataFormat(2,'管理员请先设置APP最新版本号并上传最新升级包',array()));
+        }
+        $compare = version_compare($clientVersion,$lastVersion['settingValue'],'<');
+        if($compare){  // 客户端版本小于最新版本
+            if(!empty($package)){
+                foreach($package as $key=>$value){
+                    if($value != '.' && $value != '..' && preg_match('/\.wgt$/i',$value)){
+                        $pack = $value;
+                    }
+                }
+                if(!empty($pack)){
+                    $this->response($this->responseDataFormat(0,'客户端版本小于最新版本',array('downloadURL'=>config_item('domain_download').$pack)));
+                }else{
+                    $this->response($this->responseDataFormat(3,'请先上传最新升级包',array()));
+                }
+            }
+        }else{
+            $this->response($this->responseDataFormat(1,'客户端版本是最新版本',array()));
+        }
+    }
+
     /*
      * 404处理
      */

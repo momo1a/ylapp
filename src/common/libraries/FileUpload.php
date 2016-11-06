@@ -212,7 +212,7 @@ class FileUpload {
             return false;
         }
         if (!file_exists($this->path) || !is_writable($this->path)) {
-            if (!@mkdir($this->path, 0777)) {
+            if (!@mkdir($this->path, 0755)) {
                 $this->setOption('errorNum', -4);
                 return false;
             }

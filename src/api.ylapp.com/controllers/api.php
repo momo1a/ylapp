@@ -379,8 +379,22 @@ class Api extends MY_Controller
     public function checkVersion(){
         $this->load->model('System_setting_model','system');
         $clientVersion = $this->input->get_post('clientVersion');  // 客户端当前版本
-        $lastVersion = $this->system->getValue('app_version');  // 管理员设置的最新版本
-        $package = scandir(config_item('app_update_package_upload_path'));
+        $position = intval($this->input->get_post('pos'));   //   1 用户端  2 医生端
+        switch($position){
+            case 1:
+                $systemVer = 'app_version';
+                $path = config_item('app_update_package_upload_path');
+                break;
+            case 2:
+                $systemVer =  'app_version_doc';
+                $path = config_item('app_update_package_upload_path').'doc/';
+                break;
+            default:
+                $this->response($this->responseDataFormat(-1,'请传递正确的客户端标识',array()));
+
+        }
+        $lastVersion = $this->system->getValue($systemVer);  // 管理员设置的最新版本
+        $package = scandir($path);
         if(!$lastVersion){
             $this->response($this->responseDataFormat(2,'管理员请先设置APP最新版本号并上传最新升级包',array()));
         }

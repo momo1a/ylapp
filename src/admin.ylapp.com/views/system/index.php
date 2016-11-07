@@ -103,7 +103,7 @@
 
                             <div class="alert alert-info alert-dismissible">
                                 <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
-                                <h4><i class="glyphicon glyphicon-th-large"></i>APP最新版本号设置</h4>
+                                <h4><i class="glyphicon glyphicon-th-large"></i>用户端最新版本号设置</h4>
                                 <form action="" method="post">
                                 <div class="row">
                                     <div class="col-xs-5" style="margin-right: 20px">
@@ -126,7 +126,7 @@
                                 <div class="row" style="margin-top: 20px">
                                     <div class="col-xs-5" style="margin-right: 20px">
                                         <div class="form-group">
-                                            <label for="app-update-package">APP升级包上传</label>
+                                            <label for="app-update-package">用户端升级包上传</label>
                                             <input type="file" name="app-update-package" id="app-update-package" style="border: solid 1px green">
                                             <p class="help-block">上传.wgt文件，10M以内</p>
                                             <input type="hidden" name="dosave" value="app-update-upload"/>
@@ -140,7 +140,44 @@
 
                             </div>
 
+                        <div class="alert alert-info alert-dismissible">
+                            <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
+                            <h4><i class="glyphicon glyphicon-th-large"></i>医生端最新版本号设置</h4>
+                            <form action="" method="post">
+                                <div class="row">
+                                    <div class="col-xs-5" style="margin-right: 20px">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="glyphicon glyphicon-tag"></i>
+                                            </div>
+                                            <input type="text" name="app-version-doc" id="app-version-doc" class="form-control" value="<?php echo $appVersionDoc;?>">
+                                        </div>
+                                        <label>请填写标准的版本号，例如：1.0.2或者1.0</label>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <input type="button" onclick="setting('app-version-doc','app-version-save-doc',$('#app-version-doc').val());return false;" class="btn btn-default btn-sm" value="保存">
+                                    </div>
+                                </div>
+                            </form>
 
+                            <hr style="background: green"/>
+                            <form action="" method="post"  enctype="multipart/form-data" name="package-upload" id="package-upload-doc">
+                                <div class="row" style="margin-top: 20px">
+                                    <div class="col-xs-5" style="margin-right: 20px">
+                                        <div class="form-group">
+                                            <label for="app-update-package-doc">医生端升级包上传</label>
+                                            <input type="file" name="app-update-package-doc" id="app-update-package-doc" style="border: solid 1px green">
+                                            <p class="help-block">上传.wgt文件，10M以内</p>
+                                            <input type="hidden" name="dosave" value="app-update-upload-doc"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <input type="submit" onclick="fileUpload('package-upload-doc');return false;" class="btn btn-default btn-sm" value="上传">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
 
                     </div>
                 </div>

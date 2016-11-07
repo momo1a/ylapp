@@ -33,6 +33,10 @@ class System extends MY_Controller
         $appVersion = $appVersion ? $appVersion['settingValue'] : '';
 
 
+        $appVersionDoc = $this->system->getValue('app_version_doc');
+        $appVersionDoc = $appVersionDoc ? $appVersionDoc['settingValue'] : '';
+
+
         // 客服电话设置
         if($this->input->get_post('dosave') == 'telephone'){
             //$postTel = addslashes(trim($this->input->get_post('c-phone')));
@@ -95,7 +99,20 @@ class System extends MY_Controller
             }
         }
 
-        // app升级包上传
+
+        // app最新版本设置
+        if($this->input->get_post('dosave') == 'app-version-save-doc'){
+            //var_dump($_REQUEST);
+            $version = addslashes(trim($this->input->get_post('value')));
+            $res = $this->system->settingValue('app_version_doc',$version);
+            if($res){
+                $this->ajax_json(0,'保存成功');
+            }else{
+                $this->ajax_json(-1,'设置失败');
+            }
+        }
+
+        // 用户端升级包上传
         if($this->input->get_post('dosave') == 'app-update-upload'){
             //var_dump($_REQUEST);
             $uploadPath = config_item('app_update_package_upload_path');
@@ -118,7 +135,29 @@ class System extends MY_Controller
             }
         }
 
+        // 医生端端升级包上传
+        if($this->input->get_post('dosave') == 'app-update-upload-doc'){
+            $uploadPath = config_item('app_update_package_upload_path');
+            if(!$uploadPath){
+                exit(json_encode(array('code'=>-1,'msg'=>'未配置上传目录','data'=>null)));
+            }
 
+            $uploadPath .= 'doc/';
+            $this->load->library('FileUpload',null,'fileupload');
+            foreach(glob($uploadPath.'*.wgt') as $value){
+                @unlink($value);  // 删除旧文件
+            }
+            $res = $this->fileupload
+                ->set('path',$uploadPath)
+                ->set('allowtype',array('wgt'))
+                ->set('maxsize',10485760)  //  最大上传10M
+                ->upload('app-update-package-doc',true);
+            if($res['code']==0){
+                $this->ajax_json(0,'保存成功');
+            }else{
+                $this->ajax_json(-1,$res['msg']);
+            }
+        }
 
         $this->load->view('system/index',get_defined_vars());
     }

@@ -407,6 +407,9 @@ class Api extends MY_Controller
                     }
                 }
                 if(!empty($pack)){
+                    if($position == 2){
+                        $pack = 'doc/'.$pack;
+                    }
                     $this->response($this->responseDataFormat(0,'客户端版本小于最新版本',array('downloadURL'=>config_item('domain_download').$pack)));
                 }else{
                     $this->response($this->responseDataFormat(3,'请先上传最新升级包',array()));

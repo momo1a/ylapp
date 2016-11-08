@@ -358,7 +358,7 @@ class Doctor_center extends MY_Controller
         $telFrt = trim($this->input->get_post('telFrt'));
         $telSed = trim($this->input->get_post('telSed'));
         $hosId = intval($this->input->get_post('hosId'));
-        $docLevel = trim(addslashes(intval($this->input->get_post('docLevel'))));
+        $docLevel = trim(addslashes($this->input->get_post('docLevel')));
         if(!$hosId){$this->response($this->responseDataFormat(2,'请选择医院',array()));}
         $officeId = intval($this->input->get_post('officeId'));
         if(!$officeId){$this->response($this->responseDataFormat(3,'请选择科室',array()));}

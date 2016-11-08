@@ -311,7 +311,7 @@ class Doctor_center extends MY_Controller
      * 个人信息页面
      */
     public function docInfo(){
-        $select = 'YL_user.avatar,YL_user.nickname,(case when YL_user.sex=1 then "男" when YL_user.sex=2 then "女" end) as sex,(DATE_FORMAT(DATE_ADD(FROM_UNIXTIME(0),INTERVAL YL_user.birthday SECOND),"%Y-%m-%d %H:%i:%s")) as birthday,YL_user.phone as phoneF,YL_doctor_info.phoneSec,YL_hospital.name hosName,YL_doctor_offices.officeName,YL_doctor_info.degree,YL_doctor_info.summary,YL_doctor_info.goodAt,YL_doctor_info.certificateImg';
+        $select = 'YL_user.avatar,YL_user.nickname,(case when YL_user.sex=1 then "男" when YL_user.sex=2 then "女" end) as sex,(DATE_FORMAT(DATE_ADD(FROM_UNIXTIME(0),INTERVAL YL_user.birthday SECOND),"%Y-%m-%d %H:%i:%s")) as birthday,YL_user.phone as phoneF,YL_doctor_info.phoneSec,YL_hospital.name hosName,YL_doctor_offices.officeName,YL_doctor_info.degree,YL_doctor_info.summary,YL_doctor_info.goodAt,YL_doctor_info.certificateImg,YL_doctor_info.docLevel';
         $res = $this->user->getDoctorDetail(self::$currentUid,$select);
         if(!empty($res)){
             foreach($res as $key=>$value){
@@ -329,7 +329,7 @@ class Doctor_center extends MY_Controller
      * 个人信息修改页面
      */
     public function docEditInfoView(){
-        $select = 'YL_user.avatar,YL_user.nickname,(case when YL_user.sex=1 then "男" when YL_user.sex=2 then "女" end) as sex,(DATE_FORMAT(DATE_ADD(FROM_UNIXTIME(0),INTERVAL YL_user.birthday SECOND),"%Y-%m-%d %H:%i:%s")) as birthday,YL_user.phone as phoneF,YL_doctor_info.phoneSec,YL_hospital.hid as HosId,YL_doctor_offices.id as officeId,YL_doctor_info.degree,YL_doctor_info.summary,YL_doctor_info.goodAt,YL_doctor_info.certificateImg';
+        $select = 'YL_user.avatar,YL_user.nickname,(case when YL_user.sex=1 then "男" when YL_user.sex=2 then "女" end) as sex,(DATE_FORMAT(DATE_ADD(FROM_UNIXTIME(0),INTERVAL YL_user.birthday SECOND),"%Y-%m-%d %H:%i:%s")) as birthday,YL_user.phone as phoneF,YL_doctor_info.phoneSec,YL_hospital.hid as HosId,YL_doctor_offices.id as officeId,YL_doctor_info.degree,YL_doctor_info.summary,YL_doctor_info.goodAt,YL_doctor_info.certificateImg,YL_doctor_info.docLevel';
         $res = $this->user->getDoctorDetail(self::$currentUid,$select);
         if(!empty($res)){
             foreach($res as $key=>$value){
@@ -358,6 +358,7 @@ class Doctor_center extends MY_Controller
         $telFrt = trim($this->input->get_post('telFrt'));
         $telSed = trim($this->input->get_post('telSed'));
         $hosId = intval($this->input->get_post('hosId'));
+        $docLevel = trim(addslashes(intval($this->input->get_post('docLevel'))));
         if(!$hosId){$this->response($this->responseDataFormat(2,'请选择医院',array()));}
         $officeId = intval($this->input->get_post('officeId'));
         if(!$officeId){$this->response($this->responseDataFormat(3,'请选择科室',array()));}
@@ -388,6 +389,7 @@ class Doctor_center extends MY_Controller
             'sex'=>$sex,
             'phoneSec'=>$telSed,
             'hid'=>$hosId,
+            'docLevel'=>$docLevel,
             'officeId'=>$officeId,
             'degree'=>$degree,
             'summary'=>$summary,

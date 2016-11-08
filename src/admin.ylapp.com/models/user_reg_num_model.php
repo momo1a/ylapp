@@ -211,8 +211,8 @@ class User_reg_num_model extends MY_Model
                     $orderInfo['regNumPer'] = 0;
                 }
                 $docGetFee = bcmul($orderInfo['AppointFee'],$orderInfo['regNumPer']/100,2);  //  医生获得费用
-                $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
-                if(!$updateRes){
+                $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
+                if($this->db-->affected_rows() == 0){
                     $this->db->insert('money',array('uid'=>$orderInfo['docId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
                 }
                 $tradeDesc = '预约完成';

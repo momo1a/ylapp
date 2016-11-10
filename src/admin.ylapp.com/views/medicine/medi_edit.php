@@ -38,7 +38,7 @@
                             <br />
                             <input id="news-img-edit" name="thumbnail" type="file">
                         </div>
-                        <div class="col-sm-6 banner-1 banner-img">
+                        <div class="col-sm-6 banner_1 banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
                             <input id="banner-edit-1" name="banner_1" type="file">
@@ -46,12 +46,12 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-6 banner-2 banner-img">
+                        <div class="col-sm-6 banner_2 banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
                             <input id="banner-edit-2" name="banner_2" type="file">
                         </div>
-                        <div class="col-sm-6 banner-3 banner-img">
+                        <div class="col-sm-6 banner_3 banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
                             <input id="banner-edit-3" name="banner_3" type="file">
@@ -59,12 +59,12 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-6 banner-4 banner-img">
+                        <div class="col-sm-6 banner_4 banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
                             <input id="banner-edit-4" name="banner_4" type="file">
                         </div>
-                        <div class="col-sm-6 banner-5  banner-img">
+                        <div class="col-sm-6 banner_5  banner-img">
                             <span style="color: #000000">上传banner图：</span>
                             <br />
                             <input id="banner-edit-5" name="banner_5" type="file">

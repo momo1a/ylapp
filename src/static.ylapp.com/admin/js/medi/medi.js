@@ -74,12 +74,14 @@ function editMediPre(e){
         data:{mid:mid},
         dataType: 'json',
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             $('#medi_edit input[name="name"]').val(result.data.name);
             $('#medi_edit input[name="outline"]').val(result.data.outline);
             CKEDITOR.instances.contentEdit.setData(result.data.content);
             $('#medi_edit .medi-img .file-drop-zone-title ').html('<div><img  style="width: 100%;height: 100%" src="'+ IMG_SERVER + result.data.thumbnail +'"/><input type="hidden" name="origin-news-img" value="'+ result.data.thumbnail +'"/></div>');
+            //console.log(result.data.banner);
             $.each(result.data.banner,function(i,d){
+                //console.log(i);
                 $('#medi_edit .'+ i +' .file-drop-zone-title ').html('<div><img  style="width: 100%;height: 100%" src="'+ IMG_SERVER + d +'"/><input type="hidden" name="origin-news-banner" value="'+ d +'"/></div>');
             });
             $('#medi_edit #cateEdit').val(result.data.cid);

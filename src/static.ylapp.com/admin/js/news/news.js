@@ -14,9 +14,11 @@ function newsSave(){
     var nid = $('input[name="nid"]').val();
     var title = nid == 0 ? $('#news_add input[name="title"]').val() : $('#news_edit input[name="title"]').val();
     var author = nid == 0 ? $('#news_add input[name="author"]').val() : $('#news_edit input[name="author"]').val();
+    var tag = nid == 0 ? $('#news_add input[name="tag"]').val() : $('#news_edit input[name="tag"]').val();
     var content =  nid == 0 ?  CKEDITOR.instances.content.getData() : CKEDITOR.instances.contentEdit.getData();
     if(!checkInputLength(title,'资讯标题',8,50)){ return false;}
     if(!checkInputLength(author,'作者',2,20)){ return false;}
+    if(!checkInputLength(tag,'标签',2,8)){ return false;}
     if(!checkInputLength(content,'正文',20,20000)){ return false;}
     var newsImgSrc = $('.news-img img').attr('src');
     var bannerImgSrc = $('.banner-img img').attr('src');

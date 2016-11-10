@@ -47,7 +47,7 @@
                         <div class="col-sm-4">
                             <div class="input-group">
                                 <span class="input-group-addon">标签：</span>
-                                <input type="text" class="form-control" name="tag" placeholder="选填" />
+                                <input type="text" class="form-control" name="tag" id="tagEdit" />
                             </div>
                         </div>
                         <?php $position = array(

@@ -110,7 +110,7 @@ class Diagnosis_online extends MY_Controller
             'price'=>$price,
             'timeLenKey'=>$timeLenKey,
             'askTime'=>time(),
-            'state'=>1
+            'state'=>0
         );
 
         $res = $this->online_diagnosis->reDia($oid,$data);

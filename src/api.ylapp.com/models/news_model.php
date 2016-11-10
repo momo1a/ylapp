@@ -57,9 +57,12 @@ class News_model extends MY_Model
      */
     public function getClientIndexBanner($position,$select){
         $this->select($select);
-        $where = array('postPos'=>$position,'isRecmdIndex'=>1,'state'=>1);
+        $where = array('isRecmdIndex'=>1,'state'=>1);
+        $pos = array($position,0);
+        $this->or_where_in('postPos',$pos);
         $this->order_by(array('nid'=>'desc'));
         $res = $this->find_all_by($where);
+        //var_dump($this->db->last_query());
         return $res;
     }
 }

@@ -237,13 +237,13 @@ class User_reg_num_model extends MY_Model
             $this->db->insert('trade_log', $insertData); //  交易记录
         }
 
-        /*目前需求不退款*/
-        /*if($status == 4){
-            $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['userId']);
-            if(!$updateRes){
+        /*目前需求退款*/
+        if($status == 4){
+            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['userId']);
+            if($this->db->affected_rows() == 0){
                 $this->db->insert('money',array('uid'=>$orderInfo['userId'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
             }
-        }*/
+        }
 
 
         $docUserLog = array(

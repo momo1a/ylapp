@@ -215,13 +215,13 @@ class User_phone_diagnosis_model extends MY_Model
             $this->db->insert('trade_log', $insertData); //  交易记录
         }
 
-        /*需求不需要退款*/
-        /*if($status == 4){  // 预约失败 返回金额到用户钱包
-            $updateRes = $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askUid']);
-            if(!$updateRes){
+        /*需求退款到用户钱包*/
+        if($status == 4){  // 预约失败 返回金额到用户钱包
+            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askUid']);
+            if($this->db->affected_rows() == 0){
                 $this->db->insert('money',array('uid'=>$orderInfo['askUid'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
             }
-        }*/
+        }
 
         $docUserLog = array(
             'userId' => $orderInfo['askUid'],

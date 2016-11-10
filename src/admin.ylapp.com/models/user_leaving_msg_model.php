@@ -195,11 +195,11 @@ class User_leaving_msg_model extends MY_Model
         }
 
         if($status == 3){
-             // 不需要退款到用户钱包
-            /*$updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askerUid']);
-            if(!$updateRes){
+             // 退款到用户钱包
+            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askerUid']);
+            if($this->db->affected_rows() == 0){
                 $this->db->insert('money',array('uid'=>$orderInfo['askerUid'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
-            }*/
+            }
 
             $this->db->query('UPDATE YL_doctor_reply SET `state`=2 WHERE `type`=1 AND `themeId`='.$oid); // 修改医生回复表状态
         }

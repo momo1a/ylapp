@@ -163,4 +163,12 @@ SQL;
         $res = $this->update($where,$data);
         return $res;
     }
+
+    /**
+     * @param $oid
+     */
+    public function orderCancel($oid){
+        $where = array('id'=>$oid);
+        return $this->delete_where($where);
+    }
 }

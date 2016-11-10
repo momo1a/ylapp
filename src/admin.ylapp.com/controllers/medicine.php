@@ -148,6 +148,20 @@ class Medicine extends MY_Controller
     }
 
 
+    /**
+     * 删除药品
+     */
+    public function mediDel(){
+        $mid = intval($this->input->get_post('mid'));
+        $res  = $this->medi->mediDel($mid);
+        if ($res) {
+            $this->ajax_json(0, '删除成功');
+        } else {
+            $this->ajax_json(-1, '系统错误');
+        }
+    }
+
+
     /*预约管理  start*/
 
     //  预约列表

@@ -81,4 +81,12 @@ class  Medicine_model extends MY_Model
     public function mediEdit($mid,$data){
         return $this->update(array('id'=>$mid),$data);
     }
+
+    /**
+     * 删除药品
+     * @param $mid
+     */
+    public function mediDel($mid){
+        return $this->delete_where(array('id'=>$mid));
+    }
 }

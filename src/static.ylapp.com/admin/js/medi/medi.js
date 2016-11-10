@@ -122,12 +122,12 @@ function addCate(){
  $('#news_del input[name="mid"]').val(mid);
  }*/
 
-/*
-function newsDel(){
-    var mid = $('#news_del input[name="mid"]').val();
+
+function MediDel(){
+    var mid = $('#medi_del input[name="mid"]').val();
 
     $.ajax({
-        url: SITE_URL + "news/newsDel",
+        url: SITE_URL + "medicine/mediDel",
         type: "post",
         data:{mid:mid},
         dataType: 'json',
@@ -140,4 +140,4 @@ function newsDel(){
             }
         }
     });
-}*/
+}

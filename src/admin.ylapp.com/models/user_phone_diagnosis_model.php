@@ -190,6 +190,20 @@ class User_phone_diagnosis_model extends MY_Model
                 if($this->db->affected_rows() == 0){
                     $this->db->insert('money',array('uid'=>$orderInfo['docId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
                 }
+                //  trade log 表
+                $tradeLog = array(
+                    'uid' => $orderInfo['docId'] ,
+                    'userType' => 2,
+                    'tradeVolume' => $docGetFee,
+                    'tradeDesc'=> '电话问诊收入',
+                    'tradeChannel'=> 0,
+                    'dateline'=>time(),
+                    'status'=>1,
+                    'tradeType'=>4,
+                );
+
+                $this->db->insert('trade_log', $tradeLog);
+
                 $tradeDesc = '电话问诊预约完成';
                 $stat = 1;
                 break;

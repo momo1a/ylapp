@@ -215,6 +215,21 @@ class User_reg_num_model extends MY_Model
                 if($this->db->affected_rows() == 0){
                     $this->db->insert('money',array('uid'=>$orderInfo['docId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
                 }
+
+                //  trade log 表
+                $tradeLog = array(
+                    'uid' => $orderInfo['docId'] ,
+                    'userType' => 2,
+                    'tradeVolume' => $docGetFee,
+                    'tradeDesc'=> '预约挂号收入',
+                    'tradeChannel'=> 0,
+                    'dateline'=>time(),
+                    'status'=>1,
+                    'tradeType'=>6,
+                );
+
+                $this->db->insert('trade_log', $tradeLog);
+
                 $tradeDesc = '预约完成';
                 break;
             default:

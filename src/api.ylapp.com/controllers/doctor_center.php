@@ -156,6 +156,7 @@ class Doctor_center extends MY_Controller
         if(!$id){
             $this->response($this->responseDataFormat(1,'请传入留言id',array()));
         }
+        $this->checkInputLen($replyContent,'回复内容',10,300);  // 检测输入内容
         $info = $this->levemsg->getLeavMsgInfo($id,'askerUid');
 
         $data = array(
@@ -529,5 +530,19 @@ class Doctor_center extends MY_Controller
         }
         $sort = $desc == false ? SORT_ASC : SORT_DESC;
         array_multisort($fieldArr, $sort, $array);
+    }
+
+
+    /**
+     * 输入字段检测
+     * @param $field
+     * @param $content
+     * @param $min
+     * @param $max
+     */
+    protected function checkInputLen($field,$content,$min,$max){
+        if(mb_strlen($field) < $min || mb_strlen($field) > $max){
+            $this->response($this->responseDataFormat(-1,$content.'最小长度'.$min.',最大长度'.$max,array()));
+        }
     }
 }

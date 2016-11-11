@@ -80,7 +80,7 @@ class Order_model extends MY_Model
      * @return bool
      */
     public function orderCancel($oid){
-        $where = array('id'=>$oid);
+        $where = array('oid'=>$oid);
         return $this->delete_where($where);
     }
 }

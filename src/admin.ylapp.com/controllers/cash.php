@@ -53,6 +53,9 @@ class Cash extends MY_Controller
         $state = intval($_GET['state']);
         $total = $this->cash->cashCount($keyword,$userType,$state);
         $offset = intval($this->uri->segment(3));
+        if(!empty($keyword)){
+            $offset = 0;
+        }
         $list = $this->cash->cashList($keyword,$userType,$state,$limit,$offset);
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

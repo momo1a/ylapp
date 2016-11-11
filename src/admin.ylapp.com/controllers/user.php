@@ -26,6 +26,9 @@ class User extends MY_Controller
         $phone = trim(addslashes($this->input->get_post('telephone')));
         $total = $this->user->getUserCount($nickname,$phone);
         $offset = intval($this->uri->segment(3));
+        if(!empty($nickname) || !empty($phone)){
+            $offset = 0;
+        }
         $list = $this->user->getUserList($limit,$offset,$nickname,$phone,1,'YL_user.*,YL_money.amount');
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

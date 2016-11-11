@@ -39,6 +39,9 @@ class TelOnline extends MY_Controller
         }
         $total = $this->online->countAppoint($keyword,$state);
         $offset = intval($this->uri->segment(3));
+        if(!empty($keyword) || $state != -1){
+            $offset = 0;
+        }
         $list = $this->online->getAppointList($keyword,$limit,$offset,$state,'*,YL_user_phone_diagnosis.id as aid,YL_user_phone_diagnosis.ask_sex as asex,YL_user_illness_history.age as aage,YL_user_phone_diagnosis.askTime as atime,YL_user_phone_diagnosis.state as astatus');
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

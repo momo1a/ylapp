@@ -22,6 +22,9 @@ class Medicine extends MY_Controller
         $cate = intval($this->input->get_post('cate'));
         $total = $this->medi->mediCount($cate);
         $offset = intval($this->uri->segment(3));
+        if($cate != 0){
+            $offset = 0;
+        }
         $list = $this->medi->mediList($limit,$offset,'*,YL_medicine.name as mediName',$cate);
         $cates = $this->cate->get_all();
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');

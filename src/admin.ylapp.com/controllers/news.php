@@ -47,6 +47,9 @@ class News extends MY_Controller
         $post_pos = intval($this->input->get('postPos'));
         $total = $this->news->newsCount($keyword,$state,$post_pos);
         $offset = intval($this->uri->segment(3));
+        if(!empty($keyword) || $state!= -1 || $post_pos != 0){
+            $offset = 0;
+        }
         $list = $this->news->getNewsList($limit,$offset,$keyword,$state,$post_pos);
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

@@ -19,6 +19,9 @@ class Evaluate extends MY_Controller
         $state = array('0'=>'待处理','1'=>'通过','2'=>'不通过');
         $total = $this->evaluate->getCount($keyword);
         $offset = intval($this->uri->segment(3));
+        if(!empty($keyword)){
+            $offset = 0;
+        }
         $list = $this->evaluate->getList($keyword,$limit,$offset,'*,d.nickname as docName,u.nickname as userName,YL_doctor_evaluate.dateline as evaluateDate,YL_doctor_evaluate.state as estate');
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

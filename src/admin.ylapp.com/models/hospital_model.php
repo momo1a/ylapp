@@ -86,4 +86,14 @@ class Hospital_model extends MY_Model
             return true;
         }
     }
+
+    /**
+     * 编辑医院
+     * @param $hid
+     * @param $data
+     */
+    public function hospitalEdit($hid,$data){
+        $where = array('hid'=>$hid);
+        return $this->update($where,$data);
+    }
 }

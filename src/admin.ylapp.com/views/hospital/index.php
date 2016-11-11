@@ -4,6 +4,7 @@
 <?php $this->load->view('hospital/hospital_detail');?>
 <?php $this->load->view('hospital/hospital_add');?>
 <?php $this->load->view('hospital/hospital_del');?>
+<?php $this->load->view('hospital/hospital_edit');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -47,7 +48,7 @@
                                         <th><?php echo $value['address'];?></th>
                                         <th><a data-target="#hospital_detail" data-toggle="modal" hid="<?php echo $value['hid'];?>" onclick="getHospitalDetail(this);" title="医院详情">详情</a></th>
                                         <th><a data-target="#hospital_del" data-toggle="modal"  hid="<?php echo $value['hid'];?>" onclick="hospitalDelPre(this);return
-                                         false;" title="删除医院"><span class="glyphicon glyphicon-trash"></span></a></th>
+                                         false;" title="删除医院"><span class="glyphicon glyphicon-trash"></span></a>&nbsp;&nbsp;&nbsp;<a data-target="#hospital_edit" data-toggle="modal"  hid="<?php echo $value['hid'];?>" onclick="EditHospitalPre(this);return false;" title="编辑医院"><span class="glyphicon glyphicon-pencil"></span></a></th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

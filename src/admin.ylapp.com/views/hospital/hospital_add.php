@@ -8,7 +8,7 @@
         <form id="myForm" method="post" action="<?php echo site_url();?>Hospital/saveHospital" enctype="multipart/form-data">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#myForm')[0].reset()">
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">添加医院</h4>
             </div>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline " data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-outline " data-dismiss="modal" onclick="$('#myForm')[0].reset()">取消</button>
                 <button type="button" onclick="hospitalSave();return false;" class="btn btn-outline pull-left">保存</button>
             </div>
         </div>

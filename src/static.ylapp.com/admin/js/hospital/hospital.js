@@ -1,7 +1,9 @@
 $(function(){
     $("#hospital_detail .modal-dialog").css('width','400px');
     $("#hospital_add .modal-dialog").css('width','400px');
+    $("#hospital_edit .modal-dialog").css('width','400px');
     initFileInput("hospital-img", "/hospital/saveHospital",350,350);
+    initFileInput("hospital-img-edit", "/hospital/saveHospital",350,350);
 })
 /**
  * 医院详情
@@ -30,6 +32,38 @@ function getHospitalDetail(e){
         }
     });
 }
+
+/**
+ * 编辑医院之前
+ * @param e
+ * @constructor
+ */
+function EditHospitalPre(e){
+    var hid = $(e).attr('hid');
+    $('#hospital_edit input[name="hid"]').val(hid);
+    $.ajax({
+        url: SITE_URL + "hospital/getHospitalDetail",
+        type: "post",
+        data: {hid: hid},
+        dataType: 'json',
+        success: function (result) {
+            console.log(result);
+            if(result.code == 0){
+                $('#hospital_edit input[name="hos_name"]').val(result.data.name);
+                $('#hospital_edit input[name="address"]').val(result.data.address);
+                $('#hospital_edit .file-drop-zone-title ').html('<div><img  style="width: 100%;height: 100%" src="'+ IMG_SERVER + result.data.img +'"/><input type="hidden" name="origin-hospital-img" value="'+ result.data.img +'"/></div>');
+                /*content.html(
+                    '<div class="hospital-detail"><span>医院名称：</span><div>' + result.data.name + '</div></div>' +
+                    '<div class="hospital-detail"><span>医院地址：</span><div>' + result.data.address + '</div></div>' +
+                    '<div class="hospital-detail"><span>图片：</span><div style="display: block"><img src="'+ IMG_SERVER + result.data.img +'" /></div></div>'
+                );*/
+            }else{
+                //content.html('<div style="text-align: center">请求错误！请联系管理员</div>');
+            }
+        }
+    });
+}
+
 
 /**
  * 添加医院
@@ -70,6 +104,43 @@ function hospitalSave(){
     });
 }
 
+
+/**
+ * 添加医院
+ * @returns {boolean}
+ */
+function hospitalSaveEdit(){
+    var hosName = $('#hospital_edit input[name="hos_name"]').val();
+    var hid = $('#hospital_edit input[name="hid"]').val();
+    var address = $('#hospital_edit input[name="address"]').val();
+    if(!checkInputLength(hosName,'医院名称',4,50)){ return false;}
+    if(!checkInputLength(address,'地址',8,60)){ return false;}
+    var imgSrc = $('.kv-file-content img').attr('src');
+    getImageWidth(imgSrc,function(w,h){
+        if(w > 350 || h > 350){
+            alert('图片大小宽不能超过350px，高不能超过350px');
+            return false;
+        }
+    });
+    var formData = new FormData(document.getElementById('myFormEdit'));
+    $.ajax({
+        url: SITE_URL + "hospital/saveHospital",
+        type: "post",
+        data:formData,
+        contentType:false,
+        processData:false,
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+}
+
 /**
  * 删除医院之前
  * @param e
@@ -83,6 +154,7 @@ function hospitalDelPre(e){
 function hosAddPre(){
     $('#hospital_add input[name="hos_name"]').val('');
     $('#hospital_add input[name="address"]').val('');
+    $('input[name="hid"]').val('');
     $('.hidden-xs').trigger('click');
 }
 

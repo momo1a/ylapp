@@ -101,6 +101,7 @@ class User_reg_num_model extends MY_Model
         $this->join('YL_user','YL_doctor_info.uid=YL_user.uid','left');
         $this->join('YL_doctor_offices','YL_doctor_offices.id=YL_doctor_info.officeId','left');
         $this->join('YL_hospital','YL_hospital.hid=YL_doctor_info.hid','left');
+        $this->order_by(array('YL_user_reg_num.id'=>'desc'));
         $this->limit($limit);
         $this->offset($offset);
         return $this->find_all();

@@ -60,11 +60,43 @@ class User_reg_num_model extends MY_Model
      * @param $id
      */
     public function appointCancel($uid,$id){
+        /*开始事务*/
+        $this->db->trans_begin();
+        $currentTime = time();
+        $orderInfo = $this->find($id);
+        if($orderInfo['state'] != 2){  // 当前订单不是已付款的状态
+            exit(json_encode(array('code'=>-1,'msg'=>'订单状态异常','data'=>null)));
+        }
+
+        /*修改订单状态*/
         $where = array('userId'=>$uid,'id'=>$id);
-        $data = array('cancelTime'=>time(),'status'=>6);
-        $res = $this->update($where,$data);
-        /*执行成功后查询数据返回*/
-        if($res){
+        $data = array('cancelTime'=>$currentTime,'status'=>6);
+        $this->update($where,$data);
+
+        $sevenDay = 7*86400;
+        $threeDay = 3*86400;
+        $appointTime = intval($orderInfo['appointTime']);
+        $diffTime = $appointTime - $currentTime;
+        /*退款处理 -- 提前1个星期退全额,提前3天退一半,提前1天不退,退到余额*/
+        if($diffTime >= $sevenDay){ // 退全款
+            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['userId']);
+            if($this->db->affected_rows() == 0){
+                $this->db->insert('money',array('uid'=>$orderInfo['userId'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
+            }
+        }elseif($diffTime >= $threeDay && $diffTime < $sevenDay){  // 退一半
+            $backMoney = bcmul(floatval($orderInfo['price']),0.5,2);
+            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$backMoney.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['userId']);
+            if($this->db->affected_rows() == 0){
+                $this->db->insert('money',array('uid'=>$orderInfo['userId'],'amount'=>$backMoney,'updateTime'=>$currentTime));
+            }
+        }
+
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            return false;
+        } else {
+            $this->db->trans_commit();
+            /*执行成功后查询数据返回*/
             $this->select('YL_hospital.name as hosName,YL_doctor_offices.officeName,YL_user_reg_num.docName,FROM_UNIXTIME(YL_user_reg_num.cancelTime) AS cancelTime');
             $this->where(array('YL_user_reg_num.id'=>$id));
             $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user_reg_num.docId','left');
@@ -72,8 +104,6 @@ class User_reg_num_model extends MY_Model
             $this->join('YL_hospital','YL_hospital.hid=YL_doctor_info.hid','left');
             $result = $this->find_all();
             return $result;
-        }else{
-            return false;
         }
     }
 

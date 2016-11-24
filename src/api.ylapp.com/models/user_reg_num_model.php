@@ -182,4 +182,13 @@ SQL;
         return $res;
     }
 
+
+    /**
+     * @param $oid
+     */
+    public function orderCancel($oid){
+        $where = array('id'=>$oid);
+        return $this->delete_where($where);
+    }
+
 }

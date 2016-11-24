@@ -478,7 +478,33 @@ class User_center extends MY_Controller
         }
     }
 
+    // 取消订单
+    public function orderCancel(){
+        $oid = intval($this->input->get_post('oid'));
+        $orderType = intval($this->input->get_post('orderType')); // 1 留言问答 2 电话问诊 3 预约挂号 4 基因或疫苗订单
+        switch($orderType){
+            case 1:
+                $res = $this->leaving_msg->orderCancel($oid);
+                break;
+            case 2:
+                $res = $this->online_ask->orderCancel($oid);
+                break;
+            case 3:
+                $res = $this->appoint->orderCancel($oid);
+                break;
+            case 4:
+                $res = $this->order->orderCancel($oid);
+                break;
+            default :
+                $this->response($this->responseDataFormat(-1,'订单类型非法',array()));
+        }
 
+        if($res){
+            $this->response($this->responseDataFormat(0,'操作成功',array()));
+        }else{
+            $this->response($this->responseDataFormat(-1,'系统错误',array()));
+        }
+    }
 
 
 

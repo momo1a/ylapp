@@ -186,10 +186,24 @@ class User_phone_diagnosis_model extends MY_Model
                     $per = $orderInfo[$perKey];
                 }
                 $docGetFee = bcmul($orderInfo['diaFee'],$per/100,2);  //  医生获得费用
-                $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
-                if(!$updateRes){
+                $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
+                if($this->db->affected_rows() == 0){
                     $this->db->insert('money',array('uid'=>$orderInfo['docId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
                 }
+                //  trade log 表
+                $tradeLog = array(
+                    'uid' => $orderInfo['docId'] ,
+                    'userType' => 2,
+                    'tradeVolume' => $docGetFee,
+                    'tradeDesc'=> '电话问诊收入',
+                    'tradeChannel'=> 0,
+                    'dateline'=>time(),
+                    'status'=>1,
+                    'tradeType'=>4,
+                );
+
+                $this->db->insert('trade_log', $tradeLog);
+
                 $tradeDesc = '电话问诊预约完成';
                 $stat = 1;
                 break;
@@ -215,13 +229,13 @@ class User_phone_diagnosis_model extends MY_Model
             $this->db->insert('trade_log', $insertData); //  交易记录
         }
 
-        /*需求不需要退款*/
-        /*if($status == 4){  // 预约失败 返回金额到用户钱包
-            $updateRes = $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askUid']);
-            if(!$updateRes){
+        /*需求退款到用户钱包*/
+        if($status == 4){  // 预约失败 返回金额到用户钱包
+            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askUid']);
+            if($this->db->affected_rows() == 0){
                 $this->db->insert('money',array('uid'=>$orderInfo['askUid'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
             }
-        }*/
+        }
 
         $docUserLog = array(
             'userId' => $orderInfo['askUid'],

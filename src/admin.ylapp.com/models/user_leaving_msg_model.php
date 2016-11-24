@@ -195,9 +195,9 @@ class User_leaving_msg_model extends MY_Model
         }
 
         if($status == 3){
-             // 不需要退款到用户钱包
-            /*$updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askerUid']);
-            if(!$updateRes){
+             // 退款到用户钱包
+           /* $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askerUid']);
+            if($this->db->affected_rows() == 0){
                 $this->db->insert('money',array('uid'=>$orderInfo['askerUid'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
             }*/
 
@@ -214,10 +214,24 @@ class User_leaving_msg_model extends MY_Model
                 $orderInfo['leavMsgPer'] = 0;
             }
             $docGetFee = bcmul($orderInfo['leavingFee'],$orderInfo['leavMsgPer']/100,2);  //  医生获得费用
-            $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
-            if(!$updateRes){
+            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
+            if($this->db->affected_rows() == 0){
                 $this->db->insert('money',array('uid'=>$orderInfo['docId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
             }
+
+            //  trade log 表
+            $tradeLog = array(
+                'uid' => $orderInfo['docId'] ,
+                'userType' => 2,
+                'tradeVolume' => $docGetFee,
+                'tradeDesc'=> '留言问答收入',
+                'tradeChannel'=> 0,
+                'dateline'=>time(),
+                'status'=>1,
+                'tradeType'=>5,
+            );
+
+            $this->db->insert('trade_log', $tradeLog);
 
         }
 

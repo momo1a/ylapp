@@ -22,6 +22,9 @@ class Medicine extends MY_Controller
         $cate = intval($this->input->get_post('cate'));
         $total = $this->medi->mediCount($cate);
         $offset = intval($this->uri->segment(3));
+        if($cate != 0){
+            $offset = 0;
+        }
         $list = $this->medi->mediList($limit,$offset,'*,YL_medicine.name as mediName',$cate);
         $cates = $this->cate->get_all();
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
@@ -142,6 +145,20 @@ class Medicine extends MY_Controller
         $res = $this->cate->add_cate($cateName);
         if ($res) {
             $this->ajax_json(0, '操作成功');
+        } else {
+            $this->ajax_json(-1, '系统错误');
+        }
+    }
+
+
+    /**
+     * 删除药品
+     */
+    public function mediDel(){
+        $mid = intval($this->input->get_post('mid'));
+        $res  = $this->medi->mediDel($mid);
+        if ($res) {
+            $this->ajax_json(0, '删除成功');
         } else {
             $this->ajax_json(-1, '系统错误');
         }

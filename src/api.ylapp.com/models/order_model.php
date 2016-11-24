@@ -73,4 +73,14 @@ class Order_model extends MY_Model
     public function getOrderById($oid){
         return $this->find_by(array('oid'=>$oid));
     }
+
+    /**
+     * 取消订单
+     * @param $oid
+     * @return bool
+     */
+    public function orderCancel($oid){
+        $where = array('oid'=>$oid);
+        return $this->delete_where($where);
+    }
 }

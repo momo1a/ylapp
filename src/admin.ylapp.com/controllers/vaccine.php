@@ -18,6 +18,9 @@ class Vaccine extends MY_Controller
         $keyword = addslashes(trim($this->input->get_post('keyword')));
         $total = $this->vaccine->viccinumCount($keyword);
         $offset = intval($this->uri->segment(3));
+        if(!empty($keyword)){
+            $offset = 0;
+        }
         $list = $this->vaccine->getList($keyword,$limit,$offset);
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

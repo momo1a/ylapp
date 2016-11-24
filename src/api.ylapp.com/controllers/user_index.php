@@ -59,7 +59,7 @@ class User_index extends MY_Controller
 
     public function getIndexNewsList(){
         $this->load->model('news_model','news');
-        $res = $this->news->getNewsList(6,1,'YL_news.nid,YL_news.title,YL_news.thumbnail,YL_news.author,FROM_UNIXTIME(YL_news.createTime) as createTime,YL_news_category.name as cateName',true);  // 默认获取6条发布在用户端的资讯
+        $res = $this->news->getNewsList(6,1,'YL_news.nid,YL_news.title,YL_news.thumbnail,YL_news.author,FROM_UNIXTIME(YL_news.createTime) as createTime,YL_news_category.name as cateName,YL_news.tag',true);  // 默认获取6条发布在用户端的资讯
         return $res;
         //$this->response($this->responseDataFormat(0,'请求成功',$res));
     }

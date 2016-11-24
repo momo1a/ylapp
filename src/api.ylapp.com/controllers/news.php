@@ -29,7 +29,7 @@ class News extends MY_Controller
         $limit = $limit == 0 ? 10 : $limit;
         $offset = intval($this->input->get_post('offset'));
         $keyword = addslashes(trim($this->input->get_post('keyword')));
-        $res = $this->news->getNewsList($limit,1,'YL_news.nid,YL_news.thumbnail,YL_news.title,YL_news.author,FROM_UNIXTIME(YL_news.createTime) AS createTime,YL_news_category.name AS newsCate',false,$offset,$keyword);
+        $res = $this->news->getNewsList($limit,1,'YL_news.nid,YL_news.thumbnail,YL_news.title,YL_news.author,FROM_UNIXTIME(YL_news.createTime) AS createTime,YL_news_category.name AS newsCate,YL_news.tag',false,$offset,$keyword);
         //var_dump($this->db->last_query());
         $this->response($this->responseDataFormat(0,'请求成功',array('news'=>$res,'imgServer'=>self::$_imgServer)));
 
@@ -43,7 +43,7 @@ class News extends MY_Controller
         $limit = intval($this->input->get_post('limit'));
         $limit = $limit == 0 ? 10 : $limit;
         $offset = intval($this->input->get_post('offset'));
-        $res = $this->news->getNewsList($limit,2,'YL_news.nid,YL_news.thumbnail,YL_news.title,YL_news.author,FROM_UNIXTIME(YL_news.createTime) AS createTime,YL_news_category.name AS newsCate',false,$offset,$keyword);
+        $res = $this->news->getNewsList($limit,2,'YL_news.nid,YL_news.thumbnail,YL_news.title,YL_news.author,FROM_UNIXTIME(YL_news.createTime) AS createTime,YL_news_category.name AS newsCate,YL_news.tag',false,$offset,$keyword);
         $this->response($this->responseDataFormat(0,'请求成功',array('news'=>$res,'imgServer'=>self::$_imgServer)));
     }
 

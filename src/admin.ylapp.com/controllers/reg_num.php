@@ -38,6 +38,9 @@ class Reg_num extends MY_Controller
         }
         $total = $this->reg->countAppoint($keyword,$state);
         $offset = intval($this->uri->segment(3));
+        if(!empty($keyword) || $state != -1){
+            $offset = 0;
+        }
         $list = $this->reg->getAppointList($keyword,$limit,$offset,$state,'*,YL_user_reg_num.id as aid,YL_user_reg_num.sex as asex,YL_user_reg_num.dateline as atime,YL_user_reg_num.status as astatus');
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

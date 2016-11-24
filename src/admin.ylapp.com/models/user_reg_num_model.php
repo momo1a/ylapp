@@ -101,6 +101,7 @@ class User_reg_num_model extends MY_Model
         $this->join('YL_user','YL_doctor_info.uid=YL_user.uid','left');
         $this->join('YL_doctor_offices','YL_doctor_offices.id=YL_doctor_info.officeId','left');
         $this->join('YL_hospital','YL_hospital.hid=YL_doctor_info.hid','left');
+        $this->order_by(array('YL_user_reg_num.id'=>'desc'));
         $this->limit($limit);
         $this->offset($offset);
         return $this->find_all();
@@ -211,10 +212,25 @@ class User_reg_num_model extends MY_Model
                     $orderInfo['regNumPer'] = 0;
                 }
                 $docGetFee = bcmul($orderInfo['AppointFee'],$orderInfo['regNumPer']/100,2);  //  医生获得费用
-                $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
-                if(!$updateRes){
+                $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
+                if($this->db->affected_rows() == 0){
                     $this->db->insert('money',array('uid'=>$orderInfo['docId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
                 }
+
+                //  trade log 表
+                $tradeLog = array(
+                    'uid' => $orderInfo['docId'] ,
+                    'userType' => 2,
+                    'tradeVolume' => $docGetFee,
+                    'tradeDesc'=> '预约挂号收入',
+                    'tradeChannel'=> 0,
+                    'dateline'=>time(),
+                    'status'=>1,
+                    'tradeType'=>6,
+                );
+
+                $this->db->insert('trade_log', $tradeLog);
+
                 $tradeDesc = '预约完成';
                 break;
             default:
@@ -237,13 +253,13 @@ class User_reg_num_model extends MY_Model
             $this->db->insert('trade_log', $insertData); //  交易记录
         }
 
-        /*目前需求不退款*/
-        /*if($status == 4){
-            $updateRes =$this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['userId']);
-            if(!$updateRes){
+        /*目前需求退款*/
+        if($status == 4){
+            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['userId']);
+            if($this->db->affected_rows() == 0){
                 $this->db->insert('money',array('uid'=>$orderInfo['userId'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
             }
-        }*/
+        }
 
 
         $docUserLog = array(

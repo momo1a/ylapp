@@ -4,7 +4,7 @@
 <?php $this->load->view('medicine/medi_add');?>
 <?php $this->load->view('medicine/cate_add');?>
 <?php $this->load->view('medicine/medi_edit');?>
-<?php /*$this->load->view('gene/package_del');*/?>
+<?php $this->load->view('medicine/medi_del');?>
 
 
 <!-- Content Wrapper. Contains page content -->
@@ -57,8 +57,8 @@
                                         <th><?php echo $value['mediName'];?></th>
                                         <th><?php echo $value['outline'];?></th>
                                         <th>
-                                            <a data-target="#medi_edit" data-toggle="modal"  mid="<?php echo $value['id'];?>" onclick="editMediPre(this);return false;" title="编辑药品"><span class="glyphicon glyphicon-pencil"></span></a><!--
-                                            &nbsp;&nbsp;<a data-target="#package_del" data-toggle="modal"  pid="<?php /*echo $value['id'];*/?>" onclick="packageDelPre(this);return false;" title="删除套餐"><span class="glyphicon glyphicon-trash"></span></a>-->
+                                            <a data-target="#medi_edit" data-toggle="modal"  mid="<?php echo $value['id'];?>" onclick="editMediPre(this);return false;" title="编辑药品"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            &nbsp;&nbsp;<a data-target="#medi_del" data-toggle="modal"  mid="<?php echo $value['id'];?>" onclick="$('#medi_del input[name=\'mid\']').val(<?php echo $value['id'];?>);return false;" title="删除药品"><span class="glyphicon glyphicon-trash"></span></a>
                                             <!--&nbsp;&nbsp;<a href="#" nid="<?php /*echo $value['nid'];*/?>"   title="评论管理"><span class="glyphicon glyphicon-list"></span></a>-->
                                         </th>
                                     </tr>

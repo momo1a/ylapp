@@ -59,6 +59,10 @@ class LeavMsg extends MY_Controller
         }
         $total = $this->leaving->msgCount($keyword,$isReply,$state);
         $offset = intval($this->uri->segment(3));
+
+        if(!empty($keyword) || $state != -1 || $isReply != -1){
+            $offset = 0;
+        }
         $list = $this->leaving->msgList($keyword,$isReply,$state,$limit,$offset,'*,YL_user_leaving_msg.id as aid,YL_user_illness_history.sex as asex,YL_user_illness_history.age as aage,YL_user_leaving_msg.askTime as atime,YL_user_leaving_msg.state as astatus,doc.nickname as dname,doc.phone as dphone,YL_user_leaving_msg.img as msgImg');
         if(!empty($list)){
             foreach($list as $key => $value){

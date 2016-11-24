@@ -48,6 +48,9 @@ class Order extends MY_Controller
         $state = intval($_GET['state']);
         $total = $this->order->orderCount($keyword,$state,$type);
         $offset = intval($this->uri->segment(3));
+        if(!empty($keyword) || $state!= 0 || $type != 0){
+            $offset = 0;
+        }
         $list = $this->order->orderList($limit,$offset,$keyword,$state,$type,'*,YL_order.status as orderStatus');
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

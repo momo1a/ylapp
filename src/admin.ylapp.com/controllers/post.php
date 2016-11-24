@@ -37,6 +37,9 @@ class Post extends MY_Controller
         $state = intval($_GET['state']);
         $total = $this->post->postCount($keyword,$state);
         $offset = intval($this->uri->segment(3));
+        if(!empty($keyword) || $state != -1){
+            $offset = 0;
+        }
         $list = $this->post->postList($keyword,$state,$limit,$offset);
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
@@ -117,6 +120,9 @@ class Post extends MY_Controller
         $state = intval($_GET['state']);
         $total = $this->comment->commentCount($keyword,$state);
         $offset = intval($this->uri->segment(3));
+        if(!empty($keyword) || $state != -1){
+            $offset = 0;
+        }
         $list = $this->comment->commentList($keyword,$state,$limit,$offset);
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

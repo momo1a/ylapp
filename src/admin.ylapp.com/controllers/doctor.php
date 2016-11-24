@@ -42,6 +42,9 @@ class Doctor extends MY_Controller{
         }
         $total = $this->user->getUserCount($nickname,$phone,2,$state);
         $offset = intval($this->uri->segment(3));
+        if(!empty($nickname) || !empty($phone) || $state != -1){
+            $offset = 0;
+        }
         $list = $this->user->getUserList($limit,$offset,$nickname,$phone,2,'YL_user.*,YL_money.amount,YL_doctor_info.state as doctorState,YL_doctor_info.isDude',$state);
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

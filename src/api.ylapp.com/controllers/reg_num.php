@@ -110,7 +110,7 @@ class Reg_num extends MY_Controller
             'illnessId'=>$illId,
             'userRemark'=>$remark,
             'dateline'=>time(),
-            'status'=>2
+            'status'=>0
         );
 
         $res = $this->user_reg_num->reAppoint($oid,$data);

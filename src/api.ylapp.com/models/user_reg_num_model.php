@@ -64,7 +64,7 @@ class User_reg_num_model extends MY_Model
         $this->db->trans_begin();
         $currentTime = time();
         $orderInfo = $this->find($id);
-        if($orderInfo['state'] != 2){  // 当前订单不是已付款的状态
+        if($orderInfo['status'] != 2){  // 当前订单不是已付款的状态
             exit(json_encode(array('code'=>-1,'msg'=>'订单状态异常','data'=>null)));
         }
 

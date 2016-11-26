@@ -223,7 +223,7 @@ class User_phone_diagnosis_model extends MY_Model
             'tradeChannel'=>0,
             'dateline'=>$currentTime,
             'status'=>1,
-            'tradeType'=>5
+            'tradeType'=>7
         );
         // 成功状态已在付款后记录
         if($status == 2) {

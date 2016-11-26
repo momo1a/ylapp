@@ -226,7 +226,7 @@ class User_reg_num_model extends MY_Model
                     'tradeChannel'=> 0,
                     'dateline'=>time(),
                     'status'=>1,
-                    'tradeType'=>6,
+                    'tradeType'=>8,
                 );
 
                 $this->db->insert('trade_log', $tradeLog);

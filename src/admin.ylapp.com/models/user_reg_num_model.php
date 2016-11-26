@@ -203,7 +203,7 @@ class User_reg_num_model extends MY_Model
                 $stat = 1;
                 break;
             case 4:
-                $tradeDesc = '预约失败';
+                $tradeDesc = '预约挂号退款';
                 $stat = 2;
                 break;
             case 5:
@@ -244,12 +244,12 @@ class User_reg_num_model extends MY_Model
             'tradeDesc'=>$tradeDesc,
             'tradeChannel'=>0,
             'dateline'=>$currentTime,
-            'status'=>$stat,
+            'status'=>1,
             'tradeType'=>7
         );
 
-
-        if($status == 4 || $status == 3) {
+        // 成功状态已经在付款时候记录
+        if($status == 4) {
             $this->db->insert('trade_log', $insertData); //  交易记录
         }
 

@@ -37,7 +37,7 @@ class Post_model extends MY_Model
                 $str = 'ORDER BY `postTime` DESC ';
                 break;
             case 1:
-                $str =' AND postTime >= UNIX_TIMESTAMP(curdate()) ORDER BY clickCount DESC ';
+                $str =' AND postTime >= UNIX_TIMESTAMP(date_sub(curdate(),interval WEEKDAY(curdate()) day)) ORDER BY clickCount DESC ';
                 break;
             default:
                 break;

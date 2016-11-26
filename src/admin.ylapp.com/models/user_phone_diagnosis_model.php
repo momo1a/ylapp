@@ -208,7 +208,7 @@ class User_phone_diagnosis_model extends MY_Model
                 $stat = 1;
                 break;
             case 4:
-                $tradeDesc = '电话问诊预约失败';
+                $tradeDesc = '电话问诊退款';
                 $stat = 2;
                 break;
             default:
@@ -222,10 +222,11 @@ class User_phone_diagnosis_model extends MY_Model
             'tradeDesc'=>$tradeDesc,
             'tradeChannel'=>0,
             'dateline'=>$currentTime,
-            'status'=>$stat,
+            'status'=>1,
             'tradeType'=>5
         );
-        if($status == 2 || $status == 3) {
+        // 成功状态已在付款后记录
+        if($status == 2) {
             $this->db->insert('trade_log', $insertData); //  交易记录
         }
 

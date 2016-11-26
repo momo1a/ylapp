@@ -190,7 +190,8 @@ class User_leaving_msg_model extends MY_Model
             'status'=>$stat,
             'tradeType'=>5
         );
-        if($status == 4 || $status == 3) {
+        // 成功在付款后记录
+        if($status == 3) {
             $this->db->insert('trade_log', $insertData); //  交易记录
         }
 

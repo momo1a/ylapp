@@ -36,6 +36,7 @@ class Money_model extends MY_Model
         return $res;
     }
 
+
     /**
      * 订单支付
      * @param $uid
@@ -44,7 +45,7 @@ class Money_model extends MY_Model
      * @param $orderType
      */
     public function orderPay($uid,$amount,$oid,$orderType){
-        // ２疫苗接种支付，３基因检测支付，４电话问诊支付，５在线问答支付，６预约挂号支付'
+        // ２疫苗接种支付，３基因检测支付，４电话问诊支付，５在线问答支付，６预约挂号支付
         $this->db->trans_begin();
 
         $this->updateUserMoney($uid,$amount);   //  扣除用户费用
@@ -55,6 +56,7 @@ class Money_model extends MY_Model
             'tradeVolume' => $amount,
             'tradeChannel' => 0,
             'dateline' => time(),
+
         );
 
         switch(intval($orderType)){
@@ -62,28 +64,28 @@ class Money_model extends MY_Model
             case 3 :
                 $this->db->query('UPDATE YL_order SET `status`=2 WHERE oid='.intval($oid));  // 修改订单状态
                 $tradeData['tradeDesc'] =  $orderType == 2 ? '疫苗付款' : '基因付款';
-                $tradeData['tradeType'] =  $orderType == 2 ?  3  : 4;
+                $tradeData['tradeType'] =  $orderType == 2 ?  2  : 3;
+                $tradeData['status'] = 1;
                 $this->db->insert('trade_log',$tradeData);
                 $tradeData['oid'] = $oid;
-                $tradeData['status'] = 1;
                 $this->db->insert('pay',$tradeData);  // 支付表
                 break;
             case 4 :  // 电话问诊
                 $this->db->query('UPDATE YL_user_phone_diagnosis SET `state`=1 WHERE id='.intval($oid));
                 $tradeData['tradeDesc'] = '电话问诊付款';
-                $tradeData['tradeType'] = 5;
+                $tradeData['tradeType'] = 4;
+                $tradeData['status'] = 1;
                 $this->db->insert('trade_log',$tradeData);
                 $tradeData['oid'] = $oid;
-                $tradeData['status'] = 1;
                 $this->db->insert('pay',$tradeData);  // 支付表
                 break;
             case 5 :  // 留言问诊
                 $this->db->query('UPDATE YL_user_leaving_msg SET `state`=2 WHERE id='.intval($oid));
-                $tradeData['tradeDesc'] = '留言问诊付款';
-                $tradeData['tradeType'] = 6;
+                $tradeData['tradeDesc'] = '在线问答付款';
+                $tradeData['tradeType'] = 5;
+                $tradeData['status'] = 1;
                 $this->db->insert('trade_log',$tradeData);
                 $tradeData['oid'] = $oid;
-                $tradeData['status'] = 1;
                 $this->db->insert('pay',$tradeData);  // 支付表
                 break;
 
@@ -91,10 +93,10 @@ class Money_model extends MY_Model
 
                 $this->db->query('UPDATE YL_user_reg_num SET `status`=2 WHERE id='.intval($oid));
                 $tradeData['tradeDesc'] = '预约挂号付款';
-                $tradeData['tradeType'] = 7;
+                $tradeData['tradeType'] = 6;
+                $tradeData['status'] = 1;
                 $this->db->insert('trade_log',$tradeData);
                 $tradeData['oid'] = $oid;
-                $tradeData['status'] = 1;
                 $this->db->insert('pay',$tradeData);  // 支付表
                 break;
             default :

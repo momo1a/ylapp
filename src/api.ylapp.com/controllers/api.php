@@ -243,10 +243,10 @@ class Api extends MY_Controller
         $pwd = trim($this->input->post('pwd'));    // 密码
         $rePwd = trim($this->input->post('rePwd')); // 确认密码
         if(strlen($pwd) < 6){
-            $this->response($this->responseDataFormat(1,'密码不的小于6位',array()));
+            $this->response($this->responseDataFormat(1,'密码不能小于6位',array()));
         }
         if(is_numeric($pwd)){
-            $this->response($this->responseDataFormat(2,'密码不得是纯数字',array()));
+            $this->response($this->responseDataFormat(2,'密码不能是纯数字',array()));
         }
         if($pwd != $rePwd){
             $this->response($this->responseDataFormat(3,'第一次密码跟第二次密码不一致',array()));
@@ -275,10 +275,10 @@ class Api extends MY_Controller
         $flag = $flag ? true : false;
         if(!$flag) {
             if (strlen($pwd) < 6) {
-                $this->response($this->responseDataFormat(1, '密码不的小于6位', array()));
+                $this->response($this->responseDataFormat(1, '密码不能小于6位', array()));
             }
             if (is_numeric($pwd)) {
-                $this->response($this->responseDataFormat(2, '密码不得是纯数字', array()));
+                $this->response($this->responseDataFormat(2, '密码不能是纯数字', array()));
             }
         }else{
             if (strlen($pwd) != 6) {

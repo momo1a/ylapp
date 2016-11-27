@@ -305,7 +305,7 @@ class Api extends MY_Controller
      * 发送手机验证码接口
      */
     public function sendIdentifyCode(){
-        $timeLen = 60;
+        $timeLen = 300;
         $mobile = trim($this->input->post('mobile'));   //手机号
         $flag = intval($this->input->get_post('flag')); //忘记密码发送验证码判断标识
         if($flag === 1){

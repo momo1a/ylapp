@@ -43,7 +43,7 @@ class Post_model extends MY_Model
                 break;
         }
         $sql = <<<SQL
-SELECT  a.`id`,a.`isAnonymous`,b.`id` AS collId,`postTitle`,`postNickname`,FROM_UNIXTIME(`postTime`) AS postDate,LEFT(`postContent`,24) AS content,(SELECT avatar FROM YL_user WHERE `uid`=a.postUid) AS avatar,(SELECT COUNT(1) FROM YL_post_click_like WHERE `postId`=a.id) AS clickCount,(SELECT COUNT(1) FROM YL_post_comment WHERE state=1 AND postId=a.id) AS commentCount FROM YL_post AS a LEFT JOIN YL_post_click_like AS b ON a.id=b.postId  AND b.uid={$uid}  WHERE state=1 {$str} LIMIT {$offset},{$limit};
+SELECT  a.`id`,a.`isAnonymous`,b.`id` AS collId,`postTitle`,`postNickname`,FROM_UNIXTIME(`postTime`) AS postDate,LEFT(`postContent`,24) AS content,(SELECT avatar FROM YL_user WHERE `uid`=a.postUid) AS avatar,`clickLikeCount` AS clickCount,(SELECT COUNT(1) FROM YL_post_comment WHERE state=1 AND postId=a.id) AS commentCount FROM YL_post AS a LEFT JOIN YL_post_click_like AS b ON a.id=b.postId  AND b.uid={$uid}  WHERE state=1 {$str} LIMIT {$offset},{$limit};
 SQL;
         $query = $this->db->query($sql);
         $res = $query->result_array();

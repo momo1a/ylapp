@@ -30,8 +30,20 @@ class Post_click_like_model extends MY_Model
      * @param $uid
      */
     public function clickLike($postId,$uid){
-        $res = $this->insert(array('postId' => $postId, 'uid' => $uid, 'clickTime' => time()));
-        return $res;
+        /*开始事务*/
+        $this->db->trans_begin();
+        $this->insert(array('postId' => $postId, 'uid' => $uid, 'clickTime' => time()));
+        $this->db->query('UPDATE `YL_post` SET `clickLikeCount`=`clickLikeCount`+1 WHERE `id`='.$postId);
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
+        }
     }
 
 
@@ -42,9 +54,21 @@ class Post_click_like_model extends MY_Model
      * @return bool
      */
     public function cancelLike($postId,$uid){
+        $this->db->trans_begin();
         $where = array('postId'=>$postId,'uid'=>$uid);
-        $res = $this->delete_where($where);
-        return $res;
+        $this->delete_where($where);
+        $this->db->query('UPDATE `YL_post` SET `clickLikeCount`=`clickLikeCount`-1 WHERE `id`='.$postId);
+        if ($this->db->trans_status() === FALSE)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
+        }
+
     }
 
 

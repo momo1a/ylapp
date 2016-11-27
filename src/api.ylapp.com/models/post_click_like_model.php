@@ -57,7 +57,7 @@ class Post_click_like_model extends MY_Model
         $this->db->trans_begin();
         $where = array('postId'=>$postId,'uid'=>$uid);
         $this->delete_where($where);
-        $this->db->query('UPDATE `YL_post` SET `clickLikeCount`=`clickLikeCount`-1 WHERE `id`='.$postId);
+        $this->db->query('UPDATE  `YL_post` SET `clickLikeCount` = IF(`clickLikeCount` = 0, `clickLikeCount`, `clickLikeCount`-1) WHERE id='.$postId);
         if ($this->db->trans_status() === FALSE)
         {
             $this->db->trans_rollback();

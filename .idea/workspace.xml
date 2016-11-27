@@ -7,9 +7,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/memcached.php" afterPath="$PROJECT_DIR$/src/common/config/development/memcached.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/models/post_click_like_model.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/models/post_click_like_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/models/post_model.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/models/post_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ylapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,8 +41,8 @@
       <file leaf-file-name="money_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/money_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.7777777" vertical-offset="1421" max-vertical-offset="3105">
-              <caret line="68" column="58" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
+            <state vertical-scroll-proportion="-5.5277777" vertical-offset="1745" max-vertical-offset="3105">
+              <caret line="77" column="46" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
               <folding>
                 <marker date="1480163891557" expanded="true" signature="647:731" placeholder="UPDATE YL_mo..." />
                 <marker date="1480163891557" expanded="true" signature="1401:1442" placeholder="UPDATE YL_or..." />
@@ -59,18 +57,18 @@
       <file leaf-file-name="post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.0147057" vertical-offset="1374" max-vertical-offset="4104">
-              <caret line="66" column="36" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="36" />
+            <state vertical-scroll-proportion="-2.4264705" vertical-offset="1860" max-vertical-offset="4104">
+              <caret line="80" column="39" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post_model.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="post_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/post_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60487807" vertical-offset="611" max-vertical-offset="2241">
-              <caret line="45" column="224" selection-start-line="45" selection-start-column="224" selection-end-line="45" selection-end-column="224" />
+            <state vertical-scroll-proportion="-3.6176472" vertical-offset="1239" max-vertical-offset="2241">
+              <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
               <folding>
                 <marker date="1480224752360" expanded="true" signature="944:1393" placeholder="SELECT a.`id..." />
               </folding>
@@ -78,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post_click_like_model.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="post_click_like_model.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/post_click_like_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.4117646" vertical-offset="1131" max-vertical-offset="2268">
-              <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.34146342" vertical-offset="1178" max-vertical-offset="2268">
+              <caret line="59" column="140" selection-start-line="59" selection-start-column="140" selection-end-line="59" selection-end-column="140" />
               <folding />
             </state>
           </provider>
@@ -91,7 +89,7 @@
       <file leaf-file-name="user_phone_diagnosis_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_phone_diagnosis_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6075" max-vertical-offset="8154">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="6075" max-vertical-offset="8235">
               <caret line="225" column="26" selection-start-line="225" selection-start-column="26" selection-end-line="225" selection-end-column="26" />
               <folding>
                 <marker date="1480166226136" expanded="true" signature="5873:5968" placeholder="UPDATE YL_mo..." />
@@ -104,7 +102,7 @@
       <file leaf-file-name="user_reg_num_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_reg_num_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6156" max-vertical-offset="8505">
+            <state vertical-scroll-proportion="2.25" vertical-offset="6237" max-vertical-offset="8586">
               <caret line="228" column="34" selection-start-line="228" selection-start-column="34" selection-end-line="228" selection-end-column="34" />
               <folding>
                 <marker date="1480166260943" expanded="true" signature="6561:6656" placeholder="UPDATE YL_mo..." />
@@ -215,8 +213,8 @@
         <option value="$PROJECT_DIR$/src/api.ylapp.com/core/MY_Controller.php" />
         <option value="$PROJECT_DIR$/docs/sql/table/trade_log.sql" />
         <option value="$PROJECT_DIR$/docs/sql/table/pay.sql" />
-        <option value="$PROJECT_DIR$/src/api.ylapp.com/models/post_click_like_model.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/models/post_model.php" />
+        <option value="$PROJECT_DIR$/src/api.ylapp.com/models/post_click_like_model.php" />
       </list>
     </option>
   </component>
@@ -738,28 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_phone_diagnosis_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6075" max-vertical-offset="8154">
-          <caret line="225" column="26" selection-start-line="225" selection-start-column="26" selection-end-line="225" selection-end-column="26" />
-          <folding>
-            <marker date="1480166226136" expanded="true" signature="5873:5968" placeholder="UPDATE YL_mo..." />
-            <marker date="1480166226136" expanded="true" signature="7493:7597" placeholder="UPDATE YL_mo..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_reg_num_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6156" max-vertical-offset="8505">
-          <caret line="228" column="34" selection-start-line="228" selection-start-column="34" selection-end-line="228" selection-end-column="34" />
-          <folding>
-            <marker date="1480166260943" expanded="true" signature="6561:6656" placeholder="UPDATE YL_mo..." />
-            <marker date="1480166260943" expanded="true" signature="8023:8127" placeholder="UPDATE YL_mo..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/sql/table/trade_log.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35441527" vertical-offset="0" max-vertical-offset="838">
@@ -798,14 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/post_click_like_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4117646" vertical-offset="1131" max-vertical-offset="2268">
-          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/pay_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.97317076" vertical-offset="2064" max-vertical-offset="3402">
@@ -822,8 +790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/money_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7777777" vertical-offset="1421" max-vertical-offset="3105">
-          <caret line="68" column="58" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
+        <state vertical-scroll-proportion="-5.5277777" vertical-offset="1745" max-vertical-offset="3105">
+          <caret line="77" column="46" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
           <folding>
             <marker date="1480163891557" expanded="true" signature="647:731" placeholder="UPDATE YL_mo..." />
             <marker date="1480163891557" expanded="true" signature="1401:1442" placeholder="UPDATE YL_or..." />
@@ -834,21 +802,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/post_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6176472" vertical-offset="1239" max-vertical-offset="2241">
+          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+          <folding>
+            <marker date="1480224752360" expanded="true" signature="944:1393" placeholder="SELECT a.`id..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/post.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0147057" vertical-offset="1374" max-vertical-offset="4104">
-          <caret line="66" column="36" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="36" />
+        <state vertical-scroll-proportion="-2.4264705" vertical-offset="1860" max-vertical-offset="4104">
+          <caret line="80" column="39" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/post_model.php">
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_phone_diagnosis_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60487807" vertical-offset="611" max-vertical-offset="2241">
-          <caret line="45" column="224" selection-start-line="45" selection-start-column="224" selection-end-line="45" selection-end-column="224" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6075" max-vertical-offset="8154">
+          <caret line="225" column="26" selection-start-line="225" selection-start-column="26" selection-end-line="225" selection-end-column="26" />
           <folding>
-            <marker date="1480224752360" expanded="true" signature="944:1393" placeholder="SELECT a.`id..." />
+            <marker date="1480166226136" expanded="true" signature="5873:5968" placeholder="UPDATE YL_mo..." />
+            <marker date="1480166226136" expanded="true" signature="7493:7597" placeholder="UPDATE YL_mo..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/user_reg_num_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.25" vertical-offset="6237" max-vertical-offset="8586">
+          <caret line="228" column="34" selection-start-line="228" selection-start-column="34" selection-end-line="228" selection-end-column="34" />
+          <folding>
+            <marker date="1480166260943" expanded="true" signature="6561:6656" placeholder="UPDATE YL_mo..." />
+            <marker date="1480166260943" expanded="true" signature="8023:8127" placeholder="UPDATE YL_mo..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/post_click_like_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34146342" vertical-offset="1178" max-vertical-offset="2268">
+          <caret line="59" column="140" selection-start-line="59" selection-start-column="140" selection-end-line="59" selection-end-column="140" />
+          <folding />
         </state>
       </provider>
     </entry>

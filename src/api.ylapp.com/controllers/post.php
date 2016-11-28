@@ -77,14 +77,14 @@ class Post extends MY_Controller
         $offset = intval($this->input->get_post('offset'));
         $limit = $limit == 0 ? 10 : $limit;
         $postId = intval($this->input->get_post('postId'));
-        $select = 'YL_user.avatar,YL_post.postTitle,YL_post.postNickname,FROM_UNIXTIME(YL_post.postTime) AS postDate,YL_post.postContent,YL_post.isAnonymous,YL_post.img';
+        $select = 'YL_user.avatar,YL_post.postTitle,YL_post.postNickname,FROM_UNIXTIME(YL_post.postTime) AS postDate,YL_post.postContent,YL_post.isAnonymous,YL_post.img,YL_post.clickLikeCount';
         $post = $this->post->postDetail($postId,$select);
         if(!empty($post)){
             foreach($post as $key=>$value){
                 $post[$key]['img'] = json_decode($post[$key]['img'],true);
             }
         }
-        $likeCount = $this->click_like->getCountByPostId($postId);
+        $likeCount = $post[0]['clickLikeCount'];
         $isClickLike = $this->click_like->getCommentByUidAndPostId(self::$currentUid,$postId);  //当前用户是否已点赞
         $isClickLike = $isClickLike ? '已点赞' : '未点赞';
         $commentSelect = 'YL_post_comment.id,YL_user.avatar,YL_post_comment.recmdNickname,FROM_UNIXTIME(YL_post_comment.recmdTime) AS recmdDate,YL_post_comment.recmdContent';

@@ -249,7 +249,7 @@ class MY_Controller extends CI_Controller
      * 交易记录视图
      */
     protected function tradeLogView(){
-        $res = $this->trade_log->getListByUid(self::$currentUid,'tradeDesc,FROM_UNIXTIME(dateline) AS tradeTime,tradeVolume,(case when tradeType=0 then "提现" when tradeType=1 then "充值" when tradeType=2 then "疫苗费用" when tradeType=3 then "基因费用" when tradeType=4 then "电话问诊" when tradeType=5 then "在线问答" when tradeType=6 then "预约挂号" tradeType=7 then "电话问诊退款" when tradeType=8 then "预约挂号退款" end)as tradeType');
+        $res = $this->trade_log->getListByUid(self::$currentUid,'tradeDesc,FROM_UNIXTIME(dateline) AS tradeTime,tradeVolume,(case when tradeType=0 then "提现" when tradeType=1 then "充值" when tradeType=2 then "疫苗费用" when tradeType=3 then "基因费用" when tradeType=4 then "电话问诊" when tradeType=5 then "在线问答" when tradeType=6 then "预约挂号" when tradeType=7 then "电话问诊退款" when tradeType=8 then "预约挂号退款" end)as tradeType');
         $this->response($this->responseDataFormat(0,'请求成功',array($res)));
     }
 

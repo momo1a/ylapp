@@ -97,17 +97,30 @@ class User_phone_diagnosis_model extends MY_Model
         $appointTime = intval($orderInfo['hopeCalldate']);
         $diffTime = $appointTime - $currentTime;
         /*退款处理 -- 提前1个星期退全额,提前3天退一半,提前1天不退,退到余额*/
+        $tradeData = array(
+            'uid'=>$orderInfo['askUid'],
+            'userType'=>1,
+            'tradeDesc'=>'电话问诊退款',
+            'tradeChannel'=>0,
+            'dateline'=>$currentTime,
+            'status'=>1,
+            'tradeType'=>7
+        );
         if($diffTime >= $sevenDay){ // 退全款
             $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$orderInfo['price'].',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askUid']);
             if($this->db->affected_rows() == 0){
                 $this->db->insert('money',array('uid'=>$orderInfo['askUid'],'amount'=>$orderInfo['price'],'updateTime'=>$currentTime));
             }
+            $tradeData['tradeVolume'] = $orderInfo['price'];
+            $this->db->insert('trade_log', $tradeData);
         }elseif($diffTime >= $threeDay && $diffTime < $sevenDay){  // 退一半
             $backMoney = bcmul(floatval($orderInfo['price']),0.5,2);
             $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$backMoney.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['askUid']);
             if($this->db->affected_rows() == 0){
                 $this->db->insert('money',array('uid'=>$orderInfo['askUid'],'amount'=>$backMoney,'updateTime'=>$currentTime));
             }
+            $tradeData['tradeVolume'] = $backMoney;
+            $this->db->insert('trade_log', $tradeData);
         }
 
         if ($this->db->trans_status() === false) {

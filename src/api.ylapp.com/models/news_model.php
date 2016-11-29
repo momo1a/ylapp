@@ -28,8 +28,8 @@ class News_model extends MY_Model
             $this->like('title',$keyword);
             $this->or_like('tag',$keyword);
         }
-        $this->where('YL_news.postPos',$postPos);
-        $this->or_where('YL_news.postPos',0);
+        $this->where('(YL_news.postPos',$postPos);
+        $this->or_where('YL_news.postPos','0)',false);
         $this->select($select);
         $this->join('YL_news_category','YL_news_category.cid=YL_news.cid','left');
         $this->order_by(array('createTime'=>'DESC','nid'=>'DESC'));

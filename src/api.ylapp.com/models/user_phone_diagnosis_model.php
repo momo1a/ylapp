@@ -189,6 +189,7 @@ SQL;
         $this->select($select);
         $this->limit($limit);
         $this->offset($offset);
+        $this->order_by('YL_user_phone_diagnosis.id','DESC');
         $res = $this->find_all();
         return $res;
 

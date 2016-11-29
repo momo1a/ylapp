@@ -87,6 +87,7 @@ LEFT JOIN YL_doctor_reply AS r ON r.themeId=m.id AND r.type=1
 WHERE
 	m.state {$state}
 AND m.docId = {$docId}
+ORDER BY m.id DESC
 LIMIT {$offset},{$limit}
 SQL;
         $query = $this->db->query($sql);

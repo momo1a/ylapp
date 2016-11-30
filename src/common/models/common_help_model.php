@@ -22,10 +22,22 @@ class Common_help_model extends YL_Model
      * 获取帮助列表
      * @param $type 1 用户端 2 医生端
      */
-    public function getHelp($type){
+    public function getHelp($type,$select = 'id,title,description'){
         $type = intval($type);
-        $this->where(array('type'=>$type,'isShow'=>1));
-        $this->select('id,title,description');
+        $this->where(array('(type'=>$type));
+        $this->or_where('type','0)',false);
+        $this->where(array('isShow'=>1));
+        $this->select($select);
+        $this->order_by(array('id'=>'desc'));
+        $res = $this->find_all();
+        return $res;
+    }
+
+    /**
+     * 获取所有帮助
+     * @return array
+     */
+    public function getAllHelp(){
         $this->order_by(array('id'=>'desc'));
         $res = $this->find_all();
         return $res;
@@ -42,6 +54,22 @@ class Common_help_model extends YL_Model
         $this->select('id,title,description');
         $res = $this->find_all();
         return $res;
+    }
+
+    /**
+     * 保存帮助
+     * @param $id
+     * @param $data
+     */
+    public function save($id,$data){
+        if($id == 0){
+            $this->insert($data);
+        }else{
+            $where = array('id'=>$id);
+            $this->update($where,$data);
+        }
+
+        return $this->db->affected_rows();
     }
 
 

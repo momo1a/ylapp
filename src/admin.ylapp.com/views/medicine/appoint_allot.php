@@ -8,7 +8,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
+                    <span aria-hidden="true" onclick="$('#guys').html('<option value=\'0\'>请选择伙计</option>');">&times;</span></button>
                 <h4 class="modal-title" id="news-edit-title">分配药房伙计</h4>
             </div>
             <div class="modal-body">
@@ -35,7 +35,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline " data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-outline " data-dismiss="modal" onclick="$('#guys').html('<option value=\'0\'>请选择伙计</option>');">取消</button>
                 <button type="button" onclick="appointToAllot();return false;" class="btn btn-outline pull-left">确定</button>
             </div>
         </div>

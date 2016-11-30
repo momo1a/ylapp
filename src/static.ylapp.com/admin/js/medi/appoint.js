@@ -151,7 +151,7 @@ $(function(){
 // 获取预约详情
 function appointDetailPre(e){
     var aid = $(e).attr('aid');
-    console.log(aid);
+    //console.log(aid);
     $.ajax({
         url: SITE_URL + "medicine/getAppointDetail",
         type: "post",
@@ -159,7 +159,7 @@ function appointDetailPre(e){
         dataType: 'json',
         success: function (result) {
             if(result.data != false){
-                console.log(result);
+                //console.log(result);
                 $('#appoint_detail #appoint-content').html(result.data.content);
             }
         }
@@ -176,7 +176,7 @@ function appointAllotPre(e){
         data: {},
         dataType: 'json',
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             if(result.data != false){
                 $.each(result.data,function(i,d){
                     $('#appoint_allot #guys').append('<option value="'+ d.uid +'">'+ d.nickname +'</option>');

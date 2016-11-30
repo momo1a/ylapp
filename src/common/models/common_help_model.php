@@ -48,10 +48,10 @@ class Common_help_model extends YL_Model
      * 帮助详情
      * @param $id
      */
-    public function helpDetail($id){
+    public function helpDetail($id,$select='id,title,description'){
         $id = intval($id);
         $this->where(array('id'=>$id));
-        $this->select('id,title,description');
+        $this->select($select);
         $res = $this->find_all();
         return $res;
     }
@@ -72,5 +72,8 @@ class Common_help_model extends YL_Model
         return $this->db->affected_rows();
     }
 
+    public function del($id){
+        return $this->delete($id);
+    }
 
 }

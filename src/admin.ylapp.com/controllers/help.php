@@ -43,4 +43,25 @@ class Help extends MY_Controller
             $this->ajax_json(-1,'系统错误');
         }
     }
+
+    public function getHelpDetail(){
+        $id = $this->input->get_post('hid');
+        $res = $this->help->helpDetail($id,'*');
+        if($res){
+            $this->ajax_json(0,'请求成功',$res);
+        }else{
+            $this->ajax_json(-1,'请求失败',null);
+        }
+    }
+
+
+    public function helpDel(){
+        $id = $this->input->get_post('hid');
+        $res = $this->help->del($id);
+        if($res){
+            $this->ajax_json(0,'删除成功',null);
+        }else{
+            $this->ajax_json(-1,'请求失败',null);
+        }
+    }
 }

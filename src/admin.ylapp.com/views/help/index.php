@@ -3,6 +3,8 @@
 <?php $this->load->view('left');?>
 
 <?php $this->load->view('help/help_add');?>
+<?php $this->load->view('help/help_edit');?>
+<?php $this->load->view('help/help_del');?>
 
 
 <!-- Content Wrapper. Contains page content -->
@@ -52,8 +54,8 @@
                                         <th width="15%"><?php echo $pos[$value['type']];?></th>
                                         <th width="15%"><?php echo $isShow[$value['isShow']];?></th>
                                         <th width="15%">
-                                            <a data-target="#medi_edit" data-toggle="modal"  hid="<?php echo $value['id'];?>" onclick="editHelpPre(this);return false;" title="编辑帮助"><span class="glyphicon glyphicon-pencil"></span></a>
-                                            &nbsp;&nbsp;<a data-target="#medi_del" data-toggle="modal"  mid="<?php echo $value['id'];?>" onclick="$('#medi_del input[name=\'hid\']').val(<?php echo $value['id'];?>);return false;" title="删除帮助"><span class="glyphicon glyphicon-trash"></span></a>
+                                            <a data-target="#help_edit" data-toggle="modal"  hid="<?php echo $value['id'];?>" onclick="editHelpPre(this);return false;" title="编辑帮助"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            &nbsp;&nbsp;<a data-target="#help_del" data-toggle="modal"  hid="<?php echo $value['id'];?>" onclick="$('#help_del input[name=\'hid\']').val(<?php echo $value['id'];?>);return false;" title="删除帮助"><span class="glyphicon glyphicon-trash"></span></a>
                                         </th>
                                     </tr>
                                 <?php }}?>

@@ -222,14 +222,14 @@ class User_leaving_msg_model extends MY_Model
 
             //  trade log 表
             $tradeLog = array(
-                'uid' => $orderInfo['docId'] ,
+                'uid' => $orderInfo['doctorId'] ,
                 'userType' => 2,
                 'tradeVolume' => $docGetFee,
                 'tradeDesc'=> '留言问答收入',
                 'tradeChannel'=> 0,
                 'dateline'=>time(),
                 'status'=>1,
-                'tradeType'=>5,
+                'tradeType'=>9,
             );
 
             $this->db->insert('trade_log', $tradeLog);

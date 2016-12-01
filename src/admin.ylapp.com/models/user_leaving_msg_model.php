@@ -239,7 +239,7 @@ class User_leaving_msg_model extends MY_Model
 
         $docUserLog = array(
             'userId' => $orderInfo['askerUid'],
-            'doctorId' => $orderInfo['docId'],
+            'doctorId' => $orderInfo['doctorId'],
             'comType'=>1,
             'comState'=>$status,
             'description'=>$tradeDesc,

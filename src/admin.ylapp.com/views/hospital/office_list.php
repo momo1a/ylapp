@@ -48,7 +48,7 @@
                                         <th width="10%"><?php echo $value['id'];?></th>
                                         <th width="15%"><?php echo $value['officeName'];?></th>
                                         <th width="15%">
-                                            <a data-target="#help_edit" data-toggle="modal"  hid="<?php echo $value['id'];?>" onclick="editHelpPre(this);return false;" title="编辑科室"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            <a data-target="#office_edit" data-toggle="modal"  hid="<?php echo $value['id'];?>" onclick="editHelpPre(this);return false;" title="编辑科室"><span class="glyphicon glyphicon-pencil"></span></a>
                                            <!-- &nbsp;&nbsp;<a data-target="#help_del" data-toggle="modal"  hid="<?php /*echo $value['id'];*/?>" onclick="$('#office_del input[name=\'hid\']').val(<?php /*echo $value['id'];*/?>);return false;" title="删除帮助"><span class="glyphicon glyphicon-trash"></span></a>-->
                                         </th>
                                     </tr>
@@ -70,4 +70,4 @@
 <!-- /.content-wrapper -->
 <!-- Main Footer -->
 <?php $this->load->view('foot');?>
-<script src="<?php echo config_item('domain_static').'admin/';?>js/hospital/hospital.js"></script>
+<script src="<?php echo config_item('domain_static').'admin/';?>js/hospital/office.js"></script>

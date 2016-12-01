@@ -33,4 +33,12 @@ class Doctor_offices_model extends MY_Model
 
         return $this->db->affected_rows();
     }
+
+
+    public function officeDetail($id,$select='*'){
+        $where = array('id'=>$id);
+        $this->select($select);
+        $this->where($where);
+        return $this->find_all();
+    }
 }

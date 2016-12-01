@@ -1,4 +1,4 @@
-<div class="modal fade modal-primary" id="help_del" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--<div class="modal fade modal-primary" id="help_del" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -16,5 +16,5 @@
             </div>
         </div>
         <!-- /.modal-content -->
-    </div>
-</div>
+    <!--</div>
+</div>-->

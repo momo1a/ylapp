@@ -136,4 +136,15 @@ class Hospital extends MY_Controller
             $this->ajax_json(-1,'系统错误');
         }
     }
+
+    // 获取科室
+    public function getOfficeDetail(){
+        $id = $this->input->get_post('hid');
+        $res = $this->office->officeDetail($id,'*');
+        if($res){
+            $this->ajax_json(0,'请求成功',$res);
+        }else{
+            $this->ajax_json(-1,'请求失败',null);
+        }
+    }
 }

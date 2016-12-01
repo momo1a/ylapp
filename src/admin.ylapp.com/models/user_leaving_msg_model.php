@@ -162,7 +162,7 @@ class User_leaving_msg_model extends MY_Model
 
         $this->update($where,$updateData);  // 更新订单状态
 
-        $orderInfo = $this->select('*,d.nickname as docName,u.nickname as userName,YL_user_leaving_msg.price as leavingFee')
+        $orderInfo = $this->select('*,d.nickname as docName,u.nickname as userName,YL_user_leaving_msg.price as leavingFee,YL_user_leaving_msg.docId as doctorId')
             ->join('YL_user as d','d.uid=YL_user_leaving_msg.docId','left')
             ->join('YL_user as u','u.uid=YL_user_leaving_msg.askerUid','left')
             ->join('YL_doctor_fee_seting as s','s.docId=YL_user_leaving_msg.docId','left')
@@ -215,9 +215,9 @@ class User_leaving_msg_model extends MY_Model
                 $orderInfo['leavMsgPer'] = 0;
             }
             $docGetFee = bcmul($orderInfo['leavingFee'],$orderInfo['leavMsgPer']/100,2);  //  医生获得费用
-            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['docId']);
+            $this->db->query('UPDATE YL_money set `amount`=`amount`+'.$docGetFee.',`updateTime`='.$currentTime.' WHERE `uid`='.$orderInfo['doctorId']);
             if($this->db->affected_rows() == 0){
-                $this->db->insert('money',array('uid'=>$orderInfo['docId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
+                $this->db->insert('money',array('uid'=>$orderInfo['doctorId'],'amount'=>$docGetFee,'updateTime'=>$currentTime));
             }
 
             //  trade log 表

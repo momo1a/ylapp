@@ -16,6 +16,8 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">医院管理</h3>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="<?php echo site_url();?>hospital/officeList"><button class="btn btn-xs btn-primary">科室管理</button></a>
                         <a data-target="#hospital_add" data-toggle="modal" onclick="hosAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加医院</h3></a>
                     </div>
                     <div class="bg-gray color-palette">

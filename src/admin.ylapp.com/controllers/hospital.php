@@ -10,6 +10,7 @@ class Hospital extends MY_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model('Hospital_model','hospital');
+        $this->load->model('Doctor_offices_model','office');
     }
 
     public function index(){
@@ -104,6 +105,35 @@ class Hospital extends MY_Controller
             $this->ajax_json(0,'删除成功');
         }else{
             $this->ajax_json(-1,'删除失败');
+        }
+    }
+
+
+    // 科室列表
+    public function officeList(){
+        //$limit = 10;
+        //$offset = intval($this->uri->segment(3));
+        $list = $this->office->getAllOffices('*');
+        //$page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
+        //$page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
+        //$pager = $this->pager($total, $limit,$page_conf);
+        //$data['pager'] = $pager;
+        $data['list'] = $list;
+        //$data['get'] = $_GET;
+        $this->load->view('hospital/office_list',$data);
+    }
+
+    //保存科室
+
+    public function saveOffice(){
+        $id = intval($this->input->get_post('hid'));
+        $officeName = $this->input->get_post('officeName');
+        $data = array('officeName'=>$officeName);
+        $res = $this->office->save($id,$data);
+        if($res) {
+            $this->ajax_json(0,'操作成功');
+        }else{
+            $this->ajax_json(-1,'系统错误');
         }
     }
 }

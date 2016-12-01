@@ -16,9 +16,21 @@ class Doctor_offices_model extends MY_Model
      * 获取所有科室
      */
 
-    public function getAllOffices(){
-        $this->select('id as officeId,officeName');
+    public function getAllOffices($select='id as officeId,officeName'){
+        $this->select($select);
         $res = $this->find_all();
         return $res;
+    }
+
+
+    public function save($id,$data){
+        if($id == 0){
+            $this->insert($data);
+        }else{
+            $where = array('id'=>$id);
+            $this->update($where,$data);
+        }
+
+        return $this->db->affected_rows();
     }
 }

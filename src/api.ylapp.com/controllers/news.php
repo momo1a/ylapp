@@ -52,7 +52,7 @@ class News extends MY_Controller
      */
     public function getNewsDetail(){
         $nid = intval($this->input->get_post('nid'));
-        $res = $this->news->getNewsDetail($nid,'title,author,FROM_UNIXTIME(createTime) AS createTime,content');
+        $res = $this->news->getNewsDetail($nid,'title,author,FROM_UNIXTIME(createTime) AS createTime,content,thumbnail');
         /*$res['content'] = trim($res['content']);
         $res['content'] = ltrim($res['content'],'<p>');
         $res['content'] = rtrim($res['content'],'</p>');*/
@@ -62,7 +62,7 @@ class News extends MY_Controller
         $collId = $collId ? $collId : 0;
         $shareLink = self::$_detailSite.$nid;
         if($res){
-            $this->response($this->responseDataFormat(0,'请求成功',array('news'=>$res,'isColl'=>$isCollection,'collId'=>intval($collId),'shareLink'=>$shareLink)));
+            $this->response($this->responseDataFormat(0,'请求成功',array('news'=>$res,'isColl'=>$isCollection,'collId'=>intval($collId),'shareLink'=>$shareLink,'imgServer'=>self::$_imgServer)));
         }else{
             $this->response($this->responseDataFormat(-1,'请求失败',array()));
         }

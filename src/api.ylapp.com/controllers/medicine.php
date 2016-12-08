@@ -31,6 +31,7 @@ class Medicine extends MY_Controller
 
         $limit = !$limit ? 10 : $limit;
         $medicine = $this->medicine->mediList($limit,$offset,$select='YL_medicine.id as mid,YL_medicine.name as medicineName,outline,thumbnail',$cid,$keyword); // 药品列表
+        //var_dump($this->db->last_query());
         $category = $this->cate->get_all($select="cid,name as cateName");  // 所有分类
         $this->response($this->responseDataFormat(0,'请求成功',array('category'=>$category,'medicine'=>$medicine,'imgServer'=>self::$_imgServer)));
     }

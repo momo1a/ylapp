@@ -51,6 +51,7 @@
                                 <th>患者手机</th>
                                 <th>患者姓名</th>
                                 <th>药品名</th>
+                                <th>药房伙计</th>
                                 <th>详情</th>
                                 <th>当前状态</th>
                                 <th>操作</th>
@@ -65,6 +66,7 @@
                                         <th><?php echo $value['telephone'];?></th>
                                         <th><?php echo $value['illName'];?></th>
                                         <th><?php echo $value['mediName'];?></th>
+                                        <th><?php echo !$value['guysName'] ? '暂未分配' : $value['guysName'];?></th>
                                         <th>
                                             <a data-target="#appoint_detail" data-toggle="modal"  aid="<?php echo $value['aid'];?>" onclick="appointDetailPre(this);return false;" title="预约详情"><span class="glyphicon glyphicon-list-alt"></span></a><!--
                                             &nbsp;&nbsp;<a data-target="#package_del" data-toggle="modal"  pid="<?php /*echo $value['id'];*/?>" onclick="packageDelPre(this);return false;" title="删除套餐"><span class="glyphicon glyphicon-trash"></span></a>-->

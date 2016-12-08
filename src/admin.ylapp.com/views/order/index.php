@@ -25,7 +25,7 @@
                     <form method="get" action="" id="cashForm">
                         <div class="box-header">
                             <h3 class="box-title">订单管理</h3>
-                            <!--<button  href="javascript:void(0);" onclick="$('#doexport').val('yes')" style="float: right" class="btn primary-btn"><span class="glyphicon glyphicon-save"></span>导出excel</button>-->
+                            <button  href="javascript:void(0);" onclick="$('#doexport').val('yes')" style="float: right" class="btn primary-btn"><span class="glyphicon glyphicon-save"></span>导出excel</button>
                         </div>
                         <div class="bg-gray color-palette">
                             <input type="hidden" name="doexport"  id="doexport" value="no"/>

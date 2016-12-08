@@ -60,7 +60,54 @@ class Order extends MY_Controller
         $data['type'] = $this->_type;
         $data['state'] = $this->_state;
         $data['get'] = $_GET;
+        if($this->input->get_post('doexport') == 'yes'){
+            $this->exportData();
+        }
         $this->load->view('order/index',$data);
+    }
+
+
+    /**
+     * 导出数据
+     */
+    protected function exportData(){
+        header("Content-type:application/vnd.ms-excel");
+        $filename = '订单数据('.date("Y-m-d-H:i:s", time()).').xls';
+        $keyword = addslashes(trim($this->input->get_post('keyword')));
+        $type = intval($_GET['type']);
+        $state = intval($_GET['state']);
+        /*默认可以导出最新的2000条数据*/
+        $data = $this->order->orderList(2000,0,$keyword,$state,$type,'*,YL_order.status as orderStatus');
+        $sex = array('1' => '男' ,'2'=>'女');
+        $header = array(
+            '订单编号',
+            '购买人',
+            '电话号码',
+            '性别',
+            '出生日期',
+            '下单时间',
+            '套餐名称',
+            '价格',
+            '类别',
+            '当前状态',
+        );
+        $rows = array();
+        if(!empty($data)) {
+            foreach ($data as $k => $v) {
+                $rows[$k]['oid'] = $v['oid'];
+                $rows[$k]['buyerName'] = $v['buyerName'];
+                $rows[$k]['buyerTel'] = strval($v['buyerTel']);
+                $rows[$k]['sex'] = $sex[$v['sex']];
+                $rows[$k]['buyerBrithday'] = date('Y-m-d',$v['buyerBrithday']);;
+                $rows[$k]['dateline'] = date('Y-m-d H:i:s',$v['dateline']);;
+                $rows[$k]['packageTitle'] = $v['packageTitle'];
+                $rows[$k]['price'] = $v['price'];
+                $rows[$k]['type'] = $this->_type[$v['type']];;
+                $rows[$k]['orderStatus'] = $this->_state[$v['orderStatus']];;
+            }
+        }
+        array_unshift($rows, $header);
+        $this->data_export($rows, $filename);
     }
 
 

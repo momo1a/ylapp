@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b8df0e38-6e17-4f20-9398-32df1adec543" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/sql/update/proc_user_cancel_online_ask.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/database.php" afterPath="$PROJECT_DIR$/src/common/config/development/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/views/order/index.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/views/order/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/medicine.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/medicine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/models/medicine_model.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/models/medicine_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/memcached.php" afterPath="$PROJECT_DIR$/src/common/config/development/memcached.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/news.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/news.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/order.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/controllers/order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/admin.ylapp.com/models/order_model.php" afterPath="$PROJECT_DIR$/src/admin.ylapp.com/models/order_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ylapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,92 +44,258 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="appoint.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/static.ylapp.com/admin/js/medi/appoint.js">
+      <file leaf-file-name="mytest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1794" max-vertical-offset="7614">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-3.9722223" vertical-offset="28828" max-vertical-offset="33210">
+              <caret line="1073" column="24" selection-start-line="1073" selection-start-column="24" selection-end-line="1073" selection-end-column="24" />
+              <folding>
+                <marker date="1481202847168" expanded="true" signature="354:512" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="446:504" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="461:496" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="582:881" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="995:1153" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="1087:1145" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="1102:1137" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="1220:1917" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="2054:2212" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="2146:2204" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="2161:2196" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="2288:2617" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="2751:2909" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="2843:2901" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="2858:2893" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="2987:3279" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="3386:3544" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="3478:3536" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="3493:3528" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="3614:3906" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="4026:4184" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="4118:4176" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="4133:4168" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="4257:4608" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="4743:4901" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="4835:4893" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="4850:4885" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="4976:5272" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="5382:5540" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="5474:5532" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="5489:5524" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="5608:5904" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="6020:6178" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="6112:6170" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="6127:6162" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="6272:6808" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="6913:7071" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="7005:7063" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="7020:7055" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="7136:7516" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="7623:7781" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="7715:7773" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="7730:7765" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="7848:8145" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="8250:8408" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="8342:8400" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="8357:8392" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="8474:8772" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="8909:9067" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="9001:9059" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="9016:9051" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="9134:9479" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="9614:9772" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="9706:9764" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="9721:9756" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="9851:10104" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="10219:10377" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="10311:10369" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="10326:10361" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="10457:10710" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="10821:10979" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="10913:10971" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="10928:10963" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="11057:11445" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="11555:11713" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="11647:11705" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="11662:11697" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="11819:12111" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="12223:12381" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="12315:12373" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="12330:12365" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="12489:12783" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="12891:13049" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="12983:13041" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="12998:13033" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="13154:13544" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="13666:13824" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="13758:13816" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="13773:13808" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="13930:14183" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="14318:14476" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="14410:14468" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="14425:14460" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="14578:15162" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="15301:15459" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="15393:15451" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="15408:15443" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="15561:15814" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="15958:16116" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="16050:16108" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="16065:16100" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="16228:16568" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="16717:16875" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="16809:16867" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="16824:16859" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="16984:17273" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="17425:17583" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="17517:17575" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="17532:17567" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="17692:17981" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="18089:18247" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="18181:18239" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="18196:18231" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="18349:18692" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="18828:18986" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="18920:18978" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="18935:18970" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="19096:19436" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="19569:19727" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="19661:19719" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="19676:19711" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="19804:20093" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="20206:20364" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="20298:20356" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="20313:20348" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="20441:20730" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="20848:21006" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="20940:20998" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="20955:20990" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="21088:21340" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="21453:21611" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="21545:21603" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="21560:21595" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="21690:21977" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="22079:22237" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="22171:22229" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="22186:22221" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="22311:22651" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="22759:22917" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="22851:22909" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="22866:22901" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="22989:23242" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="23353:23511" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="23445:23503" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="23460:23495" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="23586:23839" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="23950:24108" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="24042:24100" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="24057:24092" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="24185:24438" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="24548:24706" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="24640:24698" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="24655:24690" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="24783:25036" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="25147:25305" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="25239:25297" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="25254:25289" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="25382:25674" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="25779:25937" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="25871:25929" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="25886:25921" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="25999:26122" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="26228:26386" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="26320:26378" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="26335:26370" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="26458:26750" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="26856:27014" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="26948:27006" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="26963:26998" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="27084:27335" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="27667:27751" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="27812:28284" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="28618:28702" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="28763:29235" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="29569:29653" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="29719:30191" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="30378:30536" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="30470:30528" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="30485:30520" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="30616:30876" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="30987:31145" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="31079:31137" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="31094:31129" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="31212:31501" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="31607:31765" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="31699:31757" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="31714:31749" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="31831:32118" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="32225:32383" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="32317:32375" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="32332:32367" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="32450:32741" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="32846:33004" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="32938:32996" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="32953:32988" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="33082:33374" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="33480:33638" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="33572:33630" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="33587:33622" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="33707:34051" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="34163:34321" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="34255:34313" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="34270:34305" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="34396:34726" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="34832:34990" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="34924:34982" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="34939:34974" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="35050:35340" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="35448:35606" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="35540:35598" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="35555:35590" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="35684:36238" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="36348:36506" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="36440:36498" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="36455:36490" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="36574:37099" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="37207:37365" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="37299:37357" placeholder="..." />
+                <marker date="1481202847168" expanded="true" signature="37314:37349" placeholder="{...}" />
+                <marker date="1481202847168" expanded="true" signature="37438:37951" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/index.php">
+        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/order/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2133">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state vertical-scroll-proportion="-6.75" vertical-offset="2025" max-vertical-offset="3429">
+              <caret line="84" column="85" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="85" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/order.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6483333" vertical-offset="2311" max-vertical-offset="3456">
+              <caret line="105" column="56" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="office_add.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_add.php">
+      <file leaf-file-name="MY_Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/core/MY_Controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1053">
-              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="office_list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-49.5" vertical-offset="0" max-vertical-offset="2268">
-              <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="office.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/static.ylapp.com/admin/js/hospital/office.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="567" max-vertical-offset="2322">
-              <caret line="21" column="90" selection-start-line="21" selection-start-column="90" selection-end-line="21" selection-end-column="90" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hospital.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/hospital.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3333" max-vertical-offset="4185">
-              <caret line="139" column="11" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="help.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/help.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1056" max-vertical-offset="1944">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="53" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="office_edit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_edit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.916667" vertical-offset="201" max-vertical-offset="1053">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="news.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/news.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44366196" vertical-offset="1134" max-vertical-offset="2781">
-              <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
-              <folding />
+            <state vertical-scroll-proportion="-5.138889" vertical-offset="4081" max-vertical-offset="6777">
+              <caret line="158" column="23" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
+              <folding>
+                <marker date="1478000132512" expanded="true" signature="3913:3932" placeholder="..." />
+                <marker date="1478000132512" expanded="true" signature="4914:4930" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,19 +308,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/hooks/search.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/config/config.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/config/hooks.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/cash.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/doctor.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/evaluate.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/gene.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/leavMsg.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/models/order_model.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/news.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/vaccine.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/order.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/post.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/reg_num.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/telOnline.php" />
@@ -170,7 +334,6 @@
         <option value="$PROJECT_DIR$/docs/sql/table/trade_log.sql" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/models/user_reg_num_model.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/models/user_phone_diagnosis_model.php" />
-        <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/help/help_add.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/help/help_edit.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/help/help_del.php" />
@@ -188,6 +351,14 @@
         <option value="$PROJECT_DIR$/src/static.ylapp.com/admin/js/hospital/office.js" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_list.php" />
         <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/news.php" />
+        <option value="$PROJECT_DIR$/src/api.ylapp.com/models/medicine_model.php" />
+        <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/medicine.php" />
+        <option value="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/order/index.php" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/models/order_model.php" />
+        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/order.php" />
       </list>
     </option>
   </component>
@@ -293,6 +464,142 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="order" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cash" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin.ylapp.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -308,46 +615,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ylapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ylapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ylapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ylapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="table" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -388,6 +655,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -395,9 +665,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -422,11 +689,11 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46028292" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2742111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22061966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22329059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -461,83 +728,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/hospital_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28390595" vertical-offset="1713" max-vertical-offset="2288">
-          <caret line="85" column="24" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/models/common_trade_log_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="792">
-          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/core/MY_Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6755555" vertical-offset="5502" max-vertical-offset="7436">
-          <caret line="252" column="73" selection-start-line="252" selection-start-column="73" selection-end-line="252" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/post_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3326613" vertical-offset="1089" max-vertical-offset="1848">
-          <caret line="58" column="30" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/reg_num.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="836" max-vertical-offset="2398">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/medical.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51008064" vertical-offset="3773" max-vertical-offset="4972">
-          <caret line="186" column="48" selection-start-line="186" selection-start-column="48" selection-end-line="186" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/config/development/shs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37262356" vertical-offset="486" max-vertical-offset="1078">
-          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8800" max-vertical-offset="14586">
-          <caret line="400" column="34" selection-start-line="400" selection-start-column="34" selection-end-line="400" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/news_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1606">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/user_leaving_msg_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59879035" vertical-offset="1551" max-vertical-offset="3850">
-          <caret line="89" column="19" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/doctor_center.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5962" max-vertical-offset="12056">
-          <caret line="276" column="9" selection-start-line="276" selection-start-column="9" selection-end-line="276" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/sql/table/trade_log.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35441527" vertical-offset="0" max-vertical-offset="838">
@@ -570,13 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4620" max-vertical-offset="6644">
           <caret line="210" column="36" selection-start-line="210" selection-start-column="30" selection-end-line="210" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7946768" vertical-offset="8778" max-vertical-offset="13310">
-          <caret line="399" column="26" selection-start-line="399" selection-start-column="20" selection-end-line="399" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -650,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/core/MY_Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34741783" vertical-offset="3430" max-vertical-offset="6777">
-          <caret line="137" column="23" selection-start-line="137" selection-start-column="23" selection-end-line="137" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/hospital_del.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57042253" vertical-offset="0" max-vertical-offset="852">
@@ -699,13 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="26622" max-vertical-offset="32643">
-          <caret line="986" column="5" selection-start-line="986" selection-start-column="5" selection-end-line="986" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/models/common_help_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8415493" vertical-offset="1146" max-vertical-offset="2106">
@@ -717,13 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="9855" max-vertical-offset="11745">
           <caret line="365" column="7" selection-start-line="365" selection-start-column="7" selection-end-line="365" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3105">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -742,30 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2133">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1053">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/help.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1056" max-vertical-offset="1944">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="53" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/doctor_offices_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8415493" vertical-offset="336" max-vertical-offset="1323">
@@ -773,10 +911,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_del.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06338028" vertical-offset="0" max-vertical-offset="852">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="1053">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/sql/table/news.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25775656" vertical-offset="0" max-vertical-offset="838">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.75" vertical-offset="1377" max-vertical-offset="2781">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/help.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25" vertical-offset="1056" max-vertical-offset="1944">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="53" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/hospital.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3333" max-vertical-offset="4185">
+        <state vertical-scroll-proportion="0.49295774" vertical-offset="3333" max-vertical-offset="4185">
           <caret line="139" column="11" selection-start-line="139" selection-start-column="11" selection-end-line="139" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/medicine_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.5" vertical-offset="486" max-vertical-offset="1836">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/medicine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5710956" vertical-offset="538" max-vertical-offset="1404">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -791,40 +983,351 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-49.5" vertical-offset="0" max-vertical-offset="2268">
+        <state vertical-scroll-proportion="0.45687646" vertical-offset="1721" max-vertical-offset="2268">
           <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_del.php">
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06338028" vertical-offset="0" max-vertical-offset="852">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        <state vertical-scroll-proportion="1.5454545" vertical-offset="120" max-vertical-offset="1053">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/office_edit.php">
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.916667" vertical-offset="201" max-vertical-offset="1053">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2133">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/sql/table/news.sql">
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/user_center.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25775656" vertical-offset="0" max-vertical-offset="838">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.82682925" vertical-offset="14145" max-vertical-offset="16281">
+          <caret line="522" column="14" selection-start-line="522" selection-start-column="8" selection-end-line="522" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/news.php">
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/doctor_center.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44366196" vertical-offset="1134" max-vertical-offset="2781">
-          <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.6600877" vertical-offset="1589" max-vertical-offset="15309">
+          <caret line="69" column="47" selection-start-line="69" selection-start-column="41" selection-end-line="69" selection-end-column="47" />
+          <folding>
+            <element signature="e#6#81#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/models/medi_appoint_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40298507" vertical-offset="405" max-vertical-offset="1539">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <marker date="1476969919492" expanded="true" signature="-1:-1" placeholder="SELECT FROM_..YL_medi_appoint..." />
+            <marker date="1476969919492" expanded="true" signature="-1:-1" placeholder="SELECT appoi..YL_medi_appoint..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/medicine/appoint_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81" vertical-offset="1539" max-vertical-offset="3456">
+          <caret line="68" column="104" selection-start-line="68" selection-start-column="104" selection-end-line="68" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/medicine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6355634" vertical-offset="4931" max-vertical-offset="9990">
+          <caret line="195" column="266" selection-start-line="195" selection-start-column="258" selection-end-line="195" selection-end-column="266" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/medi_appoint_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3503521" vertical-offset="1286" max-vertical-offset="3726">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9722223" vertical-offset="28828" max-vertical-offset="33210">
+          <caret line="1073" column="24" selection-start-line="1073" selection-start-column="24" selection-end-line="1073" selection-end-column="24" />
+          <folding>
+            <marker date="1481202847168" expanded="true" signature="354:512" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="446:504" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="461:496" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="582:881" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="995:1153" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="1087:1145" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="1102:1137" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="1220:1917" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="2054:2212" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="2146:2204" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="2161:2196" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="2288:2617" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="2751:2909" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="2843:2901" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="2858:2893" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="2987:3279" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="3386:3544" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="3478:3536" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="3493:3528" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="3614:3906" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="4026:4184" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="4118:4176" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="4133:4168" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="4257:4608" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="4743:4901" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="4835:4893" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="4850:4885" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="4976:5272" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="5382:5540" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="5474:5532" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="5489:5524" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="5608:5904" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="6020:6178" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="6112:6170" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="6127:6162" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="6272:6808" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="6913:7071" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="7005:7063" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="7020:7055" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="7136:7516" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="7623:7781" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="7715:7773" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="7730:7765" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="7848:8145" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="8250:8408" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="8342:8400" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="8357:8392" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="8474:8772" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="8909:9067" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="9001:9059" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="9016:9051" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="9134:9479" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="9614:9772" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="9706:9764" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="9721:9756" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="9851:10104" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="10219:10377" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="10311:10369" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="10326:10361" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="10457:10710" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="10821:10979" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="10913:10971" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="10928:10963" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="11057:11445" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="11555:11713" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="11647:11705" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="11662:11697" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="11819:12111" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="12223:12381" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="12315:12373" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="12330:12365" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="12489:12783" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="12891:13049" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="12983:13041" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="12998:13033" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="13154:13544" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="13666:13824" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="13758:13816" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="13773:13808" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="13930:14183" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="14318:14476" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="14410:14468" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="14425:14460" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="14578:15162" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="15301:15459" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="15393:15451" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="15408:15443" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="15561:15814" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="15958:16116" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="16050:16108" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="16065:16100" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="16228:16568" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="16717:16875" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="16809:16867" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="16824:16859" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="16984:17273" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="17425:17583" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="17517:17575" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="17532:17567" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="17692:17981" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="18089:18247" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="18181:18239" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="18196:18231" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="18349:18692" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="18828:18986" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="18920:18978" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="18935:18970" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="19096:19436" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="19569:19727" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="19661:19719" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="19676:19711" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="19804:20093" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="20206:20364" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="20298:20356" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="20313:20348" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="20441:20730" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="20848:21006" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="20940:20998" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="20955:20990" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="21088:21340" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="21453:21611" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="21545:21603" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="21560:21595" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="21690:21977" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="22079:22237" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="22171:22229" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="22186:22221" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="22311:22651" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="22759:22917" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="22851:22909" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="22866:22901" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="22989:23242" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="23353:23511" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="23445:23503" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="23460:23495" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="23586:23839" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="23950:24108" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="24042:24100" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="24057:24092" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="24185:24438" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="24548:24706" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="24640:24698" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="24655:24690" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="24783:25036" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="25147:25305" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="25239:25297" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="25254:25289" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="25382:25674" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="25779:25937" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="25871:25929" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="25886:25921" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="25999:26122" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="26228:26386" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="26320:26378" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="26335:26370" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="26458:26750" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="26856:27014" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="26948:27006" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="26963:26998" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="27084:27335" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="27667:27751" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="27812:28284" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="28618:28702" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="28763:29235" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="29569:29653" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="29719:30191" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="30378:30536" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="30470:30528" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="30485:30520" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="30616:30876" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="30987:31145" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="31079:31137" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="31094:31129" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="31212:31501" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="31607:31765" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="31699:31757" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="31714:31749" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="31831:32118" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="32225:32383" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="32317:32375" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="32332:32367" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="32450:32741" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="32846:33004" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="32938:32996" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="32953:32988" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="33082:33374" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="33480:33638" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="33572:33630" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="33587:33622" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="33707:34051" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="34163:34321" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="34255:34313" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="34270:34305" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="34396:34726" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="34832:34990" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="34924:34982" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="34939:34974" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="35050:35340" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="35448:35606" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="35540:35598" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="35555:35590" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="35684:36238" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="36348:36506" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="36440:36498" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="36455:36490" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="36574:37099" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="37207:37365" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="37299:37357" placeholder="..." />
+            <marker date="1481202847168" expanded="true" signature="37314:37349" placeholder="{...}" />
+            <marker date="1481202847168" expanded="true" signature="37438:37951" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/cash/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1911764" vertical-offset="1188" max-vertical-offset="3996">
+          <caret line="47" column="87" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/core/MY_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.138889" vertical-offset="4081" max-vertical-offset="6777">
+          <caret line="158" column="23" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
+          <folding>
+            <marker date="1478000132512" expanded="true" signature="3913:3932" placeholder="..." />
+            <marker date="1478000132512" expanded="true" signature="4914:4930" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/models/order_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.855" vertical-offset="1053" max-vertical-offset="4563">
+          <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/cash.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1944444" vertical-offset="2338" max-vertical-offset="3564">
+          <caret line="92" column="23" selection-start-line="92" selection-start-column="23" selection-end-line="92" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/order/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.75" vertical-offset="2025" max-vertical-offset="3429">
+          <caret line="84" column="85" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="85" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6483333" vertical-offset="2311" max-vertical-offset="3456">
+          <caret line="105" column="56" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
           <folding />
         </state>
       </provider>

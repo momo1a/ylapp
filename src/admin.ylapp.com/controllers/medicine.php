@@ -193,7 +193,7 @@ class Medicine extends MY_Controller
         }
         $total = $this->appoint->appointCount($searchKey,$searchValue,$mediName,$startTime,$endTime);
         $offset = intval($this->uri->segment(3));
-        $list = $this->appoint->appointList($limit,$offset,$searchKey,$searchValue,$mediName,$startTime,$endTime,'*,YL_medi_appoint.name as illName,YL_medicine.name as mediName,YL_medi_appoint.id as aid,YL_medi_appoint.state as appointState');
+        $list = $this->appoint->appointList($limit,$offset,$searchKey,$searchValue,$mediName,$startTime,$endTime,'*,YL_medi_appoint.name as illName,YL_medicine.name as mediName,YL_medi_appoint.id as aid,YL_medi_appoint.state as appointState,guys.nickname as guysName');
         //var_dump($this->db->last_query());
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');

@@ -61,7 +61,7 @@ class Order_model extends MY_Model
         $this->limit($limit);
         $this->offset($offset);
         $res = $this->find_all();
-        $this->order_by(array('dateline'=>'desc'));
+        $this->order_by(array('YL_order.dateline'=>'desc'));
         return $res;
     }
 

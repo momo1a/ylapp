@@ -26,6 +26,7 @@ class  Medicine_model extends MY_Model
         }
         if($keyword != ''){
             $this->like(array('YL_medicine.name'=>$keyword));
+            $this->or_like(array('YL_medicine.outline'=>$keyword));
         }
         $this->select($select);
         $this->limit($limit);

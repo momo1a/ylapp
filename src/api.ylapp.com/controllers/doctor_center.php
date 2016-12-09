@@ -85,6 +85,19 @@ class Doctor_center extends MY_Controller
         $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i,'imgServer'=>$imgServer)));
     }
 
+    // 获取药品预约详情
+    public function getAppointDetail(){
+        $id = intval($this->input->get_post('appointId'));
+        $guysId = self::$currentUid;
+        $res = $this->appoint->getAppointDetail($id,$guysId);
+        //var_dump($this->db->last_query());
+        if($res){
+            $this->response($this->responseDataFormat(0,'请求成功',$res));
+        }else{
+            $this->response($this->responseDataFormat(-1,'请求失败',$res));
+        }
+    }
+
 
     /*********************问诊之留言文答start**********************************/
     /**

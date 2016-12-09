@@ -546,7 +546,15 @@ class User_center extends MY_Controller
             if(!empty($order)){
                 foreach($order as $val){
                     array_push($container,$val);
-                    $i++;
+                    if($val['msgType'] == '在线问诊' && $val['state'] == '完成') {
+                        continue;
+                    }elseif($val['msgType'] == '预约挂号' && $val['state'] == '完成') {
+                        continue;
+                    }elseif(($val['msgType'] == '疫苗接种' || $val['msgType'] == '基因检测') && $val['state'] == '已支付'){
+                        continue;
+                    }else{
+                        $i++;
+                    }
                 }
             }
         }

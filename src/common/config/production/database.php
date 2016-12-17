@@ -3,11 +3,11 @@ $active_group = 'default';
 $active_record = TRUE;
 
 // 主数据库（默认）
-$db['default']['hostname'] = '123.207.87.83';
+$db['default']['hostname'] = '123.207.88.225';
 $db['default']['username'] = 'root';
-$db['default']['password'] = 'xgylapp';
+$db['default']['password'] = 'xgylapp123';
 $db['default']['database'] = 'ylapp';
-$db['default']['port']     = '3308';
+$db['default']['port']     = '3306';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = 'YL_';
 $db['default']['pconnect'] = FALSE;
@@ -21,10 +21,10 @@ $db['default']['autoinit'] = FALSE;
 $db['default']['stricton'] = FALSE;
 
 // 从数据库 - 主要用于前台读取数据
-$db['slave']['hostname'] = '123.207.87.83';
+$db['slave']['hostname'] = '123.207.88.225';
 $db['slave']['username'] = 'root';
-$db['slave']['password'] = 'xgylapp';
-$db['slave']['port']     = '3308';
+$db['slave']['password'] = 'xgylapp123';
+$db['slave']['port']     = '3306';
 $db['slave']['database'] = 'ylapp';
 $db['slave']['dbdriver'] = 'mysql';
 $db['slave']['dbprefix'] = 'YL_';

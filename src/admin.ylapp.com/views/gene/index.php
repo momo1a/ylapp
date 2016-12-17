@@ -15,7 +15,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">基因检测</h3>
+                        <h3 class="box-title">检测服务</h3>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <!--<span class="btn btn-primary"><a href="<?php /*echo site_url()*/?>post/commentList" style="color: #000000">评论管理</a></span>-->
                          <a data-target="#package_add" data-toggle="modal" onclick="packageAddPre();return false;"><h3 class="box-title" style="float: right;cursor: pointer"><span class="glyphicon glyphicon-plus"></span>添加套餐</h3></a>

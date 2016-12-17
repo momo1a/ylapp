@@ -32,6 +32,9 @@ $config['domain_detail'] = 'http://detail.ylapp.com/';
 
 $config['super_admin'] = array(4);
 
+// app升级包上传目录
+$config['app_update_package_upload_path'] = '/mnt/myweb/app/upload/';
+
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'shs_system.php';
 require dirname(__FILE__).DIRECTORY_SEPARATOR.'static_url.php';  //加载众划算静态URL
 

@@ -5,7 +5,7 @@ define('KEY_COOKIE_CRYPT', '111111');
 define('KEY_COOKIE_CRYPT_IV', '0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF');
 
 // APP_SERVER通信密钥
-define('KEY_APP_SERVER', '111111');
+define('KEY_APP_SERVER', 'afMYH9987sL658');
 
 //系统版本配置文件
 include COMPATH.'/config/version.php';

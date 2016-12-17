@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8df0e38-6e17-4f20-9398-32df1adec543" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/sql/update/proc_user_cancel_online_ask.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/database.php" afterPath="$PROJECT_DIR$/src/common/config/development/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/production/database.php" afterPath="$PROJECT_DIR$/src/common/config/production/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/memcached.php" afterPath="$PROJECT_DIR$/src/common/config/development/memcached.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" afterPath="$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/production/openim.php" afterPath="$PROJECT_DIR$/src/common/config/production/openim.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/shs.php" afterPath="$PROJECT_DIR$/src/common/config/development/shs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/production/constants.php" afterPath="$PROJECT_DIR$/src/common/config/production/constants.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/development/email.php" afterPath="$PROJECT_DIR$/src/common/config/development/email.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/production/email.php" afterPath="$PROJECT_DIR$/src/common/config/production/email.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/testing/email.php" afterPath="$PROJECT_DIR$/src/common/config/testing/email.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/production/shs.php" afterPath="$PROJECT_DIR$/src/common/config/production/shs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/config/testing/shs.php" afterPath="$PROJECT_DIR$/src/common/config/testing/shs.php" />
     </list>
     <ignored path="ylapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,9 +41,12 @@
       <file leaf-file-name="mytest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="30537" max-vertical-offset="33210">
-              <caret line="1131" column="36" selection-start-line="1131" selection-start-column="20" selection-end-line="1131" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="-0.0" vertical-offset="29349" max-vertical-offset="32022">
+              <caret line="1087" column="36" selection-start-line="1087" selection-start-column="36" selection-end-line="1087" selection-end-column="36" />
+              <folding>
+                <marker date="1481977668448" expanded="true" signature="29555:29996" placeholder="..." />
+                <marker date="1481977668448" expanded="true" signature="36188:36234" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,21 +61,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/config/production/database.php">
+      <file leaf-file-name="shs.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/config/production/shs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.75" vertical-offset="0" max-vertical-offset="1269">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state vertical-scroll-proportion="-9.75" vertical-offset="81" max-vertical-offset="1323">
+              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shs.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/common/config/production/shs.php">
+      <file leaf-file-name="constants.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/common/config/production/constants.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1323">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.41197184" vertical-offset="0" max-vertical-offset="1107">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shs.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/config/testing/shs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.0" vertical-offset="162" max-vertical-offset="1323">
+              <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -88,12 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/post.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/reg_num.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/telOnline.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/controllers/user.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/hooks/Search.php" />
-        <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/index.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/hospital_edit.php" />
         <option value="$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/hospital_add.php" />
         <option value="$PROJECT_DIR$/src/static.ylapp.com/admin/js/hospital/hospital.js" />
@@ -139,6 +144,12 @@
         <option value="$PROJECT_DIR$/src/common/libraries/WxPay.php" />
         <option value="$PROJECT_DIR$/src/common/config/production/database.php" />
         <option value="$PROJECT_DIR$/src/common/config/production/openim.php" />
+        <option value="$PROJECT_DIR$/src/common/config/production/email.php" />
+        <option value="$PROJECT_DIR$/src/common/config/testing/email.php" />
+        <option value="$PROJECT_DIR$/src/common/config/development/email.php" />
+        <option value="$PROJECT_DIR$/src/common/config/testing/shs.php" />
+        <option value="$PROJECT_DIR$/src/common/config/production/shs.php" />
+        <option value="$PROJECT_DIR$/src/common/config/production/constants.php" />
       </list>
     </option>
   </component>
@@ -314,6 +325,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="development" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ylapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="api.ylapp.com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -389,6 +426,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2742111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -399,7 +437,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2742111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -428,55 +465,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/gene/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4954955" vertical-offset="264" max-vertical-offset="2332">
-          <caret line="20" column="211" selection-start-line="20" selection-start-column="187" selection-end-line="20" selection-end-column="211" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/static.ylapp.com/admin/js/hospital/hospital.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76301616" vertical-offset="3535" max-vertical-offset="4092">
-          <caret line="177" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="177" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/controllers/feedback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7072243" vertical-offset="134" max-vertical-offset="660">
-          <caret line="28" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/help/help_add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.4166665" vertical-offset="768" max-vertical-offset="1620">
-          <caret line="37" column="79" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/hospital/hospital_del.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57042253" vertical-offset="0" max-vertical-offset="852">
-          <caret line="18" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/help/help_del.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.5" vertical-offset="0" max-vertical-offset="675">
-          <caret line="14" column="54" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/static.ylapp.com/admin/js/help/help.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2295">
-          <caret line="65" column="37" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/core/YL_Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15727699" vertical-offset="12259" max-vertical-offset="30186">
@@ -675,9 +663,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api.ylapp.com/controllers/mytest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="30537" max-vertical-offset="33210">
-          <caret line="1131" column="36" selection-start-line="1131" selection-start-column="20" selection-end-line="1131" selection-end-column="36" />
-          <folding />
+        <state vertical-scroll-proportion="-0.0" vertical-offset="29349" max-vertical-offset="32022">
+          <caret line="1087" column="36" selection-start-line="1087" selection-start-column="36" selection-end-line="1087" selection-end-column="36" />
+          <folding>
+            <marker date="1481977668448" expanded="true" signature="29555:29996" placeholder="..." />
+            <marker date="1481977668448" expanded="true" signature="36188:36234" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -747,14 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/order/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="2187" max-vertical-offset="3321">
-          <caret line="97" column="36" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/config/production/memcached.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="888">
@@ -789,16 +772,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/config/production/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.75" vertical-offset="0" max-vertical-offset="1269">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.34859154" vertical-offset="0" max-vertical-offset="1269">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin.ylapp.com/views/order/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.0" vertical-offset="2187" max-vertical-offset="3321">
+          <caret line="97" column="36" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/config/production/email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19014084" vertical-offset="0" max-vertical-offset="852">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/config/development/email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19014084" vertical-offset="0" max-vertical-offset="852">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/config/testing/email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15845071" vertical-offset="0" max-vertical-offset="852">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/config/development/shs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1323">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/config/testing/shs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.0" vertical-offset="162" max-vertical-offset="1323">
+          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/config/testing/openim.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="888">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/common/config/production/shs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1323">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.75" vertical-offset="81" max-vertical-offset="1323">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/config/production/constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41197184" vertical-offset="0" max-vertical-offset="1107">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>

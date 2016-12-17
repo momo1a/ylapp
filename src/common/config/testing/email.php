@@ -3,8 +3,8 @@
 //在注册帐号和QQ登录绑定时使用该邮箱发送激活码
 
 $config['smtp_host']    = 'smtp.exmail.qq.com';  //邮箱协议地址
-$config['smtp_user']    = 'cs@zhonghuasuan.com'; //邮箱账户
-$config['smtp_pass']    = 'a2ycgAGgpX1';	    //邮箱密码
+$config['smtp_user']    = ''; //邮箱账户
+$config['smtp_pass']    = '';	    //邮箱密码
 $config['smtp_crypto']  = '';               //验证类型
 $config['smtp_port']    = '25';             //SMTP 端口
 $config['protocol']     = 'smtp';           //邮件发送协议

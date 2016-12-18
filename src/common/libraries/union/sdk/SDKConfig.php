@@ -6,7 +6,8 @@ namespace com\unionpay\acp\sdk;
 // 签名证书路径
 //const SDK_SIGN_CERT_PATH = '/mnt/myweb/ylapp/src/common/libraries/union/certs/ylapp.pfx';
 
-const SDK_SIGN_CERT_PATH = '/usr/local/nginx/html/ylapp/src/common/libraries/union/certs/ylapp.pfx';
+//const SDK_SIGN_CERT_PATH = '/usr/local/nginx/html/ylapp/src/common/libraries/union/certs/ylapp.pfx';
+const SDK_SIGN_CERT_PATH = 'D:/webroot/zzidcconf/nginx/html/ylapp/src/common/libraries/union/certs/ylapp.pfx';
 
 // 签名证书密码
 const SDK_SIGN_CERT_PWD = '654321';
@@ -18,12 +19,12 @@ const  SDK_MER_ID = '826440153990003';
 //const SDK_ENCRYPT_CERT_PATH = '/mnt/myweb/ylapp/src/common/libraries/union/certs/acp_prod_enc.cer';
 
 // 服务器上的证书绝对地址
-const SDK_ENCRYPT_CERT_PATH = '/usr/local/nginx/html/ylapp/src/common/libraries/union/certs/acp_prod_enc.cer';
+const SDK_ENCRYPT_CERT_PATH = 'D:/webroot/zzidcconf/nginx/html/ylapp/src/common/libraries/union/certs/acp_prod_enc.cer';
 
 // 验签证书路径（请配到文件夹，不要配到具体文件）
 //const SDK_VERIFY_CERT_DIR = '/mnt/myweb/ylapp/src/common/libraries/union/certs/';
 
-const SDK_VERIFY_CERT_DIR = '/usr/local/nginx/html/ylapp/src/common/libraries/union/certs/';
+const SDK_VERIFY_CERT_DIR = 'D:/webroot/zzidcconf/nginx/html/ylapp/src/common/libraries/union/certs/';
 
 // 前台请求地址
 //const SDK_FRONT_TRANS_URL = 'https://101.231.204.80:5000/gateway/api/frontTransReq.do';

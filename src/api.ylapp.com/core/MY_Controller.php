@@ -124,7 +124,7 @@ class MY_Controller extends CI_Controller
      * @return int
      */
     protected function getRemoteAddr(){
-        return ip2long($this->input->server('REMOTE_ADDR'));
+        return bindec(decbin(ip2long($this->input->server('REMOTE_ADDR'))));
     }
 
     /**

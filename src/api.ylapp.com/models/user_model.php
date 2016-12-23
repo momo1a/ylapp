@@ -134,7 +134,7 @@ class User_model extends MY_Model
      */
     public function updateLoginInfo($uid){
         $where = array('uid'=>$uid);
-        $data = array('lastLoginTime'=>time(),'lastLoginIp'=>ip2long($_SERVER['REMOTE_ADDR']));
+        $data = array('lastLoginTime'=>time(),'lastLoginIp'=>bindec(decbin(ip2long($_SERVER['REMOTE_ADDR']))));
         $res = $this->update($where,$data);
         return $res;
     }

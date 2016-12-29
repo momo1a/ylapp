@@ -341,9 +341,13 @@ function saveDoctor(){
     var office = $("#doctor_add select[name='office']").val();
     var docLevel = $("#doctor_add input[name='docLevel']").val();
     var isDude = $("#doctor_add input:checked[name='isDude']:checked").val();
-    var phonePattern =   /^1[3|4|5|6|8|7]\d{9}$/;
-    if(!phonePattern.test(account)){
-        alert('请填写正确手机号');
+    var phonePattern =   /.?(-|'|"|‘|“).?/;
+    if(phonePattern.test(account)){
+        alert('不能包含特殊字符”’-" \'');
+        return false;
+    }
+    if(account.length<2 || account.length>50){
+        alert('账户名不能大于50位小于2位');
         return false;
     }
     var pwdPattern = /^\d+$/;

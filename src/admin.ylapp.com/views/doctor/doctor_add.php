@@ -13,7 +13,7 @@
                     <div class=" col-xs-6">
                         <div class="input-group">
                             <span class="input-group-addon">账号</span>
-                            <input type="text" class="form-control" name="account" placeholder="请填写手机号">
+                            <input type="text" class="form-control" name="account" placeholder="请填写账号名">
                         </div>
                     </div>
                     <div class="col-xs-6">

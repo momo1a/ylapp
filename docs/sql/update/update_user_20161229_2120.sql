@@ -1,0 +1,1 @@
+ALTER TABLE YL_user modify `phone` varchar(60) NOT NULL DEFAULT '' COMMENT '电话';

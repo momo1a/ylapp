@@ -203,7 +203,7 @@ class User_model extends My_Model{
      */
     public function addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude,$docLevel){
         $this->db->trans_begin();
-        $resF = $this->insert(array('phone'=>$phone,'password'=>$password,'nickname'=>$nickname,'sex'=>$sex,'userType'=>2,'dateline'=>time(),'regIp'=>bindec(decbin(ip2long($_SERVER['REMOTE_ADDR'])))));
+        $resF = $this->insert(array('email'=>$phone,'password'=>$password,'nickname'=>$nickname,'sex'=>$sex,'userType'=>2,'dateline'=>time(),'regIp'=>bindec(decbin(ip2long($_SERVER['REMOTE_ADDR'])))));
         $docId = $this->db->insert_id();
         $resS = $this->db->insert('doctor_info',array('uid'=>$docId,'hid'=>$hid,'officeId'=>$officeId,'sex'=>$sex,'isDude'=>$isDude,'docLevel'=>$docLevel));
         if (!$resF || !$resS)

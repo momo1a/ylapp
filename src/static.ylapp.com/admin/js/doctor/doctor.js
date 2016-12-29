@@ -50,7 +50,7 @@ function getDoctorDetail(e){
                     default :
                         var sex = '男';
                 }
-                doctorInfo.html('<div class="doctor-detail"><div><span>账号：</span>'+ doctor.phone +'</div><div><span>密码：</span>'+ doctor.password +'</div></div>' +
+                doctorInfo.html('<div class="doctor-detail"><div><span>账号：</span>'+ doctor.email +'</div><div><span>密码：</span>'+ doctor.password +'</div></div>' +
                 '<div class="doctor-detail"><div><span>姓名：</span>'+ doctor.nickname +'</div><div><span>出生日期：</span>'+ doctor.birthday +'</div></div>' +
                 '<div class="doctor-detail"><div><span>性别：</span>'+ sex +'</div><div><span>电话一：</span>'+ doctor.phone +'</div></div>'+
                 '<div class="doctor-detail"><div><span>所属医院：</span>'+ doctor.name +'</div><div><span>电话二：</span>'+ doctor.phoneSec +'</div></div>' +

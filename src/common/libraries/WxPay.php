@@ -32,7 +32,7 @@ class WxPay{
            // 'mch_id' => "1266284201",   /*微信申请成功之后邮件中的商户id*/
             'mch_id' => "1410453702",   /*微信申请成功之后邮件中的商户id*/
             //'api_key' => "68f96eefa7b34346670149f370c7af5a",    /*在微信商户平台上自己设定的api密钥 32位*/
-            'api_key' => "q1w2e3r4t5y6u7i8o9p0a1s2d3f4g5h6",    /*在微信商户平台上自己设定的api密钥 32位*/
+            'api_key' => "164da2a9a27b901159011c55d8afdf13",    /*在微信商户平台上自己设定的api密钥 32位*/
         );
 
         $this->apiUrl = "https://api.mch.weixin.qq.com/pay/unifiedorder";

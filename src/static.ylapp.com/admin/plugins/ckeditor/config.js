@@ -40,6 +40,20 @@ CKEDITOR.editorConfig = function( config ) {
     //config.filebrowserImageUploadUrl= "admin/UserArticleFileUpload.do";
     config.filebrowser = true;
 
+    config.extraPlugins = 'colorbutton';
+
+    config.colorButton_enableAutomatic = false;
+
+    config.colorButton_foreStyle = {
+        element: 'font',
+        attributes: { 'color': '#(color)' }
+    };
+
+    config.colorButton_backStyle = {
+        element: 'font',
+        styles: { 'background-color': '#(color)' }
+    };
+
     // 图片上传地址
     config.filebrowserImageUploadUrl = SITE_URL + "home/ckImgUpload";
 };

@@ -10,7 +10,9 @@ class User_center extends MY_Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->checkUserLogin();   // 检查用户登录
+        if($this->router->method != 'logout') {
+            $this->checkUserLogin();   // 检查用户登录
+        }
         $this->load->model('User_phone_diagnosis_model','online_ask');
         $this->load->model('Doctor_evaluate_model','evaluate');
         $this->load->model('User_reg_num_model','appoint');

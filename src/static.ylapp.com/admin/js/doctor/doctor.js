@@ -35,7 +35,7 @@ function getDoctorDetail(e){
         data: {uid: uid},
         dataType: 'json',
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             var doctorInfo = $("#doctor_detail .modal-body");
             doctorInfo.html('');
             var doctor = result.data;
@@ -69,6 +69,33 @@ function getDoctorDetail(e){
                     $('#goodAt').append(html);
                 }
             }
+        }
+
+    });
+}
+
+// 编辑医生前置函数
+function editDoctorPre(e){
+    var uid = $(e).attr("uid");
+    $.ajax({
+        url: SITE_URL + "doctor/getDoctorDetail",
+        type: "post",
+        data: {uid: uid},
+        dataType: 'json',
+        success: function (result) {
+            console.log(result);
+            $("#doctor_edit .modal-body input[name='account']").val(result.data.email);
+            $("#doctor_edit .modal-body input[name='pwd']").val(result.data.password);
+            $("#doctor_edit .modal-body input[name='username']").val(result.data.nickname);
+            $("#doctor_edit .modal-body input[name='username']").val(result.data.nickname);
+            $("#doctor_edit .modal-body #sex_edit").val(result.data.sex);
+            $("#doctor_edit .modal-body #hospital_edit").val(result.data.hid);
+            $("#doctor_edit .modal-body #office_edit").val(result.data.officeId);
+            $("#doctor_edit .modal-body input[name='docLevel']").val(result.data.docLevel);
+            if(result.data.isDude == '1') {
+                $("#doctor_edit .modal-body #isDude_edit").prop("checked", true);
+            }
+
         }
 
     });

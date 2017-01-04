@@ -8,6 +8,7 @@
 <?php $this->load->view('doctor/trade_info');?>
 <?php $this->load->view('doctor/fee_setting');?>
 <?php $this->load->view('doctor/doctor_add');?>
+<?php $this->load->view('doctor/doctor_edit');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -97,7 +98,11 @@
                                                     break;
                                                 default:
                                                     echo '状态异常';
-                                            }?></th>
+                                            }?>
+                                            &nbsp;&nbsp;
+                                            <a data-target="#doctor_edit" data-toggle="modal"  uid="<?php echo $value['uid'];?>" onclick="editDoctorPre(this);return false;" title="编辑医生"><span class="glyphicon glyphicon-pencil"></span></a>
+                                            &nbsp;&nbsp;<a data-target="#medi_del" data-toggle="modal"  mid="<?php echo $value['id'];?>" onclick="$('#medi_del input[name=\'mid\']').val(<?php echo $value['id'];?>);return false;" title="删除医生"><span class="glyphicon glyphicon-trash"></span></a>
+                                        </th>
                                     </tr>
                                 <?php }}?>
                             </tbody>

@@ -53,8 +53,8 @@ class Medicine extends MY_Controller
                 }
             }
             if($mid == 0) {
-                if ($i < 3) {
-                    $this->ajax_json(-2, 'banner图片必须上传三张或三张以上');
+                if ($i < 1) {
+                    $this->ajax_json(-2, 'banner图片必须上传一张或一张以上');
                 }
             }
             foreach($_FILES as $key=>$value){

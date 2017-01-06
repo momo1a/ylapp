@@ -96,6 +96,8 @@ function editDoctorPre(e){
                 $("#doctor_edit .modal-body #isDude_edit").prop("checked", true);
             }
 
+            $("#doctor_edit .modal-body input[name='uid']").val(uid);
+
         }
 
     });
@@ -355,19 +357,21 @@ function saveDoctorFee(){
  * 初始化添加医生界面
  */
 function addDoctorPre(){
-
+    $('#doctor_edit input[name="uid"]').val(0);
 }
 
 
 function saveDoctor(){
-    var account = $("#doctor_add input[name='account']").val();
-    var pwd = $("#doctor_add input[name='pwd']").val();
-    var username = $("#doctor_add input[name='username']").val();
-    var sex = $("#doctor_add select[name='sex']").val();
-    var hospital = $("#doctor_add select[name='hospital']").val();
-    var office = $("#doctor_add select[name='office']").val();
-    var docLevel = $("#doctor_add input[name='docLevel']").val();
-    var isDude = $("#doctor_add input:checked[name='isDude']:checked").val();
+    var uid = $('#doctor_edit input[name="uid"]').val();
+    var eleId = uid != 0 ? 'edit' : 'add';
+    var account = $("#doctor_"+ eleId +" input[name='account']").val();
+    var pwd = $("#doctor_"+ eleId +" input[name='pwd']").val();
+    var username = $("#doctor_"+ eleId +" input[name='username']").val();
+    var sex = $("#doctor_"+ eleId +" select[name='sex']").val();
+    var hospital = $("#doctor_"+ eleId +" select[name='hospital']").val();
+    var office = $("#doctor_"+ eleId +" select[name='office']").val();
+    var docLevel = $("#doctor_"+ eleId +" input[name='docLevel']").val();
+    var isDude = $("#doctor_"+ eleId +" input:checked[name='isDude']:checked").val();
     var phonePattern =   /.?(-|'|"|‘|“).?/;
     if(phonePattern.test(account)){
         alert('不能包含特殊字符”’-" \'');
@@ -397,9 +401,30 @@ function saveDoctor(){
     }
     isDude = isDude == undefined ? 0 : isDude;
     $.ajax({
-        url: SITE_URL + "doctor/addDoctor",
+        url: SITE_URL + "doctor/saveDoctor",
         type: "post",
-        data: {phone:account,password:pwd,nickname:username,sex:sex,hid:hospital,officeId:office,isDude:isDude,docLevel:docLevel},
+        data: {phone:account,password:pwd,nickname:username,sex:sex,hid:hospital,officeId:office,isDude:isDude,docLevel:docLevel,uid:uid},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+
+
+
+}
+
+function DoctorDel(){
+    var uid = $("#doctor_del input[name='uid']").val();
+    $.ajax({
+        url: SITE_URL + "doctor/doctorDel",
+        type: "post",
+        data: {uid:uid},
         dataType: 'json',
         success: function (result) {
             if(result.code == 0){

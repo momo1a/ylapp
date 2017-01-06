@@ -158,7 +158,8 @@ class Doctor extends MY_Controller{
     /**
      * 添加医生账户
      */
-    public function addDoctor(){
+    public function saveDoctor(){
+        $uid = intval($this->input->get_post('uid'));
         $phone = trim($this->input->get_post('phone'));
         $password = $this->encryption(trim($this->input->get_post('password')));
         $nickname = $this->input->get_post('nickname');
@@ -167,9 +168,11 @@ class Doctor extends MY_Controller{
         $officeId = intval($this->input->get_post('officeId'));
         $docLevel = trim($this->input->get_post('docLevel'));
         $isDude = intval($this->input->get_post('isDude'));
-        $this->user->getRecord('email',$phone) ? $this->ajax_json(-1,'账户已经注册') : '';
+        if($uid==0) {
+            $this->user->getRecord('email', $phone) ? $this->ajax_json(-1, '账户已经注册') : '';
+        }
         $this->user->getRecord('nickname',$nickname) ? $this->ajax_json(-1,'昵称已经存在') : '';
-        $res = $this->user->addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude,$docLevel);
+        $res = $this->user->addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude,$docLevel,$uid);
         if($res){
             $this->ajax_json(0,'操作成功');
         }else{
@@ -178,5 +181,16 @@ class Doctor extends MY_Controller{
 
     }
 
-
+    /**
+     * 删除医生
+     */
+    public function doctorDel(){
+        $uid = intval($this->input->get_post('uid'));
+        $rs = $this->user->doctorDel($uid);
+        if($rs){
+            $this->ajax_json(0,'操作成功');
+        }else{
+            $this->ajax_json(0,'操作失败');
+        }
+    }
 }

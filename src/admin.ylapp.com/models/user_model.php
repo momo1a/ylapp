@@ -201,12 +201,43 @@ class User_model extends My_Model{
      * @param $hid
      * @param $officeId
      */
-    public function addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude,$docLevel){
+    public function addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude,$docLevel,$uid){
         $this->db->trans_begin();
-        $resF = $this->insert(array('email'=>$phone,'password'=>$password,'nickname'=>$nickname,'sex'=>$sex,'userType'=>2,'dateline'=>time(),'regIp'=>bindec(decbin(ip2long($_SERVER['REMOTE_ADDR'])))));
-        $docId = $this->db->insert_id();
-        $resS = $this->db->insert('doctor_info',array('uid'=>$docId,'hid'=>$hid,'officeId'=>$officeId,'sex'=>$sex,'isDude'=>$isDude,'docLevel'=>$docLevel));
+        if($uid == 0) {
+            $resF = $this->insert(array('email' => $phone, 'password' => $password, 'nickname' => $nickname, 'sex' => $sex, 'userType' => 2, 'dateline' => time(), 'regIp' => bindec(decbin(ip2long($_SERVER['REMOTE_ADDR'])))));
+            $docId = $this->db->insert_id();
+            $resS = $this->db->insert('doctor_info', array('uid' => $docId, 'hid' => $hid, 'officeId' => $officeId, 'sex' => $sex, 'isDude' => $isDude, 'docLevel' => $docLevel));
+        }else{
+            $where = array('uid'=>$uid);
+            $data = array('password' => $password, 'nickname' => $nickname, 'sex' => $sex);
+            $resF = $this->from('user')->update($where,$data);
+            $info_data = array('hid' => $hid, 'officeId' => $officeId, 'sex' => $sex, 'isDude' => $isDude, 'docLevel' => $docLevel);
+            $resS = $this->db->update('doctor_info', $info_data,$where);
+        }
+
         if (!$resF || !$resS)
+        {
+            $this->db->trans_rollback();
+            return false;
+        }
+        else
+        {
+            $this->db->trans_commit();
+            return true;
+        }
+    }
+
+    /**
+     * 删除医生
+     * @param $uid
+     * @return bool
+     */
+    public function doctorDel($uid){
+        $this->db->trans_begin();
+        $tables = array('user', 'doctor_info');
+        $this->db->where('uid', $uid);
+        $res = $this->db->delete($tables);
+        if ($res)
         {
             $this->db->trans_rollback();
             return false;

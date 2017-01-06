@@ -13,7 +13,7 @@
                         <div class=" col-xs-6">
                             <div class="input-group">
                                 <span class="input-group-addon">账号</span>
-                                <input type="text" class="form-control" name="account" placeholder="请填写账号名">
+                                <input type="text" class="form-control" readonly name="account" placeholder="请填写账号名">
                             </div>
                         </div>
                         <div class="col-xs-6">
@@ -83,6 +83,7 @@
                         </div>
                     </div>
                     <hr/>
+                    <input name="uid" type="hidden"/>
                     <div class="row" style="text-align: center"><button type="button" class="btn btn-default" onclick="saveDoctor();return false;">保存</button></div>
             </form>
         </div>

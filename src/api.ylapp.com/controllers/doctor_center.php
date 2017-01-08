@@ -39,6 +39,7 @@ class Doctor_center extends MY_Controller
         $regOrder = $this->reg_num->doctorIndex(self::$currentUid);  //预约挂号
         $diagOrder = $this->diagnosis->doctorIndex(self::$currentUid); //在线问诊
         $msgOrder = $this->levemsg->doctorIndex(self::$currentUid); //留言问答
+        $medicineOrder = $this->appoint->getMsg(2,self::$currentUid);   // 药品分配
         $banner = $this->news->getClientIndexBanner(2,'nid,title,banner as img');
         if(!empty($msgOrder)){
             foreach($msgOrder as $key=>$value){
@@ -50,6 +51,7 @@ class Doctor_center extends MY_Controller
         $this->orderContainer($regOrder,$i,$order);
         $this->orderContainer($diagOrder,$i,$order);
         $this->orderContainer($msgOrder,$i,$order);
+        $this->orderContainer($medicineOrder,$i,$order);
         $this->sortArrByField($order,'dateline',true);
         $result = array_slice($order,$offset,$limit,true);
         $this->response($this->responseDataFormat(0,'请求成功',array('order'=>$result,'count'=>$i,'banner'=>$banner,'imgServer'=>$this->imgServer)));

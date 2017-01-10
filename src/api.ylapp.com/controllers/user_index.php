@@ -48,7 +48,7 @@ class User_index extends MY_Controller
      */
     public function getIndexDoctorList(){
         $this->load->model('user_model','user');
-        $res = $this->user->getDoctorList(6,'YL_user.uid,YL_user.avatar,YL_user.nickname,YL_doctor_offices.officeName');
+        $res = $this->user->getDoctorList(6,'YL_user.uid,YL_user.avatar,YL_user.nickname,YL_doctor_offices.officeName',true);
         //$this->response($this->responseDataFormat(0,'请求成功',$res));
         return $res;
     }

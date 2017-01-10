@@ -45,7 +45,7 @@ class Doctor extends MY_Controller{
         if(!empty($nickname) || !empty($phone) || $state != -1){
             $offset = 0;
         }
-        $list = $this->user->getUserList($limit,$offset,$nickname,$phone,2,'YL_user.*,YL_money.amount,YL_doctor_info.state as doctorState,YL_doctor_info.isDude',$state);
+        $list = $this->user->getUserList($limit,$offset,$nickname,$phone,2,'YL_user.*,YL_money.amount,YL_doctor_info.state as doctorState,YL_doctor_info.isDude,YL_doctor_info.isReCmd',$state);
         $page_conf['base_url'] = site_url($this->router->class.'/'.$this->router->method.'/');
         $page_conf['first_url'] = site_url($this->router->class.'/'.$this->router->method.'/0');
         $pager = $this->pager($total, $limit,$page_conf);
@@ -176,7 +176,7 @@ class Doctor extends MY_Controller{
         if($res){
             $this->ajax_json(0,'操作成功');
         }else{
-            $this->ajax_json(0,'操作失败');
+            $this->ajax_json(-1,'操作失败');
         }
 
     }
@@ -190,7 +190,21 @@ class Doctor extends MY_Controller{
         if($rs){
             $this->ajax_json(0,'操作成功');
         }else{
-            $this->ajax_json(0,'操作失败');
+            $this->ajax_json(-1,'操作失败');
+        }
+    }
+
+    /**
+     * 推荐或者取消推荐到首页
+     */
+    public function reCmd(){
+        $uid = intval($this->input->get_post('uid'));
+        $action = intval($this->input->get_post('action'));
+        $rs = $this->user->reCmd($uid,$action);
+        if($rs){
+            $this->ajax_json(0,'操作成功');
+        }else{
+            $this->ajax_json(-1,'操作失败');
         }
     }
 }

@@ -147,7 +147,7 @@ class User_model extends MY_Model
      * @param $select   查询字段
      * @return array
      */
-    public function getDoctorList($limit,$select,$officeId=0,$hid=0,$keyword='',$offset=0){
+    public function getDoctorList($limit,$select,$officeId=0,$hid=0,$keyword='',$offset=0,$indexRecmd = false){
         $officeId = intval($officeId);
         $hid = intval($hid);
         if($officeId != 0){
@@ -158,6 +158,10 @@ class User_model extends MY_Model
         }
         if($keyword != ''){
             $this->like('YL_user.nickname',$keyword);
+        }
+        if($indexRecmd){
+            $this->where('YL_doctor_info.isReCmd',1);
+            $this->order_by('YL_doctor_info.reCmdTime','desc');
         }
         $where = array('userType'=>2,'YL_doctor_info.state'=>1,'YL_doctor_info.isDude'=>0);
         $this->select($select);

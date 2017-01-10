@@ -249,6 +249,18 @@ class User_model extends My_Model{
         }
     }
 
+    /**
+     * 推荐，取消推荐
+     * @param $uid
+     * @param $action
+     */
+    public function reCmd($uid,$action){
+        $where = array('uid'=>$uid);
+        $data = array('isReCmd'=>$action,'reCmdTime'=>time());
+        $res = $this->db->update('doctor_info', $data,$where);
+        return $res;
+    }
+
 
 
 

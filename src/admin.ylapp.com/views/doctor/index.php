@@ -56,6 +56,7 @@
                                 <th>费用设置</th>
                                 <th>当前状态</th>
                                 <th>药房伙计</th>
+                                <th>推荐/取消推荐</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
@@ -87,6 +88,13 @@
                                             }?></th>
                                         <?php $isDude = array('0'=>'否','1'=>'是');?>
                                         <th><?php echo $isDude[$value['isDude']];?></th>
+                                        <th><?php
+                                                if($value['isDude'] == 0 && $value['isReCmd'] == 0) {
+                                                    echo '<a href="javascript:void(0);" onclick="reCmd(this);return false;" action="1" uid="'.$value['uid'].'">推荐到首页</a>';
+                                                }elseif($value['isDude'] == 0 && $value['isReCmd'] == 1){
+                                                    echo '<a href="javascript:void(0);" onclick="reCmd(this);return false;" action="0" uid="'.$value['uid'].'">取消推荐到首页</a>';
+                                                }
+                                            ?></th>
                                         <th><?php switch(intval($value['doctorState'])){
                                                 case 0:
                                                     echo '<a state="1" uid="'.$value['uid'].'" onclick="setDoctorStat(this);return false;" >通过</a>&nbsp;&nbsp;<a state="2" uid="'.$value['uid'].'" onclick="setDoctorStat(this);return false;" >不通过</a>';

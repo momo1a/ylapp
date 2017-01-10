@@ -11,6 +11,8 @@ CREATE TABLE `YL_doctor_info` (
   `summary` VARCHAR(1000) not null default '' comment '简介',
   `goodAt` varchar(1000) not null default '' COMMENT '擅长',
   `isDude` tinyint(3) unsigned not null default '0' comment '是否药店伙计 0否  1是',
+  `isReCmd`tinyint(3) unsigned not null default '0' comment '是否推荐到首页 0否  1是',
+  `reCmdTime` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '推荐到首页的时间',
   `certificateImg` VARCHAR(600) not null default '' comment '证书图片',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '账号状态:0待审核,1通过,2不通过',
   PRIMARY KEY (`uid`),

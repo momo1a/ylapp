@@ -437,4 +437,27 @@ function DoctorDel(){
     });
 }
 
+/**
+ * 推荐 取消推荐到首页
+ * @param ele
+ */
+function reCmd(ele){
+    var action = $(ele).attr('action');
+    var uid = $(ele).attr('uid');
+    $.ajax({
+        url: SITE_URL + "doctor/reCmd",
+        type: "post",
+        data: {uid:uid,action:action},
+        dataType: 'json',
+        success: function (result) {
+            if(result.code == 0){
+                alert(result.msg);
+                location.reload();
+            }else{
+                alert(result.msg);
+            }
+        }
+    });
+}
+
 

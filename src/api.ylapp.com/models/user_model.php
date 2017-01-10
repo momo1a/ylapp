@@ -159,11 +159,11 @@ class User_model extends MY_Model
         if($keyword != ''){
             $this->like('YL_user.nickname',$keyword);
         }
+        $where = array('userType'=>2,'YL_doctor_info.state'=>1,'YL_doctor_info.isDude'=>0);
         if($indexRecmd){
-            $this->where('YL_doctor_info.isReCmd',1);
+            $where['YL_doctor_info.isReCmd'] = 1;
             $this->order_by('YL_doctor_info.reCmdTime','desc');
         }
-        $where = array('userType'=>2,'YL_doctor_info.state'=>1,'YL_doctor_info.isDude'=>0);
         $this->select($select);
         $this->join('YL_doctor_info','YL_doctor_info.uid=YL_user.uid','left');
         $this->join('YL_hospital','YL_doctor_info.hid=YL_hospital.hid','left');

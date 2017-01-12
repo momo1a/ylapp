@@ -31,8 +31,9 @@ function mediSave(){
     var mediImgSrc = $('.medi-img img').attr('src');
     var bannerImgSrc = $('.banner-img img').attr('src');
     if(!(ImageValidata(mediImgSrc,'药品缩略图',350,350))){ return false;}
-    if(!(ImageValidata(bannerImgSrc,'banner图片',350,350))){ return false;}
-
+    if(!(ImageValidata(bannerImgSrc,'banner图片',290,135))){ return false;}
+    if(!(Bilivalidate(bannerImgSrc,'banner图片',15,7))){return false;}  // 宽高比
+    console.log('test')
     for(instance in CKEDITOR.instances){
         CKEDITOR.instances[instance].updateElement();
     }
@@ -115,14 +116,7 @@ function addCate(){
 
 }
 
-/**
- * 删除前
- * @param e
- */
-/*function newsDelPre(e){
- var mid = $(e).attr('mid');
- $('#news_del input[name="mid"]').val(mid);
- }*/
+
 
 
 function MediDel(){

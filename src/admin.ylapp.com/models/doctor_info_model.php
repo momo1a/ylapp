@@ -63,5 +63,15 @@ class Doctor_info_model extends MY_Model
         return $res;
     }
 
+    /**
+     * 获取未处理医生
+     */
+    public function getNotDealDoctor($select){
+        $this->select($select,false);
+        $this->join('user','user.uid=doctor_info.uid','left');
+        $this->where(array('doctor_info.state'=>0));
+        return $this->find_all();
+    }
+
 
 }

@@ -177,6 +177,7 @@ class MY_Controller extends CI_Controller
         $this->load->model('Post_model','post');
         $this->load->model('Post_comment_model','comment');
         $this->load->model('User_leaving_msg_model','leaving');
+        $this->load->model('Doctor_info_model','doc_info');
         $this->load->model('User_phone_diagnosis_model','diagnosis');
         $this->load->model('User_reg_num_model','reg');
         $this->load->model('Order_model','order');
@@ -186,6 +187,7 @@ class MY_Controller extends CI_Controller
         $leavingMsg = $this->leaving->getNotDeal('*,askTime as dateline,"留言" as msgType');  //  留言问答
         $diaMsg = $this->diagnosis->getNotDeal('*,askTime as dateline,"电话" as msgType');   //   电话问诊
         $regMsg = $this->reg->getNotDeal('*,"挂号" as msgType');   // 预约挂号
+        $docMsg = $this->doc_info->getNotDealDoctor('*,"医生" as msgType');
         $orderMsg = $this->order->getNotDeal('*,"订单" as msgType');   // 订单
         $cashMsg = $this->cash->getNotDeal('*,"提现" as msgType');   // 提现
         $msg = array();
@@ -197,6 +199,7 @@ class MY_Controller extends CI_Controller
         $this->msgContainer($regMsg,$i,$msg);
         $this->msgContainer($orderMsg,$i,$msg);
         $this->msgContainer($cashMsg,$i,$msg);
+        $this->msgContainer($docMsg,$i,$msg);
 
         $this->sortArrByField($msg,'dateline',true);
         return array('msg'=>$msg,'count'=>$i);

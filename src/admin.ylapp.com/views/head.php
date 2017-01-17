@@ -130,6 +130,9 @@ desired effect
                                             case '提现':
                                                 echo msgTemplate(site_url().'cash/index?keyword='.$val['buyerName'].'&state=0',$val['realName'].'的提现待处理');
                                                 break;
+                                            case '医生':
+                                                echo msgTemplate(site_url().'doctor/index/?nickname='.$val['nickname'],$val['nickname'].'医生信息待审核');
+                                                break;
 
                                         }?>
                                     <?php  endforeach;endif;?>

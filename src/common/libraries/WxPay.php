@@ -27,12 +27,12 @@ class WxPay{
 
     public function  __construct() {
         $this->config = array(
-            'appid' => "wx1a13456d65204e33",    /*微信开放平台上的应用id*/
-            //'appid' => "wxda3086c3063a6d9b",    /*微信开放平台上的应用id*/
-            'mch_id' => "1266284201",   /*微信申请成功之后邮件中的商户id*/
-            //'mch_id' => "1410453702",   /*微信申请成功之后邮件中的商户id*/
-            'api_key' => "68f96eefa7b34346670149f370c7af5a",    /*在微信商户平台上自己设定的api密钥 32位*/
-            //'api_key' => "26f0594ee11f7c78239cd2f82bc18c55",    /*在微信商户平台上自己设定的api密钥 32位*/
+            //'appid' => "wx1a13456d65204e33",    /*微信开放平台上的应用id*/
+            //'api_key' => "68f96eefa7b34346670149f370c7af5a",    /*在微信商户平台上自己设定的api密钥 32位*/
+            //'mch_id' => "1266284201",   /*微信申请成功之后邮件中的商户id*/
+            'appid' => "wxda3086c3063a6d9b",    /*微信开放平台上的应用id*/
+            'mch_id' => "1410453702",   /*微信申请成功之后邮件中的商户id*/
+            'api_key' => "1234567890qwertyuiop1234567890QW",    /*在微信商户平台上自己设定的api密钥 32位*/
         );
 
         $this->apiUrl = "https://api.mch.weixin.qq.com/pay/unifiedorder";
@@ -64,7 +64,6 @@ class WxPay{
         $data["sign"] = $s;
         $xml = $this->arrayToXml($data);
         $response = $this->postXmlCurl($xml, $url);
-
         //将微信返回的结果xml转成数组
         return $this->xmlstr_to_array($response);
     }

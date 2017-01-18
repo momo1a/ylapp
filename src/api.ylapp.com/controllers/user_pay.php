@@ -46,6 +46,7 @@ class User_pay extends MY_Controller
                 $this->pay->submitPay($data) ? '' : $this->response($this->responseDataFormat(-1,'系统数据库错误',array()));
                 $noticeUrl = site_url().'notice/wx_recharge';
                 $response = $this->wxpay->getPrePayOrder($orderBody, $tradeNo, $amount,$uid,$noticeUrl);
+                //var_dump($response);
                 $wxPayUrl = site_url().'wxpay_return/toWxPay?prepay_id='.$response['prepay_id'];
                 $this->response($this->responseDataFormat(0,'请求成功',array('wxPayUrl'=>$wxPayUrl)));
                 break;

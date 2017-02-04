@@ -22,7 +22,7 @@ class News_model extends MY_Model
     public function getNewsList($limit,$postPos,$select,$recmdToIndex=false,$offset=0,$keyword = ''){
         $where = array('YL_news.state'=>1);
         if($recmdToIndex){
-            $this->where('isRecmdIndex',1);
+            $this->where('isRecmd',1);
         }
         if($keyword != ''){
             $this->like('title',$keyword);

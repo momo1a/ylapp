@@ -26,7 +26,7 @@ $config['image_servers'] = array('http://123.207.88.225:8081/');
 
 // 各站点域名
 //$config['domain_www'] = 'http://www.ylapp.com/';
-$config['domain_static'] = 'http://123.207.88.225:8083/';
+$config['domain_static'] = 'https://static.du-ms.com/';
 $config['domain_detail'] = 'http://123.207.88.225:8084/';
 $config['domain_download'] = 'http://123.207.88.225:8085/';  // 下载站点
 

@@ -22,12 +22,12 @@ $config['upload_avatar_thumb_size'] = array('small'=>48, 'middle'=>120, 'big'=>1
 $config['upload_avatar_quality'] = 95;
 
 // 图片服务器
-$config['image_servers'] = array('http://123.207.88.225:8081/');
+$config['image_servers'] = array('https://img.du-ms.com/');
 
 // 各站点域名
 //$config['domain_www'] = 'http://www.ylapp.com/';
 $config['domain_static'] = 'https://static.du-ms.com/';
-$config['domain_detail'] = 'http://123.207.88.225:8084/';
+$config['domain_detail'] = 'https://detail.du-ms.com/';
 $config['domain_download'] = 'http://123.207.88.225:8085/';  // 下载站点
 
 // app升级包上传目录

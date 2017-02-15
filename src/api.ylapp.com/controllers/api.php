@@ -144,7 +144,7 @@ class Api extends MY_Controller
 
                 $res = $this->user->bindThirdPart($openId,$user);
                 if(!$res){
-                    $this->response($this->responseDataFormat(-1, '系统错误绑定失败', array())); //绑定失败
+                    $this->response($this->responseDataFormat(-1, '请绑定已注册的手机号码', array())); //绑定失败
                 }
 
                 $this->login(true,$res);  // 转到登录接口
@@ -168,7 +168,7 @@ class Api extends MY_Controller
 
                 $res = $this->user->bindThirdPart($openId,$user,2);
                 if(!$res){
-                    $this->response($this->responseDataFormat(-1, '系统错误绑定失败', array())); //绑定失败
+                    $this->response($this->responseDataFormat(-1, '请绑定已注册的手机号码', array())); //绑定失败
                 }
 
                 $this->login(true,$res);  // 转到登录接口

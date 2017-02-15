@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		body{
+			background-color: #FFFFFF;
+		}
+		.content{ 
+			text-align: center;
+		}
+		img{
+			width: 100px;
+		    margin: 25% 0 8px;
+		}
+		.btns{
+		    position: absolute;
+		    top: 60%;
+		    left: 0;
+		    right: 0;
+			font-family: "微软雅黑";
+		}
+		.p1{
+			font-size: 15px;color: #63b5b3;
+			font-family: "微软雅黑";
+		}
+		.btns>button{
+		    border-radius: 20px;
+		    width: 105px;
+		    margin: 10px 10px;
+		}
+		.b1{
+			border: 1px solid #099fde;
+		}
+		.b2{
+			border: 1px solid #44a643;
+		}
+		.p2{
+			position: absolute;bottom: 15px;left: 0;right: 0;
+			margin: auto;
+			font-family: "微软雅黑";
+		}
+		.p3{
+			font-size: 31px;
+    		margin-bottom: 15px;
+    		color: #226296;
+    		font-family: "微软雅黑";
+		}
+	</style>
+	<body>
+		<div class="content">
+			<img src="100x100.png" />
+			<p class="p3">名医肿瘤科</p>
+			<p class="p1">
+				最专注的跨境医疗平台
+			</p>
+			<div class="btns">
+				<button id="b1" class="mui-btn b1">iOS 版</button>
+				<button id="b2" class="mui-btn b2">Android 版</button>
+			</div>
+			<p class="p2">
+				copyright © 2016 www.du-ms.com
+			</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.getElementById("b1").addEventListener("click",function(){
+			window.location.href = "https://itunes.apple.com/cn/app/id1159570957";
+		})
+		document.getElementById("b2").addEventListener("click",function(){
+			window.location.href = "http://sj.qq.com/myapp/detail.htm?apkName=io.dcloud.H568440CA";
+		})
+	</script>
+</html>

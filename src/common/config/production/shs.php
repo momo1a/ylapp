@@ -1,7 +1,7 @@
 <?php
 // 用户cookie配置
 $config['cookie_name'] = 'YL';
-$config['cookie_domain'] = '.fqf.com';
+$config['cookie_domain'] = '.du-ms.com';
 $config['cookie_account'] = 'account'; // 保存登录账号的cookie键
 
 // Session配置
@@ -22,13 +22,13 @@ $config['upload_avatar_thumb_size'] = array('small'=>48, 'middle'=>120, 'big'=>1
 $config['upload_avatar_quality'] = 95;
 
 // 图片服务器
-$config['image_servers'] = array('http://123.207.88.225:8081/');
+$config['image_servers'] = array('https://img.du-ms.com/');
 
 // 各站点域名
 //$config['domain_www'] = 'http://www.ylapp.com/';
-$config['domain_static'] = 'http://123.207.88.225:8083/';
-$config['domain_detail'] = 'http://123.207.88.225:8084/';
-$config['domain_download'] = 'http://123.207.88.225:8085/';  // 下载站点
+$config['domain_static'] = 'https://static.du-ms.com/';
+$config['domain_detail'] = 'https://detail.du-ms.com/';
+$config['domain_download'] = 'https://download.du-ms.com/';  // 下载站点
 
 // app升级包上传目录
 $config['app_update_package_upload_path'] = 'D:/webroot/zzidcconf/nginx/html/upload/';

@@ -168,10 +168,19 @@ class Doctor extends MY_Controller{
         $officeId = intval($this->input->get_post('officeId'));
         $docLevel = trim($this->input->get_post('docLevel'));
         $isDude = intval($this->input->get_post('isDude'));
+        $nicknameExists = $this->user->getRecord('nickname',$nickname);
         if($uid==0) {
             $this->user->getRecord('email', $phone) ? $this->ajax_json(-1, '账户已经注册') : '';
+            if($nicknameExists) {
+                $this->ajax_json(-1,'昵称已经存在');
+            }
         }
-        $this->user->getRecord('nickname',$nickname) ? $this->ajax_json(-1,'昵称已经存在') : '';
+        $nicknameExistsByUid = $this->user->getUserInfoByUid($uid);
+        if($uid != 0){
+            if($nicknameExists && $nicknameExistsByUid['nickname'] != $nickname){
+                $this->ajax_json(-1,'昵称已经存在');
+            }
+        }
         $res = $this->user->addDoctor($phone,$password,$nickname,$sex,$hid,$officeId,$isDude,$docLevel,$uid);
         if($res){
             $this->ajax_json(0,'操作成功');

@@ -19,7 +19,7 @@
                         <div class="col-xs-6">
                             <div class="input-group">
                                 <span class="input-group-addon">密码</span>
-                                <input type="password" class="form-control" name="pwd">
+                                <input type="password" class="form-control" name="pwd" readonly>
                             </div>
                         </div>
                     </div>

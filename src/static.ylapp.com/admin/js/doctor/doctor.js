@@ -386,9 +386,11 @@ function saveDoctor(){
         alert('密码不能为纯数字');
         return false;
     }
-    if(pwd.length > 20 || pwd.length < 6){
-        alert('密码不能大于20位小于6位');
-        return false;
+    if(uid==0){
+        if(pwd.length > 20 || pwd.length < 6){
+            alert('密码不能大于20位小于6位');
+            return false;
+        }
     }
 
     if(username.length < 2 || username.length > 20){

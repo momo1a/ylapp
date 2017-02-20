@@ -165,6 +165,23 @@ class Medicine extends MY_Controller
     }
 
 
+    /**
+     * 删除药品banner图片
+     */
+    public function delMedibanner(){
+        //var_dump($_REQUEST);
+        $mid = intval($this->input->get_post('mid'));
+        $bannerKey = $this->input->get_post('bannerKey');
+        $bannerKey = !get_magic_quotes_gpc() ? addslashes($bannerKey) : $bannerKey;
+        $res = $this->medi->mediBanerDel($bannerKey,$mid);
+        if ($res) {
+            $this->ajax_json(0, '删除成功');
+        } else {
+            $this->ajax_json(-1, '系统错误');
+        }
+    }
+
+
     /*预约管理  start*/
 
     //  预约列表

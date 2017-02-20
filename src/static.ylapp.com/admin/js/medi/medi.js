@@ -18,6 +18,23 @@ $(function(){
 
     initFileInput("news-img-edit", "/news/newsAdd",350,350);
     $(".fileinput-remove-button").css('display','none');  // 隐藏图片上传移除按钮
+
+    // 编辑药品页面 删除banner图片
+    $("#medi_edit .banner-img  .fileinput-remove").bind('click',function(){
+        //console.log('test')
+        //console.log($(this).parents('.banner-img').attr('id'),$('#medi_edit input[name="mid"]').val());
+        var bannerKey = $(this).parents('.banner-img').attr('id');
+        var mid = $('#medi_edit input[name="mid"]').val();
+        $.ajax({
+            url: SITE_URL + "medicine/delMedibanner",
+            type: "post",
+            data: {mid: mid,bannerKey:bannerKey},
+            dataType: 'json',
+            success: function (result) {
+                ;;
+            }
+        });
+    })
 });
 
 function mediSave(){
@@ -33,7 +50,6 @@ function mediSave(){
     if(!(ImageValidata(mediImgSrc,'药品缩略图',350,350))){ return false;}
     if(!(ImageValidata(bannerImgSrc,'banner图片',290,135))){ return false;}
     if(!(Bilivalidate(bannerImgSrc,'banner图片',15,7))){return false;}  // 宽高比
-    console.log('test')
     for(instance in CKEDITOR.instances){
         CKEDITOR.instances[instance].updateElement();
     }
@@ -137,3 +153,7 @@ function MediDel(){
         }
     });
 }
+
+
+
+

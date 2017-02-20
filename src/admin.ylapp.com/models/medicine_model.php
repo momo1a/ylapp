@@ -89,4 +89,20 @@ class  Medicine_model extends MY_Model
     public function mediDel($mid){
         return $this->delete_where(array('id'=>$mid));
     }
+
+    /**
+     * 删除banner图片
+     * @param $bannerKey
+     * @param $mid
+     *
+     */
+    public function mediBanerDel($bannerKey,$mid){
+        $where = array('id'=>$mid);
+        $this->select('banner');
+        $banners = $this->find_by($where);
+        $arr = json_decode($banners['banner'],true);
+        unset($arr[$bannerKey]);
+        $res = $this->update($where,array('banner'=>json_encode($arr)));
+        return $res;
+    }
 }

@@ -255,7 +255,7 @@ class Medicine extends MY_Controller
 
 
         /*默认可以导出最新的2000条数据*/
-        $data = $this->appoint->appointList(2000,0,$searchKey,$searchValue,$mediName,$startTime,$endTime,'*,YL_medi_appoint.name as illName,YL_medicine.name as mediName,YL_medi_appoint.id as aid,YL_medi_appoint.state as appointState');
+        $data = $this->appoint->appointList(2000,0,$searchKey,$searchValue,$mediName,$startTime,$endTime,'*,YL_medi_appoint.name as illName,YL_medicine.name as mediName,YL_medi_appoint.id as aid,YL_medi_appoint.state as appointState,guys.nickname as guysName');
         $state = array('0'=>'未分配','1'=>'已分配');
         $header = array(
             '编号',
@@ -263,6 +263,7 @@ class Medicine extends MY_Controller
             '患者手机',
             '患者姓名',
             '药品名',
+            '药房伙计',
             '当前状态',
         );
 
@@ -274,6 +275,7 @@ class Medicine extends MY_Controller
                 $rows[$k]['telephone'] = $v['telephone'];
                 $rows[$k]['illName'] = $v['illName'];
                 $rows[$k]['mediName'] = $v['mediName'];
+                $rows[$k]['guysName'] = $v['guysName'];
                 $rows[$k]['appointState'] = $state[$v['appointState']];
             }
         }

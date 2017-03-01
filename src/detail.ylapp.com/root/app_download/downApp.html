@@ -92,10 +92,16 @@
 			if(browser.versions.iPhone || browser.versions.iPad || browser.versions.ios) { //苹果版
 				window.location.href = "https://itunes.apple.com/cn/app/id1159570957";
 				is_weixn(); //苹果微信不自动跳转浏览器
+			}else if(browser.versions.android){
+				alert('请选择Android版');
 			}
 		})
 		document.getElementById("b2").addEventListener("click",function(){
-			window.location.href = "http://sj.qq.com/myapp/detail.htm?apkName=io.dcloud.H568440CA";
+			if(browser.versions.iPhone || browser.versions.iPad || browser.versions.ios) { //苹果版
+				alert('请选择iOS版');
+			}else{
+				window.location.href = "http://imtt.dd.qq.com/16891/2778A0B6C87BC65988A89FA52FE301FE.apk?fsname=io.dcloud.H568440CA_1.0.5_180.apk&csr=1bbd";
+			}
 		})
 		// 是否为微信
 		function is_weixn() {

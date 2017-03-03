@@ -83,10 +83,8 @@ function editDoctorPre(e){
         data: {uid: uid},
         dataType: 'json',
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             $("#doctor_edit .modal-body input[name='account']").val(result.data.email);
-            $("#doctor_edit .modal-body input[name='pwd']").val(result.data.password);
-            $("#doctor_edit .modal-body input[name='username']").val(result.data.nickname);
             $("#doctor_edit .modal-body input[name='username']").val(result.data.nickname);
             $("#doctor_edit .modal-body #sex_edit").val(result.data.sex);
             $("#doctor_edit .modal-body #hospital_edit").val(result.data.hid);
@@ -365,7 +363,7 @@ function saveDoctor(){
     var uid = $('#doctor_edit input[name="uid"]').val();
     var eleId = uid != 0 ? 'edit' : 'add';
     var account = $("#doctor_"+ eleId +" input[name='account']").val();
-    var pwd = $("#doctor_"+ eleId +" input[name='pwd']").val();
+    var pwd = $.trim($("#doctor_"+ eleId +" input[name='pwd']").val());
     var username = $("#doctor_"+ eleId +" input[name='username']").val();
     var sex = $("#doctor_"+ eleId +" select[name='sex']").val();
     var hospital = $("#doctor_"+ eleId +" select[name='hospital']").val();
@@ -386,7 +384,7 @@ function saveDoctor(){
         alert('密码不能为纯数字');
         return false;
     }
-    if(uid==0){
+    if(uid==0 || (uid!=0 && pwd != '')){
         if(pwd.length > 20 || pwd.length < 6){
             alert('密码不能大于20位小于6位');
             return false;

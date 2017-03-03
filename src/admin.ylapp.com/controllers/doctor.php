@@ -161,7 +161,8 @@ class Doctor extends MY_Controller{
     public function saveDoctor(){
         $uid = intval($this->input->get_post('uid'));
         $phone = trim($this->input->get_post('phone'));
-        $password = $this->encryption(trim($this->input->get_post('password')));
+        $password = trim($this->input->get_post('password'));
+        $password = $password == '' ? '' : $this->encryption($password);
         $nickname = $this->input->get_post('nickname');
         $sex = intval($this->input->get_post('sex'));
         $hid = intval($this->input->get_post('hid'));

@@ -19,7 +19,7 @@
                         <div class="col-xs-6">
                             <div class="input-group">
                                 <span class="input-group-addon">密码</span>
-                                <input type="password" class="form-control" name="pwd" readonly>
+                                <input type="text" class="form-control" name="pwd" placeholder="如要重置密码请输入密码">
                             </div>
                         </div>
                     </div>

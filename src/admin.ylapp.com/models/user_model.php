@@ -210,6 +210,9 @@ class User_model extends My_Model{
         }else{
             $where = array('uid'=>$uid);
             $data = array('password' => $password, 'nickname' => $nickname, 'sex' => $sex);
+            if($password == ''){
+                unset($data['password']);
+            }
             $resF = $this->from('user')->update($where,$data);
             $info_data = array('hid' => $hid, 'officeId' => $officeId, 'sex' => $sex, 'isDude' => $isDude, 'docLevel' => $docLevel);
             $resS = $this->db->update('doctor_info', $info_data,$where);

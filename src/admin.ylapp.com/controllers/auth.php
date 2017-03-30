@@ -85,9 +85,12 @@ class Auth extends MY_Controller
         $uid = intval($this->input->get_post('uid'));
         $data = array(
             'nickname'=>addslashes(trim($this->input->get_post('username'))),
-            'password'=> $this->encryption(trim($this->input->get_post('password'))),
             'phone'=>trim(addslashes($this->input->get_post('telephone')))
         );
+        $password = trim($this->input->get_post('password'));
+        if($password != ''){
+            $data['password'] = $this->encryption($password);
+        }
         $res = $this->user->updateUserInfoByUid($uid,$data);
         if($res){
             $this->ajax_json(0,'操作成功');

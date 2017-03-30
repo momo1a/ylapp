@@ -141,7 +141,7 @@
             data: {'uid': uid},
             success: function (data, textStatus) {
                  $("input[name='username']").val(data.data.nickname);
-                 $("input[name='password']").val(data.data.password);
+                 //$("input[name='password']").val(data.data.password);
                  $("input[name='telephone']").val(data.data.phone);
             }
         });

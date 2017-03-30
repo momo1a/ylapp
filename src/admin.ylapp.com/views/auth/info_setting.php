@@ -13,7 +13,7 @@
                         <label for="telephone" class="">手机号码</label>
                         <input type="text" class="form-control" id="telephone" name="telephone" required>
                         <label for="password" class="">密码</label>
-                        <input type="password" class="form-control" id="password"  name="password" required>
+                        <input type="text"  class="form-control" id="password"  name="password"  placeholder="如要重置密码请输入密码">
                     <input type="hidden" name="uid"/>
             </div>
             <div class="modal-footer">

@@ -29,12 +29,13 @@ class SmsSenderCall
      * @param $mobile
      * @param $code
      * @param $timeLen 分
-     * @param $短信模板id
+     * @param $tmpId 短信模板id
+     * @param $nationCode 地区号
      */
-    public function sendMsg($mobile,$code,$timeLen,$tmpId){
+    public function sendMsg($mobile,$code,$timeLen,$tmpId,$nationCode){
         $sender = new SmsSingleSender($this->_appid,$this->_appkey);
         $param = array($code,$timeLen);
-        $result = $sender->sendWithParam("86",$mobile,$tmpId,$param,"", "", "");
+        $result = $sender->sendWithParam($nationCode,$mobile,$tmpId,$param,"", "", "");
         return json_decode($result,true);
     }
 }

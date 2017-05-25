@@ -311,6 +311,7 @@ class Api extends MY_Controller
     public function sendIdentifyCode(){
         $this->load->config('msm_tencent');
         $timeLen = 300;
+        $nationCode = '852';  // 香港区号
         $tmpId = config_item('tencent_tpm_normal');
         $mobile = trim($this->input->post('mobile'));   //手机号
         $flag = intval($this->input->get_post('flag')); //忘记密码发送验证码判断标识
@@ -325,8 +326,11 @@ class Api extends MY_Controller
         if(!is_numeric($mobile)){
             $this->response($this->responseDataFormat(2,'手机号码非法',array()));
         }
+        if(preg_match('/^\d{11}$/',$mobile)){
+            $nationCode = '86';
+        }
         $code = rand(100000,999999);
-        $res = $this->sms->sendMsg($mobile,$code,ceil($timeLen/60),$tmpId);
+        $res = $this->sms->sendMsg($mobile,$code,ceil($timeLen/60),$tmpId,$nationCode);
         /*$returnCode = $res['result']->err_code;
         $status  = $res['result']->success;
         $returnCode = (array)$returnCode;

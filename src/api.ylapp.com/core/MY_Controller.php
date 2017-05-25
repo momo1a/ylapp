@@ -63,7 +63,8 @@ class MY_Controller extends CI_Controller
         $this->load->model('Common_trade_log_model','trade_log');
         $this->load->model('News_collections_model','collection');
         $this->load->model('User_model','user');
-        $this->load->library("UeMsg",null,'sms');  // 加载短信类库
+        //$this->load->library("UeMsg",null,'sms');  // 加载短信类库 (废弃)
+        $this->load->library("SmsTencent/SmsSenderCall",null,'sms');  // 加载短信类库
         $this->load->library('Cache_memcached',null,'cache');  // 加载缓存类库
         self::$privateToken = str_replace('\\','',$this->input->get_post('privateToken'));
         $cacheData = $this->cache->get(md5(self::$privateToken));

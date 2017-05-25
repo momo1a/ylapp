@@ -309,10 +309,13 @@ class Api extends MY_Controller
      * 发送手机验证码接口
      */
     public function sendIdentifyCode(){
+        $this->load->config('msm_tencent');
         $timeLen = 300;
+        $tmpId = config_item('tencent_tpm_normal');
         $mobile = trim($this->input->post('mobile'));   //手机号
         $flag = intval($this->input->get_post('flag')); //忘记密码发送验证码判断标识
         if($flag === 1){
+            $tmpId = config_item('tencent_tpm_find');
             $this->load->model('user_model','user');
             $checkPhone = $this->user->getRecord('phone',$mobile);
             if(!$checkPhone) {
@@ -323,13 +326,16 @@ class Api extends MY_Controller
             $this->response($this->responseDataFormat(2,'手机号码非法',array()));
         }
         $code = rand(100000,999999);
-        $res = $this->sms->sendMsg($mobile,$code,$timeLen);
+        $res = $this->sms->sendMsg($mobile,$code,ceil($timeLen/60),$tmpId);
         /*$returnCode = $res['result']->err_code;
         $status  = $res['result']->success;
         $returnCode = (array)$returnCode;
         $status = (array)$status;*/
-        if($res == 0) {
+
+        if($res['result'] === 0 && $res['errmsg'] == 'OK') {
             $this->cache->save($mobile, $code, $timeLen);
+        }else{
+            $this->response($this->responseDataFormat($res['result'],'发送短信失败',$res));
         }
         $this->response($this->responseDataFormat($res,'请求成功',array()));
     }

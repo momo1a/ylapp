@@ -5,3 +5,4 @@ $config['tencent_appkey'] =  '9f6ab6030b2ae934dfcc4f1d14b631ae';
 $config['tencent_tpm_login'] = 21284;   // 登陆模板
 $config['tencent_tpm_reg'] = 21283;    //  注册模板
 $config['tencent_tpm_find'] = 21282;   //  找回密码
+$config['tencent_tpm_normal'] = 21172;   //  通用

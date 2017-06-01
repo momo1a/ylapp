@@ -25,7 +25,7 @@ class AliPayWeb
     public function __construct($config){
         //↓↓↓↓↓↓↓↓↓↓请在这里配置您的基本信息↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 //合作身份者ID，签约账号，以2088开头由16位纯数字组成的字符串，查看地址：https://openhome.this->.com/platform/keyManage.htm?keyType=partner
-        $this->_config['partner']		= '2088311771079114';
+        $this->_config['partner']		= '2088521192348391';
 
 //收款支付宝账号，以2088开头由16位纯数字组成的字符串，一般情况下收款账号就是签约账号
         $this->_config['seller_id']	= $this->_config['partner'];
@@ -157,8 +157,8 @@ class  AliPay
      */
     public function __construct($config){
         $this->_config['service'] = 'mobile.securitypay.pay';
-        $this->_config['partner'] = '2088311771079114';
-        $this->_config['seller_id'] = 'wqdzhifu@qq.com';
+        $this->_config['partner'] = '2088521192348391';
+        $this->_config['seller_id'] = 'mingyihui8@163.com';
         $this->_config['_input_charset'] = 'UTF-8';
         $this->_config['payment_type'] = '1';
         $this->_config['it_b_pay'] = '1d';
@@ -194,20 +194,16 @@ class  AliPay
      */
     protected function rsaSign($data) {
         $priKey = "-----BEGIN PRIVATE KEY-----
-MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAK6iErqFuscqeygS
-AMPtz0rke+Hu6+9/Qg76H0fr/GYLe8lxWVm4kLysgznltPf56TJfBZiayAh2KEsJ
-N9txQKnvaQhYcqAoh6EMb6qeycMsGYBeI5H7CGCYy+YDi6UWXdxzQKQDNNpKPdv4
-DT+xyVX/sndEe/DjnESk+yMc+dEFAgMBAAECgYBi2mfToeOq3kc81YQNZM6UzGW7
-7S0tM1JHfBq88b68XP/DdiBoA2wbAWR/H6KjRJpW4ycdzXAyKgCBCUTPOXqqR4L/
-VT1+aXvzSjEPpxJk1dCMrhwgyTepuPdstTNjjsaR6uGU0Ai/UUhDLSfN/AFtOdxk
-OONmXEOltq4j3BH3OQJBAOC68GLhaMfszySdn9e+MtqsJvH10/X4b7ZwbYmUMwL8
-OONWr9Kw0CmzMmxMZEqBZ2aRx/gRFF9y6tRu12Tm+5cCQQDG7qLor1jPpbs+LDT7
-Hfms9iTq/jtosM1egXfBI55Hs4DbELlJzYIdgh26qDpJ3+Aqu92l72Z56DkFQZJo
-YtvDAkBX9XMvEJDFZ4+wAi3U8HHRGv5nR9N9e46l9p048xOAQJ43hO9uZJwlJik/
-MCs06i9Bex+snWq+7SiymuudZ7bjAkAMwsoYewcLauoz9sn/QdD+U1vS5zQQZycF
-ZPC1pv9EQjOF2fDI1zH9ipc1ngz/KClNFHgHaO/96fOebrJhl9XZAkA0EMpwXiFA
-1IM5qujvgbOfP3GsseY5t/2tYPZYvXTb/puKMoyp5AGKozEVEOLQzAKpwdOnH/8R
-bbWgp25A5hrv
+MIIBugIBAAKBgQC4f2l3ML5h5+SLt0zTKYmSSRDZCvvLHjAwPhTIGDT6inmrtzLQ
+6BpfxtRcNGed8uJJ+Ibghg9/iJfM19k29nIrGBDYhCQhpGcoEe65+CkLXU4vKWw3
+NkhUC13b/lYuDOLP5nOqMt08g4emuEeOvKZipeFUblrHVDoKO3RM+ADfuwIVAIkU
+567jE1XGw3zX8C5FteZTnwzPAoGAPd6YICD5PVJ8etohcOksKkNMrmHgo8K1gMJH
+nLxLXzbtXBrNIoxztTFf2BZ0h1CrpzKCzX3hzacgynKd1YIwgeqOj/udFNuAAS6L
+ZFKlmLQ8fKPxtP5k13VuN8sZbMkeOOkC8peW80Qt1gJQQjcdlGwv4sZsZLYvRET8
+9aG0mY8CgYBmDrF/W6gvyzz1SP/t13M6nHVO0ebzgPYLN7glL3tPT7CLNVVQHbx5
+GDg9H/yvL3dhpNEqjftOg1r6V+eH0WzbSYADXj65bvwYG/FMqofYAsiP9oJD7+Y1
+1l06+f6c217obF2ddJgBNRFv8RJLNJ8TaB0g40bd3NTCP59reMmV6wIUCmWb/RRZ
+YK4GTuvoBeowPmRjprY=
 -----END PRIVATE KEY-----";
         $res = openssl_get_privatekey($priKey);
         openssl_sign($data, $sign, $res);

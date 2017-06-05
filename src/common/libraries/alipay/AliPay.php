@@ -25,7 +25,7 @@ class AliPayWeb
     public function __construct($config){
         //↓↓↓↓↓↓↓↓↓↓请在这里配置您的基本信息↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 //合作身份者ID，签约账号，以2088开头由16位纯数字组成的字符串，查看地址：https://openhome.this->.com/platform/keyManage.htm?keyType=partner
-        $this->_config['partner']		= '2088521192348391';
+        $this->_config['partner']		= '2088311771079114';
 
 //收款支付宝账号，以2088开头由16位纯数字组成的字符串，一般情况下收款账号就是签约账号
         $this->_config['seller_id']	= $this->_config['partner'];
@@ -193,18 +193,22 @@ class  AliPay
      * @return string
      */
     protected function rsaSign($data) {
-        $priKey = "-----BEGIN PRIVATE KEY-----
-MIIBugIBAAKBgQC4f2l3ML5h5+SLt0zTKYmSSRDZCvvLHjAwPhTIGDT6inmrtzLQ
-6BpfxtRcNGed8uJJ+Ibghg9/iJfM19k29nIrGBDYhCQhpGcoEe65+CkLXU4vKWw3
-NkhUC13b/lYuDOLP5nOqMt08g4emuEeOvKZipeFUblrHVDoKO3RM+ADfuwIVAIkU
-567jE1XGw3zX8C5FteZTnwzPAoGAPd6YICD5PVJ8etohcOksKkNMrmHgo8K1gMJH
-nLxLXzbtXBrNIoxztTFf2BZ0h1CrpzKCzX3hzacgynKd1YIwgeqOj/udFNuAAS6L
-ZFKlmLQ8fKPxtP5k13VuN8sZbMkeOOkC8peW80Qt1gJQQjcdlGwv4sZsZLYvRET8
-9aG0mY8CgYBmDrF/W6gvyzz1SP/t13M6nHVO0ebzgPYLN7glL3tPT7CLNVVQHbx5
-GDg9H/yvL3dhpNEqjftOg1r6V+eH0WzbSYADXj65bvwYG/FMqofYAsiP9oJD7+Y1
-1l06+f6c217obF2ddJgBNRFv8RJLNJ8TaB0g40bd3NTCP59reMmV6wIUCmWb/RRZ
-YK4GTuvoBeowPmRjprY=
------END PRIVATE KEY-----";
+        $priKey = "-----BEGIN RSA PRIVATE KEY-----
+MIICXQIBAAKBgQCxp/YT2wJJkhE6KaCofGVXdUmPKNqctjf1K5p8cj0tvCvjk5jM
+tl4Ok+EFWJIbtGNVPRhCkEDTiyttnjpZ2efHnlEKEIFOz4MBaYnFQ2av+LUev3We
+NvllqPeOIbcwNPIu0JoxWOqcslDJQskZyuEUDD7xgoXogVNVck6QD2axcwIDAQAB
+AoGBAKwRBMq4XV/KZHsT5HIrgbASfjt1Ez+jUVFZeRg9QTnxvgR+aQklPLYbzl7y
+KRlCPs9JDB00QEVjzp0uGk/6OHzGGGotjaKHbKHnodscr7PVimcGvxwOXotDT6kp
+/oWtSDxKFO5+Havik41A31r3Rp316yEJzHMgMJnWYUnkPf55AkEA4HiNlMJVtSBC
+sr5LTJRJvts3MoxCeu2K2N4s4cKSnB0I8zeYhl34nGQRToUQ7WtA7SRUGT0F9ddW
+SlSxkdkyXwJBAMqcDrYGWam1cjF6aZd36jxkHbGpFHCWw4GbiaWGpp+ziKyPSxav
+Asod+KWrrGZp0j+JpE7h1f7PvltPAqxSIW0CQQCbOcJuhJTQVCbLhFx98G2u1dkt
+02CFsY66uak/1VWdL1bpGiEXihRJ0clGCy7Rf8G+O8kMSu68OtUpQbgpq5DxAkAn
+UKL2JUNO0BupiDRnJOi58T9l0wZZVpf3VWQfT4KTqLXTrjaG30zuRWSTWT2p3czj
+cWUFvYLV4B/y/eDp6UH9AkAK4LqtYI2ygI6RtJfaE0QB4bRO5AfLffWSlCmdaJmf
+Mgt2xDN/sLgiap+eLHBE8zkdFRKOp5xJbhhyoTyocWn/
+-----END RSA PRIVATE KEY-----";
+
         $res = openssl_get_privatekey($priKey);
         openssl_sign($data, $sign, $res);
         openssl_free_key($res);
